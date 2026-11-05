@@ -100,7 +100,7 @@ test("mcp: tools are listed, and compare_cities points at the chart view", async
   const client = await connected();
   const { tools } = await client.listTools();
   const names = tools.map((t) => t.name).sort();
-  assert.deepEqual(names, ["compare_cities", "fetch_city", "get_city", "list_metrics_and_sources", "list_sources", "methodology", "net_pay", "record_observation", "search_cities"]);
+  assert.deepEqual(names, ["compare_cities", "fetch_city", "get_city", "list_metrics_and_sources", "list_sources", "list_stale", "methodology", "net_pay", "propose_change", "record_observation", "search_cities"]);
   const cmp = tools.find((t) => t.name === "compare_cities")!;
   assert.equal((cmp._meta as { ui: { resourceUri: string } }).ui.resourceUri, VIEW_URI);
   assert.equal(cmp.annotations?.readOnlyHint, true);

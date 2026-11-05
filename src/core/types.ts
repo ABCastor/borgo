@@ -65,6 +65,8 @@ export interface Observation {
   url?: string;
   /** Which fetcher produced it, "<source-id>@<version>". */
   fetcher?: string;
+  /** Set when a reviewed proposal corrected this figure (data/corrections.json): when, through which issue, and the official text it cites. */
+  correction?: { on: string; issue: number; citation: { publisher: string; title: string; url: string } };
 }
 
 export type Direction = "higher" | "lower" | "neutral";

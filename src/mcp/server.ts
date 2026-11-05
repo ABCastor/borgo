@@ -20,6 +20,11 @@ import { methodology } from "../agent/methodology.ts";
 import { CATALOGUE_KINDS, catalogue, cataloguePart, cityReport, compare, dsInfo, netPay, REPORT_VERSION, summarize, summaryWhy } from "../agent/report.ts";
 import { placeFetchSummary } from "../agent/fetch-place.ts";
 import { VIEW_MIME, VIEW_URI, viewHtml } from "./view.ts";
+import { listStale, proposeChange, proposeMarkdown, type Poster } from "../community/agent.ts";
+import type { Http } from "../community/net.ts";
+import { CITATION_TYPES, KINDS, type RepoView } from "../community/proposal.ts";
+import { loadCorrections, repoView } from "../community/repo.ts";
+import { FACT_KINDS } from "../community/stale.ts";
 
 export const INSTRUCTIONS = `Borgo compares cities to live in on open, sourced data, weighted by the person's own values, and works out take-home pay and what is left after rent and everyday spending.
 
@@ -34,7 +39,8 @@ How to use it well:
 - The places the person asks about go to the named data providers (Open-Meteo, the World Bank and others) as names or coordinates; their salary, weights and household never do.
 - search_cities finds ids (a miss means: try fetch_city); get_city gives a city's figures with source, period, level and licence (pass \`metrics\` for a few, \`passports\` for who may live there); net_pay answers take-home pay questions on their own; list_metrics_and_sources (filter with \`kind\`, e.g. kind "regimes" and country "NL") and methodology explain what the scores mean.
 - Position lines (politics, abortion, couples_law) are stances, not more-is-better: pass a stance only when the person stated it or you already know it from them, never from their nationality, city or any other guess, and give the line a weight. Report each place's fact in neutral words, with its date.
-- Quote figures with their source and period. Rankings depend on the weights: no ranking is objective.`;
+- Quote figures with their source and period. Rankings depend on the weights: no ranking is objective.
+- When a figure or rule looks wrong or out of date, list_stale shows the curated facts due for review, and propose_change turns a correction into a checked proposal for the maintainers: cite the official text (statute, gazette, official table), never a news article alone or a link-only source. It returns a prefilled GitHub issue link for the person; post it for them only after they agreed to that exact proposal.`;
 
 const money = z.object({ amount: z.number().describe("Amount"), currency: z.string().optional().describe("ISO 4217, e.g. EUR, GBP, USD. Default: the display currency") });
 const tweak = z.object({
@@ -152,6 +158,14 @@ export interface ServerOptions {
   registry?: RegistryEntry[];
   /** How fetches reach the network (tests pass a recorded one). */
   ctx?: () => FetchCtx;
+  /** The repository the proposal checks read (default: this checkout). */
+  repo?: RepoView;
+  /** How propose_change opens cited pages (default: the guarded real network). */
+  http?: Http;
+  /** How propose_change posts an issue once the person agreed (default: their signed-in GitHub CLI). */
+  poster?: Poster;
+  /** Today, YYYY-MM-DD, for list_stale (default: the clock). */
+  today?: () => string;
 }
 
 const openWorld = { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: true };
@@ -394,6 +408,74 @@ export function createServer(data: Dataset, opts: ServerOptions = {}): McpServer
       addFetched(data, [prev]);
       const priv = entry.redistribute === "no" ? " It stays in this person's cache: the source may not be redistributed, so the project never publishes it." : "";
       return reply(`Kept ${m.label} = ${Array.isArray(value) ? value.join(" · ") : value} for ${c.name}, from ${entry.name} (${period}), marked as reported by an agent, unverified. It counts in this person's comparisons from now on${previous ? `, replacing the ${previous.period} figure from the same source` : ""}.${priv}`, { reportVersion: REPORT_VERSION, city: c.id, observation: o, replaced: previous ?? null, path });
+    }),
+  );
+
+  const level = z.enum(["city", "metro", "region", "country"]);
+  server.registerTool(
+    "list_stale",
+    {
+      title: "Facts due for review",
+      description:
+        "The facts Borgo encodes by hand (tax models, abortion and same-sex couples law, paid leave, election results, residence rules, corrected figures), each with the day it is due to be compared with its official source again, the most overdue first. Each row says why it is due, links its current source and gives the target to use with propose_change.",
+      inputSchema: {
+        within: z.number().int().min(0).max(3650).optional().describe("Also list facts due within this many days (default 0: only those already due)"),
+        kind: z.enum(FACT_KINDS).optional().describe("Only one kind of fact"),
+        country: z.string().optional().describe("ISO alpha-2: only this country's facts"),
+        asOf: z.string().optional().describe("The day to compare against, YYYY-MM-DD (default today)"),
+        limit: z.number().int().min(1).max(500).optional().describe("Default 50"),
+      },
+      outputSchema: looseOutput,
+      annotations: readOnly,
+    },
+    guarded(({ within, kind, country, asOf, limit }) => {
+      const r = listStale({ within, kind, country, asOf: asOf ?? opts.today?.(), limit }, { corrections: loadCorrections(), registry, name: (c) => data.countries[c]?.name ?? c });
+      const { markdown, ...rest } = r;
+      return reply(markdown, { reportVersion: REPORT_VERSION, ...rest });
+    }),
+  );
+
+  server.registerTool(
+    "propose_change",
+    {
+      title: "Propose a correction",
+      description:
+        "Turn a correction to a Borgo figure, rule or source into a proposal the maintainers review, checked the way the project's GitHub workflow checks it: the target exists, the value has the metric's shape and unit, the citation is an official text (statute, gazette, official table or page, or a registry source) and not a link-only site, a rule cites its legal text, and the cited page answers and holds the quote. Returns the verdict and a prefilled GitHub issue link for the person to open and submit (public, under their account, data under CC BY 4.0). Posts nothing by itself: to post with the person's signed-in GitHub CLI, show them the proposal and call again with post.confirm set to the token this call returns, only after they say yes.",
+      inputSchema: {
+        kind: z.enum(KINDS).describe("correction (a figure shown is wrong), figure (a figure Borgo lacks), rule-change (a tax, leave, residence or law rule), source (a registry entry), link (a broken or missing address)"),
+        city: z.string().optional().describe("For a figure: the city id (search_cities)"),
+        metric: z.string().optional().describe("For a figure: the metric id"),
+        source: z.string().optional().describe("For a figure: the registry source id it comes from (get_city shows it)"),
+        file: z.string().optional().describe("For a rule, source or link: the file, e.g. src/tax/it.ts or registry/ons-pipr.json (list_stale gives it)"),
+        path: z.string().optional().describe("For a rule, source or link: what inside the file changes, e.g. ABORTION.US-NY or homepage"),
+        current: z.string().optional().describe("The value shown now"),
+        proposed: z.union([z.string(), z.number(), z.array(z.number())]).describe("A figure in the metric's unit (12 numbers for a monthly one), or the new rule in a sentence"),
+        unit: z.string().optional().describe("The figure's unit, e.g. GBP/month"),
+        period: z.string().optional().describe("The time the value describes, e.g. 2026-09"),
+        level: level.optional().describe("The area the value describes"),
+        citation: z
+          .object({
+            url: z.string().describe("The official text's address"),
+            type: z.enum(CITATION_TYPES).describe("statute, gazette, official-table, official-page or registry; news and other pages go in leads"),
+            publisher: z.string(),
+            title: z.string(),
+            accessed: z.string().describe("YYYY-MM-DD"),
+            quote: z.string().optional().describe("A sentence copied exactly from the page that states the value; checked on the page"),
+          })
+          .describe("The primary citation: the official text itself"),
+        leads: z.array(z.string()).optional().describe("News or other pages that pointed to the change: leads, never citations"),
+        agent: z.string().describe("Your name and version, name@1.0"),
+        operator: z.string().describe("The person or project that runs you and answers for the proposal"),
+        note: z.string().optional().describe("For the reviewer; public, so no personal details"),
+        offline: z.boolean().optional().describe("Skip opening the cited pages"),
+        post: z.object({ confirm: z.string() }).optional().describe("Only after the person agreed to post this exact proposal: the confirm token from the previous call"),
+      },
+      outputSchema: looseOutput,
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
+    },
+    guardedAsync(async (args) => {
+      const r = await proposeChange(args, { repo: opts.repo ?? repoView(), http: opts.http, poster: opts.poster });
+      return reply(proposeMarkdown(r), { reportVersion: REPORT_VERSION, valid: r.valid, problems: r.verdict.problems, warnings: r.verdict.warnings, route: r.verdict.route, locked: r.verdict.locked, labels: r.verdict.labels, next: r.verdict.next, title: r.title, issueUrl: r.issueUrl, confirm: r.confirm, posted: r.posted, notPosted: r.notPosted ?? null, proposal: r.proposal });
     }),
   );
 

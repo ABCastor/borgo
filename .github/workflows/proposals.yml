@@ -1,0 +1,65 @@
+name: proposals
+
+# Checks every issue written by the proposal form (.github/ISSUE_TEMPLATE/proposal.yml), labels it and comments a
+# readable reason when it fails. A valid proposal that changes a data file becomes a pull request for review; a rule
+# (tax, law, positions, residence) stays an issue for a person to encode with tests. See CONTRIBUTING.md.
+#
+# The issue's text is untrusted. It is never interpolated into a shell or an expression: the scripts read it from the
+# event file GitHub writes ($GITHUB_EVENT_PATH) and treat it as data. The workflow runs the default branch's code only
+# (issue events always do), installs no dependencies, and each job gets only the permissions it needs.
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions: {}
+
+concurrency:
+  group: proposal-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Check the proposal
+    if: github.event.issue.state == 'open' && contains(github.event.issue.body, '### Kind of change')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      issues: write
+    outputs:
+      route: ${{ steps.check.outputs.route }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+      - id: check
+        name: Check shape, target, unit, citation and quote; label and comment
+        run: node scripts/proposals/check-issue.ts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+  pull-request:
+    name: Open the pull request
+    needs: check
+    if: needs.check.outputs.route == 'pr'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write # only to say where the branch is when the repository does not let workflows open pull requests
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+      - name: Put the change on a branch and open a pull request
+        run: node scripts/proposals/open-pr.ts
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

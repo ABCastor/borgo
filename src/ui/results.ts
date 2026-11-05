@@ -8,6 +8,8 @@ import { PENSION_RELIEF } from "../tax/pension.ts";
 import { moneyGap } from "../core/criteria.ts";
 import type { Resolved } from "../core/lookup.ts";
 import { html, raw, type Raw } from "./dom.ts";
+import { correctionUrl } from "../community/prefill.ts";
+import { REPO_URL } from "../community/proposal.ts";
 import { term } from "./terms.ts";
 import { countryName, money, num } from "./format.ts";
 import type { AppState } from "./state.ts";
@@ -367,17 +369,24 @@ export function sourcePopover(s: AppState, cityId: string, metric: string, r: Re
     return html`<dt>Source</dt><dd><a href="${src.url}" target="_blank" rel="noopener">${src.name}</a>, ${src.publisher}${typeof o.value === "number" ? html` · <b class="num">${num(o.value, m?.decimals ?? 1)}</b>` : ""}</dd>
       <dt>Period</dt><dd>${o.period}</dd>${o.note ? html`<dt>Note</dt><dd>${o.note}</dd>` : ""}
       <dt>Licence</dt><dd>${src.licenceUrl ? html`<a href="${src.licenceUrl}" target="_blank" rel="noopener">${src.licence}</a>` : src.licence}</dd>
-      <dt>Fetched</dt><dd>${o.retrieved.length > 10 ? `${o.retrieved.slice(0, 10)} ${o.retrieved.slice(11, 16)} UTC` : o.retrieved}${o.url ? html` · <a href="${o.url}" target="_blank" rel="noopener">what was read</a>` : ""}${o.fetcher === "agent" ? " · read by your agent" : ""}</dd>`;
+      ${o.correction
+        ? html`<dt>Corrected</dt><dd>${o.correction.on}, citing <a href="${o.correction.citation.url}" target="_blank" rel="noopener">${o.correction.citation.publisher}: ${o.correction.citation.title}</a> · <a href="${REPO_URL}/issues/${o.correction.issue}" target="_blank" rel="noopener">proposal #${o.correction.issue}</a></dd>`
+        : html`<dt>Fetched</dt><dd>${o.retrieved.length > 10 ? `${o.retrieved.slice(0, 10)} ${o.retrieved.slice(11, 16)} UTC` : o.retrieved}${o.url ? html` · <a href="${o.url}" target="_blank" rel="noopener">what was read</a>` : ""}${o.fetcher === "agent" ? " · read by your agent" : ""}</dd>`}`;
   };
   const head =
     r.origin.kind === "consensus"
       ? html`<p class="pop-lede">Median of ${r.origin.observations.length} sources, which range from ${num(r.origin.min, m?.decimals ?? 1)} to ${num(r.origin.max, m?.decimals ?? 1)}.</p>`
       : "";
   const list = r.origin.kind === "consensus" ? r.origin.observations : [r.origin.observation];
+  // A person's agent read this figure for them: it is theirs to fix, not the project's.
+  const shown = list.find((o) => o.fetcher !== "agent");
+  const suggest = m && shown
+    ? html`<a class="link" data-correction href="${correctionUrl(city, m, shown, s.data.countries[city.country]?.currency ?? "")}" target="_blank" rel="noopener" title="Opens a public GitHub issue, filled in with this figure: add the new value and its official source">Suggest a correction</a>`
+    : "";
   return html`<div class="pop-body"><b>${m?.label ?? metric}, ${city.name}</b>${head}
     <dl><dt>Describes</dt><dd>${describes}</dd>${list.map(one)}</dl>
     ${r.others.length ? html`<p class="hint">${r.others.length} older or less local figure${r.others.length > 1 ? "s" : ""} not used.</p>` : ""}
-    <button class="link" data-act="edit" data-city="${cityId}" data-metric="${metric}">Use my own number</button></div>`;
+    <p class="pop-actions"><button class="link" data-act="edit" data-city="${cityId}" data-metric="${metric}">Use my own number</button>${suggest}</p></div>`;
 }
 
 export { raw };

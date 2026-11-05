@@ -20,6 +20,7 @@ import type { City, Country, Dataset, FxTable, Metric, Observation, RightsArea }
 import { loadRegistry, registrySources } from "../src/registry/load.ts";
 import { LICENCES, PARTS, partFor, type LicenceManifest, type ManifestEntry, type PartFile, type PartId, type Published } from "../src/registry/licences.ts";
 import type { RegistryEntry } from "../src/registry/schema.ts";
+import type { CorrectionsFile } from "../src/community/apply.ts";
 import { validateMap, type WorldMap } from "../src/core/world-map.ts";
 
 const cities = await readJson<City[]>("data/cities.json");
@@ -60,6 +61,7 @@ function publishable(id: string, where: string): PartId | null {
 }
 
 const files: string[] = [];
+let corrected = 0;
 for (const part of PART_IDS) {
   const dir = PARTS[part].folder;
   if (!existsSync(join(ROOT, dir))) continue;
@@ -70,13 +72,43 @@ for (const part of PART_IDS) {
   }
 }
 
+// Figures corrected through reviewed proposals (CONTRIBUTING.md): each replaces the same source's figure for that city
+// and metric, or adds it, and keeps the official text it cites. The same checks apply as to any other figure.
+const CORRECTIONS = "data/corrections.json";
+if (existsSync(join(ROOT, CORRECTIONS))) {
+  const { corrections } = await readJson<CorrectionsFile>(CORRECTIONS);
+  for (const c of corrections) {
+    const where = `${CORRECTIONS} ${c.city} ${c.metric}`;
+    const o: Observation = { metric: c.metric, value: c.value, period: c.period, level: c.level, source: c.source, retrieved: c.correction?.on, url: c.url, fetcher: "correction", ...(c.note ? { note: c.note } : {}), correction: { on: c.correction?.on, issue: c.correction?.issue, citation: { publisher: c.correction?.citation?.publisher, title: c.correction?.citation?.title, url: c.correction?.citation?.url } } };
+    if (!Number.isInteger(c.correction?.issue) || !/^https:\/\//.test(c.url ?? "") || !/^\d{4}-\d{2}-\d{2}$/.test(c.correction?.on ?? "") || !c.correction?.citation?.publisher) {
+      errors.push(`${where}: a correction needs its issue number, the https address it cites, the day (YYYY-MM-DD) and the citation's publisher`);
+      continue;
+    }
+    const part = publishable(c.source, where);
+    if (!part) continue;
+    // Checked like a file of that part, then put in place of the figure it corrects.
+    const before = errors.length;
+    check(CORRECTIONS, { source: c.source, retrieved: o.retrieved, observations: { [c.city]: [o] } }, part, false);
+    if (errors.length > before) continue;
+    const list = byPart[part][c.city]!;
+    // A newer release from the source wins: the correction has done its work and can be removed.
+    const newer = list.find((x) => x.metric === c.metric && x.source === c.source && x.period > c.period);
+    if (newer) {
+      console.warn(`${where}: ${c.source} now has ${newer.period}, newer than the correction's ${c.period}; the correction is not used and can be removed`);
+      continue;
+    }
+    byPart[part][c.city] = [...list.filter((x) => !(x.metric === c.metric && x.source === c.source)), o];
+    corrected++;
+  }
+}
+
 function shapeOk(shape: Metric["shape"] | undefined, v: unknown): boolean {
   const n = valueLength(shape);
   if (n) return Array.isArray(v) && v.length === n && v.every(Number.isFinite);
   return typeof v === "number" && Number.isFinite(v);
 }
 
-function check(f: string, file: ObservationFile, folderPart: PartId): void {
+function check(f: string, file: ObservationFile, folderPart: PartId, keep = true): void {
   for (const [cityId, list] of Object.entries(file.observations)) {
     if (!ids.has(cityId)) {
       errors.push(`${f}: unknown city ${cityId}`);
@@ -91,7 +123,7 @@ function check(f: string, file: ObservationFile, folderPart: PartId): void {
       if (m && !shapeOk(m.shape, o.value)) errors.push(`${where}: ${o.metric} has the wrong shape`);
       if (!o.period || !o.retrieved) errors.push(`${where}: ${o.metric} lacks period or retrieval date`);
       if (part && part !== folderPart) errors.push(`${where}: ${o.source} is licensed ${entries.get(o.source)!.rights!.licenceId}, so its figures belong in ${PARTS[part].folder}, not ${PARTS[folderPart].folder}`);
-      if (part) byPart[part][cityId]!.push(o);
+      if (part && keep) byPart[part][cityId]!.push(o);
     }
   }
 }
@@ -184,5 +216,5 @@ await writeJson("public/data/registry.json", registry.entries);
 await writeFile(join(ROOT, "public/data/map.json"), JSON.stringify(map));
 const count = (p: PartId) => Object.values(byPart[p]).reduce((s, l) => s + l.length, 0);
 console.log(
-  `dataset: ${cities.length} cities, ${PART_IDS.map((p) => `${count(p)} observations in ${PARTS[p].file}`).join(", ")}, from ${files.length} source files; ${manifest.sources.length} sources in the licence manifest; map: ${map.tiles.length / 3} tiles, ${map.places.length} places`,
+  `dataset: ${cities.length} cities, ${PART_IDS.map((p) => `${count(p)} observations in ${PARTS[p].file}`).join(", ")}, from ${files.length} source files${corrected ? ` and ${corrected} correction${corrected > 1 ? "s" : ""}` : ""}; ${manifest.sources.length} sources in the licence manifest; map: ${map.tiles.length / 3} tiles, ${map.places.length} places`,
 );

@@ -80,6 +80,8 @@ Everything is a small, separate piece.
 
 Pull requests need a source and a licence for every number they add.
 
+**Corrections** to any figure, rule or source are welcome from people and their agents: **Suggest a correction** under any figure's sources, the [proposal form](https://github.com/ABCastor/borgo/issues/new?template=proposal.yml), or `propose_change` in the MCP server (`borgo propose` on the command line). Each proposal cites the official text it comes from and is checked on GitHub, then reviewed; `borgo stale` lists the curated facts due for review. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## Licence
 
 The Map follows the spirit of Nick Winans' [Where to Live](https://github.com/Nicell/where-to-live) map of pleasant days in the US (MIT); no code is copied from it.

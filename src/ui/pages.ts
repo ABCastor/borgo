@@ -84,7 +84,8 @@ export function aboutPage(s: AppState): Raw {
 
 export function contactPage(): Raw {
   const ways = [
-    { href: `${REPO}/issues/new`, title: "Report a wrong figure or a bug", text: "Name the city, the figure and where you saw a better one. A wrong tax line is a bug too: give the gross, the country and the line." },
+    { href: `${REPO}/issues/new?template=proposal.yml`, title: "Correct a figure, a rule or a source", text: "Give the new value and the official text it comes from: the statute, the gazette or the official table. Suggest a correction, under any figure's sources, fills in the rest." },
+    { href: `${REPO}/issues/new`, title: "Report a bug", text: "What you did, what you expected and what happened. A wrong tax line is a bug too: give the gross, the country and the line." },
     { href: `${REPO}/issues/new`, title: "Ask for a city, a source or a country's tax", text: "Say which, and point to an open source for it if you know one. Only data we may share can be added." },
     { href: `${REPO}/discussions`, title: "Ask a question or share an idea", text: "How a number is worked out, what the ranking means for you, what you would like it to do next." },
     { href: `${REPO}/security/advisories/new`, title: "Report a security problem", text: "Privately, through GitHub's security advisories, not in a public issue." },

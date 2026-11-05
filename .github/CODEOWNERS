@@ -1,0 +1,27 @@
+# Who reviews what (CONTRIBUTING.md, "Review"). A change to one of these paths asks its owners for review.
+# Locked facts (tax modules, residence rights, position lines: politics, abortion and same-sex couples law) need two
+# approving reviews, or one from the country's named steward; both stewards are asked here. Everything else needs one.
+
+*                                   @Anneo22 @edoardoavenia
+
+# Locked: two reviewers, or the country's steward.
+/src/tax/                           @Anneo22 @edoardoavenia
+/src/fetch/rights-law.ts            @Anneo22 @edoardoavenia
+/src/fetch/politics.ts              @Anneo22 @edoardoavenia
+/src/fetch/politics-table.ts        @Anneo22 @edoardoavenia
+/pipeline/inputs/politics.json      @Anneo22 @edoardoavenia
+/data/rights.json                   @Anneo22 @edoardoavenia
+/src/core/rights.ts                 @Anneo22 @edoardoavenia
+/registry/politics.json             @Anneo22 @edoardoavenia
+/registry/abortion-law.json         @Anneo22 @edoardoavenia
+/registry/couples-law.json          @Anneo22 @edoardoavenia
+/registry/eu-free-movement.json     @Anneo22 @edoardoavenia
+/registry/ch-afmp.json              @Anneo22 @edoardoavenia
+/registry/cta.json                  @Anneo22 @edoardoavenia
+/registry/ttta.json                 @Anneo22 @edoardoavenia
+
+# The review process itself.
+/.github/                           @Anneo22 @edoardoavenia
+/src/community/                     @Anneo22 @edoardoavenia
+/scripts/proposals/                 @Anneo22 @edoardoavenia
+/CONTRIBUTING.md                    @Anneo22 @edoardoavenia

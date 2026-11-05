@@ -205,6 +205,7 @@ Calculations and the cache stay on the person's machine. The places they look up
 | A fetched place is scored like a snapshot city; merging replaces source by source | `test/fetch.test.ts` |
 | The cache round-trips, is reused, refreshed partially, and invalidated by a fetcher version change | `test/fetch.test.ts` |
 | MCP `list_sources`, `fetch_city`, `record_observation` work over the protocol | `test/fetch.test.ts` |
+| A proposal without a primary citation for a rule, citing a link-only source, or of the wrong shape is refused with a readable reason; a valid data proposal becomes a pull request and a rule stays an issue; `propose_change` posts nothing without the person's agreement to that exact proposal | `test/community.test.ts` |
 | No money figure is invented without a rate or tax model | `test/fetch.test.ts` |
 
 Not promised: that a provider is up or right, that a resolved name is the place the person meant (they see country, region and population), that any metric exists for every place.

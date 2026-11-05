@@ -15,6 +15,9 @@ import { CATALOGUE_KINDS, catalogue, cataloguePart, cityReport, compare, netPay,
 import { fetchPlace, placeFetchMarkdown, placeFetchSummary } from "../agent/fetch-place.ts";
 import { listSources, sourcesMarkdown } from "../agent/sources.ts";
 import { loadRegistry } from "../registry/load.ts";
+import { listStale, proposeChange, proposeMarkdown, type ProposeInput } from "../community/agent.ts";
+import { loadCorrections, repoView } from "../community/repo.ts";
+import { FACT_KINDS, type FactKind } from "../community/stale.ts";
 
 const HELP = `borgo: compare cities to live in on open, sourced data, weighted by what you value.
 
@@ -36,6 +39,14 @@ Usage
   borgo catalogue [--kind regimes] [--country NL]
                                                 criteria, metrics, sources, tax models, regimes, presets
   borgo methodology                             how scores and money are computed
+  borgo stale [--within 60] [--kind law] [--country IT]
+                                                curated facts due for review against their official source
+  borgo propose --kind correction --city london-gb --metric rent_1bed --source ons-pipr --proposed 1800
+        --unit GBP/month --period 2026-09 --level region --url <official source> --type official-table
+        --publisher "Office for National Statistics" --title "..." --accessed 2026-11-05 [--quote "..."]
+        [--lead <news url>] [--agent name@1.0 --operator "..."] [--offline] [--from proposal.json]
+                                                check a correction and print the prefilled GitHub issue link;
+                                                --post <token> posts it with your signed-in gh, after you read it
   borgo data build                              validate data/ and build public/data/dataset.json
   borgo data refresh [source]                   re-fetch one source (or all), then build
   borgo mcp                                     run the MCP server on stdio
@@ -124,6 +135,30 @@ const OPTIONS = {
   "no-paid-childcare": { type: "boolean" },
   full: { type: "boolean" },
   kind: { type: "string" },
+  within: { type: "string" },
+  "as-of": { type: "string" },
+  city: { type: "string" },
+  source: { type: "string" },
+  file: { type: "string" },
+  path: { type: "string" },
+  current: { type: "string" },
+  proposed: { type: "string" },
+  unit: { type: "string" },
+  period: { type: "string" },
+  level: { type: "string" },
+  url: { type: "string" },
+  type: { type: "string" },
+  publisher: { type: "string" },
+  title: { type: "string" },
+  accessed: { type: "string" },
+  quote: { type: "string" },
+  lead: { type: "string", multiple: true },
+  agent: { type: "string" },
+  operator: { type: "string" },
+  note: { type: "string" },
+  offline: { type: "boolean" },
+  post: { type: "string" },
+  from: { type: "string" },
 } as const;
 
 type Flags = ReturnType<typeof parseArgs<{ options: typeof OPTIONS; allowPositionals: true }>>["values"];
@@ -253,6 +288,44 @@ export function compareArgs(positionals: string[], f: Flags): QueryArgs {
   return a;
 }
 
+/** A proposal from flags, or from a JSON file (--from) with flags on top. */
+export function proposeInput(f: Flags): ProposeInput {
+  const base: Partial<ProposeInput> = f.from ? JSON.parse(readFileSync(f.from, "utf8")) : {};
+  const c = base.citation;
+  const i = {
+    ...base,
+    ...(f.kind ? { kind: f.kind } : {}),
+    ...(f.city ? { city: f.city } : {}),
+    ...(f.metric ? { metric: f.metric } : {}),
+    ...(f.source ? { source: f.source } : {}),
+    ...(f.file ? { file: f.file } : {}),
+    ...(f.path ? { path: f.path } : {}),
+    ...(f.current ? { current: f.current } : {}),
+    ...(f.proposed ? { proposed: f.proposed } : {}),
+    ...(f.unit ? { unit: f.unit } : {}),
+    ...(f.period ? { period: f.period } : {}),
+    ...(f.level ? { level: f.level } : {}),
+    ...(f.lead ? { leads: f.lead } : {}),
+    ...(f.agent ? { agent: f.agent } : {}),
+    ...(f.operator ? { operator: f.operator } : {}),
+    ...(f.note ? { note: f.note } : {}),
+    ...(f.offline ? { offline: true } : {}),
+    ...(f.post ? { post: { confirm: f.post } } : {}),
+    citation: {
+      url: f.url ?? c?.url ?? "",
+      type: f.type ?? c?.type ?? "",
+      publisher: f.publisher ?? c?.publisher ?? "",
+      title: f.title ?? c?.title ?? "",
+      accessed: f.accessed ?? c?.accessed ?? "",
+      ...((f.quote ?? c?.quote) ? { quote: f.quote ?? c?.quote } : {}),
+    },
+  } as ProposeInput;
+  if (!i.kind) throw new Error("propose needs --kind: correction, figure, rule-change, source or link.");
+  if (i.proposed === undefined || i.proposed === "") throw new Error("propose needs --proposed: the new value.");
+  if (!i.citation.url || !i.citation.type) throw new Error("propose needs the official source: --url and --type (statute, gazette, official-table, official-page or registry).");
+  return i;
+}
+
 function runPipeline(rel: string): boolean {
   const r = spawnSync(process.execPath, [join(ROOT, rel)], { cwd: ROOT, stdio: "inherit" });
   return r.status === 0;
@@ -289,6 +362,11 @@ export async function main(argv: string[]): Promise<number> {
   }
   const print = (json: unknown, text: string) => console.log(f.json ? JSON.stringify(json, null, 2) : text);
   if (cmd === "data") return data(rest[0], rest[1]);
+  if (cmd === "propose") {
+    const r = await proposeChange(proposeInput(f), { repo: repoView() });
+    print({ reportVersion: REPORT_VERSION, valid: r.valid, problems: r.verdict.problems, warnings: r.verdict.warnings, route: r.verdict.route, locked: r.verdict.locked, title: r.title, issueUrl: r.issueUrl, confirm: r.confirm, posted: r.posted, notPosted: r.notPosted ?? null, proposal: r.proposal }, proposeMarkdown(r).replace("call again with post.confirm =", "run the same command with --post"));
+    return r.valid ? 0 : 1;
+  }
   if (cmd === "mcp") {
     const { serve } = await import("../mcp/stdio.ts");
     await serve();
@@ -374,6 +452,16 @@ export async function main(argv: string[]): Promise<number> {
       }
       const c = catalogue(ds);
       print(c, catalogueMarkdown(c));
+      return 0;
+    }
+    case "stale": {
+      if (f.kind && !(FACT_KINDS as readonly string[]).includes(f.kind)) throw new Error(`--kind is one of ${FACT_KINDS.join(", ")}.`);
+      const r = listStale(
+        { within: f.within ? number(f.within, "--within") : undefined, kind: f.kind as FactKind | undefined, country: f.country, asOf: f["as-of"], limit: f.limit ? number(f.limit, "--limit") : undefined },
+        { corrections: loadCorrections(), registry: loadRegistry().entries, name: (c) => ds.countries[c]?.name ?? c },
+      );
+      const { markdown, ...rest } = r;
+      print({ reportVersion: REPORT_VERSION, ...rest }, markdown);
       return 0;
     }
     case "methodology": {
