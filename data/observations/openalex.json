@@ -1,0 +1,1146 @@
+{
+  "source": "openalex",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "research_output",
+        "value": 2443,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "20,703 works by 97 institutions in Turin"
+      },
+      {
+        "metric": "builder_density",
+        "value": 56,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "research_output",
+        "value": 4298,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "58,944 works by 257 institutions in Milan"
+      },
+      {
+        "metric": "builder_density",
+        "value": 66,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "research_output",
+        "value": 3029,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "70,241 works by 379 institutions in Rome"
+      },
+      {
+        "metric": "builder_density",
+        "value": 60,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "research_output",
+        "value": 2263,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "20,575 works by 61 institutions in Naples"
+      },
+      {
+        "metric": "builder_density",
+        "value": 55,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "research_output",
+        "value": 4908,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "19,380 works by 80 institutions in Bologna"
+      },
+      {
+        "metric": "builder_density",
+        "value": 68,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "research_output",
+        "value": 4011,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "14,726 works by 68 institutions in Florence"
+      },
+      {
+        "metric": "builder_density",
+        "value": 65,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "research_output",
+        "value": 1714,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "153,585 works by 2142 institutions in London"
+      },
+      {
+        "metric": "builder_density",
+        "value": 50,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "research_output",
+        "value": 22529,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "32,819 works by 276 institutions in Cambridge"
+      },
+      {
+        "metric": "builder_density",
+        "value": 95,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "research_output",
+        "value": 4268,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "24,285 works by 132 institutions in Manchester"
+      },
+      {
+        "metric": "builder_density",
+        "value": 66,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "research_output",
+        "value": 3126,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "14,973 works by 153 institutions in Bristol"
+      },
+      {
+        "metric": "builder_density",
+        "value": 60,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "research_output",
+        "value": 4754,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "24,484 works by 170 institutions in Edinburgh"
+      },
+      {
+        "metric": "builder_density",
+        "value": 68,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "research_output",
+        "value": 2475,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "25,346 works by 380 institutions in Dublin"
+      },
+      {
+        "metric": "builder_density",
+        "value": 56,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "research_output",
+        "value": 2745,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "6,148 works by 53 institutions in Cork"
+      },
+      {
+        "metric": "builder_density",
+        "value": 58,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "research_output",
+        "value": 7246,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "154,954 works by 1471 institutions in Paris"
+      },
+      {
+        "metric": "builder_density",
+        "value": 75,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "research_output",
+        "value": 5569,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "29,003 works by 194 institutions in Lyon"
+      },
+      {
+        "metric": "builder_density",
+        "value": 70,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "research_output",
+        "value": 1573,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "53,898 works by 597 institutions in Berlin"
+      },
+      {
+        "metric": "builder_density",
+        "value": 48,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "research_output",
+        "value": 3555,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "53,504 works by 318 institutions in Munich"
+      },
+      {
+        "metric": "builder_density",
+        "value": 63,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "research_output",
+        "value": 1202,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "23,734 works by 234 institutions in Hamburg"
+      },
+      {
+        "metric": "builder_density",
+        "value": 44,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "research_output",
+        "value": 6479,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "48,047 works by 245 institutions in Amsterdam"
+      },
+      {
+        "metric": "builder_density",
+        "value": 73,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "research_output",
+        "value": 1590,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "13,800 works by 99 institutions in Rotterdam"
+      },
+      {
+        "metric": "builder_density",
+        "value": 48,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "research_output",
+        "value": 2203,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "22,449 works by 476 institutions in Brussels"
+      },
+      {
+        "metric": "builder_density",
+        "value": 54,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "research_output",
+        "value": 3433,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "39,598 works by 298 institutions in Copenhagen"
+      },
+      {
+        "metric": "builder_density",
+        "value": 62,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "research_output",
+        "value": 2469,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "37,411 works by 561 institutions in Stockholm"
+      },
+      {
+        "metric": "builder_density",
+        "value": 56,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "research_output",
+        "value": 2088,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "22,602 works by 633 institutions in Oslo"
+      },
+      {
+        "metric": "builder_density",
+        "value": 53,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "research_output",
+        "value": 3155,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "20,787 works by 462 institutions in Helsinki"
+      },
+      {
+        "metric": "builder_density",
+        "value": 61,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "research_output",
+        "value": 9928,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "41,237 works by 397 institutions in Zurich"
+      },
+      {
+        "metric": "builder_density",
+        "value": 81,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "research_output",
+        "value": 7567,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "15,266 works by 188 institutions in Geneva"
+      },
+      {
+        "metric": "builder_density",
+        "value": 76,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "research_output",
+        "value": 2128,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "35,995 works by 441 institutions in Vienna"
+      },
+      {
+        "metric": "builder_density",
+        "value": 54,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "research_output",
+        "value": 2458,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "28,654 works by 964 institutions in Prague"
+      },
+      {
+        "metric": "builder_density",
+        "value": 56,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "research_output",
+        "value": 1860,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "31,661 works by 359 institutions in Warsaw"
+      },
+      {
+        "metric": "builder_density",
+        "value": 51,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "research_output",
+        "value": 2401,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "19,603 works by 90 institutions in Krakow"
+      },
+      {
+        "metric": "builder_density",
+        "value": 56,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "research_output",
+        "value": 1383,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "24,087 works by 303 institutions in Budapest"
+      },
+      {
+        "metric": "builder_density",
+        "value": 46,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "research_output",
+        "value": 7815,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "40,468 works by 712 institutions in Lisbon"
+      },
+      {
+        "metric": "builder_density",
+        "value": 76,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "research_output",
+        "value": 9634,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "24,345 works by 232 institutions in Porto"
+      },
+      {
+        "metric": "builder_density",
+        "value": 80,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "research_output",
+        "value": 2812,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "91,546 works by 567 institutions in Madrid"
+      },
+      {
+        "metric": "builder_density",
+        "value": 58,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "research_output",
+        "value": 4024,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "67,858 works by 401 institutions in Barcelona"
+      },
+      {
+        "metric": "builder_density",
+        "value": 65,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "research_output",
+        "value": 2696,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "22,227 works by 72 institutions in Valencia"
+      },
+      {
+        "metric": "builder_density",
+        "value": 58,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "research_output",
+        "value": 1143,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "6,773 works by 21 institutions in Málaga"
+      },
+      {
+        "metric": "builder_density",
+        "value": 43,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "research_output",
+        "value": 3768,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "25,018 works by 257 institutions in Athens"
+      },
+      {
+        "metric": "builder_density",
+        "value": 64,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "research_output",
+        "value": 771,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "3,039 works by 72 institutions in Tallinn"
+      },
+      {
+        "metric": "builder_density",
+        "value": 36,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "research_output",
+        "value": 3173,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "26,260 works by 452 institutions in San Francisco"
+      },
+      {
+        "metric": "builder_density",
+        "value": 61,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "research_output",
+        "value": 1206,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "46,064 works by 398 institutions in Los Angeles"
+      },
+      {
+        "metric": "builder_density",
+        "value": 44,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "research_output",
+        "value": 1258,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "110,726 works by 1492 institutions in New York"
+      },
+      {
+        "metric": "builder_density",
+        "value": 44,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "research_output",
+        "value": 12103,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "79,135 works by 454 institutions in Boston"
+      },
+      {
+        "metric": "builder_density",
+        "value": 84,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "research_output",
+        "value": 4313,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "33,683 works by 369 institutions in Seattle"
+      },
+      {
+        "metric": "builder_density",
+        "value": 66,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "research_output",
+        "value": 1467,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "14,300 works by 247 institutions in Austin"
+      },
+      {
+        "metric": "builder_density",
+        "value": 47,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "research_output",
+        "value": 1693,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "8,247 works by 123 institutions in Miami"
+      },
+      {
+        "metric": "builder_density",
+        "value": 50,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "research_output",
+        "value": 1432,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "38,163 works by 537 institutions in Chicago"
+      },
+      {
+        "metric": "builder_density",
+        "value": 47,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "research_output",
+        "value": 1083,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "7,892 works by 176 institutions in Denver"
+      },
+      {
+        "metric": "builder_density",
+        "value": 42,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "research_output",
+        "value": 2188,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "61,154 works by 572 institutions in Toronto"
+      },
+      {
+        "metric": "builder_density",
+        "value": 54,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "research_output",
+        "value": 3873,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "25,646 works by 288 institutions in Vancouver"
+      },
+      {
+        "metric": "builder_density",
+        "value": 64,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "research_output",
+        "value": 2829,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "49,882 works by 436 institutions in Montreal"
+      },
+      {
+        "metric": "builder_density",
+        "value": 59,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "research_output",
+        "value": 1064,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "59,996 works by 433 institutions in Singapore"
+      },
+      {
+        "metric": "builder_density",
+        "value": 41,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "research_output",
+        "value": 1056,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "102,747 works by 3943 institutions in Tokyo"
+      },
+      {
+        "metric": "builder_density",
+        "value": 41,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "research_output",
+        "value": 1129,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "63,671 works by 286 institutions in Sydney"
+      },
+      {
+        "metric": "builder_density",
+        "value": 42,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "research_output",
+        "value": 1459,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "79,325 works by 239 institutions in Melbourne"
+      },
+      {
+        "metric": "builder_density",
+        "value": 47,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "research_output",
+        "value": 115,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "4,347 works by 49 institutions in Dubai"
+      },
+      {
+        "metric": "builder_density",
+        "value": 2,
+        "period": "2025",
+        "level": "city",
+        "source": "openalex",
+        "retrieved": "2026-10-27",
+        "note": "log scale: 100 works per 100k residents = 0, 30,000 = 100"
+      }
+    ]
+  }
+}

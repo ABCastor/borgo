@@ -1,0 +1,77 @@
+{
+  "id": "worldbank-wdi",
+  "name": "World Development Indicators",
+  "publisher": "World Bank",
+  "homepage": "https://databank.worldbank.org/source/world-development-indicators",
+  "measures": [
+    {
+      "metric": "price_level",
+      "definition": "How expensive everyday consumption is compared with the United States (= 100): purchasing-power parity over the market exchange rate."
+    },
+    {
+      "metric": "homicide_rate",
+      "definition": "Intentional homicides per 100,000 people a year (UNODC figures)."
+    },
+    {
+      "metric": "life_expectancy",
+      "definition": "Years a newborn would live at today's death rates."
+    },
+    {
+      "metric": "health_oop",
+      "definition": "What people pay for health care themselves each year, per person, in current US dollars: out-of-pocket spending, not insurance premiums (WHO Global Health Expenditure Database)."
+    },
+    {
+      "metric": "doctors",
+      "definition": "Practising physicians per 1,000 people, generalists and specialists (WHO Global Health Workforce Statistics)."
+    },
+    {
+      "metric": "unemployment",
+      "definition": "Unemployed people as a share of the labour force, ILO modelled estimate."
+    },
+    {
+      "metric": "degree_share",
+      "definition": "Share of people aged 25 and over who completed at least short-cycle tertiary education (SE.TER.CUAT.ST.ZS, UNESCO Institute for Statistics), for the whole country."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "country",
+    "period": "latest year available, 2015 onwards"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://datacatalog.worldbank.org/public-licenses",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "WDI via API v2; indicators PA.NUS.PRVT.PP, PA.NUS.FCRF, VC.IHR.PSRC.P5, SP.DYN.LE00.IN, SH.XPD.OOPC.PC.CD, SH.MED.PHYS.ZS, SL.UEM.TOTL.ZS, SE.TER.CUAT.ST.ZS, each License_Type CC BY-4.0 in its metadata",
+    "termsUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+    "termsRead": "2026-11-05",
+    "attribution": "World Bank, World Development Indicators, CC BY 4.0 (underlying sources named in each figure's note: ICP, IMF, UNODC, UN Population Division, WHO, ILO, UNESCO Institute for Statistics)"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://api.worldbank.org/v2/country/{country}/indicator/{indicator}?format=json&per_page=100&date=2015:{year}",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/country.ts"
+  },
+  "linkOut": "https://data.worldbank.org/country/{country}",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 180
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "The standard open source for country indicators."
+  },
+  "caveats": [
+    "Country figures stand in for the city: marked approximate wherever shown."
+  ]
+}

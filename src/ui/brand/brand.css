@@ -1,0 +1,41 @@
+/* Borgo's header: the Castor header's line and navigation (castor/header.css), with the product's own mark at the
+   left standing on the line and the name, with Castor's typed asterisk, at the right. Everything stands on the line:
+   the nav and the name sit 10px above it (the master's padding), the mark's ground on the line itself. */
+.bmast { column-gap: 1.6rem; }
+.bmast .nav { margin-left: 0; }
+.bmark { display: block; flex: 0 0 auto; align-self: flex-end; margin: 0 0 -10px; color: var(--ink); line-height: 0; }
+.bmark .mark { display: block; width: 40px; height: auto; overflow: visible; }
+.mk-ink { fill: currentColor; }
+.mk-you { fill: var(--human); transform-box: fill-box; transform-origin: 50% 100%; }
+/* The mark's one move: your house settles into its place, a short damped hop. Two targets, never crossed: the mark
+   moves only the mark, the name only its asterisk. */
+.bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: settle .9s var(--ease) 1; }
+@keyframes settle { 0%, 100% { transform: none; } 30% { transform: translateY(-9%); } 62% { transform: translateY(2%); } 82% { transform: translateY(-1.5%); } }
+
+.bname { margin-left: .5rem; font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: 30px; line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
+.bname.no-tools { margin-left: auto; }
+.bname .star { display: inline-block; margin-left: .1em; line-height: .88; color: var(--human); transition: transform .45s cubic-bezier(.45, 0, .55, 1); }
+.bname:hover .star { transform: rotate(90deg); }
+
+/* Settings: the canonical Castor gear (castor/settings.svg), terracotta on light and teal on dark, a 44px target
+   whose icon centres on the name's cap-height middle. */
+.bmast .bar-tools { margin-left: auto; align-self: flex-end; margin-bottom: -11.5px; display: flex; color: light-dark(var(--human), var(--machine)); }
+.settings-toggle { display: grid; place-items: center; width: 44px; height: 44px; border: 0; padding: 0; background: none; color: inherit; border-radius: 50%; }
+.settings-toggle:hover { background: color-mix(in oklab, currentColor 10%, transparent); }
+.settings-toggle[aria-expanded="true"] { background: color-mix(in oklab, currentColor 14%, transparent); }
+.settings-toggle svg { display: block; width: 19px; height: 19px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: none; }
+  .bname .star { transition: none; }
+}
+
+/* A phone: the mark, the gear and the name on the first line; the sections take the second. */
+@media (max-width: 560px) {
+  .bmast { column-gap: .6rem; row-gap: 16px; }
+  .bmark { margin-bottom: 0; }
+  .bmark .mark { width: 34px; }
+  .bname { font-size: 26px; }
+  .bmast .nav { order: 3; flex-basis: 100%; justify-content: space-between; gap: .4rem; }
+  .bmast .bar-tools { margin-bottom: -13px; }
+}

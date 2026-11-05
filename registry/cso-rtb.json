@@ -1,0 +1,58 @@
+{
+  "id": "cso-rtb",
+  "name": "RTB Average Monthly Rent Report (RIA02)",
+  "publisher": "Central Statistics Office Ireland, Residential Tenancies Board",
+  "homepage": "https://data.cso.ie/table/RIA02",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average monthly rent agreed in new one-bedroom tenancies registered with the RTB."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average monthly rent agreed in new three-bedroom tenancies registered with the RTB."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "IE"
+    ],
+    "level": "city",
+    "period": "latest year"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "CSO table RIA02 (RTB Average Monthly Rent Report), latest year",
+    "termsUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report",
+    "termsRead": "2026-11-05",
+    "attribution": "Central Statistics Office and Residential Tenancies Board, RIA02 RTB Average Monthly Rent Report, CC BY 4.0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/RIA02/JSON-stat/2.0/en",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 120
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Official registered rents; new tenancies, so above what sitting tenants pay."
+  },
+  "caveats": [
+    "Areas are local electoral areas and towns; a place not named in the table gets no figure."
+  ]
+}

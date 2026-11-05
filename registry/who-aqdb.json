@@ -1,0 +1,57 @@
+{
+  "id": "who-aqdb",
+  "name": "WHO Ambient Air Quality Database v8.0 (2026)",
+  "publisher": "World Health Organization",
+  "homepage": "https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database",
+  "measures": [
+    {
+      "metric": "pm25",
+      "definition": "Fine particles under 2.5 micrometres, measured at the city's monitoring stations: the annual mean the city reported."
+    }
+  ],
+  "coverage": {
+    "geography": "global (about 7,000 settlements)",
+    "level": "city",
+    "period": "2010-2025, latest year per city"
+  },
+  "licence": "WHO terms for data compilations (public-health use, unaltered values; not CC BY)",
+  "licenceUrl": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "WHO-data",
+    "edition": "WHO Ambient Air Quality Database, Version 8.0, released 30 June 2026 (sheet GlobalCity_Db_V8.0_2026-06-28)",
+    "termsUrl": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions",
+    "termsRead": "2026-11-05",
+    "attribution": "World Health Organization, WHO Ambient Air Quality Database (Version 8.0), 2026, accessed 2026-10-27; data provided by the national and regional agencies named in each value's note",
+    "notices": [
+      "WHO does not endorse Borgo, its use of these data, or any city ranking built from them.",
+      "Values are as published by WHO; WHO advises against using the database to rank cities or compare countries directly, because monitoring differs between places."
+    ]
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://cdn.who.int/media/docs/default-source/air-pollution-documents/air-quality-and-health/who-ambient-air-quality-database-version-2026-v8.xlsx?download=true",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/node/who-air.ts"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "The measured reference. No CORS and an xlsx, so the CLI and MCP fetch it; the browser uses CAMS."
+  },
+  "caveats": [
+    "Values are stored exactly as published, with the data provider WHO names for the row (WHO terms).",
+    "Station mix differs by city (traffic or background).",
+    "Published in its own file (public/data/dataset-who.json) under WHO's terms, never inside the CC BY 4.0 compilation."
+  ]
+}

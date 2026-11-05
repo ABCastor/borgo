@@ -1,0 +1,56 @@
+{
+  "id": "open-meteo-cams",
+  "name": "Air quality (CAMS global and European models)",
+  "publisher": "Open-Meteo, Copernicus Atmosphere Monitoring Service",
+  "homepage": "https://open-meteo.com/en/docs/air-quality-api",
+  "measures": [
+    {
+      "metric": "pm25",
+      "definition": "Fine particles under 2.5 micrometres, modelled: the mean concentration over the last full year at the city's coordinates."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "last full year"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://open-meteo.com/en/license",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Open-Meteo air-quality API (CAMS global and European), fetched on demand",
+    "termsUrl": "https://open-meteo.com/en/license",
+    "termsRead": "2026-11-05",
+    "attribution": "Weather data by Open-Meteo.com (https://open-meteo.com/), CC BY 4.0",
+    "notices": [
+      "Contains modified Copernicus Atmosphere Monitoring Service information. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude={lat}&longitude={lon}&start_date={start}&end_date={end}&hourly=pm2_5",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/air.ts",
+    "rateLimit": "as Open-Meteo"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Covers every place; used where WHO's measured figure cannot be fetched (the browser) or does not exist."
+  },
+  "caveats": [
+    "A model, not a measurement: it can miss local sources such as a busy valley or wood stoves. Measured WHO figures win where both exist."
+  ]
+}

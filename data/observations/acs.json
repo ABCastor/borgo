@@ -1,0 +1,582 @@
+{
+  "source": "acs",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "san-francisco-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 31.7,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 33,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 35.2,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 17.2,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 12.5%, bicycle 4.7% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 71.7,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 2398,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±104"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 7.7,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 32.3,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 35.8,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 5.1,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 4.4%, bicycle 0.7% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 48.7,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1821,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±28"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2698,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±105"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 57.3,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 40.8,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 36.4,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 12.8,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 10.9%, bicycle 1.9% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 54.4,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1804,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±29"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2209,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±62"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 31.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 32.2,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 28.2,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 19.8,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 16.5%, bicycle 3.3% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 67.4,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 2207,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±109"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2583,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±251"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 23.4,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 27.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 20.5,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 14.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 10.6%, bicycle 4.1% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 79.5,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1961,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±70"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 3310,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±180"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 3.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 24.3,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 20.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 5,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 3.4%, bicycle 1.5% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 69,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1563,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±49"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2091,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±156"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 8.4,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 29,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 61,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 9,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 7.8%, bicycle 1.2% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 55.8,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1790,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±106"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2597,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±279"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 25.1,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 33.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 21.1,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 9.5,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 7.9%, bicycle 1.6% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 56.5,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1565,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±56"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1802,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±67"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "transit_commute_share",
+        "value": 4.6,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: public transport (taxi excluded) / workers who commute"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 25.8,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08013 aggregate travel time / workers who commute"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 15.7,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B05002: foreign-born / total population"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 6.9,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B08301: walked 4.6%, bicycle 2.3% of workers who commute"
+      },
+      {
+        "metric": "degree_share",
+        "value": 63.3,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B15001: associate's degree or higher, aged 25 to 64"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1708,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), one bedroom, every renter-occupied home paying cash rent, margin ±60"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2469,
+        "period": "2025",
+        "level": "city",
+        "source": "acs",
+        "retrieved": "2026-11-05",
+        "note": "B25031: median gross rent (rent plus utilities), three bedrooms, every renter-occupied home paying cash rent, margin ±271"
+      }
+    ]
+  }
+}

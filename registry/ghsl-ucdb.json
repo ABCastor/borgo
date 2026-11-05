@@ -1,0 +1,57 @@
+{
+  "id": "ghsl-ucdb",
+  "name": "GHS Urban Centre Database 2025 (R2024A), general characteristics",
+  "publisher": "European Commission, Joint Research Centre (GHSL)",
+  "homepage": "https://human-settlement.emergency.copernicus.eu/ghs_ucdb_2024.php",
+  "measures": [
+    {
+      "metric": "city_edge_km",
+      "definition": "Straight-line distance from the city's centre point to the nearest edge of its urban centre outline (touching 1 km squares with at least 1,500 residents per km², 50,000 people or more, 2025), over directions that lead on to land."
+    }
+  ],
+  "coverage": {
+    "geography": "global (11,422 urban centres)",
+    "level": "city",
+    "period": "2025"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "GHS-UCDB R2024A V1.2, general characteristics theme (2026-05-19)",
+    "termsUrl": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_GLOBE_R2024A/V1-1/copyright.txt",
+    "termsRead": "2026-11-05",
+    "attribution": "GHS-UCDB R2024A, European Commission, Joint Research Centre, CC BY 4.0, doi:10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd; Borgo derives the distance from the centre to the urban centre's edge",
+    "notices": [
+      "Shores and lakes from Natural Earth (public domain) decide which directions lead on to land."
+    ]
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/node/ghsl.ts",
+    "rateLimit": "one 6.6 MB file, kept 30 days"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Credit: Mari Rivero et al. (2024), GHS-UCDB R2024A, European Commission JRC, doi:10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd. Sea and lakes from Natural Earth (public domain) decide which directions lead on to land."
+  },
+  "caveats": [
+    "The urban centre ends where density falls below 1,500 residents per km²: beyond it lie suburbs, farmland, hills or a large park, not necessarily open country.",
+    "Shores come from Natural Earth at about 1 km precision; directions that meet water within 3 km of the edge are dropped.",
+    "A centre point that falls in a gap inside its urban centre gets no figure (Dubai)."
+  ]
+}

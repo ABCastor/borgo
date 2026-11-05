@@ -1,0 +1,27 @@
+{
+  "id": "internations",
+  "name": "InterNations Expat City Ranking",
+  "publisher": "InterNations",
+  "homepage": "https://www.internations.org/expat-insider/",
+  "measures": [],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "Proprietary",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://www.internations.org/expat-insider/",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Survey of expats; proprietary."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+}

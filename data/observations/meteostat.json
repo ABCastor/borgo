@@ -1,0 +1,783 @@
+{
+  "source": "meteostat",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          134,
+          145,
+          174,
+          166,
+          196,
+          203,
+          250,
+          234,
+          183,
+          123,
+          102,
+          125
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:11.691Z",
+        "url": "https://bulk.meteostat.net/v2/normals/16061.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Torino / Bric Della Croce, 6 km away at 709 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2034,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:11.691Z",
+        "url": "https://bulk.meteostat.net/v2/normals/16061.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Torino / Bric Della Croce, 6 km away at 709 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          111,
+          136,
+          176,
+          189,
+          250,
+          278,
+          320,
+          299,
+          223,
+          160,
+          112,
+          106
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:12.422Z",
+        "url": "https://bulk.meteostat.net/v2/normals/16158.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Pisa / S. Giusto, 70 km away at 2 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2360,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:12.422Z",
+        "url": "https://bulk.meteostat.net/v2/normals/16158.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Pisa / S. Giusto, 70 km away at 2 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          52,
+          73,
+          101,
+          140,
+          184,
+          174,
+          179,
+          174,
+          133,
+          102,
+          55,
+          48
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.132Z",
+        "url": "https://bulk.meteostat.net/v2/normals/03334.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Manchester Airport, 15 km away at 69 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1412,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.132Z",
+        "url": "https://bulk.meteostat.net/v2/normals/03334.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Manchester Airport, 15 km away at 69 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          49,
+          65,
+          99,
+          133,
+          172,
+          166,
+          168,
+          151,
+          119,
+          90,
+          64,
+          36
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.286Z",
+        "url": "https://bulk.meteostat.net/v2/normals/03160.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Edinburgh Airport, 10 km away at 41 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1312,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.286Z",
+        "url": "https://bulk.meteostat.net/v2/normals/03160.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Edinburgh Airport, 10 km away at 41 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          48,
+          77,
+          147,
+          175,
+          247,
+          232,
+          240,
+          200,
+          156,
+          94,
+          54,
+          37
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.361Z",
+        "url": "https://bulk.meteostat.net/v2/normals/01492.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Oslo-Blindern, 4 km away at 94 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1706,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.361Z",
+        "url": "https://bulk.meteostat.net/v2/normals/01492.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Oslo-Blindern, 4 km away at 94 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          41,
+          72,
+          163,
+          249,
+          283,
+          323,
+          334,
+          301,
+          230,
+          139,
+          56,
+          36
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.430Z",
+        "url": "https://bulk.meteostat.net/v2/normals/12375.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Warszawa-Okecie, 8 km away at 106 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2227,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.430Z",
+        "url": "https://bulk.meteostat.net/v2/normals/12375.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Warszawa-Okecie, 8 km away at 106 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          38,
+          54,
+          90,
+          132,
+          184,
+          188,
+          201,
+          186,
+          124,
+          97,
+          45,
+          28
+        ],
+        "period": "1961-1990",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.564Z",
+        "url": "https://bulk.meteostat.net/v2/normals/12566.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Krakow, 10 km away at 237 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1367,
+        "period": "1961-1990",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.564Z",
+        "url": "https://bulk.meteostat.net/v2/normals/12566.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Krakow, 10 km away at 237 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          71,
+          98,
+          128,
+          183,
+          235,
+          242,
+          286,
+          261,
+          195,
+          143,
+          79,
+          56
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.688Z",
+        "url": "https://bulk.meteostat.net/v2/normals/12840.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Budapest Met Center, 2 km away at 129 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1977,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.688Z",
+        "url": "https://bulk.meteostat.net/v2/normals/12840.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Budapest Met Center, 2 km away at 129 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          156,
+          177,
+          215,
+          248,
+          294,
+          326,
+          350,
+          337,
+          255,
+          203,
+          159,
+          147
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.726Z",
+        "url": "https://bulk.meteostat.net/v2/normals/08535.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Lisboa / Geof, 1 km away at 77 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2869,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.726Z",
+        "url": "https://bulk.meteostat.net/v2/normals/08535.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Lisboa / Geof, 1 km away at 77 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          147,
+          163,
+          198,
+          233,
+          259,
+          281,
+          304,
+          287,
+          229,
+          166,
+          142,
+          121
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.767Z",
+        "url": "https://bulk.meteostat.net/v2/normals/08546.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Porto / Serra Do Pilar, 2 km away at 93 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2529,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.767Z",
+        "url": "https://bulk.meteostat.net/v2/normals/08546.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Porto / Serra Do Pilar, 2 km away at 93 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          139,
+          145,
+          201,
+          239,
+          299,
+          355,
+          384,
+          364,
+          277,
+          213,
+          148,
+          116
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.821Z",
+        "url": "https://bulk.meteostat.net/v2/normals/16714.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Athens / Athenai / Pláka, 2 km away at 107 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2881,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:13.821Z",
+        "url": "https://bulk.meteostat.net/v2/normals/16714.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Athens / Athenai / Pláka, 2 km away at 107 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          151,
+          164,
+          204,
+          212,
+          257,
+          281,
+          290,
+          278,
+          229,
+          200,
+          142,
+          136
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.277Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72509.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Boston Logan International, 4 km away at 6 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2545,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.277Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72509.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Boston Logan International, 4 km away at 6 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          84,
+          119,
+          192,
+          212,
+          258,
+          274,
+          302,
+          308,
+          223,
+          148,
+          78,
+          72
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.413Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72793.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Seattle-Tacoma Airport, 17 km away at 131 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2268,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.413Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72793.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Seattle-Tacoma Airport, 17 km away at 131 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          158,
+          152,
+          192,
+          193,
+          188,
+          259,
+          300,
+          270,
+          232,
+          215,
+          142,
+          134
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.452Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72254.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Camp Mabry/Austin City Asos, 6 km away at 201 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2435,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.452Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72254.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Camp Mabry/Austin City Asos, 6 km away at 201 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          210,
+          221,
+          272,
+          286,
+          306,
+          270,
+          294,
+          267,
+          255,
+          234,
+          225,
+          209
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.493Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72202.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Miami International Airport, 12 km away at 4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 3049,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.493Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72202.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Miami International Airport, 12 km away at 4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          134,
+          140,
+          190,
+          218,
+          285,
+          304,
+          326,
+          293,
+          232,
+          195,
+          106,
+          91
+        ],
+        "period": "1961-1990",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.587Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72534.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Chicago Midway Airport, 11 km away at 189 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2515,
+        "period": "1961-1990",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.587Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72534.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Chicago Midway Airport, 11 km away at 189 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          206,
+          199,
+          242,
+          260,
+          279,
+          303,
+          313,
+          287,
+          263,
+          238,
+          189,
+          190
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.625Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72469.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Denver / Stapleton International, Co., 11 km away at 1626 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2969,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.625Z",
+        "url": "https://bulk.meteostat.net/v2/normals/72469.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Denver / Stapleton International, Co., 11 km away at 1626 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          87,
+          110,
+          145,
+          179,
+          221,
+          256,
+          281,
+          257,
+          197,
+          153,
+          82,
+          77
+        ],
+        "period": "1961-1990",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.663Z",
+        "url": "https://bulk.meteostat.net/v2/normals/71508.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Toronto City, 4 km away at 112 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2045,
+        "period": "1961-1990",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.663Z",
+        "url": "https://bulk.meteostat.net/v2/normals/71508.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Toronto City, 4 km away at 112 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          58,
+          97,
+          130,
+          182,
+          230,
+          222,
+          298,
+          281,
+          216,
+          121,
+          65,
+          48
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.750Z",
+        "url": "https://bulk.meteostat.net/v2/normals/71892.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Vancouver International Airport, 8 km away at 4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1947,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.750Z",
+        "url": "https://bulk.meteostat.net/v2/normals/71892.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Vancouver International Airport, 8 km away at 4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          102,
+          129,
+          171,
+          189,
+          240,
+          257,
+          269,
+          256,
+          208,
+          133,
+          92,
+          79
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.877Z",
+        "url": "https://bulk.meteostat.net/v2/normals/71627.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Montreal International Airport, 13 km away at 36 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2124,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.877Z",
+        "url": "https://bulk.meteostat.net/v2/normals/71627.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Montreal International Airport, 13 km away at 36 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          262,
+          234,
+          204,
+          175,
+          129,
+          125,
+          133,
+          167,
+          170,
+          216,
+          227,
+          243
+        ],
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.931Z",
+        "url": "https://bulk.meteostat.net/v2/normals/94865.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Point Cook, 17 km away at 18 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2285,
+        "period": "1981-2010",
+        "level": "city",
+        "source": "meteostat",
+        "retrieved": "2026-10-27T11:14:14.931Z",
+        "url": "https://bulk.meteostat.net/v2/normals/94865.csv.gz",
+        "fetcher": "meteostat@1",
+        "note": "Measured at Point Cook, 17 km away at 18 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ]
+  }
+}

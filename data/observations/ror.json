@@ -1,0 +1,1146 @@
+{
+  "source": "ror",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "universities",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "universities",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "universities",
+        "value": 47,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 68,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "universities",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "universities",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "universities",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "universities",
+        "value": 157,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 81,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "universities",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "universities",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "universities",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "universities",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "universities",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "universities",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "universities",
+        "value": 103,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 638,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "universities",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 93,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "universities",
+        "value": 55,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 100,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "universities",
+        "value": 51,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 50,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "universities",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "universities",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "universities",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "universities",
+        "value": 39,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "universities",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "universities",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "universities",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "universities",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "universities",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 119,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "universities",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "universities",
+        "value": 42,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 78,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "universities",
+        "value": 54,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 69,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "universities",
+        "value": 64,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 88,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "universities",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "universities",
+        "value": 47,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 63,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "universities",
+        "value": 134,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 145,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "universities",
+        "value": 59,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 63,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "universities",
+        "value": 42,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 94,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "universities",
+        "value": 43,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 57,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "universities",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "universities",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "universities",
+        "value": 25,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "universities",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "universities",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "universities",
+        "value": 43,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 25,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "universities",
+        "value": 116,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "universities",
+        "value": 41,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "universities",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "universities",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "universities",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "universities",
+        "value": 75,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "universities",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "universities",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 44,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "universities",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "universities",
+        "value": 38,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 70,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "universities",
+        "value": 118,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 132,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "universities",
+        "value": 226,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 441,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "universities",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 35,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "universities",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 32,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "universities",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type education (universities, colleges, schools of higher education)"
+      },
+      {
+        "metric": "research_institutes",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ror",
+        "retrieved": "2026-10-27",
+        "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
+      }
+    ]
+  }
+}

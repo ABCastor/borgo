@@ -1,0 +1,48 @@
+{
+  "id": "terrain-tiles",
+  "name": "Terrain Tiles (Terrarium) on AWS Open Data",
+  "publisher": "Mapzen / AWS Open Data",
+  "homepage": "https://registry.opendata.aws/terrain-tiles/",
+  "measures": [
+    {
+      "metric": "mountain_km",
+      "definition": "Distance to ground 1,000 m above the centre."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Public domain (USGS, NOAA) and Open Government Licence – Canada, with attribution",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "terrain-tiles",
+    "edition": "Terrain Tiles (Terrarium) on AWS Open Data, zoom 8: SRTM, GMTED2010 above 60° N, ETOPO1, NRCAN in Canada",
+    "termsUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+    "termsRead": "2026-11-05",
+    "attribution": "Terrain Tiles on AWS Open Data (Mapzen, a Linux Foundation project): SRTM and GMTED2010 terrain data courtesy of the U.S. Geological Survey; ETOPO1, U.S. National Oceanic and Atmospheric Administration; Canada terrain data contains information licensed under the Open Government Licence – Canada"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/geography.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "We store derived distances only."
+  },
+  "licenceUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+}

@@ -1,0 +1,26 @@
+{
+  "source": "scb-rent",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "stockholm-se": [
+      {
+        "metric": "rent_1bed",
+        "value": 8376,
+        "period": "2026",
+        "level": "city",
+        "source": "scb-rent",
+        "retrieved": "2026-11-05",
+        "note": "Stockholm municipality, 2-room homes (one bedroom), median annual rent of every rented dwelling (100514 SEK) divided by 12 (SCB BO0406)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 13429,
+        "period": "2026",
+        "level": "city",
+        "source": "scb-rent",
+        "retrieved": "2026-11-05",
+        "note": "Stockholm municipality, homes of 4 rooms or more (three bedrooms or more), median annual rent of every rented dwelling (161148 SEK) divided by 12 (SCB BO0406)"
+      }
+    ]
+  }
+}

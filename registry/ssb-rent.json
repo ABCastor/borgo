@@ -1,0 +1,57 @@
+{
+  "id": "ssb-rent",
+  "name": "Rental market survey (Statistics Norway table 09895)",
+  "publisher": "Statistics Norway (SSB)",
+  "homepage": "https://www.ssb.no/en/statbank/table/09895",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Sitting rent: the average monthly rent of every surveyed tenancy of a 2-room home (one bedroom; Norwegian rooms leave out the kitchen) in the Oslo and Bærum price zone, old and new tenancies."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Sitting rent: the average monthly rent of every surveyed tenancy of a 4-room home (three bedrooms) in the Oslo and Bærum price zone."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "NO"
+    ],
+    "level": "metro",
+    "period": "yearly"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://www.ssb.no/en/diverse/lisens",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "table 09895, 2025 (updated 2025-12-22)",
+    "termsUrl": "https://www.ssb.no/en/diverse/lisens",
+    "attribution": "Statistics Norway (SSB), table 09895: Rental market survey, average monthly rents, CC BY 4.0 (www.ssb.no)",
+    "termsRead": "2026-11-05"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://data.ssb.no/api/v0/en/table/09895",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/ssb-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent)",
+    "on": "2026-11-05",
+    "notes": "Official, every tenancy; rooms counted without the kitchen."
+  },
+  "caveats": [
+    "Oslo and Bærum form one price zone; SSB warns that yearly samples differ, so year-to-year changes are not exact."
+  ]
+}

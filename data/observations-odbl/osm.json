@@ -1,0 +1,3711 @@
+{
+  "source": "osm",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "london-gb": [
+      {
+        "metric": "coworking",
+        "value": 144,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 57,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 300,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 459,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 14.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "coworking",
+        "value": 66,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 206,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 416,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 39.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "turin-it": [
+      {
+        "metric": "coworking",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 395,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 23.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "coworking",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 43,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 154,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 534,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 36.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "coworking",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 25,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 97,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 199,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 27.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "coworking",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 108,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 11.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 35,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 314,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 26.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "coworking",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 192,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 259,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 9.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 36,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 375,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 17.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "coworking",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 326,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 17.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 203,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "coworking",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 293,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 17.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "coworking",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 81,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 8.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "coworking",
+        "value": 50,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 40,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 239,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 343,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 22.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "coworking",
+        "value": 183,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 74,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 125,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 400,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 697,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 12.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "coworking",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 39,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 64,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 429,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 14.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "coworking",
+        "value": 77,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 64,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 423,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "coworking",
+        "value": 147,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 41,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 255,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 674,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 14.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "coworking",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 86,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 45.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "coworking",
+        "value": 43,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 144,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1213,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "coworking",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 74,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 55,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 29.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "coworking",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 453,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 12.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "coworking",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 445,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "coworking",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 48,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1129,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 21.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "coworking",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 80,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 89,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 24.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "coworking",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 59,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1193,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 51,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 72,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 6.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "coworking",
+        "value": 47,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 53,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 303,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 8.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "coworking",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 97,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 253,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 12.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "coworking",
+        "value": 53,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 118,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 439,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 18.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "coworking",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 497,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 21.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "coworking",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 169,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 9.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "coworking",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 235,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 19.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "coworking",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 156,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1127,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 37.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 54,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 3.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "coworking",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 395,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 38.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "coworking",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 109,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 135,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 5.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 81,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1203,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 29.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "coworking",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 52,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 80,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 231,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 27.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 39,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 350,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 7.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "coworking",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 67,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 91,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 240,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 13.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "coworking",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 238,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 19.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "coworking",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 40,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 38,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 324,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 16.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "coworking",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 169,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 643,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 22.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "coworking",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 146,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 85,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 392,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 10.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "coworking",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 95,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 200,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "coworking",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 332,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 18.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "coworking",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 79,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 638,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 21.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "coworking",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 310,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 42.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "coworking",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 45,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 114,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 176,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 23.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "coworking",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 72,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 175,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 23.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "coworking",
+        "value": 69,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 68,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 114,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 19.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "coworking",
+        "value": 61,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 458,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 40,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 5.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "coworking",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 47,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 60,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 320,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 13.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "coworking",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 458,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 10.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "coworking",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 92,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 7.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ]
+  }
+}

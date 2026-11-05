@@ -1,0 +1,37 @@
+{
+  "name": "borgo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Borgo: compare any cities on open, sourced data, weighted by what you value.",
+  "license": "Apache-2.0",
+  "bin": {
+    "borgo": "bin/borgo.ts",
+    "where-to-live": "bin/where-to-live.ts"
+  },
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node --test 'test/**/*.test.ts'",
+    "data": "node pipeline/build-data.ts",
+    "build": "node scripts/build.ts",
+    "dev": "node scripts/build.ts --serve",
+    "deploy": "node scripts/build.ts && npx --yes wrangler@4.158.0 deploy",
+    "mcp": "node src/mcp/stdio.ts",
+    "cli": "node bin/borgo.ts",
+    "probe:site": "node scripts/probe-site.ts 390",
+    "probe:input": "node scripts/probe-input.ts",
+    "og": "node scripts/og-image.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2"
+  }
+}

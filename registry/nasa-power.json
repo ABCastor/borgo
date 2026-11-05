@@ -1,0 +1,55 @@
+{
+  "id": "nasa-power",
+  "name": "NASA POWER climatology",
+  "publisher": "NASA Langley Research Center, Prediction Of Worldwide Energy Resources (POWER) project, from NASA GMAO's MERRA-2 reanalysis",
+  "homepage": "https://power.larc.nasa.gov/",
+  "measures": [
+    {
+      "metric": "map_climate",
+      "definition": "The average afternoon high of each month on the map's grid: the monthly mean air temperature 2 m above the ground plus half the mean daily range, averaged over POWER's points on land in each tile."
+    }
+  ],
+  "coverage": {
+    "geography": "global, on a grid of about 0.5° by 0.625°",
+    "level": "region",
+    "period": "2001-2025 climatology"
+  },
+  "licence": "CC0-1.0 (NASA data use guidance), citation requested",
+  "licenceUrl": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC0-1.0",
+    "edition": "POWER climatology API v2, MERRA-2 2001-2025",
+    "termsUrl": "https://power.larc.nasa.gov/docs/referencing/",
+    "termsRead": "2026-11-05",
+    "attribution": "The data was obtained from National Aeronautics and Space Administration (NASA) Langley Research Center's Prediction Of Worldwide Energy Resources (POWER) project funded through the NASA Earth Science Division (POWER climatology API v2, read on the date in data/map/world.json)"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://power.larc.nasa.gov/api/temporal/climatology/regional?latitude-min={lat}&latitude-max={lat+10}&longitude-min={lon}&longitude-max={lon+10}&parameters=T2M&community=RE&format=JSON",
+    "cors": false,
+    "key": null,
+    "rateLimit": "one parameter per regional request, boxes of at most 10° by 10°",
+    "fetcher": "pipeline/sources/world-map.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 730
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Chosen for the map's climate layer: global, open, no key. Checked against station normals on 2026-11-05: July mean daily high 33.7 °C at Madrid (AEMET 32.1 at Retiro, 33.6 at Barajas) and 23.1 °C at Heathrow (Met Office 23.5)."
+  },
+  "caveats": [
+    "POWER asks every work product to say: \"The data was obtained from National Aeronautics and Space Administration (NASA) Langley Research Center's Prediction Of Worldwide Energy Resources (POWER) project funded through the NASA Earth Science Division\", with the service name, version and date read (POWER Climatology API v2.10.1, read 2026-11-05).",
+    "NASA data carry no restriction unless marked (Earthdata data use guidance: CC0); POWER marks none.",
+    "A map tile is about 150 km across and averages its ground, mountains included, so it reads cooler than a city in a valley beside the mountains (Turin's tile includes the Alps). City points use their own nice days from Open-Meteo at the city's coordinates.",
+    "Air temperature only: the tile layer does not know humidity, cloud or rain."
+  ]
+}

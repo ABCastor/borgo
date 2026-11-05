@@ -1,0 +1,54 @@
+{
+  "id": "eurostat-regions",
+  "name": "Population by educational attainment and NUTS 2 region (edat_lfse_04)",
+  "publisher": "Eurostat (EU Labour Force Survey)",
+  "homepage": "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_04/default/table",
+  "measures": [
+    {
+      "metric": "degree_share",
+      "definition": "Share of people aged 25 to 64 whose highest level of education is tertiary (ISCED 2011 levels 5 to 8), in the NUTS 2 region around the city, from the EU Labour Force Survey."
+    }
+  ],
+  "coverage": {
+    "geography": "EU, EFTA, candidate countries; the UK to 2019",
+    "level": "region",
+    "period": "latest year, 2025 for most"
+  },
+  "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+  "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "EU-reuse",
+    "edition": "edat_lfse_04, ISCED 5-8, ages 25-64, latest year (2025 for most regions)",
+    "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "termsRead": "2026-11-05",
+    "attribution": "Source: Eurostat, EU Labour Force Survey (edat_lfse_04, © European Union). Borgo keeps each region's latest value",
+    "notices": [
+      "Eurostat is not responsible for Borgo's use of its data."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_04?format=JSON&lang=en&isced11=ED5-8&sex=T&age=Y25-64&unit=PC&geo={nuts2}",
+    "cors": true,
+    "key": null,
+    "fetcher": "pipeline/sources/eurostat-regions.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "One survey and one definition for every region; the region is wider than the city except where they coincide (Berlin, Hamburg, Vienna, Prague, Budapest, Brussels). Not fetched on demand: finding a place's NUTS 2 region needs a boundary lookup not built yet."
+  },
+  "caveats": [
+    "A region such as Piemonte or Lombardia includes towns and countryside, so it reads lower than its main city."
+  ]
+}

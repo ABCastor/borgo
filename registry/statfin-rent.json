@@ -1,0 +1,53 @@
+{
+  "id": "statfin-rent",
+  "name": "Rents of dwellings (Statistics Finland table 15fc)",
+  "publisher": "Statistics Finland",
+  "homepage": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__asvu/statfin_asvu_pxt_15fc.px/",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Sitting rent: the median monthly rent of every non-subsidised tenancy of a two-room flat (one bedroom; Finnish rooms leave out the kitchen) in Helsinki, old and new tenancies."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "FI"
+    ],
+    "level": "city",
+    "period": "quarterly"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "table 15fc, 2026Q3 (updated 2026-10-15)",
+    "termsUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html",
+    "attribution": "Source: Statistics Finland, rents of dwellings (table 15fc), CC BY 4.0",
+    "termsRead": "2026-11-05"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/asvu/15fc.px",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/statfin-rent.ts"
+  },
+  "refresh": {
+    "cadence": "monthly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent)",
+    "on": "2026-11-05",
+    "notes": "Official, every non-subsidised tenancy."
+  },
+  "caveats": [
+    "The table's largest class is three rooms or more (two bedrooms or more), so it gives no three-bedroom figure."
+  ]
+}

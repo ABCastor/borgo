@@ -1,0 +1,46 @@
+{
+  "source": "cso-rtb",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "dublin-ie": [
+      {
+        "metric": "rent_1bed",
+        "value": 1736,
+        "period": "2025",
+        "level": "city",
+        "source": "cso-rtb",
+        "retrieved": "2026-10-27",
+        "note": "Dublin, new tenancies registered with the RTB"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2567,
+        "period": "2025",
+        "level": "city",
+        "source": "cso-rtb",
+        "retrieved": "2026-10-27",
+        "note": "Dublin, new tenancies registered with the RTB"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "rent_1bed",
+        "value": 1231,
+        "period": "2025",
+        "level": "city",
+        "source": "cso-rtb",
+        "retrieved": "2026-10-27",
+        "note": "Cork City, new tenancies registered with the RTB"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1800,
+        "period": "2025",
+        "level": "city",
+        "source": "cso-rtb",
+        "retrieved": "2026-10-27",
+        "note": "Cork City, new tenancies registered with the RTB"
+      }
+    ]
+  }
+}

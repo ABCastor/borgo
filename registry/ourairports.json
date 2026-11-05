@@ -1,0 +1,52 @@
+{
+  "id": "ourairports",
+  "name": "OurAirports airports",
+  "publisher": "OurAirports",
+  "homepage": "https://ourairports.com/data/",
+  "measures": [
+    {
+      "metric": "airport_km",
+      "definition": "Distance to the nearest large airport with scheduled flights, and airports within 100 km."
+    },
+    {
+      "metric": "airports_100km",
+      "definition": "Airports with scheduled passenger flights within 100 km of the centre."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Public domain",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "PD",
+    "edition": "OurAirports airports.csv, read 2026-10-27",
+    "termsUrl": "https://ourairports.com/data/",
+    "termsRead": "2026-11-05",
+    "attribution": "Airports from OurAirports (ourairports.com), public domain"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/ourairports.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Updated nightly by contributors."
+  },
+  "licenceUrl": "https://ourairports.com/data/"
+}

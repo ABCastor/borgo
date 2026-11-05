@@ -1,0 +1,42 @@
+/* Copied byte for byte from castor-identity master/header/header.html (COPY START to COPY END). Never edit here: re-copy from the master. */
+/* COPY START */
+.mast a{text-decoration:none}
+:focus-visible{outline:2px solid var(--between);outline-offset:2px;border-radius:3px}
+@property --ang{syntax:'<angle>';inherits:true;initial-value:0deg}  /* the marks are children: must inherit */
+@property --ry{syntax:'<length>';inherits:true;initial-value:16px}
+/* The standard Castor product header, "on the line" (master: castor-identity
+   master/header/header.html; rules: docs/SIGNATURE.md, "The product header"). The page opens the way it closes, with
+   things standing on a line: the name and the navigation stand on the header's hairline, their baselines 10px above
+   it, as "by Castor" stands above the footer's. The name is set like Castor in the footer (Literata 560, opsz 72,
+   -0.055em, 30px). The orbit hangs inside the name's box, its centre on the cap midpoint (top:50% of a box trimmed to
+   cap and baseline), so no font metric is typed in. The page you are on is a 2px terracotta bar lying on the line. */
+.mast{display:flex;align-items:flex-end;flex-wrap:wrap;row-gap:14px;margin:0 -1.25rem;padding:28px 1.25rem 10px;border-bottom:1px solid var(--rule)}
+.mast a{text-decoration:none}  /* the header never underlines, whatever the product's links do */
+/* masthead: the orbit, the signature's settled hover (castor-identity site/final-signature.html, .hov; castor-site RULES.md s.2).
+   At rest the circle and the asterisk sit at the two ends of an olive ellipse. Reached for, they
+   travel ALONG it while it flattens to a line, and arrive on each other as the mark: they must arrive,
+   not converge, which is why the angle and the ellipse's height move together. One transition of 0.9s
+   for both, so leaving takes as long as arriving. Half the reference scale: 96 by 36, rx 31, ry 16,
+   marks 20. */
+.orb{position:relative;display:block;flex:0 0 auto;width:96px;height:36px;--ang:0deg;--ry:16px;transition:--ang .9s var(--ease),--ry .9s var(--ease)}
+.orb:hover,.orb:focus-visible{--ang:90deg;--ry:0px}
+.orail{position:absolute;inset:0;overflow:visible}
+.orail ellipse{fill:none;stroke:var(--between);stroke-width:1.5;vector-effect:non-scaling-stroke;ry:16px;transition:ry .9s var(--ease)}
+.orb:hover .orail ellipse,.orb:focus-visible .orail ellipse{ry:.01px}
+.orb .ob{position:absolute;top:50%;left:50%;width:20px;height:20px;margin:-10px 0 0 -10px}
+.orb .ob.a{transform:translate(calc(cos(var(--ang)) * 31px),calc(sin(var(--ang)) * var(--ry)))}
+.orb .ob.b{transform:translate(calc(cos(var(--ang) + 180deg) * 31px),calc(sin(var(--ang) + 180deg) * var(--ry)))}
+.orb svg{display:block}
+.orb .disc{fill:var(--machine)}
+.orb .key{fill:var(--paper);stroke:var(--paper)}
+.orb .star{fill:var(--human)}
+@media (prefers-reduced-motion:reduce){.orb{transition:none;--ang:90deg;--ry:0px}.orail ellipse{transition:none;ry:.01px}}
+.brand{position:relative;display:block;padding-left:97px;font-family:var(--word);font-weight:560;font-variation-settings:'opsz' 72;letter-spacing:-.055em;font-size:30px;line-height:1;text-box:trim-both cap alphabetic;color:var(--ink);white-space:nowrap}
+.brand .orb{position:absolute;left:0;top:50%;margin-top:-18px}
+.nav{margin-left:auto;display:flex;align-items:flex-end;gap:1.1rem;font-size:13px;font-weight:500;letter-spacing:.02em}
+.nav a{position:relative;display:block;padding:14px 0 10px;margin:-14px 0 -10px;line-height:1;text-box:trim-both cap alphabetic;color:var(--quiet)}  /* padding widens the target to 33px and the negative margin gives the space back, so the baseline stays on the name's */
+.nav a:hover{color:var(--ink);text-decoration:none}
+.nav a[aria-current]{color:var(--ink)}
+.nav a[aria-current]::after{content:"";position:absolute;left:0;right:0;bottom:-1.5px;height:2px;background:var(--human)}  /* centred on the 1px line */
+@media (max-width:560px){.mast{margin:0 -1rem;padding-left:1rem;padding-right:1rem}.brand{font-size:24px}.nav{gap:.85rem;font-size:13px}}
+/* COPY END */

@@ -1,0 +1,633 @@
+{
+  "source": "foundersrc",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frc_london"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcparis"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frc_lyon"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcberlin"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcmunich"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frchamburg"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcamsterdam"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcbrussels"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frccopenhagen"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frchelsinki"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frczurich"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frclisbon"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcporto"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcbarcelona"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frc_valencia"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcathens"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcsanfrancisco"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frclosangeles"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcnewyork"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcboston"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcaustin"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcmiami"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frctoronto"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcvancouver/"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frc_montreal"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frc_singapore"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frctokyo/"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "founders_running_club",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "Chapter: https://www.instagram.com/frcmelbourne"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "founders_running_club",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "foundersrc",
+        "retrieved": "2026-10-27",
+        "note": "No chapter listed on https://foundersrc.com/communities"
+      }
+    ]
+  }
+}

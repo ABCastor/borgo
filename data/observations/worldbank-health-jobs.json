@@ -1,0 +1,1260 @@
+{
+  "source": "worldbank-wdi",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "doctors",
+        "value": 4.19,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "doctors",
+        "value": 4.19,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "doctors",
+        "value": 4.19,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "doctors",
+        "value": 4.19,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "doctors",
+        "value": 4.19,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "doctors",
+        "value": 4.19,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "doctors",
+        "value": 3.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "doctors",
+        "value": 3.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "doctors",
+        "value": 3.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "doctors",
+        "value": 3.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "doctors",
+        "value": 3.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "doctors",
+        "value": 3.88,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.6,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "doctors",
+        "value": 3.88,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.6,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "doctors",
+        "value": 3.28,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FR/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 7.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FR/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "doctors",
+        "value": 3.28,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FR/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 7.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FR/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "doctors",
+        "value": 4.53,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "doctors",
+        "value": 4.53,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "doctors",
+        "value": 4.53,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "doctors",
+        "value": 3.88,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NL/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NL/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "doctors",
+        "value": 3.88,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NL/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NL/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "doctors",
+        "value": 3.57,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/BE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 5.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/BE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "doctors",
+        "value": 4.5,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DK/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 5.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DK/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "doctors",
+        "value": 4.41,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/SE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 8.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/SE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "doctors",
+        "value": 4.97,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NO/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.6,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NO/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "doctors",
+        "value": 3.61,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FI/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 9.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FI/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "doctors",
+        "value": 4.48,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CH/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CH/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "doctors",
+        "value": 4.48,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CH/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CH/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "doctors",
+        "value": 5.52,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 5.6,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "doctors",
+        "value": 4.35,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CZ/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 2.8,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CZ/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "doctors",
+        "value": 4.03,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PL/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PL/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "doctors",
+        "value": 4.03,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PL/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 3,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PL/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "doctors",
+        "value": 3.46,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/HU/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/HU/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "doctors",
+        "value": 5.85,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "doctors",
+        "value": 5.85,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PT/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PT/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "doctors",
+        "value": 4.29,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 10.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "doctors",
+        "value": 4.29,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 10.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "doctors",
+        "value": 4.29,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 10.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "doctors",
+        "value": 4.29,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 10.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "doctors",
+        "value": 6.58,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GR/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 8.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GR/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "doctors",
+        "value": 3.47,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/EE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 8.3,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/EE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "doctors",
+        "value": 3.68,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "doctors",
+        "value": 2.82,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "doctors",
+        "value": 2.82,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "doctors",
+        "value": 2.82,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 6.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "doctors",
+        "value": 2.83,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/SG/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 2.8,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/SG/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "doctors",
+        "value": 2.65,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/JP/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 2.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/JP/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "doctors",
+        "value": 4.09,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AU/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.1,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AU/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "doctors",
+        "value": 4.09,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AU/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 4.1,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AU/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "doctors",
+        "value": 2.99,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AE/indicator/SH.MED.PHYS.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Physicians per 1,000 people (WHO Global Health Workforce Statistics via World Bank)"
+      },
+      {
+        "metric": "unemployment",
+        "value": 2.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AE/indicator/SL.UEM.TOTL.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "Unemployment, % of the labour force, ILO modelled estimate (via World Bank)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,747 @@
+{
+  "source": "labour-law",
+  "retrieved": "2026-11-04",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-04-08;66",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (D.Lgs. 66/2003, art. 10)"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-04-08;66",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (D.Lgs. 66/2003, art. 10)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-04-08;66",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (D.Lgs. 66/2003, art. 10)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-04-08;66",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (D.Lgs. 66/2003, art. 10)"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-04-08;66",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (D.Lgs. 66/2003, art. 10)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2003-04-08;66",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (D.Lgs. 66/2003, art. 10)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "annual_leave",
+        "value": 28,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.uk/holiday-entitlement-rights",
+        "fetcher": "labour-law@1",
+        "note": "5.6 weeks (28 days) a year; bank holidays may be included and are not an additional guaranteed paid entitlement (GOV.UK: holiday entitlement)"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "annual_leave",
+        "value": 28,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.uk/holiday-entitlement-rights",
+        "fetcher": "labour-law@1",
+        "note": "5.6 weeks (28 days) a year; bank holidays may be included and are not an additional guaranteed paid entitlement (GOV.UK: holiday entitlement)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "annual_leave",
+        "value": 28,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.uk/holiday-entitlement-rights",
+        "fetcher": "labour-law@1",
+        "note": "5.6 weeks (28 days) a year; bank holidays may be included and are not an additional guaranteed paid entitlement (GOV.UK: holiday entitlement)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "annual_leave",
+        "value": 28,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.uk/holiday-entitlement-rights",
+        "fetcher": "labour-law@1",
+        "note": "5.6 weeks (28 days) a year; bank holidays may be included and are not an additional guaranteed paid entitlement (GOV.UK: holiday entitlement)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "annual_leave",
+        "value": 28,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.uk/holiday-entitlement-rights",
+        "fetcher": "labour-law@1",
+        "note": "5.6 weeks (28 days) a year; bank holidays may be included and are not an additional guaranteed paid entitlement (GOV.UK: holiday entitlement)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.irishstatutebook.ie/eli/1997/act/20/section/19/enacted/en/html",
+        "fetcher": "labour-law@1",
+        "note": "4 working weeks (Organisation of Working Time Act 1997, s. 19)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.irishstatutebook.ie/eli/1997/act/20/section/19/enacted/en/html",
+        "fetcher": "labour-law@1",
+        "note": "4 working weeks (Organisation of Working Time Act 1997, s. 19)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "annual_leave",
+        "value": 25,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2258",
+        "fetcher": "labour-law@1",
+        "note": "5 weeks (30 working days on a six-day count) (Service-Public: congés payés)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "annual_leave",
+        "value": 25,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.service-public.gouv.fr/particuliers/vosdroits/F2258",
+        "fetcher": "labour-law@1",
+        "note": "5 weeks (30 working days on a six-day count) (Service-Public: congés payés)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gesetze-im-internet.de/burlg/__3.html",
+        "fetcher": "labour-law@1",
+        "note": "24 working days on a six-day count (Bundesurlaubsgesetz § 3)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gesetze-im-internet.de/burlg/__3.html",
+        "fetcher": "labour-law@1",
+        "note": "24 working days on a six-day count (Bundesurlaubsgesetz § 3)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gesetze-im-internet.de/burlg/__3.html",
+        "fetcher": "labour-law@1",
+        "note": "24 working days on a six-day count (Bundesurlaubsgesetz § 3)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://eures.europa.eu/living-and-working/living-and-working-conditions/living-and-working-conditions-netherlands_en",
+        "fetcher": "labour-law@1",
+        "note": "4 times the weekly working hours (EURES: Netherlands working conditions, statutory annual leave)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://eures.europa.eu/living-and-working/living-and-working-conditions/living-and-working-conditions-netherlands_en",
+        "fetcher": "labour-law@1",
+        "note": "4 times the weekly working hours (EURES: Netherlands working conditions, statutory annual leave)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.onva.fgov.be/fr/ouvriers/duree-de-vacances/calcul-des-jours-de-vacances",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks after a full year of work in the previous year (ONVA, the national annual holiday office)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "annual_leave",
+        "value": 25,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.retsinformation.dk/eli/lta/2018/60",
+        "fetcher": "labour-law@1",
+        "note": "2.08 days for each month worked: 5 weeks (Ferieloven)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "annual_leave",
+        "value": 25,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/semesterlag-1977480_sfs-1977-480/",
+        "fetcher": "labour-law@1",
+        "note": "25 days (Semesterlag (1977:480) § 4)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "annual_leave",
+        "value": 21,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://lovdata.no/dokument/NL/lov/1988-04-29-21",
+        "fetcher": "labour-law@1",
+        "note": "25 working days on a six-day count (4 weeks and 1 day); an extra week from 60 (Ferieloven § 5)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.finlex.fi/fi/laki/ajantasa/2005/20050162",
+        "fetcher": "labour-law@1",
+        "note": "2 days per full accrual month before one year of employment (24 on a six-day count); 2.5 thereafter (30 on a six-day count, equivalent to 25 on a five-day week) (Vuosilomalaki 162/2005)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.ch.ch/en/work/working-hours/vacation--public-holidays-and-absences-from-work/",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks; 5 weeks under 20 (ch.ch: vacation entitlement, Code of Obligations art. 329a)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.ch.ch/en/work/working-hours/vacation--public-holidays-and-absences-from-work/",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks; 5 weeks under 20 (ch.ch: vacation entitlement, Code of Obligations art. 329a)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "annual_leave",
+        "value": 25,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10008376",
+        "fetcher": "labour-law@1",
+        "note": "5 weeks (30 working days on a six-day count); 6 weeks after 25 years of service (Urlaubsgesetz § 2)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://eures.europa.eu/living-and-working/living-and-working-conditions/living-and-working-conditions-czechia_en",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (EURES: Czechia working conditions, Labour Code § 213)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.pl/web/family/the-duration-of-annual-leave",
+        "fetcher": "labour-law@1",
+        "note": "20 days, 26 after 10 years of work, which counts up to 8 years of education (Ministry of Family, Labour and Social Policy: duration of annual leave)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.gov.pl/web/family/the-duration-of-annual-leave",
+        "fetcher": "labour-law@1",
+        "note": "20 days, 26 after 10 years of work, which counts up to 8 years of education (Ministry of Family, Labour and Social Policy: duration of annual leave)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://njt.hu/jogszabaly/2012-1-00-00",
+        "fetcher": "labour-law@1",
+        "note": "20 working days, plus days by age from 25 (National Legislation Database: Labour Code (Mt.) §§ 116-117)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "annual_leave",
+        "value": 22,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475",
+        "fetcher": "labour-law@1",
+        "note": "22 working days (Código do Trabalho, art. 238)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "annual_leave",
+        "value": 22,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://diariodarepublica.pt/dr/legislacao-consolidada/lei/2009-34546475",
+        "fetcher": "labour-law@1",
+        "note": "22 working days (Código do Trabalho, art. 238)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "annual_leave",
+        "value": 21.428571428571427,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+        "fetcher": "labour-law@1",
+        "note": "30 calendar days, represented as 30 × 5/7 five-day-week equivalent days, not an exact workday entitlement (Estatuto de los Trabajadores, art. 38)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "annual_leave",
+        "value": 21.428571428571427,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+        "fetcher": "labour-law@1",
+        "note": "30 calendar days, represented as 30 × 5/7 five-day-week equivalent days, not an exact workday entitlement (Estatuto de los Trabajadores, art. 38)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "annual_leave",
+        "value": 21.428571428571427,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+        "fetcher": "labour-law@1",
+        "note": "30 calendar days, represented as 30 × 5/7 five-day-week equivalent days, not an exact workday entitlement (Estatuto de los Trabajadores, art. 38)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "annual_leave",
+        "value": 21.428571428571427,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-11430",
+        "fetcher": "labour-law@1",
+        "note": "30 calendar days, represented as 30 × 5/7 five-day-week equivalent days, not an exact workday entitlement (Estatuto de los Trabajadores, art. 38)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://eures.europa.eu/living-and-working/living-and-working-conditions/living-and-working-conditions-greece_en",
+        "fetcher": "labour-law@1",
+        "note": "20 days in the first year on a five-day week, rising with service to 25 (EURES: Greece working conditions, statutory annual leave)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.tooelu.ee/en/26/types-holidays",
+        "fetcher": "labour-law@1",
+        "note": "28 calendar days (Estonian Labour Inspectorate: types of holidays, Employment Contracts Act § 55)"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "annual_leave",
+        "value": 0,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.dol.gov/general/topic/workhours/vacation_leave",
+        "fetcher": "labour-law@1",
+        "note": "No general federal paid vacation requirement under the FLSA; government contracts and state or local paid-leave laws can impose additional obligations (US Department of Labor: vacation leave)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "annual_leave",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.canada.ca/en/employment-social-development/corporate/portfolio/labour/bulletin/march-2026.html",
+        "fetcher": "labour-law@1",
+        "note": "Federal baseline: 2 weeks after 1 year, 3 after 5 years and 4 after 10; provincial rules and service entitlements differ (Employment and Social Development Canada: Labour Bulletin, March 2026)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "annual_leave",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.canada.ca/en/employment-social-development/corporate/portfolio/labour/bulletin/march-2026.html",
+        "fetcher": "labour-law@1",
+        "note": "Federal baseline: 2 weeks after 1 year, 3 after 5 years and 4 after 10; provincial rules and service entitlements differ (Employment and Social Development Canada: Labour Bulletin, March 2026)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "annual_leave",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.canada.ca/en/employment-social-development/corporate/portfolio/labour/bulletin/march-2026.html",
+        "fetcher": "labour-law@1",
+        "note": "Federal baseline: 2 weeks after 1 year, 3 after 5 years and 4 after 10; provincial rules and service entitlements differ (Employment and Social Development Canada: Labour Bulletin, March 2026)"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "annual_leave",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.mom.gov.sg/employment-practices/leave/annual-leave/eligibility-and-entitlement",
+        "fetcher": "labour-law@1",
+        "note": "7 days in the first year, one more each year to 14 (MOM: annual leave entitlement)"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "annual_leave",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.mhlw.go.jp/content/001762303.pdf",
+        "fetcher": "labour-law@1",
+        "note": "10 days after 6 months of service, rising to 20 after 6½ years (MHLW: Understanding and Utilizing Labor Laws, annual leave under art. 39)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.fairwork.gov.au/leave/annual-leave",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (Fair Work Ombudsman: annual leave)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "annual_leave",
+        "value": 20,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://www.fairwork.gov.au/leave/annual-leave",
+        "fetcher": "labour-law@1",
+        "note": "4 weeks (Fair Work Ombudsman: annual leave)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "annual_leave",
+        "value": 21.428571428571427,
+        "period": "2026",
+        "level": "country",
+        "source": "labour-law",
+        "retrieved": "2026-11-04T23:14:54.070Z",
+        "url": "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/Types-of-leaves",
+        "fetcher": "labour-law@1",
+        "note": "30 calendar days after a year of service, represented as 30 × 5/7 five-day-week equivalent days, not an exact workday entitlement; public holidays within leave count towards it (UAE government: types of leave, Labour Law art. 29)"
+      }
+    ]
+  }
+}

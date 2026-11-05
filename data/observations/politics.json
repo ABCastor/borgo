@@ -1,0 +1,402 @@
+{
+  "source": "politics",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "london-gb": [
+      {
+        "metric": "politics_lr",
+        "value": 5.6,
+        "period": "2024-07-04",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://electionresults.parliament.uk/general-elections/6/political-parties",
+        "note": "Estimate from the official result of House of Commons, 4 Jul 2024, with ParlGov party positions: Labour 33.7% (4.4), Conservatives 23.7% (7.4), Reform UK 14.3% (8.7, party-family average), Liberal Democrats 12.2% (4.3), Green Party 6.4% (2.6), Scottish National Party 2.5% (3.6). Parties with a position took 96% of the vote."
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "politics_lr",
+        "value": 5.6,
+        "period": "2024-07-04",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://electionresults.parliament.uk/general-elections/6/political-parties",
+        "note": "Estimate from the official result of House of Commons, 4 Jul 2024, with ParlGov party positions: Labour 33.7% (4.4), Conservatives 23.7% (7.4), Reform UK 14.3% (8.7, party-family average), Liberal Democrats 12.2% (4.3), Green Party 6.4% (2.6), Scottish National Party 2.5% (3.6). Parties with a position took 96% of the vote."
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "politics_lr",
+        "value": 5.6,
+        "period": "2024-07-04",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://electionresults.parliament.uk/general-elections/6/political-parties",
+        "note": "Estimate from the official result of House of Commons, 4 Jul 2024, with ParlGov party positions: Labour 33.7% (4.4), Conservatives 23.7% (7.4), Reform UK 14.3% (8.7, party-family average), Liberal Democrats 12.2% (4.3), Green Party 6.4% (2.6), Scottish National Party 2.5% (3.6). Parties with a position took 96% of the vote."
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "politics_lr",
+        "value": 5.6,
+        "period": "2024-07-04",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://electionresults.parliament.uk/general-elections/6/political-parties",
+        "note": "Estimate from the official result of House of Commons, 4 Jul 2024, with ParlGov party positions: Labour 33.7% (4.4), Conservatives 23.7% (7.4), Reform UK 14.3% (8.7, party-family average), Liberal Democrats 12.2% (4.3), Green Party 6.4% (2.6), Scottish National Party 2.5% (3.6). Parties with a position took 96% of the vote."
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "politics_lr",
+        "value": 5.6,
+        "period": "2024-07-04",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://electionresults.parliament.uk/general-elections/6/political-parties",
+        "note": "Estimate from the official result of House of Commons, 4 Jul 2024, with ParlGov party positions: Labour 33.7% (4.4), Conservatives 23.7% (7.4), Reform UK 14.3% (8.7, party-family average), Liberal Democrats 12.2% (4.3), Green Party 6.4% (2.6), Scottish National Party 2.5% (3.6). Parties with a position took 96% of the vote."
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "politics_lr",
+        "value": 4.9,
+        "period": "2024-11-29",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://data.oireachtas.ie/ie/oireachtas/electoralProcess/electionResults/dail/2025/2025-04-02_34th-dail-general-election-results_en.pdf",
+        "note": "Estimate from the official result of Dáil, first preferences, 29 Nov 2024, with ParlGov party positions: Fianna Fáil 21.9% (6.1), Fine Gael 20.8% (6.4), Sinn Féin 19% (2.8), Non-party candidates 13.2% (no position), Social Democrats 4.8% (3.3, party-family average), Labour 4.7% (3.6). Parties with a position took 81% of the vote."
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "politics_lr",
+        "value": 4.9,
+        "period": "2024-11-29",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://data.oireachtas.ie/ie/oireachtas/electoralProcess/electionResults/dail/2025/2025-04-02_34th-dail-general-election-results_en.pdf",
+        "note": "Estimate from the official result of Dáil, first preferences, 29 Nov 2024, with ParlGov party positions: Fianna Fáil 21.9% (6.1), Fine Gael 20.8% (6.4), Sinn Féin 19% (2.8), Non-party candidates 13.2% (no position), Social Democrats 4.8% (3.3, party-family average), Labour 4.7% (3.6). Parties with a position took 81% of the vote."
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2024-06-30",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.data.gouv.fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour",
+        "note": "Estimate from the official result of National Assembly, round one, by the Interior Ministry's candidate groups, 30 Jun 2024, with ParlGov party positions: Rassemblement National 29.3% (9.7), Union of the Left (New Popular Front) 28% (2.3, members' average), Ensemble 20% (6, members' average), Les Républicains 6.6% (7.5), Union of the far right (LR candidates allied with the RN) 3.9% (no position), Other right 3.7% (no position). Parties with a position took 86% of the vote."
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2024-06-30",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.data.gouv.fr/datasets/elections-legislatives-des-30-juin-et-7-juillet-2024-resultats-definitifs-du-1er-tour",
+        "note": "Estimate from the official result of National Assembly, round one, by the Interior Ministry's candidate groups, 30 Jun 2024, with ParlGov party positions: Rassemblement National 29.3% (9.7), Union of the Left (New Popular Front) 28% (2.3, members' average), Ensemble 20% (6, members' average), Les Républicains 6.6% (7.5), Union of the far right (LR candidates allied with the RN) 3.9% (no position), Other right 3.7% (no position). Parties with a position took 86% of the vote."
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "politics_lr",
+        "value": 5.5,
+        "period": "2025-02-23",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html",
+        "note": "Estimate from the official result of Bundestag, second votes, 23 Feb 2025, with ParlGov party positions: CDU 22.6% (6.3), AfD 20.8% (8.7, party-family average), SPD 16.4% (3.6), Greens 11.6% (2.9), The Left 8.8% (1.2), CSU 6% (7.3). Parties with a position took 92% of the vote."
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "politics_lr",
+        "value": 5.5,
+        "period": "2025-02-23",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html",
+        "note": "Estimate from the official result of Bundestag, second votes, 23 Feb 2025, with ParlGov party positions: CDU 22.6% (6.3), AfD 20.8% (8.7, party-family average), SPD 16.4% (3.6), Greens 11.6% (2.9), The Left 8.8% (1.2), CSU 6% (7.3). Parties with a position took 92% of the vote."
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "politics_lr",
+        "value": 5.5,
+        "period": "2025-02-23",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.bundeswahlleiterin.de/bundestagswahlen/2025/ergebnisse/bund-99.html",
+        "note": "Estimate from the official result of Bundestag, second votes, 23 Feb 2025, with ParlGov party positions: CDU 22.6% (6.3), AfD 20.8% (8.7, party-family average), SPD 16.4% (3.6), Greens 11.6% (2.9), The Left 8.8% (1.2), CSU 6% (7.3). Parties with a position took 92% of the vote."
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2025-10-29",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.verkiezingsuitslagen.nl/verkiezingen/detail/TK20251029",
+        "note": "Estimate from the official result of House of Representatives, 29 Oct 2025, with ParlGov party positions: D66 16.9% (4.5), PVV 16.7% (8.8), VVD 14.2% (7.3), GroenLinks–PvdA 12.8% (2.8, members' average), CDA 11.8% (5.9), JA21 5.9% (8.7, party-family average). Parties with a position took 94% of the vote."
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2025-10-29",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.verkiezingsuitslagen.nl/verkiezingen/detail/TK20251029",
+        "note": "Estimate from the official result of House of Representatives, 29 Oct 2025, with ParlGov party positions: D66 16.9% (4.5), PVV 16.7% (8.8), VVD 14.2% (7.3), GroenLinks–PvdA 12.8% (2.8, members' average), CDA 11.8% (5.9), JA21 5.9% (8.7, party-family average). Parties with a position took 94% of the vote."
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "politics_lr",
+        "value": 5.5,
+        "period": "2024-06-09",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://resultatselection.belgium.be/fr/election-results/chambre-des-repr%C3%A9sentants/2024/royaume/251712",
+        "note": "Estimate from the official result of Chamber of Representatives, 9 Jun 2024, with ParlGov party positions: N-VA 16.7% (6.5), Vlaams Belang 13.8% (9.7), MR 10.3% (6.7), PVDA-PTB 9.9% (1.3, party-family average), Vooruit 8.1% (3.2), PS 8% (2.9). Parties with a position took 96% of the vote."
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "politics_lr",
+        "value": 5.2,
+        "period": "2026-03-24",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://api.statbank.dk/v1/data/FV26TOT/CSV?lang=en&VALRES=*&OMR%C3%85DE=0&Tid=2026",
+        "note": "Estimate from the official result of Folketing, 24 Mar 2026, with ParlGov party positions: Social Democrats 21.8% (3.8), Socialist People's Party 11.6% (2.1), Venstre 10.1% (7.3), Liberal Alliance 9.4% (6, party-family average), Danish People's Party 9.1% (8.2), Moderates 7.7% (6, party-family average). Parties with a position took 98% of the vote."
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "politics_lr",
+        "value": 5.7,
+        "period": "2026-09-13",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.val.se/valresultat-och-statistik/riksdags--region--och-kommunval/valresultat-2026",
+        "note": "Estimate from the official result of Riksdag, 13 Sept 2026, with ParlGov party positions: Social Democrats 28% (3.4), Moderates 19.9% (7.9), Sweden Democrats 17.5% (8.7, party-family average), Left Party 8.4% (1.5), Centre Party 7% (5.8), Christian Democrats 6.2% (7.2). Parties with a position took 98% of the vote."
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "politics_lr",
+        "value": 5.3,
+        "period": "2025-09-08",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://valgresultat.no/api/2025/st",
+        "note": "Estimate from the official result of Storting, 8 Sept 2025, with ParlGov party positions: Labour 28% (3.4), Progress Party 23.8% (8.8), Conservatives 14.6% (7.9), Socialist Left 5.6% (1.6), Centre Party 5.6% (4.7), Red Party 5.3% (0.4). Parties with a position took 96% of the vote."
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "politics_lr",
+        "value": 5.5,
+        "period": "2023-04-02",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://tulospalvelu.vaalit.fi/EKV-2023/en/tulos_kokomaa.html",
+        "note": "Estimate from the official result of Eduskunta, 2 Apr 2023, with ParlGov party positions: National Coalition Party 20.8% (7.2), Finns Party 20.1% (6.6), Social Democrats 19.9% (3.6), Centre Party 11.3% (5.8), Left Alliance 7.1% (2.2), Greens 7% (3.6). Parties with a position took 97% of the vote."
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "politics_lr",
+        "value": 4.7,
+        "period": "2023-10-22",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-1702020000_104/px-x-1702020000_104.px",
+        "note": "Estimate from the official result of National Council, party strength, 22 Oct 2023, with ParlGov party positions: SVP 27.4% (7.4), SP 21.1% (1.8), FDP 12.5% (6.8, members' average), GLP 12.4% (2.5, party-family average), Grüne 9.9% (1.7), Mitte 8.2% (6.1, members' average). Parties with a position took 96% of the vote."
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "politics_lr",
+        "value": 4.8,
+        "period": "2023-10-22",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.pxweb.bfs.admin.ch/pxweb/de/px-x-1702020000_104/px-x-1702020000_104.px",
+        "note": "Estimate from the official result of National Council, party strength, 22 Oct 2023, with ParlGov party positions: SP 18.4% (1.8), FDP 15.7% (6.8, members' average), Grüne 15.4% (1.7), SVP 15.3% (7.4), MCR 12.3% (8.7, party-family average), Mitte 8.2% (6.1, members' average). Parties with a position took 95% of the vote."
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "politics_lr",
+        "value": 6,
+        "period": "2024-09-29",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.bmi.gv.at/412/Nationalratswahlen/Nationalratswahl_2024/start.aspx",
+        "note": "Estimate from the official result of National Council, 29 Sept 2024, with ParlGov party positions: Freedom Party 28.8% (8.3), People’s Party 26.3% (6.5), Social Democrats 21.1% (3.7), NEOS 9.1% (6, party-family average), Greens 8.2% (2.5). Parties with a position took 94% of the vote."
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "politics_lr",
+        "value": 6.5,
+        "period": "2025-10-04",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.volby.cz/app/ps2025/en/results",
+        "note": "Estimate from the official result of Chamber of Deputies, 4 Oct 2025, with ParlGov party positions: ANO 2011 34.5% (6, party-family average), SPOLU (ODS, KDU-ČSL, TOP 09) 23.4% (6.9, members' average), Mayors and Independents 11.2% (6, party-family average), Czech Pirate Party 9% (no position), Freedom and Direct Democracy 7.8% (8.7, party-family average), Motorists for Themselves 6.8% (no position). Parties with a position took 77% of the vote."
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2023-10-15",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://sejmsenat2023.pkw.gov.pl/sejmsenat2023/pl/dane_w_arkuszach",
+        "note": "Estimate from the official result of Sejm, 15 Oct 2023, with ParlGov party positions: Law and Justice 35.4% (7.7), Civic Coalition 30.7% (4.9, members' average), Third Way 14.4% (no position), The Left 8.6% (3.1, members' average), Confederation 7.2% (8.1, members' average), Nonpartisan Local Government Activists 1.9% (no position). Parties with a position took 82% of the vote."
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2023-10-15",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://sejmsenat2023.pkw.gov.pl/sejmsenat2023/pl/dane_w_arkuszach",
+        "note": "Estimate from the official result of Sejm, 15 Oct 2023, with ParlGov party positions: Law and Justice 35.4% (7.7), Civic Coalition 30.7% (4.9, members' average), Third Way 14.4% (no position), The Left 8.6% (3.1, members' average), Confederation 7.2% (8.1, members' average), Nonpartisan Local Government Activists 1.9% (no position). Parties with a position took 82% of the vote."
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2025-05-18",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.eleicoes.mai.gov.pt/legislativas2025/assets/static/territory-results/territory-results-GLOBAL-990000-AR.json",
+        "note": "Estimate from the official result of Assembly of the Republic, 18 May 2025, with ParlGov party positions: AD (PSD, CDS) 33.2% (7.2, members' average), PS 23.8% (4), Chega 23.7% (8.7, party-family average), Iniciativa Liberal 5.6% (6, party-family average), Livre 4.2% (3.3, party-family average), CDU (PCP, PEV) 3% (2.2). Parties with a position took 97% of the vote."
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2025-05-18",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.eleicoes.mai.gov.pt/legislativas2025/assets/static/territory-results/territory-results-GLOBAL-990000-AR.json",
+        "note": "Estimate from the official result of Assembly of the Republic, 18 May 2025, with ParlGov party positions: AD (PSD, CDS) 33.2% (7.2, members' average), PS 23.8% (4), Chega 23.7% (8.7, party-family average), Iniciativa Liberal 5.6% (6, party-family average), Livre 4.2% (3.3, party-family average), CDU (PCP, PEV) 3% (2.2). Parties with a position took 97% of the vote."
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "politics_lr",
+        "value": 6.2,
+        "period": "2023-03-05",
+        "level": "country",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://rk2023.valimised.ee/en/election-result/index.html",
+        "note": "Estimate from the official result of Riigikogu, 5 Mar 2023, with ParlGov party positions: Reform Party 31.2% (7.9), Conservative People’s Party 16.1% (no position), Centre Party 15.3% (4), Estonia 200 13.3% (6, party-family average), Social Democratic Party 9.3% (4.2), Isamaa 8.2% (8.5). Parties with a position took 83% of the vote."
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "politics_lr",
+        "value": 6.5,
+        "period": "2025-04-28",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.elections.ca/res/rep/off/ovrGE45/62/table8E.html",
+        "note": "Estimate from the official result of House of Commons, 28 Apr 2025, with ParlGov party positions: Liberal Party of Canada 49.2% (5.1), Conservative Party of Canada 43.8% (8.7), New Democratic Party 4.8% (2.5), Green Party of Canada 1.1% (1.9), People's Party of Canada 0.7% (8.7, party-family average), Christian Heritage Party of Canada 0.1% (no position). Parties with a position took 100% of the vote."
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "politics_lr",
+        "value": 6.1,
+        "period": "2025-04-28",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.elections.ca/res/rep/off/ovrGE45/62/table8E.html",
+        "note": "Estimate from the official result of House of Commons, 28 Apr 2025, with ParlGov party positions: Liberal Party of Canada 41.8% (5.1), Conservative Party of Canada 41.2% (8.7), New Democratic Party 13% (2.5), Green Party of Canada 3% (1.9), People's Party of Canada 0.4% (8.7, party-family average), Independent 0.4% (no position). Parties with a position took 99% of the vote."
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "politics_lr",
+        "value": 5.2,
+        "period": "2025-04-28",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://www.elections.ca/res/rep/off/ovrGE45/62/table8E.html",
+        "note": "Estimate from the official result of House of Commons, 28 Apr 2025, with ParlGov party positions: Liberal Party of Canada 42.6% (5.1), Bloc Québécois 27.7% (3), Conservative Party of Canada 23.3% (8.7), New Democratic Party 4.5% (2.5), Green Party of Canada 0.9% (1.9), People's Party of Canada 0.8% (8.7, party-family average). Parties with a position took 100% of the vote."
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "politics_lr",
+        "value": 5.2,
+        "period": "2025-05-03",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://results.aec.gov.au/31496/Website/HouseStateFirstPrefsByParty-31496-NSW.htm",
+        "note": "Estimate from the official result of House of Representatives, first preferences, 3 May 2025, with ParlGov party positions: Australian Labor Party 35.2% (3.9), Liberal 24.2% (7.4), The Greens 11.1% (1.5), Independent 9.7% (no position), The Nationals 7.3% (7.8), Pauline Hanson's One Nation 6% (8.2). Parties with a position took 85% of the vote."
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "politics_lr",
+        "value": 5.2,
+        "period": "2025-05-03",
+        "level": "region",
+        "source": "politics",
+        "retrieved": "2026-11-05",
+        "url": "https://results.aec.gov.au/31496/Website/HouseStateFirstPrefsByParty-31496-VIC.htm",
+        "note": "Estimate from the official result of House of Representatives, first preferences, 3 May 2025, with ParlGov party positions: Australian Labor Party 33.9% (3.9), Liberal 27.6% (7.4), The Greens 13.6% (1.5), Independent 7.5% (no position), Pauline Hanson's One Nation 5.8% (8.2), The Nationals 4.6% (7.8). Parties with a position took 86% of the vote."
+      }
+    ]
+  }
+}

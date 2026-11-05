@@ -1,0 +1,41 @@
+[
+  {
+    "id": "EEA",
+    "name": "EU and EEA free movement",
+    "members": ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO"],
+    "territory": ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO"],
+    "source": "eu-free-movement",
+    "note": "Directive 2004/38/EC, extended to Iceland, Liechtenstein and Norway by the EEA Agreement. Beyond three months a registration is usually required, but no visa or permit to work."
+  },
+  {
+    "id": "CH-EU",
+    "name": "Swiss-EU free movement",
+    "members": ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO","CH"],
+    "territory": ["CH"],
+    "source": "ch-afmp",
+    "note": "The EU-Swiss Agreement on the Free Movement of Persons (and the EFTA Convention). Swiss citizens have the same right in the EU and EEA."
+  },
+  {
+    "id": "CH-IN-EU",
+    "name": "Swiss-EU free movement",
+    "members": ["CH"],
+    "territory": ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","IS","LI","NO"],
+    "source": "ch-afmp"
+  },
+  {
+    "id": "CTA",
+    "name": "Common Travel Area",
+    "members": ["GB", "IE"],
+    "territory": ["GB", "IE"],
+    "source": "cta",
+    "note": "British and Irish citizens may live and work in each other's country (UK-Ireland Memorandum of Understanding, 2019)."
+  },
+  {
+    "id": "TTTA",
+    "name": "Trans-Tasman Travel Arrangement",
+    "members": ["AU", "NZ"],
+    "territory": ["AU", "NZ"],
+    "source": "ttta",
+    "note": "Australian and New Zealand citizens may live and work in each other's country."
+  }
+]

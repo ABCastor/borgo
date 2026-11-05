@@ -1,0 +1,678 @@
+{
+  "source": "ghsl-ucdb",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 1.8,
+        "note": "Turin urban centre (1,243,448 people, 2025): nearest edge 1.8 km to the south-east; half the directions over land end within 7.5 km"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.7,
+        "note": "Milan urban centre (3,135,553 people, 2025): nearest edge 4.7 km to the south; half the directions over land end within 11.4 km"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 7,
+        "note": "Rome urban centre (2,476,089 people, 2025): nearest edge 7 km to the south; half the directions over land end within 12.2 km"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 8.3,
+        "note": "Naples urban centre (2,885,079 people, 2025): nearest edge 8.3 km to the west; half the directions over land end within 13.2 km"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 1.6,
+        "note": "Bologna urban centre (456,780 people, 2025): nearest edge 1.6 km to the south-west; half the directions over land end within 5.9 km"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 1.9,
+        "note": "Florence urban centre (711,105 people, 2025): nearest edge 1.9 km to the north-east; half the directions over land end within 3.5 km"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 15.5,
+        "note": "London urban centre (10,408,332 people, 2025): nearest edge 15.5 km to the north; half the directions over land end within 22.2 km"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 0.9,
+        "note": "Cambridge urban centre (136,064 people, 2025): nearest edge 0.9 km to the south; half the directions over land end within 2.6 km"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 8.7,
+        "note": "Manchester urban centre (2,539,907 people, 2025): nearest edge 8.7 km to the north; half the directions over land end within 14.1 km"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.2,
+        "note": "Bristol urban centre (680,809 people, 2025): nearest edge 2.2 km to the west; half the directions over land end within 6.5 km"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.3,
+        "note": "Edinburgh urban centre (530,165 people, 2025): nearest edge 5.3 km to the south; half the directions over land end within 7 km"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 6.5,
+        "note": "Dublin urban centre (1,124,520 people, 2025): nearest edge 6.5 km to the south; half the directions over land end within 9.1 km"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.4,
+        "note": "Cork urban centre (137,272 people, 2025): nearest edge 2.4 km to the north; half the directions over land end within 3.5 km"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 12.5,
+        "note": "Paris urban centre (9,328,385 people, 2025): nearest edge 12.5 km to the south-west; half the directions over land end within 19.5 km"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 6.2,
+        "note": "Lyon urban centre (1,194,741 people, 2025): nearest edge 6.2 km to the north; half the directions over land end within 8.3 km"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 8.8,
+        "note": "Berlin urban centre (3,549,997 people, 2025): nearest edge 8.8 km to the north-east; half the directions over land end within 14.5 km"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.9,
+        "note": "Munich urban centre (1,827,704 people, 2025): nearest edge 5.9 km to the east; half the directions over land end within 10.4 km"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.3,
+        "note": "Hamburg urban centre (1,733,898 people, 2025): nearest edge 5.3 km to the south-east; half the directions over land end within 12.1 km"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.5,
+        "note": "Amsterdam urban centre (1,223,407 people, 2025): nearest edge 4.5 km to the north-east; half the directions over land end within 7.6 km"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4,
+        "note": "Rotterdam [The Hague] urban centre (2,173,754 people, 2025): nearest edge 4 km to the north-west; half the directions over land end within 9.5 km"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.9,
+        "note": "Brussels urban centre (1,468,754 people, 2025): nearest edge 5.9 km to the west; half the directions over land end within 7.9 km"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 3.6,
+        "note": "Copenhagen urban centre (1,258,202 people, 2025): nearest edge 3.6 km to the south; half the directions over land end within 11.6 km"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.9,
+        "note": "Stockholm urban centre (1,543,892 people, 2025): nearest edge 2.9 km to the north; half the directions over land end within 8.6 km"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.5,
+        "note": "Oslo urban centre (889,573 people, 2025): nearest edge 5.5 km to the north; half the directions over land end within 7.6 km"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 9.2,
+        "note": "Helsinki urban centre (1,001,125 people, 2025): nearest edge 9.2 km to the east; half the directions over land end within 13.5 km"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.9,
+        "note": "Zurich urban centre (689,208 people, 2025): nearest edge 2.9 km to the south-east; half the directions over land end within 6.6 km"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.5,
+        "note": "Geneva urban centre (433,727 people, 2025): nearest edge 2.5 km to the north-east; half the directions over land end within 4.6 km"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 6.1,
+        "note": "Vienna urban centre (2,056,565 people, 2025): nearest edge 6.1 km to the north; half the directions over land end within 9.4 km"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.9,
+        "note": "Prague urban centre (1,201,278 people, 2025): nearest edge 4.9 km to the north-west; half the directions over land end within 9.3 km"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 7.5,
+        "note": "Warsaw urban centre (1,999,986 people, 2025): nearest edge 7.5 km to the south-east; half the directions over land end within 10 km"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.5,
+        "note": "Krakow urban centre (723,413 people, 2025): nearest edge 2.5 km to the south-west; half the directions over land end within 7.6 km"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.4,
+        "note": "Budapest urban centre (1,743,875 people, 2025): nearest edge 4.4 km to the west; half the directions over land end within 10.5 km"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 10.7,
+        "note": "Lisbon urban centre (1,974,574 people, 2025): nearest edge 10.7 km to the north-west; half the directions over land end within 13.4 km"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 7,
+        "note": "Porto urban centre (1,060,250 people, 2025): nearest edge 7 km to the south-east; half the directions over land end within 10.5 km"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.8,
+        "note": "Madrid urban centre (5,680,137 people, 2025): nearest edge 2.8 km to the west; half the directions over land end within 12.2 km"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.1,
+        "note": "Barcelona urban centre (3,908,362 people, 2025): nearest edge 5.1 km to the north-west; half the directions over land end within 9.2 km"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.2,
+        "note": "Valencia urban centre (1,404,208 people, 2025): nearest edge 4.2 km to the north-east; half the directions over land end within 8.5 km"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2.7,
+        "note": "Málaga urban centre (522,827 people, 2025): nearest edge 2.7 km to the north-east; half the directions over land end within 4.7 km"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.8,
+        "note": "Athens urban centre (3,166,757 people, 2025): nearest edge 4.8 km to the south-east; half the directions over land end within 8.8 km"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 2,
+        "note": "Tallinn urban centre (449,861 people, 2025): nearest edge 2 km to the north-east; half the directions over land end within 7.1 km"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 15.8,
+        "note": "San Francisco urban centre (4,718,349 people, 2025): nearest edge 15.8 km to the south; half the directions over land end within 15.9 km"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 7.8,
+        "note": "Los Angeles urban centre (13,474,333 people, 2025): nearest edge 7.8 km to the north; half the directions over land end within 20 km"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 14.6,
+        "note": "New York City urban centre (14,197,659 people, 2025): nearest edge 14.6 km to the south-east; half the directions over land end within 27.7 km"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 8.9,
+        "note": "Boston urban centre (1,669,310 people, 2025): nearest edge 8.9 km to the north-west; half the directions over land end within 12.9 km"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 18.5,
+        "note": "Seattle urban centre (2,099,643 people, 2025): nearest edge 18.5 km to the north-east; half the directions over land end within 24.5 km"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 4.5,
+        "note": "Austin urban centre (1,580,153 people, 2025): nearest edge 4.5 km to the north-west; half the directions over land end within 6.7 km"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 20.1,
+        "note": "Miami urban centre (5,733,042 people, 2025): nearest edge 20.1 km to the west; half the directions over land end within 29.3 km"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 18.2,
+        "note": "Chicago urban centre (5,318,735 people, 2025): nearest edge 18.2 km to the south; half the directions over land end within 24.2 km"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 10.3,
+        "note": "Denver urban centre (2,425,086 people, 2025): nearest edge 10.3 km to the south; half the directions over land end within 17.8 km"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 19.7,
+        "note": "Toronto urban centre (5,566,382 people, 2025): nearest edge 19.7 km to the north-west; half the directions over land end within 22.8 km"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 5.2,
+        "note": "Vancouver urban centre (2,198,107 people, 2025): nearest edge 5.2 km to the south-west; half the directions over land end within 11.2 km"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 11.3,
+        "note": "Montreal urban centre (3,221,844 people, 2025): nearest edge 11.3 km to the south-west; half the directions over land end within 15.4 km"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 9.4,
+        "note": "Singapore urban centre (5,117,759 people, 2025): nearest edge 9.4 km to the north-west; half the directions over land end within 12.2 km"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 34,
+        "note": "Tokyo urban centre (33,155,907 people, 2025): nearest edge 34 km to the north-west; half the directions over land end within 39 km"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 10.8,
+        "note": "Sydney urban centre (4,375,394 people, 2025): nearest edge 10.8 km to the south; half the directions over land end within 24.1 km"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "city_edge_km",
+        "period": "2025",
+        "level": "city",
+        "source": "ghsl-ucdb",
+        "retrieved": "2026-11-05",
+        "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+        "value": 9.7,
+        "note": "Melbourne urban centre (4,010,658 people, 2025): nearest edge 9.7 km to the south-west; half the directions over land end within 21.3 km"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1153 @@
+{
+  "source": "wmo-normals",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "milan-it": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          121,
+          139,
+          183,
+          178,
+          201,
+          229,
+          268,
+          241,
+          173,
+          126,
+          101,
+          102
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:11.696Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Stabio, 47 km away at 351 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2063,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:11.696Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Stabio, 47 km away at 351 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          131,
+          150,
+          186,
+          217,
+          267,
+          293,
+          342,
+          318,
+          237,
+          177,
+          124,
+          126
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:11.700Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Vigna di Valle, 32 km away at 260 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2568,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:11.700Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Vigna di Valle, 32 km away at 260 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          127,
+          148,
+          179,
+          201,
+          252,
+          288,
+          325,
+          310,
+          234,
+          193,
+          129,
+          119
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:11.704Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Grazzanise, 28 km away at 10 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2504,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:11.704Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Grazzanise, 28 km away at 10 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          61,
+          79,
+          124,
+          177,
+          208,
+          208,
+          218,
+          202,
+          157,
+          115,
+          71,
+          55
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:12.429Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Heathrow, 23 km away at 25 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1675,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:12.429Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Heathrow, 23 km away at 25 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          61,
+          79,
+          125,
+          173,
+          211,
+          205,
+          215,
+          193,
+          154,
+          113,
+          71,
+          54
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.139Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Lyneham, 42 km away at 145 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1653,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.139Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Lyneham, 42 km away at 145 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          59,
+          81,
+          115,
+          161,
+          199,
+          179,
+          157,
+          156,
+          131,
+          105,
+          73,
+          54
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.289Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at DublinAirport, 11 km away at 71 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1471,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.289Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at DublinAirport, 11 km away at 71 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          61,
+          74,
+          111,
+          160,
+          191,
+          184,
+          164,
+          158,
+          129,
+          99,
+          75,
+          55
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.292Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at CorkAirport, 6 km away at 155 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1461,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.292Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at CorkAirport, 6 km away at 155 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          59,
+          83,
+          134,
+          177,
+          201,
+          203,
+          222,
+          215,
+          174,
+          118,
+          69,
+          56
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.295Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at PARIS MONTSOURIS, 4 km away at 75 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1711,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.295Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at PARIS MONTSOURIS, 4 km away at 75 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          71,
+          102,
+          173,
+          197,
+          223,
+          256,
+          288,
+          263,
+          204,
+          131,
+          78,
+          58
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.298Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at LYON BRON, 8 km away at 202 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2044,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.298Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at LYON BRON, 8 km away at 202 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          51,
+          74,
+          124,
+          192,
+          224,
+          230,
+          237,
+          221,
+          167,
+          115,
+          55,
+          41
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.301Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Berlin-Tempelhof, 6 km away at 48 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1730,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.301Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Berlin-Tempelhof, 6 km away at 48 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          75,
+          95,
+          145,
+          186,
+          213,
+          224,
+          241,
+          232,
+          170,
+          123,
+          74,
+          66
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.304Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Muenchen-Stadt, 4 km away at 515 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1845,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.304Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Muenchen-Stadt, 4 km away at 515 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          45,
+          67,
+          120,
+          183,
+          221,
+          210,
+          219,
+          203,
+          152,
+          109,
+          51,
+          36
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.308Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Hamburg-Fuhlsbuettel, 9 km away at 11 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1617,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.308Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Hamburg-Fuhlsbuettel, 9 km away at 11 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          69,
+          94,
+          146,
+          198,
+          231,
+          217,
+          225,
+          204,
+          154,
+          117,
+          67,
+          58
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.310Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at AmsterdamSchipholAp, 9 km away at -4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1780,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.310Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at AmsterdamSchipholAp, 9 km away at -4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          70,
+          90,
+          143,
+          193,
+          226,
+          216,
+          221,
+          203,
+          153,
+          115,
+          67,
+          56
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.313Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at RotterdamTheHagueAp, 5 km away at -5 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1752,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.313Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at RotterdamTheHagueAp, 5 km away at -5 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          59,
+          73,
+          126,
+          171,
+          198,
+          199,
+          203,
+          192,
+          155,
+          113,
+          66,
+          49
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.316Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at UCCLE, 6 km away at 99 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1604,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.316Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at UCCLE, 6 km away at 99 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          48,
+          64,
+          131,
+          207,
+          271,
+          266,
+          272,
+          242,
+          171,
+          107,
+          54,
+          36
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.319Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Falsterbo, 36 km away at 2 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1867,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.319Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Falsterbo, 36 km away at 2 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          44,
+          75,
+          151,
+          216,
+          277,
+          277,
+          280,
+          235,
+          170,
+          96,
+          45,
+          33
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.322Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Stockholm Sol, 3 km away at 41 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1899,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.322Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Stockholm Sol, 3 km away at 41 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          35,
+          71,
+          146,
+          203,
+          296,
+          278,
+          308,
+          248,
+          160,
+          89,
+          34,
+          23
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.364Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at HelsinkiKumpula, 4 km away at 24 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1890,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.364Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at HelsinkiKumpula, 4 km away at 24 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          60,
+          89,
+          144,
+          178,
+          192,
+          207,
+          229,
+          216,
+          164,
+          109,
+          61,
+          47
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.368Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at ZuerichFluntern, 2 km away at 556 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1694,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.368Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at ZuerichFluntern, 2 km away at 556 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          61,
+          96,
+          161,
+          187,
+          212,
+          246,
+          269,
+          242,
+          184,
+          116,
+          65,
+          48
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.373Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at GeneveCointrin, 5 km away at 411 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1887,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.373Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at GeneveCointrin, 5 km away at 411 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          70,
+          105,
+          155,
+          217,
+          248,
+          261,
+          274,
+          266,
+          192,
+          130,
+          68,
+          57
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.378Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Wien Hohe Warte, 5 km away at 198 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2042,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.378Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Wien Hohe Warte, 5 km away at 198 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          51,
+          83,
+          127,
+          191,
+          222,
+          230,
+          241,
+          230,
+          165,
+          108,
+          52,
+          44
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.383Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at PrahaLibus, 9 km away at 302 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1743,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.383Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at PrahaLibus, 9 km away at 302 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          161,
+          184,
+          220,
+          247,
+          293,
+          332,
+          372,
+          344,
+          256,
+          208,
+          165,
+          147
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.769Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at MADRIDCUATROVIENTOS, 8 km away at 690 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2929,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.769Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at MADRIDCUATROVIENTOS, 8 km away at 690 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          120,
+          147,
+          195,
+          211,
+          241,
+          250,
+          280,
+          258,
+          203,
+          163,
+          120,
+          105
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.772Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at BARCELONAAEROPUERTO, 13 km away at 4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2292,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.772Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at BARCELONAAEROPUERTO, 13 km away at 4 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          168,
+          174,
+          211,
+          233,
+          260,
+          277,
+          308,
+          283,
+          231,
+          201,
+          166,
+          152
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.775Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at VALENCIA, 1 km away at 11 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2663,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.775Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at VALENCIA, 1 km away at 11 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          171,
+          179,
+          212,
+          238,
+          289,
+          327,
+          343,
+          310,
+          248,
+          209,
+          166,
+          152
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.777Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at MALAGAAEROPUERTO, 8 km away at 5 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2842,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.777Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at MALAGAAEROPUERTO, 8 km away at 5 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          30,
+          59,
+          148,
+          217,
+          306,
+          294,
+          312,
+          256,
+          162,
+          88,
+          29,
+          21
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.824Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Tallinn-Harku, 10 km away at 33 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1923,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:13.824Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Tallinn-Harku, 10 km away at 33 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          180,
+          199,
+          197,
+          182,
+          185,
+          175,
+          189,
+          185,
+          161,
+          155,
+          133,
+          133
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.879Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at ChangiAirport, 17 km away at 14 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2074,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.879Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at ChangiAirport, 17 km away at 14 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          193,
+          170,
+          175,
+          179,
+          180,
+          124,
+          151,
+          174,
+          127,
+          129,
+          150,
+          174
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.883Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Tokyo, 5 km away at 25 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 1927,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.883Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at Tokyo, 5 km away at 25 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          231,
+          201,
+          210,
+          214,
+          205,
+          170,
+          209,
+          246,
+          241,
+          242,
+          224,
+          234
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.887Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at SydneyAirport, 9 km away at 6 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 2628,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.887Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at SydneyAirport, 9 km away at 6 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "sunshine_monthly",
+        "value": [
+          253,
+          251,
+          288,
+          316,
+          350,
+          345,
+          340,
+          334,
+          308,
+          300,
+          268,
+          257
+        ],
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.933Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at DubaiIntlAirport, 19 km away at 8 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      },
+      {
+        "metric": "sunshine_hours",
+        "value": 3609,
+        "period": "1991-2020",
+        "level": "city",
+        "source": "wmo-normals",
+        "retrieved": "2026-10-27T11:14:14.933Z",
+        "url": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+        "fetcher": "wmo-normals@1",
+        "note": "Measured at DubaiIntlAirport, 19 km away at 8 m (WMO definition: direct sunlight of at least 120 W/m²)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "mlab",
+  "name": "M-Lab NDT statistics (daily city aggregates)",
+  "publisher": "Measurement Lab",
+  "homepage": "https://www.measurementlab.net/data/",
+  "measures": [
+    {
+      "metric": "download_mbps",
+      "definition": "Typical download speed in single-stream speed tests."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "CC0-1.0",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC0-1.0",
+    "edition": "M-Lab NDT daily city aggregates, 2023",
+    "termsUrl": "https://www.measurementlab.net/data/",
+    "termsRead": "2026-11-05",
+    "attribution": "The M-Lab NDT Data Set, 2023-01-01–2023-12-31. https://measurementlab.net/tests/ndt"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://statistics.measurementlab.net",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/mlab.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Frozen at 2023, the last full year aggregated."
+  },
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+}

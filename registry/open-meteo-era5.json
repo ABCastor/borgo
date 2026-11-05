@@ -1,0 +1,152 @@
+{
+  "id": "open-meteo-era5",
+  "name": "Historical weather (ERA5 reanalysis)",
+  "publisher": "Open-Meteo, Copernicus Climate Change Service (ECMWF)",
+  "homepage": "https://open-meteo.com/en/docs/historical-weather-api",
+  "measures": [
+    {
+      "metric": "temp_high",
+      "definition": "Air temperature 2 m above the ground in the shade: the mean of each day's highest, by month."
+    },
+    {
+      "metric": "temp_low",
+      "definition": "Air temperature 2 m above the ground in the shade: the mean of each day's lowest, by month."
+    },
+    {
+      "metric": "feels_high",
+      "definition": "Apparent ('feels like') temperature, which adds the effect of humidity, wind and sun to the air temperature: the mean of each day's highest, by month."
+    },
+    {
+      "metric": "feels_low",
+      "definition": "Apparent ('feels like') temperature: the mean of each day's lowest, by month."
+    },
+    {
+      "metric": "temp_hourly",
+      "definition": "Air temperature at each hour of the local day, averaged over each month."
+    },
+    {
+      "metric": "cloud_cover",
+      "definition": "Share of the sky covered by cloud, averaged over every hour of each month."
+    },
+    {
+      "metric": "wet_days",
+      "definition": "Days a year with at least 1 mm of rain or snow."
+    },
+    {
+      "metric": "wet_days_monthly",
+      "definition": "Days with at least 1 mm of rain or snow, by month."
+    },
+    {
+      "metric": "temp_high_p10",
+      "definition": "Air temperature in the shade: the 10th percentile of daily highs, by month."
+    },
+    {
+      "metric": "temp_high_p90",
+      "definition": "Air temperature in the shade: the 90th percentile of daily highs, by month."
+    },
+    {
+      "metric": "temp_low_p10",
+      "definition": "Air temperature in the shade: the 10th percentile of daily lows, by month."
+    },
+    {
+      "metric": "temp_low_p90",
+      "definition": "Air temperature in the shade: the 90th percentile of daily lows, by month."
+    },
+    {
+      "metric": "temp_record_high",
+      "definition": "The highest hourly air temperature in each month over the five years."
+    },
+    {
+      "metric": "temp_record_low",
+      "definition": "The lowest hourly air temperature in each month over the five years."
+    },
+    {
+      "metric": "nice_bins_feels",
+      "definition": "Days with under 1 mm of rain and at most half the sky clouded from 8 am to 8 pm, by month and by the average feels-like temperature of those hours in whole degrees."
+    },
+    {
+      "metric": "nice_bins_air",
+      "definition": "The same dry, mostly clear days, by the average air temperature of those hours in whole degrees."
+    },
+    {
+      "metric": "beach_days",
+      "definition": "Days that are dry, at most 40% clouded and feel 24 to 32 °C on average from 8 am to 8 pm, by month."
+    },
+    {
+      "metric": "active_days",
+      "definition": "Days with two hours in a row between 6 am and 9 pm that are dry, under 30 km/h of wind and feel 5 to 22 °C, by month."
+    },
+    {
+      "metric": "muggy_days",
+      "definition": "Days whose average dew point is 18 °C or more, by month."
+    },
+    {
+      "metric": "grey_days",
+      "definition": "Days at least 80% clouded on average from 8 am to 8 pm, by month."
+    },
+    {
+      "metric": "hot_nights",
+      "definition": "Days whose lowest air temperature stays above 20 °C, by month."
+    },
+    {
+      "metric": "hot_days",
+      "definition": "Days whose feels-like temperature reaches 32 °C between 8 am and 8 pm, by month."
+    },
+    {
+      "metric": "snow_days",
+      "definition": "Days with at least 1 cm of fresh snow, by month."
+    },
+    {
+      "metric": "windy_days",
+      "definition": "Days whose wind at 10 m averages 30 km/h or more from 8 am to 8 pm, by month."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "last 5 full years"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://open-meteo.com/en/license",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Open-Meteo historical weather API (ERA5), 2021-2025",
+    "termsUrl": "https://open-meteo.com/en/license",
+    "termsRead": "2026-11-05",
+    "attribution": "Weather data by Open-Meteo.com (https://open-meteo.com/), CC BY 4.0",
+    "notices": [
+      "Contains modified Copernicus Climate Change Service information 2021-2025. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}&start_date={start}&end_date={end}&timezone=auto&hourly=temperature_2m,apparent_temperature,dew_point_2m,precipitation,snowfall,cloud_cover,wind_speed_10m",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/open-meteo.ts",
+    "rateLimit": "free tier: 10,000 calls a day, 5,000 an hour, 600 a minute, non-commercial use. Five years of hourly data for one place with up to 10 variables weighs about 130 calls (the fetcher asks for 7): about 40 places an hour and 75 a day from one address (27 Oct 2026: HTTP 429 after the 40th seed city, and again once the day's calls ran out)."
+  },
+  "linkOut": "https://open-meteo.com/en/docs/historical-weather-api#latitude={lat}&longitude={lon}",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "A global reanalysis at the city's coordinates, so every place gets the same method. Data CC BY 4.0; the free API is for non-commercial use."
+  },
+  "caveats": [
+    "A reanalysis grid cell (about 25 km) smooths coasts and hills; a hilltop or a bay can differ by a degree or two.",
+    "Not used for sunshine: on 27 Oct 2026 its sunshine_duration (2021-2025) read 32-92% above WMO 1991-2020 station normals at Heathrow, Dublin, Madrid and Berlin; periods differ, so this is a provisional exclusion, not a measured model bias.",
+    "The free API is for non-commercial use (open-meteo.com/en/terms); its servers log requested coordinates for 90 days.",
+    "Cloud cover, light rain and 10 m wind are where a reanalysis grid is weakest: the weather-day counts that rest on them (nice, beach, grey, windy) are best read as comparisons between cities, not as exact days."
+  ]
+}

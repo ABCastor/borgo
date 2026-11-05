@@ -1,0 +1,1194 @@
+{
+  "builtAt": "2026-11-05T15:34:08.779Z",
+  "parts": [
+    {
+      "id": "open",
+      "folder": "data/observations",
+      "file": "data/dataset.json",
+      "licence": {
+        "id": "CC-BY-4.0",
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "notice": "Borgo's compilation is licensed CC BY 4.0. Each figure keeps its source's own terms and attribution, listed in data/licences.json; reuse a figure under those terms."
+    },
+    {
+      "id": "odbl",
+      "folder": "data/observations-odbl",
+      "file": "data/dataset-odbl.json",
+      "licence": {
+        "id": "ODbL-1.0",
+        "name": "Open Database License 1.0",
+        "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+      },
+      "notice": "Figures derived from OpenStreetMap. © OpenStreetMap contributors. This database is made available under the Open Database License (ODbL 1.0): https://opendatacommons.org/licenses/odbl/1-0/. It is kept apart from Borgo's CC BY 4.0 data and any derived database must stay under the ODbL."
+    },
+    {
+      "id": "who",
+      "folder": "data/observations-who",
+      "file": "data/dataset-who.json",
+      "licence": {
+        "id": "WHO-data",
+        "name": "WHO terms and conditions for data compilations",
+        "url": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions"
+      },
+      "notice": "Values from the WHO Ambient Air Quality Database (Version 8.0), World Health Organization, 2026, as published, with each value's data provider named in its note. Used under WHO's terms for data compilations: for public health purposes, values unaltered, attribution to WHO and the providing countries. Not licensed CC BY. WHO does not endorse Borgo or the way it uses these data."
+    },
+    {
+      "id": "cmhc",
+      "folder": "data/observations-cmhc",
+      "file": "data/dataset-cmhc.json",
+      "licence": {
+        "id": "CMHC-data",
+        "name": "CMHC Licence Agreement for the Use of Data",
+        "url": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions"
+      },
+      "notice": "Source: Canada Mortgage and Housing Corporation (CMHC), Rental Market Survey, average rents (October), via Statistics Canada table 34-10-0133-01. This information is reproduced and distributed on an \"as is\" basis with the permission of CMHC. Not licensed CC BY: it is redistributed under CMHC's Licence Agreement for the Use of Data, and anyone receiving it agrees to be bound by those terms."
+    }
+  ],
+  "sources": [
+    {
+      "source": "abortion-law",
+      "name": "Abortion in law, from the statutes cited",
+      "publisher": "Borgo contributors",
+      "url": "https://github.com/ABCastor/borgo/blob/main/src/fetch/rights-law.ts",
+      "edition": "curated in src/fetch/rights-law.ts, checked 2026-11-05",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from the statutes cited in each figure's note",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 56,
+      "metrics": [
+        "abortion_law"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "acs",
+      "name": "American Community Survey 1-year estimates",
+      "publisher": "US Census Bureau",
+      "url": "https://www.census.gov/programs-surveys/acs/data/summary-file.html",
+      "edition": "ACS 1-year estimates, summary-file tables, latest year published",
+      "licenceId": "PD-USGov",
+      "licence": "Public domain (US government work)",
+      "licenceUrl": "https://www.usa.gov/government-copyright",
+      "termsUrl": "https://www.census.gov/about/policies/citation.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: U.S. Census Bureau, American Community Survey 1-year estimates",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 62,
+      "metrics": [
+        "active_commute_share",
+        "commute_minutes",
+        "degree_share",
+        "foreign_born_share",
+        "rent_1bed",
+        "rent_3bed",
+        "transit_commute_share"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ch-afmp",
+      "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
+      "publisher": "Swiss State Secretariat for Migration",
+      "url": "https://www.sem.admin.ch/sem/en/home/themen/fza_schweiz-eu-efta.html",
+      "edition": "Agreement on the Free Movement of Persons (EU-Switzerland), in force",
+      "licenceId": "law-summary",
+      "licence": "Borgo's own summary of the law cited (CC BY 4.0); the official text is cited, not copied",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.admin.ch/gov/en/start/terms-and-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of the EU-Swiss Agreement on the Free Movement of Persons (State Secretariat for Migration)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "residence rules (Swiss-EU free movement)"
+      ]
+    },
+    {
+      "source": "cldr",
+      "name": "CLDR territory information",
+      "publisher": "Unicode Consortium",
+      "url": "https://cldr.unicode.org/",
+      "edition": "CLDR 49 supplementalData territoryInfo",
+      "licenceId": "Unicode-3.0",
+      "licence": "Unicode License v3",
+      "licenceUrl": "https://www.unicode.org/license.txt",
+      "termsUrl": "https://www.unicode.org/license.txt",
+      "termsRead": "2026-11-05",
+      "attribution": "Unicode CLDR territory information. Copyright © 1991-2026 Unicode, Inc. Used under the Unicode License v3 (https://www.unicode.org/license.txt)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 112,
+      "metrics": [
+        "english_official",
+        "english_share"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "cmhc-rms",
+      "name": "CMHC Rental Market Survey: average rents (Statistics Canada table 34-10-0133-01)",
+      "publisher": "Canada Mortgage and Housing Corporation, republished by Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301",
+      "edition": "Rental Market Survey, October 2025, via Statistics Canada table 34-10-0133-01 (release of 2025-12-17)",
+      "licenceId": "CMHC-data",
+      "licence": "CMHC Licence Agreement for the Use of Data",
+      "licenceUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+      "termsUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Canada Mortgage and Housing Corporation (CMHC), Rental Market Survey, average rents, October 2025, via Statistics Canada table 34-10-0133-01. This information is reproduced and distributed on an \"as is\" basis with the permission of CMHC.",
+      "notices": [
+        "Redistributed under CMHC's Licence Agreement for the Use of Data: anyone receiving these figures agrees to be bound by its terms. Not covered by Borgo's CC BY 4.0 licence."
+      ],
+      "part": "cmhc",
+      "file": "data/dataset-cmhc.json",
+      "observations": 6,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "couples-law",
+      "name": "Same-sex couples in law, from the statutes cited",
+      "publisher": "Borgo contributors",
+      "url": "https://github.com/ABCastor/borgo/blob/main/src/fetch/rights-law.ts",
+      "edition": "curated in src/fetch/rights-law.ts, checked 2026-11-05",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from the statutes cited in each figure's note",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 56,
+      "metrics": [
+        "same_sex_couples"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "cso-rtb",
+      "name": "RTB Average Monthly Rent Report (RIA02)",
+      "publisher": "Central Statistics Office Ireland, Residential Tenancies Board",
+      "url": "https://data.cso.ie/table/RIA02",
+      "edition": "CSO table RIA02 (RTB Average Monthly Rent Report), latest year",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report",
+      "termsRead": "2026-11-05",
+      "attribution": "Central Statistics Office and Residential Tenancies Board, RIA02 RTB Average Monthly Rent Report, CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 4,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "cta",
+      "name": "Common Travel Area guidance",
+      "publisher": "UK Government",
+      "url": "https://www.gov.uk/government/publications/common-travel-area-guidance",
+      "edition": "Common Travel Area guidance (UK Government), 2019 Memorandum of Understanding",
+      "licenceId": "law-summary",
+      "licence": "Borgo's own summary of the law cited (CC BY 4.0); the official text is cited, not copied",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.gov.uk/help/terms-conditions",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of the Common Travel Area guidance; contains public sector information licensed under the Open Government Licence v3.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "residence rules (Common Travel Area)"
+      ]
+    },
+    {
+      "source": "ecb-fx",
+      "name": "Euro foreign exchange reference rates",
+      "publisher": "European Central Bank",
+      "url": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+      "edition": "euro foreign exchange reference rates of the date in data/fx.json",
+      "licenceId": "ECB-reuse",
+      "licence": "ECB copyright terms: free use, cited, unaltered",
+      "licenceUrl": "https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html",
+      "termsUrl": "https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: European Central Bank, euro foreign exchange reference rates",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "exchange rates"
+      ]
+    },
+    {
+      "source": "eu-free-movement",
+      "name": "Directive 2004/38/EC and the EEA Agreement",
+      "publisher": "European Union",
+      "url": "https://eur-lex.europa.eu/eli/dir/2004/38/oj",
+      "edition": "Directive 2004/38/EC and the EEA Agreement, in force",
+      "licenceId": "law-summary",
+      "licence": "Borgo's own summary of the law cited (CC BY 4.0); the official text is cited, not copied",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of Directive 2004/38/EC (© European Union, EUR-Lex)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "residence rules (EU and EEA free movement)"
+      ]
+    },
+    {
+      "source": "eurostat-regions",
+      "name": "Population by educational attainment and NUTS 2 region (edat_lfse_04)",
+      "publisher": "Eurostat (EU Labour Force Survey)",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_04/default/table",
+      "edition": "edat_lfse_04, ISCED 5-8, ages 25-64, latest year (2025 for most regions)",
+      "licenceId": "EU-reuse",
+      "licence": "European Commission reuse policy (Decision 2011/833/EU): reuse with the source acknowledged and changes stated",
+      "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Eurostat, EU Labour Force Survey (edat_lfse_04, © European Union). Borgo keeps each region's latest value",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 37,
+      "metrics": [
+        "degree_share"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "eurostat-urban",
+      "name": "Urban Audit: cities and greater cities",
+      "publisher": "Eurostat",
+      "url": "https://ec.europa.eu/eurostat/web/cities/database",
+      "edition": "Urban Audit tables urb_c*, each city's latest value 2011-2025",
+      "licenceId": "EU-reuse",
+      "licence": "European Commission reuse policy (Decision 2011/833/EU): reuse with the source acknowledged and changes stated",
+      "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Eurostat, Urban Audit (© European Union). Borgo keeps each city's latest value and converts units where its note says so",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 230,
+      "metrics": [
+        "active_commute_share",
+        "commute_minutes",
+        "degree_share",
+        "foreign_born_share",
+        "green_share",
+        "public_pools",
+        "road_deaths",
+        "transit_commute_share",
+        "transit_pass"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "foundersrc",
+      "name": "Founders Running Club communities",
+      "publisher": "Founders Running Club",
+      "url": "https://foundersrc.com/communities",
+      "edition": "public communities list, read 2026-10-27",
+      "licenceId": "facts-no-licence",
+      "licence": "No licence from the publisher: only facts of presence are stored",
+      "licenceUrl": "https://foundersrc.com/communities",
+      "termsUrl": "https://foundersrc.com/communities",
+      "termsRead": "2026-11-05",
+      "attribution": "Founders Running Club communities list (facts of presence and links only)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 57,
+      "metrics": [
+        "founders_running_club"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "fr-carte-loyers",
+      "name": "Carte des loyers: asking-rent indicators by commune (2025)",
+      "publisher": "Ministère de la Transition écologique (DHUP), with ANIL",
+      "url": "https://www.data.gouv.fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025",
+      "edition": "carte des loyers 2025 (files of 2025-12-11), apartments of 1-2 rooms and of 3+ rooms",
+      "licenceId": "Etalab-2.0",
+      "licence": "Licence Ouverte / Open Licence 2.0 (Etalab)",
+      "licenceUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+      "termsUrl": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+      "termsRead": "2026-11-05",
+      "attribution": "Ministère de la Transition écologique, carte des loyers 2025 (data.gouv.fr, update of 2025-12-11), Licence Ouverte 2.0. Borgo weights arrondissements by adverts and multiplies the rate per m² by a fixed flat size",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 4,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "geonames",
+      "name": "GeoNames gazetteer",
+      "publisher": "GeoNames",
+      "url": "https://www.geonames.org/",
+      "edition": "GeoNames records via Open-Meteo's geocoder and the GeoNames dump, read 2026-10-27",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.geonames.org/export/",
+      "termsRead": "2026-11-05",
+      "attribution": "Places, coordinates, populations and time zones from GeoNames (geonames.org), CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "cities and countries (names, coordinates, population, time zones, currencies)"
+      ]
+    },
+    {
+      "source": "ghsl-ucdb",
+      "name": "GHS Urban Centre Database 2025 (R2024A), general characteristics",
+      "publisher": "European Commission, Joint Research Centre (GHSL)",
+      "url": "https://human-settlement.emergency.copernicus.eu/ghs_ucdb_2024.php",
+      "edition": "GHS-UCDB R2024A V1.2, general characteristics theme (2026-05-19)",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_GLOBE_R2024A/V1-1/copyright.txt",
+      "termsRead": "2026-11-05",
+      "attribution": "GHS-UCDB R2024A, European Commission, Joint Research Centre, CC BY 4.0, doi:10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd; Borgo derives the distance from the centre to the urban centre's edge",
+      "notices": [
+        "Shores and lakes from Natural Earth (public domain) decide which directions lead on to land."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 56,
+      "metrics": [
+        "city_edge_km"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "github",
+      "name": "GitHub user search",
+      "publisher": "GitHub",
+      "url": "https://docs.github.com/en/rest/search/search#search-users",
+      "edition": "GitHub REST API, search users (total_count only), read 2026-11-05",
+      "licenceId": "counts-no-licence",
+      "licence": "No data licence from the publisher: only total counts are stored, no record about anyone, as its terms allow public, non-personal information in openly published research",
+      "licenceUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions",
+      "termsUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions",
+      "termsRead": "2026-11-05",
+      "attribution": "Counts of GitHub profiles by stated location, from GitHub's public user search (counts only, no profile data)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 56,
+      "metrics": [
+        "github_developers"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "labour-law",
+      "name": "Paid holiday by law, from the labour codes cited",
+      "publisher": "Borgo contributors",
+      "url": "https://github.com/ABCastor/borgo/blob/main/src/fetch/family.ts",
+      "edition": "curated in src/fetch/family.ts, 2026 rules",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from the labour codes cited in each figure's note",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 57,
+      "metrics": [
+        "annual_leave"
+      ],
+      "retrieved": [
+        "2026-11-04",
+        "2026-11-04"
+      ],
+      "provides": []
+    },
+    {
+      "source": "meteostat",
+      "name": "Meteostat climate normals",
+      "publisher": "Meteostat and its data providers (national weather services)",
+      "url": "https://dev.meteostat.net/",
+      "edition": "Meteostat bulk climate normals (bulk.meteostat.net/v2/normals), read 2026-10-27",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://dev.meteostat.net/license",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Meteostat (meteostat.net) and its data providers (dev.meteostat.net/providers), CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 42,
+      "metrics": [
+        "sunshine_hours",
+        "sunshine_monthly"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "mlab",
+      "name": "M-Lab NDT statistics (daily city aggregates)",
+      "publisher": "Measurement Lab",
+      "url": "https://www.measurementlab.net/data/",
+      "edition": "M-Lab NDT daily city aggregates, 2023",
+      "licenceId": "CC0-1.0",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "termsUrl": "https://www.measurementlab.net/data/",
+      "termsRead": "2026-11-05",
+      "attribution": "The M-Lab NDT Data Set, 2023-01-01–2023-12-31. https://measurementlab.net/tests/ndt",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 56,
+      "metrics": [
+        "download_mbps"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "nager-date",
+      "name": "Nager.Date public holidays",
+      "publisher": "Nager.Date (open-source project)",
+      "url": "https://date.nager.at/",
+      "edition": "Nager.Date API v3, 2026 holidays",
+      "licenceId": "MIT",
+      "licence": "MIT License",
+      "licenceUrl": "https://opensource.org/license/mit",
+      "termsUrl": "https://github.com/nager/Nager.Date",
+      "termsRead": "2026-11-05",
+      "attribution": "Public holidays from Nager.Date (date.nager.at), MIT License, Copyright (c) Nager",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 56,
+      "metrics": [
+        "public_holidays"
+      ],
+      "retrieved": [
+        "2026-11-04",
+        "2026-11-04"
+      ],
+      "provides": []
+    },
+    {
+      "source": "nasa-power",
+      "name": "NASA POWER climatology",
+      "publisher": "NASA Langley Research Center, Prediction Of Worldwide Energy Resources (POWER) project, from NASA GMAO's MERRA-2 reanalysis",
+      "url": "https://power.larc.nasa.gov/",
+      "edition": "POWER climatology API v2, MERRA-2 2001-2025",
+      "licenceId": "CC0-1.0",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "termsUrl": "https://power.larc.nasa.gov/docs/referencing/",
+      "termsRead": "2026-11-05",
+      "attribution": "The data was obtained from National Aeronautics and Space Administration (NASA) Langley Research Center's Prediction Of Worldwide Energy Resources (POWER) project funded through the NASA Earth Science Division (POWER climatology API v2, read on the date in data/map/world.json)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "the world map (public/data/map.json)"
+      ]
+    },
+    {
+      "source": "natural-earth",
+      "name": "Natural Earth (coastline, land, countries and populated places)",
+      "publisher": "Natural Earth",
+      "url": "https://www.naturalearthdata.com/",
+      "edition": "Natural Earth 5.1 (1:50m admin-0, 1:10m populated places, coastline, land)",
+      "licenceId": "PD",
+      "licence": "Public domain (dedicated by the publisher)",
+      "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "termsUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "termsRead": "2026-11-05",
+      "attribution": "Made with Natural Earth (public domain)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 57,
+      "metrics": [
+        "sea_km"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": [
+        "the world map (public/data/map.json)"
+      ]
+    },
+    {
+      "source": "oecd-childcare",
+      "name": "OECD Tax-Benefit Models: net childcare costs",
+      "publisher": "OECD",
+      "url": "https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+      "edition": "OECD Tax-Benefit Models, net childcare costs (DSD_TAXBEN_NCC), 2025",
+      "licenceId": "OECD-data",
+      "licence": "OECD terms for data: any use, with the OECD citation passed on",
+      "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "OECD (2026), Net childcare costs, OECD Tax-Benefit Models, https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+      "notices": [
+        "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 330,
+      "metrics": [
+        "childcare_fees_1",
+        "childcare_fees_2",
+        "childcare_net_couple_1",
+        "childcare_net_couple_2",
+        "childcare_net_single_1",
+        "childcare_net_single_2"
+      ],
+      "retrieved": [
+        "2026-11-04",
+        "2026-11-04"
+      ],
+      "provides": []
+    },
+    {
+      "source": "oecd-family-db",
+      "name": "OECD Family Database: parental leave systems (PF2.1)",
+      "publisher": "OECD",
+      "url": "https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+      "edition": "OECD Family Database PF2.1, updated May 2026 (policies in April 2025)",
+      "licenceId": "OECD-data",
+      "licence": "OECD terms for data: any use, with the OECD citation passed on",
+      "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "OECD (2026), OECD Family Database, PF2.1 Parental leave systems, https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+      "notices": [
+        "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 110,
+      "metrics": [
+        "leave_fathers",
+        "leave_mothers"
+      ],
+      "retrieved": [
+        "2026-11-04",
+        "2026-11-04"
+      ],
+      "provides": []
+    },
+    {
+      "source": "oecd-wellbeing",
+      "name": "OECD Well-being Database (How's Life?)",
+      "publisher": "OECD",
+      "url": "https://www.oecd.org/en/data/datasets/well-being-database.html",
+      "edition": "OECD Well-being Database, DSD_HSL@DF_HSL_CWB 1.1",
+      "licenceId": "OECD-data",
+      "licence": "OECD terms for data: any use, with the OECD citation passed on",
+      "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "OECD (2026), OECD Well-being Database (How's Life?), https://www.oecd.org/en/data/datasets/well-being-database.html",
+      "notices": [
+        "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 46,
+      "metrics": [
+        "life_evaluation"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ons-pipr",
+      "name": "Price Index of Private Rents",
+      "publisher": "Office for National Statistics",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
+      "edition": "ONS Price Index of Private Rents, monthly price statistics, latest month",
+      "licenceId": "OGL-UK-3.0",
+      "licence": "Open Government Licence v3.0",
+      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "termsUrl": "https://www.ons.gov.uk/methodology/geography/licences",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Office for National Statistics, Price Index of Private Rents. Contains public sector information licensed under the Open Government Licence v3.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 8,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "open-meteo-era5",
+      "name": "Historical weather (ERA5 reanalysis)",
+      "publisher": "Open-Meteo, Copernicus Climate Change Service (ECMWF)",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "edition": "Open-Meteo historical weather API (ERA5), 2021-2025",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://open-meteo.com/en/license",
+      "termsRead": "2026-11-05",
+      "attribution": "Weather data by Open-Meteo.com (https://open-meteo.com/), CC BY 4.0",
+      "notices": [
+        "Contains modified Copernicus Climate Change Service information 2021-2025. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 1368,
+      "metrics": [
+        "active_days",
+        "beach_days",
+        "cloud_cover",
+        "feels_high",
+        "feels_low",
+        "grey_days",
+        "hot_days",
+        "hot_nights",
+        "muggy_days",
+        "nice_bins_air",
+        "nice_bins_feels",
+        "snow_days",
+        "temp_high",
+        "temp_high_p10",
+        "temp_high_p90",
+        "temp_hourly",
+        "temp_low",
+        "temp_low_p10",
+        "temp_low_p90",
+        "temp_record_high",
+        "temp_record_low",
+        "wet_days",
+        "wet_days_monthly",
+        "windy_days"
+      ],
+      "retrieved": [
+        "2026-10-28",
+        "2026-10-28"
+      ],
+      "provides": []
+    },
+    {
+      "source": "openalex",
+      "name": "OpenAlex institutions",
+      "publisher": "OurResearch",
+      "url": "https://openalex.org/",
+      "edition": "OpenAlex institutions API, 2025 works",
+      "licenceId": "CC0-1.0",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "termsUrl": "https://help.openalex.org/hc/en-us/articles/24397762024087-Pricing",
+      "termsRead": "2026-11-05",
+      "attribution": "OpenAlex (openalex.org), CC0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 114,
+      "metrics": [
+        "builder_density",
+        "research_output"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "osm",
+      "name": "OpenStreetMap via the Overpass API",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/copyright",
+      "edition": "OpenStreetMap via the Overpass API, read 2026-10-27",
+      "licenceId": "ODbL-1.0",
+      "licence": "Open Database License 1.0",
+      "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "termsUrl": "https://www.openstreetmap.org/copyright",
+      "termsRead": "2026-11-05",
+      "attribution": "© OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+      "notices": [],
+      "part": "odbl",
+      "file": "data/dataset-odbl.json",
+      "observations": 399,
+      "metrics": [
+        "climbing_gyms",
+        "coworking",
+        "cycle_paths_km",
+        "green_space_10km",
+        "hackerspaces",
+        "rail_stations",
+        "swimming_pools"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "osm-walk-cycle",
+      "name": "OpenStreetMap via the Overpass API: walking and cycling",
+      "publisher": "OpenStreetMap contributors",
+      "url": "https://www.openstreetmap.org/copyright",
+      "edition": "OpenStreetMap via the Overpass API, read 2026-11-05",
+      "licenceId": "ODbL-1.0",
+      "licence": "Open Database License 1.0",
+      "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "termsUrl": "https://www.openstreetmap.org/copyright",
+      "termsRead": "2026-11-05",
+      "attribution": "© OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)",
+      "notices": [],
+      "part": "odbl",
+      "file": "data/dataset-odbl.json",
+      "observations": 113,
+      "metrics": [
+        "bike_network",
+        "walkable_share"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ourairports",
+      "name": "OurAirports airports",
+      "publisher": "OurAirports",
+      "url": "https://ourairports.com/data/",
+      "edition": "OurAirports airports.csv, read 2026-10-27",
+      "licenceId": "PD",
+      "licence": "Public domain (dedicated by the publisher)",
+      "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "termsUrl": "https://ourairports.com/data/",
+      "termsRead": "2026-11-05",
+      "attribution": "Airports from OurAirports (ourairports.com), public domain",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 114,
+      "metrics": [
+        "airport_km",
+        "airports_100km"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "politics",
+      "name": "Political position from election results",
+      "publisher": "Borgo contributors",
+      "url": "https://github.com/ABCastor/borgo/blob/main/pipeline/inputs/politics.json",
+      "edition": "pipeline/inputs/politics.json; ParlGov 2024 release (doi:10.7910/DVN/2VZ5ZC, CC0 1.0)",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from official election results and ParlGov party positions (Döring, Huber and Manow, ParlGov 2024 release, CC0)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 33,
+      "metrics": [
+        "politics_lr"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ror",
+      "name": "Research Organization Registry",
+      "publisher": "ROR",
+      "url": "https://ror.org/",
+      "edition": "ROR data dump, read 2026-10-27",
+      "licenceId": "CC0-1.0",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "termsUrl": "https://ror.org/registry/",
+      "termsRead": "2026-11-05",
+      "attribution": "Research Organization Registry (ror.org), CC0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 114,
+      "metrics": [
+        "research_institutes",
+        "universities"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "scb-rent",
+      "name": "Rents for dwellings (Statistics Sweden BO0406)",
+      "publisher": "Statistics Sweden (SCB)",
+      "url": "https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0406__BO0406E/BO0406Tab03/",
+      "edition": "BO0406Tab03, 2026 (updated 2026-10-02)",
+      "licenceId": "CC0-1.0",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "termsUrl": "https://www.scb.se/en/services/open-data-api/",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Statistics Sweden, rents for dwellings (BO0406)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ssb-rent",
+      "name": "Rental market survey (Statistics Norway table 09895)",
+      "publisher": "Statistics Norway (SSB)",
+      "url": "https://www.ssb.no/en/statbank/table/09895",
+      "edition": "table 09895, 2025 (updated 2025-12-22)",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.ssb.no/en/diverse/lisens",
+      "termsRead": "2026-11-05",
+      "attribution": "Statistics Norway (SSB), table 09895: Rental market survey, average monthly rents, CC BY 4.0 (www.ssb.no)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "statfin-rent",
+      "name": "Rents of dwellings (Statistics Finland table 15fc)",
+      "publisher": "Statistics Finland",
+      "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__asvu/statfin_asvu_pxt_15fc.px/",
+      "edition": "table 15fc, 2026Q3 (updated 2026-10-15)",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Statistics Finland, rents of dwellings (table 15fc), CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 1,
+      "metrics": [
+        "rent_1bed"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "terrain-tiles",
+      "name": "Terrain Tiles (Terrarium) on AWS Open Data",
+      "publisher": "Mapzen / AWS Open Data",
+      "url": "https://registry.opendata.aws/terrain-tiles/",
+      "edition": "Terrain Tiles (Terrarium) on AWS Open Data, zoom 8: SRTM, GMTED2010 above 60° N, ETOPO1, NRCAN in Canada",
+      "licenceId": "terrain-tiles",
+      "licence": "Terrain Tiles source terms: public domain (USGS, NOAA) and Open Government Licence – Canada, with attribution",
+      "licenceUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+      "termsUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+      "termsRead": "2026-11-05",
+      "attribution": "Terrain Tiles on AWS Open Data (Mapzen, a Linux Foundation project): SRTM and GMTED2010 terrain data courtesy of the U.S. Geological Survey; ETOPO1, U.S. National Oceanic and Atmospheric Administration; Canada terrain data contains information licensed under the Open Government Licence – Canada",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 57,
+      "metrics": [
+        "mountain_km"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ttta",
+      "name": "Trans-Tasman Travel Arrangement",
+      "publisher": "Australian Department of Home Affairs",
+      "url": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-444",
+      "edition": "Trans-Tasman Travel Arrangement (Special Category visa, subclass 444)",
+      "licenceId": "law-summary",
+      "licence": "Borgo's own summary of the law cited (CC BY 4.0); the official text is cited, not copied",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-444",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of the Trans-Tasman Travel Arrangement (Australian Department of Home Affairs)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 0,
+      "metrics": [],
+      "retrieved": null,
+      "provides": [
+        "residence rules (Trans-Tasman Travel Arrangement)"
+      ]
+    },
+    {
+      "source": "who-aqdb",
+      "name": "WHO Ambient Air Quality Database v8.0 (2026)",
+      "publisher": "World Health Organization",
+      "url": "https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database",
+      "edition": "WHO Ambient Air Quality Database, Version 8.0, released 30 June 2026 (sheet GlobalCity_Db_V8.0_2026-06-28)",
+      "licenceId": "WHO-data",
+      "licence": "WHO terms and conditions for data compilations",
+      "licenceUrl": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions",
+      "termsUrl": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions",
+      "termsRead": "2026-11-05",
+      "attribution": "World Health Organization, WHO Ambient Air Quality Database (Version 8.0), 2026, accessed 2026-10-27; data provided by the national and regional agencies named in each value's note",
+      "notices": [
+        "WHO does not endorse Borgo, its use of these data, or any city ranking built from them.",
+        "Values are as published by WHO; WHO advises against using the database to rank cities or compare countries directly, because monitoring differs between places."
+      ],
+      "part": "who",
+      "file": "data/dataset-who.json",
+      "observations": 54,
+      "metrics": [
+        "pm25"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "wmo-normals",
+      "name": "WMO Climatological Standard Normals 1991-2020",
+      "publisher": "World Meteorological Organization, archived by NOAA NCEI",
+      "url": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+      "edition": "NCEI accession 0253808, version 6.6 (composite primary parameters, TSUN)",
+      "licenceId": "NCEI-WMO",
+      "licence": "No licence attached: NCEI public access with a requested citation, under the WMO Unified Data Policy",
+      "licenceUrl": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0253808",
+      "termsUrl": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0253808",
+      "termsRead": "2026-11-05",
+      "attribution": "WMO Member Nations (2023). WMO Climatological Standard Normals for 1991-2020 (NCEI Accession 0253808), sunshine duration. NOAA National Centers for Environmental Information. https://doi.org/10.25921/800j-vn07",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 62,
+      "metrics": [
+        "sunshine_hours",
+        "sunshine_monthly"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "worldbank-wdi",
+      "name": "World Development Indicators",
+      "publisher": "World Bank",
+      "url": "https://databank.worldbank.org/source/world-development-indicators",
+      "edition": "WDI via API v2; indicators PA.NUS.PRVT.PP, PA.NUS.FCRF, VC.IHR.PSRC.P5, SP.DYN.LE00.IN, SH.XPD.OOPC.PC.CD, SH.MED.PHYS.ZS, SL.UEM.TOTL.ZS, SE.TER.CUAT.ST.ZS, each License_Type CC BY-4.0 in its metadata",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+      "termsRead": "2026-11-05",
+      "attribution": "World Bank, World Development Indicators, CC BY 4.0 (underlying sources named in each figure's note: ICP, IMF, UNODC, UN Population Division, WHO, ILO, UNESCO Institute for Statistics)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 398,
+      "metrics": [
+        "degree_share",
+        "doctors",
+        "health_oop",
+        "homicide_rate",
+        "life_expectancy",
+        "price_level",
+        "unemployment"
+      ],
+      "retrieved": [
+        "2026-10-27",
+        "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "worldbank-wgi",
+      "name": "Worldwide Governance Indicators",
+      "publisher": "World Bank",
+      "url": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+      "edition": "Worldwide Governance Indicators, GOV_WGI_CC.EST (License_Type CC BY-4.0 in its metadata)",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+      "termsRead": "2026-11-05",
+      "attribution": "World Bank, Worldwide Governance Indicators, Control of Corruption estimate, CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 57,
+      "metrics": [
+        "clean_government"
+      ],
+      "retrieved": [
+        "2026-11-05",
+        "2026-11-05"
+      ],
+      "provides": []
+    }
+  ]
+}

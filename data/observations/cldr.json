@@ -1,0 +1,1128 @@
+{
+  "source": "cldr",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 34,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 34,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 34,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 34,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 34,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 34,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 98,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 39,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 39,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 64,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 64,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 64,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 90,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 90,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 59,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 86,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 86,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 70,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 45,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 45,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 73,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 27,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 33,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 33,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 20,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 27,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 27,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 24,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 24,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 24,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 24,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 51,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 50,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 87,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 87,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 87,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is official"
+      },
+      {
+        "metric": "english_share",
+        "value": 80,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "english_official",
+        "value": 1,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is de facto official"
+      },
+      {
+        "metric": "english_share",
+        "value": 96,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "english_official",
+        "value": 0,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "English is not an official language"
+      },
+      {
+        "metric": "english_share",
+        "value": 50,
+        "period": "CLDR 49",
+        "level": "country",
+        "source": "cldr",
+        "retrieved": "2026-10-27",
+        "note": "share of the population that speaks English, any level"
+      }
+    ]
+  }
+}

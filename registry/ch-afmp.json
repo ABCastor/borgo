@@ -1,0 +1,38 @@
+{
+  "id": "ch-afmp",
+  "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
+  "publisher": "Swiss State Secretariat for Migration",
+  "homepage": "https://www.sem.admin.ch/sem/en/home/themen/fza_schweiz-eu-efta.html",
+  "measures": [
+    {
+      "metric": "right_to_live",
+      "definition": "Free movement between Switzerland and the EU/EEA."
+    }
+  ],
+  "coverage": {
+    "geography": "the treaty area",
+    "level": "country",
+    "period": "in force"
+  },
+  "licence": "Borgo's summary of the official text (CC BY 4.0)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "law-summary",
+    "edition": "Agreement on the Free Movement of Persons (EU-Switzerland), in force",
+    "termsUrl": "https://www.admin.ch/gov/en/start/terms-and-conditions.html",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo's summary of the EU-Swiss Agreement on the Free Movement of Persons (State Secretariat for Migration)"
+  },
+  "access": "curated",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "A legal text, encoded by hand in data/rights.json."
+  },
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+}

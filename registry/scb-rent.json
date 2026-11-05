@@ -1,0 +1,57 @@
+{
+  "id": "scb-rent",
+  "name": "Rents for dwellings (Statistics Sweden BO0406)",
+  "publisher": "Statistics Sweden (SCB)",
+  "homepage": "https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0406__BO0406E/BO0406Tab03/",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Sitting rent: the median annual rent of every rented 2-room dwelling (one bedroom; Swedish rooms leave out the kitchen) in Stockholm municipality, divided by 12. Mostly rents set by negotiation, not what a newcomer pays on the second-hand market."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Sitting rent: the median annual rent of every rented dwelling of 4 rooms or more (three bedrooms or more) in Stockholm municipality, divided by 12."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "SE"
+    ],
+    "level": "city",
+    "period": "yearly"
+  },
+  "licence": "CC0-1.0",
+  "licenceUrl": "https://www.scb.se/en/services/open-data-api/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC0-1.0",
+    "edition": "BO0406Tab03, 2026 (updated 2026-10-02)",
+    "termsUrl": "https://www.scb.se/en/services/open-data-api/",
+    "attribution": "Source: Statistics Sweden, rents for dwellings (BO0406)",
+    "termsRead": "2026-11-05"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://api.scb.se/OV0104/v1/doris/en/ssd/BO/BO0406/BO0406E/BO0406Tab03",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/scb-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent)",
+    "on": "2026-11-05",
+    "notes": "Official, every rented dwelling; CC0."
+  },
+  "caveats": [
+    "Swedish first-hand rents are negotiated and allocated by queue; a newcomer often rents second hand at a higher price, which this figure does not show."
+  ]
+}

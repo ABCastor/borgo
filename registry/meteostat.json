@@ -1,0 +1,56 @@
+{
+  "id": "meteostat",
+  "name": "Meteostat climate normals",
+  "publisher": "Meteostat and its data providers (national weather services)",
+  "homepage": "https://dev.meteostat.net/",
+  "measures": [
+    {
+      "metric": "sunshine_hours",
+      "definition": "Sunshine duration measured at the nearest station, summed over the year, from the latest 30-year normal Meteostat holds."
+    },
+    {
+      "metric": "sunshine_monthly",
+      "definition": "Sunshine duration measured at the nearest station, by month."
+    }
+  ],
+  "coverage": {
+    "geography": "patchy: stations whose normals include sunshine",
+    "level": "city",
+    "period": "latest 30-year normal (1991-2020 where available)"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://dev.meteostat.net/license",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Meteostat bulk climate normals (bulk.meteostat.net/v2/normals), read 2026-10-27",
+    "termsUrl": "https://dev.meteostat.net/license",
+    "termsRead": "2026-11-05",
+    "attribution": "Source: Meteostat (meteostat.net) and its data providers (dev.meteostat.net/providers), CC BY 4.0"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://bulk.meteostat.net/v2/normals/{station}.csv.gz",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/node/meteostat.ts"
+  },
+  "refresh": {
+    "cadence": "static",
+    "maxAgeDays": 3650
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Fills sunshine where the WMO set has no station (Lisbon, Turin). No CORS, so CLI and MCP only."
+  },
+  "caveats": [
+    "Credit Meteostat and the original weather service.",
+    "Product: the bulk normals files (bulk.meteostat.net/v2/normals/<station>.csv.gz), sunshine in minutes. Whether Meteostat fills gaps in normals with model data is not documented for this product; unverified."
+  ]
+}

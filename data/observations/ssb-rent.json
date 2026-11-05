@@ -1,0 +1,26 @@
+{
+  "source": "ssb-rent",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "oslo-no": [
+      {
+        "metric": "rent_1bed",
+        "value": 15260,
+        "period": "2025",
+        "level": "metro",
+        "source": "ssb-rent",
+        "retrieved": "2026-11-05",
+        "note": "Oslo and Bærum, 2-room homes (one bedroom), average monthly rent of every tenancy surveyed (SSB table 09895)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 23200,
+        "period": "2025",
+        "level": "metro",
+        "source": "ssb-rent",
+        "retrieved": "2026-11-05",
+        "note": "Oslo and Bærum, 4-room homes (three bedrooms), average monthly rent of every tenancy surveyed (SSB table 09895)"
+      }
+    ]
+  }
+}

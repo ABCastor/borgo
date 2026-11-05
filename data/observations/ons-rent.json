@@ -1,0 +1,86 @@
+{
+  "source": "ons-pipr",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "london-gb": [
+      {
+        "metric": "rent_1bed",
+        "value": 1764,
+        "period": "2026-09",
+        "level": "region",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "London, average of new and existing private tenancies"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2651,
+        "period": "2026-09",
+        "level": "region",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "London, average of new and existing private tenancies"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "rent_1bed",
+        "value": 1255,
+        "period": "2026-09",
+        "level": "city",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "Cambridge, average of new and existing private tenancies"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1908,
+        "period": "2026-09",
+        "level": "city",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "Cambridge, average of new and existing private tenancies"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "rent_1bed",
+        "value": 1007,
+        "period": "2026-09",
+        "level": "city",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "Manchester, average of new and existing private tenancies"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1441,
+        "period": "2026-09",
+        "level": "city",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "Manchester, average of new and existing private tenancies"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "rent_1bed",
+        "value": 1230,
+        "period": "2026-09",
+        "level": "city",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "Bristol, City of, average of new and existing private tenancies"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1769,
+        "period": "2026-09",
+        "level": "city",
+        "source": "ons-pipr",
+        "retrieved": "2026-10-27",
+        "note": "Bristol, City of, average of new and existing private tenancies"
+      }
+    ]
+  }
+}

@@ -1,0 +1,413 @@
+{
+  "source": "eurostat-regions",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "degree_share",
+        "value": 21.2,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Piemonte (ITC1), aged 25 to 64"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "degree_share",
+        "value": 23.6,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Lombardia (ITC4), aged 25 to 64"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "degree_share",
+        "value": 28.5,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Lazio (ITI4), aged 25 to 64"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "degree_share",
+        "value": 18.7,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Campania (ITF3), aged 25 to 64"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "degree_share",
+        "value": 25.3,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Emilia-Romagna (ITH5), aged 25 to 64"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "degree_share",
+        "value": 23.8,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Toscana (ITI1), aged 25 to 64"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "degree_share",
+        "value": 59.6,
+        "period": "2019",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "London (UKI), aged 25 to 64"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "degree_share",
+        "value": 41.2,
+        "period": "2019",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Greater Manchester (UKD3), aged 25 to 64"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "degree_share",
+        "value": 63,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Eastern and Midland (IE06), aged 25 to 64"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "degree_share",
+        "value": 54.8,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Southern (IE05), aged 25 to 64"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "degree_share",
+        "value": 58.6,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Ile de France (FR10), aged 25 to 64"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "degree_share",
+        "value": 49.4,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Rhône-Alpes (FRK2), aged 25 to 64"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "degree_share",
+        "value": 48.1,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Berlin (DE30), aged 25 to 64"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "degree_share",
+        "value": 47.4,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Oberbayern (DE21), aged 25 to 64"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "degree_share",
+        "value": 43,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Hamburg (DE60), aged 25 to 64"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "degree_share",
+        "value": 52.2,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Noord-Holland (NL32), aged 25 to 64"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "degree_share",
+        "value": 47.3,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Zuid-Holland (NL36), aged 25 to 64"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "degree_share",
+        "value": 56.9,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), aged 25 to 64"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "degree_share",
+        "value": 58.2,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Hovedstaden (DK01), aged 25 to 64"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "degree_share",
+        "value": 60,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Stockholm (SE11), aged 25 to 64"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "degree_share",
+        "value": 56.5,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Oslo og Viken (NO08), aged 25 to 64"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "degree_share",
+        "value": 48.1,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Helsinki-Uusimaa (FI1B), aged 25 to 64"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "degree_share",
+        "value": 56.6,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Zürich (CH04), aged 25 to 64"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "degree_share",
+        "value": 46.4,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Région lémanique (CH01), aged 25 to 64"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "degree_share",
+        "value": 46.3,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Wien (AT13), aged 25 to 64"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "degree_share",
+        "value": 54.8,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Praha (CZ01), aged 25 to 64"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "degree_share",
+        "value": 65.3,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Warszawski stołeczny (PL91), aged 25 to 64"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "degree_share",
+        "value": 41.2,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Małopolskie (PL21), aged 25 to 64"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "degree_share",
+        "value": 59.3,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Budapest (HU11), aged 25 to 64"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "degree_share",
+        "value": 43.3,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Grande Lisboa (PT1A), aged 25 to 64"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "degree_share",
+        "value": 29.8,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Norte (PT11), aged 25 to 64"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "degree_share",
+        "value": 50,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Comunidad de Madrid (ES30), aged 25 to 64"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "degree_share",
+        "value": 46.9,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Cataluña (ES51), aged 25 to 64"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "degree_share",
+        "value": 38.1,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Comunitat Valenciana (ES52), aged 25 to 64"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "degree_share",
+        "value": 36.7,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Andalucía (ES61), aged 25 to 64"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "degree_share",
+        "value": 44.6,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Attiki (EL30), aged 25 to 64"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "degree_share",
+        "value": 42.1,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-regions",
+        "retrieved": "2026-11-05",
+        "note": "Eesti (EE00), aged 25 to 64"
+      }
+    ]
+  }
+}

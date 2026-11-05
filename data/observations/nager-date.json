@@ -1,0 +1,734 @@
+{
+  "source": "nager-date",
+  "retrieved": "2026-11-04",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.117Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in IT-21"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.146Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in IT-25"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.169Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in IT-62"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.192Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in IT-72"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.214Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in IT-45"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.233Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in IT-52"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.256Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GB",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in GB-ENG"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.256Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GB",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in GB-ENG"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.256Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GB",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in GB-ENG"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.256Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GB",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in GB-ENG"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.276Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GB",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in GB-SCT"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.305Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.305Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/IE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.325Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/FR",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.325Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/FR",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.348Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/DE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.348Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/DE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.348Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/DE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "public_holidays",
+        "value": 6,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.369Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/NL",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "public_holidays",
+        "value": 6,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.369Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/NL",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.389Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/BE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in BE-BRU"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.411Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/DK",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.432Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/SE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.455Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/NO",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.476Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/FI",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "public_holidays",
+        "value": 7,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.498Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/CH",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in CH-ZH"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.517Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/CH",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in CH-GE"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.538Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/AT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.559Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/CZ",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.579Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/PL",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.579Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/PL",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.601Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/HU",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.621Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/PT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.621Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/PT",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.642Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/ES",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in ES-MD"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.661Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/ES",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in ES-CT"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.681Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/ES",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in ES-VC"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "public_holidays",
+        "value": 8,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.700Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/ES",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in ES-AN"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.721Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/GR",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.741Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/EE",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.761Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-CA"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.761Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-CA"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.780Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-NY"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.799Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-MA"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.819Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-WA"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.843Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-TX"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.863Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-FL"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.882Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-IL"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.902Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/US",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in US-CO"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.923Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/CA",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in CA-ON"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "public_holidays",
+        "value": 11,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.943Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/CA",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in CA-BC"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.963Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/CA",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in CA-QC"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:53.984Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/SG",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "public_holidays",
+        "value": 16,
+        "period": "2026",
+        "level": "country",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:54.005Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/JP",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "public_holidays",
+        "value": 9,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:54.027Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/AU",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in AU-NSW"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "public_holidays",
+        "value": 10,
+        "period": "2026",
+        "level": "region",
+        "source": "nager-date",
+        "retrieved": "2026-11-04T23:14:54.049Z",
+        "url": "https://date.nager.at/api/v3/PublicHolidays/2026/AU",
+        "fetcher": "nager-date@1",
+        "note": "Public holidays on Monday to Friday in 2026, nationwide and in AU-VIC"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2155 @@
+{
+  "source": "eurostat-urban",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "transit_commute_share",
+        "value": 27.49,
+        "period": "2011",
+        "level": "city",
+        "note": "Torino",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 33.29,
+        "period": "2011",
+        "level": "city",
+        "note": "Torino",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.19,
+        "period": "2024",
+        "level": "city",
+        "note": "Torino",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 12.46,
+        "period": "2012",
+        "level": "city",
+        "note": "Torino",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 18.7,
+        "period": "2025",
+        "level": "city",
+        "note": "Torino",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 26.1,
+        "period": "2018",
+        "level": "city",
+        "note": "Torino",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 13.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Torino; on foot 10.7%, by bicycle 2.7%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "transit_commute_share",
+        "value": 23.13,
+        "period": "2011",
+        "level": "city",
+        "note": "Milano (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 34.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Milano (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.29,
+        "period": "2024",
+        "level": "city",
+        "note": "Milano (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 17,
+        "period": "2025",
+        "level": "city",
+        "note": "Milano (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 24.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Milano (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 13,
+        "period": "2011",
+        "level": "city",
+        "note": "Milano (greater city): the city and its contiguous urban area; on foot 8.3%, by bicycle 4.8%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "transit_commute_share",
+        "value": 27.81,
+        "period": "2011",
+        "level": "city",
+        "note": "Roma",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 44.74,
+        "period": "2011",
+        "level": "city",
+        "note": "Roma",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.49,
+        "period": "2024",
+        "level": "city",
+        "note": "Roma",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 4.79,
+        "period": "2012",
+        "level": "city",
+        "note": "Roma",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 14.7,
+        "period": "2025",
+        "level": "city",
+        "note": "Roma",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 30.7,
+        "period": "2018",
+        "level": "city",
+        "note": "Roma",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 7.5,
+        "period": "2011",
+        "level": "city",
+        "note": "Roma; on foot 7%, by bicycle 0.5%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "transit_commute_share",
+        "value": 16.51,
+        "period": "2011",
+        "level": "city",
+        "note": "Napoli (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 28.11,
+        "period": "2011",
+        "level": "city",
+        "note": "Napoli (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.34,
+        "period": "2024",
+        "level": "city",
+        "note": "Napoli (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 4.7,
+        "period": "2025",
+        "level": "city",
+        "note": "Napoli (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 15.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Napoli (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 18.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Napoli (greater city): the city and its contiguous urban area; on foot 17.3%, by bicycle 1%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "transit_commute_share",
+        "value": 23.94,
+        "period": "2011",
+        "level": "city",
+        "note": "Bologna",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 31.93,
+        "period": "2011",
+        "level": "city",
+        "note": "Bologna",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.28,
+        "period": "2024",
+        "level": "city",
+        "note": "Bologna",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 18.2,
+        "period": "2025",
+        "level": "city",
+        "note": "Bologna",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 39.6,
+        "period": "2018",
+        "level": "city",
+        "note": "Bologna",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 14.6,
+        "period": "2011",
+        "level": "city",
+        "note": "Bologna; on foot 9.5%, by bicycle 5.2%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "transit_commute_share",
+        "value": 22.77,
+        "period": "2011",
+        "level": "city",
+        "note": "Firenze",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 32.73,
+        "period": "2011",
+        "level": "city",
+        "note": "Firenze",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.39,
+        "period": "2024",
+        "level": "city",
+        "note": "Firenze",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 18.9,
+        "period": "2025",
+        "level": "city",
+        "note": "Firenze",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 32.6,
+        "period": "2018",
+        "level": "city",
+        "note": "Firenze",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 15.2,
+        "period": "2011",
+        "level": "city",
+        "note": "Firenze; on foot 9%, by bicycle 6.3%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "transit_commute_share",
+        "value": 52.6,
+        "period": "2011",
+        "level": "city",
+        "note": "London",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.13,
+        "period": "2018",
+        "level": "city",
+        "note": "London",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 36.7,
+        "period": "2011",
+        "level": "city",
+        "note": "London",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.5,
+        "period": "2018",
+        "level": "city",
+        "note": "London; 130 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 57.2,
+        "period": "2017",
+        "level": "city",
+        "note": "London",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 13.6,
+        "period": "2011",
+        "level": "city",
+        "note": "London; on foot 9.3%, by bicycle 4.3%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "transit_commute_share",
+        "value": 12.4,
+        "period": "2011",
+        "level": "city",
+        "note": "Cambridge",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0,
+        "period": "2014",
+        "level": "city",
+        "note": "Cambridge",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 33.3,
+        "period": "2018",
+        "level": "city",
+        "note": "Cambridge",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 6.4,
+        "period": "2018",
+        "level": "city",
+        "note": "Cambridge; 8 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 79.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Cambridge",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 48.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Cambridge; on foot 16.9%, by bicycle 31.9%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "transit_commute_share",
+        "value": 27.4,
+        "period": "2011",
+        "level": "city",
+        "note": "Manchester",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.18,
+        "period": "2018",
+        "level": "city",
+        "note": "Manchester",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 19.2,
+        "period": "2012",
+        "level": "city",
+        "note": "Manchester",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 28.6,
+        "period": "2018",
+        "level": "city",
+        "note": "Manchester",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Manchester; 12 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 52.3,
+        "period": "2018",
+        "level": "city",
+        "note": "Manchester",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 19.1,
+        "period": "2011",
+        "level": "city",
+        "note": "Manchester; on foot 14.9%, by bicycle 4.2%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "transit_commute_share",
+        "value": 12.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Bristol",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.15,
+        "period": "2018",
+        "level": "city",
+        "note": "Bristol",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 17.24,
+        "period": "2012",
+        "level": "city",
+        "note": "Bristol",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 15.9,
+        "period": "2018",
+        "level": "city",
+        "note": "Bristol",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.5,
+        "period": "2018",
+        "level": "city",
+        "note": "Bristol; 7 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 59.1,
+        "period": "2018",
+        "level": "city",
+        "note": "Bristol",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 28.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Bristol; on foot 20.2%, by bicycle 8.1%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "transit_commute_share",
+        "value": 30.79,
+        "period": "2011",
+        "level": "city",
+        "note": "Edinburgh",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.1,
+        "period": "2018",
+        "level": "city",
+        "note": "Edinburgh",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 11.86,
+        "period": "2012",
+        "level": "city",
+        "note": "Edinburgh",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 20.9,
+        "period": "2018",
+        "level": "city",
+        "note": "Edinburgh",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2.5,
+        "period": "2011",
+        "level": "city",
+        "note": "Edinburgh; 12 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 63.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Edinburgh",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 23,
+        "period": "2011",
+        "level": "city",
+        "note": "Edinburgh; on foot 18.2%, by bicycle 4.8%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "transit_commute_share",
+        "value": 21,
+        "period": "2011",
+        "level": "city",
+        "note": "Dublin (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 28.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Dublin (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Dublin (greater city): the city and its contiguous urban area; 17 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 18.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Dublin (greater city): the city and its contiguous urban area; on foot 13.5%, by bicycle 5.3%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "transit_commute_share",
+        "value": 9.2,
+        "period": "2011",
+        "level": "city",
+        "note": "Cork (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 20.4,
+        "period": "2011",
+        "level": "city",
+        "note": "Cork (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2.5,
+        "period": "2011",
+        "level": "city",
+        "note": "Cork (greater city): the city and its contiguous urban area; 3 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 26.2,
+        "period": "2011",
+        "level": "city",
+        "note": "Cork (greater city): the city and its contiguous urban area; on foot 23.3%, by bicycle 2.9%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "transit_commute_share",
+        "value": 49.9,
+        "period": "2020",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 44,
+        "period": "2013",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.17,
+        "period": "2022",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 14.75,
+        "period": "2012",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 26.8,
+        "period": "2023",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 3.3,
+        "period": "2023",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area; 339 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 50.4,
+        "period": "2020",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 11.2,
+        "period": "2020",
+        "level": "city",
+        "note": "Paris (greater city): the city and its contiguous urban area; on foot 7.8%, by bicycle 3.4%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "transit_commute_share",
+        "value": 32.7,
+        "period": "2020",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 29,
+        "period": "2014",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.15,
+        "period": "2022",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 6.77,
+        "period": "2012",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 20.6,
+        "period": "2023",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 3.7,
+        "period": "2023",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area; 45 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 50.5,
+        "period": "2020",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 16.8,
+        "period": "2020",
+        "level": "city",
+        "note": "Lyon (greater city): the city and its contiguous urban area; on foot 10.1%, by bicycle 6.7%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "transit_commute_share",
+        "value": 42.4,
+        "period": "2016",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 32.5,
+        "period": "2016",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 63.42,
+        "period": "2019",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.15,
+        "period": "2024",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 14.85,
+        "period": "2012",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 14.6,
+        "period": "2013",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.5,
+        "period": "2022",
+        "level": "city",
+        "note": "Berlin; 56 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 43.5,
+        "period": "2020",
+        "level": "city",
+        "note": "Berlin",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 18.6,
+        "period": "2016",
+        "level": "city",
+        "note": "Berlin; on foot 5.8%, by bicycle 12.8%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "transit_commute_share",
+        "value": 44,
+        "period": "2016",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 26.9,
+        "period": "2016",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 62.5,
+        "period": "2019",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.11,
+        "period": "2024",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 14.14,
+        "period": "2012",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 32.7,
+        "period": "2023",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.1,
+        "period": "2023",
+        "level": "city",
+        "note": "München; 17 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 53.9,
+        "period": "2020",
+        "level": "city",
+        "note": "München",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 19.2,
+        "period": "2016",
+        "level": "city",
+        "note": "München; on foot 6.4%, by bicycle 12.8%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "transit_commute_share",
+        "value": 40.4,
+        "period": "2016",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 30.1,
+        "period": "2016",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 89.5,
+        "period": "2019",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.21,
+        "period": "2024",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 12.18,
+        "period": "2012",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 27.9,
+        "period": "2023",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.5,
+        "period": "2022",
+        "level": "city",
+        "note": "Hamburg; 27 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 36.7,
+        "period": "2020",
+        "level": "city",
+        "note": "Hamburg",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 17.6,
+        "period": "2016",
+        "level": "city",
+        "note": "Hamburg; on foot 6%, by bicycle 11.6%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "road_deaths",
+        "value": 0.16,
+        "period": "2020",
+        "level": "city",
+        "note": "Amsterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 14.94,
+        "period": "2012",
+        "level": "city",
+        "note": "Amsterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 37.5,
+        "period": "2024",
+        "level": "city",
+        "note": "Amsterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.1,
+        "period": "2024",
+        "level": "city",
+        "note": "Amsterdam (greater city): the city and its contiguous urban area; 12 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 64.3,
+        "period": "2020",
+        "level": "city",
+        "note": "Amsterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "road_deaths",
+        "value": 0.19,
+        "period": "2020",
+        "level": "city",
+        "note": "Rotterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 25.8,
+        "period": "2024",
+        "level": "city",
+        "note": "Rotterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.9,
+        "period": "2024",
+        "level": "city",
+        "note": "Rotterdam (greater city): the city and its contiguous urban area; 24 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 40.3,
+        "period": "2020",
+        "level": "city",
+        "note": "Rotterdam (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "transit_commute_share",
+        "value": 40.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 67,
+        "period": "2025",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.17,
+        "period": "2025",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 13.16,
+        "period": "2012",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 49.7,
+        "period": "2025",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.3,
+        "period": "2024",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area; 16 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 6,
+        "period": "2011",
+        "level": "city",
+        "note": "Bruxelles/Brussel (greater city): the city and its contiguous urban area; on foot 4.1%, by bicycle 1.9%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "copenhagen-dk": [],
+    "stockholm-se": [
+      {
+        "metric": "transit_pass",
+        "value": 82,
+        "period": "2018",
+        "level": "city",
+        "note": "Stockholm (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.17,
+        "period": "2018",
+        "level": "city",
+        "note": "Stockholm (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 7.38,
+        "period": "2012",
+        "level": "city",
+        "note": "Stockholm (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 27.2,
+        "period": "2025",
+        "level": "city",
+        "note": "Stockholm (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 44.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Stockholm (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "road_deaths",
+        "value": 0.13,
+        "period": "2012",
+        "level": "city",
+        "note": "Oslo (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 27.6,
+        "period": "2022",
+        "level": "city",
+        "note": "Oslo (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "transit_commute_share",
+        "value": 52,
+        "period": "2018",
+        "level": "city",
+        "note": "Helsinki/Helsingfors",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 34.5,
+        "period": "2018",
+        "level": "city",
+        "note": "Helsinki/Helsingfors",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 66.6,
+        "period": "2024",
+        "level": "city",
+        "note": "Helsinki/Helsingfors",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.09,
+        "period": "2023",
+        "level": "city",
+        "note": "Helsinki/Helsingfors",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 17.5,
+        "period": "2024",
+        "level": "city",
+        "note": "Helsinki/Helsingfors",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2.4,
+        "period": "2024",
+        "level": "city",
+        "note": "Helsinki/Helsingfors; 16 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 49.9,
+        "period": "2018",
+        "level": "city",
+        "note": "Helsinki/Helsingfors",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 22,
+        "period": "2018",
+        "level": "city",
+        "note": "Helsinki/Helsingfors; on foot 8%, by bicycle 14%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "transit_commute_share",
+        "value": 60.41,
+        "period": "2024",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 39.9,
+        "period": "2024",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 91,
+        "period": "2024",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.26,
+        "period": "2024",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 44.4,
+        "period": "2025",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 60.8,
+        "period": "2021",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 11.7,
+        "period": "2024",
+        "level": "city",
+        "note": "Zurich (greater city): the city and its contiguous urban area; on foot 4.9%, by bicycle 6.8%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "transit_commute_share",
+        "value": 49.82,
+        "period": "2024",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 36.08,
+        "period": "2024",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 73,
+        "period": "2024",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.21,
+        "period": "2024",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 9.98,
+        "period": "2012",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 54,
+        "period": "2025",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 46.3,
+        "period": "2021",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 23.3,
+        "period": "2024",
+        "level": "city",
+        "note": "Geneva (greater city): the city and its contiguous urban area; on foot 11.6%, by bicycle 11.7%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "road_deaths",
+        "value": 0.12,
+        "period": "2014",
+        "level": "city",
+        "note": "Wien (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 32.2,
+        "period": "2014",
+        "level": "city",
+        "note": "Wien (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "commute_minutes",
+        "value": 38,
+        "period": "2011",
+        "level": "city",
+        "note": "Praha",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.13,
+        "period": "2017",
+        "level": "city",
+        "note": "Praha",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 12.56,
+        "period": "2012",
+        "level": "city",
+        "note": "Praha",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 15.1,
+        "period": "2011",
+        "level": "city",
+        "note": "Praha",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 5,
+        "period": "2011",
+        "level": "city",
+        "note": "Praha; 62 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "transit_pass",
+        "value": 24.4,
+        "period": "2018",
+        "level": "city",
+        "note": "Warszawa",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.14,
+        "period": "2024",
+        "level": "city",
+        "note": "Warszawa",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 2.1,
+        "period": "2011",
+        "level": "city",
+        "note": "Warszawa",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2,
+        "period": "2011",
+        "level": "city",
+        "note": "Warszawa; 34 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "transit_pass",
+        "value": 22.06,
+        "period": "2018",
+        "level": "city",
+        "note": "Kraków",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.06,
+        "period": "2024",
+        "level": "city",
+        "note": "Kraków",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 1.7,
+        "period": "2011",
+        "level": "city",
+        "note": "Kraków",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2,
+        "period": "2011",
+        "level": "city",
+        "note": "Kraków; 15 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "transit_pass",
+        "value": 22.65,
+        "period": "2024",
+        "level": "city",
+        "note": "Budapest (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.23,
+        "period": "2024",
+        "level": "city",
+        "note": "Budapest (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 8.17,
+        "period": "2012",
+        "level": "city",
+        "note": "Budapest (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 13.1,
+        "period": "2024",
+        "level": "city",
+        "note": "Budapest (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 45.4,
+        "period": "2016",
+        "level": "city",
+        "note": "Budapest (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "transit_commute_share",
+        "value": 33.76,
+        "period": "2011",
+        "level": "city",
+        "note": "Lisboa (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 33.24,
+        "period": "2011",
+        "level": "city",
+        "note": "Lisboa (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 49.3,
+        "period": "2015",
+        "level": "city",
+        "note": "Lisboa (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.18,
+        "period": "2023",
+        "level": "city",
+        "note": "Lisboa (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 17.3,
+        "period": "2021",
+        "level": "city",
+        "note": "Lisboa (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 8.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Lisboa (greater city): the city and its contiguous urban area; on foot 8.6%, by bicycle 0.2%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "transit_commute_share",
+        "value": 22.16,
+        "period": "2011",
+        "level": "city",
+        "note": "Porto (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 25.21,
+        "period": "2011",
+        "level": "city",
+        "note": "Porto (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 36,
+        "period": "2015",
+        "level": "city",
+        "note": "Porto (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.22,
+        "period": "2023",
+        "level": "city",
+        "note": "Porto (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 7.6,
+        "period": "2021",
+        "level": "city",
+        "note": "Porto (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 11.3,
+        "period": "2011",
+        "level": "city",
+        "note": "Porto (greater city): the city and its contiguous urban area; on foot 11.1%, by bicycle 0.3%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "commute_minutes",
+        "value": 31.21,
+        "period": "2011",
+        "level": "city",
+        "note": "Madrid (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.15,
+        "period": "2024",
+        "level": "city",
+        "note": "Madrid (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 10.87,
+        "period": "2014",
+        "level": "city",
+        "note": "Madrid (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 26.1,
+        "period": "2024",
+        "level": "city",
+        "note": "Madrid (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 1.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Madrid (greater city): the city and its contiguous urban area; 57 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 48.4,
+        "period": "2018",
+        "level": "city",
+        "note": "Madrid (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "transit_commute_share",
+        "value": 24.29,
+        "period": "2011",
+        "level": "city",
+        "note": "Barcelona (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 27.18,
+        "period": "2011",
+        "level": "city",
+        "note": "Barcelona (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.16,
+        "period": "2024",
+        "level": "city",
+        "note": "Barcelona (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 30.9,
+        "period": "2024",
+        "level": "city",
+        "note": "Barcelona (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 45.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Barcelona (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 15.9,
+        "period": "2011",
+        "level": "city",
+        "note": "Barcelona (greater city): the city and its contiguous urban area; on foot 14.2%, by bicycle 1.7%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "road_deaths",
+        "value": 0.14,
+        "period": "2024",
+        "level": "city",
+        "note": "Valencia (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 21.3,
+        "period": "2024",
+        "level": "city",
+        "note": "Valencia (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 41.1,
+        "period": "2018",
+        "level": "city",
+        "note": "Valencia (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "commute_minutes",
+        "value": 21.36,
+        "period": "2011",
+        "level": "city",
+        "note": "Málaga",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.27,
+        "period": "2024",
+        "level": "city",
+        "note": "Málaga",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "green_share",
+        "value": 1.31,
+        "period": "2014",
+        "level": "city",
+        "note": "Málaga",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 15.8,
+        "period": "2024",
+        "level": "city",
+        "note": "Málaga",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 2.8,
+        "period": "2011",
+        "level": "city",
+        "note": "Málaga; 16 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 35.4,
+        "period": "2018",
+        "level": "city",
+        "note": "Málaga",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "road_deaths",
+        "value": 0.4,
+        "period": "2013",
+        "level": "city",
+        "note": "Athina (greater city): the city and its contiguous urban area",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "transit_commute_share",
+        "value": 38,
+        "period": "2018",
+        "level": "city",
+        "note": "Tallinn",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "commute_minutes",
+        "value": 24.2,
+        "period": "2018",
+        "level": "city",
+        "note": "Tallinn",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "transit_pass",
+        "value": 30,
+        "period": "2025",
+        "level": "city",
+        "note": "Tallinn",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "road_deaths",
+        "value": 0.07,
+        "period": "2025",
+        "level": "city",
+        "note": "Tallinn",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "foreign_born_share",
+        "value": 26.1,
+        "period": "2025",
+        "level": "city",
+        "note": "Tallinn",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "public_pools",
+        "value": 6.6,
+        "period": "2025",
+        "level": "city",
+        "note": "Tallinn; 30 in total",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2018",
+        "level": "city",
+        "note": "Tallinn",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      },
+      {
+        "metric": "active_commute_share",
+        "value": 12.7,
+        "period": "2018",
+        "level": "city",
+        "note": "Tallinn; on foot 11.5%, by bicycle 1.2%",
+        "source": "eurostat-urban",
+        "retrieved": "2026-11-05"
+      }
+    ]
+  }
+}

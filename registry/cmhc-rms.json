@@ -1,0 +1,61 @@
+{
+  "id": "cmhc-rms",
+  "name": "CMHC Rental Market Survey: average rents (Statistics Canada table 34-10-0133-01)",
+  "publisher": "Canada Mortgage and Housing Corporation, republished by Statistics Canada",
+  "homepage": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Sitting rent: the average monthly rent of every occupied one-bedroom unit in purpose-built rental apartments and rows of three units or more, old and new tenancies, surveyed each October, for the census metropolitan area. Rent only, utilities as each lease includes them."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Sitting rent: the average monthly rent of every occupied three-bedroom unit in purpose-built rental apartments and rows of three units or more, surveyed each October, for the census metropolitan area."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "CA"
+    ],
+    "level": "metro",
+    "period": "October, yearly"
+  },
+  "licence": "CMHC Licence Agreement for the Use of Data (not CC BY)",
+  "licenceUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CMHC-data",
+    "edition": "Rental Market Survey, October 2025, via Statistics Canada table 34-10-0133-01 (release of 2025-12-17)",
+    "termsUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+    "attribution": "Source: Canada Mortgage and Housing Corporation (CMHC), Rental Market Survey, average rents, October 2025, via Statistics Canada table 34-10-0133-01. This information is reproduced and distributed on an \"as is\" basis with the permission of CMHC.",
+    "notices": [
+      "Redistributed under CMHC's Licence Agreement for the Use of Data: anyone receiving these figures agrees to be bound by its terms. Not covered by Borgo's CC BY 4.0 licence."
+    ],
+    "termsRead": "2026-11-05"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www150.statcan.gc.ca/n1/tbl/csv/34100133-eng.zip",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/cmhc-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent)",
+    "on": "2026-11-05",
+    "notes": "Read first-hand 2026-11-05: the StatCan Open Licence does not cover this table, whose note points to CMHC's licence (revocable, recipients bound)."
+  },
+  "caveats": [
+    "Purpose-built rentals only: condominiums and houses rented out privately, a large share of the market in Toronto and Vancouver, are not in it, and a new tenancy usually costs more than the average.",
+    "Statistics Canada's table says the CMHC figures are provided subject to CMHC's licence, so they are published in their own file (public/data/dataset-cmhc.json)."
+  ]
+}

@@ -1,0 +1,3000 @@
+[
+  {
+    "id": "abortion-law",
+    "name": "Abortion in law, from the statutes cited",
+    "publisher": "Borgo contributors",
+    "homepage": "https://github.com/ABCastor/borgo/blob/main/src/fetch/rights-law.ts",
+    "measures": [
+      {
+        "metric": "abortion_law",
+        "definition": "On what grounds the law allows a pregnancy to be ended, from 0 (not at all, or only to save the woman's life) to 4 (on request to 10 weeks or later), with the gestational limit in words."
+      }
+    ],
+    "coverage": {
+      "geography": "the 26 countries with a tax model except the UAE; in the United States, the states in the table",
+      "level": "country",
+      "period": "as reviewed"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "curated in src/fetch/rights-law.ts, checked 2026-11-05",
+      "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from the statutes cited in each figure's note"
+    },
+    "access": "curated",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "src/fetch/rights-law.ts",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/rights-law.ts"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Legal facts with their statutes, because the indices on abortion law (Center for Reproductive Rights, WHO Global Abortion Policies Database) may not be redistributed. A neutral fact: whether and which way it counts is the person's own stance."
+    },
+    "caveats": [
+      "Each figure's note says whether the law was checked against the source linked (the statute, or an official page that states it) on 2026-11-05, or is stated from the law cited because that source could not be read (Greece, Canada, Australia, California, New York, Massachusetts, Illinois).",
+      "In the United States each state sets the law: a state not in the table has no figure, never a national one.",
+      "The law on paper, not access in practice: waiting periods, counselling, cost and the distance to a provider are in the note where the statute sets them, not in the level."
+    ]
+  },
+  {
+    "id": "acs",
+    "name": "American Community Survey 1-year estimates",
+    "publisher": "US Census Bureau",
+    "homepage": "https://www.census.gov/programs-surveys/acs/data/summary-file.html",
+    "measures": [
+      {
+        "metric": "commute_minutes",
+        "definition": "Average travel time to work of workers who commute, in minutes (table B08013 over B08301)."
+      },
+      {
+        "metric": "foreign_born_share",
+        "definition": "Share of residents born in another country: a measure of how international the city is."
+      },
+      {
+        "metric": "transit_commute_share",
+        "definition": "Share of journeys to work made by bus, tram, metro or train."
+      },
+      {
+        "metric": "rent_1bed",
+        "definition": "Sitting rent: the median monthly gross rent (contract rent plus utilities and fuels) of every renter-occupied one-bedroom home paying cash rent in the city, old and new tenancies (table B25031)."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Sitting rent: the median monthly gross rent (rent plus utilities) of every renter-occupied three-bedroom home paying cash rent in the city (table B25031); not stored where the Census tops it out at $3,500 or more."
+      },
+      {
+        "metric": "degree_share",
+        "definition": "Share of people aged 25 to 64 with an associate's, bachelor's or graduate degree (table B15001), the US counterpart of ISCED 5 to 8."
+      },
+      {
+        "metric": "active_commute_share",
+        "definition": "Share of workers who commute (working from home left out) who walked or cycled to work (table B08301)."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "US"
+      ],
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Public domain (US government work)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "PD-USGov",
+      "edition": "ACS 1-year estimates, summary-file tables, latest year published",
+      "termsUrl": "https://www.census.gov/about/policies/citation.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: U.S. Census Bureau, American Community Survey 1-year estimates"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www2.census.gov/programs-surveys/acs/summary_file/{year}/table-based-SF/data/1YRData/",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/acs.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Summary files need no key; the API now does."
+    },
+    "licenceUrl": "https://www.census.gov/about/policies/citation.html",
+    "caveats": [
+      "Rents are gross (utilities included) and cover every tenancy, so they read lower than asking rents for a home on the market today."
+    ]
+  },
+  {
+    "id": "ch-afmp",
+    "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
+    "publisher": "Swiss State Secretariat for Migration",
+    "homepage": "https://www.sem.admin.ch/sem/en/home/themen/fza_schweiz-eu-efta.html",
+    "measures": [
+      {
+        "metric": "right_to_live",
+        "definition": "Free movement between Switzerland and the EU/EEA."
+      }
+    ],
+    "coverage": {
+      "geography": "the treaty area",
+      "level": "country",
+      "period": "in force"
+    },
+    "licence": "Borgo's summary of the official text (CC BY 4.0)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "law-summary",
+      "edition": "Agreement on the Free Movement of Persons (EU-Switzerland), in force",
+      "termsUrl": "https://www.admin.ch/gov/en/start/terms-and-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of the EU-Swiss Agreement on the Free Movement of Persons (State Secretariat for Migration)"
+    },
+    "access": "curated",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "A legal text, encoded by hand in data/rights.json."
+    },
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "cldr",
+    "name": "CLDR territory information",
+    "publisher": "Unicode Consortium",
+    "homepage": "https://cldr.unicode.org/",
+    "measures": [
+      {
+        "metric": "english_share",
+        "definition": "Share of the country that speaks English, and whether English is official."
+      },
+      {
+        "metric": "english_official",
+        "definition": "Whether English is an official or de facto official language of the country."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "country",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Unicode-3.0",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "Unicode-3.0",
+      "edition": "CLDR 49 supplementalData territoryInfo",
+      "termsUrl": "https://www.unicode.org/license.txt",
+      "termsRead": "2026-11-05",
+      "attribution": "Unicode CLDR territory information. Copyright © 1991-2026 Unicode, Inc. Used under the Unicode License v3 (https://www.unicode.org/license.txt)"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/cldr.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Country-wide estimates from censuses and surveys."
+    },
+    "licenceUrl": "https://www.unicode.org/license.txt"
+  },
+  {
+    "id": "cmhc-rms",
+    "name": "CMHC Rental Market Survey: average rents (Statistics Canada table 34-10-0133-01)",
+    "publisher": "Canada Mortgage and Housing Corporation, republished by Statistics Canada",
+    "homepage": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Sitting rent: the average monthly rent of every occupied one-bedroom unit in purpose-built rental apartments and rows of three units or more, old and new tenancies, surveyed each October, for the census metropolitan area. Rent only, utilities as each lease includes them."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Sitting rent: the average monthly rent of every occupied three-bedroom unit in purpose-built rental apartments and rows of three units or more, surveyed each October, for the census metropolitan area."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "CA"
+      ],
+      "level": "metro",
+      "period": "October, yearly"
+    },
+    "licence": "CMHC Licence Agreement for the Use of Data (not CC BY)",
+    "licenceUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CMHC-data",
+      "edition": "Rental Market Survey, October 2025, via Statistics Canada table 34-10-0133-01 (release of 2025-12-17)",
+      "termsUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+      "attribution": "Source: Canada Mortgage and Housing Corporation (CMHC), Rental Market Survey, average rents, October 2025, via Statistics Canada table 34-10-0133-01. This information is reproduced and distributed on an \"as is\" basis with the permission of CMHC.",
+      "notices": [
+        "Redistributed under CMHC's Licence Agreement for the Use of Data: anyone receiving these figures agrees to be bound by its terms. Not covered by Borgo's CC BY 4.0 licence."
+      ],
+      "termsRead": "2026-11-05"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www150.statcan.gc.ca/n1/tbl/csv/34100133-eng.zip",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/cmhc-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent)",
+      "on": "2026-11-05",
+      "notes": "Read first-hand 2026-11-05: the StatCan Open Licence does not cover this table, whose note points to CMHC's licence (revocable, recipients bound)."
+    },
+    "caveats": [
+      "Purpose-built rentals only: condominiums and houses rented out privately, a large share of the market in Toronto and Vancouver, are not in it, and a new tenancy usually costs more than the average.",
+      "Statistics Canada's table says the CMHC figures are provided subject to CMHC's licence, so they are published in their own file (public/data/dataset-cmhc.json)."
+    ]
+  },
+  {
+    "id": "copenhagenize",
+    "name": "Copenhagenize Index of bicycle-friendly cities",
+    "publisher": "Copenhagenize Design Co.",
+    "homepage": "https://copenhagenizeindex.eu/",
+    "measures": [],
+    "coverage": {
+      "geography": "100 cities worldwide",
+      "level": "city",
+      "period": "current edition"
+    },
+    "licence": "Proprietary (all rights reserved)",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://copenhagenizeindex.eu/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "An expert ranking of how cities serve cyclists; all rights reserved, so a link only. The open cycling lines are the OpenStreetMap cycle network and the official share of trips to work by bicycle."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "couples-law",
+    "name": "Same-sex couples in law, from the statutes cited",
+    "publisher": "Borgo contributors",
+    "homepage": "https://github.com/ABCastor/borgo/blob/main/src/fetch/rights-law.ts",
+    "measures": [
+      {
+        "metric": "same_sex_couples",
+        "definition": "What national law offers same-sex couples: 0 sexual relations between people of the same sex are a crime, 1 legal but national law offers no union, 2 civil union or registered partnership, 3 marriage."
+      }
+    ],
+    "coverage": {
+      "geography": "countries in the table",
+      "level": "country",
+      "period": "as reviewed"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "curated in src/fetch/rights-law.ts, checked 2026-11-05",
+      "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from the statutes cited in each figure's note"
+    },
+    "access": "curated",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "src/fetch/rights-law.ts",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/rights-law.ts"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Legal facts with their statutes, because the indices (Equaldex, ILGA) may not be redistributed. A neutral fact: whether and which way it counts is the person's own stance."
+    },
+    "caveats": [
+      "Each figure's note says whether the law was checked against the source linked on 2026-11-05 or is stated from the law cited because that source could not be read.",
+      "The step is about forming a union at home: the note adds what it leaves out, such as EU-law recognition of a marriage concluded abroad (Poland) or local partnership certificates (Japan)."
+    ]
+  },
+  {
+    "id": "cso-rtb",
+    "name": "RTB Average Monthly Rent Report (RIA02)",
+    "publisher": "Central Statistics Office Ireland, Residential Tenancies Board",
+    "homepage": "https://data.cso.ie/table/RIA02",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average monthly rent agreed in new one-bedroom tenancies registered with the RTB."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average monthly rent agreed in new three-bedroom tenancies registered with the RTB."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "IE"
+      ],
+      "level": "city",
+      "period": "latest year"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "CSO table RIA02 (RTB Average Monthly Rent Report), latest year",
+      "termsUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report",
+      "termsRead": "2026-11-05",
+      "attribution": "Central Statistics Office and Residential Tenancies Board, RIA02 RTB Average Monthly Rent Report, CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://ws.cso.ie/public/api.restful/PxStat.Data.Cube_API.ReadDataset/RIA02/JSON-stat/2.0/en",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 120
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Official registered rents; new tenancies, so above what sitting tenants pay."
+    },
+    "caveats": [
+      "Areas are local electoral areas and towns; a place not named in the table gets no figure."
+    ]
+  },
+  {
+    "id": "cta",
+    "name": "Common Travel Area guidance",
+    "publisher": "UK Government",
+    "homepage": "https://www.gov.uk/government/publications/common-travel-area-guidance",
+    "measures": [
+      {
+        "metric": "right_to_live",
+        "definition": "British and Irish citizens may live and work in each other's country."
+      }
+    ],
+    "coverage": {
+      "geography": "the treaty area",
+      "level": "country",
+      "period": "in force"
+    },
+    "licence": "Borgo's summary of the official text (CC BY 4.0)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "law-summary",
+      "edition": "Common Travel Area guidance (UK Government), 2019 Memorandum of Understanding",
+      "termsUrl": "https://www.gov.uk/help/terms-conditions",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of the Common Travel Area guidance; contains public sector information licensed under the Open Government Licence v3.0"
+    },
+    "access": "curated",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "A legal text, encoded by hand in data/rights.json."
+    },
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "ecb-fx",
+    "name": "Euro foreign exchange reference rates",
+    "publisher": "European Central Bank",
+    "homepage": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+    "measures": [
+      {
+        "metric": "fx",
+        "definition": "How many units of each currency one euro bought on the reference date."
+      }
+    ],
+    "coverage": {
+      "geography": "about 30 currencies",
+      "level": "country",
+      "period": "latest working day"
+    },
+    "licence": "ECB reuse with attribution",
+    "licenceUrl": "https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "ECB-reuse",
+      "edition": "euro foreign exchange reference rates of the date in data/fx.json",
+      "termsUrl": "https://www.ecb.europa.eu/services/using-our-site/disclaimer/html/index.en.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: European Central Bank, euro foreign exchange reference rates"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://data-api.ecb.europa.eu/service/data/EXR/D..EUR.SP00.A?lastNObservations=1&format=jsondata",
+      "cors": true,
+      "key": null,
+      "fetcher": "pipeline/sources/ecb.ts"
+    },
+    "refresh": {
+      "cadence": "daily",
+      "maxAgeDays": 30
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "The official euro reference rates."
+    },
+    "caveats": [
+      "Currencies the ECB does not quote need another source; a country without a rate has no money figures."
+    ]
+  },
+  {
+    "id": "eiu-liveability",
+    "name": "EIU Global Liveability Index",
+    "publisher": "Economist Intelligence Unit",
+    "homepage": "https://www.eiu.com/n/campaigns/global-liveability-index/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.eiu.com/n/campaigns/global-liveability-index/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Paid index of 173 cities."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "eu-free-movement",
+    "name": "Directive 2004/38/EC and the EEA Agreement",
+    "publisher": "European Union",
+    "homepage": "https://eur-lex.europa.eu/eli/dir/2004/38/oj",
+    "measures": [
+      {
+        "metric": "right_to_live",
+        "definition": "The right of EU and EEA citizens to live and work in any member state."
+      }
+    ],
+    "coverage": {
+      "geography": "the treaty area",
+      "level": "country",
+      "period": "in force"
+    },
+    "licence": "Borgo's summary of the official text (CC BY 4.0)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "law-summary",
+      "edition": "Directive 2004/38/EC and the EEA Agreement, in force",
+      "termsUrl": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of Directive 2004/38/EC (© European Union, EUR-Lex)"
+    },
+    "access": "curated",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "A legal text, encoded by hand in data/rights.json."
+    },
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "eurostat-regions",
+    "name": "Population by educational attainment and NUTS 2 region (edat_lfse_04)",
+    "publisher": "Eurostat (EU Labour Force Survey)",
+    "homepage": "https://ec.europa.eu/eurostat/databrowser/view/edat_lfse_04/default/table",
+    "measures": [
+      {
+        "metric": "degree_share",
+        "definition": "Share of people aged 25 to 64 whose highest level of education is tertiary (ISCED 2011 levels 5 to 8), in the NUTS 2 region around the city, from the EU Labour Force Survey."
+      }
+    ],
+    "coverage": {
+      "geography": "EU, EFTA, candidate countries; the UK to 2019",
+      "level": "region",
+      "period": "latest year, 2025 for most"
+    },
+    "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+    "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "EU-reuse",
+      "edition": "edat_lfse_04, ISCED 5-8, ages 25-64, latest year (2025 for most regions)",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Eurostat, EU Labour Force Survey (edat_lfse_04, © European Union). Borgo keeps each region's latest value",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/edat_lfse_04?format=JSON&lang=en&isced11=ED5-8&sex=T&age=Y25-64&unit=PC&geo={nuts2}",
+      "cors": true,
+      "key": null,
+      "fetcher": "pipeline/sources/eurostat-regions.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "One survey and one definition for every region; the region is wider than the city except where they coincide (Berlin, Hamburg, Vienna, Prague, Budapest, Brussels). Not fetched on demand: finding a place's NUTS 2 region needs a boundary lookup not built yet."
+    },
+    "caveats": [
+      "A region such as Piemonte or Lombardia includes towns and countryside, so it reads lower than its main city."
+    ]
+  },
+  {
+    "id": "eurostat-urban",
+    "name": "Urban Audit: cities and greater cities",
+    "publisher": "Eurostat",
+    "homepage": "https://ec.europa.eu/eurostat/web/cities/database",
+    "measures": [
+      {
+        "metric": "transit_commute_share",
+        "definition": "Share of journeys to work made by bus, tram, metro or train, as reported by the city."
+      },
+      {
+        "metric": "commute_minutes",
+        "definition": "Average time of a journey to work, one way."
+      },
+      {
+        "metric": "foreign_born_share",
+        "definition": "Share of residents born in another country: a measure of how international the city is."
+      },
+      {
+        "metric": "green_share",
+        "definition": "Share of the city's area that is green urban space or sports and leisure land, from the EU Urban Atlas via Eurostat."
+      },
+      {
+        "metric": "public_pools",
+        "definition": "Public swimming pools, indoor and outdoor, per 100,000 residents, as reported by the city to the Eurostat Urban Audit."
+      },
+      {
+        "metric": "road_deaths",
+        "definition": "People killed in road accidents per 10,000 residents a year."
+      },
+      {
+        "metric": "transit_pass",
+        "definition": "Price of a monthly pass for all public transport in the central zone (5 to 10 km)."
+      },
+      {
+        "metric": "degree_share",
+        "definition": "Share of people aged 25 to 64 whose highest level of education is tertiary (ISCED 5 to 8), reported by the city; figures from 2014 on only."
+      },
+      {
+        "metric": "active_commute_share",
+        "definition": "Share of journeys to work made on foot plus the share made by bicycle, from the same year."
+      }
+    ],
+    "coverage": {
+      "geography": "EU, EEA, CH, UK (to 2018)",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "EU-reuse",
+      "edition": "Urban Audit tables urb_c*, each city's latest value 2011-2025",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Eurostat, Urban Audit (© European Union). Borgo keeps each city's latest value and converts units where its note says so",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{dataset}?format=JSON&lang=en&indic_ur={indicator}&cities={code}",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/eurostat-urban.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Each city's latest report; older than 2010 dropped."
+    },
+    "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "caveats": [
+      "A place is found by its name among the Urban Audit's city labels, which use local names (Torino, Wien, Athina): a place known here only by its English name may not be found."
+    ]
+  },
+  {
+    "id": "foundersrc",
+    "name": "Founders Running Club communities",
+    "publisher": "Founders Running Club",
+    "homepage": "https://foundersrc.com/communities",
+    "measures": [
+      {
+        "metric": "founders_running_club",
+        "definition": "Whether the club lists a chapter in the city."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Public listing (facts of presence only; no licence stated)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "facts-no-licence",
+      "edition": "public communities list, read 2026-10-27",
+      "termsUrl": "https://foundersrc.com/communities",
+      "termsRead": "2026-11-05",
+      "attribution": "Founders Running Club communities list (facts of presence and links only)"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://foundersrc.com/communities",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/foundersrc.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": true,
+      "by": "the project owner (named in the brief, 27 Oct 2026)",
+      "on": "2026-10-27",
+      "notes": "Named by the owner (brief C1)."
+    }
+  },
+  {
+    "id": "fr-carte-loyers",
+    "name": "Carte des loyers: asking-rent indicators by commune (2025)",
+    "publisher": "Ministère de la Transition écologique (DHUP), with ANIL",
+    "homepage": "https://www.data.gouv.fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Asking rent: the modelled rent per m², charges included, of an unfurnished flat of one or two rooms advertised on leboncoin and SeLoger in the third quarter, times 50 m² (Borgo's flat size for one bedroom). Paris and Lyon are the mean of their arrondissements weighted by adverts."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Asking rent: the modelled rent per m², charges included, of an unfurnished flat of three rooms or more advertised in the third quarter, times 90 m² (Borgo's flat size for three bedrooms)."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "FR"
+      ],
+      "level": "city",
+      "period": "2025-Q3"
+    },
+    "licence": "Licence Ouverte 2.0 (Etalab)",
+    "licenceUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "Etalab-2.0",
+      "edition": "carte des loyers 2025 (files of 2025-12-11), apartments of 1-2 rooms and of 3+ rooms",
+      "termsUrl": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+      "attribution": "Ministère de la Transition écologique, carte des loyers 2025 (data.gouv.fr, update of 2025-12-11), Licence Ouverte 2.0. Borgo weights arrondissements by adverts and multiplies the rate per m² by a fixed flat size",
+      "termsRead": "2026-11-05"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://static.data.gouv.fr/resources/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025/20251211-144934/pred-app12-mef-dhup.csv",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/fr-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent)",
+      "on": "2026-11-05",
+      "notes": "Official open data from the housing ministry; asking rents, modelled."
+    },
+    "caveats": [
+      "Asking rents of adverts, not rents paid, and charges included: higher than a sitting rent for the same home.",
+      "The 1-2 room rate is for flats of 37 m² on average and smaller flats cost more per m², so 50 m² at that rate can overstate a one-bedroom rent."
+    ]
+  },
+  {
+    "id": "geonames",
+    "name": "GeoNames gazetteer",
+    "publisher": "GeoNames",
+    "homepage": "https://www.geonames.org/",
+    "measures": [
+      {
+        "metric": "place",
+        "definition": "Where a place is (coordinates), what it is called, how many people live there, its time zone and the region it belongs to."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "GeoNames records via Open-Meteo's geocoder and the GeoNames dump, read 2026-10-27",
+      "termsUrl": "https://www.geonames.org/export/",
+      "termsRead": "2026-11-05",
+      "attribution": "Places, coordinates, populations and time zones from GeoNames (geonames.org), CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://geocoding-api.open-meteo.com/v1/search?name={name}&count=10&language=en&format=json",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/places/resolve.ts",
+      "rateLimit": "Open-Meteo free tier: 10,000 calls a day, non-commercial"
+    },
+    "alternatives": [
+      {
+        "endpoint": "https://secure.geonames.org/searchJSON?q={name}&country={country}&featureClass=P&maxRows=10&username={GEONAMES_USERNAME}",
+        "cors": true,
+        "key": "a free GeoNames username (geonames.org/login), set as GEONAMES_USERNAME"
+      },
+      {
+        "endpoint": "https://download.geonames.org/export/dump/cities15000.zip",
+        "cors": false,
+        "note": "every place over 15,000 people, for offline resolving in the CLI"
+      }
+    ],
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 3650
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "The reference open gazetteer; Open-Meteo's geocoder serves the same GeoNames records with CORS and no key."
+    },
+    "caveats": [
+      "Population is GeoNames' figure, often the municipality, not the metro area."
+    ]
+  },
+  {
+    "id": "ghsl-ucdb",
+    "name": "GHS Urban Centre Database 2025 (R2024A), general characteristics",
+    "publisher": "European Commission, Joint Research Centre (GHSL)",
+    "homepage": "https://human-settlement.emergency.copernicus.eu/ghs_ucdb_2024.php",
+    "measures": [
+      {
+        "metric": "city_edge_km",
+        "definition": "Straight-line distance from the city's centre point to the nearest edge of its urban centre outline (touching 1 km squares with at least 1,500 residents per km², 50,000 people or more, 2025), over directions that lead on to land."
+      }
+    ],
+    "coverage": {
+      "geography": "global (11,422 urban centres)",
+      "level": "city",
+      "period": "2025"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "GHS-UCDB R2024A V1.2, general characteristics theme (2026-05-19)",
+      "termsUrl": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_GLOBE_R2024A/V1-1/copyright.txt",
+      "termsRead": "2026-11-05",
+      "attribution": "GHS-UCDB R2024A, European Commission, Joint Research Centre, CC BY 4.0, doi:10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd; Borgo derives the distance from the centre to the urban centre's edge",
+      "notices": [
+        "Shores and lakes from Natural Earth (public domain) decide which directions lead on to land."
+      ]
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_UCDB_GLOBE_R2024A/GHS_UCDB_THEME_GLOBE_R2024A/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A/V1-2/GHS_UCDB_THEME_GENERAL_CHARACTERISTICS_GLOBE_R2024A_V1_2.zip",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/node/ghsl.ts",
+      "rateLimit": "one 6.6 MB file, kept 30 days"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Credit: Mari Rivero et al. (2024), GHS-UCDB R2024A, European Commission JRC, doi:10.2905/1a338be6-7eaf-480c-9664-3a8ade88cbcd. Sea and lakes from Natural Earth (public domain) decide which directions lead on to land."
+    },
+    "caveats": [
+      "The urban centre ends where density falls below 1,500 residents per km²: beyond it lie suburbs, farmland, hills or a large park, not necessarily open country.",
+      "Shores come from Natural Earth at about 1 km precision; directions that meet water within 3 km of the edge are dropped.",
+      "A centre point that falls in a gap inside its urban centre gets no figure (Dubai)."
+    ]
+  },
+  {
+    "id": "github",
+    "name": "GitHub user search",
+    "publisher": "GitHub",
+    "homepage": "https://docs.github.com/en/rest/search/search#search-users",
+    "measures": [
+      {
+        "metric": "github_developers",
+        "definition": "GitHub accounts whose profile location names the city, per 1,000 residents (city population from GeoNames); only the total count of the search is read."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "the day it is read"
+    },
+    "licence": "No data licence: only total counts of profiles are stored (GitHub Acceptable Use Policies, section 7)",
+    "licenceUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "counts-no-licence",
+      "edition": "GitHub REST API, search users (total_count only), read 2026-11-05",
+      "termsUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions",
+      "termsRead": "2026-11-05",
+      "attribution": "Counts of GitHub profiles by stated location, from GitHub's public user search (counts only, no profile data)"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://api.github.com/search/users?q=location:\"{name}\"&per_page=1",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/github.ts",
+      "rateLimit": "10 searches a minute without a token"
+    },
+    "linkOut": "https://github.com/search?q=location%3A%22{name}%22&type=users",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Only a count is kept, no account. The Acceptable Use Policies allow public, non-personal information to be used for research published openly; a total count of profiles is that kind of information. Owner to confirm this reading of the terms."
+    },
+    "caveats": [
+      "Counts follow what people type: many leave the location empty, some name a nearby big city, and a name shared by two places mixes them (such places get no figure).",
+      "Populations are GeoNames figures, the city proper for most places but the metropolitan area for a few (Sydney, Melbourne), which lowers their rate.",
+      "Searches only the place's names held here (Brussels, not Bruxelles or Brussel, unless listed as aliases)."
+    ]
+  },
+  {
+    "id": "internations",
+    "name": "InterNations Expat City Ranking",
+    "publisher": "InterNations",
+    "homepage": "https://www.internations.org/expat-insider/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.internations.org/expat-insider/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Survey of expats; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "iqair",
+    "name": "IQAir city air quality",
+    "publisher": "IQAir",
+    "homepage": "https://www.iqair.com/",
+    "measures": [
+      {
+        "metric": "pm25",
+        "definition": "Read on the publisher's page; not copied."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.iqair.com/search?q={name}",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Live and yearly air-quality rankings; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "labour-law",
+    "name": "Paid holiday by law, from the labour codes cited",
+    "publisher": "Borgo contributors",
+    "homepage": "https://github.com/ABCastor/borgo/blob/main/src/fetch/family.ts",
+    "measures": [
+      {
+        "metric": "annual_leave",
+        "definition": "Statutory paid annual leave for a full-time employee on a five-day week, at the baseline service level in each note. Calendar-day entitlements use the explicit five-day-week equivalent in the observation, not an exact individual workday entitlement."
+      }
+    ],
+    "coverage": {
+      "geography": "the 26 countries with a tax model",
+      "level": "country",
+      "period": "as reviewed"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "curated in src/fetch/family.ts, 2026 rules",
+      "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from the labour codes cited in each figure's note"
+    },
+    "access": "curated",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "src/fetch/family.ts",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/family.ts"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Official statutes and labour-authority guidance, with an official source linked on every figure and country-by-country verification in docs/pension-leave-audit.md."
+    },
+    "caveats": [
+      "Baseline entitlements only: service, accrual, age, working pattern, sector and collective agreements can change the applicable leave. Hungary, Norway and Switzerland have modelled age adjustments; service progression is described but not calculated.",
+      "The UK entitlement is 28 days including any bank holidays the employer counts towards it; public holidays are not an additional guaranteed paid entitlement there.",
+      "Spain and the UAE grant 30 calendar days, represented as 30 × 5/7 equivalent working days. The actual number of working days depends on leave dates; UAE public holidays within leave count towards it.",
+      "Canada uses the federal baseline, not a uniform rule for all provincial employees. First-year accrual and qualifying service differ by country."
+    ]
+  },
+  {
+    "id": "meteostat",
+    "name": "Meteostat climate normals",
+    "publisher": "Meteostat and its data providers (national weather services)",
+    "homepage": "https://dev.meteostat.net/",
+    "measures": [
+      {
+        "metric": "sunshine_hours",
+        "definition": "Sunshine duration measured at the nearest station, summed over the year, from the latest 30-year normal Meteostat holds."
+      },
+      {
+        "metric": "sunshine_monthly",
+        "definition": "Sunshine duration measured at the nearest station, by month."
+      }
+    ],
+    "coverage": {
+      "geography": "patchy: stations whose normals include sunshine",
+      "level": "city",
+      "period": "latest 30-year normal (1991-2020 where available)"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://dev.meteostat.net/license",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Meteostat bulk climate normals (bulk.meteostat.net/v2/normals), read 2026-10-27",
+      "termsUrl": "https://dev.meteostat.net/license",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Meteostat (meteostat.net) and its data providers (dev.meteostat.net/providers), CC BY 4.0"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://bulk.meteostat.net/v2/normals/{station}.csv.gz",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/node/meteostat.ts"
+    },
+    "refresh": {
+      "cadence": "static",
+      "maxAgeDays": 3650
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Fills sunshine where the WMO set has no station (Lisbon, Turin). No CORS, so CLI and MCP only."
+    },
+    "caveats": [
+      "Credit Meteostat and the original weather service.",
+      "Product: the bulk normals files (bulk.meteostat.net/v2/normals/<station>.csv.gz), sunshine in minutes. Whether Meteostat fills gaps in normals with model data is not documented for this product; unverified."
+    ]
+  },
+  {
+    "id": "mlab",
+    "name": "M-Lab NDT statistics (daily city aggregates)",
+    "publisher": "Measurement Lab",
+    "homepage": "https://www.measurementlab.net/data/",
+    "measures": [
+      {
+        "metric": "download_mbps",
+        "definition": "Typical download speed in single-stream speed tests."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "CC0-1.0",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC0-1.0",
+      "edition": "M-Lab NDT daily city aggregates, 2023",
+      "termsUrl": "https://www.measurementlab.net/data/",
+      "termsRead": "2026-11-05",
+      "attribution": "The M-Lab NDT Data Set, 2023-01-01–2023-12-31. https://measurementlab.net/tests/ndt"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://statistics.measurementlab.net",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/mlab.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Frozen at 2023, the last full year aggregated."
+    },
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "id": "nager-date",
+    "name": "Nager.Date public holidays",
+    "publisher": "Nager.Date (open-source project)",
+    "homepage": "https://date.nager.at/",
+    "measures": [
+      {
+        "metric": "public_holidays",
+        "definition": "Public holidays that fall on Monday to Friday this year, nationwide plus those of the city's region."
+      }
+    ],
+    "coverage": {
+      "geography": "about 120 countries",
+      "level": "region",
+      "period": "the current year"
+    },
+    "licence": "MIT",
+    "licenceUrl": "https://github.com/nager/Nager.Date/blob/main/LICENSE.md",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "MIT",
+      "edition": "Nager.Date API v3, 2026 holidays",
+      "termsUrl": "https://github.com/nager/Nager.Date",
+      "termsRead": "2026-11-05",
+      "attribution": "Public holidays from Nager.Date (date.nager.at), MIT License, Copyright (c) Nager"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://date.nager.at/api/v3/PublicHolidays/{year}/{country}",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/family.ts"
+    },
+    "linkOut": "https://date.nager.at/PublicHoliday/Country/{country}",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Open-source holiday rules with a free, keyless API; the API answers browsers (CORS open)."
+    },
+    "caveats": [
+      "Holidays moved off a weekend by law count where Nager.Date lists the moved date.",
+      "Regional holidays count only when the city's ISO region code matches the one Nager.Date uses."
+    ]
+  },
+  {
+    "id": "nasa-power",
+    "name": "NASA POWER climatology",
+    "publisher": "NASA Langley Research Center, Prediction Of Worldwide Energy Resources (POWER) project, from NASA GMAO's MERRA-2 reanalysis",
+    "homepage": "https://power.larc.nasa.gov/",
+    "measures": [
+      {
+        "metric": "map_climate",
+        "definition": "The average afternoon high of each month on the map's grid: the monthly mean air temperature 2 m above the ground plus half the mean daily range, averaged over POWER's points on land in each tile."
+      }
+    ],
+    "coverage": {
+      "geography": "global, on a grid of about 0.5° by 0.625°",
+      "level": "region",
+      "period": "2001-2025 climatology"
+    },
+    "licence": "CC0-1.0 (NASA data use guidance), citation requested",
+    "licenceUrl": "https://www.earthdata.nasa.gov/engage/open-data-services-software-policies/data-use-guidance",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC0-1.0",
+      "edition": "POWER climatology API v2, MERRA-2 2001-2025",
+      "termsUrl": "https://power.larc.nasa.gov/docs/referencing/",
+      "termsRead": "2026-11-05",
+      "attribution": "The data was obtained from National Aeronautics and Space Administration (NASA) Langley Research Center's Prediction Of Worldwide Energy Resources (POWER) project funded through the NASA Earth Science Division (POWER climatology API v2, read on the date in data/map/world.json)"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://power.larc.nasa.gov/api/temporal/climatology/regional?latitude-min={lat}&latitude-max={lat+10}&longitude-min={lon}&longitude-max={lon+10}&parameters=T2M&community=RE&format=JSON",
+      "cors": false,
+      "key": null,
+      "rateLimit": "one parameter per regional request, boxes of at most 10° by 10°",
+      "fetcher": "pipeline/sources/world-map.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 730
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Chosen for the map's climate layer: global, open, no key. Checked against station normals on 2026-11-05: July mean daily high 33.7 °C at Madrid (AEMET 32.1 at Retiro, 33.6 at Barajas) and 23.1 °C at Heathrow (Met Office 23.5)."
+    },
+    "caveats": [
+      "POWER asks every work product to say: \"The data was obtained from National Aeronautics and Space Administration (NASA) Langley Research Center's Prediction Of Worldwide Energy Resources (POWER) project funded through the NASA Earth Science Division\", with the service name, version and date read (POWER Climatology API v2.10.1, read 2026-11-05).",
+      "NASA data carry no restriction unless marked (Earthdata data use guidance: CC0); POWER marks none.",
+      "A map tile is about 150 km across and averages its ground, mountains included, so it reads cooler than a city in a valley beside the mountains (Turin's tile includes the Alps). City points use their own nice days from Open-Meteo at the city's coordinates.",
+      "Air temperature only: the tile layer does not know humidity, cloud or rain."
+    ]
+  },
+  {
+    "id": "natural-earth",
+    "name": "Natural Earth (coastline, land, countries and populated places)",
+    "publisher": "Natural Earth",
+    "homepage": "https://www.naturalearthdata.com/",
+    "measures": [
+      {
+        "metric": "sea_km",
+        "definition": "Straight-line distance from the centre to the open-sea coast."
+      },
+      {
+        "metric": "map_land",
+        "definition": "Which tiles of the world map are land, and the country each one belongs to, from the 1:50m admin-0 countries."
+      },
+      {
+        "metric": "map_places",
+        "definition": "Towns and cities of 100,000 people or more, plus every national capital, from the 1:10m populated places: what a click on the map can add."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Public domain",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "PD",
+      "edition": "Natural Earth 5.1 (1:50m admin-0, 1:10m populated places, coastline, land)",
+      "termsUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+      "termsRead": "2026-11-05",
+      "attribution": "Made with Natural Earth (public domain)"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_coastline.geojson",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/geography.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Lakes and some tidal rivers excluded by hand for sea distance. The map leaves Antarctica out and keeps Somaliland, Northern Cyprus and the Siachen Glacier as land without a country code."
+    },
+    "caveats": [
+      "The map's tiles take the country most of their ground belongs to, so a small country (Singapore, Luxembourg) can share a tile with its neighbour; its cities still show as their own points."
+    ],
+    "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/"
+  },
+  {
+    "id": "numbeo",
+    "name": "Numbeo cost of living",
+    "publisher": "Numbeo",
+    "homepage": "https://www.numbeo.com/",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Read on the publisher's page; not copied."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Read on the publisher's page; not copied."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.numbeo.com/cost-of-living/in/{name_dashed}",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Crowd-sourced prices and rents; the most complete rent figures, but proprietary: their terms forbid republishing, even under a paid licence."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published.",
+    "licenceUrl": "https://www.numbeo.com/common/terms_of_use.jsp",
+    "caveats": [
+      "Terms (read 27 Oct 2026): 'Automated data collection methods (such as scraping or crawling) are strictly prohibited unless you have obtained prior written permission from Numbeo.' Personal use is free with credit."
+    ]
+  },
+  {
+    "id": "oecd-childcare",
+    "name": "OECD Tax-Benefit Models: net childcare costs",
+    "publisher": "OECD",
+    "homepage": "https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+    "measures": [
+      {
+        "metric": "childcare_fees_1",
+        "definition": "Fees a year for full-time childcare for one child aged 2 or 3, before any public support, national currency."
+      },
+      {
+        "metric": "childcare_fees_2",
+        "definition": "Fees a year for full-time childcare for two children aged 2 and 3, before any public support."
+      },
+      {
+        "metric": "childcare_net_couple_1",
+        "definition": "Net cost a year of full-time childcare for one child, for a two-earner couple on 100% and 67% of the average wage: fees less childcare benefits and tax breaks, plus changes in other benefits."
+      },
+      {
+        "metric": "childcare_net_couple_2",
+        "definition": "The same for two children aged 2 and 3."
+      },
+      {
+        "metric": "childcare_net_single_1",
+        "definition": "Net cost a year of full-time childcare for one child, for a single parent on the average wage."
+      },
+      {
+        "metric": "childcare_net_single_2",
+        "definition": "The same for two children aged 2 and 3."
+      }
+    ],
+    "coverage": {
+      "geography": "OECD and EU members (39 countries)",
+      "level": "country",
+      "period": "latest model year, the last four years"
+    },
+    "licence": "OECD terms for data (any use, with citation)",
+    "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "OECD-data",
+      "edition": "OECD Tax-Benefit Models, net childcare costs (DSD_TAXBEN_NCC), 2025",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "OECD (2026), Net childcare costs, OECD Tax-Benefit Models, https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+      "notices": [
+        "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://sdmx.oecd.org/public/rest/data/OECD.ELS.JAI,DSD_TAXBEN_NCC@DF_NCC,1.1/{iso3}.NCF.XDC.AW100.C_C1+C_C2+S_C1+S_C2.Y2_3.AW67+_Z.YES.NO.NO._T+CF.A?format=csvfilewithlabels&startPeriod={year-4}",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/family.ts"
+    },
+    "linkOut": "https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "The one open, comparable source for childcare after public support; the API answers browsers (CORS open)."
+    },
+    "caveats": [
+      "The model prices childcare in one reference place per country (often a large city or a typical municipality), so a city's real fees can differ a lot.",
+      "Children aged 2 and 3 only; general child benefits that do not depend on childcare are not in the net cost."
+    ]
+  },
+  {
+    "id": "oecd-family-db",
+    "name": "OECD Family Database: parental leave systems (PF2.1)",
+    "publisher": "OECD",
+    "homepage": "https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+    "measures": [
+      {
+        "metric": "leave_mothers",
+        "definition": "Paid maternity, parental and home-care leave available to mothers, in weeks at full pay (full-rate equivalent)."
+      },
+      {
+        "metric": "leave_fathers",
+        "definition": "Paid paternity leave and parental leave reserved for fathers, in weeks at full pay (full-rate equivalent)."
+      }
+    ],
+    "coverage": {
+      "geography": "OECD and EU members",
+      "level": "country",
+      "period": "entitlements in April of the table's year"
+    },
+    "licence": "OECD terms for data (any use, with citation)",
+    "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "OECD-data",
+      "edition": "OECD Family Database PF2.1, updated May 2026 (policies in April 2025)",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "OECD (2026), OECD Family Database, PF2.1 Parental leave systems, https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+      "notices": [
+        "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+      ]
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/node/oecd-family.ts"
+    },
+    "linkOut": "https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "The standard comparable source for paid leave."
+    },
+    "caveats": [
+      "National entitlements only: state programmes (New York or Washington paid family leave in the US) and employer schemes are not in it.",
+      "The live PF2.1 edition is updated May 2026 but measures policies in April 2025 using 2024 earnings. It is not a current-2026 statement of statutory leave; later reforms are outside these comparable full-rate-equivalent observations."
+    ]
+  },
+  {
+    "id": "oecd-wellbeing",
+    "name": "OECD Well-being Database (How's Life?)",
+    "publisher": "OECD",
+    "homepage": "https://www.oecd.org/en/data/datasets/well-being-database.html",
+    "measures": [
+      {
+        "metric": "life_evaluation",
+        "definition": "How satisfied people say they are with their life as a whole, on a 0 to 10 scale, averaged over the country."
+      }
+    ],
+    "coverage": {
+      "geography": "OECD members",
+      "level": "country",
+      "period": "latest year, 2018 onwards"
+    },
+    "licence": "OECD terms for data (any use, with citation)",
+    "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "OECD-data",
+      "edition": "OECD Well-being Database, DSD_HSL@DF_HSL_CWB 1.1",
+      "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+      "termsRead": "2026-11-05",
+      "attribution": "OECD (2026), OECD Well-being Database (How's Life?), https://www.oecd.org/en/data/datasets/well-being-database.html",
+      "notices": [
+        "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://sdmx.oecd.org/public/rest/data/OECD.WISE.WDP,DSD_HSL@DF_HSL_CWB,1.1/{iso3}.11_1._T._T._T?format=csvfilewithlabels&startPeriod=2018",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/country.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Open alternative to the World Happiness Report, whose data may not be redistributed."
+    },
+    "caveats": [
+      "Only OECD members; elsewhere the line stays empty rather than borrowing a closed index.",
+      "The OECD API answers HTTP 500 intermittently; the fetch reports it and can be re-run for this source alone (borgo fetch <place> --only oecd-wellbeing)."
+    ]
+  },
+  {
+    "id": "ons-pipr",
+    "name": "Price Index of Private Rents",
+    "publisher": "Office for National Statistics",
+    "homepage": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average monthly private rent of a one-bedroom home in the local authority."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average monthly private rent of a three-bedroom home in the local authority."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "GB"
+      ],
+      "level": "region",
+      "period": "latest month"
+    },
+    "licence": "OGL-UK-3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "OGL-UK-3.0",
+      "edition": "ONS Price Index of Private Rents, monthly price statistics, latest month",
+      "termsUrl": "https://www.ons.gov.uk/methodology/geography/licences",
+      "termsRead": "2026-11-05",
+      "attribution": "Source: Office for National Statistics, Price Index of Private Rents. Contains public sector information licensed under the Open Government Licence v3.0"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics (latest xlsx linked from the page)",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/node/ons-rent.ts"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Official private rents for every UK local authority."
+    },
+    "caveats": [
+      "The xlsx has no CORS, so the browser cannot read it."
+    ]
+  },
+  {
+    "id": "open-meteo-cams",
+    "name": "Air quality (CAMS global and European models)",
+    "publisher": "Open-Meteo, Copernicus Atmosphere Monitoring Service",
+    "homepage": "https://open-meteo.com/en/docs/air-quality-api",
+    "measures": [
+      {
+        "metric": "pm25",
+        "definition": "Fine particles under 2.5 micrometres, modelled: the mean concentration over the last full year at the city's coordinates."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "last full year"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://open-meteo.com/en/license",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Open-Meteo air-quality API (CAMS global and European), fetched on demand",
+      "termsUrl": "https://open-meteo.com/en/license",
+      "termsRead": "2026-11-05",
+      "attribution": "Weather data by Open-Meteo.com (https://open-meteo.com/), CC BY 4.0",
+      "notices": [
+        "Contains modified Copernicus Atmosphere Monitoring Service information. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude={lat}&longitude={lon}&start_date={start}&end_date={end}&hourly=pm2_5",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/air.ts",
+      "rateLimit": "as Open-Meteo"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Covers every place; used where WHO's measured figure cannot be fetched (the browser) or does not exist."
+    },
+    "caveats": [
+      "A model, not a measurement: it can miss local sources such as a busy valley or wood stoves. Measured WHO figures win where both exist."
+    ]
+  },
+  {
+    "id": "open-meteo-era5",
+    "name": "Historical weather (ERA5 reanalysis)",
+    "publisher": "Open-Meteo, Copernicus Climate Change Service (ECMWF)",
+    "homepage": "https://open-meteo.com/en/docs/historical-weather-api",
+    "measures": [
+      {
+        "metric": "temp_high",
+        "definition": "Air temperature 2 m above the ground in the shade: the mean of each day's highest, by month."
+      },
+      {
+        "metric": "temp_low",
+        "definition": "Air temperature 2 m above the ground in the shade: the mean of each day's lowest, by month."
+      },
+      {
+        "metric": "feels_high",
+        "definition": "Apparent ('feels like') temperature, which adds the effect of humidity, wind and sun to the air temperature: the mean of each day's highest, by month."
+      },
+      {
+        "metric": "feels_low",
+        "definition": "Apparent ('feels like') temperature: the mean of each day's lowest, by month."
+      },
+      {
+        "metric": "temp_hourly",
+        "definition": "Air temperature at each hour of the local day, averaged over each month."
+      },
+      {
+        "metric": "cloud_cover",
+        "definition": "Share of the sky covered by cloud, averaged over every hour of each month."
+      },
+      {
+        "metric": "wet_days",
+        "definition": "Days a year with at least 1 mm of rain or snow."
+      },
+      {
+        "metric": "wet_days_monthly",
+        "definition": "Days with at least 1 mm of rain or snow, by month."
+      },
+      {
+        "metric": "temp_high_p10",
+        "definition": "Air temperature in the shade: the 10th percentile of daily highs, by month."
+      },
+      {
+        "metric": "temp_high_p90",
+        "definition": "Air temperature in the shade: the 90th percentile of daily highs, by month."
+      },
+      {
+        "metric": "temp_low_p10",
+        "definition": "Air temperature in the shade: the 10th percentile of daily lows, by month."
+      },
+      {
+        "metric": "temp_low_p90",
+        "definition": "Air temperature in the shade: the 90th percentile of daily lows, by month."
+      },
+      {
+        "metric": "temp_record_high",
+        "definition": "The highest hourly air temperature in each month over the five years."
+      },
+      {
+        "metric": "temp_record_low",
+        "definition": "The lowest hourly air temperature in each month over the five years."
+      },
+      {
+        "metric": "nice_bins_feels",
+        "definition": "Days with under 1 mm of rain and at most half the sky clouded from 8 am to 8 pm, by month and by the average feels-like temperature of those hours in whole degrees."
+      },
+      {
+        "metric": "nice_bins_air",
+        "definition": "The same dry, mostly clear days, by the average air temperature of those hours in whole degrees."
+      },
+      {
+        "metric": "beach_days",
+        "definition": "Days that are dry, at most 40% clouded and feel 24 to 32 °C on average from 8 am to 8 pm, by month."
+      },
+      {
+        "metric": "active_days",
+        "definition": "Days with two hours in a row between 6 am and 9 pm that are dry, under 30 km/h of wind and feel 5 to 22 °C, by month."
+      },
+      {
+        "metric": "muggy_days",
+        "definition": "Days whose average dew point is 18 °C or more, by month."
+      },
+      {
+        "metric": "grey_days",
+        "definition": "Days at least 80% clouded on average from 8 am to 8 pm, by month."
+      },
+      {
+        "metric": "hot_nights",
+        "definition": "Days whose lowest air temperature stays above 20 °C, by month."
+      },
+      {
+        "metric": "hot_days",
+        "definition": "Days whose feels-like temperature reaches 32 °C between 8 am and 8 pm, by month."
+      },
+      {
+        "metric": "snow_days",
+        "definition": "Days with at least 1 cm of fresh snow, by month."
+      },
+      {
+        "metric": "windy_days",
+        "definition": "Days whose wind at 10 m averages 30 km/h or more from 8 am to 8 pm, by month."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "last 5 full years"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://open-meteo.com/en/license",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Open-Meteo historical weather API (ERA5), 2021-2025",
+      "termsUrl": "https://open-meteo.com/en/license",
+      "termsRead": "2026-11-05",
+      "attribution": "Weather data by Open-Meteo.com (https://open-meteo.com/), CC BY 4.0",
+      "notices": [
+        "Contains modified Copernicus Climate Change Service information 2021-2025. Neither the European Commission nor ECMWF is responsible for any use that may be made of the Copernicus information or data it contains."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://archive-api.open-meteo.com/v1/archive?latitude={lat}&longitude={lon}&start_date={start}&end_date={end}&timezone=auto&hourly=temperature_2m,apparent_temperature,dew_point_2m,precipitation,snowfall,cloud_cover,wind_speed_10m",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/open-meteo.ts",
+      "rateLimit": "free tier: 10,000 calls a day, 5,000 an hour, 600 a minute, non-commercial use. Five years of hourly data for one place with up to 10 variables weighs about 130 calls (the fetcher asks for 7): about 40 places an hour and 75 a day from one address (27 Oct 2026: HTTP 429 after the 40th seed city, and again once the day's calls ran out)."
+    },
+    "linkOut": "https://open-meteo.com/en/docs/historical-weather-api#latitude={lat}&longitude={lon}",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "A global reanalysis at the city's coordinates, so every place gets the same method. Data CC BY 4.0; the free API is for non-commercial use."
+    },
+    "caveats": [
+      "A reanalysis grid cell (about 25 km) smooths coasts and hills; a hilltop or a bay can differ by a degree or two.",
+      "Not used for sunshine: on 27 Oct 2026 its sunshine_duration (2021-2025) read 32-92% above WMO 1991-2020 station normals at Heathrow, Dublin, Madrid and Berlin; periods differ, so this is a provisional exclusion, not a measured model bias.",
+      "The free API is for non-commercial use (open-meteo.com/en/terms); its servers log requested coordinates for 90 days.",
+      "Cloud cover, light rain and 10 m wind are where a reanalysis grid is weakest: the weather-day counts that rest on them (nice, beach, grey, windy) are best read as comparisons between cities, not as exact days."
+    ]
+  },
+  {
+    "id": "openalex",
+    "name": "OpenAlex institutions",
+    "publisher": "OurResearch",
+    "homepage": "https://openalex.org/",
+    "measures": [
+      {
+        "metric": "research_output",
+        "definition": "Papers, patents and datasets published in a year by the institutions located in the city, per 100,000 residents."
+      },
+      {
+        "metric": "builder_density",
+        "definition": "The same research output per resident, placed on a 0 to 100 log scale (100 works per 100,000 residents = 0, 30,000 = 100)."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "last indexed year"
+    },
+    "licence": "CC0-1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC0-1.0",
+      "edition": "OpenAlex institutions API, 2025 works",
+      "termsUrl": "https://help.openalex.org/hc/en-us/articles/24397762024087-Pricing",
+      "termsRead": "2026-11-05",
+      "attribution": "OpenAlex (openalex.org), CC0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://api.openalex.org/institutions?filter=geo.city:\"{name}\",country_code:{country},type:!government&per-page=200&sort=works_count:desc&select=counts_by_year",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/research.ts",
+      "rateLimit": "100,000 calls a day; deep paging needs a key"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 180
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "A proxy for who is in the room, labelled as research density, not startups (decision D10)."
+    },
+    "caveats": [
+      "Matches institutions by city name; a suburb campus can fall outside.",
+      "National agencies are left out because their output is national."
+    ]
+  },
+  {
+    "id": "osm-walk-cycle",
+    "name": "OpenStreetMap via the Overpass API: walking and cycling",
+    "publisher": "OpenStreetMap contributors",
+    "homepage": "https://www.openstreetmap.org/copyright",
+    "measures": [
+      {
+        "metric": "walkable_share",
+        "definition": "Share of residential streets within 5 km of the centre whose middle has a food shop, a pharmacy or doctor, a school, a park and a public-transport stop each within 1 km as the crow flies."
+      },
+      {
+        "metric": "bike_network",
+        "definition": "Kilometres of cycle paths plus roads with a separate cycle track tagged on them, within 10 km of the centre, per km² of land there; painted lanes are not counted."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "the OpenStreetMap state on the day it is read"
+    },
+    "licence": "ODbL-1.0",
+    "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+    "redistribute": "share-alike",
+    "rights": {
+      "licenceId": "ODbL-1.0",
+      "edition": "OpenStreetMap via the Overpass API, read 2026-11-05",
+      "termsUrl": "https://www.openstreetmap.org/copyright",
+      "termsRead": "2026-11-05",
+      "attribution": "© OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/node/osm-walk-cycle.ts",
+      "rateLimit": "public Overpass servers: two slots per client, under 10,000 queries a day; two queries of about a minute and a half a place"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Share-alike: kept apart and credited. Not run from a browser (cors false here by choice): the queries are too heavy to send from every visitor's page."
+    },
+    "caveats": [
+      "Counts measure how thoroughly a city is mapped as well as what exists; OSM is strongest in Europe.",
+      "Straight-line distance: a river or a motorway without a crossing makes a real walk longer.",
+      "Doctors' surgeries are mapped unevenly, so a pharmacy counts as well."
+    ]
+  },
+  {
+    "id": "osm",
+    "name": "OpenStreetMap via the Overpass API",
+    "publisher": "OpenStreetMap contributors",
+    "homepage": "https://www.openstreetmap.org/copyright",
+    "measures": [
+      {
+        "metric": "coworking",
+        "definition": "Counts of places mapped within 10 km of the centre (coworking, climbing, pools, hackerspaces, stations, cycle paths, green space)."
+      },
+      {
+        "metric": "climbing_gyms",
+        "definition": "Indoor climbing and bouldering gyms mapped in OpenStreetMap within 10 km of the centre."
+      },
+      {
+        "metric": "cycle_paths_km",
+        "definition": "Length of paths built or signed for bicycles, mapped in OpenStreetMap within 10 km of the centre; painted lanes on roads are not counted."
+      },
+      {
+        "metric": "green_space_10km",
+        "definition": "Share of the land within 10 km of the centre that is park, woodland, heath or other public green space in OpenStreetMap; the sea is left out of the land."
+      },
+      {
+        "metric": "hackerspaces",
+        "definition": "Community workshops for building things, mapped in OpenStreetMap within 10 km of the centre."
+      },
+      {
+        "metric": "rail_stations",
+        "definition": "Train, metro and light-rail stations mapped in OpenStreetMap within 10 km of the centre."
+      },
+      {
+        "metric": "swimming_pools",
+        "definition": "Swimming centres and pools open to the public, mapped in OpenStreetMap within 10 km of the centre."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "ODbL-1.0",
+    "redistribute": "share-alike",
+    "rights": {
+      "licenceId": "ODbL-1.0",
+      "edition": "OpenStreetMap via the Overpass API, read 2026-10-27",
+      "termsUrl": "https://www.openstreetmap.org/copyright",
+      "termsRead": "2026-11-05",
+      "attribution": "© OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://overpass-api.de/api/interpreter",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/osm.ts",
+      "rateLimit": "public Overpass servers: two slots per client; minutes per city"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Share-alike: kept apart and credited."
+    },
+    "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/"
+  },
+  {
+    "id": "ourairports",
+    "name": "OurAirports airports",
+    "publisher": "OurAirports",
+    "homepage": "https://ourairports.com/data/",
+    "measures": [
+      {
+        "metric": "airport_km",
+        "definition": "Distance to the nearest large airport with scheduled flights, and airports within 100 km."
+      },
+      {
+        "metric": "airports_100km",
+        "definition": "Airports with scheduled passenger flights within 100 km of the centre."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Public domain",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "PD",
+      "edition": "OurAirports airports.csv, read 2026-10-27",
+      "termsUrl": "https://ourairports.com/data/",
+      "termsRead": "2026-11-05",
+      "attribution": "Airports from OurAirports (ourairports.com), public domain"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://davidmegginson.github.io/ourairports-data/airports.csv",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/ourairports.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Updated nightly by contributors."
+    },
+    "licenceUrl": "https://ourairports.com/data/"
+  },
+  {
+    "id": "oxford-economics",
+    "name": "Oxford Economics Global Cities Index",
+    "publisher": "Oxford Economics",
+    "homepage": "https://www.oxfordeconomics.com/global-cities-index/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.oxfordeconomics.com/global-cities-index/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Paid index of 1,000 cities."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "passport-index",
+    "name": "Passport Index",
+    "publisher": "Arton Capital",
+    "homepage": "https://www.passportindex.org/",
+    "measures": [
+      {
+        "metric": "right_to_live",
+        "definition": "Read on the publisher's page; not copied."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.passportindex.org/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Visa-free travel, not the right to live; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "politics",
+    "name": "Political position from election results",
+    "publisher": "Borgo contributors",
+    "homepage": "https://github.com/ABCastor/borgo/blob/main/pipeline/inputs/politics.json",
+    "measures": [
+      {
+        "metric": "politics_lr",
+        "definition": "An estimate of where the place voted at its latest national lower-house election, 0 left to 10 right: each party's ParlGov 2024 position (the mean of expert surveys, or of its party family where no survey covers it; an alliance takes its members' mean) averaged by its share of the official result."
+      }
+    ],
+    "coverage": {
+      "geography": "18 countries with an official result read and enough of the vote positioned; Swiss cantons, Canadian provinces and Australian states. No figure for Hungary, Italy and Japan (under 75% of the vote positioned), the United States and Singapore (no ParlGov positions), Spain and Greece (official results not readable for this release) or the UAE.",
+      "level": "region",
+      "period": "latest national election, 2022 to 2026"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "pipeline/inputs/politics.json; ParlGov 2024 release (doi:10.7910/DVN/2VZ5ZC, CC0 1.0)",
+      "termsUrl": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo contributors, from official election results and ParlGov party positions (Döring, Huber and Manow, ParlGov 2024 release, CC0)"
+    },
+    "access": "curated",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "src/fetch/politics.ts",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/politics.ts"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Inputs, each open: ParlGov 2024 release (Döring and Manow, Harvard Dataverse doi:10.7910/DVN/2VZ5ZC, CC0), matched by ParlGov party id; official results from each country's electoral authority or statistics office, listed with their URLs in pipeline/inputs/politics.json and docs/positions.md, each compared with its source on the date given. Wikidata and the MIT Election Lab are no longer used. The Manifesto Project was left out: its terms forbid redistribution."
+    },
+    "caveats": [
+      "Party positions are ParlGov's 2024 release: expert surveys up to about 2019, so a party that moved since keeps its older place. Where no survey covers a party, ParlGov gives its party family's mean; the note marks those parties.",
+      "A party ParlGov does not place has no position, and a place gets no figure when parties with a position took under 75% of the vote. Independents and non-party candidates have no position.",
+      "Sweden's shares are the Election Authority's rounded percentages and Switzerland's the Federal Statistical Office's party strength; France's groups are the Interior Ministry's candidate classifications (nuances)."
+    ]
+  },
+  {
+    "id": "ror",
+    "name": "Research Organization Registry",
+    "publisher": "ROR",
+    "homepage": "https://ror.org/",
+    "measures": [
+      {
+        "metric": "universities",
+        "definition": "Universities and research institutes registered in the city."
+      },
+      {
+        "metric": "research_institutes",
+        "definition": "Research facilities (institutes, laboratories, observatories) registered in the city in the Research Organization Registry. National research councils that register every lab inflate some cities (Paris, Tokyo)."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "CC0-1.0",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC0-1.0",
+      "edition": "ROR data dump, read 2026-10-27",
+      "termsUrl": "https://ror.org/registry/",
+      "termsRead": "2026-11-05",
+      "attribution": "Research Organization Registry (ror.org), CC0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://api.ror.org/v2/organizations?query.advanced=locations.geonames_id:{geonames}",
+      "cors": true,
+      "key": null,
+      "fetcher": "pipeline/sources/ror.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Exact match on GeoNames ids."
+    },
+    "licenceUrl": "https://ror.org/registry/"
+  },
+  {
+    "id": "scb-rent",
+    "name": "Rents for dwellings (Statistics Sweden BO0406)",
+    "publisher": "Statistics Sweden (SCB)",
+    "homepage": "https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0406__BO0406E/BO0406Tab03/",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Sitting rent: the median annual rent of every rented 2-room dwelling (one bedroom; Swedish rooms leave out the kitchen) in Stockholm municipality, divided by 12. Mostly rents set by negotiation, not what a newcomer pays on the second-hand market."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Sitting rent: the median annual rent of every rented dwelling of 4 rooms or more (three bedrooms or more) in Stockholm municipality, divided by 12."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "SE"
+      ],
+      "level": "city",
+      "period": "yearly"
+    },
+    "licence": "CC0-1.0",
+    "licenceUrl": "https://www.scb.se/en/services/open-data-api/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC0-1.0",
+      "edition": "BO0406Tab03, 2026 (updated 2026-10-02)",
+      "termsUrl": "https://www.scb.se/en/services/open-data-api/",
+      "attribution": "Source: Statistics Sweden, rents for dwellings (BO0406)",
+      "termsRead": "2026-11-05"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://api.scb.se/OV0104/v1/doris/en/ssd/BO/BO0406/BO0406E/BO0406Tab03",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/scb-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent)",
+      "on": "2026-11-05",
+      "notes": "Official, every rented dwelling; CC0."
+    },
+    "caveats": [
+      "Swedish first-hand rents are negotiated and allocated by queue; a newcomer often rents second hand at a higher price, which this figure does not show."
+    ]
+  },
+  {
+    "id": "ssb-rent",
+    "name": "Rental market survey (Statistics Norway table 09895)",
+    "publisher": "Statistics Norway (SSB)",
+    "homepage": "https://www.ssb.no/en/statbank/table/09895",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Sitting rent: the average monthly rent of every surveyed tenancy of a 2-room home (one bedroom; Norwegian rooms leave out the kitchen) in the Oslo and Bærum price zone, old and new tenancies."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Sitting rent: the average monthly rent of every surveyed tenancy of a 4-room home (three bedrooms) in the Oslo and Bærum price zone."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "NO"
+      ],
+      "level": "metro",
+      "period": "yearly"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://www.ssb.no/en/diverse/lisens",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "table 09895, 2025 (updated 2025-12-22)",
+      "termsUrl": "https://www.ssb.no/en/diverse/lisens",
+      "attribution": "Statistics Norway (SSB), table 09895: Rental market survey, average monthly rents, CC BY 4.0 (www.ssb.no)",
+      "termsRead": "2026-11-05"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://data.ssb.no/api/v0/en/table/09895",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/ssb-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent)",
+      "on": "2026-11-05",
+      "notes": "Official, every tenancy; rooms counted without the kitchen."
+    },
+    "caveats": [
+      "Oslo and Bærum form one price zone; SSB warns that yearly samples differ, so year-to-year changes are not exact."
+    ]
+  },
+  {
+    "id": "startup-genome",
+    "name": "Startup Genome ecosystem rankings",
+    "publisher": "Startup Genome",
+    "homepage": "https://startupgenome.com/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://startupgenome.com/ecosystems",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Startup ecosystem rankings; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "statfin-rent",
+    "name": "Rents of dwellings (Statistics Finland table 15fc)",
+    "publisher": "Statistics Finland",
+    "homepage": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__asvu/statfin_asvu_pxt_15fc.px/",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Sitting rent: the median monthly rent of every non-subsidised tenancy of a two-room flat (one bedroom; Finnish rooms leave out the kitchen) in Helsinki, old and new tenancies."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "FI"
+      ],
+      "level": "city",
+      "period": "quarterly"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "table 15fc, 2026Q3 (updated 2026-10-15)",
+      "termsUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html",
+      "attribution": "Source: Statistics Finland, rents of dwellings (table 15fc), CC BY 4.0",
+      "termsRead": "2026-11-05"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://pxdata.stat.fi/PxWeb/api/v1/en/StatFin/asvu/15fc.px",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/statfin-rent.ts"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent)",
+      "on": "2026-11-05",
+      "notes": "Official, every non-subsidised tenancy."
+    },
+    "caveats": [
+      "The table's largest class is three rooms or more (two bedrooms or more), so it gives no three-bedroom figure."
+    ]
+  },
+  {
+    "id": "terrain-tiles",
+    "name": "Terrain Tiles (Terrarium) on AWS Open Data",
+    "publisher": "Mapzen / AWS Open Data",
+    "homepage": "https://registry.opendata.aws/terrain-tiles/",
+    "measures": [
+      {
+        "metric": "mountain_km",
+        "definition": "Distance to ground 1,000 m above the centre."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "see docs/data-sources.md"
+    },
+    "licence": "Public domain (USGS, NOAA) and Open Government Licence – Canada, with attribution",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "terrain-tiles",
+      "edition": "Terrain Tiles (Terrarium) on AWS Open Data, zoom 8: SRTM, GMTED2010 above 60° N, ETOPO1, NRCAN in Canada",
+      "termsUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md",
+      "termsRead": "2026-11-05",
+      "attribution": "Terrain Tiles on AWS Open Data (Mapzen, a Linux Foundation project): SRTM and GMTED2010 terrain data courtesy of the U.S. Geological Survey; ETOPO1, U.S. National Oceanic and Atmospheric Administration; Canada terrain data contains information licensed under the Open Government Licence – Canada"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/geography.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "We store derived distances only."
+    },
+    "licenceUrl": "https://github.com/tilezen/joerd/blob/master/docs/attribution.md"
+  },
+  {
+    "id": "ttta",
+    "name": "Trans-Tasman Travel Arrangement",
+    "publisher": "Australian Department of Home Affairs",
+    "homepage": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-444",
+    "measures": [
+      {
+        "metric": "right_to_live",
+        "definition": "Australians and New Zealanders may live and work in each other's country."
+      }
+    ],
+    "coverage": {
+      "geography": "the treaty area",
+      "level": "country",
+      "period": "in force"
+    },
+    "licence": "Borgo's summary of the official text (CC BY 4.0)",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "law-summary",
+      "edition": "Trans-Tasman Travel Arrangement (Special Category visa, subclass 444)",
+      "termsUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-444",
+      "termsRead": "2026-11-05",
+      "attribution": "Borgo's summary of the Trans-Tasman Travel Arrangement (Australian Department of Home Affairs)"
+    },
+    "access": "curated",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "A legal text, encoded by hand in data/rights.json."
+    },
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "weatherspark",
+    "name": "WeatherSpark",
+    "publisher": "Cedar Lake Ventures",
+    "homepage": "https://weatherspark.com/",
+    "measures": [
+      {
+        "metric": "temp_hourly",
+        "definition": "Read on the publisher's page; not copied."
+      },
+      {
+        "metric": "cloud_cover",
+        "definition": "Read on the publisher's page; not copied."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://weatherspark.com/search?q={name}",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": true,
+      "by": "the project owner (named in the brief, 27 Oct 2026)",
+      "on": "2026-10-27",
+      "notes": "Year-round weather charts the owner likes (brief D7); proprietary, link only."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published.",
+    "licenceUrl": "https://weatherspark.com/terms",
+    "caveats": [
+      "robots.txt (read 27 Oct 2026) disallows GPTBot, ClaudeBot and other AI agents from the whole site, and /search for everyone; the terms page refuses scripted reads. Link for people only."
+    ]
+  },
+  {
+    "id": "who-aqdb",
+    "name": "WHO Ambient Air Quality Database v8.0 (2026)",
+    "publisher": "World Health Organization",
+    "homepage": "https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database",
+    "measures": [
+      {
+        "metric": "pm25",
+        "definition": "Fine particles under 2.5 micrometres, measured at the city's monitoring stations: the annual mean the city reported."
+      }
+    ],
+    "coverage": {
+      "geography": "global (about 7,000 settlements)",
+      "level": "city",
+      "period": "2010-2025, latest year per city"
+    },
+    "licence": "WHO terms for data compilations (public-health use, unaltered values; not CC BY)",
+    "licenceUrl": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "WHO-data",
+      "edition": "WHO Ambient Air Quality Database, Version 8.0, released 30 June 2026 (sheet GlobalCity_Db_V8.0_2026-06-28)",
+      "termsUrl": "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions",
+      "termsRead": "2026-11-05",
+      "attribution": "World Health Organization, WHO Ambient Air Quality Database (Version 8.0), 2026, accessed 2026-10-27; data provided by the national and regional agencies named in each value's note",
+      "notices": [
+        "WHO does not endorse Borgo, its use of these data, or any city ranking built from them.",
+        "Values are as published by WHO; WHO advises against using the database to rank cities or compare countries directly, because monitoring differs between places."
+      ]
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://cdn.who.int/media/docs/default-source/air-pollution-documents/air-quality-and-health/who-ambient-air-quality-database-version-2026-v8.xlsx?download=true",
+      "cors": false,
+      "key": null,
+      "fetcher": "src/fetch/node/who-air.ts"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 365
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "The measured reference. No CORS and an xlsx, so the CLI and MCP fetch it; the browser uses CAMS."
+    },
+    "caveats": [
+      "Values are stored exactly as published, with the data provider WHO names for the row (WHO terms).",
+      "Station mix differs by city (traffic or background).",
+      "Published in its own file (public/data/dataset-who.json) under WHO's terms, never inside the CC BY 4.0 compilation."
+    ]
+  },
+  {
+    "id": "wikidata",
+    "name": "Wikidata",
+    "publisher": "Wikimedia Foundation",
+    "homepage": "https://www.wikidata.org/",
+    "measures": [
+      {
+        "metric": "region_code",
+        "definition": "The ISO 3166-2 code of the region a place belongs to (Sicily is IT-82), which the regional tax rules use."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "region",
+      "period": "current"
+    },
+    "licence": "CC0-1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC0-1.0",
+      "edition": "Wikidata structured data, read on demand",
+      "termsUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "termsRead": "2026-11-05",
+      "attribution": "Wikidata (wikidata.org), CC0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://query.wikidata.org/sparql?format=json&query={sparql}",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/places/resolve.ts",
+      "rateLimit": "query service: 60 s of query time a minute per client; send a User-Agent"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 3650
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Maps a GeoNames region id (P1566) to its ISO 3166-2 code (P300); also a fallback place search."
+    },
+    "caveats": [
+      "The query service rate-limits busy clients (HTTP 429); a committed table covers the regions the tax rules need."
+    ]
+  },
+  {
+    "id": "wikipedia",
+    "name": "Wikipedia",
+    "publisher": "Wikimedia Foundation",
+    "homepage": "https://en.wikipedia.org/",
+    "measures": [
+      {
+        "metric": "place",
+        "definition": "Read on the publisher's page; not copied."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "CC-BY-SA-4.0",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://en.wikipedia.org/wiki/{name_underscored}",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "The city's article and its climate box (station normals with sources)."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published.",
+    "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  {
+    "id": "wmo-normals",
+    "name": "WMO Climatological Standard Normals 1991-2020",
+    "publisher": "World Meteorological Organization, archived by NOAA NCEI",
+    "homepage": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+    "measures": [
+      {
+        "metric": "sunshine_hours",
+        "definition": "WMO sunshine duration: hours a year with direct sunlight of at least 120 W/m², roughly the hours bright enough to cast a sharp shadow, measured at the nearest station."
+      },
+      {
+        "metric": "sunshine_monthly",
+        "definition": "WMO sunshine duration by month, measured at the nearest station."
+      }
+    ],
+    "coverage": {
+      "geography": "1,842 stations in 86 countries (no USA, Canada, Portugal, Poland, Hungary, Greece, Norway or Denmark rows)",
+      "level": "city",
+      "period": "1991-2020"
+    },
+    "licence": "No licence attached; NCEI public access, citation requested (WMO Unified Data Policy)",
+    "licenceUrl": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0253808",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "NCEI-WMO",
+      "edition": "NCEI accession 0253808, version 6.6 (composite primary parameters, TSUN)",
+      "termsUrl": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0253808",
+      "termsRead": "2026-11-05",
+      "attribution": "WMO Member Nations (2023). WMO Climatological Standard Normals for 1991-2020 (NCEI Accession 0253808), sunshine duration. NOAA National Centers for Environmental Information. https://doi.org/10.25921/800j-vn07"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/sunshine.ts"
+    },
+    "refresh": {
+      "cadence": "static",
+      "maxAgeDays": 3650
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Measured sunshine by the WMO definition; chosen over ERA5 after comparing both on 27 Oct 2026."
+    },
+    "caveats": [
+      "A station within 50 km and 500 m of height, else Meteostat's nearest within 80 km, else no figure; the note names the station, its distance and height.",
+      "The composite file holds what each country submitted; a country missing here may have submitted after this version (6.6).",
+      "Licence: NCEI attaches no licence; its record asks for the citation in rights.attribution and disclaims liability. The WMO Unified Data Policy (Resolution 1, Cg-Ext 2021) defines free and unrestricted exchange as no conditions on use and treats attribution as encouraged, not a condition. Read on 2026-11-05."
+    ]
+  },
+  {
+    "id": "world-happiness-report",
+    "name": "World Happiness Report",
+    "publisher": "Wellbeing Research Centre, Oxford",
+    "homepage": "https://worldhappiness.report/",
+    "measures": [
+      {
+        "metric": "life_evaluation",
+        "definition": "Read on the publisher's page; not copied."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://worldhappiness.report/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "Gallup-based national rankings; Gallup data may not be redistributed."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "worldbank-wdi",
+    "name": "World Development Indicators",
+    "publisher": "World Bank",
+    "homepage": "https://databank.worldbank.org/source/world-development-indicators",
+    "measures": [
+      {
+        "metric": "price_level",
+        "definition": "How expensive everyday consumption is compared with the United States (= 100): purchasing-power parity over the market exchange rate."
+      },
+      {
+        "metric": "homicide_rate",
+        "definition": "Intentional homicides per 100,000 people a year (UNODC figures)."
+      },
+      {
+        "metric": "life_expectancy",
+        "definition": "Years a newborn would live at today's death rates."
+      },
+      {
+        "metric": "health_oop",
+        "definition": "What people pay for health care themselves each year, per person, in current US dollars: out-of-pocket spending, not insurance premiums (WHO Global Health Expenditure Database)."
+      },
+      {
+        "metric": "doctors",
+        "definition": "Practising physicians per 1,000 people, generalists and specialists (WHO Global Health Workforce Statistics)."
+      },
+      {
+        "metric": "unemployment",
+        "definition": "Unemployed people as a share of the labour force, ILO modelled estimate."
+      },
+      {
+        "metric": "degree_share",
+        "definition": "Share of people aged 25 and over who completed at least short-cycle tertiary education (SE.TER.CUAT.ST.ZS, UNESCO Institute for Statistics), for the whole country."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "country",
+      "period": "latest year available, 2015 onwards"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://datacatalog.worldbank.org/public-licenses",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "WDI via API v2; indicators PA.NUS.PRVT.PP, PA.NUS.FCRF, VC.IHR.PSRC.P5, SP.DYN.LE00.IN, SH.XPD.OOPC.PC.CD, SH.MED.PHYS.ZS, SL.UEM.TOTL.ZS, SE.TER.CUAT.ST.ZS, each License_Type CC BY-4.0 in its metadata",
+      "termsUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+      "termsRead": "2026-11-05",
+      "attribution": "World Bank, World Development Indicators, CC BY 4.0 (underlying sources named in each figure's note: ICP, IMF, UNODC, UN Population Division, WHO, ILO, UNESCO Institute for Statistics)"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://api.worldbank.org/v2/country/{country}/indicator/{indicator}?format=json&per_page=100&date=2015:{year}",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/country.ts"
+    },
+    "linkOut": "https://data.worldbank.org/country/{country}",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 180
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-10-27",
+      "notes": "The standard open source for country indicators."
+    },
+    "caveats": [
+      "Country figures stand in for the city: marked approximate wherever shown."
+    ]
+  },
+  {
+    "id": "worldbank-wgi",
+    "name": "Worldwide Governance Indicators",
+    "publisher": "World Bank",
+    "homepage": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+    "measures": [
+      {
+        "metric": "clean_government",
+        "definition": "Control of corruption: how far public power is exercised for private gain, petty and grand, and captured by elites and private interests, as perceived by households, firms and experts; an estimate of roughly -2.5 (weak) to 2.5 (strong)."
+      }
+    ],
+    "coverage": {
+      "geography": "global",
+      "level": "country",
+      "period": "latest year, 1996 onwards"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://datacatalog.worldbank.org/search/dataset/0038026/worldwide-governance-indicators",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Worldwide Governance Indicators, GOV_WGI_CC.EST (License_Type CC BY-4.0 in its metadata)",
+      "termsUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+      "termsRead": "2026-11-05",
+      "attribution": "World Bank, Worldwide Governance Indicators, Control of Corruption estimate, CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "per-city",
+      "runtimes": [
+        "browser",
+        "node"
+      ],
+      "endpoint": "https://api.worldbank.org/v2/country/{iso2}/indicator/GOV_WGI_CC.EST?source=3&format=json",
+      "cors": true,
+      "key": null,
+      "fetcher": "src/fetch/country.ts"
+    },
+    "linkOut": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 180
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "Licence read on the World Bank Data Catalog page for the dataset (Creative Commons Attribution 4.0) on 2026-11-05."
+    },
+    "caveats": [
+      "A perception measure built from 35 surveys and expert assessments, with a margin of error: small differences between countries mean little.",
+      "A country figure standing in for the city."
+    ]
+  },
+  {
+    "id": "yc-directory",
+    "name": "Y Combinator startup directory",
+    "publisher": "Y Combinator",
+    "homepage": "https://www.ycombinator.com/companies",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary (terms forbid copying, scraping and data mining)",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.ycombinator.com/companies",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-05",
+      "notes": "YC-backed companies and where they are based; the site's terms of use forbid scraping and data mining, so a person browses it, filtered by location."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  }
+]

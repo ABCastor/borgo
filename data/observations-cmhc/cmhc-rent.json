@@ -1,0 +1,66 @@
+{
+  "source": "cmhc-rms",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "toronto-ca": [
+      {
+        "metric": "rent_1bed",
+        "value": 1761,
+        "period": "2025-10",
+        "level": "metro",
+        "source": "cmhc-rms",
+        "retrieved": "2026-11-05",
+        "note": "Toronto, Ontario (census metropolitan area), one bedroom units, average rent of purpose-built rental apartments and rows, October survey (CMHC via Statistics Canada table 34-10-0133-01)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2294,
+        "period": "2025-10",
+        "level": "metro",
+        "source": "cmhc-rms",
+        "retrieved": "2026-11-05",
+        "note": "Toronto, Ontario (census metropolitan area), three bedroom units, average rent of purpose-built rental apartments and rows, October survey (CMHC via Statistics Canada table 34-10-0133-01)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "rent_1bed",
+        "value": 1807,
+        "period": "2025-10",
+        "level": "metro",
+        "source": "cmhc-rms",
+        "retrieved": "2026-11-05",
+        "note": "Vancouver, British Columbia (census metropolitan area), one bedroom units, average rent of purpose-built rental apartments and rows, October survey (CMHC via Statistics Canada table 34-10-0133-01)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2820,
+        "period": "2025-10",
+        "level": "metro",
+        "source": "cmhc-rms",
+        "retrieved": "2026-11-05",
+        "note": "Vancouver, British Columbia (census metropolitan area), three bedroom units, average rent of purpose-built rental apartments and rows, October survey (CMHC via Statistics Canada table 34-10-0133-01)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "rent_1bed",
+        "value": 1131,
+        "period": "2025-10",
+        "level": "metro",
+        "source": "cmhc-rms",
+        "retrieved": "2026-11-05",
+        "note": "Montréal, Quebec (census metropolitan area), one bedroom units, average rent of purpose-built rental apartments and rows, October survey (CMHC via Statistics Canada table 34-10-0133-01)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1625,
+        "period": "2025-10",
+        "level": "metro",
+        "source": "cmhc-rms",
+        "retrieved": "2026-11-05",
+        "note": "Montréal, Quebec (census metropolitan area), three bedroom units, average rent of purpose-built rental apartments and rows, October survey (CMHC via Statistics Canada table 34-10-0133-01)"
+      }
+    ]
+  }
+}

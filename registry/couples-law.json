@@ -1,0 +1,53 @@
+{
+  "id": "couples-law",
+  "name": "Same-sex couples in law, from the statutes cited",
+  "publisher": "Borgo contributors",
+  "homepage": "https://github.com/ABCastor/borgo/blob/main/src/fetch/rights-law.ts",
+  "measures": [
+    {
+      "metric": "same_sex_couples",
+      "definition": "What national law offers same-sex couples: 0 sexual relations between people of the same sex are a crime, 1 legal but national law offers no union, 2 civil union or registered partnership, 3 marriage."
+    }
+  ],
+  "coverage": {
+    "geography": "countries in the table",
+    "level": "country",
+    "period": "as reviewed"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "curated in src/fetch/rights-law.ts, checked 2026-11-05",
+    "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo contributors, from the statutes cited in each figure's note"
+  },
+  "access": "curated",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "src/fetch/rights-law.ts",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/rights-law.ts"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Legal facts with their statutes, because the indices (Equaldex, ILGA) may not be redistributed. A neutral fact: whether and which way it counts is the person's own stance."
+  },
+  "caveats": [
+    "Each figure's note says whether the law was checked against the source linked on 2026-11-05 or is stated from the law cited because that source could not be read.",
+    "The step is about forming a union at home: the note adds what it leaves out, such as EU-law recognition of a marriage concluded abroad (Poland) or local partnership certificates (Japan)."
+  ]
+}

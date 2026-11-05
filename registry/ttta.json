@@ -1,0 +1,38 @@
+{
+  "id": "ttta",
+  "name": "Trans-Tasman Travel Arrangement",
+  "publisher": "Australian Department of Home Affairs",
+  "homepage": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-444",
+  "measures": [
+    {
+      "metric": "right_to_live",
+      "definition": "Australians and New Zealanders may live and work in each other's country."
+    }
+  ],
+  "coverage": {
+    "geography": "the treaty area",
+    "level": "country",
+    "period": "in force"
+  },
+  "licence": "Borgo's summary of the official text (CC BY 4.0)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "law-summary",
+    "edition": "Trans-Tasman Travel Arrangement (Special Category visa, subclass 444)",
+    "termsUrl": "https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-444",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo's summary of the Trans-Tasman Travel Arrangement (Australian Department of Home Affairs)"
+  },
+  "access": "curated",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "A legal text, encoded by hand in data/rights.json."
+  },
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "osm",
+  "name": "OpenStreetMap via the Overpass API",
+  "publisher": "OpenStreetMap contributors",
+  "homepage": "https://www.openstreetmap.org/copyright",
+  "measures": [
+    {
+      "metric": "coworking",
+      "definition": "Counts of places mapped within 10 km of the centre (coworking, climbing, pools, hackerspaces, stations, cycle paths, green space)."
+    },
+    {
+      "metric": "climbing_gyms",
+      "definition": "Indoor climbing and bouldering gyms mapped in OpenStreetMap within 10 km of the centre."
+    },
+    {
+      "metric": "cycle_paths_km",
+      "definition": "Length of paths built or signed for bicycles, mapped in OpenStreetMap within 10 km of the centre; painted lanes on roads are not counted."
+    },
+    {
+      "metric": "green_space_10km",
+      "definition": "Share of the land within 10 km of the centre that is park, woodland, heath or other public green space in OpenStreetMap; the sea is left out of the land."
+    },
+    {
+      "metric": "hackerspaces",
+      "definition": "Community workshops for building things, mapped in OpenStreetMap within 10 km of the centre."
+    },
+    {
+      "metric": "rail_stations",
+      "definition": "Train, metro and light-rail stations mapped in OpenStreetMap within 10 km of the centre."
+    },
+    {
+      "metric": "swimming_pools",
+      "definition": "Swimming centres and pools open to the public, mapped in OpenStreetMap within 10 km of the centre."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "ODbL-1.0",
+  "redistribute": "share-alike",
+  "rights": {
+    "licenceId": "ODbL-1.0",
+    "edition": "OpenStreetMap via the Overpass API, read 2026-10-27",
+    "termsUrl": "https://www.openstreetmap.org/copyright",
+    "termsRead": "2026-11-05",
+    "attribution": "© OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/osm.ts",
+    "rateLimit": "public Overpass servers: two slots per client; minutes per city"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Share-alike: kept apart and credited."
+  },
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/"
+}

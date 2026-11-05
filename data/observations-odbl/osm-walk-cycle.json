@@ -1,0 +1,1250 @@
+{
+  "source": "osm-walk-cycle",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,064 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (3% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.31,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "398 km of cycle paths and 12 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "10,654 residential streets within 5 km of the centre; most often missing: a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.76,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "542 km of cycle paths and 10 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,639 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.69,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "204 km of cycle paths and 12 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "walkable_share",
+        "value": 86,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,745 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (8% of streets), a food shop (5% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.08,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "18 km of cycle paths and 0 km of roads with a separate cycle track, over 227 km² of land within 10 km of the centre"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,863 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (2% of streets), a school (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.01,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "315 km of cycle paths and 3 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,209 residential streets within 5 km of the centre; most often missing: a school (2% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "310 km of cycle paths and 3 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,371 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (3% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.62,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "194 km of cycle paths and 2 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "9,475 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.53,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "460 km of cycle paths and 20 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,815 residential streets within 5 km of the centre; most often missing: a school (2% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.58,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "176 km of cycle paths and 6 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,268 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.82,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "176 km of cycle paths and 2 km of roads with a separate cycle track, over 218 km² of land within 10 km of the centre"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 89,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,897 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (10% of streets), a food shop (3% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "283 km of cycle paths and 8 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,829 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (6% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.38,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "382 km of cycle paths and 52 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "walkable_share",
+        "value": 93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,145 residential streets within 5 km of the centre; most often missing: a park (3% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.45,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "114 km of cycle paths and 4 km of roads with a separate cycle track, over 263 km² of land within 10 km of the centre"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,950 residential streets within 5 km of the centre; most often missing: a food shop (1% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.11,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "345 km of cycle paths and 3 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,977 residential streets within 5 km of the centre; most often missing: a food shop (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "417 km of cycle paths and 3 km of roads with a separate cycle track, over 233 km² of land within 10 km of the centre"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,670 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (3% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.17,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "359 km of cycle paths and 6 km of roads with a separate cycle track, over 312 km² of land within 10 km of the centre"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,155 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.16,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "204 km of cycle paths and 24 km of roads with a separate cycle track, over 196 km² of land within 10 km of the centre"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,499 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "441 km of cycle paths and 6 km of roads with a separate cycle track, over 249 km² of land within 10 km of the centre"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,556 residential streets within 5 km of the centre; most often missing: a park (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.41,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "293 km of cycle paths and 75 km of roads with a separate cycle track, over 261 km² of land within 10 km of the centre"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,034 residential streets within 5 km of the centre; most often missing: a school (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.42,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "86 km of cycle paths and 0 km of roads with a separate cycle track, over 204 km² of land within 10 km of the centre"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "10,032 residential streets within 5 km of the centre; most often missing: a school (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.22,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "55 km of cycle paths and 8 km of roads with a separate cycle track, over 289 km² of land within 10 km of the centre"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "walkable_share",
+        "value": 91,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,870 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (6% of streets), a school (6% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.32,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "82 km of cycle paths and 14 km of roads with a separate cycle track, over 301 km² of land within 10 km of the centre"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,619 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.46,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "704 km of cycle paths and 68 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "walkable_share",
+        "value": 91,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1,878 residential streets within 5 km of the centre; most often missing: a school (9% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.84,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "445 km of cycle paths and 1 km of roads with a separate cycle track, over 243 km² of land within 10 km of the centre"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "walkable_share",
+        "value": 94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,564 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (5% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.86,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "94 km of cycle paths and 45 km of roads with a separate cycle track, over 161 km² of land within 10 km of the centre"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,218 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.47,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "428 km of cycle paths and 34 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "walkable_share",
+        "value": 68,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,072 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (31% of streets), a food shop (5% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "73 km of cycle paths and 22 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "9,227 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.49,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "679 km of cycle paths and 103 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,464 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.31,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "111 km of cycle paths and 206 km of roads with a separate cycle track, over 242 km² of land within 10 km of the centre"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,162 residential streets within 5 km of the centre; most often missing: a stop (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 3.94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1222 km of cycle paths and 15 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "walkable_share",
+        "value": 88,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,368 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (12% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.33,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "258 km of cycle paths and 73 km of roads with a separate cycle track, over 249 km² of land within 10 km of the centre"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "walkable_share",
+        "value": 80,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,135 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (20% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.84,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "169 km of cycle paths and 33 km of roads with a separate cycle track, over 241 km² of land within 10 km of the centre"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,082 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.18,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "456 km of cycle paths and 230 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "walkable_share",
+        "value": 76,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,575 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (17% of streets), a school (10% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.17,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "235 km of cycle paths and 132 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,119 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 3.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1128 km of cycle paths and 4 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "walkable_share",
+        "value": 57,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,330 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (30% of streets), a food shop (25% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.39,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "54 km of cycle paths and 5 km of roads with a separate cycle track, over 150 km² of land within 10 km of the centre"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,742 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 3.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1193 km of cycle paths and 1 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,835 residential streets within 5 km of the centre; most often missing: a food shop (0% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.66,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "443 km of cycle paths and 79 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "walkable_share",
+        "value": 92,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,275 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (8% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.55,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "136 km of cycle paths and 36 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "walkable_share",
+        "value": 76,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,479 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (21% of streets), a food shop (4% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.14,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "350 km of cycle paths and 10 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,385 residential streets within 5 km of the centre; most often missing: a food shop (4% of streets), a pharmacy or doctor (3% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "240 km of cycle paths and 61 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,571 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 4.61,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "504 km of cycle paths and 463 km of roads with a separate cycle track, over 210 km² of land within 10 km of the centre"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,221 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "324 km of cycle paths and 13 km of roads with a separate cycle track, over 225 km² of land within 10 km of the centre"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,028 residential streets within 5 km of the centre; most often missing: a school (4% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.92,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "392 km of cycle paths and 77 km of roads with a separate cycle track, over 245 km² of land within 10 km of the centre"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,821 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (2% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 4.28,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1129 km of cycle paths and 35 km of roads with a separate cycle track, over 272 km² of land within 10 km of the centre"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,670 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.58,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "397 km of cycle paths and 8 km of roads with a separate cycle track, over 256 km² of land within 10 km of the centre"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "walkable_share",
+        "value": 93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,453 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (6% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.04,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "336 km of cycle paths and 2 km of roads with a separate cycle track, over 165 km² of land within 10 km of the centre"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "walkable_share",
+        "value": 93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,303 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (7% of streets), a school (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1205 km of cycle paths and 1 km of roads with a separate cycle track, over 172 km² of land within 10 km of the centre"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,149 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.11,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "31 km of cycle paths and 4 km of roads with a separate cycle track, over 311 km² of land within 10 km of the centre"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "walkable_share",
+        "value": 94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,381 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (5% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.18,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "321 km of cycle paths and 6 km of roads with a separate cycle track, over 277 km² of land within 10 km of the centre"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,789 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (2% of streets), a park (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.79,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "237 km of cycle paths and 12 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "walkable_share",
+        "value": 88,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,180 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (11% of streets), a food shop (7% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "265 km of cycle paths and 47 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,087 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (0% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.12,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "652 km of cycle paths and 13 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,853 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.65,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "201 km of cycle paths and 1 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,994 residential streets within 5 km of the centre; most often missing: a park (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.04,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "639 km of cycle paths and 1 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,974 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.67,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "458 km of cycle paths and 39 km of roads with a separate cycle track, over 297 km² of land within 10 km of the centre"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "bike_network",
+        "value": 0.29,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "92 km of cycle paths and 0 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      }
+    ]
+  }
+}

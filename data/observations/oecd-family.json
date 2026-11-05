@@ -1,0 +1,1326 @@
+{
+  "source": "oecd-family-db",
+  "retrieved": "2026-11-04",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "leave_mothers",
+        "value": 31.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "leave_mothers",
+        "value": 31.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "leave_mothers",
+        "value": 31.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "leave_mothers",
+        "value": 31.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "leave_mothers",
+        "value": 31.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "leave_mothers",
+        "value": 31.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.811Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "leave_mothers",
+        "value": 11.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.4,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "leave_mothers",
+        "value": 11.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.4,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "leave_mothers",
+        "value": 11.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.4,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "leave_mothers",
+        "value": 11.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.4,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "leave_mothers",
+        "value": 11.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.4,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.896Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "leave_mothers",
+        "value": 8.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.941Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 2.1,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.941Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "leave_mothers",
+        "value": 8.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.941Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 2.1,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:51.941Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "leave_mothers",
+        "value": 19.6,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.006Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 7.7,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.006Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "leave_mothers",
+        "value": 19.6,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.006Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 7.7,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.006Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "leave_mothers",
+        "value": 38.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.067Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 4.8,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.067Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "leave_mothers",
+        "value": 38.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.067Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 4.8,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.067Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "leave_mothers",
+        "value": 38.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.067Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 4.8,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.067Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "leave_mothers",
+        "value": 22.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.107Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 11.3,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.107Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "leave_mothers",
+        "value": 22.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.107Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 11.3,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.107Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "leave_mothers",
+        "value": 15.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.148Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 6.8,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.148Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "leave_mothers",
+        "value": 20.4,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.203Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 5.5,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.203Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "leave_mothers",
+        "value": 34.4,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.256Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 10.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.256Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "leave_mothers",
+        "value": 39.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.308Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 14.6,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.308Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "leave_mothers",
+        "value": 39.7,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.359Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 10.8,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.359Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "leave_mothers",
+        "value": 8.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.394Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 1.2,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.394Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "leave_mothers",
+        "value": 8.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.394Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 1.2,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.394Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "leave_mothers",
+        "value": 46.5,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.428Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 8.1,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.428Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "leave_mothers",
+        "value": 50.6,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.464Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 1.2,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.464Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "leave_mothers",
+        "value": 40.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.515Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 8.3,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.515Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "leave_mothers",
+        "value": 40.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.515Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 8.3,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.515Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "leave_mothers",
+        "value": 75.9,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.576Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 2.3,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.576Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "leave_mothers",
+        "value": 22.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.608Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 14.5,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.608Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "leave_mothers",
+        "value": 22.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.608Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 14.5,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.608Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "leave_mothers",
+        "value": 16,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 16,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "leave_mothers",
+        "value": 16,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 16,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "leave_mothers",
+        "value": 16,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 16,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "leave_mothers",
+        "value": 16,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 16,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.653Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "leave_mothers",
+        "value": 37,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.703Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 6.4,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.703Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "leave_mothers",
+        "value": 82.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.771Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 4.3,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.771Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "leave_mothers",
+        "value": 0,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.822Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "leave_mothers",
+        "value": 20.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.862Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 2,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.862Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "leave_mothers",
+        "value": 20.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.862Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 2,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.862Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "leave_mothers",
+        "value": 20.1,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.862Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 2,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.862Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "leave_mothers",
+        "value": 36.3,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.895Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 31.6,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.895Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "leave_mothers",
+        "value": 9.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.968Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.968Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "leave_mothers",
+        "value": 9.2,
+        "note": "Paid maternity, parental and home-care leave available to mothers, in full-rate-equivalent weeks (OECD PF2.1.A, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.968Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      },
+      {
+        "metric": "leave_fathers",
+        "value": 0.9,
+        "note": "Paid paternity leave and leave reserved for fathers, in full-rate-equivalent weeks (OECD PF2.1.B, policies in April 2025; not a current-year statutory entitlement)",
+        "level": "country",
+        "source": "oecd-family-db",
+        "retrieved": "2026-11-04T23:14:52.968Z",
+        "url": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+        "fetcher": "oecd-family-db@1",
+        "period": "2025"
+      }
+    ]
+  }
+}

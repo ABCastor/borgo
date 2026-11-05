@@ -1,0 +1,47 @@
+{
+  "id": "foundersrc",
+  "name": "Founders Running Club communities",
+  "publisher": "Founders Running Club",
+  "homepage": "https://foundersrc.com/communities",
+  "measures": [
+    {
+      "metric": "founders_running_club",
+      "definition": "Whether the club lists a chapter in the city."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Public listing (facts of presence only; no licence stated)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "facts-no-licence",
+    "edition": "public communities list, read 2026-10-27",
+    "termsUrl": "https://foundersrc.com/communities",
+    "termsRead": "2026-11-05",
+    "attribution": "Founders Running Club communities list (facts of presence and links only)"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://foundersrc.com/communities",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/foundersrc.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": true,
+    "by": "the project owner (named in the brief, 27 Oct 2026)",
+    "on": "2026-10-27",
+    "notes": "Named by the owner (brief C1)."
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "openalex",
+  "name": "OpenAlex institutions",
+  "publisher": "OurResearch",
+  "homepage": "https://openalex.org/",
+  "measures": [
+    {
+      "metric": "research_output",
+      "definition": "Papers, patents and datasets published in a year by the institutions located in the city, per 100,000 residents."
+    },
+    {
+      "metric": "builder_density",
+      "definition": "The same research output per resident, placed on a 0 to 100 log scale (100 works per 100,000 residents = 0, 30,000 = 100)."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "last indexed year"
+  },
+  "licence": "CC0-1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC0-1.0",
+    "edition": "OpenAlex institutions API, 2025 works",
+    "termsUrl": "https://help.openalex.org/hc/en-us/articles/24397762024087-Pricing",
+    "termsRead": "2026-11-05",
+    "attribution": "OpenAlex (openalex.org), CC0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://api.openalex.org/institutions?filter=geo.city:\"{name}\",country_code:{country},type:!government&per-page=200&sort=works_count:desc&select=counts_by_year",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/research.ts",
+    "rateLimit": "100,000 calls a day; deep paging needs a key"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 180
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "A proxy for who is in the room, labelled as research density, not startups (decision D10)."
+  },
+  "caveats": [
+    "Matches institutions by city name; a suburb campus can fall outside.",
+    "National agencies are left out because their output is national."
+  ]
+}

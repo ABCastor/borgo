@@ -1,0 +1,623 @@
+{
+  "source": "mlab",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "download_mbps",
+        "value": 37.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 390,197 tests (Turin, IT-21)"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "download_mbps",
+        "value": 28.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,821,372 tests (Milan, IT-25)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "download_mbps",
+        "value": 31,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,674,225 tests (Rome, IT-62)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "download_mbps",
+        "value": 36.9,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 478,632 tests (Naples, IT-72)"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "download_mbps",
+        "value": 37.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 236,492 tests (Bologna, IT-45)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "download_mbps",
+        "value": 28,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 254,380 tests (Florence, IT-52)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "download_mbps",
+        "value": 47.1,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 2,896,935 tests (London, GB-ENG)"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "download_mbps",
+        "value": 63.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 115,112 tests (Cambridge, GB-ENG)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "download_mbps",
+        "value": 52,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,078,418 tests (Manchester, GB-ENG)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "download_mbps",
+        "value": 55,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 386,806 tests (Bristol, GB-ENG)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "download_mbps",
+        "value": 52,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 293,489 tests (Edinburgh, GB-SCT)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "download_mbps",
+        "value": 30.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,820,156 tests (Dublin, IE-L)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "download_mbps",
+        "value": 46.8,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 122,782 tests (Cork, IE-M)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "download_mbps",
+        "value": 61.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 1,320,018 tests (Paris, FR-IDF)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "download_mbps",
+        "value": 64.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 173,276 tests (Lyon, FR-ARA)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "download_mbps",
+        "value": 41.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 2,009,488 tests (Berlin, DE-BE)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "download_mbps",
+        "value": 44.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 924,621 tests (Munich, DE-BY)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "download_mbps",
+        "value": 37.5,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,239,483 tests (Hamburg, DE-HH)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "download_mbps",
+        "value": 51.9,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 502,823 tests (Amsterdam, NL-NH)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "download_mbps",
+        "value": 65.8,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 138,492 tests (Rotterdam, NL-ZH)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "download_mbps",
+        "value": 44.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 555,820 tests (Brussels, BE-BRU)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "download_mbps",
+        "value": 85.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 30,247 tests (Copenhagen, DK-84)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "download_mbps",
+        "value": 64.8,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 168,193 tests (Stockholm, SE-AB)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "download_mbps",
+        "value": 56.3,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 211,598 tests (Oslo, NO-03)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "download_mbps",
+        "value": 37.5,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 73,267 tests (Helsinki, FI-18)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "download_mbps",
+        "value": 75.5,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 102,552 tests (Zurich, CH-ZH)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "download_mbps",
+        "value": 93.5,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 19,494 tests (Geneva, CH-GE)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "download_mbps",
+        "value": 30.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,521,716 tests (Vienna, AT-9)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "download_mbps",
+        "value": 29.1,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 411,495 tests (Prague, CZ-10)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "download_mbps",
+        "value": 39.5,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 135,762 tests (Warsaw, PL-14)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "download_mbps",
+        "value": 38.9,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 34,500 tests (Krakow, PL-12)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "download_mbps",
+        "value": 87.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 52,042 tests (Budapest, HU-BU)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "download_mbps",
+        "value": 38,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 333 days, 569,004 tests (Lisbon, PT-11)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "download_mbps",
+        "value": 42.8,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 332 days, 230,496 tests (Porto, PT-13)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "download_mbps",
+        "value": 55.8,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,517,524 tests (Madrid, ES-MD)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "download_mbps",
+        "value": 60,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 623,616 tests (Barcelona, ES-CT)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "download_mbps",
+        "value": 45.5,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 339,773 tests (Valencia, ES-VC)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "download_mbps",
+        "value": 43.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 251,017 tests (Málaga, ES-AN)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "download_mbps",
+        "value": 43.1,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 112,665 tests (Athens, GR-I)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "download_mbps",
+        "value": 35.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 14,394 tests (Tallinn, EE-37)"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "download_mbps",
+        "value": 60.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 952,717 tests (San Francisco, US-CA)"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "download_mbps",
+        "value": 59,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 2,466,505 tests (Los Angeles, US-CA)"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "download_mbps",
+        "value": 54.4,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 2,445,121 tests (New York, US-NY)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "download_mbps",
+        "value": 58.2,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 406,449 tests (Boston, US-MA)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "download_mbps",
+        "value": 52.7,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,563,090 tests (Seattle, US-WA)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "download_mbps",
+        "value": 92.9,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 776,535 tests (Austin, US-TX)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "download_mbps",
+        "value": 66.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 1,213,902 tests (Miami, US-FL)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "download_mbps",
+        "value": 61.9,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 2,357,138 tests (Chicago, US-IL)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "download_mbps",
+        "value": 56.3,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,249,630 tests (Denver, US-CO)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "download_mbps",
+        "value": 58.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 1,929,262 tests (Toronto, CA-ON)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "download_mbps",
+        "value": 72.9,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 588,782 tests (Vancouver, CA-BC)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "download_mbps",
+        "value": 53.3,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 950,295 tests (Montreal, CA-QC)"
+      }
+    ],
+    "singapore-sg": [],
+    "tokyo-jp": [
+      {
+        "metric": "download_mbps",
+        "value": 44.3,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 3,158,290 tests (Tokyo, JP-13)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "download_mbps",
+        "value": 40.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 3,919,218 tests (Sydney, AU-NSW)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "download_mbps",
+        "value": 39.4,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 337 days, 2,760,737 tests (Melbourne, AU-VIC)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "download_mbps",
+        "value": 31.6,
+        "period": "2023",
+        "level": "city",
+        "source": "mlab",
+        "retrieved": "2026-10-27",
+        "note": "median of daily median NDT download speeds, 336 days, 82,097 tests (Dubai, AE-DU)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "eu-free-movement",
+  "name": "Directive 2004/38/EC and the EEA Agreement",
+  "publisher": "European Union",
+  "homepage": "https://eur-lex.europa.eu/eli/dir/2004/38/oj",
+  "measures": [
+    {
+      "metric": "right_to_live",
+      "definition": "The right of EU and EEA citizens to live and work in any member state."
+    }
+  ],
+  "coverage": {
+    "geography": "the treaty area",
+    "level": "country",
+    "period": "in force"
+  },
+  "licence": "Borgo's summary of the official text (CC BY 4.0)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "law-summary",
+    "edition": "Directive 2004/38/EC and the EEA Agreement, in force",
+    "termsUrl": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo's summary of Directive 2004/38/EC (© European Union, EUR-Lex)"
+  },
+  "access": "curated",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "A legal text, encoded by hand in data/rights.json."
+  },
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+}

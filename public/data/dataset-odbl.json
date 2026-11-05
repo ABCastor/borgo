@@ -1,0 +1,4850 @@
+{
+  "part": "odbl",
+  "licence": {
+    "id": "ODbL-1.0",
+    "name": "Open Database License 1.0",
+    "url": "https://opendatacommons.org/licenses/odbl/1-0/"
+  },
+  "notice": "Figures derived from OpenStreetMap. © OpenStreetMap contributors. This database is made available under the Open Database License (ODbL 1.0): https://opendatacommons.org/licenses/odbl/1-0/. It is kept apart from Borgo's CC BY 4.0 data and any derived database must stay under the ODbL.",
+  "sources": [
+    "osm",
+    "osm-walk-cycle"
+  ],
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,064 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (3% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.31,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "398 km of cycle paths and 12 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 395,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 23.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "10,654 residential streets within 5 km of the centre; most often missing: a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.76,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "542 km of cycle paths and 10 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 43,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 154,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 534,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 36.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,639 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.69,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "204 km of cycle paths and 12 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 25,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 97,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 199,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 27.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "walkable_share",
+        "value": 86,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,745 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (8% of streets), a food shop (5% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.08,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "18 km of cycle paths and 0 km of roads with a separate cycle track, over 227 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 108,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 11.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,863 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (2% of streets), a school (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.01,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "315 km of cycle paths and 3 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 35,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 314,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 26.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,371 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (3% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.62,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "194 km of cycle paths and 2 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 192,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "9,475 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.53,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "460 km of cycle paths and 20 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 144,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 57,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 300,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 459,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 14.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 89,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,897 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (10% of streets), a food shop (3% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "283 km of cycle paths and 8 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 259,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 9.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,829 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (6% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.38,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "382 km of cycle paths and 52 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 36,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 375,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 17.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,670 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (3% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.17,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "359 km of cycle paths and 6 km of roads with a separate cycle track, over 312 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 326,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 17.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,155 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.16,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "204 km of cycle paths and 24 km of roads with a separate cycle track, over 196 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 203,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,556 residential streets within 5 km of the centre; most often missing: a park (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.41,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "293 km of cycle paths and 75 km of roads with a separate cycle track, over 261 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 293,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 17.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "walkable_share",
+        "value": 91,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,870 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (6% of streets), a school (6% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.32,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "82 km of cycle paths and 14 km of roads with a separate cycle track, over 301 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 81,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 8.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,619 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.46,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "704 km of cycle paths and 68 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 183,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 74,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 125,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 400,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 697,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 12.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,218 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.47,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "428 km of cycle paths and 34 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 77,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 64,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 423,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "9,227 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.49,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "679 km of cycle paths and 103 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 147,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 41,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 255,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 674,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 14.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,162 residential streets within 5 km of the centre; most often missing: a stop (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 3.94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1222 km of cycle paths and 15 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 43,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 144,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1213,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,082 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.18,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "456 km of cycle paths and 230 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 453,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 12.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,119 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 3.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1128 km of cycle paths and 4 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 48,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1129,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 21.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,742 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 3.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1193 km of cycle paths and 1 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 59,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1193,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,835 residential streets within 5 km of the centre; most often missing: a food shop (0% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.66,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "443 km of cycle paths and 79 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 53,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 118,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 439,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 18.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "walkable_share",
+        "value": 96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,571 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 4.61,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "504 km of cycle paths and 463 km of roads with a separate cycle track, over 210 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 497,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 21.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,821 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (2% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 4.28,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1129 km of cycle paths and 35 km of roads with a separate cycle track, over 272 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 156,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1127,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 37.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,670 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.58,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "397 km of cycle paths and 8 km of roads with a separate cycle track, over 256 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 395,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 38.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "walkable_share",
+        "value": 93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,303 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (7% of streets), a school (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1205 km of cycle paths and 1 km of roads with a separate cycle track, over 172 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 81,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 1203,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 29.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,789 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (2% of streets), a park (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.79,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "237 km of cycle paths and 12 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 52,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 80,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 231,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 27.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "walkable_share",
+        "value": 88,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,180 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (11% of streets), a food shop (7% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "265 km of cycle paths and 47 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 31,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 238,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 19.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,087 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (0% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.12,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "652 km of cycle paths and 13 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 169,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 643,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 22.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,853 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.65,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "201 km of cycle paths and 1 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 95,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 200,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,994 residential streets within 5 km of the centre; most often missing: a park (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.04,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "639 km of cycle paths and 1 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 79,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 638,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 21.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,209 residential streets within 5 km of the centre; most often missing: a school (2% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "310 km of cycle paths and 3 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 28,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 310,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 42.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "walkable_share",
+        "value": 97,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,815 residential streets within 5 km of the centre; most often missing: a school (2% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.58,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "176 km of cycle paths and 6 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 45,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 114,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 176,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 23.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,268 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.82,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "176 km of cycle paths and 2 km of roads with a separate cycle track, over 218 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 72,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 175,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 23.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "walkable_share",
+        "value": 93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,145 residential streets within 5 km of the centre; most often missing: a park (3% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.45,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "114 km of cycle paths and 4 km of roads with a separate cycle track, over 263 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 69,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 68,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 114,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 19.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,950 residential streets within 5 km of the centre; most often missing: a food shop (1% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.11,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "345 km of cycle paths and 3 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 50,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 40,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 239,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 343,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 22.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,977 residential streets within 5 km of the centre; most often missing: a food shop (1% of streets), a school (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "417 km of cycle paths and 3 km of roads with a separate cycle track, over 233 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 66,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 206,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 416,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 39.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "walkable_share",
+        "value": 98,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,499 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "441 km of cycle paths and 6 km of roads with a separate cycle track, over 249 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 39,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 64,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 429,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 14.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,034 residential streets within 5 km of the centre; most often missing: a school (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.42,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "86 km of cycle paths and 0 km of roads with a separate cycle track, over 204 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 86,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 45.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "10,032 residential streets within 5 km of the centre; most often missing: a school (0% of streets), a food shop (0% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.22,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "55 km of cycle paths and 8 km of roads with a separate cycle track, over 289 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 74,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 55,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 29.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "walkable_share",
+        "value": 91,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "1,878 residential streets within 5 km of the centre; most often missing: a school (9% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.84,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "445 km of cycle paths and 1 km of roads with a separate cycle track, over 243 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 445,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 25.4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "walkable_share",
+        "value": 94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,564 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (5% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.86,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "94 km of cycle paths and 45 km of roads with a separate cycle track, over 161 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 80,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 89,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 24.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "walkable_share",
+        "value": 68,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,072 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (31% of streets), a food shop (5% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "73 km of cycle paths and 22 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 51,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 72,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 6.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,464 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.31,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "111 km of cycle paths and 206 km of roads with a separate cycle track, over 242 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 47,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 53,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 303,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 111,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 8.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "walkable_share",
+        "value": 88,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,368 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (12% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.33,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "258 km of cycle paths and 73 km of roads with a separate cycle track, over 249 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 97,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 253,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 12.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "walkable_share",
+        "value": 80,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,135 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (20% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.84,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "169 km of cycle paths and 33 km of roads with a separate cycle track, over 241 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 21,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 169,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 9.3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "walkable_share",
+        "value": 76,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,575 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (17% of streets), a school (10% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.17,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "235 km of cycle paths and 132 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 235,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 19.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "walkable_share",
+        "value": 57,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,330 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (30% of streets), a food shop (25% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.39,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "54 km of cycle paths and 5 km of roads with a separate cycle track, over 150 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 54,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 3.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "walkable_share",
+        "value": 92,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,275 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (8% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.55,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "136 km of cycle paths and 36 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 22,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 109,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 135,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 5.8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "walkable_share",
+        "value": 76,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "2,479 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (21% of streets), a food shop (4% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.14,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "350 km of cycle paths and 10 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 39,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 350,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 7.2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "3,385 residential streets within 5 km of the centre; most often missing: a food shop (4% of streets), a pharmacy or doctor (3% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.96,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "240 km of cycle paths and 61 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 67,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 91,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 240,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 13.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,221 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (4% of streets), a food shop (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "324 km of cycle paths and 13 km of roads with a separate cycle track, over 225 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 40,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 38,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 324,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 16.7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "walkable_share",
+        "value": 95,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,028 residential streets within 5 km of the centre; most often missing: a school (4% of streets), a pharmacy or doctor (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.92,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "392 km of cycle paths and 77 km of roads with a separate cycle track, over 245 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 146,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 16,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 85,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 392,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 10.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "walkable_share",
+        "value": 93,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "6,453 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (6% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 2.04,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "336 km of cycle paths and 2 km of roads with a separate cycle track, over 165 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 23,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 332,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 18.1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "walkable_share",
+        "value": 100,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "7,149 residential streets within 5 km of the centre; nothing missing"
+      },
+      {
+        "metric": "bike_network",
+        "value": 0.11,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "31 km of cycle paths and 4 km of roads with a separate cycle track, over 311 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 61,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 26,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 458,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 40,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 5.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "walkable_share",
+        "value": 94,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "4,381 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (5% of streets), a food shop (2% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.18,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "321 km of cycle paths and 6 km of roads with a separate cycle track, over 277 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 47,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 60,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 320,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 13.6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "walkable_share",
+        "value": 99,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "5,974 residential streets within 5 km of the centre; most often missing: a pharmacy or doctor (1% of streets), a school (1% of streets)"
+      },
+      {
+        "metric": "bike_network",
+        "value": 1.67,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "458 km of cycle paths and 39 km of roads with a separate cycle track, over 297 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 33,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 27,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 46,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 458,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 10.9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "bike_network",
+        "value": 0.29,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "osm-walk-cycle",
+        "retrieved": "2026-11-05",
+        "url": "https://overpass-api.de/api/interpreter",
+        "note": "92 km of cycle paths and 0 km of roads with a separate cycle track, over 314 km² of land within 10 km of the centre"
+      },
+      {
+        "metric": "coworking",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "climbing_gyms",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "swimming_pools",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "hackerspaces",
+        "value": 0,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "rail_stations",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "cycle_paths_km",
+        "value": 92,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "within 10 km of the centre"
+      },
+      {
+        "metric": "green_space_10km",
+        "value": 7.5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "osm",
+        "retrieved": "2026-10-27",
+        "note": "share of the land within 10 km of the centre that is park, woodland or other public green space"
+      }
+    ]
+  }
+}

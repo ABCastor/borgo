@@ -1,0 +1,523 @@
+{
+  "source": "oecd-wellbeing",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.45,
+        "period": "2022",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.45,
+        "period": "2022",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.45,
+        "period": "2022",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.45,
+        "period": "2022",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.45,
+        "period": "2022",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.6,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.6,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "life_evaluation",
+        "value": 7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "life_evaluation",
+        "value": 7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "life_evaluation",
+        "value": 7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.6,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.6,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.6,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.4,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.8,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2024",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2024",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.4,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.7,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.1,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.3,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.3,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.2,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.2,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.2,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.2,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "life_evaluation",
+        "value": 6.9,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.3,
+        "period": "2025",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "san-francisco-us": [],
+    "los-angeles-us": [],
+    "new-york-us": [],
+    "boston-us": [],
+    "seattle-us": [],
+    "austin-us": [],
+    "miami-us": [],
+    "chicago-us": [],
+    "denver-us": [],
+    "toronto-ca": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.4,
+        "period": "2023",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.4,
+        "period": "2023",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.4,
+        "period": "2023",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "singapore-sg": [],
+    "tokyo-jp": [
+      {
+        "metric": "life_evaluation",
+        "value": 5.89,
+        "period": "2024",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.2,
+        "period": "2020",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "life_evaluation",
+        "value": 7.2,
+        "period": "2020",
+        "level": "country",
+        "source": "oecd-wellbeing",
+        "retrieved": "2026-10-27",
+        "note": "Average answer to how satisfied people are with their life as a whole, 0 to 10"
+      }
+    ],
+    "dubai-ae": []
+  }
+}

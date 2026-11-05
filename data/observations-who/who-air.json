@@ -1,0 +1,603 @@
+{
+  "source": "who-aqdb",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "pm25",
+        "value": 18.053,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Torino, 4 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "pm25",
+        "value": 20.448,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Milano Greater City, 16 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "pm25",
+        "value": 11.793,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Roma, 13 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "pm25",
+        "value": 15.118,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Napoli Greater City, 18 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "pm25",
+        "value": 14.27,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Bologna, 3 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "pm25",
+        "value": 12.665,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Firenze, 5 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "pm25",
+        "value": 11.205,
+        "period": "2019",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "London, 16 stations; data: European Environmental Agency (WHO V6.0  (2023))"
+      }
+    ],
+    "cambridge-gb": [],
+    "manchester-gb": [
+      {
+        "metric": "pm25",
+        "value": 8.82,
+        "period": "2021",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Manchester, 1 station; data: Department for Environment, Food and Rural Affairs (WHO V7.0 (2024))"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "pm25",
+        "value": 8.33,
+        "period": "2021",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Bristol, 2 stations; data: Department for Environment, Food and Rural Affairs (WHO V7.0 (2024))"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "pm25",
+        "value": 4.78,
+        "period": "2021",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Edinburgh, 2 stations; data: Department for Environment, Food and Rural Affairs (WHO V7.0 (2024))"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "pm25",
+        "value": 7.318,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Dublin, 12 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "pm25",
+        "value": 6.433,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Cork, 5 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "pm25",
+        "value": 9.309,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Paris Greater City, 34 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "pm25",
+        "value": 8.942,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Lyon, 7 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "pm25",
+        "value": 11.323,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Berlin, 42 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "pm25",
+        "value": 7.87,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Munchen, 5 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "pm25",
+        "value": 9.07,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Hamburg, 14 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "pm25",
+        "value": 8.886,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Greater Amsterdam, 10 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "pm25",
+        "value": 8.677,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Greater Rotterdam, 12 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "pm25",
+        "value": 7.597,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Bruxelles Brussel, 17 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "pm25",
+        "value": 6.912,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Kobenhavn, 4 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "pm25",
+        "value": 4.883,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Stockholm Greater City, 24 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "pm25",
+        "value": 8.477,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Oslo, 16 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "pm25",
+        "value": 5.363,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Helsinki Helsingfors Greater City, 7 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "pm25",
+        "value": 7.595,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Zurich Greater City, 7 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "geneva-ch": [],
+    "vienna-at": [
+      {
+        "metric": "pm25",
+        "value": 9.926,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Wien, 19 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "pm25",
+        "value": 13.404,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Praha, 15 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "pm25",
+        "value": 14.703,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Warszawa, 7 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "pm25",
+        "value": 17.47,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Krakow, 7 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "pm25",
+        "value": 10.125,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Budapest, 6 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "pm25",
+        "value": 7.604,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Lisboa Greater City, 17 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "pm25",
+        "value": 9.43,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Porto Greater City, 8 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "pm25",
+        "value": 10.272,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Madrid, 43 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "pm25",
+        "value": 10.904,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Barcelona, 30 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "pm25",
+        "value": 10.673,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Valencia, 12 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "pm25",
+        "value": 7.32,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Malaga, 5 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "pm25",
+        "value": 12.604,
+        "period": "2025",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Athina, 10 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "pm25",
+        "value": 3.95,
+        "period": "2025",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Tallinn, 3 stations; data: European Environmental Agency (WHO V8.0 (2026))"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "pm25",
+        "value": 7.383,
+        "period": "2021",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "San Francisco Oakland Hayward CA, 10 stations; data: Environmental Protection Agency (WHO V6.0  (2023))"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "pm25",
+        "value": 10.53,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Los Angeles Long Beach Anaheim CA, 17 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "pm25",
+        "value": 7.07,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "New York Newark Jersey City NY NJ PA, 18 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "pm25",
+        "value": 6.432,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Boston Cambridge Newton MA NH, 7 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "pm25",
+        "value": 6.085,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Seattle Tacoma Bellevue WA, 4 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "pm25",
+        "value": 9.4,
+        "period": "2021",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Austin Round Rock TX, 3 stations; data: Environmental Protection Agency (WHO V6.0  (2023))"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "pm25",
+        "value": 6.18,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Miami Fort Lauderdale West Palm Beach FL, 8 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "pm25",
+        "value": 8.671,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Chicago Naperville Elgin IL IN WI, 21 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "pm25",
+        "value": 6.018,
+        "period": "2022",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Denver Aurora Lakewood CO, 8 stations; data: Environmental Protection Agency (WHO V7.0 (2024))"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "pm25",
+        "value": 9.4,
+        "period": "2023",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Toronto, 5 stations; data: Air Quality Risk Assessment Division, Water and Air Quality Bureau, Health Canada (WHO V8.0 (2026))"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "pm25",
+        "value": 6,
+        "period": "2023",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Vancouver, 1 station; data: Air Quality Risk Assessment Division, Water and Air Quality Bureau, Health Canada (WHO V8.0 (2026))"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "pm25",
+        "value": 8.625,
+        "period": "2023",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Montreal, 9 stations; data: Air Quality Risk Assessment Division, Water and Air Quality Bureau, Health Canada (WHO V8.0 (2026))"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "pm25",
+        "value": 12,
+        "period": "2021",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Singapore, 1 station; data: Key Environment Statistics published by the Ministry of Sustainability and the Environment (WHO V6.0  (2023))"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "pm25",
+        "value": 10.828,
+        "period": "2019",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Tokyo, 18 stations; data: Status of Air Pollution (WHO V6.0  (2023))"
+      }
+    ],
+    "sydney-au": [],
+    "melbourne-au": [
+      {
+        "metric": "pm25",
+        "value": 7.93,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Melbourne, 1 station; data: Health Protection Policy and Surveillance Division | Interim Australian Centre for Disease Contr (WHO V8.0 (2026))"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "pm25",
+        "value": 35,
+        "period": "2024",
+        "level": "city",
+        "source": "who-aqdb",
+        "retrieved": "2026-11-05",
+        "note": "Dubai, 5 stations; data: International (WHO V8.0 (2026))"
+      }
+    ]
+  }
+}

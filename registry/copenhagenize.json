@@ -1,0 +1,27 @@
+{
+  "id": "copenhagenize",
+  "name": "Copenhagenize Index of bicycle-friendly cities",
+  "publisher": "Copenhagenize Design Co.",
+  "homepage": "https://copenhagenizeindex.eu/",
+  "measures": [],
+  "coverage": {
+    "geography": "100 cities worldwide",
+    "level": "city",
+    "period": "current edition"
+  },
+  "licence": "Proprietary (all rights reserved)",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://copenhagenizeindex.eu/",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "An expert ranking of how cities serve cyclists; all rights reserved, so a link only. The open cycling lines are the OpenStreetMap cycle network and the official share of trips to work by bicycle."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+}

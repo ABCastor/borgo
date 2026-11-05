@@ -1,0 +1,1146 @@
+{
+  "source": "geography",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "sea_km",
+        "value": 105,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 22,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1350 m at 45.18, 7.45; the centre sits at about 248 m"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "sea_km",
+        "value": 118,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 41,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1148 m at 45.83, 9.18; the centre sits at about 135 m"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "sea_km",
+        "value": 25,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 30,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1184 m at 42.06, 12.80; the centre sits at about 54 m"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "sea_km",
+        "value": 1,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 14,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1218 m at 40.82, 14.43; the centre sits at about 22 m"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "sea_km",
+        "value": 75,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 34,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1092 m at 44.18, 11.32; the centre sits at about 73 m"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "sea_km",
+        "value": 78,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 25,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1144 m at 43.73, 11.55; the centre sits at about 47 m"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "sea_km",
+        "value": 36,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 23 m) within 300 km"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "sea_km",
+        "value": 65,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 13 m) within 300 km"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "sea_km",
+        "value": 34,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 56 m) within 300 km"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "sea_km",
+        "value": 9,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 22 m) within 300 km"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "sea_km",
+        "value": 2,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 112,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1128 m at 56.96, -3.24; the centre sits at about 77 m"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "sea_km",
+        "value": 3,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 15 m) within 300 km"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "sea_km",
+        "value": 3,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 9 m) within 300 km"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "sea_km",
+        "value": 149,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 41 m) within 300 km"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "sea_km",
+        "value": 240,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 42,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1229 m at 45.41, 4.62; the centre sits at about 172 m"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "sea_km",
+        "value": 142,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 207,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1080 m at 51.80, 10.62; the centre sits at about 43 m"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "sea_km",
+        "value": 286,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 53,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1635 m at 47.66, 11.50; the centre sits at about 523 m"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "sea_km",
+        "value": 73,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 199,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1040 m at 51.80, 10.60; the centre sits at about 12 m"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "sea_km",
+        "value": 23,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 12 m) within 300 km"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "sea_km",
+        "value": 24,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 10 m) within 300 km"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "sea_km",
+        "value": 73,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 26 m) within 300 km"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "sea_km",
+        "value": 0,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 11 m) within 300 km"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "sea_km",
+        "value": 2,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 19 m) within 300 km"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "sea_km",
+        "value": 2,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 75,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1041 m at 60.24, 9.55; the centre sits at about 22 m"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "sea_km",
+        "value": 2,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 26 m) within 300 km"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "sea_km",
+        "value": 325,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 31,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1537 m at 47.09, 8.59; the centre sits at about 434 m"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "sea_km",
+        "value": 276,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 16,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1409 m at 46.29, 5.98; the centre sits at about 383 m"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "sea_km",
+        "value": 338,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 59,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1275 m at 47.95, 15.67; the centre sits at about 189 m"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "sea_km",
+        "value": 388,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 107,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1233 m at 50.75, 15.50; the centre sits at about 204 m"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "sea_km",
+        "value": 262,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 117 m) within 300 km"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "sea_km",
+        "value": 478,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 53,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1235 m at 49.63, 19.62; the centre sits at about 219 m"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "sea_km",
+        "value": 412,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 127,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1141 m at 48.60, 18.62; the centre sits at about 122 m"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "sea_km",
+        "value": 2,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 172,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1089 m at 40.07, -8.16; the centre sits at about 65 m"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "sea_km",
+        "value": 3,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 45,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1120 m at 41.02, -8.11; the centre sits at about 82 m"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "sea_km",
+        "value": 303,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 43,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1804 m at 40.78, -3.86; the centre sits at about 666 m"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "sea_km",
+        "value": 4,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 38,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1098 m at 41.61, 1.81; the centre sits at about 36 m"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "sea_km",
+        "value": 4,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 47,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1088 m at 39.54, -0.92; the centre sits at about 22 m"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "sea_km",
+        "value": 0,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 24,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1021 m at 36.62, -4.66; the centre sits at about 13 m"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "sea_km",
+        "value": 6,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 19,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1092 m at 38.16, 23.72; the centre sits at about 85 m"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "sea_km",
+        "value": 1,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 11 m) within 300 km"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "sea_km",
+        "value": 3,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 67,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1076 m at 37.51, -121.73; the centre sits at about 12 m"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "sea_km",
+        "value": 22,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 22,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1095 m at 34.21, -118.11; the centre sits at about 85 m"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "sea_km",
+        "value": 1,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 142,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1114 m at 41.96, -74.40; the centre sits at about 34 m"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "sea_km",
+        "value": 1,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 172,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1091 m at 43.08, -72.92; the centre sits at about 33 m"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "sea_km",
+        "value": 1,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 46,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1176 m at 47.51, -121.74; the centre sits at about 72 m"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "sea_km",
+        "value": 200,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 156 m) within 300 km"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "sea_km",
+        "value": 0,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 25 m) within 300 km"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "sea_km",
+        "value": 933,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 183 m) within 300 km"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "sea_km",
+        "value": 1171,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 31,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "2653 m at 39.82, -105.33; the centre sits at about 1620 m"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "sea_km",
+        "value": 531,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 300,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "no ground 1,000 m above the centre (about 161 m) within 300 km"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "sea_km",
+        "value": 4,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 15,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1140 m at 49.38, -123.08; the centre sits at about 77 m"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "sea_km",
+        "value": 329,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 129,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1329 m at 44.37, -73.90; the centre sits at about 231 m"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "sea_km",
+        "value": 1,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 262,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1062 m at 2.84, 102.07; the centre sits at about 10 m"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "sea_km",
+        "value": 8,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 51,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1178 m at 35.50, 139.18; the centre sits at about 31 m"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "sea_km",
+        "value": 4,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 97,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1115 m at -33.49, 150.26; the centre sits at about 71 m"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "sea_km",
+        "value": 6,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 60,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1094 m at -37.71, 145.64; the centre sits at about 29 m"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "sea_km",
+        "value": 13,
+        "period": "Natural Earth 5.1",
+        "source": "natural-earth",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "straight line from the centre to the open-sea coastline (lakes excluded)"
+      },
+      {
+        "metric": "mountain_km",
+        "value": 87,
+        "period": "terrain tiles 2017",
+        "source": "terrain-tiles",
+        "level": "city",
+        "retrieved": "2026-10-27",
+        "note": "1157 m at 24.74, 56.08; the centre sits at about 27 m"
+      }
+    ]
+  }
+}

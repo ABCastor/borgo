@@ -1,0 +1,54 @@
+{
+  "id": "nager-date",
+  "name": "Nager.Date public holidays",
+  "publisher": "Nager.Date (open-source project)",
+  "homepage": "https://date.nager.at/",
+  "measures": [
+    {
+      "metric": "public_holidays",
+      "definition": "Public holidays that fall on Monday to Friday this year, nationwide plus those of the city's region."
+    }
+  ],
+  "coverage": {
+    "geography": "about 120 countries",
+    "level": "region",
+    "period": "the current year"
+  },
+  "licence": "MIT",
+  "licenceUrl": "https://github.com/nager/Nager.Date/blob/main/LICENSE.md",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "MIT",
+    "edition": "Nager.Date API v3, 2026 holidays",
+    "termsUrl": "https://github.com/nager/Nager.Date",
+    "termsRead": "2026-11-05",
+    "attribution": "Public holidays from Nager.Date (date.nager.at), MIT License, Copyright (c) Nager"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://date.nager.at/api/v3/PublicHolidays/{year}/{country}",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/family.ts"
+  },
+  "linkOut": "https://date.nager.at/PublicHoliday/Country/{country}",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Open-source holiday rules with a free, keyless API; the API answers browsers (CORS open)."
+  },
+  "caveats": [
+    "Holidays moved off a weekend by law count where Nager.Date lists the moved date.",
+    "Regional holidays count only when the city's ISO region code matches the one Nager.Date uses."
+  ]
+}

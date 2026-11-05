@@ -1,0 +1,53 @@
+{
+  "id": "wikidata",
+  "name": "Wikidata",
+  "publisher": "Wikimedia Foundation",
+  "homepage": "https://www.wikidata.org/",
+  "measures": [
+    {
+      "metric": "region_code",
+      "definition": "The ISO 3166-2 code of the region a place belongs to (Sicily is IT-82), which the regional tax rules use."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "region",
+    "period": "current"
+  },
+  "licence": "CC0-1.0",
+  "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC0-1.0",
+    "edition": "Wikidata structured data, read on demand",
+    "termsUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+    "termsRead": "2026-11-05",
+    "attribution": "Wikidata (wikidata.org), CC0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://query.wikidata.org/sparql?format=json&query={sparql}",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/places/resolve.ts",
+    "rateLimit": "query service: 60 s of query time a minute per client; send a User-Agent"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 3650
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Maps a GeoNames region id (P1566) to its ISO 3166-2 code (P300); also a fallback place search."
+  },
+  "caveats": [
+    "The query service rate-limits busy clients (HTTP 429); a committed table covers the regions the tax rules need."
+  ]
+}

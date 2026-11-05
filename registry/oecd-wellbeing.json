@@ -1,0 +1,53 @@
+{
+  "id": "oecd-wellbeing",
+  "name": "OECD Well-being Database (How's Life?)",
+  "publisher": "OECD",
+  "homepage": "https://www.oecd.org/en/data/datasets/well-being-database.html",
+  "measures": [
+    {
+      "metric": "life_evaluation",
+      "definition": "How satisfied people say they are with their life as a whole, on a 0 to 10 scale, averaged over the country."
+    }
+  ],
+  "coverage": {
+    "geography": "OECD members",
+    "level": "country",
+    "period": "latest year, 2018 onwards"
+  },
+  "licence": "OECD terms for data (any use, with citation)",
+  "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "OECD-data",
+    "edition": "OECD Well-being Database, DSD_HSL@DF_HSL_CWB 1.1",
+    "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+    "termsRead": "2026-11-05",
+    "attribution": "OECD (2026), OECD Well-being Database (How's Life?), https://www.oecd.org/en/data/datasets/well-being-database.html",
+    "notices": [
+      "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": ["node"],
+    "endpoint": "https://sdmx.oecd.org/public/rest/data/OECD.WISE.WDP,DSD_HSL@DF_HSL_CWB,1.1/{iso3}.11_1._T._T._T?format=csvfilewithlabels&startPeriod=2018",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/country.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Open alternative to the World Happiness Report, whose data may not be redistributed."
+  },
+  "caveats": [
+    "Only OECD members; elsewhere the line stays empty rather than borrowing a closed index.",
+    "The OECD API answers HTTP 500 intermittently; the fetch reports it and can be re-run for this source alone (borgo fetch <place> --only oecd-wellbeing)."
+  ]
+}

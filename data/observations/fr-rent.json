@@ -1,0 +1,46 @@
+{
+  "source": "fr-carte-loyers",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "paris-fr": [
+      {
+        "metric": "rent_1bed",
+        "value": 1698,
+        "period": "2025-Q3",
+        "level": "city",
+        "source": "fr-carte-loyers",
+        "retrieved": "2026-11-05",
+        "note": "Paris, asking rent of flats of one or two rooms, charges included: 33.96 €/m² (mean of 20 arrondissements weighted by 191727 adverts) × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2850,
+        "period": "2025-Q3",
+        "level": "city",
+        "source": "fr-carte-loyers",
+        "retrieved": "2026-11-05",
+        "note": "Paris, asking rent of flats of three rooms or more, charges included: 31.67 €/m² (mean of 20 arrondissements weighted by 78129 adverts) × 90 m²"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "rent_1bed",
+        "value": 956,
+        "period": "2025-Q3",
+        "level": "city",
+        "source": "fr-carte-loyers",
+        "retrieved": "2026-11-05",
+        "note": "Lyon, asking rent of flats of one or two rooms, charges included: 19.12 €/m² (mean of 9 arrondissements weighted by 89255 adverts) × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1379,
+        "period": "2025-Q3",
+        "level": "city",
+        "source": "fr-carte-loyers",
+        "retrieved": "2026-11-05",
+        "note": "Lyon, asking rent of flats of three rooms or more, charges included: 15.32 €/m² (mean of 9 arrondissements weighted by 55087 adverts) × 90 m²"
+      }
+    ]
+  }
+}

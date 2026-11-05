@@ -1,0 +1,59 @@
+{
+  "id": "natural-earth",
+  "name": "Natural Earth (coastline, land, countries and populated places)",
+  "publisher": "Natural Earth",
+  "homepage": "https://www.naturalearthdata.com/",
+  "measures": [
+    {
+      "metric": "sea_km",
+      "definition": "Straight-line distance from the centre to the open-sea coast."
+    },
+    {
+      "metric": "map_land",
+      "definition": "Which tiles of the world map are land, and the country each one belongs to, from the 1:50m admin-0 countries."
+    },
+    {
+      "metric": "map_places",
+      "definition": "Towns and cities of 100,000 people or more, plus every national capital, from the 1:10m populated places: what a click on the map can add."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Public domain",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "PD",
+    "edition": "Natural Earth 5.1 (1:50m admin-0, 1:10m populated places, coastline, land)",
+    "termsUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "termsRead": "2026-11-05",
+    "attribution": "Made with Natural Earth (public domain)"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_coastline.geojson",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/geography.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Lakes and some tidal rivers excluded by hand for sea distance. The map leaves Antarctica out and keeps Somaliland, Northern Cyprus and the Siachen Glacier as land without a country code."
+  },
+  "caveats": [
+    "The map's tiles take the country most of their ground belongs to, so a small country (Singapore, Luxembourg) can share a tile with its neighbour; its cities still show as their own points."
+  ],
+  "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/"
+}

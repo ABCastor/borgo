@@ -1,0 +1,52 @@
+{
+  "id": "ror",
+  "name": "Research Organization Registry",
+  "publisher": "ROR",
+  "homepage": "https://ror.org/",
+  "measures": [
+    {
+      "metric": "universities",
+      "definition": "Universities and research institutes registered in the city."
+    },
+    {
+      "metric": "research_institutes",
+      "definition": "Research facilities (institutes, laboratories, observatories) registered in the city in the Research Organization Registry. National research councils that register every lab inflate some cities (Paris, Tokyo)."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "CC0-1.0",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC0-1.0",
+    "edition": "ROR data dump, read 2026-10-27",
+    "termsUrl": "https://ror.org/registry/",
+    "termsRead": "2026-11-05",
+    "attribution": "Research Organization Registry (ror.org), CC0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://api.ror.org/v2/organizations?query.advanced=locations.geonames_id:{geonames}",
+    "cors": true,
+    "key": null,
+    "fetcher": "pipeline/sources/ror.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Exact match on GeoNames ids."
+  },
+  "licenceUrl": "https://ror.org/registry/"
+}

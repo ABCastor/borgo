@@ -1,0 +1,27 @@
+{
+  "id": "oxford-economics",
+  "name": "Oxford Economics Global Cities Index",
+  "publisher": "Oxford Economics",
+  "homepage": "https://www.oxfordeconomics.com/global-cities-index/",
+  "measures": [],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "Proprietary",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://www.oxfordeconomics.com/global-cities-index/",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Paid index of 1,000 cities."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+}

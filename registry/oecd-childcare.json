@@ -1,0 +1,74 @@
+{
+  "id": "oecd-childcare",
+  "name": "OECD Tax-Benefit Models: net childcare costs",
+  "publisher": "OECD",
+  "homepage": "https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+  "measures": [
+    {
+      "metric": "childcare_fees_1",
+      "definition": "Fees a year for full-time childcare for one child aged 2 or 3, before any public support, national currency."
+    },
+    {
+      "metric": "childcare_fees_2",
+      "definition": "Fees a year for full-time childcare for two children aged 2 and 3, before any public support."
+    },
+    {
+      "metric": "childcare_net_couple_1",
+      "definition": "Net cost a year of full-time childcare for one child, for a two-earner couple on 100% and 67% of the average wage: fees less childcare benefits and tax breaks, plus changes in other benefits."
+    },
+    {
+      "metric": "childcare_net_couple_2",
+      "definition": "The same for two children aged 2 and 3."
+    },
+    {
+      "metric": "childcare_net_single_1",
+      "definition": "Net cost a year of full-time childcare for one child, for a single parent on the average wage."
+    },
+    {
+      "metric": "childcare_net_single_2",
+      "definition": "The same for two children aged 2 and 3."
+    }
+  ],
+  "coverage": {
+    "geography": "OECD and EU members (39 countries)",
+    "level": "country",
+    "period": "latest model year, the last four years"
+  },
+  "licence": "OECD terms for data (any use, with citation)",
+  "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "OECD-data",
+    "edition": "OECD Tax-Benefit Models, net childcare costs (DSD_TAXBEN_NCC), 2025",
+    "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+    "termsRead": "2026-11-05",
+    "attribution": "OECD (2026), Net childcare costs, OECD Tax-Benefit Models, https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+    "notices": [
+      "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": ["node"],
+    "endpoint": "https://sdmx.oecd.org/public/rest/data/OECD.ELS.JAI,DSD_TAXBEN_NCC@DF_NCC,1.1/{iso3}.NCF.XDC.AW100.C_C1+C_C2+S_C1+S_C2.Y2_3.AW67+_Z.YES.NO.NO._T+CF.A?format=csvfilewithlabels&startPeriod={year-4}",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/family.ts"
+  },
+  "linkOut": "https://www.oecd.org/en/data/indicators/net-childcare-costs.html",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "The one open, comparable source for childcare after public support; the API answers browsers (CORS open)."
+  },
+  "caveats": [
+    "The model prices childcare in one reference place per country (often a large city or a typical municipality), so a city's real fees can differ a lot.",
+    "Children aged 2 and 3 only; general child benefits that do not depend on childcare are not in the net cost."
+  ]
+}

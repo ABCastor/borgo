@@ -1,0 +1,60 @@
+{
+  "id": "oecd-family-db",
+  "name": "OECD Family Database: parental leave systems (PF2.1)",
+  "publisher": "OECD",
+  "homepage": "https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+  "measures": [
+    {
+      "metric": "leave_mothers",
+      "definition": "Paid maternity, parental and home-care leave available to mothers, in weeks at full pay (full-rate equivalent)."
+    },
+    {
+      "metric": "leave_fathers",
+      "definition": "Paid paternity leave and parental leave reserved for fathers, in weeks at full pay (full-rate equivalent)."
+    }
+  ],
+  "coverage": {
+    "geography": "OECD and EU members",
+    "level": "country",
+    "period": "entitlements in April of the table's year"
+  },
+  "licence": "OECD terms for data (any use, with citation)",
+  "licenceUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "OECD-data",
+    "edition": "OECD Family Database PF2.1, updated May 2026 (policies in April 2025)",
+    "termsUrl": "https://www.oecd.org/en/about/terms-conditions.html",
+    "termsRead": "2026-11-05",
+    "attribution": "OECD (2026), OECD Family Database, PF2.1 Parental leave systems, https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+    "notices": [
+      "Reusers must cite the OECD as above and pass this acknowledgement requirement on to anyone they share the data with."
+    ]
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://webfs.oecd.org/els-com/Family_Database/PF2_1_Parental_leave_systems.xlsx",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/node/oecd-family.ts"
+  },
+  "linkOut": "https://www.oecd.org/en/data/datasets/oecd-family-database.html",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "The standard comparable source for paid leave."
+  },
+  "caveats": [
+    "National entitlements only: state programmes (New York or Washington paid family leave in the US) and employer schemes are not in it.",
+    "The live PF2.1 edition is updated May 2026 but measures policies in April 2025 using 2024 earnings. It is not a current-2026 statement of statutory leave; later reforms are outside these comparable full-rate-equivalent observations."
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "weatherspark",
+  "name": "WeatherSpark",
+  "publisher": "Cedar Lake Ventures",
+  "homepage": "https://weatherspark.com/",
+  "measures": [
+    {
+      "metric": "temp_hourly",
+      "definition": "Read on the publisher's page; not copied."
+    },
+    {
+      "metric": "cloud_cover",
+      "definition": "Read on the publisher's page; not copied."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "Proprietary",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://weatherspark.com/search?q={name}",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": true,
+    "by": "the project owner (named in the brief, 27 Oct 2026)",
+    "on": "2026-10-27",
+    "notes": "Year-round weather charts the owner likes (brief D7); proprietary, link only."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published.",
+  "licenceUrl": "https://weatherspark.com/terms",
+  "caveats": [
+    "robots.txt (read 27 Oct 2026) disallows GPTBot, ClaudeBot and other AI agents from the whole site, and /search for everyone; the terms page refuses scripted reads. Link for people only."
+  ]
+}

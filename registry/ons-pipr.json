@@ -1,0 +1,57 @@
+{
+  "id": "ons-pipr",
+  "name": "Price Index of Private Rents",
+  "publisher": "Office for National Statistics",
+  "homepage": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average monthly private rent of a one-bedroom home in the local authority."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average monthly private rent of a three-bedroom home in the local authority."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "GB"
+    ],
+    "level": "region",
+    "period": "latest month"
+  },
+  "licence": "OGL-UK-3.0",
+  "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "OGL-UK-3.0",
+    "edition": "ONS Price Index of Private Rents, monthly price statistics, latest month",
+    "termsUrl": "https://www.ons.gov.uk/methodology/geography/licences",
+    "termsRead": "2026-11-05",
+    "attribution": "Source: Office for National Statistics, Price Index of Private Rents. Contains public sector information licensed under the Open Government Licence v3.0"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics (latest xlsx linked from the page)",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/node/ons-rent.ts"
+  },
+  "refresh": {
+    "cadence": "monthly",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Official private rents for every UK local authority."
+  },
+  "caveats": [
+    "The xlsx has no CORS, so the browser cannot read it."
+  ]
+}

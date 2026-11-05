@@ -1,0 +1,55 @@
+{
+  "id": "labour-law",
+  "name": "Paid holiday by law, from the labour codes cited",
+  "publisher": "Borgo contributors",
+  "homepage": "https://github.com/ABCastor/borgo/blob/main/src/fetch/family.ts",
+  "measures": [
+    {
+      "metric": "annual_leave",
+      "definition": "Statutory paid annual leave for a full-time employee on a five-day week, at the baseline service level in each note. Calendar-day entitlements use the explicit five-day-week equivalent in the observation, not an exact individual workday entitlement."
+    }
+  ],
+  "coverage": {
+    "geography": "the 26 countries with a tax model",
+    "level": "country",
+    "period": "as reviewed"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "curated in src/fetch/family.ts, 2026 rules",
+    "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo contributors, from the labour codes cited in each figure's note"
+  },
+  "access": "curated",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "src/fetch/family.ts",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/family.ts"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Official statutes and labour-authority guidance, with an official source linked on every figure and country-by-country verification in docs/pension-leave-audit.md."
+  },
+  "caveats": [
+    "Baseline entitlements only: service, accrual, age, working pattern, sector and collective agreements can change the applicable leave. Hungary, Norway and Switzerland have modelled age adjustments; service progression is described but not calculated.",
+    "The UK entitlement is 28 days including any bank holidays the employer counts towards it; public holidays are not an additional guaranteed paid entitlement there.",
+    "Spain and the UAE grant 30 calendar days, represented as 30 × 5/7 equivalent working days. The actual number of working days depends on leave dates; UAE public holidays within leave count towards it.",
+    "Canada uses the federal baseline, not a uniform rule for all provincial employees. First-year accrual and qualifying service differ by country."
+  ]
+}

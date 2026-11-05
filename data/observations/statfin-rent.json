@@ -1,0 +1,17 @@
+{
+  "source": "statfin-rent",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "helsinki-fi": [
+      {
+        "metric": "rent_1bed",
+        "value": 950,
+        "period": "2026Q3",
+        "level": "city",
+        "source": "statfin-rent",
+        "retrieved": "2026-11-05",
+        "note": "Helsinki, non-subsidised two-room flats (one bedroom), median monthly rent of every tenancy (Statistics Finland table 15fc)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "id": "osm-walk-cycle",
+  "name": "OpenStreetMap via the Overpass API: walking and cycling",
+  "publisher": "OpenStreetMap contributors",
+  "homepage": "https://www.openstreetmap.org/copyright",
+  "measures": [
+    {
+      "metric": "walkable_share",
+      "definition": "Share of residential streets within 5 km of the centre whose middle has a food shop, a pharmacy or doctor, a school, a park and a public-transport stop each within 1 km as the crow flies."
+    },
+    {
+      "metric": "bike_network",
+      "definition": "Kilometres of cycle paths plus roads with a separate cycle track tagged on them, within 10 km of the centre, per km² of land there; painted lanes are not counted."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "the OpenStreetMap state on the day it is read"
+  },
+  "licence": "ODbL-1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "redistribute": "share-alike",
+  "rights": {
+    "licenceId": "ODbL-1.0",
+    "edition": "OpenStreetMap via the Overpass API, read 2026-11-05",
+    "termsUrl": "https://www.openstreetmap.org/copyright",
+    "termsRead": "2026-11-05",
+    "attribution": "© OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright)"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://overpass-api.de/api/interpreter",
+    "cors": false,
+    "key": null,
+    "fetcher": "src/fetch/node/osm-walk-cycle.ts",
+    "rateLimit": "public Overpass servers: two slots per client, under 10,000 queries a day; two queries of about a minute and a half a place"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Share-alike: kept apart and credited. Not run from a browser (cors false here by choice): the queries are too heavy to send from every visitor's page."
+  },
+  "caveats": [
+    "Counts measure how thoroughly a city is mapped as well as what exists; OSM is strongest in Europe.",
+    "Straight-line distance: a river or a motorway without a crossing makes a real walk longer.",
+    "Doctors' surgeries are mapped unevenly, so a pharmacy counts as well."
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "id": "worldbank-wgi",
+  "name": "Worldwide Governance Indicators",
+  "publisher": "World Bank",
+  "homepage": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+  "measures": [
+    {
+      "metric": "clean_government",
+      "definition": "Control of corruption: how far public power is exercised for private gain, petty and grand, and captured by elites and private interests, as perceived by households, firms and experts; an estimate of roughly -2.5 (weak) to 2.5 (strong)."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "country",
+    "period": "latest year, 1996 onwards"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://datacatalog.worldbank.org/search/dataset/0038026/worldwide-governance-indicators",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Worldwide Governance Indicators, GOV_WGI_CC.EST (License_Type CC BY-4.0 in its metadata)",
+    "termsUrl": "https://datacatalog.worldbank.org/public-licenses#cc-by",
+    "termsRead": "2026-11-05",
+    "attribution": "World Bank, Worldwide Governance Indicators, Control of Corruption estimate, CC BY 4.0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://api.worldbank.org/v2/country/{iso2}/indicator/GOV_WGI_CC.EST?source=3&format=json",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/country.ts"
+  },
+  "linkOut": "https://www.worldbank.org/en/publication/worldwide-governance-indicators",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 180
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Licence read on the World Bank Data Catalog page for the dataset (Creative Commons Attribution 4.0) on 2026-11-05."
+  },
+  "caveats": [
+    "A perception measure built from 35 surveys and expert assessments, with a margin of error: small differences between countries mean little.",
+    "A country figure standing in for the city."
+  ]
+}

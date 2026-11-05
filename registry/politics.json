@@ -1,0 +1,54 @@
+{
+  "id": "politics",
+  "name": "Political position from election results",
+  "publisher": "Borgo contributors",
+  "homepage": "https://github.com/ABCastor/borgo/blob/main/pipeline/inputs/politics.json",
+  "measures": [
+    {
+      "metric": "politics_lr",
+      "definition": "An estimate of where the place voted at its latest national lower-house election, 0 left to 10 right: each party's ParlGov 2024 position (the mean of expert surveys, or of its party family where no survey covers it; an alliance takes its members' mean) averaged by its share of the official result."
+    }
+  ],
+  "coverage": {
+    "geography": "18 countries with an official result read and enough of the vote positioned; Swiss cantons, Canadian provinces and Australian states. No figure for Hungary, Italy and Japan (under 75% of the vote positioned), the United States and Singapore (no ParlGov positions), Spain and Greece (official results not readable for this release) or the UAE.",
+    "level": "region",
+    "period": "latest national election, 2022 to 2026"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "pipeline/inputs/politics.json; ParlGov 2024 release (doi:10.7910/DVN/2VZ5ZC, CC0 1.0)",
+    "termsUrl": "https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/2VZ5ZC",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo contributors, from official election results and ParlGov party positions (Döring, Huber and Manow, ParlGov 2024 release, CC0)"
+  },
+  "access": "curated",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "src/fetch/politics.ts",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/politics.ts"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Inputs, each open: ParlGov 2024 release (Döring and Manow, Harvard Dataverse doi:10.7910/DVN/2VZ5ZC, CC0), matched by ParlGov party id; official results from each country's electoral authority or statistics office, listed with their URLs in pipeline/inputs/politics.json and docs/positions.md, each compared with its source on the date given. Wikidata and the MIT Election Lab are no longer used. The Manifesto Project was left out: its terms forbid redistribution."
+  },
+  "caveats": [
+    "Party positions are ParlGov's 2024 release: expert surveys up to about 2019, so a party that moved since keeps its older place. Where no survey covers a party, ParlGov gives its party family's mean; the note marks those parties.",
+    "A party ParlGov does not place has no position, and a place gets no figure when parties with a position took under 75% of the vote. Independents and non-party candidates have no position.",
+    "Sweden's shares are the Election Authority's rounded percentages and Switzerland's the Federal Statistical Office's party strength; France's groups are the Interior Ministry's candidate classifications (nuances)."
+  ]
+}

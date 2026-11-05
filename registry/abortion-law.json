@@ -1,0 +1,54 @@
+{
+  "id": "abortion-law",
+  "name": "Abortion in law, from the statutes cited",
+  "publisher": "Borgo contributors",
+  "homepage": "https://github.com/ABCastor/borgo/blob/main/src/fetch/rights-law.ts",
+  "measures": [
+    {
+      "metric": "abortion_law",
+      "definition": "On what grounds the law allows a pregnancy to be ended, from 0 (not at all, or only to save the woman's life) to 4 (on request to 10 weeks or later), with the gestational limit in words."
+    }
+  ],
+  "coverage": {
+    "geography": "the 26 countries with a tax model except the UAE; in the United States, the states in the table",
+    "level": "country",
+    "period": "as reviewed"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "curated in src/fetch/rights-law.ts, checked 2026-11-05",
+    "termsUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo contributors, from the statutes cited in each figure's note"
+  },
+  "access": "curated",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "src/fetch/rights-law.ts",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/rights-law.ts"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Legal facts with their statutes, because the indices on abortion law (Center for Reproductive Rights, WHO Global Abortion Policies Database) may not be redistributed. A neutral fact: whether and which way it counts is the person's own stance."
+  },
+  "caveats": [
+    "Each figure's note says whether the law was checked against the source linked (the statute, or an official page that states it) on 2026-11-05, or is stated from the law cited because that source could not be read (Greece, Canada, Australia, California, New York, Massachusetts, Illinois).",
+    "In the United States each state sets the law: a state not in the table has no figure, never a national one.",
+    "The law on paper, not access in practice: waiting periods, counselling, cost and the distance to a provider are in the note where the statute sets them, not in the level."
+  ]
+}

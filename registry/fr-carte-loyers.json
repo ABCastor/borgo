@@ -1,0 +1,58 @@
+{
+  "id": "fr-carte-loyers",
+  "name": "Carte des loyers: asking-rent indicators by commune (2025)",
+  "publisher": "Ministère de la Transition écologique (DHUP), with ANIL",
+  "homepage": "https://www.data.gouv.fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Asking rent: the modelled rent per m², charges included, of an unfurnished flat of one or two rooms advertised on leboncoin and SeLoger in the third quarter, times 50 m² (Borgo's flat size for one bedroom). Paris and Lyon are the mean of their arrondissements weighted by adverts."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Asking rent: the modelled rent per m², charges included, of an unfurnished flat of three rooms or more advertised in the third quarter, times 90 m² (Borgo's flat size for three bedrooms)."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "FR"
+    ],
+    "level": "city",
+    "period": "2025-Q3"
+  },
+  "licence": "Licence Ouverte 2.0 (Etalab)",
+  "licenceUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "Etalab-2.0",
+    "edition": "carte des loyers 2025 (files of 2025-12-11), apartments of 1-2 rooms and of 3+ rooms",
+    "termsUrl": "https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf",
+    "attribution": "Ministère de la Transition écologique, carte des loyers 2025 (data.gouv.fr, update of 2025-12-11), Licence Ouverte 2.0. Borgo weights arrondissements by adverts and multiplies the rate per m² by a fixed flat size",
+    "termsRead": "2026-11-05"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://static.data.gouv.fr/resources/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025/20251211-144934/pred-app12-mef-dhup.csv",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/fr-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent)",
+    "on": "2026-11-05",
+    "notes": "Official open data from the housing ministry; asking rents, modelled."
+  },
+  "caveats": [
+    "Asking rents of adverts, not rents paid, and charges included: higher than a sitting rent for the same home.",
+    "The 1-2 room rate is for flats of 37 m² on average and smaller flats cost more per m², so 50 m² at that rate can overstate a one-bedroom rent."
+  ]
+}

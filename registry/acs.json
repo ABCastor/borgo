@@ -1,0 +1,77 @@
+{
+  "id": "acs",
+  "name": "American Community Survey 1-year estimates",
+  "publisher": "US Census Bureau",
+  "homepage": "https://www.census.gov/programs-surveys/acs/data/summary-file.html",
+  "measures": [
+    {
+      "metric": "commute_minutes",
+      "definition": "Average travel time to work of workers who commute, in minutes (table B08013 over B08301)."
+    },
+    {
+      "metric": "foreign_born_share",
+      "definition": "Share of residents born in another country: a measure of how international the city is."
+    },
+    {
+      "metric": "transit_commute_share",
+      "definition": "Share of journeys to work made by bus, tram, metro or train."
+    },
+    {
+      "metric": "rent_1bed",
+      "definition": "Sitting rent: the median monthly gross rent (contract rent plus utilities and fuels) of every renter-occupied one-bedroom home paying cash rent in the city, old and new tenancies (table B25031)."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Sitting rent: the median monthly gross rent (rent plus utilities) of every renter-occupied three-bedroom home paying cash rent in the city (table B25031); not stored where the Census tops it out at $3,500 or more."
+    },
+    {
+      "metric": "degree_share",
+      "definition": "Share of people aged 25 to 64 with an associate's, bachelor's or graduate degree (table B15001), the US counterpart of ISCED 5 to 8."
+    },
+    {
+      "metric": "active_commute_share",
+      "definition": "Share of workers who commute (working from home left out) who walked or cycled to work (table B08301)."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "US"
+    ],
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Public domain (US government work)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "PD-USGov",
+    "edition": "ACS 1-year estimates, summary-file tables, latest year published",
+    "termsUrl": "https://www.census.gov/about/policies/citation.html",
+    "termsRead": "2026-11-05",
+    "attribution": "Source: U.S. Census Bureau, American Community Survey 1-year estimates"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www2.census.gov/programs-surveys/acs/summary_file/{year}/table-based-SF/data/1YRData/",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/acs.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Summary files need no key; the API now does."
+  },
+  "licenceUrl": "https://www.census.gov/about/policies/citation.html",
+  "caveats": [
+    "Rents are gross (utilities included) and cover every tenancy, so they read lower than asking rents for a home on the market today."
+  ]
+}

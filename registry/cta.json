@@ -1,0 +1,38 @@
+{
+  "id": "cta",
+  "name": "Common Travel Area guidance",
+  "publisher": "UK Government",
+  "homepage": "https://www.gov.uk/government/publications/common-travel-area-guidance",
+  "measures": [
+    {
+      "metric": "right_to_live",
+      "definition": "British and Irish citizens may live and work in each other's country."
+    }
+  ],
+  "coverage": {
+    "geography": "the treaty area",
+    "level": "country",
+    "period": "in force"
+  },
+  "licence": "Borgo's summary of the official text (CC BY 4.0)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "law-summary",
+    "edition": "Common Travel Area guidance (UK Government), 2019 Memorandum of Understanding",
+    "termsUrl": "https://www.gov.uk/help/terms-conditions",
+    "termsRead": "2026-11-05",
+    "attribution": "Borgo's summary of the Common Travel Area guidance; contains public sector information licensed under the Open Government Licence v3.0"
+  },
+  "access": "curated",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "A legal text, encoded by hand in data/rights.json."
+  },
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+}

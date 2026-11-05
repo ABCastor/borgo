@@ -1,0 +1,87 @@
+{
+  "id": "eurostat-urban",
+  "name": "Urban Audit: cities and greater cities",
+  "publisher": "Eurostat",
+  "homepage": "https://ec.europa.eu/eurostat/web/cities/database",
+  "measures": [
+    {
+      "metric": "transit_commute_share",
+      "definition": "Share of journeys to work made by bus, tram, metro or train, as reported by the city."
+    },
+    {
+      "metric": "commute_minutes",
+      "definition": "Average time of a journey to work, one way."
+    },
+    {
+      "metric": "foreign_born_share",
+      "definition": "Share of residents born in another country: a measure of how international the city is."
+    },
+    {
+      "metric": "green_share",
+      "definition": "Share of the city's area that is green urban space or sports and leisure land, from the EU Urban Atlas via Eurostat."
+    },
+    {
+      "metric": "public_pools",
+      "definition": "Public swimming pools, indoor and outdoor, per 100,000 residents, as reported by the city to the Eurostat Urban Audit."
+    },
+    {
+      "metric": "road_deaths",
+      "definition": "People killed in road accidents per 10,000 residents a year."
+    },
+    {
+      "metric": "transit_pass",
+      "definition": "Price of a monthly pass for all public transport in the central zone (5 to 10 km)."
+    },
+    {
+      "metric": "degree_share",
+      "definition": "Share of people aged 25 to 64 whose highest level of education is tertiary (ISCED 5 to 8), reported by the city; figures from 2014 on only."
+    },
+    {
+      "metric": "active_commute_share",
+      "definition": "Share of journeys to work made on foot plus the share made by bicycle, from the same year."
+    }
+  ],
+  "coverage": {
+    "geography": "EU, EEA, CH, UK (to 2018)",
+    "level": "city",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "EU-reuse",
+    "edition": "Urban Audit tables urb_c*, each city's latest value 2011-2025",
+    "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "termsRead": "2026-11-05",
+    "attribution": "Source: Eurostat, Urban Audit (© European Union). Borgo keeps each city's latest value and converts units where its note says so",
+    "notices": [
+      "Eurostat is not responsible for Borgo's use of its data."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/{dataset}?format=JSON&lang=en&indic_ur={indicator}&cities={code}",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/eurostat-urban.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Each city's latest report; older than 2010 dropped."
+  },
+  "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+  "caveats": [
+    "A place is found by its name among the Urban Audit's city labels, which use local names (Torino, Wien, Athina): a place known here only by its English name may not be found."
+  ]
+}

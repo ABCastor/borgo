@@ -1,0 +1,678 @@
+{
+  "source": "worldbank-wdi",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "degree_share",
+        "value": 17.7,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "degree_share",
+        "value": 17.7,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "degree_share",
+        "value": 17.7,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "degree_share",
+        "value": 17.7,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "degree_share",
+        "value": 17.7,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "degree_share",
+        "value": 17.7,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "degree_share",
+        "value": 48.7,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "degree_share",
+        "value": 48.7,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "degree_share",
+        "value": 48.7,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "degree_share",
+        "value": 48.7,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "degree_share",
+        "value": 48.7,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GB/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "degree_share",
+        "value": 51.2,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "degree_share",
+        "value": 51.2,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/IE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "degree_share",
+        "value": 37.2,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FR/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "degree_share",
+        "value": 37.2,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FR/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "degree_share",
+        "value": 30.2,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "degree_share",
+        "value": 30.2,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "degree_share",
+        "value": 30.2,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "degree_share",
+        "value": 38.9,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NL/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "degree_share",
+        "value": 38.9,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NL/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "degree_share",
+        "value": 37.9,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/BE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "degree_share",
+        "value": 38.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/DK/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "degree_share",
+        "value": 45.2,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/SE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "degree_share",
+        "value": 43.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/NO/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "degree_share",
+        "value": 38.9,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/FI/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "degree_share",
+        "value": 41.6,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CH/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "degree_share",
+        "value": 41.6,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CH/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "degree_share",
+        "value": 21.3,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "degree_share",
+        "value": 22,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CZ/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "degree_share",
+        "value": 33.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PL/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "degree_share",
+        "value": 33.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PL/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "degree_share",
+        "value": 27.4,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/HU/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "degree_share",
+        "value": 25.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "degree_share",
+        "value": 25.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/PT/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "degree_share",
+        "value": 35.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "degree_share",
+        "value": 35.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "degree_share",
+        "value": 35.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "degree_share",
+        "value": 35.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/ES/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "degree_share",
+        "value": 29.6,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/GR/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "degree_share",
+        "value": 39.9,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/EE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "degree_share",
+        "value": 49.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/US/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "degree_share",
+        "value": 49.3,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "degree_share",
+        "value": 49.3,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "degree_share",
+        "value": 49.3,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/CA/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "degree_share",
+        "value": 53.2,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/SG/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "degree_share",
+        "value": 47.5,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AU/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "degree_share",
+        "value": 47.5,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AU/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "degree_share",
+        "value": 55.7,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-05",
+        "url": "https://api.worldbank.org/v2/country/AE/indicator/SE.TER.CUAT.ST.ZS?format=json&per_page=100&date=2015:2026",
+        "note": "At least short-cycle tertiary education, % of people aged 25 and over (UNESCO Institute for Statistics via World Bank)"
+      }
+    ]
+  }
+}

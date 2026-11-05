@@ -1,0 +1,2115 @@
+{
+  "source": "worldbank-wdi",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "price_level",
+        "value": 72.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.57,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 758,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "price_level",
+        "value": 72.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.57,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 758,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "price_level",
+        "value": 72.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.57,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 758,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "price_level",
+        "value": 72.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.57,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 758,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "price_level",
+        "value": 72.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.57,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 758,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "price_level",
+        "value": 72.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.57,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 758,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "price_level",
+        "value": 92.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.12,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 81.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 853,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "price_level",
+        "value": 92.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.12,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 81.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 853,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "price_level",
+        "value": 92.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.12,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 81.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 853,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "price_level",
+        "value": 92.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.12,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 81.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 853,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "price_level",
+        "value": 92.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.12,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 81.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 853,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "price_level",
+        "value": 102.1,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.65,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 784,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "price_level",
+        "value": 102.1,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.65,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 784,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "price_level",
+        "value": 82.8,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.34,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 492,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "price_level",
+        "value": 82.8,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.34,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 492,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "price_level",
+        "value": 81.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.91,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 80.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 733,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "price_level",
+        "value": 81.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.91,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 80.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 733,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "price_level",
+        "value": 81.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.91,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 80.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 733,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "price_level",
+        "value": 86.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 807,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "price_level",
+        "value": 86.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 807,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "price_level",
+        "value": 87.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.08,
+        "period": "2021",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1276,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "price_level",
+        "value": 104.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.84,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 935,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "price_level",
+        "value": 90.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.15,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 868,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "price_level",
+        "value": 96.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.72,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.2,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1136,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "price_level",
+        "value": 90.6,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.98,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 777,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "price_level",
+        "value": 128.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.6,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 2596,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "price_level",
+        "value": 128.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.6,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 2596,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "price_level",
+        "value": 84.8,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.88,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1110,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "price_level",
+        "value": 67,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.77,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 80,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 379,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "price_level",
+        "value": 54.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.8,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 326,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "price_level",
+        "value": 54.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.8,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 326,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "price_level",
+        "value": 57.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.72,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 76.7,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 327,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "price_level",
+        "value": 64.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.72,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 838,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "price_level",
+        "value": 64.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.72,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.4,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 838,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "price_level",
+        "value": 68.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 648,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "price_level",
+        "value": 68.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 648,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "price_level",
+        "value": 68.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 648,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "price_level",
+        "value": 68.7,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 648,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "price_level",
+        "value": 65.5,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.84,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 81.8,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 673,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "price_level",
+        "value": 75.9,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.54,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 79.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 521,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "price_level",
+        "value": 100,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 5.76,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 78.9,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1472,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "price_level",
+        "value": 90.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.98,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 974,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "price_level",
+        "value": 90.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.98,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 974,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "price_level",
+        "value": 90.2,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 1.98,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 82.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 974,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "price_level",
+        "value": 78.3,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.07,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.3,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 997,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "price_level",
+        "value": 69,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.23,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 84,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 445,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "price_level",
+        "value": 94.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.85,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1106,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "price_level",
+        "value": 94.4,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.85,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 1106,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "price_level",
+        "value": 68.8,
+        "period": "2025",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Private consumption PPP over the market exchange rate; United States = 100"
+      },
+      {
+        "metric": "homicide_rate",
+        "value": 0.69,
+        "period": "2022",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27",
+        "note": "Intentional homicides per 100,000 people (UNODC via World Bank)"
+      },
+      {
+        "metric": "life_expectancy",
+        "value": 83.1,
+        "period": "2024",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-10-27"
+      },
+      {
+        "metric": "health_oop",
+        "value": 232,
+        "period": "2023",
+        "level": "country",
+        "source": "worldbank-wdi",
+        "retrieved": "2026-11-04",
+        "note": "Out-of-pocket health expenditure per person, current US dollars (WHO Global Health Expenditure Database via World Bank)"
+      }
+    ]
+  }
+}

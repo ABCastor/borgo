@@ -1,0 +1,709 @@
+[
+  {
+    "id": "turin-it",
+    "name": "Torino",
+    "country": "IT",
+    "lat": 45.07049,
+    "lon": 7.68682,
+    "population": 847287,
+    "region": "IT-21",
+    "aliases": [
+      "Turin"
+    ],
+    "geonames": "3165524",
+    "tz": "Europe/Rome",
+    "elevation": 239
+  },
+  {
+    "id": "milan-it",
+    "name": "Milan",
+    "country": "IT",
+    "lat": 45.46427,
+    "lon": 9.18951,
+    "population": 1371498,
+    "region": "IT-25",
+    "aliases": [
+      "Milano"
+    ],
+    "geonames": "3173435",
+    "tz": "Europe/Rome",
+    "elevation": 122
+  },
+  {
+    "id": "rome-it",
+    "name": "Rome",
+    "country": "IT",
+    "lat": 41.89193,
+    "lon": 12.51133,
+    "population": 2318895,
+    "region": "IT-62",
+    "aliases": [
+      "Roma"
+    ],
+    "geonames": "3169070",
+    "tz": "Europe/Rome",
+    "elevation": 20
+  },
+  {
+    "id": "naples-it",
+    "name": "Naples",
+    "country": "IT",
+    "lat": 40.85216,
+    "lon": 14.26811,
+    "population": 909048,
+    "region": "IT-72",
+    "aliases": [
+      "Napoli"
+    ],
+    "geonames": "3172394",
+    "tz": "Europe/Rome",
+    "elevation": 17
+  },
+  {
+    "id": "bologna-it",
+    "name": "Bologna",
+    "country": "IT",
+    "lat": 44.49381,
+    "lon": 11.33875,
+    "population": 394843,
+    "region": "IT-45",
+    "geonames": "3181928",
+    "tz": "Europe/Rome",
+    "elevation": 54
+  },
+  {
+    "id": "florence-it",
+    "name": "Florence",
+    "country": "IT",
+    "lat": 43.77925,
+    "lon": 11.24626,
+    "population": 367150,
+    "region": "IT-52",
+    "aliases": [
+      "Firenze"
+    ],
+    "geonames": "3176959",
+    "tz": "Europe/Rome",
+    "elevation": 50
+  },
+  {
+    "id": "london-gb",
+    "name": "London",
+    "country": "GB",
+    "lat": 51.50853,
+    "lon": -0.12574,
+    "population": 8961989,
+    "region": "GB-ENG",
+    "geonames": "2643743",
+    "tz": "Europe/London",
+    "elevation": 25
+  },
+  {
+    "id": "cambridge-gb",
+    "name": "Cambridge",
+    "country": "GB",
+    "lat": 52.2,
+    "lon": 0.11667,
+    "population": 145674,
+    "region": "GB-ENG",
+    "geonames": "2653941",
+    "tz": "Europe/London",
+    "elevation": 12
+  },
+  {
+    "id": "manchester-gb",
+    "name": "Manchester",
+    "country": "GB",
+    "lat": 53.48095,
+    "lon": -2.23743,
+    "population": 568996,
+    "region": "GB-ENG",
+    "geonames": "2643123",
+    "tz": "Europe/London",
+    "elevation": 51
+  },
+  {
+    "id": "bristol-gb",
+    "name": "Bristol",
+    "country": "GB",
+    "lat": 51.45523,
+    "lon": -2.59665,
+    "population": 479024,
+    "region": "GB-ENG",
+    "geonames": "2654675",
+    "tz": "Europe/London",
+    "elevation": 21
+  },
+  {
+    "id": "edinburgh-gb",
+    "name": "Edinburgh",
+    "country": "GB",
+    "lat": 55.95206,
+    "lon": -3.19648,
+    "population": 514990,
+    "region": "GB-SCT",
+    "geonames": "2650225",
+    "tz": "Europe/London",
+    "elevation": 66
+  },
+  {
+    "id": "dublin-ie",
+    "name": "Dublin",
+    "country": "IE",
+    "lat": 53.33306,
+    "lon": -6.24889,
+    "population": 1024027,
+    "geonames": "2964574",
+    "tz": "Europe/Dublin",
+    "elevation": 17
+  },
+  {
+    "id": "cork-ie",
+    "name": "Cork",
+    "country": "IE",
+    "lat": 51.89797,
+    "lon": -8.47061,
+    "population": 224004,
+    "geonames": "2965140",
+    "tz": "Europe/Dublin",
+    "elevation": 10
+  },
+  {
+    "id": "paris-fr",
+    "name": "Paris",
+    "country": "FR",
+    "lat": 48.85341,
+    "lon": 2.3488,
+    "population": 2138551,
+    "geonames": "2988507",
+    "tz": "Europe/Paris",
+    "elevation": 42
+  },
+  {
+    "id": "lyon-fr",
+    "name": "Lyon",
+    "country": "FR",
+    "lat": 45.74906,
+    "lon": 4.84789,
+    "population": 520774,
+    "geonames": "2996944",
+    "tz": "Europe/Paris",
+    "elevation": 173
+  },
+  {
+    "id": "berlin-de",
+    "name": "Berlin",
+    "country": "DE",
+    "lat": 52.52437,
+    "lon": 13.41053,
+    "population": 3426354,
+    "geonames": "2950159",
+    "tz": "Europe/Berlin",
+    "elevation": 74
+  },
+  {
+    "id": "munich-de",
+    "name": "Munich",
+    "country": "DE",
+    "lat": 48.13743,
+    "lon": 11.57549,
+    "population": 1505005,
+    "aliases": [
+      "München"
+    ],
+    "geonames": "2867714",
+    "tz": "Europe/Berlin",
+    "elevation": 524
+  },
+  {
+    "id": "hamburg-de",
+    "name": "Hamburg",
+    "country": "DE",
+    "lat": 53.55073,
+    "lon": 9.99302,
+    "population": 1973896,
+    "geonames": "2911298",
+    "tz": "Europe/Berlin",
+    "elevation": 9
+  },
+  {
+    "id": "amsterdam-nl",
+    "name": "Amsterdam",
+    "country": "NL",
+    "lat": 52.37403,
+    "lon": 4.88969,
+    "population": 741636,
+    "geonames": "2759794",
+    "tz": "Europe/Amsterdam",
+    "elevation": 13
+  },
+  {
+    "id": "rotterdam-nl",
+    "name": "Rotterdam",
+    "country": "NL",
+    "lat": 51.9225,
+    "lon": 4.47917,
+    "population": 868135,
+    "geonames": "2747891",
+    "tz": "Europe/Amsterdam",
+    "elevation": 9
+  },
+  {
+    "id": "brussels-be",
+    "name": "Brussels",
+    "country": "BE",
+    "lat": 50.85045,
+    "lon": 4.34878,
+    "population": 1019022,
+    "region": "BE-BRU",
+    "geonames": "2800866",
+    "tz": "Europe/Brussels",
+    "elevation": 28
+  },
+  {
+    "id": "copenhagen-dk",
+    "name": "Copenhagen",
+    "country": "DK",
+    "lat": 55.67594,
+    "lon": 12.56553,
+    "population": 1153615,
+    "geonames": "2618425",
+    "tz": "Europe/Copenhagen",
+    "elevation": 14
+  },
+  {
+    "id": "stockholm-se",
+    "name": "Stockholm",
+    "country": "SE",
+    "lat": 59.32938,
+    "lon": 18.06871,
+    "population": 1515017,
+    "geonames": "2673730",
+    "tz": "Europe/Stockholm",
+    "elevation": 17
+  },
+  {
+    "id": "oslo-no",
+    "name": "Oslo",
+    "country": "NO",
+    "lat": 59.91273,
+    "lon": 10.74609,
+    "population": 1082575,
+    "geonames": "3143244",
+    "tz": "Europe/Oslo",
+    "elevation": 26
+  },
+  {
+    "id": "helsinki-fi",
+    "name": "Helsinki",
+    "country": "FI",
+    "lat": 60.16952,
+    "lon": 24.93545,
+    "population": 658864,
+    "geonames": "658225",
+    "tz": "Europe/Helsinki",
+    "elevation": 26
+  },
+  {
+    "id": "zurich-ch",
+    "name": "Zurich",
+    "country": "CH",
+    "lat": 47.36667,
+    "lon": 8.55,
+    "population": 415367,
+    "region": "CH-ZH",
+    "aliases": [
+      "Zürich"
+    ],
+    "geonames": "2657896",
+    "tz": "Europe/Zurich",
+    "elevation": 429
+  },
+  {
+    "id": "geneva-ch",
+    "name": "Geneva",
+    "country": "CH",
+    "lat": 46.20222,
+    "lon": 6.14569,
+    "population": 201741,
+    "region": "CH-GE",
+    "aliases": [
+      "Genève"
+    ],
+    "geonames": "2660646",
+    "tz": "Europe/Zurich",
+    "elevation": 400
+  },
+  {
+    "id": "vienna-at",
+    "name": "Vienna",
+    "country": "AT",
+    "lat": 48.20849,
+    "lon": 16.37208,
+    "population": 1691468,
+    "aliases": [
+      "Wien"
+    ],
+    "geonames": "2761369",
+    "tz": "Europe/Vienna",
+    "elevation": 171
+  },
+  {
+    "id": "prague-cz",
+    "name": "Prague",
+    "country": "CZ",
+    "lat": 50.08804,
+    "lon": 14.42076,
+    "population": 1165581,
+    "aliases": [
+      "Praha"
+    ],
+    "geonames": "3067696",
+    "tz": "Europe/Prague",
+    "elevation": 202
+  },
+  {
+    "id": "warsaw-pl",
+    "name": "Warsaw",
+    "country": "PL",
+    "lat": 52.22977,
+    "lon": 21.01178,
+    "population": 1702139,
+    "aliases": [
+      "Warszawa"
+    ],
+    "geonames": "756135",
+    "tz": "Europe/Warsaw",
+    "elevation": 113
+  },
+  {
+    "id": "krakow-pl",
+    "name": "Kraków",
+    "country": "PL",
+    "lat": 50.06143,
+    "lon": 19.93658,
+    "population": 816614,
+    "aliases": [
+      "Krakow"
+    ],
+    "geonames": "3094802",
+    "tz": "Europe/Warsaw",
+    "elevation": 219
+  },
+  {
+    "id": "budapest-hu",
+    "name": "Budapest",
+    "country": "HU",
+    "lat": 47.49835,
+    "lon": 19.04045,
+    "population": 1741041,
+    "geonames": "3054643",
+    "tz": "Europe/Budapest",
+    "elevation": 104
+  },
+  {
+    "id": "lisbon-pt",
+    "name": "Lisbon",
+    "country": "PT",
+    "lat": 38.72509,
+    "lon": -9.1498,
+    "population": 517802,
+    "aliases": [
+      "Lisboa"
+    ],
+    "geonames": "2267057",
+    "tz": "Europe/Lisbon",
+    "elevation": 68
+  },
+  {
+    "id": "porto-pt",
+    "name": "Porto",
+    "country": "PT",
+    "lat": 41.1485,
+    "lon": -8.61097,
+    "population": 252687,
+    "geonames": "2735943",
+    "tz": "Europe/Lisbon",
+    "elevation": 91
+  },
+  {
+    "id": "madrid-es",
+    "name": "Madrid",
+    "country": "ES",
+    "lat": 40.4165,
+    "lon": -3.70256,
+    "population": 3255944,
+    "region": "ES-MD",
+    "geonames": "3117735",
+    "tz": "Europe/Madrid",
+    "elevation": 665
+  },
+  {
+    "id": "barcelona-es",
+    "name": "Barcelona",
+    "country": "ES",
+    "lat": 41.38879,
+    "lon": 2.15899,
+    "population": 1686208,
+    "region": "ES-CT",
+    "geonames": "3128760",
+    "tz": "Europe/Madrid",
+    "elevation": 15
+  },
+  {
+    "id": "valencia-es",
+    "name": "Valencia",
+    "country": "ES",
+    "lat": 39.47391,
+    "lon": -0.37966,
+    "population": 824340,
+    "region": "ES-VC",
+    "geonames": "2509954",
+    "tz": "Europe/Madrid",
+    "elevation": 15
+  },
+  {
+    "id": "malaga-es",
+    "name": "Málaga",
+    "country": "ES",
+    "lat": 36.72016,
+    "lon": -4.42034,
+    "population": 592346,
+    "region": "ES-AN",
+    "aliases": [
+      "Malaga"
+    ],
+    "geonames": "2514256",
+    "tz": "Europe/Madrid",
+    "elevation": 22
+  },
+  {
+    "id": "athens-gr",
+    "name": "Athens",
+    "country": "GR",
+    "lat": 37.98376,
+    "lon": 23.72784,
+    "population": 664046,
+    "geonames": "264371",
+    "tz": "Europe/Athens",
+    "elevation": 70
+  },
+  {
+    "id": "tallinn-ee",
+    "name": "Tallinn",
+    "country": "EE",
+    "lat": 59.43696,
+    "lon": 24.75353,
+    "population": 394024,
+    "geonames": "588409",
+    "tz": "Europe/Tallinn",
+    "elevation": 12
+  },
+  {
+    "id": "san-francisco-us",
+    "name": "San Francisco",
+    "country": "US",
+    "lat": 37.77493,
+    "lon": -122.41942,
+    "population": 827526,
+    "region": "US-CA",
+    "geonames": "5391959",
+    "tz": "America/Los_Angeles",
+    "elevation": 16
+  },
+  {
+    "id": "los-angeles-us",
+    "name": "Los Angeles",
+    "country": "US",
+    "lat": 34.05223,
+    "lon": -118.24368,
+    "population": 3820914,
+    "region": "US-CA",
+    "geonames": "5368361",
+    "tz": "America/Los_Angeles",
+    "elevation": 89
+  },
+  {
+    "id": "new-york-us",
+    "name": "New York",
+    "country": "US",
+    "lat": 40.71427,
+    "lon": -74.00597,
+    "population": 8804190,
+    "region": "US-NY",
+    "aliases": [
+      "New York City"
+    ],
+    "geonames": "5128581",
+    "tz": "America/New_York",
+    "elevation": 10
+  },
+  {
+    "id": "boston-us",
+    "name": "Boston",
+    "country": "US",
+    "lat": 42.35843,
+    "lon": -71.05977,
+    "population": 653833,
+    "region": "US-MA",
+    "geonames": "4930956",
+    "tz": "America/New_York",
+    "elevation": 14
+  },
+  {
+    "id": "seattle-us",
+    "name": "Seattle",
+    "country": "US",
+    "lat": 47.60621,
+    "lon": -122.33207,
+    "population": 780995,
+    "region": "US-WA",
+    "geonames": "5809844",
+    "tz": "America/Los_Angeles",
+    "elevation": 56
+  },
+  {
+    "id": "austin-us",
+    "name": "Austin",
+    "country": "US",
+    "lat": 30.26715,
+    "lon": -97.74306,
+    "population": 974447,
+    "region": "US-TX",
+    "geonames": "4671654",
+    "tz": "America/Chicago",
+    "elevation": 149
+  },
+  {
+    "id": "miami-us",
+    "name": "Miami",
+    "country": "US",
+    "lat": 25.77427,
+    "lon": -80.19366,
+    "population": 487014,
+    "region": "US-FL",
+    "geonames": "4164138",
+    "tz": "America/New_York",
+    "elevation": 2
+  },
+  {
+    "id": "chicago-us",
+    "name": "Chicago",
+    "country": "US",
+    "lat": 41.85003,
+    "lon": -87.65005,
+    "population": 2664452,
+    "region": "US-IL",
+    "geonames": "4887398",
+    "tz": "America/Chicago",
+    "elevation": 179
+  },
+  {
+    "id": "denver-us",
+    "name": "Denver",
+    "country": "US",
+    "lat": 39.73915,
+    "lon": -104.9847,
+    "population": 729019,
+    "region": "US-CO",
+    "geonames": "5419384",
+    "tz": "America/Denver",
+    "elevation": 1609
+  },
+  {
+    "id": "toronto-ca",
+    "name": "Toronto",
+    "country": "CA",
+    "lat": 43.70643,
+    "lon": -79.39864,
+    "population": 2794356,
+    "region": "CA-ON",
+    "geonames": "6167865",
+    "tz": "America/Toronto",
+    "elevation": 161
+  },
+  {
+    "id": "vancouver-ca",
+    "name": "Vancouver",
+    "country": "CA",
+    "lat": 49.24966,
+    "lon": -123.11934,
+    "population": 662248,
+    "region": "CA-BC",
+    "geonames": "6173331",
+    "tz": "America/Vancouver",
+    "elevation": 70
+  },
+  {
+    "id": "montreal-ca",
+    "name": "Montreal",
+    "country": "CA",
+    "lat": 45.50884,
+    "lon": -73.58781,
+    "population": 1762949,
+    "region": "CA-QC",
+    "aliases": [
+      "Montréal"
+    ],
+    "geonames": "6077243",
+    "tz": "America/Toronto",
+    "elevation": 216
+  },
+  {
+    "id": "singapore-sg",
+    "name": "Singapore",
+    "country": "SG",
+    "lat": 1.28967,
+    "lon": 103.85007,
+    "population": 5638700,
+    "geonames": "1880252",
+    "tz": "Asia/Singapore",
+    "elevation": 23
+  },
+  {
+    "id": "tokyo-jp",
+    "name": "Tokyo",
+    "country": "JP",
+    "lat": 35.6895,
+    "lon": 139.69171,
+    "population": 9733276,
+    "geonames": "1850147",
+    "tz": "Asia/Tokyo",
+    "elevation": 44
+  },
+  {
+    "id": "sydney-au",
+    "name": "Sydney",
+    "country": "AU",
+    "lat": -33.86785,
+    "lon": 151.20732,
+    "population": 5638830,
+    "region": "AU-NSW",
+    "geonames": "2147714",
+    "tz": "Australia/Sydney",
+    "elevation": 58
+  },
+  {
+    "id": "melbourne-au",
+    "name": "Melbourne",
+    "country": "AU",
+    "lat": -37.814,
+    "lon": 144.96332,
+    "population": 5435590,
+    "region": "AU-VIC",
+    "geonames": "2158177",
+    "tz": "Australia/Melbourne",
+    "elevation": 25
+  },
+  {
+    "id": "dubai-ae",
+    "name": "Dubai",
+    "country": "AE",
+    "lat": 25.07725,
+    "lon": 55.30927,
+    "population": 3790000,
+    "geonames": "292223",
+    "tz": "Asia/Dubai",
+    "elevation": 24
+  }
+]

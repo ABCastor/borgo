@@ -1,0 +1,40 @@
+{
+  "id": "numbeo",
+  "name": "Numbeo cost of living",
+  "publisher": "Numbeo",
+  "homepage": "https://www.numbeo.com/",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Read on the publisher's page; not copied."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Read on the publisher's page; not copied."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "Proprietary",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://www.numbeo.com/cost-of-living/in/{name_dashed}",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Crowd-sourced prices and rents; the most complete rent figures, but proprietary: their terms forbid republishing, even under a paid licence."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published.",
+  "licenceUrl": "https://www.numbeo.com/common/terms_of_use.jsp",
+  "caveats": [
+    "Terms (read 27 Oct 2026): 'Automated data collection methods (such as scraping or crawling) are strictly prohibited unless you have obtained prior written permission from Numbeo.' Personal use is free with credit."
+  ]
+}

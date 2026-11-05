@@ -1,0 +1,52 @@
+{
+  "id": "cldr",
+  "name": "CLDR territory information",
+  "publisher": "Unicode Consortium",
+  "homepage": "https://cldr.unicode.org/",
+  "measures": [
+    {
+      "metric": "english_share",
+      "definition": "Share of the country that speaks English, and whether English is official."
+    },
+    {
+      "metric": "english_official",
+      "definition": "Whether English is an official or de facto official language of the country."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "country",
+    "period": "see docs/data-sources.md"
+  },
+  "licence": "Unicode-3.0",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "Unicode-3.0",
+    "edition": "CLDR 49 supplementalData territoryInfo",
+    "termsUrl": "https://www.unicode.org/license.txt",
+    "termsRead": "2026-11-05",
+    "attribution": "Unicode CLDR territory information. Copyright © 1991-2026 Unicode, Inc. Used under the Unicode License v3 (https://www.unicode.org/license.txt)"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://raw.githubusercontent.com/unicode-org/cldr-json/main/cldr-json/cldr-core/supplemental/territoryInfo.json",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/cldr.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Country-wide estimates from censuses and surveys."
+  },
+  "licenceUrl": "https://www.unicode.org/license.txt"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "wmo-normals",
+  "name": "WMO Climatological Standard Normals 1991-2020",
+  "publisher": "World Meteorological Organization, archived by NOAA NCEI",
+  "homepage": "https://www.ncei.noaa.gov/products/wmo-climate-normals",
+  "measures": [
+    {
+      "metric": "sunshine_hours",
+      "definition": "WMO sunshine duration: hours a year with direct sunlight of at least 120 W/m², roughly the hours bright enough to cast a sharp shadow, measured at the nearest station."
+    },
+    {
+      "metric": "sunshine_monthly",
+      "definition": "WMO sunshine duration by month, measured at the nearest station."
+    }
+  ],
+  "coverage": {
+    "geography": "1,842 stations in 86 countries (no USA, Canada, Portugal, Poland, Hungary, Greece, Norway or Denmark rows)",
+    "level": "city",
+    "period": "1991-2020"
+  },
+  "licence": "No licence attached; NCEI public access, citation requested (WMO Unified Data Policy)",
+  "licenceUrl": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0253808",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "NCEI-WMO",
+    "edition": "NCEI accession 0253808, version 6.6 (composite primary parameters, TSUN)",
+    "termsUrl": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.nodc:0253808",
+    "termsRead": "2026-11-05",
+    "attribution": "WMO Member Nations (2023). WMO Climatological Standard Normals for 1991-2020 (NCEI Accession 0253808), sunshine duration. NOAA National Centers for Environmental Information. https://doi.org/10.25921/800j-vn07"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://www.ncei.noaa.gov/data/oceans/archive/arc0216/0253808/6.6/data/0-data/data-composite-primary-parameters/wmo_normals_9120_TSUN.csv",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/sunshine.ts"
+  },
+  "refresh": {
+    "cadence": "static",
+    "maxAgeDays": 3650
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "Measured sunshine by the WMO definition; chosen over ERA5 after comparing both on 27 Oct 2026."
+  },
+  "caveats": [
+    "A station within 50 km and 500 m of height, else Meteostat's nearest within 80 km, else no figure; the note names the station, its distance and height.",
+    "The composite file holds what each country submitted; a country missing here may have submitted after this version (6.6).",
+    "Licence: NCEI attaches no licence; its record asks for the citation in rights.attribution and disclaims liability. The WMO Unified Data Policy (Resolution 1, Cg-Ext 2021) defines free and unrestricted exchange as no conditions on use and treats attribution as encouraged, not a condition. Read on 2026-11-05."
+  ]
+}

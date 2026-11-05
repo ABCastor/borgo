@@ -1,0 +1,27 @@
+{
+  "id": "yc-directory",
+  "name": "Y Combinator startup directory",
+  "publisher": "Y Combinator",
+  "homepage": "https://www.ycombinator.com/companies",
+  "measures": [],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "Proprietary (terms forbid copying, scraping and data mining)",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://www.ycombinator.com/companies",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "YC-backed companies and where they are based; the site's terms of use forbid scraping and data mining, so a person browses it, filtered by location."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+}

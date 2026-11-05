@@ -1,0 +1,56 @@
+{
+  "id": "github",
+  "name": "GitHub user search",
+  "publisher": "GitHub",
+  "homepage": "https://docs.github.com/en/rest/search/search#search-users",
+  "measures": [
+    {
+      "metric": "github_developers",
+      "definition": "GitHub accounts whose profile location names the city, per 1,000 residents (city population from GeoNames); only the total count of the search is read."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "the day it is read"
+  },
+  "licence": "No data licence: only total counts of profiles are stored (GitHub Acceptable Use Policies, section 7)",
+  "licenceUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "counts-no-licence",
+    "edition": "GitHub REST API, search users (total_count only), read 2026-11-05",
+    "termsUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions",
+    "termsRead": "2026-11-05",
+    "attribution": "Counts of GitHub profiles by stated location, from GitHub's public user search (counts only, no profile data)"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "per-city",
+    "runtimes": [
+      "browser",
+      "node"
+    ],
+    "endpoint": "https://api.github.com/search/users?q=location:\"{name}\"&per_page=1",
+    "cors": true,
+    "key": null,
+    "fetcher": "src/fetch/github.ts",
+    "rateLimit": "10 searches a minute without a token"
+  },
+  "linkOut": "https://github.com/search?q=location%3A%22{name}%22&type=users",
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 365
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-05",
+    "notes": "Only a count is kept, no account. The Acceptable Use Policies allow public, non-personal information to be used for research published openly; a total count of profiles is that kind of information. Owner to confirm this reading of the terms."
+  },
+  "caveats": [
+    "Counts follow what people type: many leave the location empty, some name a nearby big city, and a name shared by two places mixes them (such places get no figure).",
+    "Populations are GeoNames figures, the city proper for most places but the metropolitan area for a few (Sydney, Melbourne), which lowers their rate.",
+    "Searches only the place's names held here (Brussels, not Bruxelles or Brussel, unless listed as aliases)."
+  ]
+}

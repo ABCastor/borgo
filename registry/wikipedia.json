@@ -1,0 +1,33 @@
+{
+  "id": "wikipedia",
+  "name": "Wikipedia",
+  "publisher": "Wikimedia Foundation",
+  "homepage": "https://en.wikipedia.org/",
+  "measures": [
+    {
+      "metric": "place",
+      "definition": "Read on the publisher's page; not copied."
+    }
+  ],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "CC-BY-SA-4.0",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://en.wikipedia.org/wiki/{name_underscored}",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-10-27",
+    "notes": "The city's article and its climate box (station normals with sources)."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published.",
+  "licenceUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+}

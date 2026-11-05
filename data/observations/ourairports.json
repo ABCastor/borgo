@@ -1,0 +1,1146 @@
+{
+  "source": "ourairports",
+  "retrieved": "2026-10-27",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "airport_km",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Turin Airport (TRN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "TRN, CUF"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "airport_km",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Milano Linate Airport (LIN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "LIN, MXP, BGY, LUG, VBS"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "airport_km",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Ciampino–G. B. Pastine International Airport (CIA), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "CIA, FCO"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "airport_km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Naples International Airport (NAP), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "NAP, QSR"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "airport_km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Bologna Guglielmo Marconi Airport (BLQ), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BLQ, FRL, FLR, PMF"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "airport_km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Florence Airport, Peretola (FLR), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "FLR, PSA, FRL, BLQ"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "airport_km",
+        "value": 24,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "London Heathrow Airport (LHR), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "LCY, LHR, LGW, LTN, STN, SEN"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "airport_km",
+        "value": 36,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "London Stansted Airport (STN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "STN, LTN, LCY, SEN, LHR, NWI"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "airport_km",
+        "value": 15,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Manchester Airport (MAN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "MAN, LPL, LBA, EMA"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "airport_km",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Bristol Airport (BRS), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BRS, CWL, BOH, EXT"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Edinburgh Airport (EDI), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "EDI, DND, GLA, PIK"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Dublin Airport (DUB), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "DUB"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "airport_km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Cork International Airport (ORK), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "ORK, KIR, SNN"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "airport_km",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Paris-Orly Airport (ORY), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "ORY, CDG, BVA"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "airport_km",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Lyon Saint-Exupéry Airport (LYS), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "LYS, GNB, CMF, NCY"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "airport_km",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Berlin Brandenburg Airport (BER), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BER"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "airport_km",
+        "value": 29,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Munich Airport (MUC), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "MUC, INN"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "airport_km",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Hamburg Helmut Schmidt Airport (HAM), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "HAM, LBC, FCN, BRE"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Amsterdam Airport Schiphol (AMS), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "AMS, RTM"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "airport_km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Rotterdam The Hague Airport (RTM), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "RTM, AMS, EIN, ANR"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Brussels Airport (BRU), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BRU, ANR, CRL, LGG, LIL, EIN, MST"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "airport_km",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Copenhagen Kastrup Airport (CPH), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "CPH, RKE, MMX, AGH"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "airport_km",
+        "value": 36,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Stockholm-Arlanda Airport (ARN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BMA, ARN, VST, NYO"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "airport_km",
+        "value": 37,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Oslo-Gardermoen International Airport (OSL), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "OSL, TRF"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "airport_km",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Helsinki Vantaa Airport (HEL), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "HEL, TLL"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "airport_km",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Zürich Airport (ZRH), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "ZRH, ACH, FDH, BSL, BRN"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "airport_km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Geneva International Airport (GVA), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "GVA, NCY, CMF, LYS"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "airport_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Vienna International Airport (VIE), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "VIE, BTS"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "airport_km",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Václav Havel Airport Prague (PRG), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "PRG, PED"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "airport_km",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Warsaw Chopin Airport (WAW), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "WAW, WMI, RDO"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Kraków John Paul II International Airport (KRK), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "KRK, KTW"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "airport_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Budapest Liszt Ferenc International Airport (BUD), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BUD, Győr-Pér Airport"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "airport_km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Lisbon Humberto Delgado Airport (LIS), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "LIS, CAT"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "airport_km",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Francisco de Sá Carneiro Airport (OPO), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "OPO, VRL, VSE"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "airport_km",
+        "value": 14,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Adolfo Suárez Madrid–Barajas Airport (MAD), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "MAD"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "airport_km",
+        "value": 12,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Josep Tarradellas Barcelona-El Prat Airport (BCN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BCN, GRO, REU"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "airport_km",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Valencia Airport (VLC), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "VLC, CDT"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "airport_km",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Málaga-Costa del Sol Airport (AGP), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "AGP, GRX"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "airport_km",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Athens Eleftherios Venizelos International Airport (ATH), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "ATH"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "airport_km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Lennart Meri Tallinn Airport (TLL), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "TLL, HEL"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "airport_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "San Francisco International Airport (SFO), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "SFO, OAK, SQL, CCR, SJC, STS"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "airport_km",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Los Angeles International Airport (LAX), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "HHR, LAX, BUR, LGB, SNA, ONT, SBD"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "airport_km",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "LaGuardia Airport (LGA), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "LGA, EWR, TEB, JFK, HPN, ISP, TTN, SWF"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "airport_km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Boston Logan International Airport (BOS), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BOS, BED, ORH, MHT, EWB, PVD, PSM, NPT"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "airport_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Seattle–Tacoma International Airport (SEA), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 6,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BFI, SEA, PAE, TIW, Arlington Municipal Airport, OLM"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Austin Bergstrom International Airport (AUS), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 3,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "AUS, Austin Executive Airport, GRK"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "airport_km",
+        "value": 10,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Miami International Airport (MIA), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "MIA, OPF, FLL, BIM"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "airport_km",
+        "value": 11,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Chicago Midway International Airport (MDW), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "MDW, ORD, GYY, MGC"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "airport_km",
+        "value": 30,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Denver International Airport (DEN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 2,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "BJC, DEN"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "airport_km",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Toronto Pearson International Airport (YYZ), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "YTZ, YYZ, YCM, YHM, IAG, YKF, YLK"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "airport_km",
+        "value": 8,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Vancouver International Airport (YVR), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "YVR, Pitt Meadows Regional Airport, YCD, YXX, ESD, BLI, YYJ, FRD, XQU"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "airport_km",
+        "value": 13,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Montreal / Pierre Elliott Trudeau International Airport (YUL), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "YUL, YHU, YMX, PBG"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "airport_km",
+        "value": 17,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Singapore Changi Airport (SIN), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 5,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "XSP, SIN, BTH, JHB, TNJ"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "airport_km",
+        "value": 18,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Tokyo Haneda International Airport (HND), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Chofu Airport, HND, NRT, IBR"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "airport_km",
+        "value": 9,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Sydney Kingsford Smith International Airport (SYD), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 1,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "SYD"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "airport_km",
+        "value": 19,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Melbourne Airport (MEL), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 4,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "MEB, MEL, MBW, AVV"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "airport_km",
+        "value": 20,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "Dubai International Airport (DXB), straight line from the centre"
+      },
+      {
+        "metric": "airports_100km",
+        "value": 7,
+        "period": "2026-10-27",
+        "level": "city",
+        "source": "ourairports",
+        "retrieved": "2026-10-27",
+        "note": "DXB, DWC, SHJ, RKT, AEU, AAN, AUH"
+      }
+    ]
+  }
+}

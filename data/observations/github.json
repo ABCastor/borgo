@@ -1,0 +1,678 @@
+{
+  "source": "github",
+  "retrieved": "2026-11-05",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "github_developers",
+        "value": 8.4,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Torino%22&per_page=1",
+        "note": "7,100 accounts whose location names \"Torino\" or \"Turin\", over 847,287 residents"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "github_developers",
+        "value": 12.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Milan%22&per_page=1",
+        "note": "16,905 accounts whose location names \"Milan\" or \"Milano\", over 1,371,498 residents"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "github_developers",
+        "value": 5.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Rome%22&per_page=1",
+        "note": "12,312 accounts whose location names \"Rome\" or \"Roma\", over 2,318,895 residents"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "github_developers",
+        "value": 4.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Naples%22&per_page=1",
+        "note": "3,887 accounts whose location names \"Naples\" or \"Napoli\", over 909,048 residents"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "github_developers",
+        "value": 9.7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Bologna%22&per_page=1",
+        "note": "3,812 accounts whose location names \"Bologna\", over 394,843 residents"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "github_developers",
+        "value": 8.1,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Florence%22&per_page=1",
+        "note": "2,977 accounts whose location names \"Florence\" or \"Firenze\", over 367,150 residents; the count includes the few naming Florence in United States (4% of profiles naming a country)"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "github_developers",
+        "value": 17.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22London%22&per_page=1",
+        "note": "154,432 accounts whose location names \"London\", over 8,961,989 residents"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "github_developers",
+        "value": 26.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Manchester%22&per_page=1",
+        "note": "14,908 accounts whose location names \"Manchester\", over 568,996 residents; the count includes the few naming Manchester in United States (3% of profiles naming a country)"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "github_developers",
+        "value": 15.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Bristol%22&per_page=1",
+        "note": "7,630 accounts whose location names \"Bristol\", over 479,024 residents; the count includes the few naming Bristol in United States (2% of profiles naming a country)"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "github_developers",
+        "value": 20.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Edinburgh%22&per_page=1",
+        "note": "10,414 accounts whose location names \"Edinburgh\", over 514,990 residents"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "github_developers",
+        "value": 22.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Dublin%22&per_page=1",
+        "note": "23,440 accounts whose location names \"Dublin\", over 1,024,027 residents"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "github_developers",
+        "value": 9.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Cork%22&per_page=1",
+        "note": "2,227 accounts whose location names \"Cork\", over 224,004 residents"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "github_developers",
+        "value": 36.4,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Paris%22&per_page=1",
+        "note": "77,766 accounts whose location names \"Paris\", over 2,138,551 residents"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "github_developers",
+        "value": 23,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Lyon%22&per_page=1",
+        "note": "11,974 accounts whose location names \"Lyon\", over 520,774 residents"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "github_developers",
+        "value": 21.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Berlin%22&per_page=1",
+        "note": "73,575 accounts whose location names \"Berlin\", over 3,426,354 residents"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "github_developers",
+        "value": 21.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Munich%22&per_page=1",
+        "note": "33,033 accounts whose location names \"Munich\" or \"München\", over 1,505,005 residents"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "github_developers",
+        "value": 10.4,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Hamburg%22&per_page=1",
+        "note": "20,548 accounts whose location names \"Hamburg\", over 1,973,896 residents"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "github_developers",
+        "value": 42.7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Amsterdam%22&per_page=1",
+        "note": "31,649 accounts whose location names \"Amsterdam\", over 741,636 residents"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "github_developers",
+        "value": 7.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Rotterdam%22&per_page=1",
+        "note": "6,221 accounts whose location names \"Rotterdam\", over 868,135 residents"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "github_developers",
+        "value": 8.1,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Brussels%22&per_page=1",
+        "note": "8,240 accounts whose location names \"Brussels\", over 1,019,022 residents"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "github_developers",
+        "value": 14.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Copenhagen%22&per_page=1",
+        "note": "16,850 accounts whose location names \"Copenhagen\", over 1,153,615 residents"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "github_developers",
+        "value": 20.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Stockholm%22&per_page=1",
+        "note": "31,575 accounts whose location names \"Stockholm\", over 1,515,017 residents"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "github_developers",
+        "value": 15.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Oslo%22&per_page=1",
+        "note": "17,254 accounts whose location names \"Oslo\", over 1,082,575 residents"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "github_developers",
+        "value": 21.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Helsinki%22&per_page=1",
+        "note": "14,152 accounts whose location names \"Helsinki\", over 658,864 residents"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "github_developers",
+        "value": 30.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Zurich%22&per_page=1",
+        "note": "12,801 accounts whose location names \"Zurich\", over 415,367 residents"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "github_developers",
+        "value": 27.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Geneva%22&per_page=1",
+        "note": "5,492 accounts whose location names \"Geneva\" or \"Genève\", over 201,741 residents; the count includes the few naming Geneva in United States (1% of profiles naming a country)"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "github_developers",
+        "value": 11.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Vienna%22&per_page=1",
+        "note": "19,615 accounts whose location names \"Vienna\" or \"Wien\", over 1,691,468 residents"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "github_developers",
+        "value": 16.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Prague%22&per_page=1",
+        "note": "18,854 accounts whose location names \"Prague\" or \"Praha\", over 1,165,581 residents"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "github_developers",
+        "value": 18.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Warsaw%22&per_page=1",
+        "note": "32,210 accounts whose location names \"Warsaw\" or \"Warszawa\", over 1,702,139 residents"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "github_developers",
+        "value": 11.1,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Krak%C3%B3w%22&per_page=1",
+        "note": "9,031 accounts whose location names \"Kraków\", over 816,614 residents"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "github_developers",
+        "value": 8.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Budapest%22&per_page=1",
+        "note": "14,903 accounts whose location names \"Budapest\", over 1,741,041 residents"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "github_developers",
+        "value": 40.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Lisbon%22&per_page=1",
+        "note": "20,871 accounts whose location names \"Lisbon\" or \"Lisboa\", over 517,802 residents"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "github_developers",
+        "value": 45.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Porto%22&per_page=1",
+        "note": "11,532 accounts whose location names \"Porto\", over 252,687 residents; less 11,844 naming Porto Alegre and 791 naming Porto Velho and 83 naming Porto-Novo"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "github_developers",
+        "value": 13.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Madrid%22&per_page=1",
+        "note": "43,076 accounts whose location names \"Madrid\", over 3,255,944 residents"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "github_developers",
+        "value": 23.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Barcelona%22&per_page=1",
+        "note": "39,707 accounts whose location names \"Barcelona\", over 1,686,208 residents; the count includes the few naming Barcelona in Venezuela (1% of profiles naming a country)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "github_developers",
+        "value": 12.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Valencia%22&per_page=1",
+        "note": "10,136 accounts whose location names \"Valencia\", over 824,340 residents; the count includes the few naming Valencia in Venezuela, United States (9% of profiles naming a country)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "github_developers",
+        "value": 7.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22M%C3%A1laga%22&per_page=1",
+        "note": "4,423 accounts whose location names \"Málaga\", over 592,346 residents"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "github_developers",
+        "value": 22.7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Athens%22&per_page=1",
+        "note": "15,096 accounts whose location names \"Athens\", over 664,046 residents; the count includes the few naming Athens in United States (3% of profiles naming a country)"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "github_developers",
+        "value": 14.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Tallinn%22&per_page=1",
+        "note": "5,877 accounts whose location names \"Tallinn\", over 394,024 residents"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "github_developers",
+        "value": 106.7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22San%20Francisco%22&per_page=1",
+        "note": "88,290 accounts whose location names \"San Francisco\", over 827,526 residents; less 1 naming San Francisco Coacalco"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "github_developers",
+        "value": 14.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Los%20Angeles%22&per_page=1",
+        "note": "54,246 accounts whose location names \"Los Angeles\", over 3,820,914 residents"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "github_developers",
+        "value": 15.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22New%20York%22&per_page=1",
+        "note": "136,587 accounts whose location names \"New York\" or \"New York City\", over 8,804,190 residents"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "github_developers",
+        "value": 69.7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Boston%22&per_page=1",
+        "note": "45,553 accounts whose location names \"Boston\", over 653,833 residents"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "github_developers",
+        "value": 86.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Seattle%22&per_page=1",
+        "note": "67,789 accounts whose location names \"Seattle\", over 780,995 residents"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "github_developers",
+        "value": 44.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Austin%22&per_page=1",
+        "note": "43,037 accounts whose location names \"Austin\", over 974,447 residents"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "github_developers",
+        "value": 31.2,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Miami%22&per_page=1",
+        "note": "15,215 accounts whose location names \"Miami\", over 487,014 residents"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "github_developers",
+        "value": 19.3,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Chicago%22&per_page=1",
+        "note": "51,458 accounts whose location names \"Chicago\", over 2,664,452 residents"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "github_developers",
+        "value": 34.4,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Denver%22&per_page=1",
+        "note": "25,044 accounts whose location names \"Denver\", over 729,019 residents"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "github_developers",
+        "value": 27,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Toronto%22&per_page=1",
+        "note": "75,370 accounts whose location names \"Toronto\", over 2,794,356 residents"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "github_developers",
+        "value": 54.9,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Vancouver%22&per_page=1",
+        "note": "36,363 accounts whose location names \"Vancouver\", over 662,248 residents; less 271 naming Vancouver Island; the count includes the few naming Vancouver in United States (2% of profiles naming a country)"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "github_developers",
+        "value": 16,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Montreal%22&per_page=1",
+        "note": "28,278 accounts whose location names \"Montreal\", over 1,762,949 residents"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "github_developers",
+        "value": 10.7,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Singapore%22&per_page=1",
+        "note": "60,185 accounts whose location names \"Singapore\", over 5,638,700 residents"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "github_developers",
+        "value": 6.5,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Tokyo%22&per_page=1",
+        "note": "63,481 accounts whose location names \"Tokyo\", over 9,733,276 residents"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "github_developers",
+        "value": 7.8,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Sydney%22&per_page=1",
+        "note": "43,888 accounts whose location names \"Sydney\", over 5,638,830 residents"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "github_developers",
+        "value": 7.6,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Melbourne%22&per_page=1",
+        "note": "41,297 accounts whose location names \"Melbourne\", over 5,435,590 residents"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "github_developers",
+        "value": 7.1,
+        "period": "2026-11-05",
+        "level": "city",
+        "source": "github",
+        "retrieved": "2026-11-05",
+        "url": "https://api.github.com/search/users?q=location%3A%22Dubai%22&per_page=1",
+        "note": "27,079 accounts whose location names \"Dubai\", over 3,790,000 residents"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Borgo: compare cities on open data, weighted by what you value</title>
+<meta name="description" content="Compare any cities on open, sourced data: what you would earn after tax and keep after rent, who can move there without a visa, climate, air, safety and research. Weighted by what you value, private in your browser.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#EFECE3">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121110">
+<link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="app.css">
+</head>
+<body class="app">
+<div class="site">
+<!--HEADER-->
+<div id="page" class="page"><p class="quiet" style="padding:2rem 0">Loading the data…</p></div>
+</div>
+<div id="pop" class="pop" hidden role="dialog"></div>
+<noscript><p style="padding:1rem">This comparison runs in your browser and needs JavaScript. The data itself is in data/dataset.json.</p></noscript>
+<script type="module" src="app.js"></script>
+</body>
+</html>
