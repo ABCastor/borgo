@@ -75,6 +75,8 @@ export interface TaxResult {
 export interface TaxModel {
   country: Iso2;
   year: number;
+  /** When to compare the model with the law again: the day the next tax year's rules take effect. Default: 1 January after `year`. */
+  reviewBy?: string;
   currency: string;
   /** One line a person can read: what this model covers. */
   scope: string;

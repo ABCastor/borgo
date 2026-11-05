@@ -38,6 +38,7 @@ function incomeTaxOn(income: number, bands: Bands): number {
 export const unitedKingdom: TaxModel = {
   country: "GB",
   year: 2026,
+  reviewBy: "2027-04-06",
   currency: "GBP",
   scope: "Employee: income tax (Scottish rates for Scottish cities), employee National Insurance class 1 category A.",
   sources: [

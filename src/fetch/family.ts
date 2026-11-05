@@ -128,6 +128,9 @@ export const nagerHolidays: Fetcher = {
  * country's labour law. Where the law counts in other units the conversion is in the note. Age rules (Hungary,
  * Norway) are applied in the money model from the person's age.
  */
+/** The day every entry in STATUTORY_LEAVE was last compared with its source (docs/pension-leave-audit.md). */
+export const LEAVE_CHECKED = "2026-11-04";
+
 export const STATUTORY_LEAVE: Record<Iso2, { days: number; note: string; source: { label: string; url: string } }> = {
   AE: { days: 30 * 5 / 7, note: "30 calendar days after a year of service, represented as 30 × 5/7 five-day-week equivalent days, not an exact workday entitlement; public holidays within leave count towards it", source: { label: "UAE government: types of leave, Labour Law art. 29", url: "https://u.ae/en/information-and-services/jobs/Sector-of-employment/employment-in-the-private-sector/Types-of-leaves" } },
   AT: { days: 25, note: "5 weeks (30 working days on a six-day count); 6 weeks after 25 years of service", source: { label: "Urlaubsgesetz § 2", url: "https://www.ris.bka.gv.at/GeltendeFassung.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10008376" } },

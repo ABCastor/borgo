@@ -20,6 +20,8 @@ interface LawFact<L> {
   law: string;
   url: string;
   checked?: string;
+  /** When to compare it with its source again, when that is sooner than a year after `checked` (a bill pending, a court case). */
+  reviewBy?: string;
 }
 
 /** The date the entries marked `checked` were read in the source linked. */
@@ -67,7 +69,7 @@ export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
 export type CouplesLevel = 0 | 1 | 2 | 3;
 
 /** How the law lets a same-sex couple form a union: `law` names it, `note` adds what the step alone does not say. */
-export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: string; checked?: string; note?: string }> = {
+export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: string; checked?: string; reviewBy?: string; note?: string }> = {
   IT: { standing: 2, law: "Civil unions: Legge 20 maggio 2016, n. 76 (Cirinnà)", url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-05-20;76" },
   GB: { standing: 3, law: "Marriage: Marriage (Same Sex Couples) Act 2013; Marriage and Civil Partnership (Scotland) Act 2014; Northern Ireland from 13 January 2020 (S.I. 2019/1514, reg. 3)", url: "https://www.legislation.gov.uk/ukpga/2013/30/section/1", checked: C },
   IE: { standing: 3, law: "Marriage: Constitution, Art. 41.4 (34th Amendment, 2015)", url: "https://www.irishstatutebook.ie/eli/cons/en/html", checked: C },
@@ -119,6 +121,18 @@ export const abortionLaw: Fetcher = {
 
 /** The last full review of the couples table; entries with `checked` were read again on that date. */
 export const COUPLES_REVIEWED = C;
+
+/**
+ * When a law fact is due to be compared with its source again: its own `reviewBy`, else a year after it was checked.
+ * A fact never checked against its source (stated from the law cited) was due on the day the table was last reviewed.
+ */
+export function lawReviewBy(f: { checked?: string; reviewBy?: string }): string {
+  if (f.reviewBy) return f.reviewBy;
+  if (!f.checked) return C;
+  const d = new Date(`${f.checked}T00:00:00Z`);
+  d.setUTCFullYear(d.getUTCFullYear() + 1);
+  return d.toISOString().slice(0, 10);
+}
 
 export const couplesLaw: Fetcher = {
   source: "couples-law",
