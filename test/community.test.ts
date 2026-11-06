@@ -191,7 +191,7 @@ test("the network check: pages that are missing fail, refusals go to the reviewe
   const p = sample();
   assert.deepEqual(await checkCitations(p, goodWeb()), { problems: [], warnings: [] });
   assert.match((await checkCitations(p, web({}))).problems.join(), /answers 404: the page is not there/);
-  assert.match((await checkCitations(p, web({ [ONS]: { status: 403 } }))).warnings.join(), /answered 403 to an automated check; a reviewer opens it by hand/);
+  assert.match((await checkCitations(p, web({ [ONS]: { status: 403 } }))).warnings.join(), /answered 403 to an automated check; the reviewer opens it in a browser/);
   assert.match((await checkCitations(p, web({ [ONS]: { text: `<p>${filler}Rents rose.</p>` } }))).problems.join(), /The quote is not on/);
   assert.match((await checkCitations(p, web({ [ONS]: { type: "application/pdf", text: "" } }))).warnings.join(), /cannot be checked automatically/);
   assert.match((await checkCitations(p, async () => { throw new Error("getaddrinfo ENOTFOUND"); })).problems.join(), /could not be read: getaddrinfo ENOTFOUND/);
