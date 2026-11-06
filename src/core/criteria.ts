@@ -3,8 +3,9 @@ import { cityById, resolve, scalar, series, type Resolved } from "./lookup.ts";
 import { CHILDCARE_AGES, convert, describeMissing, paidChildcare, type MoneyResult } from "./money.ts";
 import { householdRights, type RightResult } from "./rights.ts";
 import { shortestDay } from "./sun.ts";
-import type { City, Dataset, MetricCategory, Profile } from "./types.ts";
+import type { City, ComfortBasis, Dataset, MetricCategory, Profile } from "./types.ts";
 import { BIN_COUNT, niceDaysByMonth } from "./weather-days.ts";
+import { highInRange } from "./world-map.ts";
 
 /** Everything a criterion may look at for one city. */
 export interface Context {
@@ -179,6 +180,21 @@ export function niceDays(data: Dataset, profile: Profile, city: City): { months:
   const bins = series(r);
   if (!bins || bins.length !== 12 * BIN_COUNT) return null;
   return { months: niceDaysByMonth(bins, c.min, c.max), resolved: r! };
+}
+
+/**
+ * The months whose average afternoon high is in the person's nice-day range, on the temperature their range is set on
+ * (feels like by default; air when the city has no feels-like highs, and then `basis` says so). The test is the one the
+ * map's land uses (`highInRange`), so a city reads the same way as the ground around it. Null without monthly highs.
+ */
+export function monthsInRangeOf(data: Dataset, profile: Profile, city: City): { months: boolean[]; count: number; basis: ComfortBasis } | null {
+  const c = profile.prefs.comfort;
+  const want: ComfortBasis = c.basis === "air" ? "air" : "feels";
+  const feels = want === "feels" ? series(resolve(data, profile, city, "feels_high")) : null;
+  const highs = feels?.length === 12 ? feels : series(resolve(data, profile, city, "temp_high"));
+  if (!highs || highs.length !== 12) return null;
+  const months = highs.map((h) => highInRange(h, c.min, c.max));
+  return { months, count: months.filter(Boolean).length, basis: highs === feels ? "feels" : "air" };
 }
 
 /**

@@ -1,12 +1,15 @@
-/* The Map: the world as tiles on a white sheet, coloured by what the person values. Tiles and dots share one
-   scale from bar-out to olive (a verdict); the person's own cities are ringed in ink and numbered; the card that
-   reads a place floats with the Lifted shadow, like the other popovers. */
+/* The Map: the world as tiles on a white sheet, coloured by what the person values. City dots run from bar-out to
+   olive (a verdict); the land runs from map-land to a lighter olive by the months in the person's nice-day range, one
+   hue darkening with more months, so the dots stay on top of it; the person's own cities are ringed in ink and
+   numbered; the card that reads a place floats with the Lifted shadow, like the other popovers, and is a bottom sheet
+   on a phone. */
 
 body.app {
   --map-lo: var(--bar-out);
   --map-hi: light-dark(#667D2F, #9DB45E);
   --map-mid: color-mix(in oklab, var(--map-lo), var(--map-hi));
   --map-land: light-dark(#E3DFD4, #36332D);
+  --map-land-hi: color-mix(in oklab, var(--map-hi) 62%, var(--map-land));
   --map-faint: light-dark(#EDEAE2, #282622);
 }
 
@@ -22,6 +25,7 @@ body.app {
 .mstage { position: relative; margin: 0 -6px; }
 #map-canvas { display: block; width: 100%; height: 420px; touch-action: pan-y; cursor: grab; border-radius: 8px; }
 #map-canvas.is-dragging { cursor: grabbing; }
+#map-canvas:focus-visible { outline: 2px solid var(--between); outline-offset: 2px; }
 .mload { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: var(--quiet); font-size: 13px; }
 
 .mzoom { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 4px; }
@@ -33,6 +37,7 @@ body.app {
 /* The card */
 .mcard { position: absolute; z-index: 5; width: 290px; padding: 12px 14px 12px; border-radius: 10px; background: var(--sheet); box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 18px 44px -14px rgb(0 0 0 / .45); pointer-events: none; font-size: 13px; }
 .mcard.is-pinned { pointer-events: auto; }
+.mcard:focus-visible { outline: 2px solid var(--between); outline-offset: 2px; }
 .mcard::after { content: ""; position: absolute; left: var(--arrow, 50%); width: 12px; height: 12px; background: var(--sheet); transform: translateX(-50%) rotate(45deg); }
 .mcard[data-side="above"]::after { bottom: -6px; box-shadow: 3px 3px 4px -2px rgb(0 0 0 / .12); }
 .mcard[data-side="below"]::after { top: -6px; }
@@ -57,6 +62,7 @@ body.app {
 .mc-highs .b0 b { background: var(--b0); color: #fff; } .mc-highs .b1 b { background: var(--b1); color: #fff; } .mc-highs .b2 b { background: var(--b2); }
 .mc-highs .b3 b { background: var(--b3); } .mc-highs .b4 b { background: var(--b4); } .mc-highs .b5 b { background: var(--b5); } .mc-highs .b6 b { background: var(--b6); color: #fff; }
 .mc-highs .is-in b { box-shadow: inset 0 -3px 0 var(--between); }
+.mc-figs { display: grid; gap: 4px; margin: 8px 0 0; padding: 8px 0 0; border-top: 1px solid var(--rule); list-style: none; line-height: 1.35; }
 .mc-note { margin: 8px 0 0; font-size: 12px; line-height: 1.4; color: var(--quiet); }
 .mc-hint { margin: 10px 0 0; font: 600 13px/1 var(--cond); letter-spacing: .05em; text-transform: uppercase; color: var(--quiet); }
 .mc-act { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin-top: 12px; }
@@ -69,6 +75,7 @@ body.app {
 .mlg-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 12.5px; color: var(--quiet); }
 .mlg-row b { color: var(--ink); font-weight: 600; }
 .mlg-ramp { flex: 0 1 120px; min-width: 48px; height: 10px; border-radius: 2px; background: linear-gradient(90deg, var(--map-lo), var(--map-hi)); }
+.mlg-ramp.is-land { background: linear-gradient(90deg, var(--map-land), var(--map-land-hi)); box-shadow: inset 0 0 0 1px var(--rule); }
 .mlg-end { font: 600 13px/1 var(--cond); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
 .mlg-what { flex: 1 1 16rem; }
 .mlg-row .range { margin: 0 2px; }
@@ -94,7 +101,6 @@ body.app {
 .mr-v { font-size: 12.5px; color: var(--quiet); text-align: right; }
 .mr-bar { grid-column: 2 / -1; height: 4px; border-radius: 2px; background: var(--wash); overflow: hidden; }
 .mr-bar i { display: block; height: 100%; background: var(--between); transition: width .35s var(--ease); }
-.mr-add { height: 28px; padding: 0 10px; font-size: 13px; }
 
 @media (max-width: 1100px) {
   .mfoot { grid-template-columns: minmax(0, 1fr); }
@@ -106,8 +112,12 @@ body.app {
   .mzoom .mz-txt { padding: 0 10px; }
 }
 @media (max-width: 600px) {
-  .mcard { position: relative; left: auto !important; top: auto !important; width: auto; margin: 10px 4px 0; box-shadow: none; border: 1.5px solid var(--rule); pointer-events: auto; }
+  /* A bottom sheet: pinned cards only, since a phone has nothing to point with. */
+  .mcard { position: fixed; z-index: 45; inset: auto 0 0 0 !important; width: auto; max-height: min(72vh, 560px); overflow-y: auto; overscroll-behavior: contain; padding: 16px 16px calc(16px + env(safe-area-inset-bottom)); border-radius: 10px 10px 0 0; box-shadow: 0 -1px 2px rgb(0 0 0 / .1), 0 -18px 44px -14px rgb(0 0 0 / .45); font-size: 14px; }
+  .mcard:not(.is-pinned) { display: none; }
   .mcard::after { display: none; }
+  .mcard .mc-x { top: 4px; right: 4px; width: 44px; height: 44px; }
+  .mcard .mc-act .ink-btn { flex: 1; justify-content: center; height: 44px; }
   .mzoom .mz-txt[data-to="world"] { display: none; }
   .mlg-fade { grid-template-columns: 1fr auto; }
   .mlg-fade input { grid-column: 1 / -1; grid-row: 2; }

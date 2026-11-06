@@ -158,7 +158,7 @@ function sheet(s: AppState, r: CityResult, e: Evaluation, scale: number): Raw {
 /** Explore more places: the world map under the first results. Drawn when it scrolls into view (`mounted`). */
 export function exploreShell(s: AppState, mounted: boolean): Raw {
   return html`<h2 class="explore-h" id="explore-h">Explore more places</h2>
-    <p class="explore-lede">Every city in the data, and any town on the map, coloured by what matters to you. Point at one to see where it would rank among yours; click to add it.</p>
+    <p class="explore-lede">Every city in the data, and any town on the map, coloured by what matters to you. Point at one to see where it would rank among yours; click to open its card, and add it from there.</p>
     ${mounted ? mapShell(s) : html`<div class="sheet explore-wait"><p class="quiet">The map loads as you reach it. <a href="#/map">Open it on its own page</a>.</p></div>`}`;
 }
 

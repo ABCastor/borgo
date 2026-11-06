@@ -1,27 +1,24 @@
-import { niceDays } from "../core/criteria.ts";
 import { criteriaFor, scoreCandidates, weightOf, type CityResult } from "../core/engine.ts";
 import { project } from "../core/equal-earth.ts";
 import { rightToLiveWork } from "../core/rights.ts";
 import type { City } from "../core/types.ts";
-import { monthsInRange, tileCount, tileHighs, type WorldMap } from "../core/world-map.ts";
+import { monthsInRange, tileCount, type WorldMap } from "../core/world-map.ts";
 import { rangeButton } from "./cards.ts";
-import { bandOf } from "./climate.ts";
 import { html, raw, type Raw } from "./dom.ts";
-import { countryName, distance, local as localText, MONTHS, num, tempUnit, tempValue } from "./format.ts";
+import { local as localText } from "./format.ts";
 import { shortLabel } from "./glance.ts";
 import { CLOSE } from "./results.ts";
 import type { AppState } from "./state.ts";
-import { regionName } from "./top.ts";
+import { cardFor, pinAfterClick, sameTarget as same, type Target } from "./map-card.ts";
 
 // The Map: the whole world coloured by what the person values. Land tiles carry what is known everywhere (the
 // average afternoon high of each month, from a global grid; who in the household may live in each country); city
 // points carry everything else, each scored as it would be if the person added it. Their own cities are ringed and
-// numbered, and the list beside the map ranks them by whatever the map is coloured by. Pointing at a place reads it;
-// clicking pins it, with the action that fits: add, remove or open its dossier.
+// numbered, and the list beside the map ranks them by whatever the map is coloured by. Under every value but the
+// right to live, the land says how many months of its year are in the person's nice-day range. Pointing at a place
+// reads it; clicking pins its card (src/ui/map-card.ts), and only the card's button adds it.
 
-type Target = { kind: "city"; id: string } | { kind: "land"; tile: number; place: WorldMap["places"][number] | null };
-
-interface Palette { lo: number[]; hi: number[]; land: number[]; faint: number[]; ink: string; sheet: string; quiet: string; bands: string[] }
+interface Palette { lo: number[]; hi: number[]; land: number[]; landHi: number[]; faint: number[]; ink: string; sheet: string; quiet: string }
 
 const ui = {
   map: null as WorldMap | null,
@@ -32,6 +29,8 @@ const ui = {
   fitted: false,
   hover: null as Target | null,
   pinned: null as Target | null,
+  /** What had the focus when the card was pinned, to give it back when the card closes. */
+  opener: null as HTMLElement | null,
   lens: "score",
   /** 0 to 1: places below this share of the colour scale fade. */
   fade: 0,
@@ -155,10 +154,17 @@ function allowedIn(s: AppState, cc: string): { yes: number; of: number } | null 
 
 // ---------- Colour ----------
 
+/** A CSS colour as sRGB numbers. A colour the page mixes (color-mix, oklab) is read back through a one-pixel canvas. */
 function rgbOf(probe: HTMLElement, v: string): number[] {
   probe.style.color = v;
-  const m = getComputedStyle(probe).color.match(/[\d.]+/g) ?? ["128", "128", "128"];
-  return m.slice(0, 3).map(Number);
+  const c = getComputedStyle(probe).color;
+  const m = /^rgba?\(/.test(c) ? c.match(/[\d.]+/g) : null;
+  if (m) return m.slice(0, 3).map(Number);
+  const px = document.createElement("canvas").getContext("2d", { willReadFrequently: true });
+  if (!px) return [128, 128, 128];
+  px.fillStyle = c;
+  px.fillRect(0, 0, 1, 1);
+  return [...px.getImageData(0, 0, 1, 1).data.slice(0, 3)];
 }
 
 function readPalette(host: HTMLElement): Palette {
@@ -170,11 +176,11 @@ function readPalette(host: HTMLElement): Palette {
     lo: rgbOf(probe, "var(--map-lo)"),
     hi: rgbOf(probe, "var(--map-hi)"),
     land: rgbOf(probe, "var(--map-land)"),
+    landHi: rgbOf(probe, "var(--map-land-hi)"),
     faint: rgbOf(probe, "var(--map-faint)"),
     ink: css("var(--ink)"),
     sheet: css("var(--sheet)"),
     quiet: css("var(--quiet)"),
-    bands: ["b0", "b1", "b2", "b3", "b4", "b5", "b6"].map((b) => css(`var(--${b})`)),
   };
   probe.remove();
   return p;
@@ -183,24 +189,25 @@ function readPalette(host: HTMLElement): Palette {
 const mix = (a: number[], b: number[], t: number) => a.map((x, i) => Math.round(x + (b[i]! - x) * t));
 const rgb = (c: number[]) => `rgb(${c[0]} ${c[1]} ${c[2]})`;
 const ramp = (p: Palette, t: number) => rgb(mix(p.lo, p.hi, Math.max(0, Math.min(1, t))));
+/** The land's own scale, lighter than the cities' so their dots stay on top of it: one hue, darker with more months. */
+const landRamp = (p: Palette, t: number) => rgb(mix(p.land, p.landHi, Math.max(0, Math.min(1, t))));
 
-/** Each tile's colour key under the current lens: a share of the scale, or "land" (no value here), or "faint". */
-function tileValue(s: AppState, map: WorldMap, i: number): number | "land" | "faint" {
+/**
+ * Each tile's colour key: "r" and a share for the right to live, "m" and a share of the twelve months in the person's
+ * range for every other value, or "land" or "faint" (a country a must-pass right to live rules out).
+ */
+function tileValue(s: AppState, map: WorldMap, i: number): { k: "r" | "m"; v: number } | "land" | "faint" {
   const cc = map.countries[map.tiles[i * 3 + 2]!] ?? "";
-  if (ui.lens === "nice_days") {
-    const k = s.profile.prefs.comfort;
-    return monthsInRange(map, i, k.min, k.max) / 12;
-  }
   if (ui.lens === "right_to_live") {
     const a = allowedIn(s, cc);
-    return a ? a.yes / a.of : "land";
+    return a ? { k: "r", v: a.yes / a.of } : "land";
   }
-  // Every other lens lives on the cities; the land only shows where a must-pass right to live rules a country out.
   if (s.profile.dealBreakers.includes("right_to_live")) {
     const a = allowedIn(s, cc);
     if (a && a.yes < a.of) return "faint";
   }
-  return "land";
+  const k = s.profile.prefs.comfort;
+  return { k: "m", v: monthsInRange(map, i, k.min, k.max) / 12 };
 }
 
 // ---------- View: zoom and centre, in projection units ----------
@@ -318,17 +325,17 @@ function draw(): void {
     const r = side(col + 1, row) / 2;
     const t = side(col, row - 1) / 2;
     const b = side(col, row + 1) / 2;
-    const v = tileValue(s, map, i);
-    const key = typeof v === "number" ? (v < ui.fade - 1e-9 ? `f${Math.round(v * 48)}` : `v${Math.round(v * 48)}`) : v;
+    const tv = tileValue(s, map, i);
+    const key = typeof tv === "string" ? tv : `${tv.k}${tv.v < ui.fade - 1e-9 ? "f" : "v"}${Math.round(tv.v * 48)}`;
     let path = paths.get(key);
     if (!path) paths.set(key, (path = new Path2D()));
     if (radius >= 0.8) path.roundRect(x + l, y + t, size - l - r, size - t - b, radius);
     else path.rect(x + l, y + t, size - l - r, size - t - b);
   }
   for (const [key, path] of paths) {
-    const v = Number(key.slice(1)) / 48;
-    ctx.globalAlpha = key[0] === "f" ? 0.28 : 1;
-    ctx.fillStyle = key === "land" ? rgb(p.land) : key === "faint" ? rgb(p.faint) : ramp(p, v);
+    const v = Number(key.slice(2)) / 48;
+    ctx.globalAlpha = key[1] === "f" ? 0.28 : 1;
+    ctx.fillStyle = key === "land" ? rgb(p.land) : key === "faint" ? rgb(p.faint) : key[0] === "r" ? ramp(p, v) : landRamp(p, v);
     ctx.fill(path);
   }
   ctx.globalAlpha = 1;
@@ -395,6 +402,17 @@ function draw(): void {
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.arc(x, y, rd + (order.has(hc.id) ? 7 : 4.5), 0, Math.PI * 2);
+    ctx.stroke();
+  }
+  if (cv.matches(":focus-visible")) {
+    // The keyboard's pointer: a cross in the middle of the map, which Enter pins.
+    ctx.strokeStyle = p.ink;
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
+      ctx.moveTo(W / 2 + dx * 4, H / 2 + dy * 4);
+      ctx.lineTo(W / 2 + dx * 11, H / 2 + dy * 11);
+    }
     ctx.stroke();
   }
   placeCard();
@@ -503,9 +521,6 @@ function nearestPlace(map: WorldMap, x: number, y: number): WorldMap["places"][n
   return best;
 }
 
-const same = (a: Target | null, b: Target | null) =>
-  a === b || (!!a && !!b && a.kind === b.kind && (a.kind === "city" ? a.id === (b as { id: string }).id : a.tile === (b as { tile: number }).tile && a.place?.[0] === (b as { place: unknown[] | null }).place?.[0]));
-
 function local(e: PointerEvent): [number, number] {
   const r = canvas()!.getBoundingClientRect();
   return [e.clientX - r.left, e.clientY - r.top];
@@ -575,10 +590,34 @@ function onUp(e: PointerEvent): void {
   ui.drag = null;
   if (!map || !s || !d || d.moved || e.type === "pointercancel") return;
   const [x, y] = local(e);
-  const t = at(map, s, x, y);
-  ui.pinned = t && !same(t, ui.pinned) ? t : null;
-  ui.hover = null;
-  renderCard();
+  const next = pinAfterClick(ui.pinned, at(map, s, x, y));
+  if (next) pin(next);
+  else unpin();
+}
+
+/** The map by keyboard: arrows move it, + and − zoom, Enter or Space pins the place under the cross in its middle. */
+function onKey(e: KeyboardEvent): void {
+  const map = ui.map;
+  const s = ui.state;
+  if (!map || !s || e.metaKey || e.ctrlKey || e.altKey) return;
+  const step = (Math.min(ui.W, ui.H) * 0.12) / scale(map);
+  const pan: Record<string, [number, number]> = { ArrowLeft: [-step, 0], ArrowRight: [step, 0], ArrowUp: [0, step], ArrowDown: [0, -step] };
+  if (pan[e.key]) {
+    ui.view.cx += pan[e.key]![0];
+    ui.view.cy += pan[e.key]![1];
+    clampView(map);
+  } else if (e.key === "+" || e.key === "=") zoomAt(map, ui.W / 2, ui.H / 2, 1.6);
+  else if (e.key === "-" || e.key === "_") zoomAt(map, ui.W / 2, ui.H / 2, 1 / 1.6);
+  else if (e.key === "Enter" || e.key === " ") {
+    const t = at(map, s, ui.W / 2, ui.H / 2);
+    if (t) pin(t);
+  } else return;
+  e.preventDefault();
+  if (!ui.pinned) {
+    // While moving by keyboard, the card reads whatever is under the cross.
+    ui.hover = at(map, s, ui.W / 2, ui.H / 2);
+    renderCard();
+  }
   paintMap();
 }
 
@@ -615,7 +654,8 @@ function placeCard(): void {
   const map = ui.map;
   const t = ui.pinned ?? ui.hover;
   if (!card || !map || !t || card.hidden) return;
-  if (innerWidth < 600) {
+  if (matchMedia("(max-width: 600px)").matches) {
+    // On a phone the card is a bottom sheet: the stylesheet places it.
     card.style.left = card.style.top = "";
     return;
   }
@@ -650,72 +690,55 @@ export function renderCard(): void {
     ui.cardKey = "";
     return;
   }
-  const markup = (t.kind === "city" ? cityCard(s, t.id) : landCard(s, map, t)).value;
+  const r = t.kind === "city" ? ui.results.get(t.id) : undefined;
+  const lens = r && ui.lens !== "score" && ui.lens !== "nice_days" ? { id: ui.lens, label: lensLabel(ui.lens, s), text: lensText(r) } : null;
+  const markup = cardFor(s, t, { map, pinned: !!ui.pinned, result: r, lens }).value;
   const key = `${!!ui.pinned}|${markup}`;
   if (key !== ui.cardKey) {
+    const hadFocus = card.contains(document.activeElement);
     card.innerHTML = markup;
     card.classList.toggle("is-pinned", !!ui.pinned);
+    // Pinned, the card is a small dialog the keyboard can reach; pointed at, it is read out politely.
+    if (ui.pinned) {
+      card.setAttribute("role", "dialog");
+      card.setAttribute("aria-labelledby", "map-card-name");
+      card.removeAttribute("aria-live");
+      card.tabIndex = -1;
+    } else {
+      card.setAttribute("role", "status");
+      card.setAttribute("aria-live", "polite");
+      card.removeAttribute("aria-labelledby");
+      card.removeAttribute("tabindex");
+    }
     ui.cardKey = key;
+    if (hadFocus && ui.pinned) card.focus({ preventScroll: true });
   }
   card.hidden = false;
   placeCard();
 }
 
-function monthBars(values: number[], max: number, title: string): Raw {
-  return html`<div class="mc-months" role="img" aria-label="${title}">${values.map(
-    (v, i) => html`<span><i style="height:${Math.round((100 * Math.min(v, max)) / max)}%"></i><b>${MONTHS[i]}</b></span>`,
-  )}</div>`;
+/** Pins a place and moves the focus into its card, remembering where the focus was. */
+function pin(t: Target | null): void {
+  const active = document.activeElement as HTMLElement | null;
+  if (t && active && !document.getElementById("map-card")?.contains(active)) ui.opener = active;
+  ui.pinned = t;
+  ui.hover = null;
+  ui.cardKey = "";
+  renderCard();
+  paintMap();
+  if (t) document.getElementById("map-card")?.focus({ preventScroll: true });
 }
 
-function cityCard(s: AppState, id: string): Raw {
-  const r = ui.results.get(id);
-  const city = s.data.cities.find((c) => c.id === id)!;
-  const mine = s.profile.cities.includes(id);
-  const evaluated = s.profile.cities.length + (mine ? 0 : 1);
-  const nice = niceDays(s.data, s.profile, city)?.months ?? null;
-  const k = s.profile.prefs.comfort;
-  const head = html`<div class="mc-head"><b class="mc-name">${city.name}</b><span class="mc-meta">${countryName(s.data, city.country)}</span>${ui.pinned ? html`<button class="chip-x mc-x" data-act="map-unpin" aria-label="Close">${CLOSE}</button>` : ""}</div>`;
-  if (!r) return html`${head}<p class="mc-line quiet">Not scored yet.</p>`;
-  const out = r.ruledOut.length > 0;
-  const score = html`<p class="mc-score"><span class="mc-big num">${Math.round(r.total)}</span><small>/ 100</small><span class="mc-rank">${out ? "ruled out" : mine ? `No. ${r.rank} of ${evaluated}` : `would be No. ${r.rank} of ${evaluated}`}</span></p>`;
-  const lens = ui.lens !== "score" && ui.lens !== "nice_days" ? html`<p class="mc-line"><span class="mc-k">${lensLabel(ui.lens, s)}</span> ${lensText(r)}</p>` : "";
-  const actions = ui.pinned
-    ? html`<div class="mc-act">${mine
-        ? html`<a class="ink-btn" href="#/city/${id}">Open dossier</a><button class="link" data-act="remove-city" data-city="${id}">Remove from your cities</button>`
-        : html`<button class="ink-btn" data-act="add-known" data-city="${id}">Add ${city.name}</button>`}</div>`
-    : html`<p class="mc-hint">${mine ? "Click for its dossier" : `Click to add ${city.name}`}</p>`;
-  return html`${head}${score}${lens}
-    ${nice ? html`<p class="mc-line"><span class="mc-k">Nice days</span> ${num(nice.reduce((a, b) => a + b, 0))} a year in your ${tempValue(k.min)}–${tempValue(k.max)}°</p>${monthBars(nice, 31, "Nice days by month")}` : ""}
-    ${!mine && !out ? html`<p class="mc-note">If you add it. ${r.coverage < 0.999 ? `${Math.round(r.coverage * 100)}% of this score from real data.` : ""}</p>` : ""}
-    ${actions}`;
-}
-
-function landCard(s: AppState, map: WorldMap, t: Extract<Target, { kind: "land" }>): Raw {
-  const cc = map.countries[map.tiles[t.tile * 3 + 2]!] ?? "";
-  const k = s.profile.prefs.comfort;
-  const highs = tileHighs(map, t.tile);
-  const inRange = monthsInRange(map, t.tile, k.min, k.max);
-  const country = cc ? countryName(s.data, cc) : "No country code";
-  const a = allowedIn(s, cc);
-  const pl = t.place;
-  const name = pl ? pl[0] : country;
-  const rights = a
-    ? html`<p class="mc-line"><span class="mc-k">Right to live</span> ${a.yes === a.of ? (a.of === 1 ? "you can live and work here" : "all of you can live and work here") : a.yes === 0 ? "a visa for everyone" : `${a.yes} of ${a.of} of you without a visa`}</p>`
-    : "";
-  // By GeoNames id where Natural Earth gives one: a name alone can find a namesake (Iraklio is also an Athens suburb).
-  const q = pl ? (pl[5] ? `geonames:${pl[5]}` : `${pl[0]}, ${pl[1]}`) : "";
-  const actions = ui.pinned
-    ? pl
-      ? html`<div class="mc-act"><button class="ink-btn" data-act="map-add-place" data-q="${q}" data-name="${pl[0]}">Add ${pl[0]}</button></div><p class="mc-note">Its figures are fetched from the open sources, as with Add any city.</p>`
-      : html`<p class="mc-note">No town of 50,000 people near here. Zoom in, or type a place in Add any city.</p>`
-    : html`<p class="mc-hint">${pl ? `Click to add ${pl[0]}` : "Zoom in to pick a town"}</p>`;
-  return html`<div class="mc-head"><b class="mc-name">${name}</b><span class="mc-meta">${pl ? html`${regionName(pl[1])}${pl[4] >= 1000 ? html` · ${pl[4] >= 1e6 ? `${num(pl[4] / 1e6, 1)} million` : num(Math.round(pl[4] / 1000) * 1000)} people` : ""}` : "land"}</span>${ui.pinned ? html`<button class="chip-x mc-x" data-act="map-unpin" aria-label="Close">${CLOSE}</button>` : ""}</div>
-    <p class="mc-line"><span class="mc-k">Afternoon highs</span> ${inRange} ${inRange === 1 ? "month" : "months"} in your ${tempValue(k.min)}–${tempValue(k.max)}°</p>
-    <div class="mc-highs" role="img" aria-label="Average afternoon high by month: ${highs.map((h) => tempValue(h)).join(", ")} ${tempUnit()}">${highs.map(
-      (h, i) => html`<span class="b${bandOf(h, k)} ${Math.round(h) >= k.min && Math.round(h) <= k.max ? "is-in" : ""}"><b>${tempValue(h)}°</b><i>${MONTHS[i]}</i></span>`,
-    )}</div>
-    <p class="mc-note">Air temperature, averaged over this tile's ground (about ${distance(150)}), 2001–2025.</p>
-    ${rights}${actions}`;
+/** Closes the pinned card and gives the focus back to what opened it. */
+function unpin(): void {
+  const card = document.getElementById("map-card");
+  const back = card?.contains(document.activeElement) || document.activeElement === document.body ? ui.opener : null;
+  ui.pinned = null;
+  ui.opener = null;
+  renderCard();
+  paintMap();
+  if (back?.isConnected) back.focus({ preventScroll: true });
+  else if (back) canvas()?.focus({ preventScroll: true });
 }
 
 // ---------- The page around the map: lens pills, legend, fade, ranked lists ----------
@@ -742,16 +765,17 @@ function scaleEnds(): [string, string] {
   return [short(ui.span.lo), short(ui.span.hi)];
 }
 
-function rampBar(lo: string, hi: string, what: Raw | string): Raw {
-  return html`<div class="mlg-row"><span class="mlg-end num">${lo}</span><span class="mlg-ramp" aria-hidden="true"></span><span class="mlg-end num">${hi}</span><span class="mlg-what">${what}</span></div>`;
+function rampBar(lo: string, hi: string, what: Raw | string, land = false): Raw {
+  return html`<div class="mlg-row"><span class="mlg-end num">${lo}</span><span class="mlg-ramp ${land ? "is-land" : ""}" aria-hidden="true"></span><span class="mlg-end num">${hi}</span><span class="mlg-what">${what}</span></div>`;
 }
 
 function legend(s: AppState): Raw {
   const [lo, hi] = scaleEnds();
   const ends = ui.span ? html` <span class="quiet">(${ui.span.lo.city.name} lowest, ${ui.span.hi.city.name} highest)</span>` : "";
   const rows: Raw[] = [];
+  const land = rampBar("0", "12", html`<b>Land:</b> 0 to 12 months in your range ${rangeButton(s, "map")}, by each month's average afternoon high <span class="quiet">(air temperature)</span>`, true);
   if (ui.lens === "nice_days") {
-    rows.push(rampBar("0", "12 months", html`<b>Land:</b> months whose average afternoon high is in your ${rangeButton(s, "map")} <span class="quiet">(air)</span>`));
+    rows.push(land);
     rows.push(rampBar(lo, hi, html`<b>Cities:</b> nice days a year, dry and mostly clear with the day in your range${ends}`));
   } else if (ui.lens === "right_to_live") {
     rows.push(
@@ -765,6 +789,7 @@ function legend(s: AppState): Raw {
         ? html`<div class="mlg-row"><span class="mlg-what">${ui.lens === "score" ? "Every city on the map is ruled out by a must-pass line. Turn one off in What matters to see them scored." : `No city on the map has data on ${lensLabel(ui.lens, s).toLowerCase()} yet.`}</span></div>`
         : rampBar(lo, hi, ui.lens === "score" ? html`<b>Cities:</b> your score, as each would score among your cities${ends}` : html`<b>Cities:</b> ${lensLabel(ui.lens, s).toLowerCase()}${/ a (year|month)$/.test(lensText(ui.span.hi)) ? lensText(ui.span.hi).match(/ a (year|month)$/)![0] : ""}${ends}`),
     );
+    rows.push(land);
     if (s.profile.dealBreakers.includes("right_to_live") && hasPassports(s)) rows.push(html`<div class="mlg-row"><span class="mlg-sw is-faint"></span><span class="mlg-what">Faint land: countries your must-pass right to live rules out</span></div>`);
   }
   const fadeOut = Math.round(ui.fade * 100);
@@ -796,13 +821,18 @@ function lists(s: AppState): Raw {
     ${mine.length
       ? html`<ol class="mrank">${mine.map((r, i) => {
           const v = lensValue(r);
-          return html`<li class="${ui.pinned?.kind === "city" && ui.pinned.id === r.city.id ? "is-on" : ""}"><button class="mr-go" data-act="map-pin" data-city="${r.city.id}"><b class="mr-n num">${i + 1}</b><span class="mr-name">${r.city.name}</span><span class="mr-v num">${lensText(r)}</span><span class="mr-bar"><i style="width:${v === null ? 0 : Math.max(3, Math.round(100 * shade(v)!))}%"></i></span></button><button class="chip-x" data-act="remove-city" data-city="${r.city.id}" aria-label="Remove ${r.city.name}">${CLOSE}</button></li>`;
+          return html`<li class="${ui.pinned?.kind === "city" && ui.pinned.id === r.city.id ? "is-on" : ""}"><button class="mr-go" data-act="map-pin" data-city="${r.city.id}" aria-haspopup="dialog"><b class="mr-n num">${i + 1}</b><span class="mr-name">${r.city.name}</span><span class="mr-v num">${lensText(r)}</span><span class="mr-bar"><i style="width:${v === null ? 0 : Math.max(3, Math.round(100 * shade(v)!))}%"></i></span></button><button class="chip-x" data-act="remove-city" data-city="${r.city.id}" aria-label="Remove ${r.city.name}">${CLOSE}</button></li>`;
         })}</ol>`
-      : html`<p class="vs-lede">None yet. Click a city or a town on the map to add it.</p>`}
+      : html`<p class="vs-lede">None yet. Click a city or a town on the map, then add it from its card.</p>`}
     ${rest.length
-      ? html`<h3 class="vs-h">Not on your list yet</h3><p class="vs-lede">The best of the rest on ${ui.lens === "score" ? "your score" : label.toLowerCase()}</p>
-      <ol class="mrank is-rest">${rest.map(({ r }) => html`<li><button class="mr-go" data-act="map-pin" data-city="${r.city.id}"><span class="mr-name">${r.city.name}</span><span class="mr-v num">${lensText(r)}</span></button><button class="pill-btn mr-add" data-act="add-known" data-city="${r.city.id}" aria-label="Add ${r.city.name}">Add</button></li>`)}</ol>`
+      ? html`<h3 class="vs-h">Not on your list yet</h3><p class="vs-lede">The best of the rest on ${ui.lens === "score" ? "your score" : label.toLowerCase()}. Pick one to read its card and add it.</p>
+      <ol class="mrank is-rest">${rest.map(({ r }) => html`<li class="${ui.pinned?.kind === "city" && ui.pinned.id === r.city.id ? "is-on" : ""}"><button class="mr-go" data-act="map-pin" data-city="${r.city.id}" aria-haspopup="dialog"><span class="mr-name">${r.city.name}</span><span class="mr-v num">${lensText(r)}</span></button></li>`)}</ol>`
       : ""}`;
+}
+
+function mapLabel(s: AppState): string {
+  const land = ui.lens === "right_to_live" ? "" : ", the land by months in your nice-day range";
+  return `World map: cities coloured by ${lensLabel(ui.lens, s).toLowerCase()}${land}. Arrows move, plus and minus zoom, Enter opens the card of the place in the middle. Your cities are listed under the map.`;
 }
 
 /** The map page's main column. The canvas is created once; refreshMap() redraws everything around it. */
@@ -813,9 +843,9 @@ export function mapShell(s: AppState): Raw {
       <h2 class="sh">Colour the world by</h2>
       <div id="map-lens" class="ml">${lensPicker(s)}</div>
     </div>
-    <p class="mhow"><span class="for-mouse">Point at a place to read it, click to pin it and add it to your cities. Drag to move; pinch or ⌘ + scroll to zoom.</span><span class="for-touch">Tap a place to read it and add it to your cities. Drag sideways or pinch to move.</span></p>
+    <p class="mhow"><span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p>
     <div class="mstage" id="map-stage">
-      <canvas id="map-canvas" role="img" aria-label="World map coloured by ${lensLabel(ui.lens, s).toLowerCase()}; your cities are listed under it"></canvas>
+      <canvas id="map-canvas" tabindex="0" role="application" aria-roledescription="map" aria-label="${mapLabel(s)}"></canvas>
       <div class="mzoom" role="group" aria-label="Zoom">
         <button data-act="map-zoom" data-d="1" aria-label="Zoom in">${raw('<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1.5v9M1.5 6h9"/></svg>')}</button>
         <button data-act="map-zoom" data-d="-1" aria-label="Zoom out">${raw('<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M1.5 6h9"/></svg>')}</button>
@@ -852,7 +882,7 @@ export function refreshMap(s: AppState): void {
   swap("map-list", lists(s));
   swap("map-legend", legend(s));
   swap("map-src", sourcesLine(ui.map));
-  canvas()?.setAttribute("aria-label", `World map coloured by ${lensLabel(ui.lens, s).toLowerCase()}; your cities are listed under it`);
+  canvas()?.setAttribute("aria-label", mapLabel(s));
   ui.cardKey = "";
   renderCard();
   paintMap();
@@ -882,6 +912,9 @@ export function mountMap(s: AppState): void {
   cv.addEventListener("pointercancel", onUp);
   cv.addEventListener("pointerleave", onLeave);
   cv.addEventListener("wheel", onWheel, { passive: false });
+  cv.addEventListener("keydown", onKey);
+  cv.addEventListener("focus", paintMap);
+  cv.addEventListener("blur", paintMap);
   refreshMap(s);
   document.fonts?.ready.then(paintMap);
 }
@@ -911,9 +944,9 @@ export function mapAction(s: AppState, act: string, el: HTMLElement): boolean {
       return true;
     case "map-pin": {
       const id = el.dataset.city!;
-      ui.pinned = ui.pinned?.kind === "city" && ui.pinned.id === id ? null : { kind: "city", id };
+      const next = pinAfterClick(ui.pinned, { kind: "city", id });
       const c = s.data.cities.find((x) => x.id === id);
-      if (map && c && ui.pinned) {
+      if (map && c && next) {
         // Bring the pinned city into view if it is off the map.
         const [x, y] = toScreen(map, ...project(c.lon, c.lat));
         if (x < 20 || y < 20 || x > ui.W - 20 || y > ui.H - 20) {
@@ -921,16 +954,19 @@ export function mapAction(s: AppState, act: string, el: HTMLElement): boolean {
           clampView(map);
         }
       }
-      swap("map-list", lists(s));
-      ui.cardKey = "";
-      renderCard();
-      paintMap();
+      if (next) {
+        ui.pinned = next;
+        swap("map-list", lists(s));
+        pin(next);
+      } else {
+        unpin();
+        swap("map-list", lists(s));
+      }
       return true;
     }
     case "map-unpin":
-      ui.pinned = null;
-      renderCard();
-      paintMap();
+      unpin();
+      swap("map-list", lists(s));
       return true;
   }
   return false;
@@ -965,9 +1001,8 @@ export function pinCity(id: string): void {
 /** Escape closes the pinned card. True when there was one. */
 export function unpinMap(): boolean {
   if (!ui.pinned) return false;
-  ui.pinned = null;
-  renderCard();
-  paintMap();
+  unpin();
+  if (ui.state) swap("map-list", lists(ui.state));
   return true;
 }
 

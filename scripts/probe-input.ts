@@ -70,6 +70,7 @@ try {
   const KEYS: Record<string, { key: string; code: string; vk: number; text?: string }> = {
     Tab: { key: "Tab", code: "Tab", vk: 9 },
     Enter: { key: "Enter", code: "Enter", vk: 13, text: "\r" },
+    Escape: { key: "Escape", code: "Escape", vk: 27 },
   };
   const press = async (name: string) => {
     const k = KEYS[name]!;
@@ -171,6 +172,55 @@ try {
     const said = await js<string>(`(() => { const f = document.getElementById("verdict-salary"); const box = f && f.closest(".v-next, label, div"); return ((box && box.parentElement && box.parentElement.querySelector(".fld-err")) || document.querySelector(".fld-err"))?.textContent?.trim() || ""; })()`);
     const kept = await js<string>(`document.getElementById("verdict-salary")?.value ?? "gone"`);
     check("Salary -50000: refused beside the field, kept there, not stored", p.income?.gross !== -50000 && said.length > 0 && kept === "-50000", `gross=${p.income?.gross} field="${kept}" message="${said.slice(0, 120)}"`);
+  }
+
+  // 5. The map: a click pins a card and adds nothing; only the card's "Add to my cities" adds; Escape closes the card
+  // and gives the focus back; Enter on the map pins the place under its cross.
+  await open("/?cities=lisbon-pt,berlin-de#/map");
+  for (let i = 0; i < 40; i++) {
+    await sleep(150);
+    if (await js<boolean>(`!!document.querySelector("#map-canvas") && !document.getElementById("map-load")`)) break;
+  }
+  await sleep(400);
+  {
+    const row = await js<string | null>(`document.querySelector(".mrank.is-rest .mr-go")?.dataset.city ?? null`);
+    if (!row) check("Map: a city in Not on your list yet", false, "no rows");
+    else {
+      const before = (await profile()).cities ?? [];
+      await click(`.mrank.is-rest .mr-go[data-city="${row}"]`);
+      await sleep(200);
+      const pinned = await js<{ hidden: boolean; role: string | null; inCard: boolean; add: string }>(`(() => { const c = document.getElementById("map-card"); return { hidden: c.hidden, role: c.getAttribute("role"), inCard: c.contains(document.activeElement), add: c.querySelector('[data-act="add-known"]')?.textContent ?? "" }; })()`);
+      const mid = (await profile()).cities ?? [];
+      check("Map: picking a place pins its card, with the focus in it, and adds nothing", !pinned.hidden && pinned.role === "dialog" && pinned.inCard && pinned.add === "Add to my cities" && JSON.stringify(mid) === JSON.stringify(before), `card=${JSON.stringify(pinned)} cities ${JSON.stringify(before)} -> ${JSON.stringify(mid)}`);
+      await click(`#map-card [data-act="add-known"]`);
+      await sleep(400);
+      const after = (await profile()).cities ?? [];
+      const card = await js<string>(`document.getElementById("map-card").textContent`);
+      check("Map: the card's Add to my cities adds that place, and the card stays on it", after.includes(row) && after.length === before.length + 1 && /Open dossier/.test(card), `cities=${JSON.stringify(after)} card says "${card.replace(/\s+/g, " ").slice(0, 80)}"`);
+      await press("Escape");
+      await sleep(150);
+      const closed = await js<boolean>(`document.getElementById("map-card").hidden`);
+      check("Map: Escape closes the card", closed, `hidden=${closed}`);
+    }
+    // The canvas by keyboard: focus it, Enter pins the place in the middle, Escape gives the focus back to the map.
+    await js(`document.getElementById("map-canvas").focus()`);
+    await press("Enter");
+    await sleep(200);
+    const k = await js<{ hidden: boolean; inCard: boolean }>(`(() => { const c = document.getElementById("map-card"); return { hidden: c.hidden, inCard: c.contains(document.activeElement) }; })()`);
+    const kCities = (await profile()).cities ?? [];
+    await press("Escape");
+    await sleep(150);
+    const back = await focused();
+    check("Map by keyboard: Enter pins the place under the cross, Escape returns to the map", !k.hidden && k.inCard && back.startsWith("#map-canvas") && kCities.length === 3, `card=${JSON.stringify(k)} focus after Escape=${back} cities=${kCities.length}`);
+    // A real click on the land pins a card and adds nothing.
+    const box = await js<{ x: number; y: number }>(`(() => { const r = document.getElementById("map-canvas").getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; })()`);
+    await send("Input.dispatchMouseEvent", { type: "mousePressed", x: box.x, y: box.y, button: "left", clickCount: 1 });
+    await sleep(30);
+    await send("Input.dispatchMouseEvent", { type: "mouseReleased", x: box.x, y: box.y, button: "left", clickCount: 1 });
+    await sleep(250);
+    const land = await js<{ hidden: boolean; add: number }>(`(() => { const c = document.getElementById("map-card"); return { hidden: c.hidden, add: c.querySelectorAll('[data-act="map-add-place"], [data-act="add-known"]').length }; })()`);
+    const lCities = (await profile()).cities ?? [];
+    check("Map: a click on the map pins a card with one add button, and adds nothing", !land.hidden && land.add <= 1 && lCities.length === 3, `card=${JSON.stringify(land)} cities=${lCities.length}`);
   }
 } finally {
   ws?.close();

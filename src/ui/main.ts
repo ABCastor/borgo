@@ -428,7 +428,7 @@ function onClick(e: MouseEvent): void {
   const act = t.dataset.act!;
   const p = state.profile;
   if (act === "map-add-place") {
-    if (!state.live) void fetchLive(t.dataset.q ?? "", t.dataset.name);
+    if (!state.live) void fetchLive(t.dataset.q ?? "", t.dataset.name, true);
     return;
   }
   if (act.startsWith("map-") && mapAction(state, act, t)) return;
@@ -1009,8 +1009,8 @@ function onPointerUp(): void {
 
 // ---------- Any place, fetched live from the sources that allow a browser to read them ----------
 
-/** `text` is what the geocoder is asked (a name, or geonames:<id>); `shown` is what the person sees while it looks. */
-async function fetchLive(text: string, shown = text): Promise<void> {
+/** `text` is what the geocoder is asked (a name, or geonames:<id>); `shown` is what the person sees while it looks; `fromMap` pins the added place on the map. */
+async function fetchLive(text: string, shown = text, fromMap = false): Promise<void> {
   state.live = { query: shown, label: "", sources: [] };
   renderLive();
   const ctx = makeCtx({ runtime: "browser" });
@@ -1020,6 +1020,7 @@ async function fetchLive(text: string, shown = text): Promise<void> {
     if (!pick) throw new Error(`No place called "${shown}" was found. Try adding the country: "${shown}, IT".`);
     if (pick.known) {
       state.live = null;
+      if (state.view === "map" || fromMap) pinCity(pick.city.id);
       if (!state.profile.cities.includes(pick.city.id)) setProfile((p) => p.cities.push(pick.city.id));
       else renderLive();
       return;
@@ -1039,7 +1040,7 @@ async function fetchLive(text: string, shown = text): Promise<void> {
     state.data = withFetched(state.data, [fetched]);
     state.fetchedHere.push(fetched.city.id);
     state.live = null;
-    if (state.view === "map") pinCity(fetched.city.id);
+    if (state.view === "map" || fromMap) pinCity(fetched.city.id);
     setProfile((p) => p.cities.push(fetched.city.id));
   } catch (err) {
     if (state.live) state.live.error = err instanceof Error ? err.message : String(err);

@@ -26,13 +26,18 @@ export function tileCount(map: WorldMap): number {
   return map.tiles.length / 3;
 }
 
+/**
+ * A month is in the person's range when its average afternoon high, rounded to a whole degree Celsius, sits within
+ * [min, max], both ends included. The map's land and the cities' own monthly highs use this one test.
+ */
+export function highInRange(high: number, min: number, max: number): boolean {
+  return high >= min - 0.5 && high < max + 0.5;
+}
+
 /** Months whose average afternoon high sits within [min, max] °C, both ends included, for tile `i`. */
 export function monthsInRange(map: WorldMap, i: number, min: number, max: number): number {
   let n = 0;
-  for (let m = 0; m < 12; m++) {
-    const h = map.highs[i * 12 + m]! / 10;
-    if (h >= min - 0.5 && h < max + 0.5) n++;
-  }
+  for (let m = 0; m < 12; m++) if (highInRange(map.highs[i * 12 + m]! / 10, min, max)) n++;
   return n;
 }
 
