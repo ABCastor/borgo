@@ -2,16 +2,16 @@
 
 The website, the MCP server and the CLI run the same engine (`src/core`) on the same dataset (`public/data/dataset.json`). Two answers match when all of these match: the resolved profile (the same cities, weights, household, pay and settings), the figures (the snapshot plus the person's cache of fetched places and their own numbers), the exchange rates, and the engine with its tax models. Every report names the ones it can in `dataset`: `version` and `builtAt` (the snapshot), `fxDate` (the ECB rates) and `engine` (the engine and tax models, `package.json`'s version). A cache or an own number makes two answers differ on purpose, and is not identified there. Every figure comes with its source, period, geographic level and licence; every gap is named, with what would fill it.
 
-Borgo runs from npm with Node 22.13 or newer, with no clone: `npx -y borgo mcp` starts the MCP server, and `npx -y borgo <command>` runs the CLI. The package carries the engine, the snapshot and the source registry of its version.
+Borgo runs from npm with Node 22.13 or newer, with no clone: `npx -y @abcastor/borgo mcp` starts the MCP server, and `npx -y @abcastor/borgo <command>` runs the CLI. The package carries the engine, the snapshot and the source registry of its version.
 
 ## MCP server
 
-The server speaks MCP over stdio: `npx -y borgo mcp`. Desktop apps often start with a shorter `PATH` than your shell: if they cannot find `npx`, or the Node it runs is older than 22.13, give the full path to `npx` (`which npx` prints it) instead of `npx`.
+The server speaks MCP over stdio: `npx -y @abcastor/borgo mcp`. Desktop apps often start with a shorter `PATH` than your shell: if they cannot find `npx`, or the Node it runs is older than 22.13, give the full path to `npx` (`which npx` prints it) instead of `npx`.
 
 **Claude Code**
 
 ```sh
-claude mcp add borgo -- npx -y borgo mcp
+claude mcp add borgo -- npx -y @abcastor/borgo mcp
 ```
 
 **Claude Desktop** (`claude_desktop_config.json`), **Cursor** (`~/.cursor/mcp.json` or `.cursor/mcp.json` in a project) and other JSON-configured clients:
@@ -21,7 +21,7 @@ claude mcp add borgo -- npx -y borgo mcp
   "mcpServers": {
     "borgo": {
       "command": "npx",
-      "args": ["-y", "borgo", "mcp"]
+      "args": ["-y", "@abcastor/borgo", "mcp"]
     }
   }
 }
@@ -30,7 +30,7 @@ claude mcp add borgo -- npx -y borgo mcp
 **Codex**
 
 ```sh
-codex mcp add borgo -- npx -y borgo mcp
+codex mcp add borgo -- npx -y @abcastor/borgo mcp
 ```
 
 or in `~/.codex/config.toml`:
@@ -38,7 +38,7 @@ or in `~/.codex/config.toml`:
 ```toml
 [mcp_servers.borgo]
 command = "npx"
-args = ["-y", "borgo", "mcp"]
+args = ["-y", "@abcastor/borgo", "mcp"]
 ```
 
 The server is also listed in the [MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.ABCastor/borgo`, for clients that install from it.
@@ -103,7 +103,7 @@ Simplifications, said once: each earner is taxed with the country's model on the
 ## CLI
 
 ```sh
-npm install -g borgo     # installs borgo, and where-to-live as another name for it; or put npx -y before any command
+npm install -g @abcastor/borgo     # installs borgo, and where-to-live as another name for it; or put npx -y before any command
 alias borgo="node /path/to/borgo/bin/borgo.ts"   # from a clone instead
 
 borgo compare Lisbon Berlin --salary "60k EUR"   # start here: two cities, one salary

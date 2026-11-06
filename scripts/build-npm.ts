@@ -1,5 +1,5 @@
 // Builds the npm package's one program: bin/borgo.ts and everything it imports, the MCP SDK and zod included,
-// bundled into build/npm/borgo.js as plain JavaScript, so `npx -y borgo` runs on Node without type stripping
+// bundled into build/npm/borgo.js as plain JavaScript, so `npx -y @abcastor/borgo` runs on Node without type stripping
 // and installs no dependencies. The licences of the bundled packages go beside it (THIRD-PARTY-LICENSES.txt).
 // The bundle sits two folders below the package root, as src/<dir>/<file>.ts does below the repository, so every
 // path the sources build from import.meta.url (the dataset, the registry, the map) still lands on the package root.

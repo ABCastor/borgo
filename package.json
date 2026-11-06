@@ -1,5 +1,5 @@
 {
-  "name": "borgo",
+  "name": "@abcastor/borgo",
   "version": "0.1.0",
   "type": "module",
   "description": "Borgo: compare any cities on open, sourced data, weighted by what you value.",

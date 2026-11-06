@@ -13,7 +13,7 @@
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
-      "identifier": "borgo",
+      "identifier": "@abcastor/borgo",
       "version": "0.1.0",
       "runtimeHint": "npx",
       "transport": {

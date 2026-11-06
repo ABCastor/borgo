@@ -70,7 +70,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install the tarball in a clean prefix; run the CLI and an MCP stdio session
         working-directory: ${{ runner.temp }}
-        run: node "$GITHUB_WORKSPACE/scripts/smoke-npm.js" "$RUNNER_TEMP"/borgo-*.tgz
+        run: node "$GITHUB_WORKSPACE/scripts/smoke-npm.js" "$RUNNER_TEMP"/abcastor-borgo-*.tgz
 
   leaks:
     name: Leak check

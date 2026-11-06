@@ -15,8 +15,8 @@ It runs in the browser with no account and no server. The same engine runs as a 
 With [Node.js](https://nodejs.org/) 22.13 or newer, one command runs Borgo, with no clone:
 
 ```sh
-npx -y borgo mcp                                       # the MCP server, over stdio
-npx -y borgo compare Lisbon Berlin --salary "60k EUR"   # the command line
+npx -y @abcastor/borgo mcp                                       # the MCP server, over stdio
+npx -y @abcastor/borgo compare Lisbon Berlin --salary "60k EUR"   # the command line
 ```
 
 Add the MCP server to your assistant.
@@ -24,7 +24,7 @@ Add the MCP server to your assistant.
 **Claude Code**
 
 ```sh
-claude mcp add borgo -- npx -y borgo mcp
+claude mcp add borgo -- npx -y @abcastor/borgo mcp
 ```
 
 **Claude Desktop, Cursor** and other JSON-configured clients:
@@ -34,7 +34,7 @@ claude mcp add borgo -- npx -y borgo mcp
   "mcpServers": {
     "borgo": {
       "command": "npx",
-      "args": ["-y", "borgo", "mcp"]
+      "args": ["-y", "@abcastor/borgo", "mcp"]
     }
   }
 }
@@ -43,7 +43,7 @@ claude mcp add borgo -- npx -y borgo mcp
 **Codex**
 
 ```sh
-codex mcp add borgo -- npx -y borgo mcp
+codex mcp add borgo -- npx -y @abcastor/borgo mcp
 ```
 
 [docs/agents.md](docs/agents.md) has every tool, every command and where each client keeps its configuration.
