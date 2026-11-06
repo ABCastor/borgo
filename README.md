@@ -12,9 +12,46 @@ It runs in the browser with no account and no server. The same engine runs as a 
 
 ## Quickstart
 
-Needs [Node.js](https://nodejs.org/) 26 or newer, which runs the TypeScript sources directly.
+With [Node.js](https://nodejs.org/) 22.13 or newer, one command runs Borgo, with no clone:
 
 ```sh
+npx -y borgo mcp                                       # the MCP server, over stdio
+npx -y borgo compare Lisbon Berlin --salary "60k EUR"   # the command line
+```
+
+Add the MCP server to your assistant.
+
+**Claude Code**
+
+```sh
+claude mcp add borgo -- npx -y borgo mcp
+```
+
+**Claude Desktop, Cursor** and other JSON-configured clients:
+
+```json
+{
+  "mcpServers": {
+    "borgo": {
+      "command": "npx",
+      "args": ["-y", "borgo", "mcp"]
+    }
+  }
+}
+```
+
+**Codex**
+
+```sh
+codex mcp add borgo -- npx -y borgo mcp
+```
+
+[docs/agents.md](docs/agents.md) has every tool, every command and where each client keeps its configuration.
+
+From a clone, with Node.js 26 or newer, which runs the TypeScript sources directly:
+
+```sh
+git clone https://github.com/ABCastor/borgo && cd borgo
 npm install
 node pipeline/build-data.ts      # assemble data/ into public/data/dataset.json, refusing anything unsourced
 node scripts/build.ts --serve    # build dist/ and serve it at http://127.0.0.1:8794/
