@@ -45,6 +45,33 @@ jobs:
       - name: Engine, money model, tax modules, fetchers, site
         run: npm test
 
+  npm-package:
+    name: npm package on Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        # The oldest Node package.json's engines allows, and the one the repository runs on.
+        node: ["22.13.0", "26"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+          cache: npm
+      - run: npm ci
+      - name: server.json against the MCP Registry's published schema
+        run: node scripts/check-server-json.ts
+      - name: Bundle and pack (prepack builds build/npm/borgo.js)
+        run: npm pack --pack-destination "$RUNNER_TEMP"
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install the tarball in a clean prefix; run the CLI and an MCP stdio session
+        working-directory: ${{ runner.temp }}
+        run: node "$GITHUB_WORKSPACE/scripts/smoke-npm.js" "$RUNNER_TEMP"/borgo-*.tgz
+
   leaks:
     name: Leak check
     runs-on: ubuntu-latest

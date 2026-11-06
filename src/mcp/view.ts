@@ -1,10 +1,7 @@
 // The compare chart as an MCP App view (extension io.modelcontextprotocol/ui, January 2026 spec): one HTML
 // document the host renders in a sandboxed iframe, fed the compare_cities result over postMessage.
 // It needs no network, so it declares no CSP domains.
-import { readFileSync } from "node:fs";
-import { stripTypeScriptTypes } from "node:module";
-import { join } from "node:path";
-import { ROOT } from "../agent/dataset.ts";
+import { chartSource } from "./chart-source.ts";
 
 export const VIEW_URI = "ui://borgo/compare.html";
 export const VIEW_MIME = "text/html;profile=mcp-app";
@@ -99,7 +96,7 @@ let cached: string | null = null;
 /** The view document. The chart code is src/agent/chart.ts itself, with its types stripped. */
 export function viewHtml(): string {
   if (cached) return cached;
-  const chart = stripTypeScriptTypes(readFileSync(join(ROOT, "src/agent/chart.ts"), "utf8"));
+  const chart = chartSource();
   cached = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Borgo comparison</title><style>${STYLE}</style></head><body><div id="app"><p class="quiet">Waiting for the comparison…</p></div><script type="module">\n${chart}\n${BRIDGE}</script></body></html>`;
   return cached;
 }

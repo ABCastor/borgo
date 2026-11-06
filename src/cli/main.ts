@@ -1,6 +1,6 @@
 // The terminal face of the same engine. Markdown by default, --json for scripts and agents.
 import { spawnSync } from "node:child_process";
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { DEFAULT_COMFORT } from "../core/criteria.ts";
@@ -47,8 +47,8 @@ Usage
         [--lead <news url>] [--agent name@1.0 --operator "..."] [--offline] [--from proposal.json]
                                                 check a correction and print the prefilled GitHub issue link;
                                                 --post <token> posts it with your signed-in gh, after you read it
-  borgo data build                              validate data/ and build public/data/dataset.json
-  borgo data refresh [source]                   re-fetch one source (or all), then build
+  borgo data build                              from a clone: validate data/ and build public/data/dataset.json
+  borgo data refresh [source]                   from a clone: re-fetch one source (or all), then build
   borgo mcp                                     run the MCP server on stdio
 
 Compare options
@@ -332,6 +332,7 @@ function runPipeline(rel: string): boolean {
 }
 
 function data(sub: string | undefined, name: string | undefined): number {
+  if (!existsSync(join(ROOT, "pipeline/sources"))) throw new Error("borgo data builds the dataset from a clone of the repository: git clone https://github.com/ABCastor/borgo, then run it there.");
   const available = readdirSync(join(ROOT, "pipeline/sources")).filter((f) => f.endsWith(".ts")).map((f) => f.replace(/\.ts$/, "")).sort();
   if (sub === "build") return runPipeline("pipeline/build-data.ts") ? 0 : 1;
   if (sub !== "refresh") throw new Error(`Use "data build" or "data refresh [source]". Sources: ${available.join(", ")}.`);

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.ABCastor/borgo",
+  "title": "Borgo",
+  "description": "Compare cities to live in on open, sourced data: take-home pay, rent, visas, climate, safety.",
+  "websiteUrl": "https://borgo.abcastor.com",
+  "repository": {
+    "url": "https://github.com/ABCastor/borgo",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "borgo",
+      "version": "0.1.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ]
+    }
+  ]
+}

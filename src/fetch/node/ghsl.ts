@@ -10,7 +10,6 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { DatabaseSync } from "node:sqlite";
 import type { City, Observation } from "../../core/types.ts";
 import { round, type Fetcher, type FetchCtx } from "../context.ts";
 
@@ -170,6 +169,8 @@ function loadCentres(ctx: FetchCtx) {
     writeFileSync(join(dir, "ucdb.zip"), zip);
     const gpkg = execFileSync("unzip", ["-p", join(dir, "ucdb.zip"), FILE], { maxBuffer: 1 << 28 });
     writeFileSync(join(dir, "ucdb.gpkg"), gpkg);
+    // Loaded here, not at the top: Node 22 warns that node:sqlite is experimental, and only this source needs it.
+    const { DatabaseSync } = await import("node:sqlite");
     const db = new DatabaseSync(join(dir, "ucdb.gpkg"), { readOnly: true });
     const rows = (db.prepare(`SELECT ID_UC_G0 AS id, GC_UCN_MAI_2025 AS name, GC_CNT_GAD_2025 AS country, GC_POP_TOT_2025 AS population, geom FROM ${TABLE}`).all() as { id: number; name: string; country: string; population: number; geom: Uint8Array }[]).map((r) => {
       const v = new DataView(r.geom.buffer, r.geom.byteOffset, r.geom.byteLength);

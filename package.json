@@ -1,37 +1,80 @@
 {
   "name": "borgo",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "Borgo: compare any cities on open, sourced data, weighted by what you value.",
   "license": "Apache-2.0",
-  "bin": {
-    "borgo": "bin/borgo.ts",
-    "where-to-live": "bin/where-to-live.ts"
+  "homepage": "https://borgo.abcastor.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ABCastor/borgo.git"
   },
+  "bugs": {
+    "url": "https://github.com/ABCastor/borgo/issues"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "cities",
+    "city-comparison",
+    "where-to-live",
+    "relocation",
+    "cost-of-living",
+    "take-home-pay",
+    "climate",
+    "open-data",
+    "cli"
+  ],
+  "mcpName": "io.github.ABCastor/borgo",
+  "bin": {
+    "borgo": "build/npm/borgo.js",
+    "where-to-live": "build/npm/borgo.js"
+  },
+  "files": [
+    "build/npm/",
+    "public/data/dataset.json",
+    "public/data/dataset-*.json",
+    "public/data/licences.json",
+    "public/data/map.json",
+    "registry/",
+    "data/cities.json",
+    "data/countries.json",
+    "data/rights.json",
+    "pipeline/inputs/politics.json",
+    "src/core/",
+    "src/tax/",
+    "src/fetch/family.ts",
+    "src/fetch/rights-law.ts",
+    "src/fetch/politics.ts",
+    "src/fetch/politics-table.ts"
+  ],
   "engines": {
-    "node": ">=26"
+    "node": ">=22.13"
   },
   "scripts": {
     "check": "tsc --noEmit",
     "test": "node --test 'test/**/*.test.ts'",
     "data": "node pipeline/build-data.ts",
     "build": "node scripts/build.ts",
+    "build:npm": "node scripts/build-npm.ts",
+    "smoke:npm": "node scripts/smoke-npm.js",
     "dev": "node scripts/build.ts --serve",
     "deploy": "node scripts/build.ts && npx --yes wrangler@4.158.0 deploy",
     "mcp": "node src/mcp/stdio.ts",
     "cli": "node bin/borgo.ts",
     "probe:site": "node scripts/probe-site.ts 390",
     "probe:input": "node scripts/probe-input.ts",
-    "og": "node scripts/og-image.ts"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.32.2",
-    "zod": "^4.6.7"
+    "og": "node scripts/og-image.ts",
+    "prepack": "node scripts/build-npm.ts"
   },
   "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "@types/node": "^26.6.5",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
     "esbuild": "^0.28.2",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "zod": "^4.6.7"
   }
 }
