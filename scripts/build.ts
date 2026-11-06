@@ -44,6 +44,8 @@ await writeFile(join(DIST, "index.html"), page);
 await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK));
 await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });
 await cp(join(ROOT, "public/data"), join(DIST, "data"), { recursive: true });
+// Files that must sit at the site root as they are (search engine verification, the IndexNow key).
+await cp(join(ROOT, "public/root"), DIST, { recursive: true });
 // Open data stays open to other sites' browser code: the API and the data snapshot answer any origin.
 await writeFile(join(DIST, "_headers"), ["/api/*", "/data/*"].map((p) => `${p}\n  Access-Control-Allow-Origin: *\n`).join(""));
 // The pages show every published figure: dataset.json merged with the ODbL and WHO files beside it.
