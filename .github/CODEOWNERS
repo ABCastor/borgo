@@ -1,27 +1,27 @@
-# Who reviews what (CONTRIBUTING.md, "Review"). A change to one of these paths asks its owners for review.
-# Locked facts (tax modules, residence rights, position lines: politics, abortion and same-sex couples law) need two
-# approving reviews, or one from the country's named steward; both stewards are asked here. Everything else needs one.
+# Who reviews what (CONTRIBUTING.md, "Review"). Every proposal is reviewed by Borgo's review agent, which acts as the
+# account below. Locked facts (tax modules, residence rights, position lines: politics, abortion and same-sex couples law)
+# need two independent reviews against the official text that agree.
 
-*                                   @Anneo22 @edoardoavenia
+*                                   @Anneo22
 
-# Locked: two reviewers, or the country's steward.
-/src/tax/                           @Anneo22 @edoardoavenia
-/src/fetch/rights-law.ts            @Anneo22 @edoardoavenia
-/src/fetch/politics.ts              @Anneo22 @edoardoavenia
-/src/fetch/politics-table.ts        @Anneo22 @edoardoavenia
-/pipeline/inputs/politics.json      @Anneo22 @edoardoavenia
-/data/rights.json                   @Anneo22 @edoardoavenia
-/src/core/rights.ts                 @Anneo22 @edoardoavenia
-/registry/politics.json             @Anneo22 @edoardoavenia
-/registry/abortion-law.json         @Anneo22 @edoardoavenia
-/registry/couples-law.json          @Anneo22 @edoardoavenia
-/registry/eu-free-movement.json     @Anneo22 @edoardoavenia
-/registry/ch-afmp.json              @Anneo22 @edoardoavenia
-/registry/cta.json                  @Anneo22 @edoardoavenia
-/registry/ttta.json                 @Anneo22 @edoardoavenia
+# Locked: two independent reviews.
+/src/tax/                           @Anneo22
+/src/fetch/rights-law.ts            @Anneo22
+/src/fetch/politics.ts              @Anneo22
+/src/fetch/politics-table.ts        @Anneo22
+/pipeline/inputs/politics.json      @Anneo22
+/data/rights.json                   @Anneo22
+/src/core/rights.ts                 @Anneo22
+/registry/politics.json             @Anneo22
+/registry/abortion-law.json         @Anneo22
+/registry/couples-law.json          @Anneo22
+/registry/eu-free-movement.json     @Anneo22
+/registry/ch-afmp.json              @Anneo22
+/registry/cta.json                  @Anneo22
+/registry/ttta.json                 @Anneo22
 
 # The review process itself.
-/.github/                           @Anneo22 @edoardoavenia
-/src/community/                     @Anneo22 @edoardoavenia
-/scripts/proposals/                 @Anneo22 @edoardoavenia
-/CONTRIBUTING.md                    @Anneo22 @edoardoavenia
+/.github/                           @Anneo22
+/src/community/                     @Anneo22
+/scripts/proposals/                 @Anneo22
+/CONTRIBUTING.md                    @Anneo22

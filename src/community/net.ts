@@ -118,7 +118,7 @@ export async function checkCitations(p: Proposal, http: Http = nodeHttp): Promis
       continue;
     }
     if (REFUSED.has(page.status) || page.status >= 500) {
-      warnings.push(`${label} ${shown(c.url)} answered ${page.status} to an automated check; a reviewer opens it by hand${c.quote ? " and looks for the quote" : ""}.`);
+      warnings.push(`${label} ${shown(c.url)} answered ${page.status} to an automated check; the reviewer opens it in a browser${c.quote ? " and looks for the quote" : ""}.`);
       continue;
     }
     if (page.status >= 400) {

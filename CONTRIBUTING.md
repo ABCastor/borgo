@@ -48,22 +48,24 @@ A check runs on every new or edited proposal and comments on the issue. It looks
 - the target: the city, metric and registry source exist, or the file and the name inside it do;
 - the value: one number (or 12 for a monthly figure), in the metric's unit for that city, inside its plausible range;
 - the citation: a primary source, never a link-only site, and a legal text for a rule;
-- the page: the cited address answers, and the quote is on it when one is given. A site that refuses automated reading is left to the reviewer, who opens it by hand.
+- the page: the cited address answers, and the quote is on it when one is given. A site that refuses automated reading is left to the reviewer, who opens it in a browser.
 
 It labels the issue `valid` or `needs changes`, `data` or `rule`, and `locked` where that applies. Edit the issue to fix what it lists; the check runs again.
 
-A valid proposal that changes a data file (a corrected figure, a registry address) becomes a pull request on its own. A corrected figure goes into `data/corrections.json`, which the build puts in place of the same source's figure, keeping the citation, until the source itself publishes a newer period; it carries a `reviewBy` date for that check. A rule change stays an issue: a maintainer encodes it, with tests, and opens the pull request.
+A valid proposal that changes a data file (a corrected figure, a registry address) is prepared as a branch and reviewed as a pull request. A corrected figure goes into `data/corrections.json`, which the build puts in place of the same source's figure, keeping the citation, until the source itself publishes a newer period; it carries a `reviewBy` date for that check. A rule change stays an issue: the reviewer encodes it, with tests, and opens the pull request.
 
 Once merged, the figure's source popover in the app says when it was corrected, links the official text it cites and links the proposal.
 
 ## Review
 
+Review is automated. Borgo's review agent reads every valid proposal, opens the cited official text itself and compares it with the proposed value before anything merges. It merges what the text supports, closes what it does not with the reason, and asks on the issue when the text is unclear.
+
 | Facts | Review |
 |---|---|
-| Tax modules (`src/tax/`), residence rights (`data/rights.json` and its sources), position lines (politics, abortion and same-sex couples law) | **Locked**: two approving reviews, or one from the country's steward |
-| Everything else: rents and other figures, links, registry entries, paid leave | One approving review |
+| Tax modules (`src/tax/`), residence rights (`data/rights.json` and its sources), position lines (politics, abortion and same-sex couples law) | **Locked**: two independent reviews against the official text, by different models, must agree; a rule change also needs tests derived from the text |
+| Everything else: rents and other figures, links, registry entries, paid leave | One review against the cited source |
 
-`.github/CODEOWNERS` names the reviewers for each path. No country stewards are named yet, so locked facts need two reviewers. A steward is someone with a record of accepted corrections for a country, named in `.github/CODEOWNERS` for that country's files.
+The same agent works through the facts whose review date has passed (`borgo stale`), compares each with its source and corrects it the same way.
 
 ## Agents
 

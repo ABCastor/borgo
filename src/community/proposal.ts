@@ -317,16 +317,16 @@ export interface RepoView {
   read: (path: string) => string | null;
 }
 
-/** Facts the site depends on most: two reviewers, or a named steward for that country. */
+/** Facts the site depends on most: two independent reviews against the official text must agree. */
 const LOCKED_FILES = [/^src\/tax\//, /^src\/fetch\/rights-law\.ts$/, /^src\/fetch\/politics(-table)?\.ts$/, /^pipeline\/inputs\/politics\.json$/, /^data\/rights\.json$/, /^src\/core\/rights\.ts$/];
 const LOCKED_SOURCES = new Set(["politics", "abortion-law", "couples-law", "eu-free-movement", "ch-afmp", "cta", "ttta"]);
 const LOCKED_METRICS = new Set(["politics_lr", "abortion_law", "same_sex_couples"]);
-/** True for a file whose facts are locked: two reviewers, or a named steward. */
+/** True for a file whose facts are locked: two independent reviews must agree. */
 export function lockedFile(path: string): boolean {
   const regId = /^registry\/([a-z0-9-]+)\.json$/.exec(path)?.[1];
   return LOCKED_FILES.some((re) => re.test(path)) || (!!regId && LOCKED_SOURCES.has(regId));
 }
-/** Files a rule lives in: a change to them is encoded by a person, with tests, so the proposal stays an issue. */
+/** Files a rule lives in: a change to them is encoded with tests by the reviewer, so the proposal stays an issue. */
 const RULE_FILES = [...LOCKED_FILES, /^src\/fetch\/family\.ts$/, /^src\/core\//];
 /** Registry fields a link proposal may replace in a pull request: addresses only. */
 const LINK_PATHS = new Set(["homepage", "licenceUrl", "linkOut", "rights.termsUrl"]);
@@ -339,9 +339,9 @@ export interface Verdict {
   ok: boolean;
   problems: string[];
   warnings: string[];
-  /** "pr": the workflow opens a pull request with the change; "issue": a person encodes it. */
+  /** "pr": the change is ready as a branch for review; "issue": the reviewer encodes it with tests. */
   route: Route;
-  /** Two reviewers, or a named steward for the country. */
+  /** Two independent reviews against the official text must agree. */
   locked: boolean;
   labels: string[];
   /** One line on what happens next. */
@@ -461,11 +461,11 @@ export function checkProposal(p: Proposal, repo: RepoView): Verdict {
         if (!p.level) problems.push("Say what area the figure describes: city, metro, region or country.");
         if (!fetched && !rule && primary.length && !problems.length) {
           if (src && src.redistribute !== "no") route = "pr";
-          else if (!t.source) warnings.push("Name the registry source the figure comes from (Registry source id) so the change can be committed for you; without it a maintainer works out where it belongs.");
+          else if (!t.source) warnings.push("Name the registry source the figure comes from (Registry source id) so the change can be committed for you; without it the reviewer works out where it belongs.");
           else if (src) warnings.push(`${src.name} may not be redistributed, so its figure cannot be committed.`);
         }
       }
-      if (rule && src) warnings.push(`${m.label} is encoded by hand in ${RULE_OF_SOURCE[src.id] ?? "its rule file"}: a person updates it, with tests.`);
+      if (rule && src) warnings.push(`${m.label} is encoded by hand in ${RULE_OF_SOURCE[src.id] ?? "its rule file"}: the reviewer updates it, with tests.`);
     }
   } else {
     const file = t.file.replace(/^\.?\//, "");
@@ -487,7 +487,7 @@ export function checkProposal(p: Proposal, repo: RepoView): Verdict {
         else if (linkOnly(p.proposed.trim(), hosts)) problems.push("The new address is a link-only source; propose an official page.");
         if (regId && text !== null && LINK_PATHS.has(t.path) && !problems.length) route = "pr";
       }
-      if (p.kind === "source" && isNewSource) warnings.push("A new source is vetted by a maintainer (licence, terms, what it measures) before it joins the registry.");
+      if (p.kind === "source" && isNewSource) warnings.push("A new source is vetted by the reviewer (licence, terms, what it measures) before it joins the registry.");
       if (p.kind === "source" && !regId) problems.push("A source proposal is about a registry entry: file registry/<id>.json.");
     }
   }
@@ -498,12 +498,12 @@ export function checkProposal(p: Proposal, repo: RepoView): Verdict {
   const ok = problems.length === 0;
   if (!ok) route = "issue";
   const labels = ["proposal", ok ? "valid" : "needs changes", rule ? "rule" : "data", ...(locked ? ["locked"] : [])];
-  const review = locked ? "two reviewers, or the country's steward" : "one reviewer";
+  const review = locked ? "two independent reviews against the official text" : "one review against the cited source";
   const next = !ok
     ? "Edit the issue to fix what is listed; the check runs again on every edit."
     : route === "pr"
-      ? `A pull request with the change opens from this issue; it needs ${review} before it merges.`
-      : `A maintainer encodes it${rule ? ", with tests," : ""} and opens the pull request; it needs ${review}.`;
+      ? `The change is prepared from this issue; it needs ${review} before it merges.`
+      : `The reviewer encodes it${rule ? ", with tests," : ""} and opens the pull request; it needs ${review}.`;
   return { ok, problems: [...new Set(problems)], warnings: [...new Set(warnings)], route, locked, labels, next };
 }
 

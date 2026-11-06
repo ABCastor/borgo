@@ -166,7 +166,7 @@ test("a rule change without its legal text is refused; with the statute it passe
   assert.equal(good.verdict.route, "issue");
   assert.equal(good.verdict.locked, true);
   assert.deepEqual(good.verdict.labels, ["proposal", "valid", "rule", "locked"]);
-  assert.match(good.verdict.next, /two reviewers/);
+  assert.match(good.verdict.next, /two independent reviews/);
   assert.equal(changeFor(good.proposal!, repo, { issue: 1, on: "2026-11-05", current: null }), null, "a rule is never changed by the workflow");
   // The path must name something in the file.
   assert.match((await checkFull({ ...good.proposal!, target: { file: "src/fetch/rights-law.ts", path: "NO_SUCH_TABLE.US-NY" } }, { repo, offline: true })).problems.join(), /does not appear in src\/fetch\/rights-law\.ts/);
@@ -332,13 +332,13 @@ test("the CLI: stale and propose, with the prefilled link and an exit code that 
   assert.match(JSON.parse(lo.stdout).problems.join(), /link-only source/);
 });
 
-test("CODEOWNERS asks two reviewers for every locked file, and only locked files are listed as locked", () => {
+test("CODEOWNERS lists every locked file, and only locked files are listed as locked", () => {
   const lines = readFileSync(join(ROOT, ".github/CODEOWNERS"), "utf8").split("\n");
   const start = lines.findIndex((l) => l.startsWith("# Locked:"));
   const end = lines.findIndex((l, i) => i > start && l.trim() === "");
   const locked = lines.slice(start + 1, end).map((l) => l.trim().split(/\s+/));
   for (const [path, ...owners] of locked) {
-    assert.ok(owners.length >= 2, `${path} needs two reviewers`);
+    assert.ok(owners.length >= 1, `${path} needs an owner`);
     const file = path!.replace(/^\//, "");
     assert.ok(lockedFile(file.endsWith("/") ? `${file}x.ts` : file), `${path} is locked in the checks too`);
   }

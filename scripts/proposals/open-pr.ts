@@ -30,7 +30,7 @@ const body = [
   `- Change: ${inert(change.summary)}`,
   `- Citation: ${inert(c.publisher)}, ${inert(c.title)}, ${inert(c.url)} (read ${inert(c.accessed)})`,
   ...(c.quote ? [`- Quote: ${inert(c.quote)}`] : []),
-  `- Review: ${verdict.locked ? "locked fact, two reviewers or the country's steward" : "one reviewer"}. Open the citation and compare before approving.`,
+  `- Review: ${verdict.locked ? "locked fact: two independent reviews against the official text" : "one review against the cited source"}. The reviewer opens the citation and compares before merging.`,
   "",
   "Pull requests opened by a workflow do not start other workflows: close and reopen this one to run the checks.",
 ].join("\n");
