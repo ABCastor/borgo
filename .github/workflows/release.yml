@@ -1,0 +1,35 @@
+# A tag v<version> matching package.json publishes that version to npm with provenance (npm trusted
+# publishing, no token) and to the official MCP Registry (GitHub OIDC), after the tests pass.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 26
+          registry-url: https://registry.npmjs.org
+      - name: The tag matches package.json and server.json
+        run: |
+          v="${GITHUB_REF_NAME#v}"
+          test "$(node -p 'require("./package.json").version')" = "$v"
+          test "$(node -p 'require("./server.json").version')" = "$v"
+      - run: npm ci
+      - run: npm test
+      - run: node scripts/check-server-json.ts
+      - run: npm publish --provenance --access public
+      - name: MCP Registry
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
