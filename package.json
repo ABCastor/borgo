@@ -60,12 +60,13 @@
     "build:npm": "node scripts/build-npm.ts",
     "smoke:npm": "node scripts/smoke-npm.js",
     "dev": "node scripts/build.ts --serve",
-    "deploy": "node scripts/build.ts && npx --yes wrangler@4.158.0 deploy",
+    "deploy": "node scripts/build.ts && npx --yes wrangler@4.158.0 deploy && node scripts/indexnow.ts",
     "mcp": "node src/mcp/stdio.ts",
     "cli": "node bin/borgo.ts",
     "probe:site": "node scripts/probe-site.ts 390",
     "probe:input": "node scripts/probe-input.ts",
     "og": "node scripts/og-image.ts",
+    "indexnow": "node scripts/indexnow.ts",
     "prepack": "node scripts/build-npm.ts"
   },
   "devDependencies": {
