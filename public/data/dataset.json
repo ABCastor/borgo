@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-05",
-  "builtAt": "2026-11-05T15:34:08.779Z",
+  "version": "2026-11-07",
+  "builtAt": "2026-11-07T06:41:59.738Z",
   "cities": [
     {
       "id": "turin-it",
@@ -60619,9 +60619,9 @@
         "period": "2026",
         "level": "country",
         "source": "couples-law",
-        "retrieved": "2026-11-05",
+        "retrieved": "2026-11-07",
         "url": "https://www.finlex.fi/fi/laki/ajantasa/1929/19290234",
-        "note": "Marriage: Avioliittolaki as amended, in force 1 March 2017 (stated from the law cited)"
+        "note": "Marriage: Avioliittolaki as amended, in force 1 March 2017 (checked against the source linked on 2026-11-07)"
       },
       {
         "metric": "degree_share",
@@ -102998,12 +102998,12 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-07",
         "level": "region",
         "source": "abortion-law",
-        "retrieved": "2026-11-05",
+        "retrieved": "2026-11-07",
         "url": "https://www.nysenate.gov/legislation/laws/PBH/2599-BB",
-        "note": "On request to 24 weeks, later to protect her life or health (Public Health Law s. 2599-bb (Reproductive Health Act 2019); stated from the law cited)"
+        "note": "On request to 24 weeks, later when the fetus is not viable or to protect her life or health (Public Health Law s. 2599-bb (Reproductive Health Act 2019); checked against the source linked on 2026-11-07)"
       },
       {
         "metric": "transit_commute_share",
@@ -137858,7 +137858,7 @@
     }
   ],
   "manifest": {
-    "builtAt": "2026-11-05T15:34:08.779Z",
+    "builtAt": "2026-11-07T06:41:59.738Z",
     "parts": [
       {
         "id": "open",
@@ -137927,7 +137927,7 @@
         ],
         "retrieved": [
           "2026-11-05",
-          "2026-11-05"
+          "2026-11-07"
         ],
         "provides": []
       },
@@ -138059,7 +138059,7 @@
         ],
         "retrieved": [
           "2026-11-05",
-          "2026-11-05"
+          "2026-11-07"
         ],
         "provides": []
       },
