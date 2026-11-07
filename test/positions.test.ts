@@ -125,6 +125,22 @@ test("abortion law: US states never borrow a national figure; Northern Ireland h
   assert.equal(c!.value, 2);
 });
 
+test("stale-fact round of 7 Nov 2026: each fact checked matches the words of its official text", () => {
+  // https://www.nysenate.gov/legislation/laws/PBH/2599-BB: "the patient is within twenty-four weeks from the
+  // commencement of pregnancy, or there is an absence of fetal viability, or the abortion is necessary to protect the
+  // patient's life or health."
+  const ny = ABORTION["US-NY"]!;
+  assert.equal(ny.level, 4);
+  assert.match(ny.text, /24 weeks/);
+  assert.match(ny.text, /not viable/, "the viability ground applies after 24 weeks too");
+  assert.match(ny.text, /life or health/);
+  // https://www.finlex.fi/fi/laki/ajantasa/1929/19290234 1 §: "Kaksi henkilöä, jotka ovat sopineet menevänsä
+  // avioliittoon keskenään" (20.2.2015/156, "Tämä laki tulee voimaan 1 päivänä maaliskuuta 2017").
+  assert.equal(COUPLES.FI!.standing, 3);
+  assert.match(COUPLES.FI!.law, /in force 1 March 2017/);
+  for (const f of [ny, COUPLES.FI!]) assert.equal(f.checked, "2026-11-07");
+});
+
 test("cli and mcp take stances", async () => {
   const out = execFileSync(process.execPath, [join(ROOT, "bin/where-to-live.ts"), "compare", "Torino", "Dublin", "--weight", "politics=20", "--stance", "politics=4", "--json", "--full"], { cwd: ROOT, encoding: "utf8" });
   const r = JSON.parse(out) as { profile: { stances: Record<string, number> }; ranking: { id: string }[] };

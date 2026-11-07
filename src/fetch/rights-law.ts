@@ -26,6 +26,8 @@ interface LawFact<L> {
 
 /** The date the entries marked `checked` were read in the source linked. */
 const C = "2026-11-05";
+/** The date of the review agent's first stale-fact round (2026-11-07), for the entries it read in their source then. */
+const R = "2026-11-07";
 
 export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
   IT: { level: 4, text: "in the first 90 days when the woman states that continuing would seriously endanger her physical or mental health, given her health, economic, social or family circumstances, how conception occurred, or a fetal anomaly", law: "Legge 22 maggio 1978, n. 194, art. 4", url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1978-05-22;194~art4", checked: C },
@@ -54,7 +56,7 @@ export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
   SG: { level: 4, text: "on request to 24 weeks after the last period, for citizens, work-pass holders, the wives of either, and women resident for at least 4 months", law: "Termination of Pregnancy Act 1974, ss. 3 and 4", url: "https://sso.agc.gov.sg/Act/TPA1974", checked: C },
   JP: { level: 2, text: "before 22 weeks when continuing or giving birth would seriously harm the woman's health for physical or economic reasons, or after rape; with her and her spouse's consent, hers alone where there is no spouse able to consent", law: "母体保護法 (Maternal Health Act), art. 14; Ministry of Health notice on the 22-week limit", url: "https://www.mhlw.go.jp/web/t_doc?dataId=80120000&dataType=0&pageNo=1", checked: C },
   "US-CA": { level: 4, text: "on request until viability; a right in the state constitution since 2022", law: "California Constitution art. I, s. 1.1; Health and Safety Code s. 123466", url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=123466.&lawCode=HSC" },
-  "US-NY": { level: 4, text: "on request to 24 weeks, later to protect her life or health", law: "Public Health Law s. 2599-bb (Reproductive Health Act 2019)", url: "https://www.nysenate.gov/legislation/laws/PBH/2599-BB" },
+  "US-NY": { level: 4, text: "on request to 24 weeks, later when the fetus is not viable or to protect her life or health", law: "Public Health Law s. 2599-bb (Reproductive Health Act 2019)", url: "https://www.nysenate.gov/legislation/laws/PBH/2599-BB", checked: R },
   "US-MA": { level: 4, text: "on request to 24 weeks", law: "General Laws c. 112, s. 12M", url: "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXVI/Chapter112/Section12M" },
   "US-WA": { level: 4, text: "on request until viability, later to protect her life or health", law: "RCW 9.02.110", url: "https://app.leg.wa.gov/rcw/default.aspx?cite=9.02.110", checked: C },
   "US-IL": { level: 4, text: "on request until viability", law: "Reproductive Health Act, 775 ILCS 55", url: "https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=3974" },
@@ -80,7 +82,7 @@ export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: 
   DK: { standing: 3, law: "Marriage: Lov nr. 532 af 12. juni 2012", url: "https://www.retsinformation.dk/eli/lta/2012/532" },
   SE: { standing: 3, law: "Marriage: Äktenskapsbalk (1987:230), 1 kap. 1 §, since 1 May 2009", url: "https://rkrattsbaser.gov.se/sfst?bet=1987:230", checked: C },
   NO: { standing: 3, law: "Marriage: Ekteskapsloven § 1, since 1 January 2009", url: "https://lovdata.no/dokument/NL/lov/1991-07-04-47", checked: C },
-  FI: { standing: 3, law: "Marriage: Avioliittolaki as amended, in force 1 March 2017", url: "https://www.finlex.fi/fi/laki/ajantasa/1929/19290234" },
+  FI: { standing: 3, law: "Marriage: Avioliittolaki as amended, in force 1 March 2017", url: "https://www.finlex.fi/fi/laki/ajantasa/1929/19290234", checked: R },
   CH: { standing: 3, law: "Marriage: Zivilgesetzbuch Art. 94, since 1 July 2022 (Ehe für alle)", url: "https://www.fedlex.admin.ch/eli/cc/24/233_245_233/de#art_94", checked: C },
   AT: { standing: 3, law: "Marriage: ABGB § 44, after the Constitutional Court's ruling G 258/2017, since 1 January 2019", url: "https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10001622&Paragraf=44", checked: C },
   CZ: { standing: 2, law: "Partnership: Civil Code as amended by Act 123/2024 Coll., since 1 January 2025", url: "https://mv.gov.cz/partnerstvi", checked: C, note: "a partnership to which most marriage rules apply, with exceptions; registered partnerships formed before 2025 continue" },

@@ -241,7 +241,7 @@ test("curated facts carry review dates, and list_stale finds the ones due", () =
   const due = staleFacts(facts, { asOf: "2026-11-05" });
   assert.ok(due.total > 0);
   assert.ok(due.facts.every((f) => f.reviewBy <= "2026-11-05"));
-  assert.ok(due.facts.some((f) => f.id === "law:abortion:US-NY" && /never compared with its source/.test(f.why)));
+  assert.ok(due.facts.some((f) => f.id === "law:abortion:US-MA" && /never compared with its source/.test(f.why)));
   assert.ok(staleFacts(facts, { asOf: "2026-11-05", within: 60 }).facts.some((f) => f.id === "tax:IT"));
   assert.equal(staleFacts(facts, { asOf: "2026-11-05", kind: "tax" }).total, 0);
   assert.ok(staleFacts(facts, { asOf: "2026-11-05", country: "us" }).facts.every((f) => f.country === "US"));
@@ -306,8 +306,8 @@ test("the MCP server: list_stale and propose_change, from the tool descriptions 
   const tools = (await client.listTools()).tools.map((t) => t.name);
   assert.ok(tools.includes("list_stale") && tools.includes("propose_change"));
   const stale = (await client.callTool({ name: "list_stale", arguments: { kind: "law", country: "US" } })) as unknown as { structuredContent: { facts: { id: string; propose: { target: { file: string; path: string } } }[] } };
-  const ny = stale.structuredContent.facts.find((f) => f.id === "law:abortion:US-NY")!;
-  assert.deepEqual(ny.propose.target, { file: "src/fetch/rights-law.ts", path: "ABORTION.US-NY" });
+  const ny = stale.structuredContent.facts.find((f) => f.id === "law:abortion:US-MA")!;
+  assert.deepEqual(ny.propose.target, { file: "src/fetch/rights-law.ts", path: "ABORTION.US-MA" });
   const r = (await client.callTool({ name: "propose_change", arguments: { ...ruleInput, ...ny.propose.target } })) as unknown as { content: { text: string }[]; structuredContent: { valid: boolean; issueUrl: string; confirm: string; posted: unknown } };
   assert.equal(r.structuredContent.valid, true);
   assert.equal(r.structuredContent.posted, null);

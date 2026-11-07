@@ -40,7 +40,7 @@ decision to the woman within the limit while naming grounds she states herself (
 | SG | 4 | To 24 weeks after the last period, for citizens, work-pass holders, their wives and 4-month residents | [TPA 1974 ss. 3, 4](https://sso.agc.gov.sg/Act/TPA1974) | Checked |
 | JP | 2 | Before 22 weeks, serious harm to her health for physical or economic reasons, or after rape; her and her spouse's consent | [Maternal Health Act art. 14](https://www.mhlw.go.jp/web/t_doc?dataId=80120000&dataType=0&pageNo=1); ministry notice for 22 weeks | Checked |
 | US-CA | 4 | Until viability; constitutional right since 2022 | leginfo.legislature.ca.gov blocks automated reads | Not verifiable |
-| US-NY | 4 | To 24 weeks, later for life or health | nysenate.gov blocks automated reads | Not verifiable |
+| US-NY | 4 | To 24 weeks, later when the fetus is not viable or for life or health | [PBH § 2599-bb](https://www.nysenate.gov/legislation/laws/PBH/2599-BB), read 7 Nov 2026 (the viability ground was missing) | Checked |
 | US-MA | 4 | To 24 weeks | malegislature.gov did not answer | Not verifiable |
 | US-WA | 4 | Until viability, later for life or health | [RCW 9.02.110](https://app.leg.wa.gov/rcw/default.aspx?cite=9.02.110) | Checked |
 | US-IL | 4 | Until viability | ilga.gov did not answer | Not verifiable |
@@ -70,7 +70,8 @@ Steps: 0 same-sex relations a crime; 1 legal, no union in national law; 2 civil 
 | SG | 1 | Women's Charter s. 12 (same-sex marriage void); Constitution Art. 156; Penal Code s. 377A shown as repealed | Checked |
 | JP | 1 | No official text read; the note keeps only that national law offers no union and that municipal partnership certificates are not one | Not verifiable |
 | AE | — | Federal Decree-Law 31/2021 not readable from an official source | Removed: no figure |
-| IT, FR, NL, DK, FI, PT, GR, EE, US, AU, NZ | 3 (IT 2) | Official pages blocked, need JavaScript or were not found | Not verifiable |
+| FI | 3 | [Avioliittolaki 1 §](https://www.finlex.fi/fi/laki/ajantasa/1929/19290234), as amended by 156/2015, in force 1 Mar 2017; read 7 Nov 2026 | Checked |
+| IT, FR, NL, DK, PT, GR, EE, US, AU, NZ | 3 (IT 2) | Official pages blocked, need JavaScript or were not found | Not verifiable |
 
 ## Politics
 
@@ -128,6 +129,6 @@ ParlGov's published figures and stay, marked, until an expert source covers thos
 
 ## Not verified
 
-Abortion: GR, CA, AU, US-CA, US-NY, US-MA, US-IL. Couples: IT, FR, NL, DK, FI, PT, GR, EE, US, AU, NZ, JP. Politics: ES
+Abortion: GR, CA, AU, US-CA, US-MA, US-IL. Couples: IT, FR, NL, DK, PT, GR, EE, US, AU, NZ, JP. Politics: ES
 and GR have no figure until their official results can be read; the Swiss, Canadian and Australian regional rows were
 compared row by row with their sources (Zug's "other" share is 3.7 against the official 3.75).
