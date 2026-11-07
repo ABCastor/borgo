@@ -24,9 +24,9 @@ interface LawFact<L> {
   reviewBy?: string;
 }
 
-/** The date the entries marked `checked` were read in the source linked. */
+/** The date the entries marked `checked: C` were read in the source linked. */
 const C = "2026-11-05";
-/** The date of the review agent's first stale-fact round (2026-11-07), for the entries it read in their source then. */
+/** The date the entries marked `checked: R` were read in the source linked. */
 const R = "2026-11-07";
 
 export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
