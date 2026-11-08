@@ -33,10 +33,10 @@ decision to the woman within the limit while naming grounds she states herself (
 | HU | 4 | To 12 weeks in serious crisis (physical or mental shock, social hardship), certified by her signature | [Act LXXIX of 1992 §§ 5, 6, 12(6)](https://net.jogtar.hu/jogszabaly?docid=99200079.tv) (consolidated text on Jogtár; the official njt.hu needs JavaScript) | Checked |
 | PT | 4 | To 10 weeks (10+6 after the last period), 3-day wait | [SNS 24](https://www.sns24.gov.pt/tema/saude-da-mulher/interrupcao-voluntaria-da-gravidez/) | Checked |
 | ES | 4 | To 14 weeks | [LO 2/2010 art. 14, BOE](https://www.boe.es/buscar/act.php?id=BOE-A-2010-3514) | Checked |
-| GR | 4 | To 12 weeks | Cited only to a private aggregator; no official text readable | Not verifiable |
+| GR | 4 | To 12 weeks | Cited only to a private aggregator; on 8 Nov 2026 the gazette (et.gr), AADE's law library, the Ministry of Justice and Parliament all refused automated reads | Not verifiable |
 | EE | 4 | Before 12 weeks | [RKSS § 6](https://www.riigiteataja.ee/akt/RKSS) | Checked |
-| CA | 4 | No criminal restriction since Morgentaler (1988) | SCC page needs JavaScript | Not verifiable |
-| AU | 4 | On request in every state, limits 16-24 weeks | NSW legislation site needs JavaScript; other states not read | Not verifiable |
+| CA | 4 | No criminal restriction since Morgentaler (1988) | [R v Morgentaler](https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/288/index.do) (s. 251 has "no force or effect"); [Criminal Code s. 287](https://laws-lois.justice.gc.ca/eng/acts/C-46/section-287.html) reads "[Repealed, 2019, c. 25, s. 111]"; read 8 Nov 2026 | Checked |
+| AU | 4 | By a doctor with no ground to show, to 16 (Tas), 22 (NSW, Qld), 22+6 (SA), 23 (WA) or 24 weeks (Vic; NT on the doctor's judgement); no limit in the ACT | Each statute on its official register, read 8 Nov 2026: [NSW](https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011), [Vic](https://www.legislation.vic.gov.au/in-force/acts/abortion-law-reform-act-2008), [Qld](https://www.legislation.qld.gov.au/view/html/inforce/current/act-2018-023), [SA](https://www.legislation.sa.gov.au/lz?path=/c/a/termination%20of%20pregnancy%20act%202021), [WA](https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrcmp_49344.pdf), [Tas](https://www.legislation.tas.gov.au/view/html/inforce/current/act-2013-072), [NT](https://legislation.nt.gov.au/Legislation/TERMINATION-OF-PREGNANCY-LAW-REFORM-ACT-2017), [ACT](https://www.legislation.act.gov.au/a/1993-13/); the earlier "16 to 24 weeks" range missed the ACT | Checked |
 | SG | 4 | To 24 weeks after the last period, for citizens, work-pass holders, their wives and 4-month residents | [TPA 1974 ss. 3, 4](https://sso.agc.gov.sg/Act/TPA1974) | Checked |
 | JP | 2 | Before 22 weeks, serious harm to her health for physical or economic reasons, or after rape; her and her spouse's consent | [Maternal Health Act art. 14](https://www.mhlw.go.jp/web/t_doc?dataId=80120000&dataType=0&pageNo=1); ministry notice for 22 weeks | Checked |
 | US-CA | 4 | Until viability; constitutional right since 2022 | leginfo.legislature.ca.gov blocks automated reads | Not verifiable |
@@ -129,6 +129,6 @@ ParlGov's published figures and stay, marked, until an expert source covers thos
 
 ## Not verified
 
-Abortion: GR, CA, AU, US-CA, US-MA, US-IL. Couples: IT, FR, NL, DK, PT, GR, EE, US, AU, NZ, JP. Politics: ES
+Abortion: GR, US-CA, US-MA, US-IL. Couples: IT, FR, NL, DK, PT, GR, EE, US, AU, NZ, JP. Politics: ES
 and GR have no figure until their official results can be read; the Swiss, Canadian and Australian regional rows were
 compared row by row with their sources (Zug's "other" share is 3.7 against the official 3.75).

@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-07",
-  "builtAt": "2026-11-07T06:41:59.738Z",
+  "version": "2026-11-08",
+  "builtAt": "2026-11-08T06:49:46.434Z",
   "cities": [
     {
       "id": "turin-it",
@@ -119427,12 +119427,12 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-08",
         "level": "country",
         "source": "abortion-law",
-        "retrieved": "2026-11-05",
-        "url": "https://scc-csc.lexum.com/scc-csc/scc-csc/en/item/288/index.do",
-        "note": "No criminal law restricts it since the Supreme Court struck the provision down; provinces regulate care (R v Morgentaler, [1988] 1 SCR 30; stated from the law cited)"
+        "retrieved": "2026-11-08",
+        "url": "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/288/index.do",
+        "note": "No criminal law restricts it since the Supreme Court struck the provision down; provinces regulate care (R v Morgentaler, [1988] 1 SCR 30; the provision, later Criminal Code s. 287, repealed by S.C. 2019, c. 25, s. 111; checked against the source linked on 2026-11-08)"
       },
       {
         "metric": "english_official",
@@ -121735,12 +121735,12 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-08",
         "level": "country",
         "source": "abortion-law",
-        "retrieved": "2026-11-05",
-        "url": "https://scc-csc.lexum.com/scc-csc/scc-csc/en/item/288/index.do",
-        "note": "No criminal law restricts it since the Supreme Court struck the provision down; provinces regulate care (R v Morgentaler, [1988] 1 SCR 30; stated from the law cited)"
+        "retrieved": "2026-11-08",
+        "url": "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/288/index.do",
+        "note": "No criminal law restricts it since the Supreme Court struck the provision down; provinces regulate care (R v Morgentaler, [1988] 1 SCR 30; the provision, later Criminal Code s. 287, repealed by S.C. 2019, c. 25, s. 111; checked against the source linked on 2026-11-08)"
       },
       {
         "metric": "english_official",
@@ -124043,12 +124043,12 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-08",
         "level": "country",
         "source": "abortion-law",
-        "retrieved": "2026-11-05",
-        "url": "https://scc-csc.lexum.com/scc-csc/scc-csc/en/item/288/index.do",
-        "note": "No criminal law restricts it since the Supreme Court struck the provision down; provinces regulate care (R v Morgentaler, [1988] 1 SCR 30; stated from the law cited)"
+        "retrieved": "2026-11-08",
+        "url": "https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/288/index.do",
+        "note": "No criminal law restricts it since the Supreme Court struck the provision down; provinces regulate care (R v Morgentaler, [1988] 1 SCR 30; the provision, later Criminal Code s. 287, repealed by S.C. 2019, c. 25, s. 111; checked against the source linked on 2026-11-08)"
       },
       {
         "metric": "english_official",
@@ -130822,12 +130822,12 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-08",
         "level": "country",
         "source": "abortion-law",
-        "retrieved": "2026-11-05",
-        "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-2019-011",
-        "note": "On request in every state and territory, to a limit that differs by state (16 to 24 weeks) (State laws, for example Abortion Law Reform Act 2019 (NSW), Abortion Law Reform Act 2008 (Vic); stated from the law cited)"
+        "retrieved": "2026-11-08",
+        "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011",
+        "note": "By a doctor in every state and territory, with no ground to show, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria and the Northern Territory (there when the doctor judges it appropriate in all the circumstances); the ACT sets no time limit (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) s. 5; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-08)"
       },
       {
         "metric": "english_official",
@@ -133130,12 +133130,12 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-08",
         "level": "country",
         "source": "abortion-law",
-        "retrieved": "2026-11-05",
-        "url": "https://legislation.nsw.gov.au/view/html/inforce/current/act-2019-011",
-        "note": "On request in every state and territory, to a limit that differs by state (16 to 24 weeks) (State laws, for example Abortion Law Reform Act 2019 (NSW), Abortion Law Reform Act 2008 (Vic); stated from the law cited)"
+        "retrieved": "2026-11-08",
+        "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011",
+        "note": "By a doctor in every state and territory, with no ground to show, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria and the Northern Territory (there when the doctor judges it appropriate in all the circumstances); the ACT sets no time limit (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) s. 5; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-08)"
       },
       {
         "metric": "english_official",
@@ -137858,7 +137858,7 @@
     }
   ],
   "manifest": {
-    "builtAt": "2026-11-07T06:41:59.738Z",
+    "builtAt": "2026-11-08T06:49:46.434Z",
     "parts": [
       {
         "id": "open",
@@ -137927,7 +137927,7 @@
         ],
         "retrieved": [
           "2026-11-05",
-          "2026-11-07"
+          "2026-11-08"
         ],
         "provides": []
       },
