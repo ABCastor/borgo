@@ -141,30 +141,34 @@ test("stale-fact round of 7 Nov 2026: each fact checked matches the words of its
   for (const f of [ny, COUPLES.FI!]) assert.equal(f.checked, "2026-11-07");
 });
 
-test("stale-fact round of 8 Nov 2026: Canada and Australia match the words of their official texts", () => {
+test("stale-fact round of 8-9 Nov 2026: Canada and Australia match the words of their official texts", () => {
   // https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/288/index.do: "I would strike down s. 251 of the Criminal Code
   // as having no force or effect under s. 52(1) of the Constitution Act, 1982"; "Appeal allowed and acquittals restored".
-  // https://laws-lois.justice.gc.ca/eng/acts/C-46/section-287.html: "287 [Repealed, 2019, c. 25, s. 111]".
+  // https://laws-lois.justice.gc.ca/eng/acts/C-46/section-287.html (current to 2026-10-19): "287 [Repealed, 2019, c. 25, s. 111]".
   const ca = ABORTION.CA!;
   assert.equal(ca.level, 4);
-  assert.match(ca.text, /no criminal law restricts it/);
+  assert.match(ca.text, /no abortion-specific criminal law/);
+  assert.doesNotMatch(ca.text, /no criminal law restricts it|provinces regulate/, "the sources show the abortion provision gone, nothing wider");
   assert.match(ca.law, /S\.C\. 2019, c\. 25, s\. 111/);
   // Each state's limit, in its statute on the official register:
-  // NSW https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011 s. 5: "not more than 22 weeks pregnant";
+  // NSW https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011 s. 5(1): "A person who is a prescribed
+  // health practitioner may perform a termination on a person who is not more than 22 weeks pregnant";
   // Vic https://www.legislation.vic.gov.au/in-force/acts/abortion-law-reform-act-2008 s. 4: "not more than 24 weeks pregnant";
   // Qld https://www.legislation.qld.gov.au/view/pdf/inforce/current/act-2018-023 s. 5: "not more than 22 weeks pregnant";
   // SA https://www.legislation.sa.gov.au/lz?path=/c/a/termination%20of%20pregnancy%20act%202021 s. 5: "not more than
-  // 22 weeks and 6 days pregnant"; WA https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrcmp_49344.pdf
-  // s. 202MC: "not more than 23 weeks pregnant"; Tas https://www.legislation.tas.gov.au/view/html/inforce/current/act-2013-072
+  // 22 weeks and 6 days pregnant"; s. 12(1): "a registered health practitioner must not perform a termination of a
+  // pregnancy for the purposes of sex-selection"; WA https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_49344.pdf
+  // (as at 1 May 2026) s. 202MC: "not more than 23 weeks pregnant"; Tas https://www.legislation.tas.gov.au/view/html/inforce/current/act-2013-072
   // s. 4: "Terminations by medical practitioner at not more than 16 weeks"; NT
   // https://legislation.nt.gov.au/Legislation/TERMINATION-OF-PREGNANCY-LAW-REFORM-ACT-2017 s. 7: "not more than 24 weeks
   // pregnant, if the medical practitioner considers the termination is appropriate in all the circumstances"; ACT
   // https://www.legislation.act.gov.au/a/1993-13/ Health Act 1993 pt 6 regulates who and where, and names no week.
   const au = ABORTION.AU!;
   assert.equal(au.level, 4);
-  for (const limit of [/16 weeks in Tasmania/, /22 in New South Wales and Queensland/, /22 weeks and 6 days in South Australia/, /23 in Western Australia/, /24 in Victoria and the Northern Territory/, /appropriate in all the circumstances/, /the ACT sets no time limit/]) assert.match(au.text, limit);
+  for (const limit of [/16 weeks in Tasmania/, /22 in New South Wales and Queensland/, /22 weeks and 6 days in South Australia/, /23 in Western Australia/, /24 in Victoria/, /none in the ACT/, /but the Northern Territory/, /Northern Territory to 24 weeks when the doctor judges it appropriate in all the circumstances/, /South Australia bars abortion for sex selection/]) assert.match(au.text, limit);
   assert.doesNotMatch(au.text, /16 to 24/, "the old range missed the ACT, which has no limit");
-  for (const f of [ca, au]) assert.equal(f.checked, "2026-11-08");
+  assert.match(au.law, /\(SA\) ss\. 5 and 12/);
+  for (const f of [ca, au]) assert.equal(f.checked, "2026-11-09");
 });
 
 test("cli and mcp take stances", async () => {
