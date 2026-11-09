@@ -174,6 +174,19 @@ test("stale-fact round of 8-9 Nov 2026: Canada and Australia match the words of 
   for (const f of [ca, au]) assert.equal(f.checked, "2026-11-09");
 });
 
+test("stale-fact round of 9 Nov 2026: California matches the words of its constitution and code", () => {
+  // https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=123466.&lawCode=HSC s. 123466(a): "The
+  // state shall not deny or interfere with a woman's or pregnant person's right to choose or obtain an abortion prior to
+  // viability of the fetus, or when the abortion is necessary to protect the life or health of the woman or pregnant person."
+  // https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%201.1.&article=I
+  // art. I s. 1.1: "their fundamental right to choose to have an abortion"; "(Sec. 1.1 added Nov. 8, 2022, by Prop. 1.)".
+  const ca = ABORTION["US-CA"]!;
+  assert.equal(ca.level, 4);
+  assert.match(ca.text, /until viability, later to protect her life or health/);
+  assert.match(ca.text, /state constitution since 2022/);
+  assert.equal(ca.checked, "2026-11-09");
+});
+
 test("cli and mcp take stances", async () => {
   const out = execFileSync(process.execPath, [join(ROOT, "bin/where-to-live.ts"), "compare", "Torino", "Dublin", "--weight", "politics=20", "--stance", "politics=4", "--json", "--full"], { cwd: ROOT, encoding: "utf8" });
   const r = JSON.parse(out) as { profile: { stances: Record<string, number> }; ranking: { id: string }[] };

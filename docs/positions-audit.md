@@ -39,7 +39,7 @@ decision to the woman within the limit while naming grounds she states herself (
 | AU | 4 | With no ground to show everywhere but the NT, to 16 (Tas), 22 (NSW, Qld), 22+6 (SA), 23 (WA) or 24 weeks (Vic), no limit in the ACT; NT to 24 weeks when the doctor judges it appropriate; later with further conditions; SA prohibits sex-selection terminations, subject to the serious-disability exception in s. 12(2) | Each statute on its official register, read 8-9 Nov 2026: [NSW](https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011), [Vic](https://www.legislation.vic.gov.au/in-force/acts/abortion-law-reform-act-2008), [Qld](https://www.legislation.qld.gov.au/view/html/inforce/current/act-2018-023), [SA](https://www.legislation.sa.gov.au/lz?path=/c/a/termination%20of%20pregnancy%20act%202021), [WA](https://www.legislation.wa.gov.au/legislation/statutes.nsf/RedirectURL?OpenAgent&query=mrdoc_49344.pdf) (as at 1 May 2026), [Tas](https://www.legislation.tas.gov.au/view/html/inforce/current/act-2013-072), [NT](https://legislation.nt.gov.au/Legislation/TERMINATION-OF-PREGNANCY-LAW-REFORM-ACT-2017), [ACT](https://www.legislation.act.gov.au/a/1993-13/); the earlier "16 to 24 weeks" range missed the ACT | Checked |
 | SG | 4 | To 24 weeks after the last period, for citizens, work-pass holders, their wives and 4-month residents | [TPA 1974 ss. 3, 4](https://sso.agc.gov.sg/Act/TPA1974) | Checked |
 | JP | 2 | Before 22 weeks, serious harm to her health for physical or economic reasons, or after rape; her and her spouse's consent | [Maternal Health Act art. 14](https://www.mhlw.go.jp/web/t_doc?dataId=80120000&dataType=0&pageNo=1); ministry notice for 22 weeks | Checked |
-| US-CA | 4 | Until viability; constitutional right since 2022 | leginfo.legislature.ca.gov blocks automated reads | Not verifiable |
+| US-CA | 4 | Until viability, later to protect her life or health; constitutional right since 2022 | [Health and Safety Code s. 123466](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=123466.&lawCode=HSC); [Constitution art. I s. 1.1](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%201.1.&article=I) (added by Prop. 1, 8 Nov 2022); read 9 Nov 2026 | Checked |
 | US-NY | 4 | To 24 weeks, later when the fetus is not viable or for life or health | [PBH § 2599-bb](https://www.nysenate.gov/legislation/laws/PBH/2599-BB), read 7 Nov 2026 (the viability ground was missing) | Checked |
 | US-MA | 4 | To 24 weeks | malegislature.gov did not answer | Not verifiable |
 | US-WA | 4 | Until viability, later for life or health | [RCW 9.02.110](https://app.leg.wa.gov/rcw/default.aspx?cite=9.02.110) | Checked |
@@ -129,6 +129,6 @@ ParlGov's published figures and stay, marked, until an expert source covers thos
 
 ## Not verified
 
-Abortion: GR, US-CA, US-MA, US-IL. Couples: IT, FR, NL, DK, PT, GR, EE, US, AU, NZ, JP. Politics: ES
+Abortion: GR, US-MA, US-IL. Couples: IT, FR, NL, DK, PT, GR, EE, US, AU, NZ, JP. Politics: ES
 and GR have no figure until their official results can be read; the Swiss, Canadian and Australian regional rows were
 compared row by row with their sources (Zug's "other" share is 3.7 against the official 3.75).
