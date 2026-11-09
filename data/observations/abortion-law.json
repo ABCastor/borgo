@@ -486,24 +486,24 @@
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-09",
         "level": "region",
         "source": "abortion-law",
         "retrieved": "2026-11-09",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=123466.&lawCode=HSC",
-        "note": "On request until viability; a right in the state constitution since 2022 (California Constitution art. I, s. 1.1; Health and Safety Code s. 123466; stated from the law cited)"
+        "note": "On request until viability, later to protect her life or health; a right in the state constitution since 2022 (California Constitution art. I, s. 1.1; Health and Safety Code s. 123466; checked against the source linked on 2026-11-09)"
       }
     ],
     "los-angeles-us": [
       {
         "metric": "abortion_law",
         "value": 4,
-        "period": "2026",
+        "period": "2026-11-09",
         "level": "region",
         "source": "abortion-law",
         "retrieved": "2026-11-09",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=123466.&lawCode=HSC",
-        "note": "On request until viability; a right in the state constitution since 2022 (California Constitution art. I, s. 1.1; Health and Safety Code s. 123466; stated from the law cited)"
+        "note": "On request until viability, later to protect her life or health; a right in the state constitution since 2022 (California Constitution art. I, s. 1.1; Health and Safety Code s. 123466; checked against the source linked on 2026-11-09)"
       }
     ],
     "new-york-us": [
