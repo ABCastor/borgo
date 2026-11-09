@@ -1,6 +1,6 @@
 {
   "version": "2026-11-09",
-  "builtAt": "2026-11-09T06:46:53.405Z",
+  "builtAt": "2026-11-09T06:51:58.507Z",
   "cities": [
     {
       "id": "turin-it",
@@ -130827,7 +130827,7 @@
         "source": "abortion-law",
         "retrieved": "2026-11-09",
         "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011",
-        "note": "With no ground to show in every state and territory but the Northern Territory, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria, and none in the ACT; in the Northern Territory to 24 weeks when the doctor judges it appropriate in all the circumstances. Later abortions need further conditions, and South Australia bars abortion for sex selection (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) ss. 5 and 12; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-09)"
+        "note": "With no ground to show in every state and territory but the Northern Territory, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria, and none in the ACT; in the Northern Territory to 24 weeks when the doctor judges it appropriate in all the circumstances. Later abortions need further conditions; South Australia prohibits sex-selection terminations, except where there is a substantial risk that the child would have a sex-linked medical condition resulting in serious disability (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) ss. 5 and 12; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-09)"
       },
       {
         "metric": "english_official",
@@ -133135,7 +133135,7 @@
         "source": "abortion-law",
         "retrieved": "2026-11-09",
         "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011",
-        "note": "With no ground to show in every state and territory but the Northern Territory, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria, and none in the ACT; in the Northern Territory to 24 weeks when the doctor judges it appropriate in all the circumstances. Later abortions need further conditions, and South Australia bars abortion for sex selection (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) ss. 5 and 12; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-09)"
+        "note": "With no ground to show in every state and territory but the Northern Territory, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria, and none in the ACT; in the Northern Territory to 24 weeks when the doctor judges it appropriate in all the circumstances. Later abortions need further conditions; South Australia prohibits sex-selection terminations, except where there is a substantial risk that the child would have a sex-linked medical condition resulting in serious disability (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) ss. 5 and 12; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-09)"
       },
       {
         "metric": "english_official",
@@ -137858,7 +137858,7 @@
     }
   ],
   "manifest": {
-    "builtAt": "2026-11-09T06:46:53.405Z",
+    "builtAt": "2026-11-09T06:51:58.507Z",
     "parts": [
       {
         "id": "open",
