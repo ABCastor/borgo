@@ -187,6 +187,24 @@ test("stale-fact round of 9 Nov 2026: California matches the words of its consti
   assert.equal(ca.checked, "2026-11-09");
 });
 
+test("stale-fact round of 10 Nov 2026: Denmark, Estonia and Australia marriage match the words of their official texts", () => {
+  // https://www.retsinformation.dk/eli/lta/2012/532 § 1(2): "§ 1. Loven finder anvendelse på ægteskab mellem to personer af
+  // forskelligt køn og mellem to personer af samme køn."; § 4(1): "Loven træder i kraft den 15. juni 2012." The same § 1 stands
+  // in the consolidated act in force, LBK nr 663 af 01/07/2026 (https://www.retsinformation.dk/api/pdf/256526).
+  // https://www.riigiteataja.ee/akt/PKS § 1(1): "Abielu sõlmitakse kahe füüsilise isiku vahel." (RT I, 06.07.2023, 6 - jõust. 01.01.2024)
+  // https://www.legislation.gov.au/C1961A00012/latest/text s. 5(1), compilation of 28 March 2026: "marriage means the union
+  // of 2 people to the exclusion of all others, voluntarily entered into for life."
+  for (const k of ["DK", "EE", "AU"] as const) {
+    assert.equal(COUPLES[k]!.standing, 3);
+    assert.match(COUPLES[k]!.law, /^Marriage: /);
+    assert.equal(COUPLES[k]!.checked, "2026-11-10");
+  }
+  assert.match(COUPLES.DK!.url!, /retsinformation\.dk\/eli\/lta\/2012\/532$/);
+  assert.match(COUPLES.DK!.law, /in force 15 June 2012; now LBK nr\. 663/);
+  assert.match(COUPLES.EE!.law, /§ 1\(1\), as amended by RT I, 06\.07\.2023, 6, in force 1 January 2024/);
+  assert.match(COUPLES.AU!.law, /Marriage Act 1961, s\. 5\(1\)/);
+});
+
 test("cli and mcp take stances", async () => {
   const out = execFileSync(process.execPath, [join(ROOT, "bin/where-to-live.ts"), "compare", "Torino", "Dublin", "--weight", "politics=20", "--stance", "politics=4", "--json", "--full"], { cwd: ROOT, encoding: "utf8" });
   const r = JSON.parse(out) as { profile: { stances: Record<string, number> }; ranking: { id: string }[] };

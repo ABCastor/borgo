@@ -30,6 +30,8 @@ const C = "2026-11-05";
 const R = "2026-11-07";
 /** The date the entries marked `checked: S` were read in the source linked. */
 const S = "2026-11-09";
+/** The date the entries marked `checked: T` were read in the source linked. */
+const T = "2026-11-10";
 
 export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
   IT: { level: 4, text: "in the first 90 days when the woman states that continuing would seriously endanger her physical or mental health, given her health, economic, social or family circumstances, how conception occurred, or a fetal anomaly", law: "Legge 22 maggio 1978, n. 194, art. 4", url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1978-05-22;194~art4", checked: C },
@@ -81,7 +83,7 @@ export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: 
   DE: { standing: 3, law: "Marriage: Bürgerliches Gesetzbuch § 1353, since 2017", url: "https://www.gesetze-im-internet.de/bgb/__1353.html", checked: C },
   NL: { standing: 3, law: "Marriage: Burgerlijk Wetboek Boek 1, art. 30, since 1 April 2001", url: "https://wetten.overheid.nl/BWBR0002656/" },
   BE: { standing: 3, law: "Marriage: Code civil, art. 143, since 1 June 2003", url: "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=fr&la=F&cn=1804032130&table_name=loi", checked: C },
-  DK: { standing: 3, law: "Marriage: Lov nr. 532 af 12. juni 2012", url: "https://www.retsinformation.dk/eli/lta/2012/532" },
+  DK: { standing: 3, law: "Marriage: Lov nr. 532 af 12. juni 2012, § 1, nr. 2, in force 15 June 2012; now LBK nr. 663 af 1. juli 2026, § 1", url: "https://www.retsinformation.dk/eli/lta/2012/532", checked: T },
   SE: { standing: 3, law: "Marriage: Äktenskapsbalk (1987:230), 1 kap. 1 §, since 1 May 2009", url: "https://rkrattsbaser.gov.se/sfst?bet=1987:230", checked: C },
   NO: { standing: 3, law: "Marriage: Ekteskapsloven § 1, since 1 January 2009", url: "https://lovdata.no/dokument/NL/lov/1991-07-04-47", checked: C },
   FI: { standing: 3, law: "Marriage: Avioliittolaki as amended, in force 1 March 2017", url: "https://www.finlex.fi/fi/laki/ajantasa/1929/19290234", checked: R },
@@ -93,12 +95,12 @@ export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: 
   PT: { standing: 3, law: "Marriage: Lei n.º 9/2010", url: "https://diariodarepublica.pt/dr/detalhe/lei/9-2010-332190" },
   ES: { standing: 3, law: "Marriage: Ley 13/2005", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2005-11364", checked: C },
   GR: { standing: 3, law: "Marriage: Law 5089/2024" },
-  EE: { standing: 3, law: "Marriage: Family Law Act amendment, in force 1 January 2024", url: "https://www.riigiteataja.ee/akt/PKS" },
+  EE: { standing: 3, law: "Marriage: Perekonnaseadus (Family Law Act), § 1(1), as amended by RT I, 06.07.2023, 6, in force 1 January 2024", url: "https://www.riigiteataja.ee/akt/PKS", checked: T },
   US: { standing: 3, law: "Marriage: Obergefell v. Hodges, 576 U.S. 644 (2015); Respect for Marriage Act 2022", url: "https://www.supremecourt.gov/opinions/14pdf/14-556_3204.pdf" },
   CA: { standing: 3, law: "Marriage: Civil Marriage Act, S.C. 2005, c. 33, s. 2", url: "https://laws-lois.justice.gc.ca/eng/acts/c-31.5/page-1.html", checked: C },
   SG: { standing: 1, law: "No recognition: a marriage between persons of the same sex is void (Women's Charter 1961, s. 12); the Constitution, Art. 156, lets Parliament define marriage", url: "https://sso.agc.gov.sg/Act/WC1961", checked: C, note: "Penal Code s. 377A, on sex between men, was repealed in 2022" },
   JP: { standing: 1, law: "No marriage or partnership for same-sex couples in national law", url: "https://elaws.e-gov.go.jp/document?lawid=129AC0000000089", note: "partnership certificates issued by Tokyo and many municipalities are not a marriage or partnership under national law" },
-  AU: { standing: 3, law: "Marriage: Marriage Act 1961, s. 5, as amended by the Marriage Amendment (Definition and Religious Freedoms) Act 2017", url: "https://www.legislation.gov.au/C1961A00012/latest/text" },
+  AU: { standing: 3, law: "Marriage: Marriage Act 1961, s. 5(1), as amended by the Marriage Amendment (Definition and Religious Freedoms) Act 2017", url: "https://www.legislation.gov.au/C1961A00012/latest/text", checked: T },
   NZ: { standing: 3, law: "Marriage: Marriage (Definition of Marriage) Amendment Act 2013", url: "https://www.legislation.govt.nz/act/public/2013/0020/latest/whole.html" },
 };
 

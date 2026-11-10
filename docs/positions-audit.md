@@ -71,7 +71,10 @@ Steps: 0 same-sex relations a crime; 1 legal, no union in national law; 2 civil 
 | JP | 1 | No official text read; the note keeps only that national law offers no union and that municipal partnership certificates are not one | Not verifiable |
 | AE | — | Federal Decree-Law 31/2021 not readable from an official source | Removed: no figure |
 | FI | 3 | [Avioliittolaki 1 §](https://www.finlex.fi/fi/laki/ajantasa/1929/19290234), as amended by 156/2015, in force 1 Mar 2017; read 7 Nov 2026 | Checked |
-| IT, FR, NL, DK, PT, GR, EE, US, AU, NZ | 3 (IT 2) | Official pages blocked, need JavaScript or were not found | Not verifiable |
+| DK | 3 | [Lov nr. 532 af 12. juni 2012](https://www.retsinformation.dk/eli/lta/2012/532), in force 15 Jun 2012; current consolidated act LBK nr. 663 af 1. juli 2026, § 1; read 10 Nov 2026 | Checked |
+| EE | 3 | [Perekonnaseadus § 1(1)](https://www.riigiteataja.ee/akt/PKS) "kahe füüsilise isiku vahel", RT I, 06.07.2023, 6, in force 1 Jan 2024; read 10 Nov 2026 | Checked |
+| AU | 3 | [Marriage Act 1961 s. 5](https://www.legislation.gov.au/C1961A00012/latest/text), compilation of 28 Mar 2026: "the union of 2 people"; read 10 Nov 2026 | Checked |
+| IT, FR, NL, PT, GR, US, NZ | 3 (IT 2) | Official pages blocked, need JavaScript or were not found | Not verifiable |
 
 ## Politics
 

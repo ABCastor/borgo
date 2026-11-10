@@ -261,9 +261,9 @@
         "period": "2026",
         "level": "country",
         "source": "couples-law",
-        "retrieved": "2026-11-05",
+        "retrieved": "2026-11-10",
         "url": "https://www.retsinformation.dk/eli/lta/2012/532",
-        "note": "Marriage: Lov nr. 532 af 12. juni 2012 (stated from the law cited)"
+        "note": "Marriage: Lov nr. 532 af 12. juni 2012, § 1, nr. 2, in force 15 June 2012; now LBK nr. 663 af 1. juli 2026, § 1 (checked against the source linked on 2026-11-10)"
       }
     ],
     "stockholm-se": [
@@ -476,9 +476,9 @@
         "period": "2026",
         "level": "country",
         "source": "couples-law",
-        "retrieved": "2026-11-05",
+        "retrieved": "2026-11-10",
         "url": "https://www.riigiteataja.ee/akt/PKS",
-        "note": "Marriage: Family Law Act amendment, in force 1 January 2024 (stated from the law cited)"
+        "note": "Marriage: Perekonnaseadus (Family Law Act), § 1(1), as amended by RT I, 06.07.2023, 6, in force 1 January 2024 (checked against the source linked on 2026-11-10)"
       }
     ],
     "san-francisco-us": [
@@ -656,9 +656,9 @@
         "period": "2026",
         "level": "country",
         "source": "couples-law",
-        "retrieved": "2026-11-05",
+        "retrieved": "2026-11-10",
         "url": "https://www.legislation.gov.au/C1961A00012/latest/text",
-        "note": "Marriage: Marriage Act 1961, s. 5, as amended by the Marriage Amendment (Definition and Religious Freedoms) Act 2017 (stated from the law cited)"
+        "note": "Marriage: Marriage Act 1961, s. 5(1), as amended by the Marriage Amendment (Definition and Religious Freedoms) Act 2017 (checked against the source linked on 2026-11-10)"
       }
     ],
     "melbourne-au": [
@@ -668,9 +668,9 @@
         "period": "2026",
         "level": "country",
         "source": "couples-law",
-        "retrieved": "2026-11-05",
+        "retrieved": "2026-11-10",
         "url": "https://www.legislation.gov.au/C1961A00012/latest/text",
-        "note": "Marriage: Marriage Act 1961, s. 5, as amended by the Marriage Amendment (Definition and Religious Freedoms) Act 2017 (stated from the law cited)"
+        "note": "Marriage: Marriage Act 1961, s. 5(1), as amended by the Marriage Amendment (Definition and Religious Freedoms) Act 2017 (checked against the source linked on 2026-11-10)"
       }
     ],
     "dubai-ae": []
