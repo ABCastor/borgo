@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-10",
-  "builtAt": "2026-11-10T06:37:48.629Z",
+  "version": "2026-11-14",
+  "builtAt": "2026-11-14T22:25:24.228Z",
   "cities": [
     {
       "id": "turin-it",
@@ -3094,6 +3094,26 @@
       "direction": "neutral",
       "shape": "bins",
       "description": "Days with under 1 mm of rain and at most 50% of the sky clouded on average from 8 am to 8 pm, counted by the average air temperature in the shade over that time, one whole degree at a time from -5 to 40 °C, by month.",
+      "decimals": 1
+    },
+    "nice_kinds_feels": {
+      "id": "nice_kinds_feels",
+      "label": "Days by feels-like temperature and kind of weather",
+      "unit": "days",
+      "category": "climate",
+      "direction": "neutral",
+      "shape": "kinds",
+      "description": "Every day from 8 am to 8 pm, by month, by how warm it feels on average in whole degrees, and by which nice-day tests it fails: rain (1 mm or more), cloud (more than 50% of the sky), humidity (a dew point of 18 °C or more over the day) and wind (20 km/h or more on average), so your own nice-day tests can pick the days from it.",
+      "decimals": 1
+    },
+    "nice_kinds_air": {
+      "id": "nice_kinds_air",
+      "label": "Days by air temperature and kind of weather",
+      "unit": "days",
+      "category": "climate",
+      "direction": "neutral",
+      "shape": "kinds",
+      "description": "The same days by the average air temperature in the shade from 8 am to 8 pm, in whole degrees, and by which nice-day tests they fail.",
       "decimals": 1
     },
     "beach_days": {
@@ -137857,8 +137877,17 @@
       ]
     }
   ],
+  "lazy": [
+    {
+      "file": "data/dataset-days.json",
+      "metrics": [
+        "nice_kinds_feels",
+        "nice_kinds_air"
+      ]
+    }
+  ],
   "manifest": {
-    "builtAt": "2026-11-10T06:37:48.629Z",
+    "builtAt": "2026-11-14T22:25:24.228Z",
     "parts": [
       {
         "id": "open",
@@ -138622,7 +138651,7 @@
         ],
         "part": "open",
         "file": "data/dataset.json",
-        "observations": 1368,
+        "observations": 1482,
         "metrics": [
           "active_days",
           "beach_days",
@@ -138635,6 +138664,8 @@
           "muggy_days",
           "nice_bins_air",
           "nice_bins_feels",
+          "nice_kinds_air",
+          "nice_kinds_feels",
           "snow_days",
           "temp_high",
           "temp_high_p10",
@@ -138651,7 +138682,7 @@
         ],
         "retrieved": [
           "2026-10-28",
-          "2026-10-28"
+          "2026-11-14"
         ],
         "provides": []
       },

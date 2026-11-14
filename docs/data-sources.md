@@ -133,6 +133,8 @@ A source may enter the published data only when its registry entry carries a `ri
 | `data/observations-who/` | `data/dataset-who.json` | WHO terms for data compilations | WHO Ambient Air Quality Database |
 | `data/observations-cmhc/` | `data/dataset-cmhc.json` | CMHC Licence Agreement for the Use of Data | CMHC Rental Market Survey |
 
+The days by kind of weather (`nice_kinds_feels`, `nice_kinds_air`, from Open-Meteo's ERA5, CC BY 4.0) belong to the open part but are published in a file of their own, `data/dataset-days.json`, listed under `lazy` in `dataset.json`: they are large and only a person who changes the nice-day tests needs them, so the app reads that file on demand; the command line, the MCP server and the static pages merge it like the others.
+
 `public/data/licences.json` is the manifest of the build: for every source actually exported, its edition, licence, terms page and date read, attribution, notices, the file holding its figures, how many figures, which metrics and their retrieval dates. The app, the CLI, the MCP server and the static pages merge the files; the static JSON API keeps them apart (`api/city/<id>.json` holds the CC BY part, `api/<part>/city/<id>.json` the others, each with its notice). The Data page, `/sources/` and the Credits section of every city page show each source's required attribution and notices.
 
 Decisions, with the terms read on 2026-11-05:

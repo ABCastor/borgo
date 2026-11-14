@@ -222,7 +222,8 @@ const dataset: Dataset & Published = {
 await writeJson("public/data/dataset.json", dataset);
 if (lazySources.length) {
   const file: PartFile = { part: "open", licence: PARTS.open.licence, notice: PARTS.open.notice, sources: lazySources, observations: lazyObs };
-  await writeJson(`public/${LAZY_FILE}`, file);
+  // One line: long lists of numbers, which an indent would triple.
+  await writeFile(join(ROOT, `public/${LAZY_FILE}`), JSON.stringify(file));
 }
 for (const p of others) {
   const file: PartFile = { part: p, licence: PARTS[p].licence, notice: PARTS[p].notice, sources: partSources(p), observations: Object.fromEntries(Object.entries(byPart[p]).filter(([, l]) => l.length)) };

@@ -62,7 +62,7 @@ export function comfortEditor(s: AppState): string {
     <div class="ce-row">${basisSeg(s)}</div>
     <fieldset class="nice-tests"><legend>And it is</legend>
       ${NICE_TESTS.map((x) => html`<label class="nt"><input type="checkbox" id="nt-${x.id}" data-act-change="nice-test" data-test="${x.id}" ${x.on(c) ? "checked" : ""}><span><b>${x.label}</b> <span class="quiet">${x.what}</span></span></label>`)}
-      <label class="nt nt-day"><span><b>Long</b> <span class="quiet">at least</span></span> <select id="nt-daylight" data-act-change="nice-daylight" aria-label="Hours of daylight a nice day has at least">${[0, 9, 10, 11, 12, 13, 14, 15].map((h) => html`<option value="${h}" ${(c.daylight ?? 0) === h ? "selected" : ""}>${h ? `${h} h of daylight` : "any daylight"}</option>`)}</select></label>
+      <label class="nt nt-day"><b>Long</b><span class="nt-al">at least</span><select id="nt-daylight" data-act-change="nice-daylight" aria-label="Hours of daylight a nice day has at least">${[0, 9, 10, 11, 12, 13, 14, 15].map((h) => html`<option value="${h}" ${(c.daylight ?? 0) === h ? "selected" : ""}>${h ? `${h} h of daylight` : "any daylight"}</option>`)}</select></label>
     </fieldset>
     <p class="hint nt-src">Rain, sky, humidity and wind: hourly ERA5 reanalysis 2021-2025, via ${ERA5_LINK} (CC BY 4.0). Daylight: sunrise to sunset, computed from each city's latitude. Dry and sunny are on to start.</p>
     <p class="hint">Every sheet, strip and rank follows. In a city's dossier you can also drag the band on its chart.</p></div>`.value;

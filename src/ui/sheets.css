@@ -566,7 +566,8 @@ body.is-dragging, body.is-dragging * { cursor: ns-resize !important; user-select
 .nice-tests .nt input { flex: 0 0 auto; margin: 0; transform: translateY(2px); }
 .nice-tests .nt b { font-weight: 600; }
 .nice-tests .nt input { accent-color: var(--human); }
-.nice-tests .nt-day { align-items: center; justify-content: space-between; padding-left: 21px; }
+.nice-tests .nt-day { align-items: center; padding-left: 21px; }
+.nice-tests .nt-al { color: var(--quiet); }
 .app .nice-tests .nt-day select { height: 30px; margin: 0; width: auto; }
 .nt-src { font-size: 12px; }
 .nice-sum { font-size: 12.5px; }

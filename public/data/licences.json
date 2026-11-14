@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-10T06:37:48.629Z",
+  "builtAt": "2026-11-14T22:25:24.228Z",
   "parts": [
     {
       "id": "open",
@@ -763,7 +763,7 @@
       ],
       "part": "open",
       "file": "data/dataset.json",
-      "observations": 1368,
+      "observations": 1482,
       "metrics": [
         "active_days",
         "beach_days",
@@ -776,6 +776,8 @@
         "muggy_days",
         "nice_bins_air",
         "nice_bins_feels",
+        "nice_kinds_air",
+        "nice_kinds_feels",
         "snow_days",
         "temp_high",
         "temp_high_p10",
@@ -792,7 +794,7 @@
       ],
       "retrieved": [
         "2026-10-28",
-        "2026-10-28"
+        "2026-11-14"
       ],
       "provides": []
     },
