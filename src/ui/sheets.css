@@ -380,6 +380,15 @@ body.is-dragging, body.is-dragging * { cursor: ns-resize !important; user-select
 .lines tfoot th, .lines tfoot td { border-bottom: 0; padding-top: 10px; font: 700 18px/1 var(--cond); text-transform: uppercase; letter-spacing: .04em; }
 .lines tr.is-fail th, .lines tr.is-fail .lv { color: var(--fail); }
 .lines tr.is-imputed .pts { color: var(--quiet); }
+.why-lead { margin: 4px 0 8px; max-width: 72ch; font: 600 16px/1.4 var(--ui); color: var(--ink); }
+.why { margin: 0 0 10px; padding: 0 0 0 18px; max-width: 78ch; font-size: 14px; line-height: 1.5; color: var(--ink); }
+.why li + li { margin-top: 4px; }
+.qol-score { display: flex; align-items: baseline; gap: 8px; margin: 6px 0 0; font-size: 13px; color: var(--quiet); }
+.qol-score b { font: 700 34px/1 var(--cond); color: var(--between); }
+.lines.qol tbody th { width: 40%; }
+.lines.qol tr.is-imputed td { color: var(--quiet); }
+.work-own select { height: 30px; padding: 0 6px; border: 1.5px dashed var(--human); border-radius: 6px; background: var(--sheet); color: var(--ink); font: 500 13px/1 var(--ui); }
+.work-own label { font-weight: 600; }
 .app .figs th, .app .figs td { padding: 7px 10px 7px 0; border-bottom: 1px solid var(--rule); }
 .app .figs { width: 100%; border-collapse: collapse; font-size: 13px; }
 .app .figs td.num { text-align: right; white-space: nowrap; }

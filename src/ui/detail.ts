@@ -15,6 +15,10 @@ import type { AppState } from "./state.ts";
 import { term } from "./terms.ts";
 import { partialNote } from "./partial.ts";
 import { communitySection } from "./community.ts";
+import { workWhy } from "../core/work-why.ts";
+import { qualityOfLife, QOL_PARTS } from "../core/qol.ts";
+import { QOL_INDICES, STARTUP_LINKS } from "../core/links.ts";
+import { kindOf } from "../core/work.ts";
 
 // One city's full dossier: how its score is built, its whole climate, its money and every figure.
 // The month chart is where the comfortable range is most at home: drag its band, or step it beside the title.
@@ -43,6 +47,32 @@ function scoreTable(s: AppState, r: CityResult): Raw {
         <td class="num pts">${num(l.points, 1)}</td></tr>`;
     })}</tbody>
     <tfoot><tr><th scope="row">Score</th><td></td><td></td><td class="num pts">${num(r.total, 1)}</td></tr></tfoot></table>`;
+}
+
+/** Work and ambition for the person's kind of work, in sentences: where the city ranks and what each part reads. */
+function workPart(s: AppState, r: CityResult, e: Evaluation): Raw {
+  const k = kindOf(s.profile);
+  const w = workWhy(s.data, s.profile, e, r.city.id);
+  if (!k || !w)
+    return html`<section class="part" id="work"><h2 class="ph">Work and ambition</h2><p class="note">Say what kind of work you do, under What matters, and this part says how ${r.city.name} pays and hires in your field, from official earnings and labour surveys.</p></section>`;
+  return html`<section class="part" id="work"><h2 class="ph">Work and ambition</h2>
+    <p class="why-lead">${w.lead}</p>
+    <ul class="why">${w.parts.map((p) => html`<li>${p}</li>`)}</ul>
+    ${k.id === "founder" ? html`<p class="note">Venture funding by city has no open source; read it at ${STARTUP_LINKS.map((l, i) => html`${i ? (i === STARTUP_LINKS.length - 1 ? " and " : ", ") : ""}<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)}.</p>` : k.pay ? html`<p class="note">Pay in your field is a guide to what the work pays there. Money uses the pay you enter: tick Differs by city under Your money to give each city its own.</p>` : ""}
+  </section>`;
+}
+
+/** Borgo's generic quality-of-life index: the same weights for everyone, shown with them, below the person's own score. */
+function qolPart(s: AppState, r: CityResult): Raw {
+  const q = qualityOfLife(s.data, r.city);
+  return html`<section class="part" id="qol"><h2 class="ph">Quality of life index</h2>
+    <p class="note">A generic view: the same weights for everyone, from Borgo's own sourced figures. Your score above weighs what you say matters, so it can differ.${(s.profile.weights.qol ?? 0) > 0 ? " You count this index in your score too." : " It counts in your score only if you turn it on under People and society."}</p>
+    <p class="qol-score"><b class="num">${q.score === null ? "–" : Math.round(q.score)}</b><span>${q.score === null ? `not enough figures (${Math.round(q.coverage * 100)}% of the weight)` : html`of 100${q.coverage < 1 ? html` <span class="quiet">on ${Math.round(q.coverage * 100)}% of the weight; parts with no figure are left out</span>` : ""}`}</span></p>
+    <table class="lines qol"><thead><tr><th scope="col">Part</th><th scope="col" class="num">Weight</th><th scope="col">${r.city.name}</th><th scope="col" class="num">Score</th></tr></thead><tbody>
+      ${q.parts.map((p) => html`<tr class="${p.score === null ? "is-imputed" : ""}"><th scope="row">${p.label}<small>${QOL_PARTS.find((x) => x.id === p.id)!.says}</small></th><td class="num">${p.weight}%</td><td>${p.score === null ? html`<span class="quiet">${p.text}</span>` : p.text}</td><td class="num">${p.score === null ? "–" : Math.round(p.score * 100)}</td></tr>`)}
+    </tbody></table>
+    <p class="note">Other indices weigh other things, by their own methods: ${QOL_INDICES.map((l, i) => html`${i ? (i === QOL_INDICES.length - 1 ? " and " : ", ") : ""}<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)}. Borgo links to them and copies none of their figures.</p>
+  </section>`;
 }
 
 function climate(s: AppState, r: CityResult, e: Evaluation): Raw {
@@ -143,10 +173,12 @@ export function cityView(s: AppState, e: Evaluation, id: string): Raw {
         ${r.rights.length ? html`<ul class="rights">${r.rights.map((x) => html`<li class="r-${x.status}"><b>${x.person}</b> ${x.status === "yes" ? `can live and work here (${x.via === "citizen" ? "citizen" : x.via})` : x.status === "no" ? html`<span class="${s.profile.dealBreakers.includes("right_to_live") ? "fail" : ""}">${x.person === "You" ? "need" : "needs"} a visa or permit</span>` : html`<span class="quiet">not checked:</span> <button class="link" data-act="household">add a passport</button>`}<small class="r-why">${x.text}</small></li>`)}</ul>` : html`<p class="quiet small"><button class="link" data-act="household">Add your passport</button> to see if you can live and work here.</p>`}</div>
     </header>
     <section class="part" id="score"><h2 class="ph">How the score is built</h2>${ruler(r, s.profile.dealBreakers)}${scoreTable(s, r)}</section>
+    ${workPart(s, r, e)}
     ${climate(s, r, e)}
     <div class="tear" aria-hidden="true"></div>
     <section class="part" id="money"><h2 class="ph">Money</h2><div class="pair"><div>${waterfall(s, r)}</div><div>${advanced(s, r)}</div></div></section>
     ${communitySection(city, s.data.countries[city.country]?.currency ?? "EUR")}
+    ${qolPart(s, r)}
     <section class="part" id="figures"><h2 class="ph">Every figure</h2><p class="note">Each with its source: point at the teal mark. Replace any with your own number.</p>${figures(s, r)}</section>
     <section class="part" id="elsewhere"><h2 class="ph">Elsewhere</h2><p class="note">Sources we may link to but not copy.</p><ul class="out">${linksOut(city).map((l) => html`<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`)}</ul></section>
   </article></div>`;

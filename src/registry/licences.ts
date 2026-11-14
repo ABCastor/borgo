@@ -38,6 +38,7 @@ export const LICENCES: Record<string, Licence> = Object.fromEntries(
     { id: "facts-no-licence", name: "No licence from the publisher: only facts of presence are stored", url: "https://foundersrc.com/communities", part: "open" },
     { id: "counts-no-licence", name: "No data licence from the publisher: only total counts are stored, no record about anyone, as its terms allow public, non-personal information in openly published research", url: "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions", part: "open" },
     { id: "ODbL-1.0", name: "Open Database License 1.0", url: "https://opendatacommons.org/licenses/odbl/1-0/", part: "odbl" },
+    { id: "StatCan-Open", name: "Statistics Canada Open Licence", url: "https://www.statcan.gc.ca/en/terms-conditions/open-licence", part: "open" },
     { id: "Etalab-2.0", name: "Licence Ouverte / Open Licence 2.0 (Etalab)", url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence/", part: "open" },
     { id: "CMHC-data", name: "CMHC Licence Agreement for the Use of Data", url: "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions", part: "cmhc" },
     { id: "WHO-data", name: "WHO terms and conditions for data compilations", url: "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions", part: "who" },

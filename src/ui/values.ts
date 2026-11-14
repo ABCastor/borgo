@@ -10,6 +10,7 @@ import { CURRENCIES, money } from "./format.ts";
 import { shortLabel } from "./glance.ts";
 import { PRESETS, type AppState } from "./state.ts";
 import { term } from "./terms.ts";
+import { kindOf, WORK_KINDS } from "../core/work.ts";
 
 // The sheets beside the cards. Each view carries the inputs that drive it: values on Cities and Compare,
 // pay and spending on Money. Nothing is edited in a bar on top.
@@ -69,6 +70,16 @@ function niceDaysLine(s: AppState): Raw {
   return html`<p class="nice-own">Nice days are yours to define. ${rangeButton(s, "values")} <button class="link nice-sum" data-act="comfort" data-where="values-tests" aria-haspopup="dialog">${niceTestsShort(s.profile.prefs.comfort)}</button></p>`;
 }
 
+/** The kind of work, said once at the head of Work and ambition: it decides which of the group's parts count. */
+function workLine(s: AppState): Raw {
+  const k = kindOf(s.profile);
+  return html`<p class="nice-own work-own"><label for="work-kind">Your kind of work</label><select id="work-kind" data-work aria-describedby="work-note">
+      <option value="" ${k ? "" : "selected"}>Not said</option>
+      ${WORK_KINDS.map((w) => html`<option value="${w.id}" ${k?.id === w.id ? "selected" : ""}>${w.label}</option>`)}
+    </select></p>
+    <p class="vs-lede" id="work-note">${k ? (k.pay ? "Pay and jobs in your field count here, from official earnings and labour surveys." : "Young companies, developers and graduates around you count most.") : "Choose it and pay and jobs in your field count here."}</p>`;
+}
+
 /** The other parts of a group led by one line (money left, nice days), in a few words: what else counts, or what is off. */
 function alsoSummary(p: Profile, parts: Criterion[], lead: string): string {
   const rest = parts.filter((c) => c.id !== lead);
@@ -123,6 +134,7 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
       ${only && only.fails && !o.noMust ? html`<button class="must ${p.dealBreakers.includes(only.id) ? "is-on" : ""}" data-act="toggle-breaker" data-id="${only.id}" aria-pressed="${p.dealBreakers.includes(only.id)}" title="Rule out a city that fails this line">Must pass</button>` : ""}
     </div>
     ${g.id === "climate" ? niceDaysLine(s) : ""}
+    ${g.id === "ambition" ? workLine(s) : ""}
     ${single
       ? ""
       : html`<button class="vg-toggle" data-act="group" data-id="${g.id}" aria-expanded="${open}" aria-controls="vg-${g.id}"><span>${open ? "Close" : g.id === "own" && !parts.length ? "Add a line of your own" : lead ? alsoSummary(p, parts, lead) || partsSummary(p, parts) : partsSummary(p, parts)}</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>`}

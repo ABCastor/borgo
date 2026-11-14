@@ -3,6 +3,7 @@ import { cityById } from "./lookup.ts";
 import { breakEven, homeCityOf, money, type BreakEven, type MoneyResult } from "./money.ts";
 import type { RightResult } from "./rights.ts";
 import type { City, Dataset, PersonalLine, Profile } from "./types.ts";
+import { WORK_BY_ID, WORK_KINDS } from "./work.ts";
 
 export interface LineResult {
   id: string;
@@ -146,6 +147,7 @@ export function profileProblems(p: Profile): string[] {
     else if (typeof w !== "number" || !Number.isFinite(w) || w < 0 || w > 100) out.push(`weights.${id} must be from 0 to 100; got ${JSON.stringify(w)}.`);
   }
   for (const id of p.dealBreakers) if (!ids.has(id)) out.push(`Unknown criterion "${id}" in dealBreakers. Criteria: ${[...ids].join(", ")}.`);
+  if (p.work !== undefined && !WORK_BY_ID[p.work]) out.push(`work is a kind of work: ${WORK_KINDS.map((k) => k.id).join(", ")}; got ${JSON.stringify(p.work)}.`);
   const c = p.prefs.comfort;
   const [lo, hi] = LIMITS.comfort;
   if (!(Number.isFinite(c.min) && Number.isFinite(c.max)) || c.min < lo || c.max > hi) out.push(`comfort is a range in °C between ${lo} and ${hi}; got ${c.min} to ${c.max}.`);

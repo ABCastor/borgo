@@ -1,0 +1,772 @@
+{
+  "source": "ons-ashe",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "london-gb": [
+      {
+        "metric": "pay_software",
+        "value": 90129,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in computer programming and consultancy, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 64759,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in architecture and engineering, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 86078,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in scientific research and development, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 56517,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 56517,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 51629,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in education, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 176747,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in financial services, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 86329,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in legal and accounting, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 78733,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in advertising and market research, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 75879,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in administrative and support services, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 51308,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in retail, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 41498,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in food and drink service, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 68479,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in construction, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 57239,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in land transport, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 55965,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in public administration, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 79450,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries (no figure for managers alone), London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 79450,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries, London, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "pay_software",
+        "value": 71093,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in computer programming and consultancy, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 71774,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in architecture and engineering, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 65907,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in scientific research and development, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 47964,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 47964,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 43986,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in education, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 49186,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in financial services, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 49504,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in legal and accounting, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 63100,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in advertising and market research, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 43896,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in administrative and support services, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 40404,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in retail, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 31805,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in food and drink service, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 53390,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in construction, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 50021,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in land transport, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 46420,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in public administration, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 49213,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries (no figure for managers alone), East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 49213,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries, East of England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "pay_software",
+        "value": 62754,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in computer programming and consultancy, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 58830,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in architecture and engineering, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 58300,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in scientific research and development, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 47104,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 47104,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 42608,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in education, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 55003,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in financial services, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 49620,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in legal and accounting, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 56449,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in advertising and market research, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 42943,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in administrative and support services, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 36412,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in retail, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 33197,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in food and drink service, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 49578,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in construction, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 45255,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in land transport, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42601,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in public administration, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 45439,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries (no figure for managers alone), North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 45439,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries, North West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "pay_software",
+        "value": 62461,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in computer programming and consultancy, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 50435,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in architecture and engineering, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 67553,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in scientific research and development, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 45411,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 45411,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 43115,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in education, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 72357,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in financial services, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55473,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in legal and accounting, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 38948,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in advertising and market research, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 46713,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in administrative and support services, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 34202,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in retail, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 35493,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in food and drink service, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 47107,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in construction, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 47620,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in land transport, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 44658,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in public administration, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 45686,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries (no figure for managers alone), South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 45686,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries, South West England, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "pay_software",
+        "value": 61257,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in computer programming and consultancy, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 56281,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in architecture and engineering, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 64718,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in scientific research and development, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 52703,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 52703,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in human health, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 45531,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in education, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 63953,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in financial services, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 40816,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in advertising and market research, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 46387,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in administrative and support services, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 35890,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in retail, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 31695,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in food and drink service, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 46900,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in construction, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 40872,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in land transport, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 47423,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in public administration, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 48088,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries (no figure for managers alone), Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 48088,
+        "period": "2026",
+        "level": "region",
+        "source": "ons-ashe",
+        "note": "Mean annual gross pay of full-time employees in all industries, Scotland, April 2026 (provisional), ASHE table 5.7a",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

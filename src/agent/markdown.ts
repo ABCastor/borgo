@@ -107,6 +107,7 @@ export function summaryMarkdown(r: CompareSummary, why: Record<string, string[]>
   if (r.notes.length) out.push("### How it was scored\n" + r.notes.map((x) => `- ${x}`).join("\n"));
   if (r.requiredUnknowns.length) out.push("### Must-pass not known yet\n" + r.requiredUnknowns.map((x) => `- ${x.name}: ${x.lines.join(", ")}`).join("\n"));
   out.push("### Why\n" + r.cities.map((c) => `**${c.rank}. ${c.name}.** ${(why[c.id] ?? []).join(" ") || "Close to the others on everything you weighted."}`).join("\n\n"));
+  if (r.cities.some((c) => c.work)) out.push("### Work and ambition, for your kind of work\n" + r.cities.filter((c) => c.work).map((c) => workText(c.work!)).join("\n\n"));
   const lines = r.lines;
   const cellOf = (c: CompareSummary["cities"][number], id: string) => {
     const x = c.lines.find((y) => y.id === id)!;
@@ -160,6 +161,7 @@ export function compareMarkdown(r: CompareReport): string {
 
   out.push("### Why");
   for (const c of r.cities) out.push(`**${c.rank}. ${c.name}.** ${c.why.join(" ") || "Scores close to the others on everything you weighted."}`);
+  if (r.cities.some((c) => c.work)) out.push("### Work and ambition, for your kind of work\n" + r.cities.filter((c) => c.work).map((c) => workText(c.work!)).join("\n\n"));
 
   out.push("### Points by line");
   const lines = r.cities[0]?.lines.filter((l) => l.weight > 0) ?? [];
@@ -249,6 +251,12 @@ export function cityMarkdown(r: CityReport): string {
   const h = (x: number) => `${Math.floor(x)} h ${String(Math.round((x % 1) * 60)).padStart(2, "0")}`;
   out.push(`Daylight (computed from latitude): shortest day ${h(r.daylight.shortest)}, longest ${h(r.daylight.longest)}.`);
   out.push(r.taxModel ? `Take-home pay model: ${r.taxModel.country} ${r.taxModel.year}. ${r.taxModel.scope}` : "No take-home pay model for this country yet.");
+  const q = r.qualityOfLife;
+  if (q) out.push(
+    `### Quality of life index (generic): ${q.score === null ? `no index, ${Math.round(q.coverage * 100)}% of the weight has figures` : `${q.score} of 100`}\n${q.note}\n\n` +
+      table(["Part", "Weight", "Here", "Score"], q.parts.map((p) => [p.label, `${p.weight}%`, p.text, p.score === null ? "–" : String(p.score)]), ["l", "r", "l", "r"]) +
+      `\n\nOther indices, by their own methods (link only): ${q.otherIndices.map((l) => `[${l.label}](${l.url})`).join(", ")}.`,
+  );
   out.push("### Elsewhere (link only: give the person the link, never read it yourself)\n" + r.linksOut.map((l) => `- [${l.label}](${l.url})`).join("\n"));
   const used = new Set(r.figures.map((f) => f.source?.id ?? "").concat(r.detail === "summary" ? r.sources.map((x) => x.id) : []));
   out.push("### Sources\n" + r.sources.filter((x) => used.has(x.id)).map((x) => (r.detail === "summary" ? `- [${x.name}](${x.url}), ${x.licence.split(/[;(]/)[0]!.trim()}` : `- ${x.name} (${x.publisher}), ${x.licence}: ${x.url}`)).join("\n"));
@@ -313,4 +321,9 @@ export function cataloguePartMarkdown(c: Partial<Catalogue> & { kind: CatalogueK
       "\n\nAnswer a condition the person told you about in `household[].regimeConfirmations`, e.g. `{ \"nl-recruited-abroad\": true }`."
     );
   return SECTIONS[c.kind](c, c.dataset?.cities ?? 0);
+}
+
+/** Work and ambition for the person's kind of work: the lead sentence, then one line per part. */
+function workText(w: { lead: string; parts: string[] }): string {
+  return `${w.lead}\n${w.parts.map((p) => `- ${p}`).join("\n")}`;
 }

@@ -1,0 +1,27 @@
+{
+  "id": "monocle-qol",
+  "name": "Monocle Quality of Life Survey",
+  "publisher": "Monocle",
+  "homepage": "https://monocle.com/",
+  "measures": [],
+  "coverage": {
+    "geography": "global",
+    "level": "city",
+    "period": "current"
+  },
+  "licence": "Proprietary",
+  "redistribute": "no",
+  "access": "link-out",
+  "linkOut": "https://monocle.com/",
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 90
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "An editorial ranking of cities for quality of life; proprietary."
+  },
+  "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+}

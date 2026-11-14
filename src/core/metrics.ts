@@ -1,5 +1,6 @@
 import type { Metric } from "./types.ts";
 import { BIN_COUNT, BINS, RULES } from "./weather-days.ts";
+import { WORK_METRICS } from "./work.ts";
 
 const R = RULES;
 const DAYTIME = `from ${R.daytime.from} am to ${R.daytime.to - 12} pm`;
@@ -93,6 +94,7 @@ export const METRICS: Record<string, Metric> = {
   unemployment: { id: "unemployment", label: "Unemployment", unit: "% of the labour force", category: "opportunity", direction: "lower", shape: "scalar", description: "Share of people who want work and are looking for it but have none, in the country (ILO modelled estimate).", decimals: 1, group: "ambition" },
   clean_government: { id: "clean_government", label: "Control of corruption", unit: "-2.5 to 2.5", category: "society", direction: "higher", shape: "scalar", description: "How far public power is kept from private gain, petty and grand corruption alike, as experts, firms and households perceive it in the country: the World Bank's governance estimate, roughly -2.5 (weak) to 2.5 (strong).", decimals: 2 },
   same_sex_couples: { id: "same_sex_couples", label: "Same-sex couples in law", unit: "0 to 3", category: "society", direction: "neutral", shape: "scalar", description: "What the law offers same-sex couples: 0 sexual relations between people of the same sex are a crime, 1 legal but national law offers no union, 2 civil union or registered partnership, 3 marriage.", decimals: 0 },
+  ...WORK_METRICS,
 };
 
 /** How many numbers a value of this shape holds; 0 for a single number. */

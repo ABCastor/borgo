@@ -1,0 +1,119 @@
+{
+  "id": "eurostat-ses",
+  "name": "Structure of Earnings Survey 2022 (earn_ses22_49)",
+  "publisher": "Eurostat",
+  "homepage": "https://ec.europa.eu/eurostat/databrowser/view/earn_ses22_49/default/table",
+  "measures": [
+    {
+      "metric": "pay_software",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_engineering",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_science",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_medicine",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_nursing",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_teaching",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_finance",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_law",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_marketing",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_office",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_sales",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_hospitality",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_trades",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_transport",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_public",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_management",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    },
+    {
+      "metric": "pay_all",
+      "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+    }
+  ],
+  "coverage": {
+    "geography": "EU, Norway, Switzerland, Iceland",
+    "level": "country",
+    "period": "2022 (the survey runs every four years)"
+  },
+  "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+  "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "EU-reuse",
+    "edition": "earn_ses22_49, gross earnings, national currency, firms of 10 employees or more, 2022",
+    "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Eurostat, Structure of Earnings Survey 2022 (earn_ses22_49, © European Union)",
+    "notices": [
+      "Eurostat is not responsible for Borgo's use of its data."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_ses22_49?sex=T&indic_se=ERN&unit=NAC&sizeclas=GE10&geo={country}",
+    "cors": true,
+    "key": null,
+    "fetcher": "pipeline/sources/work.ts"
+  },
+  "refresh": {
+    "cadence": "irregular",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "One survey, one definition for every European country; published by major occupation group and industry section only, so law, science and marketing read the same cell."
+  },
+  "caveats": [
+    "A country figure: a capital usually pays more than the national mean.",
+    "2022 pay; wages have risen since."
+  ]
+}

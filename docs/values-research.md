@@ -81,8 +81,9 @@ it counts. Researched 5 November 2026; terms read on the publishers' pages that 
 | Startup ecosystem rankings | Startup Genome | Proprietary (decision D2) | Link only |
 | Product launches | Product Hunt API | "Must not be used for commercial purposes" (read): the compiled data is CC BY, which allows commercial reuse | Not used |
 | Tech meetups | Meetup | No open data feed found; the terms page did not render for an automated read | Not used |
-| Venture funding | Crunchbase, Dealroom, PitchBook; OECD venture capital statistics | Proprietary; the OECD's are national only | Not built |
-| Companies founded per city | Wikidata | CC0, but its query service rate-limits this build machine, and counts follow Wikipedia's notability | Not built |
+| Venture funding | Crunchbase, Dealroom, PitchBook; OECD venture capital statistics | Proprietary; the OECD's are national only | Link only (`registry/crunchbase.json`, `registry/dealroom.json`) |
+| Companies founded per city | Wikidata, through the QLever endpoint | CC0; counts follow Wikipedia's notability | **Built (15 November 2026):** dial `young_companies`, opt-in, and in the founder recipe. Businesses founded 2010 or later, headquarters within 50 km, at least 2 sitelinks. See [work.md](work.md) |
+| Pay and jobs by kind of work | BLS OEWS and QCEW, ONS ASHE, Eurostat SES and LFS, ILOSTAT, Statistics Canada, ABS | Public domain; OGL; Eurostat reuse; CC BY 4.0; Statistics Canada Open Licence; CC BY 4.0 | **Built (15 November 2026):** dials `field_pay` and `field_jobs`, read only with a kind of work. See [work.md](work.md) |
 
 **What each proxy misses.** A degree share says nothing about drive, and a high one can mean a university town
 (Cambridge, 79% in 2018) as much as a startup hub. GitHub counts follow what people type: many leave the location

@@ -297,4 +297,9 @@ export interface Profile {
    * cost; with yes, your own figure (metric childcare_cost, a month) replaces the OECD reference household's.
    */
   paidChildcare?: boolean;
+  /**
+   * Your kind of work (an id from src/core/work.ts WORK_KINDS: "software", "nursing", "founder"...). It adds what people
+   * in that work earn and how many jobs its field holds to Work and ambition. Unset: the group is the same for everyone.
+   */
+  work?: string;
 }

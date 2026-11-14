@@ -1,0 +1,76 @@
+{
+  "id": "bls-qcew",
+  "name": "Quarterly Census of Employment and Wages (QCEW), counties",
+  "publisher": "U.S. Bureau of Labor Statistics",
+  "homepage": "https://www.bls.gov/cew/",
+  "measures": [
+    {
+      "metric": "jobs_j",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    },
+    {
+      "metric": "jobs_k",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    },
+    {
+      "metric": "jobs_f",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    },
+    {
+      "metric": "jobs_be",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    },
+    {
+      "metric": "jobs_mn",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    },
+    {
+      "metric": "jobs_oq",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    },
+    {
+      "metric": "jobs_gi",
+      "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+    }
+  ],
+  "coverage": {
+    "geography": "United States",
+    "level": "city",
+    "period": "latest full year (2025)"
+  },
+  "licence": "Public domain (US government work)",
+  "licenceUrl": "https://www.usa.gov/government-copyright",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "PD-USGov",
+    "edition": "QCEW annual averages by county and NAICS industry (open data CSV, latest full year)",
+    "termsUrl": "https://www.usa.gov/government-copyright",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: U.S. Bureau of Labor Statistics, Quarterly Census of Employment and Wages"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://data.bls.gov/cew/data/api/{year}/a/area/{county_fips}.csv",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/work.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Counts jobs where they are, from the unemployment-insurance records of every employer: the county is the city for San Francisco and Denver, larger for the others (New York sums its five boroughs)."
+  },
+  "caveats": [
+    "Cells the BLS withholds to protect an employer count as 0, so a field dominated by a few large firms can read low (Boston's industry).",
+    "Jobs where people work, not where they live, unlike the European figures."
+  ]
+}

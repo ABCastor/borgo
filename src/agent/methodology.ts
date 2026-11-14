@@ -1,4 +1,6 @@
 // How the numbers are made, in words an agent can relay. Scales and models are read from the code, so this cannot drift from it.
+import { QOL_MIN_COVERAGE, QOL_PARTS } from "../core/qol.ts";
+import { WORK_KINDS } from "../core/work.ts";
 import type { Dataset } from "../core/types.ts";
 import { catalogue } from "./report.ts";
 import { catalogueMarkdown } from "./markdown.ts";
@@ -16,6 +18,10 @@ export function methodology(data: Dataset): string {
 **Position lines.** Politics, abortion law and same-sex couples in law are not more-is-better: the person says where they stand (\`stances\`), and a place scores by its distance from that point, 1 when it sits there and 0 at the line's tolerance (3 points of the 0-10 politics scale, 2 steps of a law). The figure behind each carries its date and source: for politics, an estimate from the official result of the latest national lower-house election (Swiss cantons, Canadian provinces and Australian states at their own count), its parties placed on ParlGov's 0 (left) to 10 (right) scale and averaged by vote share, with no figure where parties with a position took under 75% of the vote; for the laws, what the law allows, from the statute or an official page that states it. They start at weight 0, and a line without a stance has no score at all: nothing is inferred about the person.
 
 **Must pass (deal-breakers).** A must-pass line passes, fails or is unknown. It fails at or beyond the worst end of its scale (for a position line, at or beyond its tolerance from your stance; for money left, below zero; for the right to live and work, when anyone whose passports or other rights are given has no right). It is unknown when the city has no figure, or when nothing is given for someone (no passport, no other right): an unknown never counts as a pass. Cities passing every must-pass rank first, then those with one unknown, then those ruled out; the verdict says when the leader's must-pass is unknown.
+
+**Your kind of work.** With \`work\` (one of ${WORK_KINDS.map((k) => k.id).join(", ")}), Work and ambition counts what people in that work earn there (official earnings surveys: the metro in the US, the region in the UK, Canada and Australia, the country elsewhere), how many of every 1,000 jobs are in its field, and for founders how many notable young companies have their headquarters nearby (Wikidata). The group keeps its weight and shares it by the kind's recipe; each city then says why in plain sentences. Pay in the field is a guide: take-home pay still uses the salary you give. Without a kind, Work and ambition is the same for everyone.
+
+**Quality of life index.** A generic score per place with fixed weights (${QOL_PARTS.map((p) => `${p.label.toLowerCase()} ${p.weight}`).join(", ")}), for a single full-time employee on the place's average pay. A part with no figure is left out and the rest share its weight; under ${Math.round(QOL_MIN_COVERAGE * 100)}% there is no index. It is a second view beside your own ranking and counts in it only when you weight the \`qol\` line, which then repeats lines you may already weight.
 
 **Which figure is used.** Your own number first (an override), then the most local observation (city, metro, region, country), then the most recent period. A country figure standing in for a city is flagged.
 

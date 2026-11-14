@@ -1,0 +1,316 @@
+{
+  "source": "abs-awe",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "sydney-au": [
+      {
+        "metric": "pay_software",
+        "value": 143494,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in information media and telecommunications times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 101982,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in manufacturing times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 125590,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in professional, scientific and technical services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 109678,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in health care and social assistance times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 109678,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in health care and social assistance times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 114691,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in education and training times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 122372,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in financial and insurance services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 125590,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in professional, scientific and technical services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 125590,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in professional, scientific and technical services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 104530,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in administrative and support services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 84079,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in retail trade times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 80158,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in accommodation and food services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 111545,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in construction times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 115097,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in transport, postal and warehousing times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 116969,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in public administration and safety times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 113220,
+        "period": "2026",
+        "level": "region",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in all industries (no figure for managers alone) times 52, New South Wales, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 113220,
+        "period": "2026",
+        "level": "region",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in all industries times 52, New South Wales, May 2026",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "pay_software",
+        "value": 143494,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in information media and telecommunications times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 101982,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in manufacturing times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 125590,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in professional, scientific and technical services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 109678,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in health care and social assistance times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 109678,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in health care and social assistance times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 114691,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in education and training times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 122372,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in financial and insurance services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 125590,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in professional, scientific and technical services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 125590,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in professional, scientific and technical services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 104530,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in administrative and support services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 84079,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in retail trade times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 80158,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in accommodation and food services times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 111545,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in construction times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 115097,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in transport, postal and warehousing times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 116969,
+        "period": "2026",
+        "level": "country",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in public administration and safety times 52, Australia, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 109314,
+        "period": "2026",
+        "level": "region",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in all industries (no figure for managers alone) times 52, Victoria, May 2026",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 109314,
+        "period": "2026",
+        "level": "region",
+        "source": "abs-awe",
+        "note": "Full-time adult average weekly total earnings in all industries times 52, Victoria, May 2026",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-14T22:25:24.228Z",
+  "builtAt": "2026-11-14T23:55:50.242Z",
   "parts": [
     {
       "id": "open",
@@ -73,6 +73,47 @@
       "provides": []
     },
     {
+      "source": "abs-awe",
+      "name": "Average Weekly Earnings (AWE)",
+      "publisher": "Australian Bureau of Statistics",
+      "url": "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia",
+      "edition": "AWE dataflow ABS,AWE,1.0.0, measure 2 (full-time adult total earnings), original series, latest half-year",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Australian Bureau of Statistics, Average Weekly Earnings, Australia, CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 34,
+      "metrics": [
+        "pay_all",
+        "pay_engineering",
+        "pay_finance",
+        "pay_hospitality",
+        "pay_law",
+        "pay_management",
+        "pay_marketing",
+        "pay_medicine",
+        "pay_nursing",
+        "pay_office",
+        "pay_public",
+        "pay_sales",
+        "pay_science",
+        "pay_software",
+        "pay_teaching",
+        "pay_trades",
+        "pay_transport"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "provides": []
+    },
+    {
       "source": "acs",
       "name": "American Community Survey 1-year estimates",
       "publisher": "US Census Bureau",
@@ -100,6 +141,78 @@
       "retrieved": [
         "2026-11-05",
         "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "bls-oews",
+      "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/oes/",
+      "edition": "OEWS May 2025, metropolitan area estimates, annual mean wage (data type 04)",
+      "licenceId": "PD-USGov",
+      "licence": "Public domain (US government work)",
+      "licenceUrl": "https://www.usa.gov/government-copyright",
+      "termsUrl": "https://www.usa.gov/government-copyright",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 153,
+      "metrics": [
+        "pay_all",
+        "pay_engineering",
+        "pay_finance",
+        "pay_hospitality",
+        "pay_law",
+        "pay_management",
+        "pay_marketing",
+        "pay_medicine",
+        "pay_nursing",
+        "pay_office",
+        "pay_public",
+        "pay_sales",
+        "pay_science",
+        "pay_software",
+        "pay_teaching",
+        "pay_trades",
+        "pay_transport"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "provides": []
+    },
+    {
+      "source": "bls-qcew",
+      "name": "Quarterly Census of Employment and Wages (QCEW), counties",
+      "publisher": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cew/",
+      "edition": "QCEW annual averages by county and NAICS industry (open data CSV, latest full year)",
+      "licenceId": "PD-USGov",
+      "licence": "Public domain (US government work)",
+      "licenceUrl": "https://www.usa.gov/government-copyright",
+      "termsUrl": "https://www.usa.gov/government-copyright",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: U.S. Bureau of Labor Statistics, Quarterly Census of Employment and Wages",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 63,
+      "metrics": [
+        "jobs_be",
+        "jobs_f",
+        "jobs_gi",
+        "jobs_j",
+        "jobs_k",
+        "jobs_mn",
+        "jobs_oq"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
       ],
       "provides": []
     },
@@ -297,6 +410,39 @@
       ]
     },
     {
+      "source": "eurostat-lfs-industry",
+      "name": "Employment by economic activity and NUTS 2 region (lfst_r_lfe2en2)",
+      "publisher": "Eurostat (EU Labour Force Survey)",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfe2en2/default/table",
+      "edition": "lfst_r_lfe2en2, thousand persons, ages 15-74, latest year (2025)",
+      "licenceId": "EU-reuse",
+      "licence": "European Commission reuse policy (Decision 2011/833/EU): reuse with the source acknowledged and changes stated",
+      "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Eurostat, EU Labour Force Survey (lfst_r_lfe2en2, © European Union)",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 245,
+      "metrics": [
+        "jobs_be",
+        "jobs_f",
+        "jobs_gi",
+        "jobs_j",
+        "jobs_k",
+        "jobs_mn",
+        "jobs_oq"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "provides": []
+    },
+    {
       "source": "eurostat-regions",
       "name": "Population by educational attainment and NUTS 2 region (edat_lfse_04)",
       "publisher": "Eurostat (EU Labour Force Survey)",
@@ -320,6 +466,49 @@
       "retrieved": [
         "2026-11-05",
         "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "eurostat-ses",
+      "name": "Structure of Earnings Survey 2022 (earn_ses22_49)",
+      "publisher": "Eurostat",
+      "url": "https://ec.europa.eu/eurostat/databrowser/view/earn_ses22_49/default/table",
+      "edition": "earn_ses22_49, gross earnings, national currency, firms of 10 employees or more, 2022",
+      "licenceId": "EU-reuse",
+      "licence": "European Commission reuse policy (Decision 2011/833/EU): reuse with the source acknowledged and changes stated",
+      "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Eurostat, Structure of Earnings Survey 2022 (earn_ses22_49, © European Union)",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 588,
+      "metrics": [
+        "pay_all",
+        "pay_engineering",
+        "pay_finance",
+        "pay_hospitality",
+        "pay_law",
+        "pay_management",
+        "pay_marketing",
+        "pay_medicine",
+        "pay_nursing",
+        "pay_office",
+        "pay_public",
+        "pay_sales",
+        "pay_science",
+        "pay_software",
+        "pay_teaching",
+        "pay_trades",
+        "pay_transport"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
       ],
       "provides": []
     },
@@ -480,6 +669,54 @@
       "retrieved": [
         "2026-11-05",
         "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ilostat",
+      "name": "ILOSTAT: earnings and employment by economic activity",
+      "publisher": "International Labour Organization",
+      "url": "https://ilostat.ilo.org/",
+      "edition": "ILOSTAT EAR_EMTA_SEX_ECO_NB_A and EMP_TEMP_SEX_ECO_NB_A, read through rplumber.ilo.org, latest year per country",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.ilo.org/rights-and-permissions",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: ILOSTAT, International Labour Organization, CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 101,
+      "metrics": [
+        "jobs_be",
+        "jobs_f",
+        "jobs_gi",
+        "jobs_j",
+        "jobs_k",
+        "jobs_mn",
+        "jobs_oq",
+        "pay_all",
+        "pay_engineering",
+        "pay_finance",
+        "pay_hospitality",
+        "pay_law",
+        "pay_management",
+        "pay_marketing",
+        "pay_medicine",
+        "pay_nursing",
+        "pay_office",
+        "pay_public",
+        "pay_sales",
+        "pay_science",
+        "pay_software",
+        "pay_teaching",
+        "pay_trades",
+        "pay_transport"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
       ],
       "provides": []
     },
@@ -717,6 +954,47 @@
       "retrieved": [
         "2026-10-27",
         "2026-10-27"
+      ],
+      "provides": []
+    },
+    {
+      "source": "ons-ashe",
+      "name": "Annual Survey of Hours and Earnings (ASHE), table 5: region by industry",
+      "publisher": "Office for National Statistics",
+      "url": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/regionbyindustry2digitsicashetable5",
+      "edition": "ASHE table 5.7a, full-time, annual gross pay, mean, latest edition",
+      "licenceId": "OGL-UK-3.0",
+      "licence": "Open Government Licence v3.0",
+      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "termsUrl": "https://www.ons.gov.uk/methodology/geography/licences",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Office for National Statistics, Annual Survey of Hours and Earnings, licensed under the Open Government Licence v3.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 84,
+      "metrics": [
+        "pay_all",
+        "pay_engineering",
+        "pay_finance",
+        "pay_hospitality",
+        "pay_law",
+        "pay_management",
+        "pay_marketing",
+        "pay_medicine",
+        "pay_nursing",
+        "pay_office",
+        "pay_public",
+        "pay_sales",
+        "pay_science",
+        "pay_software",
+        "pay_teaching",
+        "pay_trades",
+        "pay_transport"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
       ],
       "provides": []
     },
@@ -1011,6 +1289,54 @@
       "provides": []
     },
     {
+      "source": "statcan-lfs",
+      "name": "Labour Force Survey: wages and employment by industry (tables 14-10-0064 and 14-10-0023)",
+      "publisher": "Statistics Canada",
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401",
+      "edition": "Tables 14-10-0064-01 and 14-10-0023-01, annual, latest year",
+      "licenceId": "StatCan-Open",
+      "licence": "Statistics Canada Open Licence",
+      "licenceUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+      "termsUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Statistics Canada, Labour Force Survey, tables 14-10-0064-01 and 14-10-0023-01, under the Statistics Canada Open Licence",
+      "notices": [
+        "Adapted from Statistics Canada; this does not constitute an endorsement by Statistics Canada of this product."
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 66,
+      "metrics": [
+        "jobs_be",
+        "jobs_f",
+        "jobs_gi",
+        "jobs_j",
+        "jobs_oq",
+        "pay_all",
+        "pay_engineering",
+        "pay_finance",
+        "pay_hospitality",
+        "pay_law",
+        "pay_management",
+        "pay_marketing",
+        "pay_medicine",
+        "pay_nursing",
+        "pay_office",
+        "pay_public",
+        "pay_sales",
+        "pay_science",
+        "pay_software",
+        "pay_teaching",
+        "pay_trades",
+        "pay_transport"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
+      ],
+      "provides": []
+    },
+    {
       "source": "statfin-rent",
       "name": "Rents of dwellings (Statistics Finland table 15fc)",
       "publisher": "Statistics Finland",
@@ -1107,6 +1433,31 @@
       "retrieved": [
         "2026-11-05",
         "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "wikidata",
+      "name": "Wikidata",
+      "publisher": "Wikimedia Foundation",
+      "url": "https://www.wikidata.org/",
+      "edition": "Wikidata structured data, read on demand",
+      "licenceId": "CC0-1.0",
+      "licence": "CC0 1.0 (public domain dedication)",
+      "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "termsUrl": "https://www.wikidata.org/wiki/Wikidata:Licensing",
+      "termsRead": "2026-11-05",
+      "attribution": "Wikidata (wikidata.org), CC0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 57,
+      "metrics": [
+        "young_companies"
+      ],
+      "retrieved": [
+        "2026-11-14",
+        "2026-11-14"
       ],
       "provides": []
     },

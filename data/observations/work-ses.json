@@ -1,0 +1,5368 @@
+{
+  "source": "eurostat-ses",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "pay_software",
+        "value": 49625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 54759,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 72828,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34397,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 34486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 75129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 33883,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 28938,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 25345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 29363,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 31657,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42012,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 127428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 37302,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "pay_software",
+        "value": 49625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 54759,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 72828,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34397,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 34486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 75129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 33883,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 28938,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 25345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 29363,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 31657,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42012,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 127428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 37302,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "pay_software",
+        "value": 49625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 54759,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 72828,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34397,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 34486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 75129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 33883,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 28938,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 25345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 29363,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 31657,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42012,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 127428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 37302,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "pay_software",
+        "value": 49625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 54759,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 72828,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34397,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 34486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 75129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 33883,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 28938,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 25345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 29363,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 31657,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42012,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 127428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 37302,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "pay_software",
+        "value": 49625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 54759,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 72828,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34397,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 34486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 75129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 33883,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 28938,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 25345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 29363,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 31657,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42012,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 127428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 37302,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "pay_software",
+        "value": 49625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 54759,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 72828,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34397,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 34486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 75129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 55110,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 33883,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 28938,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 25345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 29363,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 31657,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 42012,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 127428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 37302,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Italy, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "pay_software",
+        "value": 90905,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 72030,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 69161,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 67227,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 44000,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 64297,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 87037,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 69161,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 69161,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 41888,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 39082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 33800,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 40536,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 57606,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 90585,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 54120,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "pay_software",
+        "value": 90905,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 72030,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 69161,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 67227,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 44000,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 64297,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 87037,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 69161,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 69161,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 41888,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 39082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 33800,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 40536,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 57606,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 90585,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 54120,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Ireland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "pay_software",
+        "value": 60737,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 69147,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 58969,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 48195,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34533,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 41592,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 90721,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 58969,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 58969,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 29070,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 27741,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 29284,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 31689,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 32374,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 34471,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 74167,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 39833,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "pay_software",
+        "value": 60737,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 69147,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 58969,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 48195,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 34533,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 41592,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 90721,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 58969,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 58969,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 29070,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 27741,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 29284,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 31689,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 32374,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 34471,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 74167,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 39833,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, France, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "pay_software",
+        "value": 78189,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 89915,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 66194,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 45141,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 61290,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 103959,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 44625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 34534,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 28889,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 39229,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 35500,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 49910,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 117464,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 50944,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "pay_software",
+        "value": 78189,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 89915,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 66194,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 45141,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 61290,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 103959,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 44625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 34534,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 28889,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 39229,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 35500,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 49910,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 117464,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 50944,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "pay_software",
+        "value": 78189,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 89915,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 66194,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 45141,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 61290,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 103959,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 81271,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 44625,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 34534,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 28889,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 39229,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 35500,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 49910,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 117464,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 50944,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Germany, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "pay_software",
+        "value": 69120,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 77017,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 73388,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 63909,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 47977,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 63584,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 85789,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 73388,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 73388,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 44231,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 31937,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 31218,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 46821,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 46821,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 61863,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 95404,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 51834,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "pay_software",
+        "value": 69120,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 77017,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 73388,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 63909,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 47977,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 63584,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 85789,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 73388,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 73388,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 44231,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 31937,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 31218,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 46821,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 46821,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 61863,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 95404,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 51834,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Netherlands, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "pay_software",
+        "value": 74098,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 76714,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 87064,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 70350,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 55779,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 63227,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 76987,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 87064,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 87064,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 48973,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries (public administration not counted), Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 37569,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 37204,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 41291,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 42107,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 107936,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries (public administration not counted), Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 53642,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees (public administration not counted), Belgium, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "pay_software",
+        "value": 656528,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 736533,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 676135,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 484463,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 429846,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 500823,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 708661,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 676135,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 676135,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 428408,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 286505,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 302416,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 456483,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 437559,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 509836,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 894496,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 489481,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Denmark, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "pay_software",
+        "value": 618907,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 620846,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 629065,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 531406,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 416492,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 499851,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 830497,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 629065,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 629065,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 396262,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 507835,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 384842,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 426446,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 404083,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 502446,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 848134,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 499237,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Sweden, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "pay_software",
+        "value": 854117,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 1012435,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 884129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 693288,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 586991,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 621730,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 940257,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 884129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 884129,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 556718,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 441486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 406264,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 567394,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 547729,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 702876,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 988195,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 659807,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Norway, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "pay_software",
+        "value": 65145,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 69350,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 63661,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 61739,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 41670,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 53158,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 74880,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 63661,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 63661,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 38676,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 35933,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 33452,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 47789,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 47205,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 53220,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 110028,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 49696,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Finland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "pay_software",
+        "value": 126616,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 121874,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 128296,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 110026,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 84048,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 115341,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 158778,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 128296,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 128296,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 83417,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 65733,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 60393,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 77215,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 76957,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 107674,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 156785,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 97440,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "pay_software",
+        "value": 126616,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 121874,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 128296,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 110026,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 84048,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 115341,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 158778,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 128296,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 128296,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 83417,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 65733,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 60393,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 77215,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 76957,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 107674,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 156785,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 97440,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Switzerland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "pay_software",
+        "value": 71668,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 77197,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 73125,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 66532,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 49227,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 61475,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 85763,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 73125,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 73125,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 48160,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries (public administration not counted), Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 36775,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 30729,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 42577,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 43692,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 112755,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries (public administration not counted), Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 52526,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees (public administration not counted), Austria, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "pay_software",
+        "value": 1058242,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 811239,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 821538,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 850884,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 578895,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 590303,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 975690,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 821538,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 821538,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 448486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 386800,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 319018,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 431089,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 440185,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 551864,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 1165878,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 547841,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Czechia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "pay_software",
+        "value": 139275,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 101578,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 115082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 102520,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 71912,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 78004,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 115927,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 115082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 115082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 64699,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 51428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 45936,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 58016,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 76774,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 92172,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 147321,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 82113,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "pay_software",
+        "value": 139275,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 101578,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 115082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 102520,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 71912,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 78004,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 115927,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 115082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 115082,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 64699,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 51428,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 45936,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 58016,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 76774,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 92172,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 147321,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 82113,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Poland, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "pay_software",
+        "value": 11796345,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 11166578,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 11608128,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 11693515,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 5453289,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 6260283,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 12981380,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 11608128,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 11608128,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 5700724,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 4483194,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 3944900,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 4606034,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 5385383,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 8313579,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 12766053,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 6653732,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Hungary, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "pay_software",
+        "value": 39232,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 35904,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 34261,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 32944,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 19459,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 36569,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 40638,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 34261,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 34261,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 18255,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries (public administration not counted), Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 17412,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 14805,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 15761,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 22023,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 60587,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries (public administration not counted), Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 23112,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees (public administration not counted), Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "pay_software",
+        "value": 39232,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 35904,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 34261,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 32944,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 19459,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 36569,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 40638,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 34261,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 34261,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 18255,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries (public administration not counted), Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 17412,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 14805,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 15761,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 22023,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 60587,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries (public administration not counted), Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 23112,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees (public administration not counted), Portugal, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "pay_software",
+        "value": 45646,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 51594,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 49085,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 26570,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 38677,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 54080,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 27540,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 22059,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 20747,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 24426,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 27469,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 35997,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 63117,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 31616,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "pay_software",
+        "value": 45646,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 51594,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 49085,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 26570,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 38677,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 54080,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 27540,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 22059,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 20747,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 24426,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 27469,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 35997,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 63117,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 31616,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "pay_software",
+        "value": 45646,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 51594,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 49085,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 26570,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 38677,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 54080,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 27540,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 22059,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 20747,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 24426,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 27469,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 35997,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 63117,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 31616,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "pay_software",
+        "value": 45646,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 51594,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 49085,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 26570,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 38677,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 54080,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 40815,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 27540,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 22059,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 20747,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 24426,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 27469,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 35997,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 63117,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 31616,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Spain, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "pay_software",
+        "value": 30635,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 40830,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 53334,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 27486,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 19070,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 22452,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 44824,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 53334,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 53334,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 24048,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries (public administration not counted), Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 22205,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 17452,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 25710,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 20549,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 58807,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries (public administration not counted), Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 24513,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees (public administration not counted), Greece, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "pay_software",
+        "value": 42753,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in information and communication, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 32319,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in industry, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 31138,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 36825,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in health and social work, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 21487,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for technicians and associate professionals in health and social work, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 21812,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in education, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 40573,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in finance and insurance, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 31138,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 31138,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for professionals in professional, scientific and technical activities, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 19495,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for clerical support workers, all industries, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 14381,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in wholesale and retail trade, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 15195,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for service and sales workers in accommodation and food, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 20256,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for craft and related trades workers in construction, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 17680,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for plant and machine operators in transport and storage, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 25836,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for everyone in public administration, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 37726,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for managers, all industries, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 23017,
+        "period": "2022",
+        "level": "country",
+        "source": "eurostat-ses",
+        "note": "Mean for all employees, Estonia, firms of 10 or more, 2022",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

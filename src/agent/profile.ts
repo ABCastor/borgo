@@ -9,6 +9,8 @@ import { hasRightsGiven, permitProblems } from "../core/rights.ts";
 import { REGIMES, regimeById, regimesFor } from "../tax/regimes.ts";
 import { findCity, matchCity } from "./cities.ts";
 import { monthlyFrom } from "../core/money.ts";
+import { chooseWork, groupOf } from "../core/groups.ts";
+import { kindWords, WORK_BY_ID, WORK_KINDS } from "../core/work.ts";
 
 export interface Money {
   amount: number;
@@ -20,6 +22,12 @@ export interface Money {
 export interface QueryArgs {
   cities: string[];
   preset?: string;
+  /**
+   * Your kind of work (WORK_KINDS id: software, engineering, science, medicine, nursing, teaching, finance, law,
+   * marketing, office, sales, hospitality, trades, transport, public, management, founder). Adds pay and jobs in your
+   * field to Work and ambition and shares the group's weight by the kind's recipe, before `weights` apply.
+   */
+  work?: string;
   /** Criterion id -> 0..100, applied on top of the preset. */
   weights?: Record<string, number>;
   /** Score only these criteria (ids): every other line gets weight 0. Each keeps its weight from `weights`, else 100. */
@@ -153,7 +161,16 @@ export function buildProfile(data: Dataset, args: QueryArgs): BuiltProfile {
     if (!known.has(id)) throw new Error(`Unknown criterion "${id}". Criteria: ${[...known].join(", ")}.`);
   for (const metrics of Object.values(args.overrides ?? {}))
     for (const m of Object.keys(metrics)) if (!METRICS[m]) throw new Error(`Unknown metric "${m}" in overrides. Metrics: ${Object.keys(METRICS).join(", ")}.`);
-  let weights = { ...presetWeights(args.preset ?? "balanced"), ...(args.weights ?? {}) };
+  let weights = presetWeights(args.preset ?? "balanced");
+  if (args.work !== undefined) {
+    const k = WORK_BY_ID[args.work.toLowerCase()];
+    if (!k) throw new Error(`Unknown kind of work "${args.work}". Kinds: ${WORK_KINDS.map((x) => x.id).join(", ")}.`);
+    weights = chooseWork({ weights } as Profile, k.id, CRITERIA).weights;
+    const parts = CRITERIA.filter((c) => groupOf(c) === "ambition" && (weights[c.id] ?? 0) > 0);
+    const total = parts.reduce((t, c) => t + weights[c.id]!, 0);
+    assumptions.push(`Work and ambition is weighed for ${kindWords(k)}: ${parts.map((c) => `${c.label.toLowerCase()} ${Math.round((100 * weights[c.id]!) / (total || 1))}%`).join(", ")} of the group.`);
+  }
+  weights = { ...weights, ...(args.weights ?? {}) };
   if (args.only?.length) {
     for (const id of args.only) if (!known.has(id)) throw new Error(`Unknown criterion "${id}" in only. Criteria: ${[...known].join(", ")}.`);
     weights = Object.fromEntries([...known].map((id) => [id, args.only!.includes(id) ? (args.weights?.[id] ?? 100) : 0]));
@@ -282,6 +299,7 @@ export function buildProfile(data: Dataset, args: QueryArgs): BuiltProfile {
     overrides,
     dealBreakers: args.dealBreakers ?? [],
     ...(Object.keys(stances).length ? { stances } : {}),
+    ...(args.work !== undefined ? { work: args.work.toLowerCase() } : {}),
   };
   const problems = profileProblems(profile);
   if (problems.length) throw new Error(problems.join(" "));

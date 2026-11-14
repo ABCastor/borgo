@@ -1,5 +1,8 @@
 // The answers agents and terminals get: plain JSON built from the same engine the site runs.
 // Every figure carries its provenance; every gap is named, with what would fill it.
+import { workWhy } from "../core/work-why.ts";
+import { qualityOfLife, QOL_PARTS, QOL_MIN_COVERAGE } from "../core/qol.ts";
+import { QOL_INDICES } from "../core/links.ts";
 import { CRITERIA, moneyGap, niceTestsText } from "../core/criteria.ts";
 import { ENGINE_VERSION, evaluate, LIMITS, weightOf, type Check, type CityResult, type Evaluation, type LineResult } from "../core/engine.ts";
 import { LINK_ONLY, linksOut, type LinkOut } from "../core/links.ts";
@@ -187,6 +190,8 @@ export interface CityVerdict {
   money: MoneyBreakdown;
   rights: RightResult[];
   missing: string[];
+  /** With a kind of work: Work and ambition for it in plain sentences (src/core/work-why.ts). */
+  work?: { lead: string; parts: string[] };
 }
 
 export interface RankRow {
@@ -462,6 +467,10 @@ export function compare(input: Dataset, args: QueryArgs): CompareReport {
       money,
       rights: r.rights,
       missing: [...money.missing, ...(money.incomplete ? [money.incomplete] : []), ...lines.filter((l) => !l.observed && l.weight > 0).map((l) => l.label)],
+      ...(() => {
+        const w = workWhy(data, profile, ev, r.city.id);
+        return w ? { work: { lead: w.lead, parts: w.parts } } : {};
+      })(),
     };
   });
   const ranking: RankRow[] = cities.map((c) => ({
@@ -554,6 +563,8 @@ export interface CompareSummary {
       gaps: string[];
     } | null;
     rights: (Omit<RightResult, "allowed" | "sources"> & { sources?: RightResult["sources"] })[];
+    /** With a kind of work: Work and ambition for it in plain sentences. */
+    work?: { lead: string; parts: string[] };
   }[];
   /** The tax model's first official source, by country; detail "full" lists every one. */
   taxSources: Record<string, { label: string; url: string }[]>;
@@ -631,6 +642,7 @@ export function summarize(r: CompareReport, opts: { limit?: number } = {}): Comp
             }
           : null,
       rights: c.rights.map(({ allowed: _, sources, ...x }) => (sources.length ? { ...x, sources } : x)),
+      ...(c.work ? { work: c.work } : {}),
     })),
     taxSources,
     sources: [...used.values()],
@@ -656,6 +668,30 @@ export interface CityReport {
   linksOut: LinkOut[];
   /** The sources behind these figures, once each. */
   sources: { id: string; name: string; publisher: string; licence: string; url: string }[];
+  /** Borgo's generic quality-of-life index: the same fixed weights for everyone, never a person's own ranking. Left out when only some metrics are asked for. */
+  qualityOfLife?: QualityOfLifeReport;
+}
+
+export interface QualityOfLifeReport {
+  /** 0 to 100, or null with under 60% of the weight covered. */
+  score: number | null;
+  coverage: number;
+  /** Each part with its fixed weight (points of 100), its 0 to 100 score and what it reads here. */
+  parts: { id: string; label: string; weight: number; score: number | null; text: string; says: string }[];
+  note: string;
+  /** Others' indices, by their own methods: linked, never copied. */
+  otherIndices: LinkOut[];
+}
+
+export function qualityOfLifeReport(data: Dataset, city: City): QualityOfLifeReport {
+  const q = qualityOfLife(data, city);
+  return {
+    score: q.score === null ? null : round(q.score, 0),
+    coverage: round(q.coverage, 2),
+    parts: q.parts.map((p) => ({ ...p, score: p.score === null ? null : round(100 * p.score, 0), says: QOL_PARTS.find((x) => x.id === p.id)!.says })),
+    note: `A generic view with the same weights for everyone, from Borgo's own sourced figures; a part with no figure is left out and the others share its weight, and under ${Math.round(QOL_MIN_COVERAGE * 100)}% of the weight there is no index. A person's own ranking weighs what they say matters and comes first; this index counts in it only when they give the qol line a weight.`,
+    otherIndices: QOL_INDICES,
+  };
 }
 
 /** A series longer than this is counted, not listed, in a summary. */
@@ -703,6 +739,7 @@ export function cityReport(data: Dataset, query: string, opts: { passports?: str
     rights: householdRights(data, household, city.country),
     linksOut: linksOut(city),
     sources,
+    ...(opts.metrics?.length ? {} : { qualityOfLife: qualityOfLifeReport(data, city) }),
   };
 }
 

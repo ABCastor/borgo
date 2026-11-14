@@ -1,0 +1,591 @@
+{
+  "source": "bls-qcew",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "san-francisco-us": [
+      {
+        "metric": "jobs_j",
+        "value": 171,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 55,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 32,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 24,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 169,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 279,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 189,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in San Francisco County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "jobs_j",
+        "value": 45,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 26,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 33,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 74,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 137,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 333,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 274,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Los Angeles County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "jobs_j",
+        "value": 61,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 78,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 29,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 14,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 144,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 342,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 205,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in the five boroughs, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "jobs_j",
+        "value": 60,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 94,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 21,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 3,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 172,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 343,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 187,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Suffolk County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "jobs_j",
+        "value": 122,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 27,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 48,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 65,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 178,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 237,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 240,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in King County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "jobs_j",
+        "value": 96,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 42,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 57,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 69,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 171,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 225,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 224,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Travis County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "jobs_j",
+        "value": 25,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 43,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 47,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 38,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 140,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 273,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 351,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Miami-Dade County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "jobs_j",
+        "value": 32,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 62,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 29,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 72,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 161,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 279,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 275,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Cook County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "jobs_j",
+        "value": 72,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 51 + 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 53,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 52",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 41,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 23",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 48,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 21 + 22 + 31-33",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 190,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 54 + 55 + 56 less 5415",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 239,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 92 + 61 + 62",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 270,
+        "period": "2025",
+        "level": "city",
+        "source": "bls-qcew",
+        "note": "Jobs located in Denver County, NAICS 42 + 44-45 + 48-49 + 72",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

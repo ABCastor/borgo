@@ -1,0 +1,115 @@
+{
+  "id": "ons-ashe",
+  "name": "Annual Survey of Hours and Earnings (ASHE), table 5: region by industry",
+  "publisher": "Office for National Statistics",
+  "homepage": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/regionbyindustry2digitsicashetable5",
+  "measures": [
+    {
+      "metric": "pay_software",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_engineering",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_science",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_medicine",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_nursing",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_teaching",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_finance",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_law",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_marketing",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_office",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_sales",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_hospitality",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_trades",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_transport",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_public",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_management",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    },
+    {
+      "metric": "pay_all",
+      "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+    }
+  ],
+  "coverage": {
+    "geography": "United Kingdom",
+    "level": "region",
+    "period": "April of the latest year (provisional until revised)"
+  },
+  "licence": "Open Government Licence v3.0",
+  "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "OGL-UK-3.0",
+    "edition": "ASHE table 5.7a, full-time, annual gross pay, mean, latest edition",
+    "termsUrl": "https://www.ons.gov.uk/methodology/geography/licences",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Office for National Statistics, Annual Survey of Hours and Earnings, licensed under the Open Government Licence v3.0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/regionbyindustry2digitsicashetable5/{edition}/ashetable5{edition}.zip",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/work.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "One survey of employers' payroll records; the region is the city's for London, wider elsewhere (East of England for Cambridge)."
+  },
+  "caveats": [
+    "Means are pulled up by top earners, most in London's finance."
+  ]
+}

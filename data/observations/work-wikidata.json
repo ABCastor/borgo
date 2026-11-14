@@ -1,0 +1,633 @@
+{
+  "source": "wikidata",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "young_companies",
+        "value": 12,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "young_companies",
+        "value": 49,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "young_companies",
+        "value": 31,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "young_companies",
+        "value": 2,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "young_companies",
+        "value": 12,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "young_companies",
+        "value": 3,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "london-gb": [
+      {
+        "metric": "young_companies",
+        "value": 182,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "cambridge-gb": [
+      {
+        "metric": "young_companies",
+        "value": 9,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "manchester-gb": [
+      {
+        "metric": "young_companies",
+        "value": 12,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "bristol-gb": [
+      {
+        "metric": "young_companies",
+        "value": 6,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "edinburgh-gb": [
+      {
+        "metric": "young_companies",
+        "value": 11,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "young_companies",
+        "value": 16,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "young_companies",
+        "value": 0,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "young_companies",
+        "value": 110,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "young_companies",
+        "value": 2,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "young_companies",
+        "value": 85,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "young_companies",
+        "value": 51,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "young_companies",
+        "value": 24,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "young_companies",
+        "value": 68,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "young_companies",
+        "value": 37,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "young_companies",
+        "value": 43,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "young_companies",
+        "value": 34,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "young_companies",
+        "value": 65,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "young_companies",
+        "value": 50,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "young_companies",
+        "value": 62,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "young_companies",
+        "value": 33,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "young_companies",
+        "value": 9,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "young_companies",
+        "value": 26,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "young_companies",
+        "value": 86,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "young_companies",
+        "value": 26,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "young_companies",
+        "value": 4,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "young_companies",
+        "value": 14,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "young_companies",
+        "value": 9,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "young_companies",
+        "value": 1,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "young_companies",
+        "value": 55,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "young_companies",
+        "value": 61,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "young_companies",
+        "value": 14,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "young_companies",
+        "value": 3,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "young_companies",
+        "value": 17,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "young_companies",
+        "value": 23,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "san-francisco-us": [
+      {
+        "metric": "young_companies",
+        "value": 216,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "young_companies",
+        "value": 181,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "young_companies",
+        "value": 180,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "young_companies",
+        "value": 43,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "young_companies",
+        "value": 40,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "young_companies",
+        "value": 23,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "young_companies",
+        "value": 22,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "young_companies",
+        "value": 34,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "young_companies",
+        "value": 22,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "toronto-ca": [
+      {
+        "metric": "young_companies",
+        "value": 39,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "young_companies",
+        "value": 18,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "young_companies",
+        "value": 29,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "singapore-sg": [
+      {
+        "metric": "young_companies",
+        "value": 30,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "tokyo-jp": [
+      {
+        "metric": "young_companies",
+        "value": 296,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "sydney-au": [
+      {
+        "metric": "young_companies",
+        "value": 17,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "melbourne-au": [
+      {
+        "metric": "young_companies",
+        "value": 17,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "dubai-ae": [
+      {
+        "metric": "young_companies",
+        "value": 17,
+        "period": "2026",
+        "level": "metro",
+        "source": "wikidata",
+        "note": "Businesses founded 2010 or later, headquarters within 50 km, with at least two Wikimedia sitelinks",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

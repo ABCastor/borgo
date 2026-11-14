@@ -2,7 +2,9 @@
 // still scores every part on its own weight; a group's weight is the sum of its parts' weights, and moving the group's
 // dial shares the new weight over its parts in the proportions they had (tested in test/groups.test.ts).
 import type { Criterion } from "./criteria.ts";
+import { weightOf } from "./engine.ts";
 import type { Profile } from "./types.ts";
+import { AMBITION_MEMBERS, applyWork } from "./work.ts";
 
 export type GroupId =
   | "money" | "right_to_live" | "climate" | "health" | "safety" | "children" | "people"
@@ -42,8 +44,8 @@ export const GROUPS: Group[] = [
     shows: hasChildren,
     pending: "Schools: no open source compares them across countries yet.",
   },
-  { id: "people", label: "People and society", question: "How content people are, how open the place is, how clean its government.", members: ["happiness", "english", "international", "clean_government"] },
-  { id: "ambition", label: "Work and ambition", question: "Jobs, research and ambitious people around you.", members: ["builders", "degrees", "developers", "jobs", "internet", "coworking", "founders_run"] },
+  { id: "people", label: "People and society", question: "How content people are, how open the place is, how clean its government.", members: ["happiness", "english", "international", "clean_government", "qol"] },
+  { id: "ambition", label: "Work and ambition", question: "Pay and jobs in your kind of work, research, and ambitious people around you.", members: AMBITION_MEMBERS },
   { id: "getting_around", label: "Getting around", question: "Getting about the city, and away from it.", members: ["walkable", "cycling", "active_commute", "way_out", "public_transport", "rail", "short_commute", "airport", "flight_home", "time_zone"] },
   { id: "nature", label: "Nature and leisure", question: "The sea, the mountains, green space and things to do.", members: ["sea", "mountains", "green", "climbing", "swimming"] },
   { id: "stand", label: "Where you stand", question: "How the place votes and what its law allows, scored by how close it is to you.", members: ["politics", "abortion", "couples_law"] },
@@ -110,4 +112,13 @@ export function splitGroupWeight(parts: { id: string; weight: number; defaultWei
     left--;
   }
   return Object.fromEntries(parts.map((p, i) => [p.id, out[i]! / 100]));
+}
+
+/**
+ * The profile with this kind of work, or none: Work and ambition keeps its weight (or takes `start` when it had none),
+ * shared over its parts by the kind's recipe (src/core/work.ts). Every face (app, terminal, agents) chooses through here.
+ */
+export function chooseWork(p: Profile, kind: string | undefined, criteria: Criterion[], start = 0): Profile {
+  const parts = criteria.filter((c) => groupOf(c) === "ambition");
+  return applyWork(p, kind, parts, (q, id) => weightOf(q, parts.find((c) => c.id === id)!), start);
 }

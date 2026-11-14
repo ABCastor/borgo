@@ -53,6 +53,15 @@ export const SOURCE_SHORT: Record<string, string> = {
   "osm-walk-cycle": "OSM",
   "eurostat-regions": "Eurostat",
   numbeo: "Numbeo",
+  "bls-oews": "BLS",
+  "bls-qcew": "BLS",
+  "eurostat-ses": "Eurostat",
+  "eurostat-lfs-industry": "Eurostat",
+  ilostat: "ILO",
+  "statcan-lfs": "StatCan",
+  "abs-awe": "ABS",
+  "ons-ashe": "ONS",
+  wikidata: "Wikidata",
 };
 
 /** A tiny teal marker naming where a figure came from; terracotta "yours" when the person set it. */

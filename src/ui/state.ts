@@ -1,3 +1,4 @@
+import { WORK_BY_ID } from "../core/work.ts";
 import { CRITERIA, DEFAULT_COMFORT, upgradeProfile } from "../core/criteria.ts";
 import { monthlyFrom } from "../core/money.ts";
 import { cleanPermits } from "../core/rights.ts";
@@ -193,6 +194,8 @@ export function sharedProfile(p: Profile, include: SharePart[]): Partial<Profile
   if (inc.has("numbers")) out.overrides = structuredClone(p.overrides);
   if (inc.has("lines")) out.personal = structuredClone(p.personal);
   if (inc.has("stances") && p.stances) out.stances = { ...p.stances };
+  // The kind of work shapes the weights the link carries, so it travels with them.
+  if (p.work) out.work = p.work;
   return out;
 }
 
@@ -277,6 +280,7 @@ export function loadProfile(data: Dataset): Profile {
     const { permits: _drop, ...rest } = h;
     return { ...rest, citizenships: Array.isArray(h.citizenships) ? h.citizenships.filter((c) => typeof c === "string" && /^[A-Z]{2}$/.test(c)) : [], ...(permits.length ? { permits } : {}) };
   });
+  if (p.work !== undefined && !WORK_BY_ID[p.work]) delete p.work;
   notFoundOnLoad = p.cities.filter((id) => !data.cities.some((c) => c.id === id));
   linkPlaces = places && typeof places === "object" ? Object.fromEntries(Object.entries(places).filter(([, v]) => typeof v === "string")) : {};
   p.cities = p.cities.filter((id) => data.cities.some((c) => c.id === id));

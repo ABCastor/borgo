@@ -1,6 +1,6 @@
 import { politicsWord } from "../core/criteria.ts";
 import { criteriaFor, evaluate, profileProblems, weightOf, type Evaluation } from "../core/engine.ts";
-import { grouped, splitGroupWeight } from "../core/groups.ts";
+import { chooseWork, grouped, splitGroupWeight } from "../core/groups.ts";
 import { resolve } from "../core/lookup.ts";
 import { convert } from "../core/money.ts";
 import type { Dataset, Profile } from "../core/types.ts";
@@ -863,6 +863,18 @@ function changed(e: Event): void {
       if (!state.profile.cities.includes(city.id)) setProfile((p) => p.cities.push(city.id));
     } else if (text.length >= 2 && !state.live) void fetchLive(picked ?? text, text.split(",")[0]);
     document.getElementById("add-city")?.focus();
+    return;
+  }
+  if (t.dataset.work !== undefined) {
+    // A kind of work: Work and ambition keeps its weight, or starts at a third priority's, shared by the kind's recipe.
+    const kind = t.value || undefined;
+    setProfile((p) => {
+      const next = chooseWork(p, kind, criteriaFor(p), THIRD_WEIGHT);
+      p.weights = next.weights;
+      if (next.work) p.work = next.work;
+      else delete p.work;
+    });
+    document.getElementById("work-kind")?.focus();
     return;
   }
   if (t.dataset.third !== undefined) {

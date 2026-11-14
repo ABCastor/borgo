@@ -1,4 +1,5 @@
 // The terminal face of the same engine. Markdown by default, --json for scripts and agents.
+import { WORK_KINDS } from "../core/work.ts";
 import { spawnSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -68,6 +69,9 @@ Usage
 
 Compare options
   --preset balanced|founder|family|saver   --weight clean_air=20 (repeatable, 0-100)
+  --work software (your kind of work: pay and jobs in your field join Work and ambition, weighed for it;
+      ${WORK_KINDS.map((k) => k.id).join(", ")})
+  --weight qol=10 (Borgo's generic quality-of-life index as a line of your score; off by default)
   --only nice_days (score only these lines, comma-separated; every other line counts 0)
   --full (every line, tax line and source)   --limit 10 (cities described in the compact answer)
   --person IT,US (passports, one per person moving; leave out what you do not know)
@@ -110,6 +114,7 @@ const OPTIONS = {
   json: { type: "boolean" },
   help: { type: "boolean", short: "h" },
   preset: { type: "string" },
+  work: { type: "string" },
   weight: { type: "string", multiple: true },
   person: { type: "string", multiple: true },
   right: { type: "string", multiple: true },
@@ -257,6 +262,7 @@ export function compareArgs(positionals: string[], f: Flags): QueryArgs {
   const base: Partial<QueryArgs> = f.args ? JSON.parse(readFileSync(f.args, "utf8")) : {};
   const a: QueryArgs = { ...base, cities: positionals.length ? positionals : (base.cities ?? []) };
   if (f.preset) a.preset = f.preset;
+  if (f.work) a.work = f.work;
   if (f.only) a.only = f.only.split(",").map((x) => x.trim()).filter(Boolean);
   if (f.weight) a.weights = { ...a.weights, ...Object.fromEntries(f.weight.map((w) => pair(w, "=", "--weight")).map(([k, v]) => [k, number(v, k)])) };
   if (f.person) a.household = f.person.map((p) => {

@@ -1,0 +1,606 @@
+{
+  "source": "statcan-lfs",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "toronto-ca": [
+      {
+        "metric": "pay_software",
+        "value": 86508,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in information, culture and recreation times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 74001,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in manufacturing times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 107199,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 73551,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in health care and social assistance times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 73551,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in health care and social assistance times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 89257,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in educational services times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 94513,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in finance, insurance and real estate times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 107199,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 107199,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 63380,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in business, building and other support services times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 66407,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in wholesale and retail trade times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 46027,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in accommodation and food services times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 82051,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in construction times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 71895,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in transportation and warehousing times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 98469,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in public administration times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 81652,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in all industries (no figure for managers alone) times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 81652,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in all industries times 52, Ontario",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_j",
+        "value": 43,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in information and communication, Ontario, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 70,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in construction, Ontario, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 113,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in industry: manufacturing, mining and utilities, Ontario, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 255,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in public administration, education and health, Ontario, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 244,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in trade, transport, hotels and restaurants, Ontario, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "vancouver-ca": [
+      {
+        "metric": "pay_software",
+        "value": 86361,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in information, culture and recreation times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 78847,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in manufacturing times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 103611,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 76811,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in health care and social assistance times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 76811,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in health care and social assistance times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 86756,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in educational services times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 88518,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in finance, insurance and real estate times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 103611,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 103611,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 65212,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in business, building and other support services times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 65028,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in wholesale and retail trade times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 50768,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in accommodation and food services times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 85926,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in construction times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 83332,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in transportation and warehousing times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 97836,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in public administration times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 81781,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in all industries (no figure for managers alone) times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 81781,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in all industries times 52, British Columbia",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_j",
+        "value": 45,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in information and communication, British Columbia, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 89,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in construction, British Columbia, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 83,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in industry: manufacturing, mining and utilities, British Columbia, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 270,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in public administration, education and health, British Columbia, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 266,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in trade, transport, hotels and restaurants, British Columbia, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "montreal-ca": [
+      {
+        "metric": "pay_software",
+        "value": 77263,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in information, culture and recreation times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 73849,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in manufacturing times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 91092,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 62901,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in health care and social assistance times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 62901,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in health care and social assistance times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 81439,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in educational services times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 86046,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in finance, insurance and real estate times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 91092,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 91092,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in professional, scientific and technical services times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 58840,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in business, building and other support services times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 60088,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in wholesale and retail trade times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 45991,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in accommodation and food services times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 80085,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in construction times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 68111,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in transportation and warehousing times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 86133,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in public administration times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 73623,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in all industries (no figure for managers alone) times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 73623,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Average weekly wage of full-time employees in all industries times 52, Quebec",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_j",
+        "value": 40,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in information and communication, Quebec, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 70,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in construction, Quebec, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 124,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in industry: manufacturing, mining and utilities, Quebec, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 292,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in public administration, education and health, Quebec, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 244,
+        "period": "2025",
+        "level": "region",
+        "source": "statcan-lfs",
+        "note": "Employment in trade, transport, hotels and restaurants, Quebec, Labour Force Survey",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

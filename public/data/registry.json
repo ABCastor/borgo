@@ -54,6 +54,121 @@
     ]
   },
   {
+    "id": "abs-awe",
+    "name": "Average Weekly Earnings (AWE)",
+    "publisher": "Australian Bureau of Statistics",
+    "homepage": "https://www.abs.gov.au/statistics/labour/earnings-and-working-conditions/average-weekly-earnings-australia",
+    "measures": [
+      {
+        "metric": "pay_software",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_engineering",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_science",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_medicine",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_nursing",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_teaching",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_finance",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_law",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_marketing",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_office",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_sales",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_hospitality",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_trades",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_transport",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_public",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_management",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      },
+      {
+        "metric": "pay_all",
+        "definition": "Full-time adult average weekly total earnings in the industry division (ANZSIC 2006) that fits the kind of work, times 52: for all jobs the city's state, for an industry all of Australia."
+      }
+    ],
+    "coverage": {
+      "geography": "Australia",
+      "level": "region",
+      "period": "May or November of the latest survey"
+    },
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "AWE dataflow ABS,AWE,1.0.0, measure 2 (full-time adult total earnings), original series, latest half-year",
+      "termsUrl": "https://www.abs.gov.au/website-privacy-copyright-and-disclaimer",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Australian Bureau of Statistics, Average Weekly Earnings, Australia, CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://data.api.abs.gov.au/rest/data/ABS,AWE,1.0.0/2.1.3.7..10..S",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "ABS terms (read 15 Nov 2026): all material on the website is under CC BY 4.0."
+    },
+    "caveats": [
+      "Industry figures are national; only all jobs is by state."
+    ]
+  },
+  {
     "id": "acs",
     "name": "American Community Survey 1-year estimates",
     "publisher": "US Census Bureau",
@@ -128,6 +243,198 @@
     "licenceUrl": "https://www.census.gov/about/policies/citation.html",
     "caveats": [
       "Rents are gross (utilities included) and cover every tenancy, so they read lower than asking rents for a home on the market today."
+    ]
+  },
+  {
+    "id": "bls-oews",
+    "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
+    "publisher": "U.S. Bureau of Labor Statistics",
+    "homepage": "https://www.bls.gov/oes/",
+    "measures": [
+      {
+        "metric": "pay_software",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_engineering",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_science",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_medicine",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_nursing",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_teaching",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_finance",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_law",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_marketing",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_office",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_sales",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_hospitality",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_trades",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_transport",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_public",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_management",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      },
+      {
+        "metric": "pay_all",
+        "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+      }
+    ],
+    "coverage": {
+      "geography": "United States",
+      "level": "metro",
+      "period": "May of the latest year (May 2025)"
+    },
+    "licence": "Public domain (US government work)",
+    "licenceUrl": "https://www.usa.gov/government-copyright",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "PD-USGov",
+      "edition": "OEWS May 2025, metropolitan area estimates, annual mean wage (data type 04)",
+      "termsUrl": "https://www.usa.gov/government-copyright",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://api.bls.gov/publicAPI/v2/timeseries/data/ (series OEUM00{msa}000000{soc}04)",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Read through the BLS public API, which needs no key for a few hundred series a day; bls.gov itself refuses scripts."
+    },
+    "caveats": [
+      "A mean over a whole occupation group: software developers earn more than the computer occupations' mean, support technicians less.",
+      "No public-sector split for a metro area: public-sector work reads the all-occupations mean."
+    ]
+  },
+  {
+    "id": "bls-qcew",
+    "name": "Quarterly Census of Employment and Wages (QCEW), counties",
+    "publisher": "U.S. Bureau of Labor Statistics",
+    "homepage": "https://www.bls.gov/cew/",
+    "measures": [
+      {
+        "metric": "jobs_j",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      },
+      {
+        "metric": "jobs_k",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      },
+      {
+        "metric": "jobs_f",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      },
+      {
+        "metric": "jobs_be",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      },
+      {
+        "metric": "jobs_mn",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      },
+      {
+        "metric": "jobs_oq",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      },
+      {
+        "metric": "jobs_gi",
+        "definition": "Jobs located in the city's county in the field, per 1,000 of all its jobs, every ownership, annual average; information and communication is NAICS 51 plus computer systems design (5415), to match the European industry section J."
+      }
+    ],
+    "coverage": {
+      "geography": "United States",
+      "level": "city",
+      "period": "latest full year (2025)"
+    },
+    "licence": "Public domain (US government work)",
+    "licenceUrl": "https://www.usa.gov/government-copyright",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "PD-USGov",
+      "edition": "QCEW annual averages by county and NAICS industry (open data CSV, latest full year)",
+      "termsUrl": "https://www.usa.gov/government-copyright",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: U.S. Bureau of Labor Statistics, Quarterly Census of Employment and Wages"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://data.bls.gov/cew/data/api/{year}/a/area/{county_fips}.csv",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Counts jobs where they are, from the unemployment-insurance records of every employer: the county is the city for San Francisco and Denver, larger for the others (New York sums its five boroughs)."
+    },
+    "caveats": [
+      "Cells the BLS withholds to protect an employer count as 0, so a field dominated by a few large firms can read low (Boston's industry).",
+      "Jobs where people work, not where they live, unlike the European figures."
     ]
   },
   {
@@ -362,6 +669,33 @@
     ]
   },
   {
+    "id": "crunchbase",
+    "name": "Crunchbase",
+    "publisher": "Crunchbase",
+    "homepage": "https://www.crunchbase.com/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.crunchbase.com/hub/{name_dashed}-companies",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Startups, funding rounds and investors by city; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
     "id": "cso-rtb",
     "name": "RTB Average Monthly Rent Report (RIA02)",
     "publisher": "Central Statistics Office Ireland, Residential Tenancies Board",
@@ -456,6 +790,33 @@
       "notes": "A legal text, encoded by hand in data/rights.json."
     },
     "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "dealroom",
+    "name": "Dealroom",
+    "publisher": "Dealroom.co",
+    "homepage": "https://dealroom.co/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://app.dealroom.co/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Venture funding and startup ecosystems; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
   },
   {
     "id": "ecb-fx",
@@ -575,6 +936,84 @@
     "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
+    "id": "eurostat-lfs-industry",
+    "name": "Employment by economic activity and NUTS 2 region (lfst_r_lfe2en2)",
+    "publisher": "Eurostat (EU Labour Force Survey)",
+    "homepage": "https://ec.europa.eu/eurostat/databrowser/view/lfst_r_lfe2en2/default/table",
+    "measures": [
+      {
+        "metric": "jobs_j",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      },
+      {
+        "metric": "jobs_k",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      },
+      {
+        "metric": "jobs_f",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      },
+      {
+        "metric": "jobs_be",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      },
+      {
+        "metric": "jobs_mn",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      },
+      {
+        "metric": "jobs_oq",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      },
+      {
+        "metric": "jobs_gi",
+        "definition": "People in work living in the NUTS 2 region around the city, in the field's industry sections, per 1,000 of all people in work there, ages 15 to 74, latest year."
+      }
+    ],
+    "coverage": {
+      "geography": "EU, EFTA",
+      "level": "region",
+      "period": "latest year (2025)"
+    },
+    "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+    "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "EU-reuse",
+      "edition": "lfst_r_lfe2en2, thousand persons, ages 15-74, latest year (2025)",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Eurostat, EU Labour Force Survey (lfst_r_lfe2en2, © European Union)",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/lfst_r_lfe2en2?age=Y15-74&sex=T&unit=THS_PER&geo={nuts2}",
+      "cors": true,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Regions publish broad industry groups only: professional and support services together, public administration with education and health, trade with transport and hospitality."
+    },
+    "caveats": [
+      "By where people live, so commuters into a capital count in their home region."
+    ]
+  },
+  {
     "id": "eurostat-regions",
     "name": "Population by educational attainment and NUTS 2 region (edat_lfse_04)",
     "publisher": "Eurostat (EU Labour Force Survey)",
@@ -626,6 +1065,125 @@
     },
     "caveats": [
       "A region such as Piemonte or Lombardia includes towns and countryside, so it reads lower than its main city."
+    ]
+  },
+  {
+    "id": "eurostat-ses",
+    "name": "Structure of Earnings Survey 2022 (earn_ses22_49)",
+    "publisher": "Eurostat",
+    "homepage": "https://ec.europa.eu/eurostat/databrowser/view/earn_ses22_49/default/table",
+    "measures": [
+      {
+        "metric": "pay_software",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_engineering",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_science",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_medicine",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_nursing",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_teaching",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_finance",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_law",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_marketing",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_office",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_sales",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_hospitality",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_trades",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_transport",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_public",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_management",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      },
+      {
+        "metric": "pay_all",
+        "definition": "Mean annual gross earnings in 2022 of employees in firms of 10 or more, for the occupation major group (ISCO-08) and industry section (NACE) that fit the kind of work: professionals in information and communication for software, technicians and associate professionals in health for nursing..."
+      }
+    ],
+    "coverage": {
+      "geography": "EU, Norway, Switzerland, Iceland",
+      "level": "country",
+      "period": "2022 (the survey runs every four years)"
+    },
+    "licence": "Eurostat reuse with acknowledgement (Decision 2011/833/EU)",
+    "licenceUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "EU-reuse",
+      "edition": "earn_ses22_49, gross earnings, national currency, firms of 10 employees or more, 2022",
+      "termsUrl": "https://ec.europa.eu/eurostat/web/main/help/copyright-notice",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Eurostat, Structure of Earnings Survey 2022 (earn_ses22_49, © European Union)",
+      "notices": [
+        "Eurostat is not responsible for Borgo's use of its data."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/earn_ses22_49?sex=T&indic_se=ERN&unit=NAC&sizeclas=GE10&geo={country}",
+      "cors": true,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "One survey, one definition for every European country; published by major occupation group and industry section only, so law, science and marketing read the same cell."
+    },
+    "caveats": [
+      "A country figure: a capital usually pays more than the national mean.",
+      "2022 pay; wages have risen since."
     ]
   },
   {
@@ -999,6 +1557,156 @@
     ]
   },
   {
+    "id": "ilostat",
+    "name": "ILOSTAT: earnings and employment by economic activity",
+    "publisher": "International Labour Organization",
+    "homepage": "https://ilostat.ilo.org/",
+    "measures": [
+      {
+        "metric": "pay_software",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_engineering",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_science",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_medicine",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_nursing",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_teaching",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_finance",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_law",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_marketing",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_office",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_sales",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_hospitality",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_trades",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_transport",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_public",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_management",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "pay_all",
+        "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+      },
+      {
+        "metric": "jobs_j",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      },
+      {
+        "metric": "jobs_k",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      },
+      {
+        "metric": "jobs_f",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      },
+      {
+        "metric": "jobs_be",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      },
+      {
+        "metric": "jobs_mn",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      },
+      {
+        "metric": "jobs_oq",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      },
+      {
+        "metric": "jobs_gi",
+        "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "Japan",
+        "Singapore",
+        "United Kingdom",
+        "Australia",
+        "United Arab Emirates"
+      ],
+      "level": "country",
+      "period": "latest year each country reports (2021 to 2025)"
+    },
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "ILOSTAT EAR_EMTA_SEX_ECO_NB_A and EMP_TEMP_SEX_ECO_NB_A, read through rplumber.ilo.org, latest year per country",
+      "termsUrl": "https://www.ilo.org/rights-and-permissions",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: ILOSTAT, International Labour Organization, CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://rplumber.ilo.org/data/indicator/?id={indicator}&sex=SEX_T&ref_area={iso3}&format=.csv",
+      "cors": true,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "The ILO's terms page (read 15 Nov 2026): databases and datasets published on or after 3 May 2023 are under CC BY 4.0. Definitions follow each country's own survey."
+    },
+    "caveats": [
+      "Japan reports scheduled monthly earnings, which leave out bonuses (often several months' pay).",
+      "Industry averages, not occupations: everyone in information and communication, not only programmers."
+    ]
+  },
+  {
     "id": "internations",
     "name": "InterNations Expat City Ranking",
     "publisher": "InterNations",
@@ -1113,6 +1821,33 @@
     ]
   },
   {
+    "id": "mercer-qol",
+    "name": "Mercer Quality of Living city ranking",
+    "publisher": "Mercer",
+    "homepage": "https://www.mercer.com/insights/total-rewards/talent-mobility-insights/quality-of-living-city-ranking/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.mercer.com/insights/total-rewards/talent-mobility-insights/quality-of-living-city-ranking/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "A quality-of-living index for expatriate packages; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
     "id": "meteostat",
     "name": "Meteostat climate normals",
     "publisher": "Meteostat and its data providers (national weather services)",
@@ -1215,6 +1950,33 @@
       "notes": "Frozen at 2023, the last full year aggregated."
     },
     "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  {
+    "id": "monocle-qol",
+    "name": "Monocle Quality of Life Survey",
+    "publisher": "Monocle",
+    "homepage": "https://monocle.com/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://monocle.com/",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "An editorial ranking of cities for quality of life; proprietary."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
   },
   {
     "id": "nager-date",
@@ -1383,6 +2145,33 @@
       "The map's tiles take the country most of their ground belongs to, so a small country (Singapore, Luxembourg) can share a tile with its neighbour; its cities still show as their own points."
     ],
     "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/"
+  },
+  {
+    "id": "numbeo-qol",
+    "name": "Numbeo Quality of Life Index",
+    "publisher": "Numbeo",
+    "homepage": "https://www.numbeo.com/quality-of-life/",
+    "measures": [],
+    "coverage": {
+      "geography": "global",
+      "level": "city",
+      "period": "current"
+    },
+    "licence": "Proprietary",
+    "redistribute": "no",
+    "access": "link-out",
+    "linkOut": "https://www.numbeo.com/quality-of-life/in/{name_dashed}",
+    "refresh": {
+      "cadence": "irregular",
+      "maxAgeDays": 90
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "A crowd-sourced quality-of-life index; proprietary, terms forbid republishing."
+    },
+    "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
   },
   {
     "id": "numbeo",
@@ -1613,6 +2402,121 @@
     "caveats": [
       "Only OECD members; elsewhere the line stays empty rather than borrowing a closed index.",
       "The OECD API answers HTTP 500 intermittently; the fetch reports it and can be re-run for this source alone (borgo fetch <place> --only oecd-wellbeing)."
+    ]
+  },
+  {
+    "id": "ons-ashe",
+    "name": "Annual Survey of Hours and Earnings (ASHE), table 5: region by industry",
+    "publisher": "Office for National Statistics",
+    "homepage": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/regionbyindustry2digitsicashetable5",
+    "measures": [
+      {
+        "metric": "pay_software",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_engineering",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_science",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_medicine",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_nursing",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_teaching",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_finance",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_law",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_marketing",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_office",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_sales",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_hospitality",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_trades",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_transport",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_public",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_management",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      },
+      {
+        "metric": "pay_all",
+        "definition": "Mean annual gross pay of full-time employees in the region, in the industry (SIC 2007 division or section) that fits the kind of work: computer programming and consultancy for software, human health for health care..."
+      }
+    ],
+    "coverage": {
+      "geography": "United Kingdom",
+      "level": "region",
+      "period": "April of the latest year (provisional until revised)"
+    },
+    "licence": "Open Government Licence v3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "OGL-UK-3.0",
+      "edition": "ASHE table 5.7a, full-time, annual gross pay, mean, latest edition",
+      "termsUrl": "https://www.ons.gov.uk/methodology/geography/licences",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Office for National Statistics, Annual Survey of Hours and Earnings, licensed under the Open Government Licence v3.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.ons.gov.uk/file?uri=/employmentandlabourmarket/peopleinwork/earningsandworkinghours/datasets/regionbyindustry2digitsicashetable5/{edition}/ashetable5{edition}.zip",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "One survey of employers' payroll records; the region is the city's for London, wider elsewhere (East of England for Cambridge)."
+    },
+    "caveats": [
+      "Means are pulled up by top earners, most in London's finance."
     ]
   },
   {
@@ -2436,6 +3340,152 @@
     "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
   },
   {
+    "id": "statcan-lfs",
+    "name": "Labour Force Survey: wages and employment by industry (tables 14-10-0064 and 14-10-0023)",
+    "publisher": "Statistics Canada",
+    "homepage": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401",
+    "measures": [
+      {
+        "metric": "pay_software",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_engineering",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_science",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_medicine",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_nursing",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_teaching",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_finance",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_law",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_marketing",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_office",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_sales",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_hospitality",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_trades",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_transport",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_public",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_management",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "pay_all",
+        "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+      },
+      {
+        "metric": "jobs_j",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      },
+      {
+        "metric": "jobs_k",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      },
+      {
+        "metric": "jobs_f",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      },
+      {
+        "metric": "jobs_be",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      },
+      {
+        "metric": "jobs_mn",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      },
+      {
+        "metric": "jobs_oq",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      },
+      {
+        "metric": "jobs_gi",
+        "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+      }
+    ],
+    "coverage": {
+      "geography": "Canada",
+      "level": "region",
+      "period": "latest year (2025)"
+    },
+    "licence": "Statistics Canada Open Licence",
+    "licenceUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "StatCan-Open",
+      "edition": "Tables 14-10-0064-01 and 14-10-0023-01, annual, latest year",
+      "termsUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Statistics Canada, Labour Force Survey, tables 14-10-0064-01 and 14-10-0023-01, under the Statistics Canada Open Licence",
+      "notices": [
+        "Adapted from Statistics Canada; this does not constitute an endorsement by Statistics Canada of this product."
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www150.statcan.gc.ca/n1/tbl/csv/{table}-eng.zip",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/work.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "The survey groups information with culture and recreation, and finance with real estate."
+    },
+    "caveats": [
+      "A province, not the city: Ontario for Toronto, British Columbia for Vancouver, Quebec for Montreal."
+    ]
+  },
+  {
     "id": "statfin-rent",
     "name": "Rents of dwellings (Statistics Finland table 15fc)",
     "publisher": "Statistics Finland",
@@ -2680,6 +3730,10 @@
       {
         "metric": "region_code",
         "definition": "The ISO 3166-2 code of the region a place belongs to (Sicily is IT-82), which the regional tax rules use."
+      },
+      {
+        "metric": "young_companies",
+        "definition": "Companies (instances of business, Q4830453, or its subclasses) with an inception in 2010 or later and headquarters (P159) whose coordinates lie within 50 km of the centre, counting those with at least two Wikimedia sitelinks; read through the QLever Wikidata endpoint."
       }
     ],
     "coverage": {
@@ -2721,7 +3775,8 @@
       "notes": "Maps a GeoNames region id (P1566) to its ISO 3166-2 code (P300); also a fallback place search."
     },
     "caveats": [
-      "The query service rate-limits busy clients (HTTP 429); a committed table covers the regions the tax rules need."
+      "The query service rate-limits busy clients (HTTP 429); a committed table covers the regions the tax rules need.",
+      "Young companies follow what Wikipedia editors write about: Tokyo's count is lifted by entertainment studios, and countries whose companies are little written about read low."
     ]
   },
   {

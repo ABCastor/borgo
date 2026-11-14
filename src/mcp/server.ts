@@ -1,4 +1,5 @@
 // The MCP server: the app's whole engine as tools, each answering in markdown for people and JSON for programs.
+import { WORK_KINDS } from "../core/work.ts";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
 import { z } from "zod";
@@ -42,6 +43,8 @@ How to use it well:
 - The places the person asks about go to the named data providers (Open-Meteo, the World Bank and others) as names or coordinates; their salary, weights and household never do.
 - search_cities finds ids (a miss means: try fetch_city); get_city gives a city's figures with source, period, level and licence (pass \`metrics\` for a few, \`passports\` for who may live there); net_pay answers take-home pay questions on their own; list_metrics_and_sources (filter with \`kind\`, e.g. kind "regimes" and country "NL") and methodology explain what the scores mean.
 - Position lines (politics, abortion, couples_law) are stances, not more-is-better: pass a stance only when the person stated it or you already know it from them, never from their nationality, city or any other guess, and give the line a weight. Report each place's fact in neutral words, with its date.
+- When the person says what work they do, pass \`work\` (e.g. "software", "founder"): Work and ambition then counts what that work pays there, how many jobs its field holds and, for founders, how many young companies are around, and each city carries plain sentences saying why (cities[].work). Relay them. Pay in the field is a guide; take-home pay still uses the salary they give.
+- get_city includes Borgo's generic quality-of-life index (qualityOfLife): fixed weights shown, the same for everyone. Present it as a generic view, never as the person's ranking; it counts in compare_cities only when they give the qol line a weight. Other indices (Numbeo, Mercer, EIU, Monocle) are link-only.
 - Quote figures with their source and period. Rankings depend on the weights: no ranking is objective.
 - When a figure or rule looks wrong or out of date, list_stale shows the curated facts due for review, and propose_change turns a correction into a checked proposal for the maintainers: cite the official text (statute, gazette, official table), never a news article alone or a link-only source. It returns a prefilled GitHub issue link for the person; post it for them only after they agreed to that exact proposal.
 - community_figures shows what people report for themselves about a place (rent by bedrooms and area, everyday prices, take-home pay by kind of work, a 1-5 rating), after automated review, with counts and months: quote it as community figures, beside the official ones, never as official. When the person tells you what they pay or earn where they live and wants to share it, submit_figures sends it to Borgo's open community data: first call it without confirm and show them the draft and its privacy note; call again with confirm true only after they said yes to those exact figures. Never send figures they did not give you as their own.`;
@@ -68,6 +71,10 @@ const permitArg = z.object({
 const compareInput = {
   cities: z.array(z.string()).describe("City ids (e.g. turin-it) or names in any common spelling (Turin, Torino, 'Paris, FR'); a name two places share needs its country"),
   preset: z.enum(PRESETS.map((p) => p.id) as [string, ...string[]]).optional().describe("Starting weights"),
+  work: z
+    .enum(WORK_KINDS.map((k) => k.id) as [string, ...string[]])
+    .optional()
+    .describe(`The person's kind of work, only if they said it: ${WORK_KINDS.map((k) => `${k.id} (${k.label})`).join(", ")}. Adds what people in that work earn there and how many jobs its field holds to Work and ambition, and shares the group's weight by the kind's recipe (founder: young companies, developers, graduates); each city then says why in plain sentences (work). Leave out for the same Work and ambition as everyone`),
   weights: z.record(z.string(), z.number().min(0).max(100)).optional().describe(`Weight 0-100 per criterion, on top of the preset. Criteria: ${criteriaIds}`),
   only: z.array(z.string()).optional().describe('Score only these criteria; every other line gets weight 0 (each listed one keeps its `weights` value, else 100). For a one-line question: only ["nice_days"] with comfort {min:20,max:28}'),
   detail: z.enum(["summary", "full"]).optional().describe('"summary" (default): verdict, ranking, weighted lines with citations, money in brief, who can move there, notes, required unknowns and next inputs. "full": every line, tax line and source, for programs'),
@@ -252,7 +259,7 @@ export function createServer(data: Dataset, opts: ServerOptions = {}): McpServer
     "get_city",
     {
       title: "Figures for a city",
-      description: "One city's figures, each with source, period, geographic level and licence; daylight; the take-home pay model; whether each person in a household may live and work there, with the rules checked; and links to sources we may not copy. Compact by default (figures with a value, long series counted); pass metrics for a few figures, detail \"full\" for everything.",
+      description: "One city's figures, each with source, period, geographic level and licence; daylight; the take-home pay model; whether each person in a household may live and work there, with the rules checked; links to sources we may not copy, and Borgo's generic quality-of-life index with its fixed weights. Compact by default (figures with a value, long series counted); pass metrics for a few figures, detail \"full\" for everything.",
       inputSchema: {
         city: z.string().describe("City id or name"),
         passports: z.array(z.array(z.string())).optional().describe("Optional: each person's passports, e.g. [['US']] or [['IT'],['US','IE']]: who may live and work there"),

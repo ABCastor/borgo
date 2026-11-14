@@ -1,5 +1,8 @@
 // The published pages: HTML for people and crawlers, a markdown twin for agents (llms.txt v2), and the
 // schema.org JSON-LD that describes them. Everything is built from src/site/facts.ts; nothing here computes.
+import { qualityOfLife, QOL_PARTS } from "../core/qol.ts";
+import { QOL_INDICES } from "../core/links.ts";
+import { WORK_KINDS, payMetric } from "../core/work.ts";
 import type { Dataset, Profile } from "../core/types.ts";
 import { DEFAULT_COMFORT } from "../core/criteria.ts";
 import { climateChart as sharedChart } from "../ui/climate-chart.ts";
@@ -178,6 +181,10 @@ export function cityPage(site: Site, data: Dataset, f: CityFacts, appParam: stri
     ${raw(`<!--community:${city.id}-->`)}<div class="cm-figs"><p class="cm-empty">Figures people add for ${city.name} appear here.</p></div>${raw("<!--/community-->")}
     <p><a class="cm-open" href="#add-figures">Add your own figures for ${city.name}</a></p>
 
+    ${payByWork(f)}
+
+    ${qolSection(data, f)}
+
     <h2>Who can live and work here freely</h2>
     <ul class="plain">
       <li>Citizens of ${inSentence(cn)}.</li>
@@ -221,6 +228,37 @@ export function cityPage(site: Site, data: Dataset, f: CityFacts, appParam: stri
     markdown: cityMarkdown(site, data, f),
     jsonld: cityJsonLd(site, f),
   };
+}
+
+/** What each kind of work pays here, from the city's own figures: the metro, region or country the source covers. */
+function payRows(f: CityFacts) {
+  return [...WORK_KINDS.filter((k) => k.pay), { id: "all", label: "All jobs" }]
+    .map((k) => ({ k, x: f.figures.find((x) => x.metric === payMetric(k.id)) }))
+    .filter((r): r is { k: (typeof r)["k"]; x: NonNullable<(typeof r)["x"]> } => !!r.x);
+}
+
+function payByWork(f: CityFacts): Raw {
+  const rows = payRows(f);
+  if (!rows.length) return html``;
+  const cur = f.figures.find((x) => x.metric === "pay_all")?.unit.replace("/year", "") ?? "";
+  return html`<h2 id="pay-by-work">Pay by kind of work</h2>
+    <p class="hint">Average gross pay a year, before tax, from official earnings surveys${cur ? `, in ${cur}` : ""}. Each row says which occupations or industry it counts and for which area; choose your kind of work in the app and it counts in Work and ambition.</p>
+    <table class="doc-table"><thead><tr><th>Kind of work, and what the figure counts</th><th class="num">A year</th></tr></thead><tbody>
+      ${rows.map(({ k, x }) => html`<tr><td>${k.label}${x.note ? html`<br><span class="quiet">${x.note}</span>` : ""}</td><td class="num">${x.text.replace(/ a year$/, "")}</td></tr>`)}
+    </tbody></table>
+    <p class="hint">Sources: ${[...new Map(rows.flatMap(({ x }) => x.sources).map((s) => [s.id, s])).values()].map((s, i) => html`${i ? "; " : ""}<a href="${s.url}" rel="noopener">${s.name}</a> (${s.publisher})`)}.</p>`;
+}
+
+/** Borgo's generic quality-of-life index for the city, its parts and their weights in view. */
+function qolSection(data: Dataset, f: CityFacts): Raw {
+  const q = qualityOfLife(data, f.city);
+  return html`<h2 id="quality-of-life">Quality of life index</h2>
+    <p class="hint">A generic view: the same fixed weights for everyone, from the figures on this page. In the app your own ranking weighs what you say matters; this index counts in it only if you turn it on.</p>
+    <p class="keyfact">${q.score === null ? html`No index for ${f.city.name}: only ${Math.round(q.coverage * 100)}% of its weight has figures.` : html`<b>${num(q.score, 0)} of 100</b>${q.coverage < 1 ? html` <span class="quiet">(on ${Math.round(q.coverage * 100)}% of the weight; parts with no figure are left out)</span>` : ""}`}</p>
+    <table class="doc-table"><thead><tr><th>Part</th><th class="num">Weight</th><th>Here</th><th class="num">Score</th></tr></thead><tbody>
+      ${q.parts.map((p) => html`<tr><td>${p.label}<br><span class="quiet">${QOL_PARTS.find((x) => x.id === p.id)!.says}</span></td><td class="num">${p.weight}%</td><td>${p.text}</td><td class="num">${p.score === null ? "–" : num(100 * p.score, 0)}</td></tr>`)}
+    </tbody></table>
+    <p class="hint">Other indices weigh other things, by their own methods: ${QOL_INDICES.map((l, i) => html`${i ? (i === QOL_INDICES.length - 1 ? " and " : ", ") : ""}<a href="${l.url}" rel="noopener nofollow">${l.label}</a>`)}. Borgo links to them and copies none of their figures.</p>`;
 }
 
 /** The sources a city page shows figures from, plus GeoNames for the place itself. */
@@ -268,6 +306,16 @@ function cityMarkdown(site: Site, data: Dataset, f: CityFacts): string {
   L.push("## A month on the reference profile", "", `Assumed: ${assumptionsText(data, referenceProfile(data, [city.id]))}.`, "");
   L.push(`- Take-home pay: ${m(b.net === null ? null : b.net / 12)}`, `- Rent: ${m(b.rent)}${b.rentFigure ? ` (${b.rentFigure.sources.map((s) => s.name).join(", ")}, ${b.rentFigure.period})` : " (no open rent data yet)"}`, `- Everyday spending: ${m(b.everyday)}`, ...(b.childcare !== null ? [`- Childcare: ${m(b.childcare)}`] : []), ...(b.health !== null ? [`- Health care, out of pocket: ${m(b.health)}`] : []), `- Left each month: ${m(b.left)}${b.left !== null && b.completeness.status === "partial" ? ` (partial: leaves out ${b.completeness.missing.join(", ")})` : ""}`, "");
   L.push("## From people who live here", "", `Rents, everyday prices, take-home pay and a 1 to 5 rating that people report for themselves, after automated review, live as JSON: ${abs(site, `/api/community/city/${city.id}.json`)} (CC BY 4.0, Borgo contributors). Never mixed into the figures above. Add your own on the page, with \`borgo submit\` or the MCP tool submit_figures.`, "");
+  const pays = payRows(f);
+  if (pays.length) {
+    L.push("## Pay by kind of work", "", "Average gross pay a year, before tax, from official earnings surveys.", "", "| Kind of work | A year | What it counts | Source |", "|---|---:|---|---|");
+    for (const { k, x } of pays) L.push(`| ${k.label} | ${x.text} | ${x.note ?? ""} | ${x.sources.map((s) => `[${s.name}](${s.url})`).join("; ")} |`);
+    L.push("");
+  }
+  const q = qualityOfLife(data, city);
+  L.push("## Quality of life index (generic)", "", `${q.score === null ? `No index: only ${Math.round(q.coverage * 100)}% of the weight has figures.` : `${num(q.score, 0)} of 100${q.coverage < 1 ? ` on ${Math.round(q.coverage * 100)}% of the weight` : ""}.`} The same fixed weights for everyone; a person's own ranking in the app weighs what they say matters.`, "", "| Part | Weight | Here | Score |", "|---|---:|---|---:|");
+  for (const p of q.parts) L.push(`| ${p.label} | ${p.weight}% | ${p.text} | ${p.score === null ? "–" : num(100 * p.score, 0)} |`);
+  L.push("", `Other indices, by their own methods (linked, not copied): ${QOL_INDICES.map((l) => `[${l.label}](${l.url})`).join(", ")}.`, "");
   L.push("## Who can live and work here without a visa", "", `- Citizens of ${inSentence(country.name)}`);
   for (const a of f.freeMovement) L.push(`- Citizens of ${a.members.map((x) => countryLabel(data, x)).join(", ")} (${a.name}; source: [${a.source.name}](${a.source.url}))`);
   L.push("");

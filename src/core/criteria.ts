@@ -6,6 +6,8 @@ import { shortestDay } from "./sun.ts";
 import type { City, ComfortBasis, Dataset, MetricCategory, Profile } from "./types.ts";
 import { BIN_COUNT, binsFromKinds, daylightShare, defaultTests, niceDaysByMonth } from "./weather-days.ts";
 import { highInRange } from "./world-map.ts";
+import { jobsMetric, kindOf, kindWords, payMetric, SECTORS } from "./work.ts";
+import { qualityOfLife } from "./qol.ts";
 
 /** Everything a criterion may look at for one city. */
 export interface Context {
@@ -557,6 +559,51 @@ export const CRITERIA: Criterion[] = [
     raw: metricLine("builder_density", "of 100"),
     defaultWeight: 12,
   },
+  // Work and ambition for the person's kind of work: only with a kind chosen (src/core/work.ts), weighted by its recipe.
+  {
+    id: "field_pay",
+    label: "Pay in your field",
+    question: "What do full-time employees in your kind of work earn there on average, before tax?",
+    category: "opportunity",
+    applies: (p) => !!kindOf(p)?.pay,
+    scale: (p, d) => eurScale(d, p, 15_000, 150_000),
+    raw: ({ data, profile, city }) => {
+      const k = kindOf(profile);
+      if (!k?.pay) return { value: null, text: "choose your kind of work", sources: [] };
+      const r = resolve(data, profile, city, payMetric(k.id));
+      const v = scalar(r);
+      const cur = data.countries[city.country]?.currency ?? "EUR";
+      const shown = v === null ? null : convert(data, v, cur, profile.displayCurrency);
+      if (v === null || shown === null) return { value: null, text: v === null ? `no pay figure for ${kindWords(k)}` : "no exchange rate", sources: r ? [r] : [] };
+      const local = cur === profile.displayCurrency ? "" : ` (${money(v, cur)})`;
+      return { value: shown, text: `${money(shown, profile.displayCurrency)} a year${local}`, sources: [r!], approximate: r!.level === "country" };
+    },
+    defaultWeight: 0,
+  },
+  {
+    id: "field_jobs",
+    label: "Jobs in your field",
+    question: "How many of every 1,000 jobs there are in the field your kind of work belongs to?",
+    category: "opportunity",
+    applies: (p) => !!kindOf(p)?.sector,
+    // Each field has its own range: a city's share of health and education jobs is never near its share of finance.
+    scale: (p) => SECTORS[kindOf(p)?.sector ?? "j"].scale,
+    raw: ({ data, profile, city }) => {
+      const s = kindOf(profile)?.sector;
+      if (!s) return { value: null, text: "choose your kind of work", sources: [] };
+      const r = resolve(data, profile, city, jobsMetric(s));
+      const v = scalar(r);
+      return { value: v, text: v === null ? "no figure" : `${fmt(v)} of every 1,000 jobs in ${SECTORS[s].short}`, sources: r ? [r] : [], approximate: r ? r.level === "country" : undefined };
+    },
+    defaultWeight: 0,
+  },
+  {
+    ...optIn("young_companies", "young_companies", "Young companies nearby", "How many notable companies founded since 2010 have their headquarters within 50 km?", "opportunity", [0, 200], "companies"),
+    raw: (ctx) => {
+      const r = metricLine("young_companies", "")(ctx);
+      return r.value === null ? r : { ...r, text: `${fmt(r.value)} founded since 2010, within 50 km` };
+    },
+  },
   // Opt-in lines: they start at weight 0 and only count once the person cares about them.
   {
     id: "time_zone",
@@ -613,6 +660,18 @@ export const CRITERIA: Criterion[] = [
   optIn("jobs", "unemployment", "Jobs", "What share of people who want work cannot find it?", "opportunity", [12, 3], "% unemployed", 1),
   optIn("degrees", "degree_share", "Graduates around", "What share of adults hold a degree or another qualification above school level?", "opportunity", [20, 65], "% of adults", 1),
   optIn("developers", "github_developers", "Developers around", "How many people per 1,000 residents name the city as their location on GitHub?", "opportunity", [3, 60], "per 1,000", 1),
+  {
+    id: "qol",
+    label: "Quality of life index",
+    question: "How does Borgo's generic quality-of-life index, the same fixed weights for everyone, rate it? It is built from lines also listed here, so weighting both counts them twice.",
+    category: "society",
+    scale: () => [30, 90],
+    raw: ({ data, city }) => {
+      const q = qualityOfLife(data, city);
+      return q.score === null ? { value: null, text: "not enough figures for the index", sources: [] } : { value: q.score, text: `${fmt(q.score)} of 100, generic`, sources: [], partial: q.coverage < 1 };
+    },
+    defaultWeight: 0,
+  },
   optIn("clean_government", "clean_government", "Clean government", "How well is corruption kept out of public life?", "society", [-0.5, 2], "of 2.5", 2),
   // Position lines: the person says where they stand; a place scores by how close it sits. Off until they do.
   positionLine({

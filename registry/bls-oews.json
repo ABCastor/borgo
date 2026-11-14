@@ -1,0 +1,116 @@
+{
+  "id": "bls-oews",
+  "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
+  "publisher": "U.S. Bureau of Labor Statistics",
+  "homepage": "https://www.bls.gov/oes/",
+  "measures": [
+    {
+      "metric": "pay_software",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_engineering",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_science",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_medicine",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_nursing",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_teaching",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_finance",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_law",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_marketing",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_office",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_sales",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_hospitality",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_trades",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_transport",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_public",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_management",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    },
+    {
+      "metric": "pay_all",
+      "definition": "Mean annual wage in the metropolitan area of the occupation group that fits the kind of work (computer and mathematical occupations for software, registered nurses for nursing...), every industry, from the employer survey."
+    }
+  ],
+  "coverage": {
+    "geography": "United States",
+    "level": "metro",
+    "period": "May of the latest year (May 2025)"
+  },
+  "licence": "Public domain (US government work)",
+  "licenceUrl": "https://www.usa.gov/government-copyright",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "PD-USGov",
+    "edition": "OEWS May 2025, metropolitan area estimates, annual mean wage (data type 04)",
+    "termsUrl": "https://www.usa.gov/government-copyright",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: U.S. Bureau of Labor Statistics, Occupational Employment and Wage Statistics"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://api.bls.gov/publicAPI/v2/timeseries/data/ (series OEUM00{msa}000000{soc}04)",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/work.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Read through the BLS public API, which needs no key for a few hundred series a day; bls.gov itself refuses scripts."
+  },
+  "caveats": [
+    "A mean over a whole occupation group: software developers earn more than the computer occupations' mean, support technicians less.",
+    "No public-sector split for a metro area: public-sector work reads the all-occupations mean."
+  ]
+}

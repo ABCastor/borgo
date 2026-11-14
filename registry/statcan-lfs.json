@@ -1,0 +1,146 @@
+{
+  "id": "statcan-lfs",
+  "name": "Labour Force Survey: wages and employment by industry (tables 14-10-0064 and 14-10-0023)",
+  "publisher": "Statistics Canada",
+  "homepage": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410006401",
+  "measures": [
+    {
+      "metric": "pay_software",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_engineering",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_science",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_medicine",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_nursing",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_teaching",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_finance",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_law",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_marketing",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_office",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_sales",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_hospitality",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_trades",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_transport",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_public",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_management",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "pay_all",
+      "definition": "Average weekly wage of full-time employees in the province, in the industry group that fits the kind of work, times 52, latest year."
+    },
+    {
+      "metric": "jobs_j",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    },
+    {
+      "metric": "jobs_k",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    },
+    {
+      "metric": "jobs_f",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    },
+    {
+      "metric": "jobs_be",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    },
+    {
+      "metric": "jobs_mn",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    },
+    {
+      "metric": "jobs_oq",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    },
+    {
+      "metric": "jobs_gi",
+      "definition": "People in work in the province in the field's industries, per 1,000 of all people in work there, latest year."
+    }
+  ],
+  "coverage": {
+    "geography": "Canada",
+    "level": "region",
+    "period": "latest year (2025)"
+  },
+  "licence": "Statistics Canada Open Licence",
+  "licenceUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "StatCan-Open",
+    "edition": "Tables 14-10-0064-01 and 14-10-0023-01, annual, latest year",
+    "termsUrl": "https://www.statcan.gc.ca/en/terms-conditions/open-licence",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Statistics Canada, Labour Force Survey, tables 14-10-0064-01 and 14-10-0023-01, under the Statistics Canada Open Licence",
+    "notices": [
+      "Adapted from Statistics Canada; this does not constitute an endorsement by Statistics Canada of this product."
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www150.statcan.gc.ca/n1/tbl/csv/{table}-eng.zip",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/work.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "The survey groups information with culture and recreation, and finance with real estate."
+  },
+  "caveats": [
+    "A province, not the city: Ontario for Toronto, British Columbia for Vancouver, Quebec for Montreal."
+  ]
+}

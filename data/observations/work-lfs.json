@@ -1,0 +1,2281 @@
+{
+  "source": "eurostat-lfs-industry",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "jobs_j",
+        "value": 27,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 28,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 66,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 242,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 108,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 180,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 245,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Piemonte (ITC1), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "jobs_j",
+        "value": 39,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 35,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 64,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 248,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 137,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 152,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 232,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Lombardia (ITC4), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "jobs_j",
+        "value": 62,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 30,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 68,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 98,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 130,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 229,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 254,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Lazio (ITI4), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "jobs_j",
+        "value": 26,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 15,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 85,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 135,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 102,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 241,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 292,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Campania (ITF3), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "jobs_j",
+        "value": 29,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 28,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 60,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 249,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 99,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 182,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 255,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Emilia-Romagna (ITH5), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "jobs_j",
+        "value": 25,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 23,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 65,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 211,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 99,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 198,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 262,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Toscana (ITI1), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "dublin-ie": [
+      {
+        "metric": "jobs_j",
+        "value": 88,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 68,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 62,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 93,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 126,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 272,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 223,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Eastern and Midland (IE06), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "cork-ie": [
+      {
+        "metric": "jobs_j",
+        "value": 44,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 30,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 66,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 153,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 94,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 280,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 233,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Southern (IE05), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "paris-fr": [
+      {
+        "metric": "jobs_j",
+        "value": 83,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 54,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 52,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 74,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 153,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 252,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 231,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Ile de France (FR10), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "lyon-fr": [
+      {
+        "metric": "jobs_j",
+        "value": 41,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 29,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 67,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 155,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 122,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 288,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 212,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Rhône-Alpes (FRK2), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "berlin-de": [
+      {
+        "metric": "jobs_j",
+        "value": 84,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 32,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 49,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 87,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 157,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 303,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 196,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Berlin (DE30), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "jobs_j",
+        "value": 64,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 43,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 52,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 207,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 119,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 250,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 189,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Oberbayern (DE21), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "jobs_j",
+        "value": 66,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 36,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 43,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 122,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 151,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 264,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 237,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Hamburg (DE60), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "amsterdam-nl": [
+      {
+        "metric": "jobs_j",
+        "value": 63,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 40,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 37,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 66,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 160,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 301,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 233,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Noord-Holland (NL32), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "jobs_j",
+        "value": 44,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 26,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 46,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 70,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 145,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 336,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 240,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Zuid-Holland (NL36), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "brussels-be": [
+      {
+        "metric": "jobs_j",
+        "value": 65,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 36,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 44,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 51,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 163,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 281,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 194,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Région de Bruxelles-Capitale/Brussels Hoofdstedelijk Gewest (BE10), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "copenhagen-dk": [
+      {
+        "metric": "jobs_j",
+        "value": 65,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 41,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 44,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 97,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 132,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 333,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 199,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Hovedstaden (DK01), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "stockholm-se": [
+      {
+        "metric": "jobs_j",
+        "value": 104,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 44,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 57,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 55,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 204,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 283,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 173,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Stockholm (SE11), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "oslo-no": [
+      {
+        "metric": "jobs_j",
+        "value": 79,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 24,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 67,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 60,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 141,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 317,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 218,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Oslo og Viken (NO08), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "helsinki-fi": [
+      {
+        "metric": "jobs_j",
+        "value": 83,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 33,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 62,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 98,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 155,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 259,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 217,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Helsinki-Uusimaa (FI1B), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "zurich-ch": [
+      {
+        "metric": "jobs_j",
+        "value": 68,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 84,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 47,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 87,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 163,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 260,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 169,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Zürich (CH04), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "jobs_j",
+        "value": 29,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 59,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 58,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 79,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 134,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 288,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 191,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Région lémanique (CH01), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "vienna-at": [
+      {
+        "metric": "jobs_j",
+        "value": 68,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 48,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 64,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 76,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 151,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 272,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 239,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Wien (AT13), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "prague-cz": [
+      {
+        "metric": "jobs_j",
+        "value": 116,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 63,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 57,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 90,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 143,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 237,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 209,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Praha (CZ01), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "warsaw-pl": [
+      {
+        "metric": "jobs_j",
+        "value": 97,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 69,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 58,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 116,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 144,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 245,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 200,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Warszawski stołeczny (PL91), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "krakow-pl": [
+      {
+        "metric": "jobs_j",
+        "value": 56,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 34,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 101,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 212,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 69,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 207,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 235,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Małopolskie (PL21), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "budapest-hu": [
+      {
+        "metric": "jobs_j",
+        "value": 90,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 60,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 48,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 111,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 168,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 231,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 219,
+        "period": "2025",
+        "level": "city",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Budapest (HU11), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "lisbon-pt": [
+      {
+        "metric": "jobs_j",
+        "value": 74,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 42,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 58,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 82,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 134,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 249,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 266,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Grande Lisboa (PT1A), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "jobs_j",
+        "value": 37,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 18,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 80,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 247,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 78,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 218,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 235,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Norte (PT11), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "madrid-es": [
+      {
+        "metric": "jobs_j",
+        "value": 73,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 48,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 65,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 85,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 152,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 211,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 269,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Comunidad de Madrid (ES30), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "jobs_j",
+        "value": 49,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 19,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 64,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 168,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 125,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 207,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 278,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Cataluña (ES51), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "jobs_j",
+        "value": 28,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 15,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 76,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 166,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 103,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 202,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 307,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Comunitat Valenciana (ES52), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "jobs_j",
+        "value": 27,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 16,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 72,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 94,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 100,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 245,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 301,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Andalucía (ES61), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "athens-gr": [
+      {
+        "metric": "jobs_j",
+        "value": 46,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 40,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 41,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 104,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 138,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 248,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 313,
+        "period": "2025",
+        "level": "region",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Attiki (EL30), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "tallinn-ee": [
+      {
+        "metric": "jobs_j",
+        "value": 58,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in information and communication, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_k",
+        "value": 23,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in finance and insurance, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_f",
+        "value": 83,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in construction, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_be",
+        "value": 173,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in industry: manufacturing, mining and utilities, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_mn",
+        "value": 88,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in professional, scientific, technical and support services, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_oq",
+        "value": 221,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in public administration, education and health, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "jobs_gi",
+        "value": 253,
+        "period": "2025",
+        "level": "country",
+        "source": "eurostat-lfs-industry",
+        "note": "People in work in trade, transport, hotels and restaurants, Eesti (EE00), by where they live",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}

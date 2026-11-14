@@ -1,0 +1,150 @@
+{
+  "id": "ilostat",
+  "name": "ILOSTAT: earnings and employment by economic activity",
+  "publisher": "International Labour Organization",
+  "homepage": "https://ilostat.ilo.org/",
+  "measures": [
+    {
+      "metric": "pay_software",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_engineering",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_science",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_medicine",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_nursing",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_teaching",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_finance",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_law",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_marketing",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_office",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_sales",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_hospitality",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_trades",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_transport",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_public",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_management",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "pay_all",
+      "definition": "Average monthly earnings of employees in the industry section (ISIC Rev. 4) that fits the kind of work, times 12, as the national statistics office reports them to the ILO."
+    },
+    {
+      "metric": "jobs_j",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    },
+    {
+      "metric": "jobs_k",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    },
+    {
+      "metric": "jobs_f",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    },
+    {
+      "metric": "jobs_be",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    },
+    {
+      "metric": "jobs_mn",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    },
+    {
+      "metric": "jobs_oq",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    },
+    {
+      "metric": "jobs_gi",
+      "definition": "People in work in the field's industry sections, per 1,000 of all people in work in the country, from the national labour force survey."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "Japan",
+      "Singapore",
+      "United Kingdom",
+      "Australia",
+      "United Arab Emirates"
+    ],
+    "level": "country",
+    "period": "latest year each country reports (2021 to 2025)"
+  },
+  "licence": "CC BY 4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "ILOSTAT EAR_EMTA_SEX_ECO_NB_A and EMP_TEMP_SEX_ECO_NB_A, read through rplumber.ilo.org, latest year per country",
+    "termsUrl": "https://www.ilo.org/rights-and-permissions",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: ILOSTAT, International Labour Organization, CC BY 4.0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://rplumber.ilo.org/data/indicator/?id={indicator}&sex=SEX_T&ref_area={iso3}&format=.csv",
+    "cors": true,
+    "key": null,
+    "fetcher": "pipeline/sources/work.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "The ILO's terms page (read 15 Nov 2026): databases and datasets published on or after 3 May 2023 are under CC BY 4.0. Definitions follow each country's own survey."
+  },
+  "caveats": [
+    "Japan reports scheduled monthly earnings, which leave out bonuses (often several months' pay).",
+    "Industry averages, not occupations: everyone in information and communication, not only programmers."
+  ]
+}

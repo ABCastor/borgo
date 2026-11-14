@@ -7,6 +7,10 @@
     {
       "metric": "region_code",
       "definition": "The ISO 3166-2 code of the region a place belongs to (Sicily is IT-82), which the regional tax rules use."
+    },
+    {
+      "metric": "young_companies",
+      "definition": "Companies (instances of business, Q4830453, or its subclasses) with an inception in 2010 or later and headquarters (P159) whose coordinates lie within 50 km of the centre, counting those with at least two Wikimedia sitelinks; read through the QLever Wikidata endpoint."
     }
   ],
   "coverage": {
@@ -48,6 +52,7 @@
     "notes": "Maps a GeoNames region id (P1566) to its ISO 3166-2 code (P300); also a fallback place search."
   },
   "caveats": [
-    "The query service rate-limits busy clients (HTTP 429); a committed table covers the regions the tax rules need."
+    "The query service rate-limits busy clients (HTTP 429); a committed table covers the regions the tax rules need.",
+    "Young companies follow what Wikipedia editors write about: Tokyo's count is lifted by entertainment studios, and countries whose companies are little written about read low."
   ]
 }

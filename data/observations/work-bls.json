@@ -1,0 +1,1554 @@
+{
+  "source": "bls-oews",
+  "retrieved": "2026-11-14",
+  "observations": {
+    "san-francisco-us": [
+      {
+        "metric": "pay_software",
+        "value": 167450,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 140180,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 139150,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 154080,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 176900,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 90440,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 126780,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 189510,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 115250,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 68550,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 75010,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 47660,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 90820,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 63330,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 100220,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 194920,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 100220,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, San Francisco-Oakland-Fremont metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004186000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "los-angeles-us": [
+      {
+        "metric": "pay_software",
+        "value": 129050,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 120710,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 103150,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 123980,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 140370,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 82670,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 102580,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 178720,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 111690,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 58140,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 60050,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 43030,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 77100,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 54540,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 77270,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 160410,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 77270,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Los Angeles-Long Beach-Anaheim metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003108000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "new-york-us": [
+      {
+        "metric": "pay_software",
+        "value": 139450,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 112870,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 103600,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 129450,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 119600,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 82600,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 119290,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 182690,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 109230,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 59750,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 74940,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 46220,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 82140,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 58070,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 86310,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 196850,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 86310,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, New York-Newark-Jersey City metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003562000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "boston-us": [
+      {
+        "metric": "pay_software",
+        "value": 136170,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 118920,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 116950,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 124520,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 121820,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 85360,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 114170,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 176660,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 87200,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 59580,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 66760,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 42830,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 82960,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 53340,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 89620,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 183090,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 89620,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Boston-Cambridge-Newton metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001446000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "seattle-us": [
+      {
+        "metric": "pay_software",
+        "value": 151750,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 125940,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 107250,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 138050,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 126390,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 82050,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 112940,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 139860,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 89530,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 62960,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 67960,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 50770,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 87590,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 64110,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 91790,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 184140,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 91790,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Seattle-Tacoma-Bellevue metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM004266000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "austin-us": [
+      {
+        "metric": "pay_software",
+        "value": 122150,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 116250,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 86150,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 101820,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 97610,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 65220,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 93110,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 138240,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 73960,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 52420,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 58880,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 34330,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 57260,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 45560,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 74580,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 147860,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 74580,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Austin-Round Rock-San Marcos metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001242000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "miami-us": [
+      {
+        "metric": "pay_software",
+        "value": 109230,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 96430,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 89350,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 106770,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 94990,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 60770,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 92330,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 123290,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 72160,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 49360,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 54500,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 38350,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 58140,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 51140,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 67190,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 137580,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 67190,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Miami-Fort Lauderdale-West Palm Beach metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM003310000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "chicago-us": [
+      {
+        "metric": "pay_software",
+        "value": 114060,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 103200,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 100370,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 106210,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 97930,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 70090,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 96800,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 148260,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 77650,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 53700,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 59990,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 37730,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 85000,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 53680,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 73380,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 150130,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 73380,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Chicago-Naperville-Elgin metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001698000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ],
+    "denver-us": [
+      {
+        "metric": "pay_software",
+        "value": 129650,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of computer and mathematical occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000015000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_engineering",
+        "value": 114140,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of architecture and engineering occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000017000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_science",
+        "value": 99430,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of life, physical and social science occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000019000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_medicine",
+        "value": 109500,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of healthcare practitioners and technical occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000029000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_nursing",
+        "value": 100920,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of registered nurses, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000029114104",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_teaching",
+        "value": 79790,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of educational instruction and library occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000025000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_finance",
+        "value": 103680,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of business and financial operations occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000013000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_law",
+        "value": 164010,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of legal occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000023000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_marketing",
+        "value": 95780,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of arts, design, entertainment, sports and media occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000027000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_office",
+        "value": 58040,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of office and administrative support occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000043000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_sales",
+        "value": 69470,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of sales and related occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000041000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_hospitality",
+        "value": 44630,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of food preparation and serving occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000035000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_trades",
+        "value": 68640,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of construction and extraction occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000047000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_transport",
+        "value": 63380,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of transportation and material moving occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000053000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_public",
+        "value": 81690,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations (the survey gives no public-sector figure for a metro area), Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000000000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_management",
+        "value": 174000,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of management occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000011000004",
+        "retrieved": "2026-11-14"
+      },
+      {
+        "metric": "pay_all",
+        "value": 81690,
+        "period": "2025",
+        "level": "metro",
+        "source": "bls-oews",
+        "note": "Mean of all occupations, Denver-Aurora-Centennial metro, May 2025",
+        "url": "https://data.bls.gov/timeseries/OEUM001974000000000000004",
+        "retrieved": "2026-11-14"
+      }
+    ]
+  }
+}
