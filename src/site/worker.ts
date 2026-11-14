@@ -33,16 +33,18 @@ function permanent(res: Response, method: string): Response {
 const WB_PATH = /^\/api\/wb(\/v2\/country\/[A-Za-z]{2,3}\/indicator\/[A-Za-z0-9._]{2,40})$/;
 const WB_PARAMS = new Set(["format", "per_page", "date", "source", "mrv", "page"]);
 
-async function worldBank(url: URL, path: string): Promise<Response> {
+/** One World Bank read, given up after `timeoutMs` so a slow upstream answers as a 504 the app can read and retry. */
+export async function worldBank(url: URL, path: string, timeoutMs = 20_000): Promise<Response> {
   // Only known parameters with plain values pass, written as the app wrote them (a date range keeps its colon).
   const query = [...url.searchParams].filter(([k, v]) => WB_PARAMS.has(k) && /^[A-Za-z0-9:.]{1,20}$/.test(v)).map(([k, v]) => `${k}=${v}`).join("&");
   const up = `https://api.worldbank.org${path}${query ? `?${query}` : ""}`;
   const cf = { cacheTtl: 86_400, cacheEverything: true };
   let res: Response;
   try {
-    res = await fetch(up, { headers: { "user-agent": "borgo/0.2 (open-source city comparison; https://github.com/ABCastor/borgo)", accept: "application/json" }, cf } as RequestInit);
+    res = await fetch(up, { headers: { "user-agent": "borgo/0.2 (open-source city comparison; https://github.com/ABCastor/borgo)", accept: "application/json" }, cf, signal: AbortSignal.timeout(timeoutMs) } as RequestInit);
   } catch (e) {
-    return new Response(JSON.stringify({ error: `World Bank unreachable: ${(e as Error).message}` }), { status: 502, headers: { "content-type": "application/json", "access-control-allow-origin": "*" } });
+    const slow = e instanceof Error && (e.name === "TimeoutError" || e.name === "AbortError");
+    return new Response(JSON.stringify({ error: slow ? `The World Bank did not answer within ${Math.round(timeoutMs / 1000)} s` : `World Bank unreachable: ${(e as Error).message}` }), { status: slow ? 504 : 502, headers: { "content-type": "application/json", "access-control-allow-origin": "*", "cache-control": "no-store" } });
   }
   const out = new Response(res.body, { status: res.status, headers: { "content-type": res.headers.get("content-type") ?? "application/json", "access-control-allow-origin": "*", "cache-control": res.ok ? "public, max-age=86400" : "no-store" } });
   return out;

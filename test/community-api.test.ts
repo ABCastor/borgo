@@ -2,7 +2,7 @@
 // (and what never is), the daily network limit, removal, the city page filled in, and the open dataset.
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { handle } from "../src/site/worker.ts";
+import { handle, worldBank } from "../src/site/worker.ts";
 import { envWith } from "./fake-d1.ts";
 
 const O = "https://borgo.abcastor.com";
@@ -140,6 +140,20 @@ test("the World Bank passes through only for indicator reads, with an open CORS 
     const no = await handle(new Request(`${O}/api/wb/v2/sources?format=json`), env);
     assert.equal(no.status, 404);
     assert.equal(seen.length, 1);
+  } finally {
+    globalThis.fetch = real;
+  }
+});
+
+test("a World Bank that does not answer becomes a quick 504 the app can read, not a hung request", async () => {
+  const real = globalThis.fetch;
+  globalThis.fetch = ((_: string, init: RequestInit) => new Promise((_, reject) => init.signal!.addEventListener("abort", () => reject(init.signal!.reason)))) as typeof fetch;
+  try {
+    const t0 = Date.now();
+    const res = await worldBank(new URL(`${O}/api/wb/v2/country/GE/indicator/SP.DYN.LE00.IN?format=json`), "/v2/country/GE/indicator/SP.DYN.LE00.IN", 50);
+    assert.equal(res.status, 504);
+    assert.equal(res.headers.get("access-control-allow-origin"), "*");
+    assert.ok(Date.now() - t0 < 2000);
   } finally {
     globalThis.fetch = real;
   }
