@@ -11,7 +11,7 @@ import { term } from "./terms.ts";
 const SHORT: Record<string, string> = {
   money_left: "Money kept",
   living_cost: "Cost of living",
-  right_to_live: "Right to live there",
+  right_to_live: "Right to live and work",
   nice_days: "Nice days",
   winter_light: "Winter daylight",
   sunshine: "Sunshine",

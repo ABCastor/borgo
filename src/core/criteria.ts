@@ -4,7 +4,7 @@ import { CHILDCARE_AGES, convert, describeMissing, paidChildcare, type MoneyResu
 import { householdRights, type RightResult } from "./rights.ts";
 import { shortestDay } from "./sun.ts";
 import type { City, ComfortBasis, Dataset, MetricCategory, Profile } from "./types.ts";
-import { BIN_COUNT, niceDaysByMonth } from "./weather-days.ts";
+import { BIN_COUNT, binsFromKinds, daylightShare, defaultTests, niceDaysByMonth } from "./weather-days.ts";
 import { highInRange } from "./world-map.ts";
 
 /** Everything a criterion may look at for one city. */
@@ -173,13 +173,36 @@ function dayCount(id: string, metric: string, label: string, question: string, s
 /** The nice-day range a new profile starts with, on the feels-like temperature. Everyone sets their own. */
 export const DEFAULT_COMFORT = { min: 18, max: 30, basis: "feels" } as const;
 
-/** Nice days by month for this person's range and temperature, from the bins of dry, mostly clear days. */
+/**
+ * Nice days by month for this person's own definition. Today's nice day (dry, mostly clear, the range) is read from
+ * the bins of dry, mostly clear days; a definition that adds humidity or wind, or drops rain or sky, is read from the
+ * days by kind of weather (nice_kinds_*), which a place without them lacks. A daylight minimum keeps each month's share
+ * of days that long, computed from the latitude.
+ */
 export function niceDays(data: Dataset, profile: Profile, city: City): { months: number[]; resolved: Resolved } | null {
   const c = profile.prefs.comfort;
-  const r = resolve(data, profile, city, (c.basis ?? "feels") === "air" ? "nice_bins_air" : "nice_bins_feels");
-  const bins = series(r);
-  if (!bins || bins.length !== 12 * BIN_COUNT) return null;
-  return { months: niceDaysByMonth(bins, c.min, c.max), resolved: r! };
+  const air = (c.basis ?? "feels") === "air";
+  let bins: number[] | null = null;
+  let r: Resolved | null | undefined;
+  if (defaultTests(c)) {
+    r = resolve(data, profile, city, air ? "nice_bins_air" : "nice_bins_feels");
+    const b = series(r);
+    bins = b && b.length === 12 * BIN_COUNT ? b : null;
+  } else {
+    r = resolve(data, profile, city, air ? "nice_kinds_air" : "nice_kinds_feels");
+    const packed = series(r);
+    bins = packed ? binsFromKinds(packed, c) : null;
+  }
+  if (!bins || !r) return null;
+  const months = niceDaysByMonth(bins, c.min, c.max);
+  const share = c.daylight ? daylightShare(city.lat, c.daylight) : null;
+  return { months: share ? months.map((n, m) => n * share[m]!) : months, resolved: r };
+}
+
+/** The nice-day tests besides temperature, in words, in the order a person reads them: "dry, mostly clear". */
+export function niceTestsText(c: Profile["prefs"]["comfort"]): string {
+  const t = [c.dry !== false ? "dry" : "", c.clear !== false ? "mostly clear" : "", c.notMuggy ? "not muggy" : "", c.calm ? "calm" : "", c.daylight ? `at least ${c.daylight} hours of daylight` : ""].filter(Boolean);
+  return t.length ? t.join(", ") : "any weather";
 }
 
 /**
@@ -371,21 +394,21 @@ export const CRITERIA: Criterion[] = [
   {
     id: "right_to_live",
     label: "Everyone can move there",
-    question: "Can every person in your household live and work there without a visa?",
+    question: "Can every person in your household live and work there without applying for a visa: by citizenship, free movement or a right they already hold?",
     category: "access",
     scale: () => [0, 1],
     raw: ({ rights }) => {
-      if (rights.length === 0) return { value: null, text: "add your passport", sources: [] };
+      if (rights.length === 0) return { value: null, text: "add your passport or other right to live and work", sources: [] };
       const n = rights.length;
       const unknown = rights.filter((r) => r.status === "unknown");
       const ok = rights.filter((r) => r.status === "yes").length;
       const noun = n === 1 ? "person" : "people";
       if (!unknown.length) return { value: ok / n, text: `${ok} of ${n} ${noun}`, sources: [] };
-      const notChecked = `${unknown.map((r) => r.person).join(", ")} not checked: add passports`;
+      const notChecked = `${unknown.map((r) => r.person).join(", ")} not checked: add passports or other rights`;
       // Someone known cannot move there: the line fails whoever else is unknown, scored as if they could not either.
       // Between `ok` (nobody unchecked can) and `ok` plus the unchecked (all of them can), and below everyone either way.
       if (ok < n - unknown.length) return { value: ok / n, text: `${ok} to ${ok + unknown.length} of ${n} ${noun}; ${notChecked}`, sources: [], partial: true };
-      return { value: null, text: unknown.length === n ? "not checked: add passports" : `${ok} of ${n - unknown.length} checked; ${notChecked}`, sources: [] };
+      return { value: null, text: unknown.length === n ? "not checked: add passports or other rights" : `${ok} of ${n - unknown.length} checked; ${notChecked}`, sources: [] };
     },
     fails: (v) => v < 1,
     defaultWeight: 15,
@@ -400,7 +423,9 @@ export const CRITERIA: Criterion[] = [
       const n = niceDays(data, profile, city);
       if (!n) return { value: null, text: "no data", sources: [] };
       const total = n.months.reduce((a, b) => a + b, 0);
-      return { value: total, text: `${fmt(total)} nice days a year`, sources: [n.resolved] };
+      // A definition beyond today's says so, so the figure is never read against the usual one.
+      const own = defaultTests(profile.prefs.comfort) && !profile.prefs.comfort.daylight ? "" : ` (${niceTestsText(profile.prefs.comfort)})`;
+      return { value: total, text: `${fmt(total)} nice days a year${own}`, sources: [n.resolved] };
     },
     defaultWeight: 8,
   },

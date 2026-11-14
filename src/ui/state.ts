@@ -1,5 +1,6 @@
 import { CRITERIA, DEFAULT_COMFORT, upgradeProfile } from "../core/criteria.ts";
 import { monthlyFrom } from "../core/money.ts";
+import { cleanPermits } from "../core/rights.ts";
 import { PRESETS } from "../core/presets.ts";
 import type { Dataset, Profile } from "../core/types.ts";
 import type { CityFetch } from "../fetch/index.ts";
@@ -24,7 +25,7 @@ export interface AppState {
   valuesOpen: boolean;
   /** Value groups opened to tune their parts. */
   openGroups: string[];
-  /** A place being looked up and fetched live, shown above the results while it loads. */
+  /** A place being looked up and fetched live: its sheet shows at once, filled as the sources answer. */
   live: LiveFetch | null;
   /** Places this browser fetched itself (not in the committed snapshot). */
   fetchedHere: string[];
@@ -38,6 +39,24 @@ export interface AppState {
   notFound?: string[];
   /** Problems of the last change, which was therefore not stored: shown beside its field. */
   refused?: string[];
+  /** A first visit: Borgo says what it is and asks first for the answers that move the ranking most. Kept for the visit once shown. */
+  intro?: boolean;
+}
+
+const INTRO_KEY = "borgo:intro-hidden";
+
+/** Whether to greet this visitor: nobody has told Borgo about themselves yet (no salary, no household) and they did not hide it. */
+export function introFor(p: Profile, shared: boolean): boolean {
+  try {
+    if (localStorage.getItem(INTRO_KEY)) return false;
+  } catch {}
+  return !shared && p.income.gross <= 0 && !Object.keys(p.income.perCity).length && !p.household.length;
+}
+
+export function hideIntro(): void {
+  try {
+    localStorage.setItem(INTRO_KEY, "1");
+  } catch {}
 }
 
 export type LiveStatus = "waiting" | "running" | "ok" | "empty" | "failed" | "skipped";
@@ -46,6 +65,9 @@ export interface LiveFetch {
   query: string;
   /** What was found: "Palermo, Sicily, Italy, 648,260 people"; empty while searching. */
   label: string;
+  /** The place's name alone ("Palermo"), and its id once found: the sheet that waits for it is drawn under that id, so it moves into its rank when the figures arrive. */
+  name?: string;
+  cityId?: string;
   sources: { source: string; status: LiveStatus; count?: number; reason?: string }[];
   error?: string;
 }
@@ -129,7 +151,7 @@ export type SharePart = "money" | "household" | "numbers" | "lines" | "stances";
 
 export const SHARE_PARTS: { key: SharePart; label: string; what: string }[] = [
   { key: "money", label: "Pay, spending and savings", what: "every salary and pay per city, pension shares, spending and where you live now, savings, newcomer regimes and tax settings" },
-  { key: "household", label: "Who is moving", what: "names, passports, ages, children, years since you lived in each country, answers to regime conditions" },
+  { key: "household", label: "Who is moving", what: "names, passports and other rights to live and work, ages, children, years since you lived in each country, answers to regime conditions" },
   { key: "numbers", label: "Your own numbers", what: "your rents and every figure you replaced" },
   { key: "lines", label: "Your own lines", what: "their names and your 1 to 5 scores" },
   { key: "stances", label: "Where you stand", what: "your politics and your stance on the laws" },
@@ -249,6 +271,11 @@ export function loadProfile(data: Dataset): Profile {
     income: { ...base.income, ...(loaded.income ?? {}) },
     prefs: { ...base.prefs, ...(loaded.prefs ?? {}), comfort },
     housing: { ...base.housing, ...(loaded.housing ?? {}) },
+  });
+  p.household = (Array.isArray(p.household) ? p.household : []).map((h) => {
+    const permits = cleanPermits(h.permits);
+    const { permits: _drop, ...rest } = h;
+    return { ...rest, citizenships: Array.isArray(h.citizenships) ? h.citizenships.filter((c) => typeof c === "string" && /^[A-Z]{2}$/.test(c)) : [], ...(permits.length ? { permits } : {}) };
   });
   notFoundOnLoad = p.cities.filter((id) => !data.cities.some((c) => c.id === id));
   linkPlaces = places && typeof places === "object" ? Object.fromEntries(Object.entries(places).filter(([, v]) => typeof v === "string")) : {};

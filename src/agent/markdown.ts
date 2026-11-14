@@ -136,7 +136,7 @@ export function summaryMarkdown(r: CompareSummary, why: Record<string, string[]>
   }
   const rights = r.cities.filter((c) => c.rights.length);
   if (rights.length) {
-    out.push("### Who can move there\n" + table(["City", ...rights[0]!.rights.map((p) => p.person)], rights.map((c) => [c.name, ...c.rights.map(rightCell)])));
+    out.push("### Right to live and work\n" + table(["City", ...rights[0]!.rights.map((p) => p.person)], rights.map((c) => [c.name, ...c.rights.map(rightCell)])));
     const no = rightsNotes(rights.map((c) => ({ name: c.name, rights: c.rights.map((x) => ({ ...x, sources: x.sources ?? [], allowed: x.status === "yes" })) })));
     if (no) out.push(no);
   }
@@ -217,7 +217,7 @@ export function compareMarkdown(r: CompareReport): string {
 
   const rights = r.cities.filter((c) => c.rights.length);
   if (rights.length) {
-    out.push("### Who can move there");
+    out.push("### Right to live and work");
     out.push(table(["City", ...rights[0]!.rights.map((p) => p.person)], rights.map((c) => [c.name, ...c.rights.map(rightCell)])));
     out.push(rightsNotes(rights.map((c) => ({ name: c.name, rights: c.rights }))));
   }

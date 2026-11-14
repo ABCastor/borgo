@@ -150,6 +150,8 @@ export function profileProblems(p: Profile): string[] {
   const [lo, hi] = LIMITS.comfort;
   if (!(Number.isFinite(c.min) && Number.isFinite(c.max)) || c.min < lo || c.max > hi) out.push(`comfort is a range in °C between ${lo} and ${hi}; got ${c.min} to ${c.max}.`);
   else if (c.min >= c.max) out.push(`comfort: min must be below max; got ${c.min} to ${c.max}.`);
+  if (c.daylight !== undefined && !(Number.isFinite(c.daylight) && c.daylight >= 0 && c.daylight <= 24)) out.push(`comfort.daylight is hours of daylight, 0 to 24; got ${c.daylight}.`);
+  for (const k of ["dry", "clear", "notMuggy", "calm"] as const) if (c[k] !== undefined && typeof c[k] !== "boolean") out.push(`comfort.${k} must be true or false; got ${String(c[k])}.`);
   for (const a of p.children ?? []) if (!(Number.isFinite(a) && a >= 0 && a < 30)) out.push(`children are ages in years from 0 to 29; got ${a}.`);
   for (const l of p.personal) for (const [city, v] of Object.entries(l.scores)) if (!(Number.isFinite(v) && v >= 1 && v <= 5)) out.push(`Your line "${l.label}" scores 1 to 5; got ${v} for ${city}.`);
   // A cost (rent, a premium, childcare) is never below zero: a negative one would read as income.

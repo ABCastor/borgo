@@ -4,13 +4,13 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { DEFAULT_COMFORT } from "../core/criteria.ts";
-import type { HousingSize, TaxTweak } from "../core/types.ts";
+import type { Comfort, HousingSize, PermitKind, TaxTweak } from "../core/types.ts";
 import { searchCities } from "../agent/cities.ts";
 import { chartInput, compareSvg } from "../agent/chart.ts";
 import { loadDataset, ROOT } from "../agent/dataset.ts";
 import { catalogueMarkdown, cataloguePartMarkdown, cityMarkdown, compareMarkdown, netPayMarkdown, summaryMarkdown } from "../agent/markdown.ts";
 import { methodology } from "../agent/methodology.ts";
-import type { Money, PeriodAmount, QueryArgs } from "../agent/profile.ts";
+import type { HouseholdArg, Money, PeriodAmount, QueryArgs } from "../agent/profile.ts";
 import { CATALOGUE_KINDS, catalogue, cataloguePart, cityReport, compare, netPay, REPORT_VERSION, summarize, summaryWhy, type CatalogueKind } from "../agent/report.ts";
 import { fetchPlace, placeFetchMarkdown, placeFetchSummary } from "../agent/fetch-place.ts";
 import { listSources, sourcesMarkdown } from "../agent/sources.ts";
@@ -27,7 +27,7 @@ Start here
 
 Usage
   borgo compare <city> <city> ... [options]     rank cities for you (compact; --full for every line and tax line)
-  borgo city <city> [--person US] [--metric rent_1bed,pm25] [--full]
+  borgo city <city> [--person US] [--right DE:permanent] [--metric rent_1bed,pm25] [--full]
                                                 a city's figures with sources, and who may live there
   borgo net-pay <country|city> <gross> [--currency GBP] [--region US-CA] [--taxable-share 0.5] [--flat-rate 0.24]
         [--age 30] [--children 2,5] [--pension 5%] [--regime it-impatriati] [--partner 40k] [--married]
@@ -56,6 +56,9 @@ Compare options
   --only nice_days (score only these lines, comma-separated; every other line counts 0)
   --full (every line, tax line and source)   --limit 10 (cities described in the compact answer)
   --person IT,US (passports, one per person moving; leave out what you do not know)
+  --right DE:permanent (a right to live and work that is not citizenship, repeatable: WHERE:KIND[:UNTIL][:no-work];
+      kinds permanent, settled, residence, work, blue-card, other; WHERE a country or EEA; UNTIL YYYY-MM-DD;
+      "2=NL:blue-card:2027-06-30" or "Sam=GB:settled" for another person)
   --salary "70k EUR"   --salary-in "London=85000 GBP" (repeatable)
   --pension 5% (of your gross: tax relief where the plan is modelled, see "catalogue --kind pensions";
       elsewhere not modelled, counted as saving)   --age 34   --children 2,5 (ages)
@@ -71,6 +74,7 @@ Compare options
   --childcare-cost "Zurich=1800/month" (repeatable: what you pay for childcare there, after support; /month or /year)
   --no-paid-childcare (the children under 6 are not in paid childcare: no childcare cost is counted)
   --comfort 18-30 (nice days: daytime feels-like, °C)   --comfort-air (the range is air temperature)
+  --nice-day not-muggy,calm,daylight=10 (more tests for a nice day; rain-ok and cloud-ok drop the rain and sky tests)
   --relative   --missing-skip   --missing-worst   --deal-breaker right_to_live (must pass; repeatable)
   --stance politics=3.5 (where you stand: politics 0 left to 10 right; abortion 0-4 and couples_law 0-3
       by step, or a step's words such as couples_law=marriage; repeatable, and only what you say)
@@ -93,6 +97,7 @@ const OPTIONS = {
   preset: { type: "string" },
   weight: { type: "string", multiple: true },
   person: { type: "string", multiple: true },
+  right: { type: "string", multiple: true },
   salary: { type: "string" },
   "salary-in": { type: "string", multiple: true },
   currency: { type: "string" },
@@ -103,6 +108,7 @@ const OPTIONS = {
   savings: { type: "string" },
   comfort: { type: "string" },
   "comfort-air": { type: "boolean" },
+  "nice-day": { type: "string" },
   relative: { type: "boolean" },
   "missing-worst": { type: "boolean" },
   "missing-skip": { type: "boolean" },
@@ -211,6 +217,19 @@ function scores(s: string): Record<string, number> {
   return Object.fromEntries(s.split(",").map((x) => pair(x, "=", "scores")).map(([k, v]) => [k, number(v, k)]));
 }
 
+/** "[who=]WHERE:KIND[:UNTIL][:no-work]" -> the person it is for (a 1-based number or a label) and the right. */
+export function parseRight(text: string): { who?: string; permit: NonNullable<HouseholdArg["rights"]>[number] } {
+  const [who, rest] = text.includes("=") ? pair(text, "=", "--right") : [undefined, text];
+  const parts = rest.split(":").map((x) => x.trim());
+  const [where, kind, ...more] = parts;
+  if (!where || !kind) throw new Error(`--right ${text}: give WHERE:KIND, e.g. DE:permanent or NL:blue-card:2027-06-30.`);
+  const until = more.find((x) => /^\d{4}-\d{2}-\d{2}$/.test(x));
+  const noWork = more.includes("no-work");
+  const unknown = more.filter((x) => x !== until && x !== "no-work");
+  if (unknown.length) throw new Error(`--right ${text}: "${unknown.join(":")}" is neither a date (YYYY-MM-DD) nor no-work.`);
+  return { ...(who ? { who } : {}), permit: { kind: kind as PermitKind, where, ...(until ? { until } : {}), ...(noWork ? { work: false } : {}) } };
+}
+
 export function compareArgs(positionals: string[], f: Flags): QueryArgs {
   const base: Partial<QueryArgs> = f.args ? JSON.parse(readFileSync(f.args, "utf8")) : {};
   const a: QueryArgs = { ...base, cities: positionals.length ? positionals : (base.cities ?? []) };
@@ -221,6 +240,17 @@ export function compareArgs(positionals: string[], f: Flags): QueryArgs {
     const [label, codes] = p.includes("=") ? pair(p, "=", "--person") : [undefined, p];
     return { ...(label ? { label } : {}), passports: codes.split(/[,\s]+/).filter(Boolean) };
   });
+  if (f.right) {
+    const people = [...(a.household ?? [])];
+    for (const r of f.right) {
+      const { who, permit } = parseRight(r);
+      const i = who === undefined ? 0 : /^\d+$/.test(who) ? Number(who) - 1 : people.findIndex((p) => p.label === who);
+      if (i < 0 || i > 20) throw new Error(`--right ${r}: no person "${who}"; name one given with --person Label=..., or number them from 1.`);
+      while (people.length <= i) people.push({});
+      people[i] = { ...people[i]!, rights: [...(people[i]!.rights ?? []), permit] };
+    }
+    a.household = people;
+  }
   if (f.age || f.partner || f["partner-in"] || f.married || f["partner-age"] || f["partner-regime"]) {
     const people = [...(a.household ?? [])];
     const need = f.partner || f["partner-in"] || f.married || f["partner-age"] || f["partner-regime"] ? 2 : 1;
@@ -260,6 +290,18 @@ export function compareArgs(positionals: string[], f: Flags): QueryArgs {
     a.comfort = { min: number(min, "--comfort"), max: number(max, "--comfort") };
   }
   if (f["comfort-air"]) a.comfort = { ...(a.comfort ?? DEFAULT_COMFORT), basis: "air" };
+  if (f["nice-day"]) {
+    const c: Comfort = { ...(a.comfort ?? DEFAULT_COMFORT) };
+    for (const t of f["nice-day"].split(",").map((x) => x.trim()).filter(Boolean)) {
+      if (t === "not-muggy") c.notMuggy = true;
+      else if (t === "calm") c.calm = true;
+      else if (t === "rain-ok") c.dry = false;
+      else if (t === "cloud-ok") c.clear = false;
+      else if (t.startsWith("daylight=")) c.daylight = number(t.slice(9), "--nice-day daylight");
+      else throw new Error(`--nice-day ${t}: use not-muggy, calm, daylight=HOURS, rain-ok or cloud-ok.`);
+    }
+    a.comfort = c;
+  }
   if (f.relative) a.normalise = "relative";
   if (f["missing-worst"]) a.missing = "worst";
   if (f["missing-skip"]) a.missing = "skip";
@@ -388,7 +430,15 @@ export async function main(argv: string[]): Promise<number> {
     }
     case "city": {
       if (!rest[0]) throw new Error("Which city? e.g. borgo city Turin");
-      const r = cityReport(ds, rest.join(" "), { passports: f.person?.map((p) => p.split(/[,\s]+/).filter(Boolean)), metrics: f.metric?.split(",").map((x) => x.trim()).filter(Boolean), detail: f.full ? "full" : "summary" });
+      const rights: NonNullable<HouseholdArg["rights"]>[] = [];
+      for (const x of f.right ?? []) {
+        const { who, permit } = parseRight(x);
+        const i = who === undefined ? 0 : Number(who) - 1;
+        if (!Number.isInteger(i) || i < 0 || i > 20) throw new Error(`--right ${x}: number the person from 1 (city takes no labels).`);
+        while (rights.length <= i) rights.push([]);
+        rights[i]!.push(permit);
+      }
+      const r = cityReport(ds, rest.join(" "), { passports: f.person?.map((p) => p.split(/[,\s]+/).filter(Boolean)), rights, metrics: f.metric?.split(",").map((x) => x.trim()).filter(Boolean), detail: f.full ? "full" : "summary" });
       print(r, cityMarkdown(r));
       return 0;
     }

@@ -77,7 +77,7 @@ export interface Metric {
   unit: string; // "EUR/month", "°C", "µg/m³", "per 100k", "days", "h", "index"
   category: MetricCategory;
   direction: Direction;
-  shape: "scalar" | "monthly" | "hourly" | "bins";
+  shape: "scalar" | "monthly" | "hourly" | "bins" | "kinds";
   /** Currency the value is expressed in, when unit is money. Values are stored in local currency unless stated. */
   currency?: "local" | "EUR" | "USD";
   description: string;
@@ -125,9 +125,29 @@ export interface Dataset {
 
 // ---------- The person using it ----------
 
+/** A right to live and work somewhere that is not citizenship. */
+export type PermitKind = "permanent" | "settled" | "residence" | "work" | "blue-card" | "other";
+
+/**
+ * A right to live (and usually work) in a place that a person holds without being its citizen: permanent residence, a
+ * residence or work permit, an EU Blue Card, settled status. The person says what they hold; Borgo does not check it.
+ */
+export interface Permit {
+  kind: PermitKind;
+  /** Where it holds: a country (ISO 3166 alpha-2), or the id of a free-movement area in data/rights.json ("EEA") for a right granted across it. */
+  where: string;
+  /** The last day it is valid, YYYY-MM-DD. None for a right without an end, such as permanent residence. */
+  until?: string;
+  /** False for a right to live there without the right to work (a student or family permit that bars work). Default true. */
+  work?: boolean;
+}
+
 export interface Person {
   label: string;
+  /** Passports: citizenship, and the free movement it brings. */
   citizenships: Iso2[];
+  /** Rights to live and work that are not citizenship (Permit). */
+  permits?: Permit[];
   /** What the newcomer tax regimes check (src/tax/regimes.ts), and the age that age-dependent tax and pension rules read. Optional: a missing fact makes its condition "you must confirm". */
   newcomer?: NewcomerFacts;
   /** What this person earns. Only for the people after the first: your own pay is `Profile.income`. */
@@ -211,13 +231,33 @@ export interface PersonalLine {
 
 export type ComfortBasis = "feels" | "air";
 
+/**
+ * What a nice day is for this person. A temperature range always; then tests a day must pass. Rain and sky are on
+ * unless switched off (today's nice day: dry and mostly clear); humidity, wind and daylight are the person's to add.
+ */
+export interface Comfort {
+  min: number;
+  max: number;
+  basis?: ComfortBasis;
+  /** Under 1 mm of rain from 8 am to 8 pm. Default true. */
+  dry?: boolean;
+  /** At most half the sky clouded on average from 8 am to 8 pm: the sunshine test. Default true. */
+  clear?: boolean;
+  /** The day's mean dew point under 18 °C: not muggy. Default false. */
+  notMuggy?: boolean;
+  /** The daytime wind under 20 km/h on average. Default false. */
+  calm?: boolean;
+  /** At least this many hours of daylight (sunrise to sunset), computed from the latitude. None by default. */
+  daylight?: number;
+}
+
 export interface Preferences {
   /**
    * Your comfortable daytime temperature, °C: a dry, mostly clear day whose average temperature from 8 am to 8 pm sits
    * inside it is a nice day. `basis` says which temperature: feels-like (the default) or the air in the shade.
    * A saved range without `basis` is from before nice days and meant a month's average; it is replaced on load.
    */
-  comfort: { min: number; max: number; basis?: ComfortBasis };
+  comfort: Comfort;
   normalise: "absolute" | "relative";
   /**
    * A city lacking a figure others have: "lowest" scores it at the lowest score a compared city has on the line,

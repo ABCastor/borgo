@@ -18,7 +18,7 @@ import { ROOT, readJson, writeJson, type ObservationFile } from "./lib.ts";
 import { METRICS, valueLength } from "../src/core/metrics.ts";
 import type { City, Country, Dataset, FxTable, Metric, Observation, RightsArea } from "../src/core/types.ts";
 import { loadRegistry, registrySources } from "../src/registry/load.ts";
-import { LICENCES, PARTS, partFor, type LicenceManifest, type ManifestEntry, type PartFile, type PartId, type Published } from "../src/registry/licences.ts";
+import { LAZY_FILE, LICENCES, PARTS, partFor, type LicenceManifest, type ManifestEntry, type PartFile, type PartId, type Published } from "../src/registry/licences.ts";
 import type { RegistryEntry } from "../src/registry/schema.ts";
 import type { CorrectionsFile } from "../src/community/apply.ts";
 import { validateMap, type WorldMap } from "../src/core/world-map.ts";
@@ -103,6 +103,8 @@ if (existsSync(join(ROOT, CORRECTIONS))) {
 }
 
 function shapeOk(shape: Metric["shape"] | undefined, v: unknown): boolean {
+  // Days by kind: twelve month factors, then pairs of key and count (src/core/weather-days.ts niceKinds).
+  if (shape === "kinds") return Array.isArray(v) && v.length >= 12 && (v.length - 12) % 2 === 0 && v.every(Number.isFinite);
   const n = valueLength(shape);
   if (n) return Array.isArray(v) && v.length === n && v.every(Number.isFinite);
   return typeof v === "number" && Number.isFinite(v);
@@ -192,6 +194,16 @@ const manifest: LicenceManifest = {
 
 const partSources = (p: PartId) => manifest.sources.filter((s) => s.part === p && s.observations > 0).map((s) => s.source);
 const others = PART_IDS.filter((p) => p !== "open" && partSources(p).length);
+// Days by kind of weather are large and read by few: they leave dataset.json for a file the app reads when asked.
+const lazyMetrics = Object.values(METRICS).filter((m) => m.shape === "kinds").map((m) => m.id);
+const lazyObs: Record<string, Observation[]> = {};
+for (const [city, list] of Object.entries(byPart.open)) {
+  const out = list.filter((o) => lazyMetrics.includes(o.metric));
+  if (!out.length) continue;
+  lazyObs[city] = out;
+  byPart.open[city] = list.filter((o) => !lazyMetrics.includes(o.metric));
+}
+const lazySources = [...new Set(Object.values(lazyObs).flat().map((o) => o.source))].sort();
 const dataset: Dataset & Published = {
   version: builtAt.slice(0, 10),
   builtAt,
@@ -204,9 +216,14 @@ const dataset: Dataset & Published = {
   rights,
   shareAlike: partSources("odbl"),
   parts: others.map((p) => ({ part: p, file: PARTS[p].file, licence: PARTS[p].licence, sources: partSources(p) })),
+  ...(lazySources.length ? { lazy: [{ file: LAZY_FILE, metrics: lazyMetrics }] } : {}),
   manifest,
 };
 await writeJson("public/data/dataset.json", dataset);
+if (lazySources.length) {
+  const file: PartFile = { part: "open", licence: PARTS.open.licence, notice: PARTS.open.notice, sources: lazySources, observations: lazyObs };
+  await writeJson(`public/${LAZY_FILE}`, file);
+}
 for (const p of others) {
   const file: PartFile = { part: p, licence: PARTS[p].licence, notice: PARTS[p].notice, sources: partSources(p), observations: Object.fromEntries(Object.entries(byPart[p]).filter(([, l]) => l.length)) };
   await writeJson(`public/${PARTS[p].file}`, file);

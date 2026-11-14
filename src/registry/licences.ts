@@ -146,6 +146,11 @@ export interface PartFile {
 /** What dataset.json says about the files beside it and the terms of everything in it. */
 export interface Published {
   parts?: { part: PartId; file: string; licence: Part["licence"]; sources: string[] }[];
+  /**
+   * Files of open figures (CC BY 4.0, like dataset.json) kept out of it because few people need them and they are
+   * large: the browser reads one only when a person asks for what it holds; every other reader merges them in.
+   */
+  lazy?: { file: string; metrics: string[] }[];
   manifest?: LicenceManifest;
 }
 
@@ -176,6 +181,14 @@ export function manifestOf(data: Dataset): LicenceManifest | undefined {
 export function partFiles(data: Dataset): string[] {
   return ((data as Dataset & Published).parts ?? []).map((p) => p.file);
 }
+
+/** The open files read only on demand (Published.lazy), relative to the site root. */
+export function lazyFiles(data: Dataset): { file: string; metrics: string[] }[] {
+  return (data as Dataset & Published).lazy ?? [];
+}
+
+/** Where the days by kind of weather go: out of dataset.json, into a file of their own the app reads when asked. */
+export const LAZY_FILE = "data/dataset-days.json";
 
 /** The manifest entries for the given sources, in a stable order: what a page must credit for the figures it shows. */
 export function creditsFor(data: Dataset, ids: Iterable<string>): ManifestEntry[] {

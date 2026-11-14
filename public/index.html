@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Borgo: compare cities on open data, weighted by what you value</title>
-<meta name="description" content="Compare any cities on open, sourced data: what you would earn after tax and keep after rent, who can move there without a visa, climate, air, safety and research. Weighted by what you value, private in your browser.">
+<title>Borgo: the best place to live for you, on open data</title>
+<meta name="description" content="Borgo ranks cities on your own values: what you keep after tax and rent, days that feel the way you like, where you have the right to live and work. Every figure shows its source, and it runs privately in your browser.">
 <meta name="google-site-verification" content="p6QXW9JQh5Vc3KerRpEp61XXgUA8tzYpbt1vvbHpJLw">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EFECE3">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121110">
+<!--PRELOAD-->
 <link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -17,12 +18,12 @@
 <body class="app">
 <div class="site">
 <!--HEADER-->
-<div id="page" class="page"><div class="quiet" style="padding:2rem 0;max-width:42rem">
-<h1>Compare cities by what you value</h1>
-<p>Borgo compares any number of cities on open data, weighted by what matters to you: what you would earn after tax and keep after rent, who in your household can move there without a visa, how many nice days you get in your own temperature range, air, safety and health. Every figure shows its source and the period it describes. It runs in your browser with no account, and the same engine answers from the command line and as an MCP server for AI assistants.</p>
-<p>Browse <a href="sources/">the sources</a>, a city such as <a href="city/lisbon-pt/">Lisbon</a> or <a href="city/berlin-de/">Berlin</a>, a comparison such as <a href="compare/amsterdam-nl-vs-berlin-de/">Amsterdam vs Berlin</a>, or the <a href="llms.txt">guide for AI assistants</a>. The code is open at <a href="https://github.com/ABCastor/borgo">github.com/ABCastor/borgo</a>.</p>
-<p>Loading the comparison…</p>
-</div></div>
+<div id="page" class="page"><div class="top-slot"><section class="intro intro-static" aria-labelledby="intro-h">
+<h1 class="intro-h" id="intro-h">The best place to live, <span>for you</span></h1>
+<p class="intro-lede">Borgo is yours. It ranks cities on what you value: what you keep after tax and rent, days that feel the way you like, where you have the right to live and work. Every number shows its source, and nothing you enter leaves your browser.</p>
+<p class="intro-more">Browse <a href="sources/">the sources</a>, a city such as <a href="city/lisbon-pt/">Lisbon</a> or <a href="city/berlin-de/">Berlin</a>, a comparison such as <a href="compare/amsterdam-nl-vs-berlin-de/">Amsterdam vs Berlin</a>, or the <a href="llms.txt">guide for AI assistants</a>; the same engine answers from the command line and as an MCP server. The code is open at <a href="https://github.com/ABCastor/borgo">github.com/ABCastor/borgo</a>.</p>
+<p class="intro-wait quiet" role="status">Loading your comparison…</p>
+</section></div></div>
 </div>
 <div id="pop" class="pop" hidden role="dialog"></div>
 <noscript><p style="padding:1rem">This comparison runs in your browser and needs JavaScript. The data itself is in data/dataset.json.</p></noscript>

@@ -6,7 +6,8 @@ import { CRITERIA } from "../core/criteria.ts";
 import { pensionPlans } from "../tax/pension.ts";
 import { observationProblems } from "../core/metrics.ts";
 import { PRESETS } from "../core/presets.ts";
-import type { Dataset, Observation } from "../core/types.ts";
+import type { Dataset, Observation, PermitKind } from "../core/types.ts";
+import { PERMIT_KIND_IDS, PERMIT_KINDS } from "../core/rights.ts";
 import { findCity, searchCities } from "../agent/cities.ts";
 import { fetchPlace, placeFetchMarkdown } from "../agent/fetch-place.ts";
 import { listSources, sourcesMarkdown } from "../agent/sources.ts";
@@ -31,7 +32,7 @@ export const INSTRUCTIONS = `Borgo compares cities to live in on open, sourced d
 Use it for any question about where to live, relocating or moving abroad, comparing cities, cost of living, rent, take-home pay or net salary in another country, quality of life, climate or air quality of a city, or whether someone's passports let them live and work there.
 
 How to use it well:
-- compare_cities is the main tool. Pass the cities and only what the person told you: passports (household; leave a person's passports out when you do not know them, and that person's right to live there is reported as not checked), salary or per-city offers with currency, a partner's pay and whether they are married, ages, children's ages, a pension share, monthly spending and where they live now (this unlocks the break-even salary), housing size, what matters to them (a preset, explicit weights 0-100, or \`only\` for a one-line question such as only: ["nice_days"]), must-pass lines (dealBreakers), their own 1-5 lines. Never invent a salary, spending or passports: leave them out and relay "what to add next".
+- compare_cities is the main tool. Pass the cities and only what the person told you: passports and any other right to live and work they hold, such as permanent residence, a work visa or an EU Blue Card (household; leave a person's passports out when you do not know them, and that person's right to live and work there is reported as not checked), salary or per-city offers with currency, a partner's pay and whether they are married, ages, children's ages, a pension share, monthly spending and where they live now (this unlocks the break-even salary), housing size, what matters to them (a preset, explicit weights 0-100, or \`only\` for a one-line question such as only: ["nice_days"]), must-pass lines (dealBreakers), their own 1-5 lines. Never invent a salary, spending or passports: leave them out and relay "what to add next".
 - Answers are compact by default (detail "summary", the top 10 cities). Ask for detail "full" only when the person wants every tax line and source; use \`limit\` for long lists.
 - Lead with the verdict and its qualifiers: a must-pass that cannot be checked is "unknown" and is never a pass; a city without a figure on a line is scored as the lowest compared city on it; money is compared on one basis for every city, and the notes say which and what input would fix it. Relay the notes, the required unknowns and the next inputs.
 - Any real place works, not only the cities already in the dataset: fetch_city resolves it ("Palermo, IT") and fetches every source that covers it into the person's cache, with provenance; then use its id in the other tools.
@@ -53,6 +54,14 @@ const criteriaIds = CRITERIA.map((c) => c.id).join(", ");
 const MODELLED_PENSIONS = pensionPlans().filter((x) => x.status === "modelled").map((x) => `${x.country} (${x.plan})`).join(", ");
 const periodAmount = z.object({ amount: z.number().min(0).describe("Amount, in the city's own currency"), per: z.enum(["month", "year"]).describe("What the amount is for: a month or a year") });
 
+/** A right to live and work that is not citizenship (core/types.ts Permit). */
+const permitArg = z.object({
+  kind: z.enum(PERMIT_KIND_IDS as [PermitKind, ...PermitKind[]]).describe(PERMIT_KIND_IDS.map((k) => `${k}: ${PERMIT_KINDS[k].label} (${PERMIT_KINDS[k].example})`).join("; ")),
+  where: z.string().describe("Where it holds: a country, ISO alpha-2 (DE), or a free-movement area id (EEA) for a right granted across it"),
+  until: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional().describe("Its last valid day, YYYY-MM-DD; leave out for a right without an end"),
+  work: z.boolean().optional().describe("false when it allows living there but not working; default true"),
+});
+
 const compareInput = {
   cities: z.array(z.string()).describe("City ids (e.g. turin-it) or names in any common spelling (Turin, Torino, 'Paris, FR'); a name two places share needs its country"),
   preset: z.enum(PRESETS.map((p) => p.id) as [string, ...string[]]).optional().describe("Starting weights"),
@@ -65,6 +74,7 @@ const compareInput = {
       z.object({
         label: z.string().optional(),
         passports: z.array(z.string()).optional().describe("ISO alpha-2 codes, e.g. ['IT','US'], if known. Leave out when you do not know them: that person's right to live there is then reported as not checked, never as needing a visa"),
+        rights: z.array(permitArg).optional().describe("Rights to live and work this person holds that are not citizenship, only if they told you: permanent residence (a green card, indefinite leave to remain), settled status, a residence permit, a work visa, an EU Blue Card. Each has a kind, where it holds (a country or a free-movement area id such as EEA), and its last valid day if it ends. A permit counts until that day; one that ended, or bars work (work: false), does not"),
         regimeConfirmations: z.record(z.string(), z.boolean()).optional().describe('This person\'s answers to newcomer-regime conditions no dataset can check, by condition id (list_metrics_and_sources kind "regimes"), e.g. {"nl-recruited-abroad": true}. Only what the person told you'),
         age: z.number().int().min(14).max(110).optional().describe("Age in years: age-dependent tax (youth relief, care insurance), pension caps, paid leave, newcomer regimes"),
         salary: money.optional().describe("Not for the first person (use `salary`): this person's gross yearly pay, the same everywhere"),
@@ -90,11 +100,23 @@ const compareInput = {
   housing: z.enum(["1bed", "3bed"]).optional(),
   spending: money.extend({ homeCity: z.string().optional().describe("Where you spend this today; default: the first city") }).optional().describe("Monthly spending on everything except housing, childcare and health, which are counted separately"),
   savings: z.number().optional().describe("Savings in the display currency, for runway"),
-  comfort: z.object({ min: z.number(), max: z.number(), basis: z.enum(["feels", "air"]).optional() }).optional().describe("Comfortable daytime temperature for the Nice days line, °C: a dry, mostly clear day whose average from 8 am to 8 pm is inside it counts. Default 18-30 on the feels-like temperature; basis \"air\" uses the air temperature in the shade"),
+  comfort: z
+    .object({
+      min: z.number(),
+      max: z.number(),
+      basis: z.enum(["feels", "air"]).optional(),
+      dry: z.boolean().optional().describe("Under 1 mm of rain from 8 am to 8 pm (default true; false lets rain through)"),
+      clear: z.boolean().optional().describe("At most half the sky clouded on average from 8 am to 8 pm, the sunshine test (default true)"),
+      notMuggy: z.boolean().optional().describe("Not muggy: the day's mean dew point under 18 °C (default false)"),
+      calm: z.boolean().optional().describe("Calm: the daytime wind under 20 km/h on average (default false)"),
+      daylight: z.number().min(0).max(24).optional().describe("At least this many hours of daylight, from the latitude (default none)"),
+    })
+    .optional()
+    .describe("What a nice day is, for the Nice days line: the daytime temperature range, °C (default 18-30 on the feels-like temperature; basis \"air\" uses the air in the shade), then the tests a day must pass. Only the person's own words: rain and sky are on unless they drop them; humidity, wind and daylight only when they ask. All from ERA5 (Open-Meteo, CC BY 4.0) and the latitude"),
   normalise: z.enum(["absolute", "relative"]).optional(),
   missing: z.enum(["lowest", "skip", "worst"]).optional().describe("A city without a figure on a line: \"lowest\" (default) scores it as the lowest compared city, \"worst\" as 0, \"skip\" leaves the line out for every city. Money is never filled in either way"),
   overrides: z.record(z.string(), z.record(z.string(), z.number())).optional().describe("Your own numbers: city -> metric id -> value; money in the city's currency. health_premium is the household's premium a month (prefer healthPremium, which takes the period); childcare_cost is the household's own childcare a month (prefer childcareCost); childcare_net_couple_1 and similar replace the OECD reference figure, a year"),
-  dealBreakers: z.array(z.string()).optional().describe("Must-pass criterion ids, e.g. right_to_live, money_left: a city fails, passes, or is unknown (no figure, a passport not given); unknown ranks after every city that passes"),
+  dealBreakers: z.array(z.string()).optional().describe("Must-pass criterion ids, e.g. right_to_live, money_left: a city fails, passes, or is unknown (no figure, no passport or other right given); unknown ranks after every city that passes"),
   stances: z
     .record(z.string(), z.union([z.number(), z.string()]))
     .optional()
@@ -229,14 +251,15 @@ export function createServer(data: Dataset, opts: ServerOptions = {}): McpServer
       inputSchema: {
         city: z.string().describe("City id or name"),
         passports: z.array(z.array(z.string())).optional().describe("Optional: each person's passports, e.g. [['US']] or [['IT'],['US','IE']]: who may live and work there"),
+        rights: z.array(z.array(permitArg)).optional().describe("Optional: each person's rights to live and work that are not citizenship, in the same order as passports, e.g. [[{kind:'permanent',where:'DE'}]]"),
         metrics: z.array(z.string()).optional().describe("Only these metric ids, e.g. ['rent_1bed','pm25']; list_metrics_and_sources kind \"metrics\" lists them"),
         detail: z.enum(["summary", "full"]).optional().describe('"summary" (default) or "full"'),
       },
       outputSchema: cityOutput,
       annotations: readOnly,
     },
-    guarded(({ city, passports, metrics, detail }) => {
-      const r = cityReport(data, city, { passports, metrics, detail: detail ?? "summary" });
+    guarded(({ city, passports, rights, metrics, detail }) => {
+      const r = cityReport(data, city, { passports, rights, metrics, detail: detail ?? "summary" });
       return reply(cityMarkdown(r), r);
     }),
   );

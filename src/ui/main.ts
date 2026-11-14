@@ -7,7 +7,8 @@ import type { Dataset, Profile } from "../core/types.ts";
 import { makeCtx } from "../fetch/context.ts";
 import { BROWSER_FETCHERS, fetchCity, withFetched } from "../fetch/index.ts";
 import { resolvePlace } from "../places/resolve.ts";
-import { partFiles, withParts, type PartFile } from "../registry/licences.ts";
+import { lazyFiles, partFiles, withParts, type PartFile } from "../registry/licences.ts";
+import { defaultTests } from "../core/weather-days.ts";
 import { citiesView, comfortEditor } from "./cards.ts";
 import { climateOf, drawHours, hourReadout, narrow } from "./climate.ts";
 import { cityView } from "./detail.ts";
@@ -15,12 +16,14 @@ import { html } from "./dom.ts";
 import { mapAction, mapInput, mapShell, mountMap, paintMap, pinCity, refreshMap, repaletteMap, unpinMap } from "./map.ts";
 import { aboutPage, contactPage, dataPage } from "./pages.ts";
 import { compareView, moneyView, sourcePopover } from "./results.ts";
-import { applyCitiesQuery, fetchedNames, loadFetchedCities, loadProfile, notFoundOnLoad, PRESETS, saveFetchedCity, saveProfile, sharedParam, storedOverride, shareUrl, sharePartsHeld, type AppState, type LiveStatus, type SharePart, type View } from "./state.ts";
+import { applyCitiesQuery, fetchedNames, hideIntro, introFor, loadFetchedCities, loadProfile, notFoundOnLoad, PRESETS, saveFetchedCity, saveProfile, sharedParam, storedOverride, shareUrl, sharePartsHeld, type AppState, type LiveStatus, type SharePart, type View } from "./state.ts";
 import { sharePanel } from "./share.ts";
 import { settingsPanel } from "./settings.ts";
 import { TERMS } from "./terms.ts";
 import { local, num, useUnits } from "./format.ts";
 import { KM_PER_MILE, tempFrom, tempIn, unitsOf, type Units } from "../core/units.ts";
+import { hasRightsGiven } from "../core/rights.ts";
+import type { PermitKind } from "../core/types.ts";
 import { browserTowns, knownCity, pickedPlace, suggestPlaces } from "./place-search.ts";
 import { householdPanel, regionName, topQuestion } from "./top.ts";
 import { moneySheet, share, THIRD_WEIGHT, valuesSheet } from "./values.ts";
@@ -486,6 +489,33 @@ function onClick(e: MouseEvent): void {
       });
       document.getElementById(`p${state.profile.household.length - 1}-pass`)?.focus();
       return;
+    case "intro-hide":
+      hideIntro();
+      state.intro = false;
+      renderLive();
+      document.getElementById("add-city")?.focus({ preventScroll: true });
+      return;
+    case "remove-passport":
+      setProfile((p) => p.household[Number(t.dataset.person)]?.citizenships.splice(Number(t.dataset.i), 1));
+      return;
+    case "add-permit": {
+      const i = Number(t.dataset.person);
+      setProfile((p) => {
+        if (!p.household.length) p.household.push({ label: "You", citizenships: [] });
+        const person = p.household[i];
+        if (person) person.permits = [...(person.permits ?? []), { kind: "permanent", where: "" }];
+      });
+      document.getElementById(`p${i}-r${(state.profile.household[i]?.permits?.length ?? 1) - 1}-kind`)?.focus();
+      return;
+    }
+    case "remove-permit":
+      setProfile((p) => {
+        const person = p.household[Number(t.dataset.person)];
+        if (!person?.permits) return;
+        person.permits.splice(Number(t.dataset.i), 1);
+        if (!person.permits.length) delete person.permits;
+      });
+      return;
     case "remove-person":
       setProfile((p) => p.household.splice(Number(t.dataset.i), 1));
       return;
@@ -592,7 +622,8 @@ function onClick(e: MouseEvent): void {
         state.valuesOpen = true;
         renderApp();
       }
-      const el = document.getElementById(target);
+      // The salary asked for on a first visit sits in the greeting, not in the answer.
+      const el = document.getElementById(target) ?? (target === "verdict-salary" ? document.getElementById("intro-salary") : null);
       if (el) {
         el.scrollIntoView({ block: "center", behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
         el.focus({ preventScroll: true });
@@ -782,6 +813,27 @@ function changed(e: Event): void {
     });
     return;
   }
+  if (t.dataset.actChange === "nice-test" || t.dataset.actChange === "nice-daylight") {
+    const next = { ...state.profile.prefs.comfort };
+    if (t.dataset.actChange === "nice-daylight") {
+      const h = Number(t.value);
+      if (h > 0) next.daylight = h;
+      else delete next.daylight;
+    } else {
+      const k = t.dataset.test as "dry" | "clear" | "notMuggy" | "calm";
+      const on = (t as HTMLInputElement).checked;
+      if (k === "dry" || k === "clear") on ? delete next[k] : (next[k] = false);
+      else on ? (next[k] = true) : delete next[k];
+    }
+    const id = t.id;
+    // The days by kind of weather arrive first, so the ranking moves once, to the new definition.
+    void ensureKinds(next).then(() => {
+      setProfile((p) => (p.prefs.comfort = next), "values");
+      refreshPopover();
+      document.getElementById(id)?.focus();
+    });
+    return;
+  }
   if (t.id === "add-city") {
     const text = t.value.trim();
     t.value = "";
@@ -827,7 +879,16 @@ function changed(e: Event): void {
       const person = p.household[i]!;
       if (f === "label") person.label = t.value;
       if (f === "citizenship") person.citizenships = [t.value, ...person.citizenships.slice(1)].filter(Boolean);
-      if (f === "citizenship2") person.citizenships = [person.citizenships[0] ?? "", t.value].filter(Boolean);
+      if (f === "add-passport" && t.value && !person.citizenships.includes(t.value)) person.citizenships = [...person.citizenships, t.value];
+      if (t.dataset.permit !== undefined) {
+        const r = person.permits?.[Number(t.dataset.permit)];
+        if (r) {
+          if (f === "kind") r.kind = t.value as PermitKind;
+          if (f === "where") r.where = t.value;
+          if (f === "until") t.value ? (r.until = t.value) : delete r.until;
+          if (f === "work") (t as HTMLInputElement).checked ? delete r.work : (r.work = false);
+        }
+      }
       const nc = (person.newcomer ??= {});
       if (f === "age") nc.age = t.value === "" ? undefined : n;
       if (f === "away") {
@@ -837,7 +898,7 @@ function changed(e: Event): void {
         nc.yearsSinceResident = v === undefined ? {} : Object.fromEntries(Object.keys(state.data.countries).map((cc) => [cc, cc === home ? 0 : v]));
       }
       // "Just you" with nothing set is the same as no household: rights are not checked.
-      if (p.household.length === 1 && !p.household[0]!.citizenships.length && !Object.values(p.household[0]!.newcomer ?? {}).some((x) => x !== undefined && !(typeof x === "object" && !Object.keys(x).length))) p.household = [];
+      if (p.household.length === 1 && !hasRightsGiven(p.household[0]!) && !Object.values(p.household[0]!.newcomer ?? {}).some((x) => x !== undefined && !(typeof x === "object" && !Object.keys(x).length))) p.household = [];
     });
     return;
   }
@@ -1010,8 +1071,19 @@ function onPointerUp(): void {
 // ---------- Any place, fetched live from the sources that allow a browser to read them ----------
 
 /** `text` is what the geocoder is asked (a name, or geonames:<id>); `shown` is what the person sees while it looks; `fromMap` pins the added place on the map. */
+/** On a phone the wall starts below the fold: the sheet being added is brought into view once it is drawn. */
+function scrollToAdding(): void {
+  requestAnimationFrame(() => {
+    const el = document.querySelector(".dos.is-loading");
+    if (!el) return;
+    const r = el.getBoundingClientRect();
+    if (r.top > innerHeight - 120) el.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+  });
+}
+
 async function fetchLive(text: string, shown = text, fromMap = false): Promise<void> {
-  state.live = { query: shown, label: "", sources: [] };
+  state.live = { query: shown, label: "", name: shown.split(",")[0]!.trim(), sources: [] };
+  if (state.view === "cities") scrollToAdding();
   renderLive();
   const ctx = makeCtx({ runtime: "browser" });
   try {
@@ -1025,7 +1097,7 @@ async function fetchLive(text: string, shown = text, fromMap = false): Promise<v
       else renderLive();
       return;
     }
-    state.live = { query: text, label: `${pick.city.name}, ${pick.label}`, sources: BROWSER_FETCHERS.map((f) => ({ source: f.source, status: "waiting" as LiveStatus })) };
+    state.live = { query: text, label: `${pick.city.name}, ${pick.label}`, name: pick.city.name, cityId: pick.city.id, sources: BROWSER_FETCHERS.map((f) => ({ source: f.source, status: "waiting" as LiveStatus })) };
     renderLive();
     const fetched = await fetchCity(pick.city, ctx, BROWSER_FETCHERS, {
       onProgress: (o) => {
@@ -1046,6 +1118,22 @@ async function fetchLive(text: string, shown = text, fromMap = false): Promise<v
     if (state.live) state.live.error = err instanceof Error ? err.message : String(err);
     renderLive();
   }
+}
+
+let kinds: Promise<void> | null = null;
+
+/**
+ * The days by kind of weather (dataset-days.json), read the first time a nice day asks more of the weather than today's
+ * definition. Places fetched in this browser carry their own. A failure leaves those cities without nice days, said so.
+ */
+function ensureKinds(c: AppState["profile"]["prefs"]["comfort"]): Promise<void> {
+  if (defaultTests(c)) return Promise.resolve();
+  kinds ??= Promise.all(lazyFiles(state.data).map((l) => fetch(l.file).then((r) => (r.ok ? (r.json() as Promise<PartFile>) : null)).catch(() => null))).then((files) => {
+    const got = files.filter((f): f is PartFile => !!f);
+    if (got.length) state.data = withParts(state.data, got);
+    else kinds = null;
+  });
+  return kinds;
 }
 
 async function boot(): Promise<void> {
@@ -1072,7 +1160,9 @@ async function boot(): Promise<void> {
     shareInclude: [],
     notFound: notFoundOnLoad,
   };
+  await ensureKinds(state.profile.prefs.comfort);
   const shared = !!sharedParam();
+  state.intro = introFor(state.profile, shared);
   if (applyCitiesQuery(data, state.profile) || shared) {
     saveProfile(state.profile);
     q.delete("p");

@@ -1,10 +1,11 @@
 import { CRITERIA, politicsWord, stanceOf, type Criterion } from "../core/criteria.ts";
 import { criteriaFor, weightOf } from "../core/engine.ts";
 import { grouped, type Group } from "../core/groups.ts";
-import type { Profile } from "../core/types.ts";
-import { rangeButton } from "./cards.ts";
+import type { Person, Profile } from "../core/types.ts";
+import { PERMIT_KINDS } from "../core/rights.ts";
+import { niceTestsShort, rangeButton } from "./cards.ts";
 import { html, type Raw } from "./dom.ts";
-import { passportOptions, problemsFor } from "./top.ts";
+import { passportOptions, problemsFor, regionName } from "./top.ts";
 import { CURRENCIES, money } from "./format.ts";
 import { shortLabel } from "./glance.ts";
 import { PRESETS, type AppState } from "./state.ts";
@@ -65,7 +66,7 @@ function partsSummary(p: Profile, parts: Criterion[]): string {
 
 /** Nice days are the person's own: the range, said once at the head of Climate, where everyone looks for it. */
 function niceDaysLine(s: AppState): Raw {
-  return html`<p class="nice-own">Nice days are yours to define. ${rangeButton(s, "values")}</p>`;
+  return html`<p class="nice-own">Nice days are yours to define. ${rangeButton(s, "values")} <button class="link nice-sum" data-act="comfort" data-where="values-tests" aria-haspopup="dialog">${niceTestsShort(s.profile.prefs.comfort)}</button></p>`;
 }
 
 /** The other parts of a group led by one line (money left, nice days), in a few words: what else counts, or what is off. */
@@ -137,17 +138,26 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
   </li>`;
 }
 
-/** Who can move there: a check, not a dial. A passport per person; each sheet then says yes, no or not checked. */
+/** What else a person holds beyond the first passport, in a few words: "+ US passport, permanent residence in Germany". */
+function moreRights(s: AppState, x: Person): string {
+  const more = [
+    ...x.citizenships.slice(1).map((c) => `${regionName(c)} passport`),
+    ...(x.permits ?? []).filter((r) => r.where).map((r) => `${PERMIT_KINDS[r.kind].label.toLowerCase()} in ${(s.data.rights ?? []).find((a) => a.id === r.where)?.name ?? regionName(r.where)}`),
+  ];
+  return more.length ? `+ ${more.join(", ")}` : "";
+}
+
+/** Right to live and work: a check, not a dial. A passport per person here; more passports and other rights behind "For You". */
 function eligibility(s: AppState): Raw {
   const p = s.profile;
   const people = p.household.length ? p.household : [{ label: "You", citizenships: [] as string[] }];
   const must = p.dealBreakers.includes("right_to_live");
   return html`<section class="elig" aria-labelledby="elig-h">
-    <div class="elig-head"><h3 class="val-n" id="elig-h">Who can move there</h3><button class="must ${must ? "is-on" : ""}" data-act="toggle-breaker" data-id="right_to_live" aria-pressed="${must}" title="Rule out a city where someone moving would need a visa or permit">Must pass</button></div>
+    <div class="elig-head"><h3 class="val-n" id="elig-h">Right to live and work</h3><button class="must ${must ? "is-on" : ""}" data-act="toggle-breaker" data-id="right_to_live" aria-pressed="${must}" title="Rule out a city where someone moving would need to apply for a visa or permit">Must pass</button></div>
     <ul class="elig-people">${people.map(
-      (x, i) => html`<li><label for="e${i}-pass">${x.label || "Someone"}</label><select id="e${i}-pass" data-person="${i}" data-field="citizenship"><option value="">Passport not given</option>${passportOptions(x.citizenships[0] ?? "")}</select></li>`,
+      (x, i) => html`<li><label for="e${i}-pass">${x.label || "Someone"}</label><select id="e${i}-pass" data-person="${i}" data-field="citizenship"><option value="">Passport not given</option>${passportOptions(x.citizenships[0] ?? "")}</select>${moreRights(s, x) ? html`<span class="elig-more">${moreRights(s, x)}</span>` : ""}</li>`,
     )}</ul>
-    <p class="vs-lede">Citizenship and free-movement areas only: visas and permits are not modelled. Each sheet says yes, no or not checked. <button class="link" data-act="household">${p.household.length > 1 ? "Edit who is moving" : "Add someone"}</button></p>
+    <p class="vs-lede">Passports, free movement, and rights you already hold, such as permanent residence, a work visa or an EU Blue Card. Each sheet says yes, no or not checked. <button class="link" data-act="household">${(p.household[0]?.citizenships.length ?? 0) > 1 || p.household.some((h) => h.permits?.length) ? "Edit passports and rights" : "Add another passport or right"}</button>${p.household.length > 1 ? "" : html` · <button class="link" data-act="household">Add someone</button>`}</p>
   </section>`;
 }
 

@@ -6,9 +6,9 @@ import { LINK_ONLY, linksOut, type LinkOut } from "../core/links.ts";
 import { resolve, type Resolved } from "../core/lookup.ts";
 import { convert, paidChildcare, rentMetric, type MoneyResult } from "../core/money.ts";
 import { PRESETS } from "../core/presets.ts";
-import { householdRights, type RightResult } from "../core/rights.ts";
+import { hasRightsGiven, householdRights, permitProblems, type RightResult } from "../core/rights.ts";
 import { longestDay, monthlyDaylight, shortestDay } from "../core/sun.ts";
-import type { City, Dataset, Level, Metric, Profile, Source, TaxTweak, Value } from "../core/types.ts";
+import type { City, Dataset, Level, Metric, Permit, Person, Profile, Source, TaxTweak, Value } from "../core/types.ts";
 import { TAX_MODELS, taxModelFor } from "../tax/index.ts";
 import type { Completeness, TaxLine } from "../tax/common.ts";
 import { householdTax } from "../tax/household.ts";
@@ -363,9 +363,9 @@ function whatToAdd(data: Dataset, profile: Profile, results: CityResult[]): stri
   const lacking = (what: string) => results.filter((r) => r.money.missing.includes(what));
   if (lacking("salary").length) out.push("A gross yearly salary (one figure, or an offer per city) to compute take-home pay and money left.");
   if (!profile.income.everyday) out.push("Your monthly spending on everything except housing, and the city where you spend it today, to compute living costs.");
-  if (!profile.household.length) out.push("The passports of everyone moving, to check who may live and work in each country.");
-  const noPassport = profile.household.filter((p) => !p.citizenships.length).map((p) => p.label);
-  if (noPassport.length) out.push(`Passports for ${noPassport.join(", ")}, to check who may live and work in each country.`);
+  if (!profile.household.length) out.push("The passports of everyone moving, and any other right to live and work they hold (permanent residence, a work visa, an EU Blue Card), to check who may live and work in each country.");
+  const noPassport = profile.household.filter((p) => !hasRightsGiven(p)).map((p) => p.label);
+  if (noPassport.length) out.push(`Passports for ${noPassport.join(", ")}, and any other right to live and work they hold, to check who may live and work in each country.`);
   const noRent = lacking("rent");
   if (noRent.length)
     out.push(`Rent for ${names(noRent)}: no official figure yet; give your own as an override (${rentMetric(profile)}, monthly, local currency).`);
@@ -661,7 +661,7 @@ export interface CityReport {
 /** A series longer than this is counted, not listed, in a summary. */
 const SERIES_IN_SUMMARY = 24;
 
-export function cityReport(data: Dataset, query: string, opts: { passports?: string[][]; metrics?: string[]; detail?: Detail } = {}): CityReport {
+export function cityReport(data: Dataset, query: string, opts: { passports?: string[][]; rights?: Permit[][]; metrics?: string[]; detail?: Detail } = {}): CityReport {
   const { city, note } = matchCity(data, query);
   const detail = opts.detail ?? "full";
   const country = data.countries[city.country];
@@ -680,7 +680,15 @@ export function cityReport(data: Dataset, query: string, opts: { passports?: str
       });
   }
   const model = taxModelFor(city.country);
-  const household = (opts.passports ?? []).map((p, i) => ({ label: i === 0 ? "You" : `Person ${i + 1}`, citizenships: p.map((c) => c.toUpperCase()) }));
+  const people = Math.max(opts.passports?.length ?? 0, opts.rights?.length ?? 0);
+  const household: Person[] = Array.from({ length: people }, (_, i) => {
+    const permits = (opts.rights?.[i] ?? []).map((r, j) => {
+      const problems = permitProblems(data, r, `rights[${i}][${j}]`);
+      if (problems.length) throw new Error(`${problems.join("; ")}.`);
+      return { ...r, where: (data.rights ?? []).some((a) => a.id === r.where) ? r.where : r.where.toUpperCase() };
+    });
+    return { label: i === 0 ? "You" : `Person ${i + 1}`, citizenships: (opts.passports?.[i] ?? []).map((c) => c.toUpperCase()), ...(permits.length ? { permits } : {}) };
+  });
   return {
     reportVersion: REPORT_VERSION,
     detail,

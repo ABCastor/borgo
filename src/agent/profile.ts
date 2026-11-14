@@ -1,10 +1,11 @@
 // Builds a full engine Profile from the few arguments an agent or a terminal passes, and says which
 // defaults it filled in, so nothing is assumed silently.
-import { CRITERIA, DEFAULT_COMFORT } from "../core/criteria.ts";
+import { CRITERIA, DEFAULT_COMFORT, niceTestsText } from "../core/criteria.ts";
 import { profileProblems } from "../core/engine.ts";
 import { METRICS } from "../core/metrics.ts";
 import { PRESETS } from "../core/presets.ts";
-import type { ComfortBasis, Dataset, HousingSize, Profile, TaxTweak } from "../core/types.ts";
+import type { Comfort, Dataset, HousingSize, Permit, PermitKind, Profile, TaxTweak } from "../core/types.ts";
+import { hasRightsGiven, permitProblems } from "../core/rights.ts";
 import { REGIMES, regimeById, regimesFor } from "../tax/regimes.ts";
 import { findCity, matchCity } from "./cities.ts";
 import { monthlyFrom } from "../core/money.ts";
@@ -46,8 +47,12 @@ export interface QueryArgs {
   /** Monthly spending on everything except housing, childcare and health, where you live now. Scaled to each city by price levels. */
   spending?: Money & { homeCity?: string };
   savings?: number;
-  /** Comfortable daytime temperature for a nice day, °C, on the feels-like temperature unless basis is "air". */
-  comfort?: { min: number; max: number; basis?: ComfortBasis };
+  /**
+   * What a nice day is: the daytime temperature range, °C, on the feels-like temperature unless basis is "air"; then the
+   * tests a day must pass. dry and clear are on unless set false (today's nice day); notMuggy, calm and daylight (hours,
+   * at least) are added only when asked.
+   */
+  comfort?: Comfort;
   normalise?: "absolute" | "relative";
   /** A city lacking a figure: "lowest" (default) scores it at the lowest compared city, "worst" at 0, "skip" drops the line for all. */
   missing?: "lowest" | "skip" | "worst" | "average";
@@ -76,6 +81,12 @@ export interface HouseholdArg {
   label?: string;
   /** Passports if known (ISO alpha-2). Leave out to skip this person's right-to-live check: never guess them. */
   passports?: string[];
+  /**
+   * Rights to live and work this person holds that are not citizenship, if they said so: permanent residence, settled
+   * status, a residence permit, a work visa, an EU Blue Card. `where` is a country (ISO alpha-2) or a free-movement area
+   * id ("EEA"); `until` its last valid day (YYYY-MM-DD); `work: false` for a permit that bars work.
+   */
+  rights?: { kind: PermitKind; where: string; until?: string; work?: boolean }[];
   /** Answers to newcomer-regime conditions no dataset can check, by condition id (list_metrics_and_sources, kind "regimes"): true or false. */
   regimeConfirmations?: Record<string, boolean>;
   /** Age in years: for age-dependent tax, pension caps, paid leave and newcomer regimes. */
@@ -177,10 +188,18 @@ export function buildProfile(data: Dataset, args: QueryArgs): BuiltProfile {
       if (!r || r.country !== cc) throw new Error(`household[${i}].regimes: unknown regime "${id}" for ${cc}. Regimes there: ${regimesFor(cc).map((x) => x.id).join(", ") || "none modelled"}.`);
     }
     const label = p.label ?? (i === 0 ? "You" : `Person ${i + 1}`);
-    if (!p.passports?.length) assumptions.push(`No passports given for ${label === "You" ? "you" : label}, so ${label === "You" ? "your" : "their"} right to live and work there is not checked.`);
+    const permits: Permit[] = (p.rights ?? []).map((r, j) => {
+      const problems = permitProblems(data, r, `household[${i}].rights[${j}]`);
+      if (problems.length) throw new Error(`${problems.join("; ")}.`);
+      const area = (data.rights ?? []).some((a) => a.id === r.where);
+      return { kind: r.kind, where: area ? r.where : r.where.toUpperCase(), ...(r.until ? { until: r.until } : {}), ...(r.work === false ? { work: false } : {}) };
+    });
+    if (!p.passports?.length && !permits.length) assumptions.push(`No passports given for ${label === "You" ? "you" : label}, so ${label === "You" ? "your" : "their"} right to live and work there is not checked.`);
+    else if (!p.passports?.length) assumptions.push(`No passports given for ${label === "You" ? "you" : label}: only the rights given are checked, and places they do not cover are not checked.`);
     return {
       label,
       citizenships: (p.passports ?? []).map((c) => c.toUpperCase()),
+      ...(permits.length ? { permits } : {}),
       ...(Object.keys(newcomer).length ? { newcomer } : {}),
       ...(i > 0 && p.spouse ? { spouse: true } : {}),
       ...(i > 0 ? { relation: p.relation ?? (p.spouse ? "partner" : "family") } : {}),
@@ -201,7 +220,7 @@ export function buildProfile(data: Dataset, args: QueryArgs): BuiltProfile {
     if (!r || r.country !== cc.toUpperCase()) throw new Error(`Unknown regime "${id}" for ${cc.toUpperCase()}. Regimes there: ${regimesFor(cc.toUpperCase()).map((x) => x.id).join(", ") || "none modelled"}.`);
   }
   if (!household.length) assumptions.push("No household given, so the right to live and work there is not checked.");
-  if (household.some((p) => !p.citizenships.length) && (args.dealBreakers ?? []).includes("right_to_live"))
+  if (household.some((p) => !hasRightsGiven(p)) && (args.dealBreakers ?? []).includes("right_to_live"))
     assumptions.push("Who can move there is a must-pass, but not every passport is given: no city can pass it until they are.");
 
   const salaryByCity = Object.fromEntries(
@@ -268,6 +287,7 @@ export function buildProfile(data: Dataset, args: QueryArgs): BuiltProfile {
   if (problems.length) throw new Error(problems.join(" "));
   if (args.missing === "average") assumptions.push('missing: "average" is read as "lowest": a city without a figure scores as the lowest compared city on that line, never above one that has it.');
   if (!args.comfort) assumptions.push(`Nice days are dry, mostly clear and feel ${DEFAULT_COMFORT.min} to ${DEFAULT_COMFORT.max} °C on average from 8 am to 8 pm.`);
+  else assumptions.push(`Nice days are ${niceTestsText(profile.prefs.comfort)} and ${profile.prefs.comfort.basis === "air" ? "have an air temperature" : "feel"} ${profile.prefs.comfort.min} to ${profile.prefs.comfort.max} °C on average from 8 am to 8 pm.`);
   return { profile, assumptions };
 }
 

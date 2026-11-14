@@ -1,6 +1,7 @@
 // Weather scores as plain day counts: each day of the last five years passes or fails a few tests, computed from hourly
 // ERA5 at the city's grid point, and the score is how many days a month pass on average. One home for every threshold;
 // docs/weather-scores.md explains where each comes from. Pure functions: the fetcher, the engine and the tests share them.
+import { dayLength } from "./sun.ts";
 
 /** Every threshold of every score, in the units people read: °C, mm, cm, km/h, % of the sky, local clock hours. */
 export const RULES = {
@@ -28,7 +29,20 @@ export const RULES = {
   snowCm: 1,
   /** Windy: the daytime wind averages at least this speed (Beaufort 5, "fresh breeze": small trees sway). */
   windyKmh: 30,
+  /** Calm, a nice-day test a person can add: the daytime wind averages under this speed (the HCI rates 10-19 km/h 9 of 10, 20-29 km/h 8). */
+  calmKmh: 20,
 } as const;
+
+/**
+ * The tests a nice day can be asked to pass besides temperature, one bit each, so that a day's "kind" says which it
+ * fails. Rain and sky are on by default (today's nice day); humidity and wind are the person's to add.
+ */
+export const KIND = { wet: 1, cloudy: 2, muggy: 4, windy: 8 } as const;
+export const KIND_COUNT = 16;
+
+/** Which nice-day tests a day fails, as KIND bits. */
+export const kindOf = (d: Day) =>
+  (d.dayPrecip >= RULES.dryMm ? KIND.wet : 0) | (d.dayCloud > RULES.niceCloud ? KIND.cloudy : 0) | (d.dew >= RULES.muggyDew ? KIND.muggy : 0) | (d.dayWind >= RULES.calmKmh ? KIND.windy : 0);
 
 /** Temperatures binned for live editing of the comfortable range: one bin per whole degree, ends open. */
 export const BINS = { from: -5, to: 40 } as const;
@@ -224,6 +238,68 @@ export function niceBins(days: Day[], basis: "feels" | "air"): number[] {
     const m = Math.floor(i / BIN_COUNT);
     return seen[m] ? (b / seen[m]) * len[m]! : NaN;
   });
+}
+
+/**
+ * Every readable day by month, daytime temperature (whole degrees, as `niceBins`) and kind (which nice-day tests it
+ * fails), so any choice of tests can be counted without fetching again. Packed as one list of numbers: twelve month
+ * factors first (the month's length over its readable days, so a count becomes days a month on average), then pairs of
+ * key and day count, key = (month * BIN_COUNT + bin) * KIND_COUNT + kind. Only the pairs that occur are listed.
+ */
+export function niceKinds(days: Day[], basis: "feels" | "air"): number[] {
+  const len = calendarDays(days);
+  const seen = new Array(12).fill(0);
+  const counts = new Map<number, number>();
+  for (const d of days) {
+    seen[d.month]++;
+    const key = (d.month * BIN_COUNT + binOf(basis === "feels" ? d.dayFeels : d.dayAir)) * KIND_COUNT + kindOf(d);
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  const factors = seen.map((n, m) => (n ? Math.round((len[m]! / n) * 1e4) / 1e4 : 0));
+  return [...factors, ...[...counts].sort((a, b) => a[0] - b[0]).flat()];
+}
+
+/** The nice-day tests a person asks for: which kinds of day fail them. Default: dry and mostly clear, as `niceSky`. */
+export interface NiceTests {
+  dry?: boolean;
+  clear?: boolean;
+  notMuggy?: boolean;
+  calm?: boolean;
+}
+export const failsMask = (t: NiceTests) => (t.dry !== false ? KIND.wet : 0) | (t.clear !== false ? KIND.cloudy : 0) | (t.notMuggy ? KIND.muggy : 0) | (t.calm ? KIND.windy : 0);
+/** True when the tests are today's nice day (dry and mostly clear, humidity and wind not asked): the bins answer them. */
+export const defaultTests = (t: NiceTests) => failsMask(t) === (KIND.wet | KIND.cloudy);
+
+/** Bins in the form `niceBins` returns, for the days that pass these tests, from `niceKinds`'s packed list. Null when it is not one. */
+export function binsFromKinds(packed: number[], tests: NiceTests): number[] | null {
+  if (packed.length < 12 || (packed.length - 12) % 2) return null;
+  const fails = failsMask(tests);
+  const bins = new Array(12 * BIN_COUNT).fill(0);
+  for (let i = 12; i < packed.length; i += 2) {
+    const key = packed[i]!;
+    if ((key % KIND_COUNT) & fails) continue;
+    const cell = Math.floor(key / KIND_COUNT);
+    const m = Math.floor(cell / BIN_COUNT);
+    if (m > 11) return null;
+    bins[cell] += packed[i + 1]! * packed[m]!;
+  }
+  return bins;
+}
+
+/**
+ * The share of each month's days with at least `hours` of daylight at this latitude, January first: a nice day can be
+ * asked to be long. Day length is computed from the latitude (src/core/sun.ts), no data source needed.
+ */
+export function daylightShare(lat: number, hours: number): number[] {
+  const out = new Array(12).fill(0);
+  const n = new Array(12).fill(0);
+  for (let doy = 0; doy < 365; doy++) {
+    const m = new Date(Date.UTC(2025, 0, 1 + doy)).getUTCMonth();
+    const decl = -23.44 * Math.cos((2 * Math.PI * (doy + 1 + 10)) / 365);
+    n[m]++;
+    if (dayLength(lat, decl) >= hours) out[m]++;
+  }
+  return out.map((x, m) => x / n[m]);
 }
 
 /** Nice days by month for a comfortable range, from the bins. A whole-degree range includes both ends. */

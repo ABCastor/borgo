@@ -11,7 +11,7 @@ import { partialNote } from "./partial.ts";
 import { mapShell } from "./map.ts";
 import { breakEvenLine, emptyState, missingText, moneyAdds } from "./results.ts";
 import type { AppState } from "./state.ts";
-import { problemsFor } from "./top.ts";
+import { liveHead, liveSources, problemsFor } from "./top.ts";
 import { term, TERMS } from "./terms.ts";
 
 // The Cities view: one dossier sheet per city, best first. A sheet says who it is (rank, score, name),
@@ -37,12 +37,34 @@ export function comfortStep(f: "min" | "max", v: number, label: string, prefix: 
       <button data-act="comfort-step" data-field="${f}" data-d="1" aria-label="${label} warmer" id="${prefix}-${f}-up">+</button></span>`;
 }
 
+/** The tests a nice day can be asked to pass besides temperature, each with what it reads and where that comes from. */
+const NICE_TESTS: { id: "dry" | "clear" | "notMuggy" | "calm"; label: string; what: string; on: (c: AppState["profile"]["prefs"]["comfort"]) => boolean }[] = [
+  { id: "dry", label: "Dry", what: "under 1 mm of rain from 8 am to 8 pm", on: (c) => c.dry !== false },
+  { id: "clear", label: "Sunny", what: "at most half the sky clouded from 8 am to 8 pm", on: (c) => c.clear !== false },
+  { id: "notMuggy", label: "Not muggy", what: "the day's dew point under 18 °C", on: (c) => !!c.notMuggy },
+  { id: "calm", label: "Calm", what: "the daytime wind under 20 km/h", on: (c) => !!c.calm },
+];
+const ERA5_LINK = html`<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>`;
+
+/** "Dry, sunny" or "Dry, sunny, not muggy, 12 h of daylight": the tests a nice day passes, said short. */
+export function niceTestsShort(c: AppState["profile"]["prefs"]["comfort"]): string {
+  const t = [...NICE_TESTS.filter((x) => x.on(c)).map((x) => x.label.toLowerCase()), c.daylight ? `${c.daylight} h of daylight` : ""].filter(Boolean);
+  const text = t.length ? t.join(", ") : "any weather";
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
 export function comfortEditor(s: AppState): string {
-  const { min, max } = s.profile.prefs.comfort;
+  const c = s.profile.prefs.comfort;
+  const { min, max } = c;
   return html`<div class="pop-body comfort-ed"><b>Your nice days</b>
-    <p class="hint">Nice days are yours to define. A ${term("comfortable", "nice day")} is dry and mostly clear, and from 8 am to 8 pm it feels the way you like:</p>
+    <p class="hint">Nice days are yours to define. From 8 am to 8 pm a ${term("comfortable", "nice day")} feels the way you like:</p>
     <p class="cl-line">${comfortStep("min", min, "Coolest nice daytime temperature", "cs")} to ${comfortStep("max", max, "Warmest nice daytime temperature", "cs")} ${tempUnit()}</p>
     <div class="ce-row">${basisSeg(s)}</div>
+    <fieldset class="nice-tests"><legend>And it is</legend>
+      ${NICE_TESTS.map((x) => html`<label class="nt"><input type="checkbox" id="nt-${x.id}" data-act-change="nice-test" data-test="${x.id}" ${x.on(c) ? "checked" : ""}><span><b>${x.label}</b> <span class="quiet">${x.what}</span></span></label>`)}
+      <label class="nt nt-day"><span><b>Long</b> <span class="quiet">at least</span></span> <select id="nt-daylight" data-act-change="nice-daylight" aria-label="Hours of daylight a nice day has at least">${[0, 9, 10, 11, 12, 13, 14, 15].map((h) => html`<option value="${h}" ${(c.daylight ?? 0) === h ? "selected" : ""}>${h ? `${h} h of daylight` : "any daylight"}</option>`)}</select></label>
+    </fieldset>
+    <p class="hint nt-src">Rain, sky, humidity and wind: hourly ERA5 reanalysis 2021-2025, via ${ERA5_LINK} (CC BY 4.0). Daylight: sunrise to sunset, computed from each city's latitude. Dry and sunny are on to start.</p>
     <p class="hint">Every sheet, strip and rank follows. In a city's dossier you can also drag the band on its chart.</p></div>`.value;
 }
 
@@ -107,10 +129,10 @@ function eligibilityCell(s: AppState, r: CityResult): Raw {
   const must = s.profile.dealBreakers.includes("right_to_live");
   const rows = r.rights.length
     ? r.rights.map(
-        (x) => html`<li class="el-${x.status} ${x.status === "no" && must ? "fail" : ""}" title="${x.text}"><b>${x.person}</b> <span>${rightWord(x.person, x.status)}${x.status === "yes" ? html`<span class="quiet">, ${x.via === "citizen" ? "citizen" : x.via}</span>` : ""}</span>${x.status === "unknown" ? html` <button class="link" data-act="focus" data-target="e${Math.max(0, s.profile.household.findIndex((h) => h.label === x.person))}-pass">add passport</button>` : ""}</li>`,
+        (x) => html`<li class="el-${x.status} ${x.status === "no" && must ? "fail" : ""}" title="${x.text}"><b>${x.person}</b> <span>${rightWord(x.person, x.status)}${x.status === "yes" ? html`<span class="quiet">, ${x.via === "citizen" ? "citizen" : x.via}</span>` : ""}</span>${x.status === "unknown" ? html` <button class="link" data-act="focus" data-target="e${Math.max(0, s.profile.household.findIndex((h) => h.label === x.person))}-pass">add passport or right</button>` : ""}</li>`,
       )
-    : [html`<li class="el-unknown"><b>You</b> <span>not checked</span> <button class="link" data-act="focus" data-target="e0-pass">add your passport</button></li>`];
-  return html`<div class="cell c-elig"><div class="lab">Can move there</div><ul class="el-list">${rows}</ul></div>`;
+    : [html`<li class="el-unknown"><b>You</b> <span>not checked</span> <button class="link" data-act="focus" data-target="e0-pass">add your passport or right</button></li>`];
+  return html`<div class="cell c-elig"><div class="lab">Right to live and work</div><ul class="el-list">${rows}</ul></div>`;
 }
 
 function sheet(s: AppState, r: CityResult, e: Evaluation, scale: number): Raw {
@@ -162,13 +184,33 @@ export function exploreShell(s: AppState, mounted: boolean): Raw {
     ${mounted ? mapShell(s) : html`<div class="sheet explore-wait"><p class="quiet">The map loads as you reach it. <a href="#/map">Open it on its own page</a>.</p></div>`}`;
 }
 
+/**
+ * The sheet of a place being added, drawn the moment it is asked for: its name, a moving band and each source's progress.
+ * It carries the place's id once found, so when the figures arrive the filled sheet takes its place and moves to its rank.
+ */
+function loadingSheet(s: AppState): Raw {
+  const l = s.live!;
+  const failed = !!l.error;
+  const where = l.label ? l.label.slice(l.label.indexOf(",") + 1).trim() : "";
+  return html`<article class="sheet dos is-loading ${failed ? "is-failed" : ""}" data-flip="${l.cityId ?? "live"}" aria-labelledby="dn-live" aria-busy="${failed ? "false" : "true"}">
+    <div class="band" aria-hidden="true"><i></i></div>
+    <div class="d-head"><div class="d-id">
+      <p class="bib num" aria-hidden="true"><span class="ghost">00</span><small>/ 100</small></p>
+      <h3 class="dname" id="dn-live">${l.name ?? l.query}</h3>
+      <p class="dmeta"><b class="rankw">${failed ? "Not added" : "Adding"}</b>${where ? html` · ${where}` : ""}</p>
+    </div>
+    <div class="live-card" role="status" aria-live="polite"><p class="live-head">${liveHead(s)}</p>${liveSources(s)}</div></div>
+  </article>`;
+}
+
 export function citiesView(s: AppState, e: Evaluation): Raw {
-  if (e.results.length === 0) return emptyState();
+  const adding = s.live ? loadingSheet(s) : "";
+  if (e.results.length === 0) return adding ? html`<section class="wall" aria-label="Your cities">${adding}</section>` : emptyState();
   const scale = glanceScale(e);
   const k = s.profile.prefs.comfort;
   const waiting = e.results.some((r) => climateOf(s, r.city) && !climateOf(s, r.city)!.nice);
   const feels = (k.basis ?? "feels") === "feels";
   const lead = html`${waiting ? html`<p class="wall-key">Nice-day counts arrive with the next climate update. Until then each sheet's strip shows the usual ${feels ? "feels-like " : ""}afternoon high of each month against your ${tempValue(k.min)}–${tempValue(k.max)}° range: <i class="kx in">filled</i> in range, <i class="kx above">mark on top</i> warmer, <i class="kx below">mark below</i> cooler.</p>` : ""}`;
-  return html`${lead}<section class="wall" aria-label="Your cities, best first">${e.results.map((r) => sheet(s, r, e, scale))}</section>
+  return html`${lead}<section class="wall" aria-label="Your cities, best first">${adding}${e.results.map((r) => sheet(s, r, e, scale))}</section>
     <p class="key">Wins and losses are in points of the 100-point score, against the average of your other cities. A line with no figure for a city scores as the lowest of your other cities on it, and never shows here. Temperature bands follow your comfortable range.</p>`;
 }

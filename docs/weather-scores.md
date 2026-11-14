@@ -61,6 +61,20 @@ Why these and not others: together they say something about every season (nice a
 | Missing hours | A day missing any hour's temperature or any daytime value is left out; a month's count is the passing share of readable days times the month's length, so a gap neither adds nor removes nice days. |
 | API budget | One request of 7 hourly variables; daily figures are aggregated here exactly as Open-Meteo aggregates its own ("a simple 24 hour aggregation from hourly values", its docs). Up to 10 variables over five years costs about 130 calls. |
 
+## 4b. Nice days a person defines
+
+The temperature range is always the person's; the other tests are theirs too. Each is one of the day tests above, read from the same hourly ERA5 days, or computed from the latitude:
+
+| Test | A nice day | Default | Rests on |
+|---|---|---|---|
+| Dry | under 1 mm of rain from 8 am to 8 pm | on | ERA5 precipitation (Open-Meteo, CC BY 4.0) |
+| Sunny | at most half the sky clouded on average from 8 am to 8 pm | on | ERA5 cloud cover |
+| Not muggy | the day's mean dew point under 18 °C | off | ERA5 dew point; the Muggy days line |
+| Calm | the daytime wind under 20 km/h on average | off | ERA5 wind at 10 m; the HCI rates 10-19 km/h 9 of 10 and 20-29 km/h 8 |
+| Long | at least N hours of daylight, sunrise to sunset | off | computed from the latitude (`src/core/sun.ts`) |
+
+The defaults are the nice day of section 3, read from the same bins, so no ranking moves until a person changes a test. Any other choice is read from `nice_kinds_feels` and `nice_kinds_air`: every readable day by month, by its daytime temperature in whole degrees and by which of the four weather tests it fails (four bits), packed as twelve month factors and then pairs of key and day count (`niceKinds` in `src/core/weather-days.ts`). Summing the days whose kind passes the chosen tests gives the same bins as before, so the range still moves live. Daylight needs no data: each month's nice days are kept in the share of its days that are long enough at the city's latitude, which assumes a long and a short day of the same month are equally likely to be nice. Because these figures are large and few people change the tests, the published data keeps them in `data/dataset-days.json`, which the app reads only when a test changes; the command line, the MCP server and the API read them always.
+
 ## 5. Limits: what a person should not read as precise
 
 - **Cloud cover** is ERA5's total cloud, which counts thin high cloud; whether a day is "mostly clear" is the weakest test here. Read nice, beach and grey days as comparisons between cities, not exact days.

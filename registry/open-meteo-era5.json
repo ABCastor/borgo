@@ -69,6 +69,14 @@
       "definition": "The same dry, mostly clear days, by the average air temperature of those hours in whole degrees."
     },
     {
+      "metric": "nice_kinds_feels",
+      "definition": "Every day by month, by the average feels-like temperature from 8 am to 8 pm in whole degrees, and by which nice-day tests it fails: rain (1 mm or more from 8 am to 8 pm), cloud (more than half the sky on average), humidity (a mean dew point of 18 °C or more) and wind (20 km/h or more on average from 8 am to 8 pm)."
+    },
+    {
+      "metric": "nice_kinds_air",
+      "definition": "The same days by the average air temperature from 8 am to 8 pm in whole degrees."
+    },
+    {
       "metric": "beach_days",
       "definition": "Days that are dry, at most 40% clouded and feel 24 to 32 °C on average from 8 am to 8 pm, by month."
     },

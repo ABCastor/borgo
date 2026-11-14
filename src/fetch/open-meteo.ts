@@ -5,7 +5,7 @@
 // from the hours, as Open-Meteo derives its own. Sunshine is deliberately NOT taken from here: ERA5's
 // sunshine_duration overstates measured hours by 30-90% (see registry/open-meteo-era5.json).
 import type { Observation } from "../core/types.ts";
-import { DAY_SCORES, daysPerMonth, mean, monthly, niceBins, quantile, toDays, type Hourly } from "../core/weather-days.ts";
+import { DAY_SCORES, daysPerMonth, mean, monthly, niceBins, niceKinds, quantile, toDays, type Hourly } from "../core/weather-days.ts";
 import { lastFullYears, round, type Fetcher } from "./context.ts";
 
 interface Archive {
@@ -13,7 +13,8 @@ interface Archive {
   hourly: Hourly;
 }
 
-const VERSION = 3;
+// 4: adds the days by kind of weather (nice_kinds_*), for nice days a person defines beyond temperature.
+const VERSION = 4;
 
 export const HOURLY = ["temperature_2m", "apparent_temperature", "dew_point_2m", "precipitation", "snowfall", "cloud_cover", "wind_speed_10m"] as const;
 
@@ -63,9 +64,24 @@ export function climateObservations(a: Archive, meta: { period: string; years: n
     { metric: "wet_days", value: Math.round(wetPerMonth.reduce((x, y) => x + y, 0)), ...base, note },
     { metric: "nice_bins_feels", value: niceBins(days, "feels").map((x) => round(x)), ...base, note: `Dry, mostly clear days by their daytime feels-like temperature, whole degrees from -5 to 40 °C, by month. ${scoreNote}` },
     { metric: "nice_bins_air", value: niceBins(days, "air").map((x) => round(x)), ...base, note: `Dry, mostly clear days by their daytime air temperature, whole degrees from -5 to 40 °C, by month. ${scoreNote}` },
+    ...kindsObservations(days, base, scoreNote),
     ...DAY_SCORES.map((s) => ({ metric: s.metric, value: daysPerMonth(days, s.test).map((x) => round(x)), ...base, note: scoreNote })),
   ];
   return obs.filter((o) => (Array.isArray(o.value) ? finite(o.value) : Number.isFinite(o.value)));
+}
+
+/**
+ * Every readable day by temperature and by which nice-day tests it fails (src/core/weather-days.ts niceKinds), for both
+ * temperatures: what lets a person add humidity or wind to their nice day, or drop rain or sky. Exported for the snapshot.
+ */
+export function kindsObservations(days: ReturnType<typeof toDays>, base: Omit<Observation, "metric" | "value">, scoreNote: string): Observation[] {
+  if (!days.length) return [];
+  return (["feels", "air"] as const).map((b) => ({
+    metric: `nice_kinds_${b}`,
+    value: niceKinds(days, b),
+    ...base,
+    note: `Days by their daytime ${b === "feels" ? "feels-like" : "air"} temperature and by which nice-day tests they fail (rain, cloud, humidity, wind), packed as month factors then pairs of key and count (src/core/weather-days.ts). ${scoreNote}`,
+  }));
 }
 
 export const openMeteo: Fetcher = {

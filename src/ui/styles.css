@@ -2,7 +2,9 @@
    Colour has three jobs and only three: terracotta is what you set (the human), teal is sourced data
    (the machine), olive is the verdict both make together. Values from castor-identity docs/SIGNATURE.md. */
 
-@font-face { font-family: Word; font-weight: 200 900; src: url(fonts/literata.woff2) format("woff2"); font-display: swap; }
+/* Literata only ever sets the Borgo and Castor names (560, optical size 72): this file is that one instance of the
+   variable font (OFL 1.1, fonts/OFL-literata.txt), 22 KB instead of 110. fonts/literata.woff2 stays for the OG image. */
+@font-face { font-family: Word; font-weight: 560; src: url(fonts/literata-560.woff2) format("woff2"); font-display: swap; }
 @font-face { font-family: UI; font-weight: 100 900; font-stretch: 62% 125%; src: url(fonts/archivo-variable.woff2) format("woff2"); font-display: swap; }
 @font-face { font-family: Hand; font-weight: 500; src: url(fonts/randosans-500-sharpie.woff2) format("woff2"); font-display: swap; }
 

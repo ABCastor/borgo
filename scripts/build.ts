@@ -8,6 +8,8 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ROOT } from "../pipeline/lib.ts";
 import { loadPublishedDataset } from "../src/registry/load.ts";
+import { partFiles } from "../src/registry/licences.ts";
+import type { Dataset } from "../src/core/types.ts";
 import { prerender } from "./prerender.ts";
 import { MARK } from "../src/ui/brand/index.ts";
 import { faviconSvg } from "../src/ui/brand/marks.ts";
@@ -40,7 +42,11 @@ const header = productHeader("#/", [
   { href: "#/data", label: "Data" },
   { href: "#/about", label: "About" },
 ], { settings: true });
-const page = (await readFile(join(ROOT, "public/index.html"), "utf8")).replace("<!--HEADER-->", header);
+// The app's data starts downloading with the page, beside the script, instead of after it has run: the comparison
+// needs dataset.json and the part files under other terms before it can draw anything.
+const published = JSON.parse(await readFile(join(ROOT, "public/data/dataset.json"), "utf8")) as Dataset;
+const preload = ["data/dataset.json", ...partFiles(published)].map((f) => `<link rel="preload" href="${f}" as="fetch" crossorigin fetchpriority="high">`).join("\n");
+const page = (await readFile(join(ROOT, "public/index.html"), "utf8")).replace("<!--HEADER-->", header).replace("<!--PRELOAD-->", preload);
 await writeFile(join(DIST, "index.html"), page);
 await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK));
 await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });

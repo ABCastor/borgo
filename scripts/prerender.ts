@@ -105,8 +105,8 @@ export async function prerender(dist: string, data: Dataset): Promise<Manifest> 
 
   // The app page: same app, plus what crawlers need to understand it and links to every static page.
   const appHtml = await readFile(join(dist, "index.html"), "utf8");
-  const appTitle = "Borgo: compare cities on open data, weighted by what you value";
-  const appDesc = "Compare any cities on open, sourced data: what you would earn after tax and keep after rent, who can move there without a visa, climate, air, safety and research. Weighted by what you value, private in your browser.";
+  const appTitle = "Borgo: the best place to live for you, on open data";
+  const appDesc = "Borgo ranks cities on your own values: what you keep after tax and rent, days that feel the way you like, where you have the right to live and work. Every figure shows its source, and it runs privately in your browser.";
   const head = [
     `<link rel="canonical" href="${SITE_ORIGIN}/">`,
     `<link rel="describedby" href="llms.txt">`,

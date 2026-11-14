@@ -5,7 +5,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { METRICS } from "../core/metrics.ts";
 import type { Dataset, Source } from "../core/types.ts";
-import { partFiles, withParts, type PartFile } from "./licences.ts";
+import { lazyFiles, partFiles, withParts, type PartFile } from "./licences.ts";
 import { toSource, validateEntry, type RegistryEntry } from "./schema.ts";
 
 export const REGISTRY_DIR = join(dirname(fileURLToPath(import.meta.url)), "../../registry");
@@ -43,7 +43,7 @@ export function registrySources(entries: RegistryEntry[]): Record<string, Source
 export function loadPublishedDataset(path: string): Dataset {
   const data = JSON.parse(readFileSync(path, "utf8")) as Dataset;
   const dir = dirname(path);
-  const files = partFiles(data)
+  const files = [...partFiles(data), ...lazyFiles(data).map((l) => l.file)]
     .map((f) => join(dir, f.replace(/^data\//, "")))
     .filter((f) => existsSync(f))
     .map((f) => JSON.parse(readFileSync(f, "utf8")) as PartFile);

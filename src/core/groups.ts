@@ -25,7 +25,7 @@ export const hasChildren = (p: Profile) => (p.children ?? []).length > 0;
 
 export const GROUPS: Group[] = [
   { id: "money", label: "Money", question: "What you keep each month, and what a month costs.", members: ["money_left", "living_cost"] },
-  { id: "right_to_live", label: "Right to live there", question: "Whether everyone moving with you can live and work there without a visa.", members: ["right_to_live"] },
+  { id: "right_to_live", label: "Right to live and work", question: "Whether everyone moving with you can live and work there without applying for a visa: by citizenship, free movement or a right they already hold.", members: ["right_to_live"] },
   {
     id: "climate",
     label: "Climate",
