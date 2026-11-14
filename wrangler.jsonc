@@ -1,6 +1,6 @@
 // Borgo on Cloudflare: a Worker that serves dist/ (npm run build) as static assets at borgo.abcastor.com. Its small
-// script (src/site/worker.ts) runs first on every request: http moves to https and the host's clean-address redirects
-// become permanent. Deploy with npm run deploy.
+// script (src/site/worker.ts) runs first on every request: http moves to https, the host's clean-address redirects
+// become permanent, and the community inbox answers /api/community/. Deploy with npm run deploy.
 {
   "name": "borgo",
   "main": "src/site/worker.ts",
@@ -9,6 +9,9 @@
   "routes": [{ "pattern": "borgo.abcastor.com", "custom_domain": true }],
   "workers_dev": false,
   "preview_urls": false,
+  // Figures people add themselves (src/site/community-api.ts); tables in migrations/, applied with
+  // npx wrangler d1 migrations apply borgo-community --remote.
+  "d1_databases": [{ "binding": "COMMUNITY", "database_name": "borgo-community", "database_id": "0f20fdba-d1ad-43de-8feb-440ae9c55b46", "migrations_dir": "migrations" }],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

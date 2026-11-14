@@ -29,6 +29,16 @@ export interface CtxOptions {
   backoff?: number;
   /** Give up on one request after this long, ms; it then counts as a failed attempt. Large files get four times as long. */
   timeout?: number;
+  /** Where a request really goes, when not to the address the fetcher names (the browser reads some APIs through the site). */
+  route?: (url: string) => string;
+}
+
+/**
+ * The browser's route: the World Bank's API answers without the header that lets another site's page read it, so the
+ * app reads it through Borgo's own Worker (/api/wb/), which passes the same request on. Observations keep the real address.
+ */
+export function browserRoute(origin: string): (url: string) => string {
+  return (url) => (url.startsWith("https://api.worldbank.org/v2/") ? `${origin}/api/wb/v2/${url.slice("https://api.worldbank.org/v2/".length)}` : url);
 }
 
 export function memoryBulkCache(): BulkCache {
@@ -44,11 +54,12 @@ export function makeCtx(o: CtxOptions): FetchCtx {
   const headers = (init?: RequestInit): HeadersInit => (o.runtime === "node" ? { "User-Agent": USER_AGENT, ...(init?.headers as Record<string, string> | undefined) } : (init?.headers ?? {}));
   const timeout = o.timeout ?? 45_000;
   // A stalled connection would otherwise hang the whole fetch: every request has a deadline, and a timeout is retried.
+  const route = o.route ?? ((u: string) => u);
   async function get(url: string, init?: RequestInit, ms = timeout): Promise<Response> {
     for (let attempt = 1; ; attempt++) {
       let res: Response;
       try {
-        res = await f(url, { ...init, headers: headers(init), signal: AbortSignal.timeout(ms) });
+        res = await f(route(url), { ...init, headers: headers(init), signal: AbortSignal.timeout(ms) });
       } catch (e) {
         const timedOut = e instanceof Error && (e.name === "TimeoutError" || e.name === "AbortError");
         if (!timedOut || attempt >= 3) throw new Error(timedOut ? `no answer within ${Math.round(ms / 1000)} s from ${new URL(url).host}` : `${(e as Error).message} (${new URL(url).host})`);

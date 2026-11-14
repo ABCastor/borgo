@@ -6,6 +6,7 @@ import { climateChart as sharedChart } from "../ui/climate-chart.ts";
 import { html, raw, type Raw } from "../ui/dom.ts";
 import { money, num } from "../ui/format.ts";
 import { creditsFor, manifestOf, PARTS, type ManifestEntry } from "../registry/licences.ts";
+import { communityForm } from "../community/view.ts";
 import { countryLabel, hoursText, inSentence, levelText, referenceProfile, type CityFacts, type Climate, type CompareFacts, type Figure, type SourceRef } from "./facts.ts";
 
 export interface Site {
@@ -172,6 +173,11 @@ export function cityPage(site: Site, data: Dataset, f: CityFacts, appParam: stri
     ${monthTable(b, city.name)}
     ${assumptions(data, referenceProfile(data, [city.id]))}
 
+    <h2 id="community">From people who live here</h2>
+    <p class="hint">Rents, everyday prices and take-home pay that people report for themselves, after an automated review. They stand beside the official figures and never change a score.</p>
+    ${raw(`<!--community:${city.id}-->`)}<div class="cm-figs"><p class="cm-empty">Figures people add for ${city.name} appear here.</p></div>${raw("<!--/community-->")}
+    <p><a class="cm-open" href="#add-figures">Add your own figures for ${city.name}</a></p>
+
     <h2>Who can live and work here freely</h2>
     <ul class="plain">
       <li>Citizens of ${inSentence(cn)}.</li>
@@ -196,6 +202,9 @@ export function cityPage(site: Site, data: Dataset, f: CityFacts, appParam: stri
     <h2>Elsewhere</h2>
     <p class="hint">Sources we link to but do not copy, because their licences forbid it.</p>
     <ul class="plain">${f.linkOut.map((l) => html`<li><a href="${l.url}" rel="noopener nofollow">${l.label}</a></li>`)}</ul>
+
+    <h2 id="add-figures">Add your own figures for ${city.name}</h2>
+    ${communityForm({ id: city.id, name: city.name, currency: data.countries[city.country]?.currency ?? "EUR" })}
 
     <h2>Credits</h2>
     ${creditList(pageCredits(data, f))}
@@ -258,6 +267,7 @@ function cityMarkdown(site: Site, data: Dataset, f: CityFacts): string {
   const m = (v: number | null) => (v === null ? "not known" : money(v, b.currency));
   L.push("## A month on the reference profile", "", `Assumed: ${assumptionsText(data, referenceProfile(data, [city.id]))}.`, "");
   L.push(`- Take-home pay: ${m(b.net === null ? null : b.net / 12)}`, `- Rent: ${m(b.rent)}${b.rentFigure ? ` (${b.rentFigure.sources.map((s) => s.name).join(", ")}, ${b.rentFigure.period})` : " (no open rent data yet)"}`, `- Everyday spending: ${m(b.everyday)}`, ...(b.childcare !== null ? [`- Childcare: ${m(b.childcare)}`] : []), ...(b.health !== null ? [`- Health care, out of pocket: ${m(b.health)}`] : []), `- Left each month: ${m(b.left)}${b.left !== null && b.completeness.status === "partial" ? ` (partial: leaves out ${b.completeness.missing.join(", ")})` : ""}`, "");
+  L.push("## From people who live here", "", `Rents, everyday prices, take-home pay and a 1 to 5 rating that people report for themselves, after automated review, live as JSON: ${abs(site, `/api/community/city/${city.id}.json`)} (CC BY 4.0, Borgo contributors). Never mixed into the figures above. Add your own on the page, with \`borgo submit\` or the MCP tool submit_figures.`, "");
   L.push("## Who can live and work here without a visa", "", `- Citizens of ${inSentence(country.name)}`);
   for (const a of f.freeMovement) L.push(`- Citizens of ${a.members.map((x) => countryLabel(data, x)).join(", ")} (${a.name}; source: [${a.source.name}](${a.source.url}))`);
   L.push("");

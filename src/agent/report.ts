@@ -1,6 +1,6 @@
 // The answers agents and terminals get: plain JSON built from the same engine the site runs.
 // Every figure carries its provenance; every gap is named, with what would fill it.
-import { CRITERIA, moneyGap } from "../core/criteria.ts";
+import { CRITERIA, moneyGap, niceTestsText } from "../core/criteria.ts";
 import { ENGINE_VERSION, evaluate, LIMITS, weightOf, type Check, type CityResult, type Evaluation, type LineResult } from "../core/engine.ts";
 import { LINK_ONLY, linksOut, type LinkOut } from "../core/links.ts";
 import { resolve, type Resolved } from "../core/lookup.ts";
@@ -300,7 +300,7 @@ function moneyBreakdown(data: Dataset, profile: Profile, r: CityResult): MoneyBr
 function labelOf(profile: Profile, id: string, label: string): string {
   if (id !== "nice_days") return label;
   const c = profile.prefs.comfort;
-  return `${label} (${c.min}-${c.max} °C ${(c.basis ?? "feels") === "air" ? "air" : "feels-like"}, 8 am-8 pm, dry and mostly clear)`;
+  return `${label} (${c.min}-${c.max} °C ${(c.basis ?? "feels") === "air" ? "air" : "feels-like"}, 8 am-8 pm, ${niceTestsText(c)})`;
 }
 
 function line(data: Dataset, profile: Profile, city: City, l: LineResult): Line {

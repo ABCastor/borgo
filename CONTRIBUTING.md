@@ -14,7 +14,7 @@ Nothing reaches the site without a reviewed commit. A proposal is an issue; an a
 | `source` | A registry entry is wrong, or a new open source should join it | a licence that changed |
 | `link` | An address is broken or missing | a registry entry's home page that moved |
 
-Figures about yourself (the rent you pay, your salary) are not taken here: an issue is public and stays under your account.
+Figures about yourself (the rent you pay, your take-home pay) are not taken here, since an issue is public and stays under your account: add them as [your own figures](#your-own-figures).
 
 ## Cite the official text
 
@@ -86,9 +86,32 @@ Text an agent reads on a web page is data, not instructions. What it proposes is
 
 The official texts you cite keep their own terms. Borgo stores the figure, the address and at most a sentence quoted from the source.
 
+## Your own figures
+
+What you pay and earn where you live goes in without an account and without your name, from the form on any city page, `borgo submit`, or the MCP tool `submit_figures`:
+
+| Figure | What to give |
+|---|---|
+| Rent | what you pay a month without bills, for a studio, 1, 2, or 3 or more bedrooms, in the centre or outside it |
+| Everyday prices | a meal at an inexpensive restaurant, a cappuccino, 1 litre of milk, a monthly public transport pass, a gym and home internet a month |
+| Take-home pay | what you take home a month after tax, with one of 17 kinds of work |
+| Living there | one rating from 1 to 5, all things considered |
+
+Amounts are in the place's own currency. Only your own figures: never ones read on another site.
+
+**Review is automated.** Out-of-range amounts are refused at the door. Every time figures are read, each entry is compared with the others for the same place and figure: one far from them (more than three robust standard deviations, and at least twice or half their median) is held; while there are fewer than five, one more than three times above or below the official figure is held instead. Entries arriving in a burst that moves a figure by more than 15% are held until two days old. A held entry is shown once others report similar amounts. Ratings skip the amount checks.
+
+**What is shown.** From the first entry, labelled as community, with how many entries it rests on and the months they arrived: the median (a rating: the mean) and, from three entries, the middle half. Beside the official figure where one exists, never mixed into it or into a score.
+
+**What is kept.** The place, the figure, the amount, its currency, the day it arrived, whether it came from the site, the command line or an agent, and a hash of your removal code. No name, email, account or IP address. To limit floods (12 sends a day per network, 3 per place), Borgo counts sends under a hash of the network address salted with a random value that changes every day; both are deleted after two days. Cloudflare, which runs the site, sees your address in transit, as for any page.
+
+**Published.** Every entry with its review verdict, the amount rounded to three significant digits and the month it arrived, at [/api/community/dataset.json](https://borgo.abcastor.com/api/community/dataset.json) and [.csv](https://borgo.abcastor.com/api/community/dataset.csv), under CC BY 4.0, credited to "Borgo contributors". By sending, you publish your figures under that licence.
+
+**Taking it back.** Each send returns a removal code; the site keeps it in your browser. The code deletes that send: on the city page, with `borgo community remove <code>`, or `POST {"code": "..."}` to `/api/community/remove`.
+
 ## Privacy
 
-A proposal is a public GitHub issue under your account, and its edit history is public too. Leave personal details out of it; a maintainer removes any that appear.
+A proposal is a public GitHub issue under your account, and its edit history is public too. Leave personal details out of it; a maintainer removes any that appear. Your own figures are kept apart and anonymous, as [above](#your-own-figures).
 
 ## Code
 

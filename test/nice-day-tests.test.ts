@@ -3,6 +3,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { loadDataset } from "../src/agent/dataset.ts";
+import type { Comfort } from "../src/core/types.ts";
 import { buildProfile } from "../src/agent/profile.ts";
 import { compareArgs } from "../src/cli/main.ts";
 import { niceDays, niceTestsText } from "../src/core/criteria.ts";
@@ -133,4 +134,16 @@ test("a daylight minimum outside 0 to 24 hours is a problem", () => {
   const p = buildProfile(data, { cities: ["Lisbon"] }).profile;
   assert.deepEqual(profileProblems({ ...p, prefs: { ...p.prefs, comfort: { ...p.prefs.comfort, daylight: 12 } } }), []);
   assert.match(profileProblems({ ...p, prefs: { ...p.prefs, comfort: { ...p.prefs.comfort, daylight: 30 } } }).join(" "), /comfort\.daylight is hours of daylight, 0 to 24/);
+});
+
+test("the compare row's label names the person's own nice-day tests, the same words as its cells", async () => {
+  const { compare } = await import("../src/agent/report.ts");
+  const data = loadDataset();
+  const label = (comfort?: Comfort) => {
+    const r = compare(data, { cities: ["Turin", "Lisbon"], ...(comfort ? { comfort } : {}) });
+    return JSON.stringify(r).match(/"label":"(Nice days \([^"]*\))"/)?.[1] ?? "";
+  };
+  assert.match(label(), /8 am-8 pm, dry, mostly clear\)$/);
+  assert.match(label({ min: 18, max: 30, notMuggy: true, calm: true }), /dry, mostly clear, not muggy, calm\)$/);
+  assert.match(label({ min: 18, max: 30, dry: false }), /8 am-8 pm, mostly clear\)$/);
 });

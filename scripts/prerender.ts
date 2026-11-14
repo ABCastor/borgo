@@ -14,6 +14,8 @@ import { TAX_MODELS } from "../src/tax/index.ts";
 import { html } from "../src/ui/dom.ts";
 import { abs, productHeader, CREATOR, DATA_LICENCE, SITE_NAME, SITE_ORIGIN, type NavLink } from "./site.ts";
 import { manifestOf, PARTS, type PartId } from "../src/registry/licences.ts";
+import { placesMeta, type MapPlace } from "../src/community/meta.ts";
+import { FIGURES } from "../src/community/figures.ts";
 
 export interface Manifest {
   /** Site paths of every HTML page, "/" first. */
@@ -166,10 +168,18 @@ export async function prerender(dist: string, data: Dataset): Promise<Manifest> 
         licences: abs("/data/licences.json"),
         ...Object.fromEntries(otherParts.map((p) => [`dataset-${p}`, abs(`/${PARTS[p].file}`)])),
         ...Object.fromEntries(otherParts.map((p) => [`city-${p}`, abs(`/api/${p}/city/{id}.json`)])),
+        communityCity: abs("/api/community/city/{id}.json"),
+        communityDataset: abs("/api/community/dataset.json"),
+        communityDatasetCsv: abs("/api/community/dataset.csv"),
+        communityPlaces: abs("/api/community/places.json"),
+        communitySubmit: abs("/api/community/submit"),
       },
       docs: { llms: abs("/llms.txt"), agents: abs("/docs/agents.md") },
     }),
   );
+  // The places that take community figures, their currencies and the official figures beside them, read by the Worker.
+  const towns = (JSON.parse(await readFile(join(ROOT, "public/data/map.json"), "utf8")) as { places: MapPlace[] }).places;
+  await write("api/community/places.json", JSON.stringify(placesMeta(data, towns)));
   await write(
     "api/cities.json",
     json({
@@ -347,6 +357,17 @@ function llmsTxt(data: Dataset, all: CityFacts[], pairCount: number): string {
     `- [World map](${abs("/data/map.json")}): land tiles on the Equal Earth projection with each month's average afternoon high (NASA POWER) and the towns the map can add (Natural Earth)`,
     "",
   );
+  L.push(
+    "## Community figures (live)",
+    "",
+    "People add their own figures, like Numbeo's contributors but as open data: rent by bedrooms and area, six everyday prices, take-home pay by kind of work, and a 1 to 5 rating of living there. An automated review holds amounts far from what others report or from the official figure; what passes is shown from the first entry, labelled as community with its count and months, beside the official figures and never mixed into them or into scores. CC BY 4.0, credited to Borgo contributors. These answer live from the Worker, so they are not files in the snapshot.",
+    "",
+    `One place after review: ${abs("/api/community/city/turin-it.json")} (pattern /api/community/city/{id}.json, for the ${data.cities.length} cities and the towns on the map; ids and currencies in ${abs("/api/community/places.json")}). Every entry with its review verdict, amounts rounded to three significant digits, the month each arrived: ${abs("/api/community/dataset.json")} and ${abs("/api/community/dataset.csv")}.`,
+    "",
+    `To send, POST JSON to ${abs("/api/community/submit")}: {"city": "turin-it", "rent": {"amount": 950, "bedrooms": "1", "area": "centre"}, "prices": {"cappuccino": 1.6}, "salary": {"amount": 2400, "occupation": "software"}, "rating": 4, "consent": true}. Amounts in the place's own currency, a month; bedrooms 0 (studio) to 3 (3 or more); area centre or outside; prices ${FIGURES.filter((f) => f.kind === "price").map((f) => f.id.slice(6)).join(", ")}; occupations ${FIGURES.filter((f) => f.kind === "salary").map((f) => f.id.slice(7)).join(", ")}. consent true means the person agreed to publish these exact figures as their own under CC BY 4.0: an agent sends only after the person said yes to them. The answer carries a removal code; POST {"code": "..."} to ${abs("/api/community/remove")} deletes that submission.`,
+    "",
+  );
+
   L.push("## Cities", "", ...all.map((f) => `- [${f.city.name}](${abs(f.path)}index.md): ${summaryLine(f)}`), "");
   L.push("## Optional", "", `- [Every comparison](${abs("/compare/index.md")}): ${pairCount} city-versus-city pages`, `- [Every city](${abs("/cities/index.md")})`, `- [Full text](${abs("/llms-full.txt")}): every city page in one file`, "");
   return L.join("\n");

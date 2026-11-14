@@ -1,0 +1,99 @@
+/* Community figures and their form, on the static city pages (body.static, the paper world) and the app's city
+   sheet (body.app). Terracotta is what people set (D7), so it marks a community figure; official figures stay ink
+   with their source in quiet words. */
+
+.cm-figs { margin: 6px 0 14px; }
+.cm-empty { margin: 4px 0 10px; color: var(--quiet); font-size: 13.5px; max-width: 68ch; }
+.cm-table { width: 100%; max-width: 54rem; border-collapse: collapse; font-size: 13.5px; font-variant-numeric: tabular-nums; }
+.cm-table th, .cm-table td { padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: baseline; text-align: left; }
+.cm-table th { font-weight: 500; }
+.cm-table td.num { text-align: right; white-space: nowrap; }
+.cm-table td.num b { font-weight: 600; }
+.cm-unit { display: block; color: var(--quiet); font-size: 12px; font-weight: 400; }
+.cm-range { display: block; color: var(--quiet); font-size: 12px; }
+.cm-badge {
+  display: inline-block; padding: 1px 7px; border: 1px solid color-mix(in oklab, var(--human) 55%, transparent); border-radius: 999px;
+  color: var(--human-ink); font: 600 11.5px/1.5 var(--cond, Bib, "Barlow Condensed", "Arial Narrow", sans-serif); letter-spacing: .06em; text-transform: uppercase;
+}
+.cm-n { color: var(--quiet); font-size: 12.5px; }
+.cm-off { color: var(--ink); font-size: 12.5px; }
+.cm-off .quiet { color: var(--quiet); }
+.cm-held th, .cm-held td { color: var(--quiet); }
+.cm-foot { margin: 8px 0 0; color: var(--quiet); font-size: 12.5px; max-width: 72ch; }
+
+/* The form: in the app, a button shows it; on the static page it stands open under its own heading. */
+.cm-open {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border: 1.5px solid var(--ink); border-radius: 6px; background: transparent; cursor: pointer;
+  color: var(--ink); font: 600 14px/1 var(--cond, Bib, "Barlow Condensed", "Arial Narrow", sans-serif); letter-spacing: .05em; text-transform: uppercase; text-decoration: none;
+}
+.cm-open:hover { background: color-mix(in oklab, var(--ink) 6%, transparent); }
+.cm-open:focus-visible { outline: 2px solid var(--human); outline-offset: 2px; }
+.cm-open[aria-expanded="true"] { background: var(--ink); color: var(--sheet, var(--paper)); }
+.cm-form { margin-top: 14px; max-width: 46rem; }
+.cm-form[hidden] { display: none; }
+.cm-lede { margin: 0 0 12px; font-size: 13.5px; max-width: 68ch; }
+.cm-form fieldset { margin: 0 0 18px; padding: 0; border: 0; min-width: 0; }
+.cm-form legend { padding: 0; margin-bottom: 6px; font: 700 15px/1.2 var(--cond, Bib, "Barlow Condensed", "Arial Narrow", sans-serif); letter-spacing: .04em; text-transform: uppercase; }
+.cm-row { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr); gap: 10px 14px; align-items: end; }
+.cm-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 14px; align-items: end; }
+.cm-field { display: block; font-size: 12.5px; color: var(--quiet); }
+.cm-field > span:first-child { display: block; margin-bottom: 4px; line-height: 1.3; }
+.cm-in { position: relative; display: block; }
+.cm-form :is(input:not([type="radio"]):not([type="checkbox"]), select) {
+  display: block; width: 100%; height: 38px; margin: 0; padding: 0 10px; border: 1.5px solid var(--rule); border-radius: 6px;
+  background: var(--sheet, var(--paper)); color: var(--ink); font: 500 14px var(--ui); font-variant-numeric: tabular-nums;
+}
+.cm-in input { padding-right: 48px !important; }
+.cm-cur { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: var(--quiet); font: 600 12px var(--cond, Bib, "Barlow Condensed", sans-serif); letter-spacing: .05em; pointer-events: none; }
+.cm-form :is(input, select):focus-visible { outline: none; border-color: var(--human); }
+.cm-form input::placeholder { color: color-mix(in oklab, var(--quiet) 75%, transparent); }
+.cm-form input:user-invalid { border-color: var(--fail); }
+.cm-stars { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.cm-stars label { position: relative; }
+.cm-stars input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.cm-stars label span {
+  display: grid; place-items: center; width: 44px; height: 38px; border: 1.5px solid var(--rule); border-radius: 6px; color: var(--ink);
+  font: 700 16px/1 var(--cond, Bib, "Barlow Condensed", sans-serif);
+}
+.cm-stars input:checked + span { background: var(--ink); border-color: var(--ink); color: var(--sheet, var(--paper)); }
+.cm-stars input:focus-visible + span { outline: 2px solid var(--human); outline-offset: 2px; }
+.cm-scale { margin-left: 6px; color: var(--quiet); font-size: 12.5px; }
+.cm-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.cm-privacy { margin: 4px 0 14px; padding: 12px 14px; border-radius: 6px; background: var(--wash); font-size: 12.5px; color: var(--ink); max-width: 68ch; }
+.cm-privacy p { margin: 0 0 6px; }
+.cm-privacy p:last-child { margin: 0; }
+.cm-consent { display: flex; gap: 10px; align-items: flex-start; margin: 0 0 14px; font-size: 13.5px; max-width: 68ch; }
+.cm-consent input { width: 18px; height: 18px; margin: 1px 0 0; accent-color: var(--ink); flex: none; }
+.cm-send { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.cm-btn {
+  height: 40px; padding: 0 18px; border: 1.5px solid var(--ink); border-radius: 6px; background: var(--ink); color: var(--sheet, var(--paper)); cursor: pointer;
+  font: 600 14px/1 var(--cond, Bib, "Barlow Condensed", sans-serif); letter-spacing: .05em; text-transform: uppercase;
+}
+.cm-btn:hover { background: color-mix(in oklab, var(--ink) 86%, var(--paper)); }
+.cm-btn:disabled { opacity: .55; cursor: progress; }
+.cm-btn.quiet-btn { background: transparent; color: var(--ink); }
+.cm-status { font-size: 13px; color: var(--quiet); }
+.cm-status.is-bad { color: var(--fail); }
+.cm-sent { margin: 8px 0 14px; padding: 12px 14px; border: 1px solid var(--rule); border-radius: 6px; font-size: 13.5px; max-width: 68ch; }
+.cm-sent p { margin: 0 0 8px; }
+.cm-sent p:last-child { margin-bottom: 0; }
+.cm-problem { border-color: color-mix(in oklab, var(--fail) 45%, transparent); }
+.cm-code { padding: 1px 6px; border-radius: 3px; background: var(--wash); font: 500 13px ui-monospace, SFMono-Regular, Menlo, monospace; user-select: all; }
+.cm-remove { display: flex; gap: 10px; align-items: end; flex-wrap: wrap; margin-top: 8px; }
+.cm-remove .cm-field { flex: 1 1 14rem; max-width: 20rem; }
+.cm-remove input { display: block; width: 100%; height: 38px; padding: 0 10px; border: 1.5px solid var(--rule); border-radius: 6px; background: var(--sheet, var(--paper)); color: var(--ink); font: 500 13px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.cm-mine { margin: 10px 0 0; font-size: 12.5px; color: var(--quiet); }
+.cm-mine button { margin-left: 6px; }
+
+@media (max-width: 640px) {
+  .cm-row, .cm-grid { grid-template-columns: minmax(0, 1fr); }
+  .cm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* 16px keeps iOS from zooming the page when a field takes focus. */
+  .cm-form :is(input:not([type="radio"]):not([type="checkbox"]), select) { height: 44px; font-size: 16px; }
+  .cm-stars label span { height: 44px; }
+  .cm-table, .cm-table tbody, .cm-table tr { display: block; }
+  .cm-table tr { padding: 8px 0; border-bottom: 1px solid var(--rule); }
+  .cm-table th, .cm-table td { display: block; padding: 2px 0; border: 0; text-align: left; }
+  .cm-table td.num { text-align: left; }
+  .cm-range { display: inline; margin-left: 6px; }
+}

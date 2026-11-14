@@ -26,6 +26,8 @@ import type { Http } from "../community/net.ts";
 import { CITATION_TYPES, KINDS, type RepoView } from "../community/proposal.ts";
 import { loadCorrections, repoView } from "../community/repo.ts";
 import { FACT_KINDS } from "../community/stale.ts";
+import { figuresMarkdown, readFigures, removeFigures, sendFigures, sendMarkdown } from "../community/client.ts";
+import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../community/figures.ts";
 
 export const INSTRUCTIONS = `Borgo compares cities to live in on open, sourced data, weighted by the person's own values, and works out take-home pay and what is left after rent and everyday spending.
 
@@ -41,7 +43,8 @@ How to use it well:
 - search_cities finds ids (a miss means: try fetch_city); get_city gives a city's figures with source, period, level and licence (pass \`metrics\` for a few, \`passports\` for who may live there); net_pay answers take-home pay questions on their own; list_metrics_and_sources (filter with \`kind\`, e.g. kind "regimes" and country "NL") and methodology explain what the scores mean.
 - Position lines (politics, abortion, couples_law) are stances, not more-is-better: pass a stance only when the person stated it or you already know it from them, never from their nationality, city or any other guess, and give the line a weight. Report each place's fact in neutral words, with its date.
 - Quote figures with their source and period. Rankings depend on the weights: no ranking is objective.
-- When a figure or rule looks wrong or out of date, list_stale shows the curated facts due for review, and propose_change turns a correction into a checked proposal for the maintainers: cite the official text (statute, gazette, official table), never a news article alone or a link-only source. It returns a prefilled GitHub issue link for the person; post it for them only after they agreed to that exact proposal.`;
+- When a figure or rule looks wrong or out of date, list_stale shows the curated facts due for review, and propose_change turns a correction into a checked proposal for the maintainers: cite the official text (statute, gazette, official table), never a news article alone or a link-only source. It returns a prefilled GitHub issue link for the person; post it for them only after they agreed to that exact proposal.
+- community_figures shows what people report for themselves about a place (rent by bedrooms and area, everyday prices, take-home pay by kind of work, a 1-5 rating), after automated review, with counts and months: quote it as community figures, beside the official ones, never as official. When the person tells you what they pay or earn where they live and wants to share it, submit_figures sends it to Borgo's open community data: first call it without confirm and show them the draft and its privacy note; call again with confirm true only after they said yes to those exact figures. Never send figures they did not give you as their own.`;
 
 const money = z.object({ amount: z.number().describe("Amount"), currency: z.string().optional().describe("ISO 4217, e.g. EUR, GBP, USD. Default: the display currency") });
 const tweak = z.object({
@@ -188,6 +191,8 @@ export interface ServerOptions {
   poster?: Poster;
   /** Today, YYYY-MM-DD, for list_stale (default: the clock). */
   today?: () => string;
+  /** How the community tools reach Borgo's site (tests pass a stand-in). */
+  communityFetch?: typeof fetch;
 }
 
 const openWorld = { readOnlyHint: false, destructiveHint: false, idempotentHint: true, openWorldHint: true };
@@ -499,6 +504,68 @@ export function createServer(data: Dataset, opts: ServerOptions = {}): McpServer
     guardedAsync(async (args) => {
       const r = await proposeChange(args, { repo: opts.repo ?? repoView(), http: opts.http, poster: opts.poster });
       return reply(proposeMarkdown(r), { reportVersion: REPORT_VERSION, valid: r.valid, problems: r.verdict.problems, warnings: r.verdict.warnings, route: r.verdict.route, locked: r.verdict.locked, labels: r.verdict.labels, next: r.verdict.next, title: r.title, issueUrl: r.issueUrl, confirm: r.confirm, posted: r.posted, notPosted: r.notPosted ?? null, proposal: r.proposal });
+    }),
+  );
+
+  const cfetch = opts.communityFetch ?? fetch;
+  const placeId = (text: string) => {
+    try {
+      return findCity(data, text).id;
+    } catch {
+      const [name, cc] = text.split(",").map((x) => x.trim());
+      return (cc ? `${name}-${cc}` : text).toLowerCase().normalize("NFD").replace(/\p{M}/gu, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+    }
+  };
+  server.registerTool(
+    "community_figures",
+    {
+      title: "What people report for a place",
+      description: "Figures people report for themselves about a place on Borgo, after automated review: rent by bedrooms and area, everyday prices, take-home pay by kind of work and a 1 to 5 rating of living there, each with its median (a rating: mean), middle half from 3 entries, count, months and the official figure beside it where one exists. Community data, CC BY 4.0; never mixed into official figures or scores. Covers the snapshot's cities and the towns on Borgo's map.",
+      inputSchema: { city: z.string().describe("City id (turin-it) or name ('Turin', 'Palermo, IT')") },
+      outputSchema: looseOutput,
+      annotations: { readOnlyHint: true, destructiveHint: false, idempotentHint: true, openWorldHint: true },
+    },
+    guardedAsync(async ({ city }) => {
+      const r = await readFigures(placeId(city), cfetch);
+      return reply(figuresMarkdown(r), { reportVersion: REPORT_VERSION, ...r });
+    }),
+  );
+  server.registerTool(
+    "submit_figures",
+    {
+      title: "Add the person's own figures",
+      description:
+        "Send what the person pays and earns where they live to Borgo's open community data (published rounded under CC BY 4.0, no name or address kept; an automated review holds amounts far from others' or the official figure). Without confirm it sends nothing and returns the draft with its privacy note: show both to the person. Call again with confirm true only after they said yes to these exact figures, and only figures they gave you as their own, never estimates or figures read on another site. The answer carries a removal code for them to keep.",
+      inputSchema: {
+        city: z.string().describe("City id (turin-it) or name ('Turin', 'Palermo, IT')"),
+        rent: z.object({ amount: z.number().min(0).describe("What they pay a month, without bills, in the place's currency"), bedrooms: z.enum(BEDROOMS.map((b) => b.id) as [string, ...string[]]).describe(BEDROOMS.map((b) => `${b.id}: ${b.label}`).join("; ")), area: z.enum(AREAS.map((a) => a.id) as [string, ...string[]]).describe("centre or outside the centre") }).optional(),
+        prices: z.object(Object.fromEntries(PRICES.map((p) => [p.id, z.number().min(0).optional().describe(`${p.label}, ${p.unit}`)])) as Record<(typeof PRICES)[number]["id"], z.ZodOptional<z.ZodNumber>>).optional().describe("What they pay for everyday things, in the place's currency"),
+        salary: z.object({ amount: z.number().min(0).describe("What they take home a month after tax"), occupation: z.enum(OCCUPATIONS.map((o) => o.id) as [string, ...string[]]).describe(OCCUPATIONS.map((o) => `${o.id}: ${o.label}`).join("; ")) }).optional(),
+        rating: z.number().int().min(1).max(5).optional().describe("Living there, all things considered, 1 poor to 5 excellent"),
+        currency: z.string().optional().describe("ISO 4217; must be the place's own (checked)"),
+        confirm: z.boolean().optional().describe("true only after the person agreed to send these exact figures"),
+      },
+      outputSchema: looseOutput,
+      annotations: { readOnlyHint: false, destructiveHint: false, idempotentHint: false, openWorldHint: true },
+    },
+    guardedAsync(async ({ confirm, city, ...rest }) => {
+      const sub: Omit<Submission, "consent"> = { ...(rest as Omit<Submission, "consent" | "city">), city: placeId(city), via: "mcp" };
+      const r = await sendFigures(sub, confirm === true, cfetch);
+      return reply(sendMarkdown(r, city), { reportVersion: REPORT_VERSION, ...r });
+    }),
+  );
+  server.registerTool(
+    "remove_figures",
+    {
+      title: "Take back a submission",
+      description: "Delete a submission the person sent, with the removal code it gave them.",
+      inputSchema: { code: z.string().describe("The 20-character removal code") },
+      outputSchema: looseOutput,
+      annotations: { readOnlyHint: false, destructiveHint: true, idempotentHint: true, openWorldHint: true },
+    },
+    guardedAsync(async ({ code }) => {
+      const r = await removeFigures(code, cfetch);
+      return reply(r.removed ? `Removed ${r.removed} ${r.removed === 1 ? "entry" : "entries"}.` : "Nothing to remove: that code matches no entry.", { reportVersion: REPORT_VERSION, ...r });
     }),
   );
 

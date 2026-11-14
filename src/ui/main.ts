@@ -4,7 +4,7 @@ import { grouped, splitGroupWeight } from "../core/groups.ts";
 import { resolve } from "../core/lookup.ts";
 import { convert } from "../core/money.ts";
 import type { Dataset, Profile } from "../core/types.ts";
-import { makeCtx } from "../fetch/context.ts";
+import { browserRoute, makeCtx } from "../fetch/context.ts";
 import { BROWSER_FETCHERS, fetchCity, withFetched } from "../fetch/index.ts";
 import { resolvePlace } from "../places/resolve.ts";
 import { lazyFiles, partFiles, withParts, type PartFile } from "../registry/licences.ts";
@@ -12,11 +12,12 @@ import { defaultTests } from "../core/weather-days.ts";
 import { citiesView, comfortEditor } from "./cards.ts";
 import { climateOf, drawHours, hourReadout, narrow } from "./climate.ts";
 import { cityView } from "./detail.ts";
+import { keepTyped, removeCommunity, sendCommunity, toggleForm } from "./community.ts";
 import { html } from "./dom.ts";
 import { mapAction, mapInput, mapShell, mountMap, paintMap, pinCity, refreshMap, repaletteMap, unpinMap } from "./map.ts";
 import { aboutPage, contactPage, dataPage } from "./pages.ts";
 import { compareView, moneyView, sourcePopover } from "./results.ts";
-import { applyCitiesQuery, fetchedNames, hideIntro, introFor, loadFetchedCities, loadProfile, notFoundOnLoad, PRESETS, saveFetchedCity, saveProfile, sharedParam, storedOverride, shareUrl, sharePartsHeld, type AppState, type LiveStatus, type SharePart, type View } from "./state.ts";
+import { applyCitiesQuery, fetchedNames, placeFromId, hideIntro, introFor, loadFetchedCities, loadProfile, notFoundOnLoad, PRESETS, saveFetchedCity, saveProfile, sharedParam, storedOverride, shareUrl, sharePartsHeld, type AppState, type LiveStatus, type SharePart, type View } from "./state.ts";
 import { sharePanel } from "./share.ts";
 import { settingsPanel } from "./settings.ts";
 import { TERMS } from "./terms.ts";
@@ -280,7 +281,10 @@ function renderLive(): void {
     refreshPopover();
     return;
   }
+  // A redraw of the city sheet keeps what the person is typing into its community form.
+  const typed = v === "city" && main ? keepTyped(main) : null;
   place(main, (v === "compare" ? compareView(state, evaluation) : v === "money" ? moneyView(state, evaluation) : v === "city" ? cityView(state, evaluation, state.city ?? "") : citiesView(state, evaluation)).value);
+  typed?.();
   if (v === "cities" && mapHere()) refreshMap(state);
   paintCanvases();
   flipPlay(before);
@@ -430,6 +434,14 @@ function onClick(e: MouseEvent): void {
   if (t.tagName === "FORM") return;
   const act = t.dataset.act!;
   const p = state.profile;
+  if (act === "community-open") {
+    toggleForm(t);
+    return;
+  }
+  if (act === "community-remove") {
+    void removeCommunity(t.dataset.city ?? "", t.dataset.code ?? "", cityName(t.dataset.city ?? ""));
+    return;
+  }
   if (act === "map-add-place") {
     if (!state.live) void fetchLive(t.dataset.q ?? "", t.dataset.name, true);
     return;
@@ -704,11 +716,17 @@ function onClick(e: MouseEvent): void {
   if (!t.closest("#pop")) closePopover();
 }
 
+const cityName = (id: string) => state.data.cities.find((c) => c.id === id)?.name ?? placeFromId(id).split(",")[0]!;
+
 function onSubmit(e: SubmitEvent): void {
   const f = e.target as HTMLFormElement;
   const act = f.dataset.act;
   if (!act) return;
   e.preventDefault();
+  if (act === "community-send") {
+    void sendCommunity(f, cityName(f.dataset.community ?? ""));
+    return;
+  }
   if (act === "add-line") {
     const label = String(new FormData(f).get("label") ?? "").trim();
     if (!label) return;
@@ -805,6 +823,8 @@ function onChange(e: Event): void {
 function changed(e: Event): void {
   const t = e.target as HTMLInputElement | HTMLSelectElement;
   if (t.dataset.mapLens || t.id === "map-fade") return;
+  // The community form is what the person sends, not their profile: it changes nothing until sent.
+  if (t.closest("form[data-community], form.cm-remove")) return;
   if (t.dataset.actChange === "paid-childcare") {
     const on = (t as HTMLInputElement).checked;
     setProfile((p) => {
@@ -1085,7 +1105,7 @@ async function fetchLive(text: string, shown = text, fromMap = false): Promise<v
   state.live = { query: shown, label: "", name: shown.split(",")[0]!.trim(), sources: [] };
   if (state.view === "cities") scrollToAdding();
   renderLive();
-  const ctx = makeCtx({ runtime: "browser" });
+  const ctx = makeCtx({ runtime: "browser", route: browserRoute(location.origin) });
   try {
     const found = await resolvePlace(text, ctx, { countries: state.data.countries, known: state.data.cities, limit: 1, towns: browserTowns });
     const pick = found[0];

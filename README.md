@@ -103,7 +103,11 @@ Numbeo, WeatherSpark, the EIU and similar closed sources are in the registry as 
 
 **Sunshine is measured, not modelled.** Reanalysis models overstate sunshine by 30 to 90% against weather stations (ERA5 gives London 2,765 hours a year; Heathrow measures 1,595), so sunshine comes only from station normals and is missing where no station is close.
 
-**The real gap is rent.** No open source gives a one-bedroom rent for cities worldwide: official data covers the UK and Ireland today. Elsewhere the app asks for your own figure rather than inventing one. Research output counts papers per resident from universities, labs, hospitals and companies; it is a proxy for "who is in the room", not a count of startups. Homicides and the other World Bank lines are national figures standing in for the city, and say "national" beside the number.
+**The real gap is rent.** No open source gives a one-bedroom rent for cities worldwide: official data covers the UK and Ireland today. Elsewhere the app asks for your own figure rather than inventing one, and people who live there can add theirs (below). Research output counts papers per resident from universities, labs, hospitals and companies; it is a proxy for "who is in the room", not a count of startups. Homicides and the other World Bank lines are national figures standing in for the city, and say "national" beside the number.
+
+## Figures people add
+
+Anyone can add what they pay and earn where they live, without an account: rent by bedrooms and area, six everyday prices (a cheap meal, a cappuccino, milk, a transit pass, a gym, home internet), take-home pay by kind of work, and a 1 to 5 rating of living there. Use the form on any city page or city sheet, `borgo submit`, or the MCP tool `submit_figures`. Nothing about the sender is kept; an automated review holds amounts far from what others report or from the official figure, and a burst of entries at once. What passes shows from the first entry, labelled as community with its count and months, beside the official figures and never in a score. Every entry is open data under CC BY 4.0 ([dataset.json](https://borgo.abcastor.com/api/community/dataset.json), [CSV](https://borgo.abcastor.com/api/community/dataset.csv)). See [CONTRIBUTING.md](CONTRIBUTING.md#your-own-figures).
 
 ## Adding to it
 

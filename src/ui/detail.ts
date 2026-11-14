@@ -14,6 +14,7 @@ import { moneyGap } from "../core/criteria.ts";
 import type { AppState } from "./state.ts";
 import { term } from "./terms.ts";
 import { partialNote } from "./partial.ts";
+import { communitySection } from "./community.ts";
 
 // One city's full dossier: how its score is built, its whole climate, its money and every figure.
 // The month chart is where the comfortable range is most at home: drag its band, or step it beside the title.
@@ -145,6 +146,7 @@ export function cityView(s: AppState, e: Evaluation, id: string): Raw {
     ${climate(s, r, e)}
     <div class="tear" aria-hidden="true"></div>
     <section class="part" id="money"><h2 class="ph">Money</h2><div class="pair"><div>${waterfall(s, r)}</div><div>${advanced(s, r)}</div></div></section>
+    ${communitySection(city, s.data.countries[city.country]?.currency ?? "EUR")}
     <section class="part" id="figures"><h2 class="ph">Every figure</h2><p class="note">Each with its source: point at the teal mark. Replace any with your own number.</p>${figures(s, r)}</section>
     <section class="part" id="elsewhere"><h2 class="ph">Elsewhere</h2><p class="note">Sources we may link to but not copy.</p><ul class="out">${linksOut(city).map((l) => html`<li><a href="${l.url}" target="_blank" rel="noopener">${l.label}</a></li>`)}</ul></section>
   </article></div>`;

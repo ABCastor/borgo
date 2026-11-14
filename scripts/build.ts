@@ -31,7 +31,7 @@ await build({
   loader: { ".html": "text" },
   outfile: join(DIST, "app.js"),
 });
-const css = await Promise.all(["src/ui/castor/header.css", "src/ui/castor/footer.css", "src/ui/styles.css", "src/site/site.css", "src/ui/sheets.css", "src/ui/map.css", "src/ui/brand/brand.css"].map((f) => readFile(join(ROOT, f), "utf8")));
+const css = await Promise.all(["src/ui/castor/header.css", "src/ui/castor/footer.css", "src/ui/styles.css", "src/site/site.css", "src/ui/sheets.css", "src/ui/map.css", "src/ui/community.css", "src/ui/brand/brand.css"].map((f) => readFile(join(ROOT, f), "utf8")));
 await writeFile(join(DIST, "app.css"), css.join("\n"));
 
 const header = productHeader("#/", [

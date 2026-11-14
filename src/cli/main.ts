@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { parseArgs } from "node:util";
 import { DEFAULT_COMFORT } from "../core/criteria.ts";
 import type { Comfort, HousingSize, PermitKind, TaxTweak } from "../core/types.ts";
-import { searchCities } from "../agent/cities.ts";
+import { findCity, searchCities } from "../agent/cities.ts";
 import { chartInput, compareSvg } from "../agent/chart.ts";
 import { loadDataset, ROOT } from "../agent/dataset.ts";
 import { catalogueMarkdown, cataloguePartMarkdown, cityMarkdown, compareMarkdown, netPayMarkdown, summaryMarkdown } from "../agent/markdown.ts";
@@ -18,6 +18,9 @@ import { loadRegistry } from "../registry/load.ts";
 import { listStale, proposeChange, proposeMarkdown, type ProposeInput } from "../community/agent.ts";
 import { loadCorrections, repoView } from "../community/repo.ts";
 import { FACT_KINDS, type FactKind } from "../community/stale.ts";
+import { figuresMarkdown, readFigures, removeFigures, sendFigures, sendMarkdown } from "../community/client.ts";
+import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../community/figures.ts";
+import { fold } from "../fetch/context.ts";
 
 const HELP = `borgo: compare cities to live in on open, sourced data, weighted by what you value.
 
@@ -47,6 +50,18 @@ Usage
         [--lead <news url>] [--agent name@1.0 --operator "..."] [--offline] [--from proposal.json]
                                                 check a correction and print the prefilled GitHub issue link;
                                                 --post <token> posts it with your signed-in gh, after you read it
+  borgo submit <city> [--rent 950 --bedrooms 1 --area centre] [--price cappuccino=1.6] (repeatable)
+        [--take-home 2400 --occupation software] [--rating 4] [--yes]
+                                                add your own figures to Borgo's community data (open, CC BY 4.0):
+                                                rent a month without bills (bedrooms ${BEDROOMS.map((b) => b.id).join(", ")}; area ${AREAS.map((a) => a.id).join(" or ")}),
+                                                prices ${PRICES.map((p) => p.id).join(", ")};
+                                                take-home pay a month after tax, by --occupation (${OCCUPATIONS.length} kinds:
+                                                ${OCCUPATIONS.slice(0, 9).map((o) => o.id).join(", ")},
+                                                ${OCCUPATIONS.slice(9).map((o) => o.id).join(", ")});
+                                                rating 1-5 of living there. In the place's own currency.
+                                                Without --yes it prints the draft and sends nothing
+  borgo community <city>                        what people report for a place, after automated review
+  borgo community remove <code>                 take back a submission with the code it gave you
   borgo data build                              from a clone: validate data/ and build public/data/dataset.json
   borgo data refresh [source]                   from a clone: re-fetch one source (or all), then build
   borgo mcp                                     run the MCP server on stdio
@@ -165,6 +180,14 @@ const OPTIONS = {
   offline: { type: "boolean" },
   post: { type: "string" },
   from: { type: "string" },
+  rent: { type: "string" },
+  bedrooms: { type: "string" },
+  area: { type: "string" },
+  price: { type: "string", multiple: true },
+  "take-home": { type: "string" },
+  occupation: { type: "string" },
+  rating: { type: "string" },
+  yes: { type: "boolean" },
 } as const;
 
 type Flags = ReturnType<typeof parseArgs<{ options: typeof OPTIONS; allowPositionals: true }>>["values"];
@@ -410,6 +433,7 @@ export async function main(argv: string[]): Promise<number> {
     print({ reportVersion: REPORT_VERSION, valid: r.valid, problems: r.verdict.problems, warnings: r.verdict.warnings, route: r.verdict.route, locked: r.verdict.locked, title: r.title, issueUrl: r.issueUrl, confirm: r.confirm, posted: r.posted, notPosted: r.notPosted ?? null, proposal: r.proposal }, proposeMarkdown(r).replace("call again with post.confirm =", "run the same command with --post"));
     return r.valid ? 0 : 1;
   }
+  if (cmd === "submit" || cmd === "community") return community(cmd, rest, f, print);
   if (cmd === "mcp") {
     const { serve } = await import("../mcp/stdio.ts");
     await serve();
@@ -523,6 +547,57 @@ export async function main(argv: string[]): Promise<number> {
     default:
       throw new Error(`Unknown command "${cmd}". Run borgo --help.`);
   }
+}
+
+/** A community place from a name or id: a city in the snapshot by any spelling, else "palermo-it" from "Palermo, IT". */
+function communityPlace(text: string): { id: string; name: string; currency?: string } {
+  try {
+    const ds = loadDataset();
+    const c = findCity(ds, text);
+    return { id: c.id, name: c.name, currency: ds.countries[c.country]?.currency };
+  } catch {
+    const [name, cc] = text.split(",").map((x) => x.trim());
+    return { id: cc ? `${fold(name!).replace(/ /g, "-")}-${cc.toLowerCase()}` : fold(text).replace(/ /g, "-"), name: name || text };
+  }
+}
+
+async function community(cmd: string, rest: string[], f: Flags, print: (json: unknown, text: string) => void): Promise<number> {
+  if (cmd === "community" && rest[0] === "remove") {
+    if (!rest[1]) throw new Error("Which code? borgo community remove <code>, the code your submission gave you.");
+    const r = await removeFigures(rest[1]);
+    print(r, r.removed ? `Removed ${r.removed} ${r.removed === 1 ? "entry" : "entries"}.` : "Nothing to remove: that code matches no entry.");
+    return 0;
+  }
+  if (!rest[0]) throw new Error(cmd === "submit" ? "Which place? e.g. borgo submit Turin --rent 950 --bedrooms 1 --area centre" : "Which place? e.g. borgo community Turin");
+  const place = communityPlace(rest.join(" "));
+  const city = place.id;
+  if (cmd === "community") {
+    const r = await readFigures(city);
+    print(r, figuresMarkdown(r));
+    return 0;
+  }
+  const amount = (v: string, flag: string) => {
+    const n = Number(v.replace(/,/g, ""));
+    if (!Number.isFinite(n)) throw new Error(`${flag} ${v}: give a number, e.g. ${flag} 950`);
+    return n;
+  };
+  const sub: Omit<Submission, "consent"> = { city, via: "cli" };
+  if (f.currency || place.currency) sub.currency = (f.currency ?? place.currency)!.toUpperCase();
+  if (f.rent) sub.rent = { amount: amount(f.rent, "--rent"), bedrooms: f.bedrooms ?? "1", area: f.area ?? "centre" };
+  else if (f.bedrooms || f.area) throw new Error("--bedrooms and --area describe a rent: add --rent <amount a month>.");
+  for (const p of f.price ?? []) {
+    const [k, v] = p.split("=");
+    if (!k || v === undefined) throw new Error(`--price ${p}: write item=amount, e.g. --price cappuccino=1.6. Items: ${PRICES.map((x) => x.id).join(", ")}.`);
+    (sub.prices ??= {})[k as keyof NonNullable<Submission["prices"]>] = amount(v, "--price");
+  }
+  if (f["take-home"]) {
+    if (!f.occupation) throw new Error(`--take-home needs --occupation, one of ${OCCUPATIONS.map((o) => o.id).join(", ")}.`);
+    sub.salary = { amount: amount(f["take-home"], "--take-home"), occupation: f.occupation };
+  }
+  if (f.rating) sub.rating = amount(f.rating, "--rating");
+  const r = await sendFigures(sub, !!f.yes);
+  print(r, sendMarkdown(r, place.name).replace("CLI: the same command with --yes; MCP: the same call with confirm true", "run the same command with --yes"));
+  return 0;
 }
 
 export async function run(argv: string[]): Promise<void> {
