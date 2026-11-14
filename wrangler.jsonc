@@ -1,7 +1,9 @@
-// Borgo on Cloudflare: a Worker that serves dist/ (npm run build) as static assets, with no code of its own,
-// at borgo.abcastor.com. Deploy with npm run deploy.
+// Borgo on Cloudflare: a Worker that serves dist/ (npm run build) as static assets at borgo.abcastor.com. Its small
+// script (src/site/worker.ts) runs first on every request: http moves to https and the host's clean-address redirects
+// become permanent. Deploy with npm run deploy.
 {
   "name": "borgo",
+  "main": "src/site/worker.ts",
   "compatibility_date": "2026-11-01",
   // One address for search engines and links: the custom domain only, no workers.dev or preview copies.
   "routes": [{ "pattern": "borgo.abcastor.com", "custom_domain": true }],
@@ -9,6 +11,8 @@
   "preview_urls": false,
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
+    "run_worker_first": true,
     // /cities answers from /cities/index.html and redirects to /cities/, the canonical form of every page.
     "html_handling": "auto-trailing-slash",
     // The app routes by #fragment, so an unknown path is a real 404: dist/404.html with status 404, never the app
