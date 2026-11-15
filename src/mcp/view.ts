@@ -76,7 +76,7 @@ window.addEventListener("message", (event) => {
 });
 
 const init = await request("ui/initialize", {
-  appInfo: { name: "borgo compare", version: "0.1.0" },
+  appInfo: { name: "borgo compare", version: "0.2.0" },
   appCapabilities: { availableDisplayModes: ["inline"] },
   protocolVersion: "${APPS_PROTOCOL}",
 });

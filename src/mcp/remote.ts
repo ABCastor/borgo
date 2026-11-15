@@ -1,4 +1,4 @@
-// Borgo's MCP server on the web: https://borgo.abcastor.com/mcp, Streamable HTTP (MCP 2025-11-25), so an assistant
+// Borgo's MCP server on the web: https://borgo.abcastor.com/mcp, Streamable HTTP at the SDK's latest protocol, so an assistant
 // connects with one address and nothing to install. It is stateless: each POST carries one JSON-RPC message or a
 // batch and gets its answer as JSON; there are no sessions and no stream to open (GET and DELETE answer 405).
 // It carries the tools of tools.ts, which read Borgo's published data, plus the community tools: submit_figures sends
