@@ -20,8 +20,8 @@ export interface Site {
   dataLicence: { id: string; url: string };
   /** The dataset version (its build date): every page says how fresh its numbers are. */
   version: string;
-  /** The Castor signature's markup (castor-identity master/footer) for a page `root` away from the site root, the last thing on every page. */
-  signature?: (root: string) => string;
+  /** The Castor signature's markup (castor-identity master/footer), the last thing on every page. */
+  signature?: string;
 }
 
 export interface Page {
@@ -140,7 +140,7 @@ export function siteFooter(site: Site, root: string, o: { addFigures?: string; c
 <nav class="bf-nav" aria-label="Everything on ${site.name}">${groups.map(([h, links], i) => html`<div class="bf-group"><p class="bf-h" id="bf-${i}">${h}</p><ul aria-labelledby="bf-${i}">${links.map((l) => html`<li>${l}</li>`)}</ul></div>`)}</nav>
 ${o.cities ? html`<p class="bf-cities">Every city has its own page of sourced figures: ${[...o.cities].sort((a, b) => a.city.name.localeCompare(b.city.name)).map((f, i) => html`${i ? ", " : ""}<a href="${root}${f.path.slice(1)}">${f.city.name}</a>`)}.</p>` : ""}
 <p class="bf-meta">Figures as of ${site.version}; every page names its sources and their licences. ${site.name} is made by <span translate="no">Castor</span>, which builds software and writes essays at <a href="https://abcastor.com/">abcastor.com</a>.</p>
-${raw(site.signature?.(root) ?? "")}
+${raw(site.signature ?? "")}
 </div>`;
 }
 

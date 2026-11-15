@@ -29,28 +29,6 @@ export interface NavLink {
 /** The Castor signature (Chip, "Castor*" and "we give a dam*" on the two-colour line), copied byte for byte from castor-identity master/footer. */
 export const SIGNATURE = (await readFile(join(ROOT, "src/ui/castor/footer.html"), "utf8")).trim();
 
-/** Where Chip's two large drawings are published, from the site root. */
-export const CHIP_FILE = "castor/chip.svg";
-/** Chip's body and tail: 33 KB of the signature's 36, the same on every page, so one cached file carries them. */
-const SPRITED = /<g class="(c-body|c-tail)">((?:<path [^>]*\/>)+)<\/g>/g;
-
-/**
- * The signature as a page carries it: the master's markup with the paths of Chip's body and tail moved, byte for byte, into
- * CHIP_FILE, each group keeping its class and referencing its own paths there. The groups stay in the page, so the
- * master's rules still move them (the tail's wag, the eye's blink) and the drawing is the master's. Kept inline, the whole
- * drawing makes the smallest pages too big to arrive in one round trip, which delays their first paint on a slow link.
- * `root` leads from the page back to the site root.
- */
-export function signatureAt(root: string): string {
-  return SIGNATURE.replace(SPRITED, (_, id: string) => `<g class="${id}"><use href="${root}${CHIP_FILE}#${id}"/></g>`);
-}
-
-/** CHIP_FILE: the groups signatureAt() refers to, each with the master's own paths. */
-export function chipFile(): string {
-  const groups = [...SIGNATURE.matchAll(SPRITED)].map((m) => `<g id="${m[1]}">${m[2]}</g>`);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 92">${groups.join("")}</svg>\n`;
-}
-
 /** The settings gear, copied from castor-identity master/toolbar. */
 const SETTINGS_ICON = (await readFile(join(ROOT, "src/ui/castor/settings.svg"), "utf8")).trim();
 

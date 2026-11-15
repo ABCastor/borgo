@@ -69,12 +69,6 @@
 .bf-meta { margin-top: 1.25rem; }
 .bf-cities a, .bf-meta a { color: inherit; text-decoration-color: color-mix(in oklab, currentColor 40%, transparent); }
 .bf-cities a:hover, .bf-meta a:hover { color: var(--ink); }
-/* Chip's body and tail come from castor/chip.svg through <use> (scripts/site.ts signatureAt). WebKit resolves a
-   light-dark() custom property inside such a clone as if the page were light, so the paper reaches the clone as a
-   plain colour, resolved here on the page's side. */
-@property --chip-paper { syntax: "<color>"; inherits: true; initial-value: transparent; }
-.sig .chip { --chip-paper: var(--paper); }
-.sig .chip use { --paper: var(--chip-paper); }
 @media (max-width: 720px) {
   .bf-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1.25rem; }
   .bf-group li { padding: .3rem 0; }
