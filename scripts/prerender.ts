@@ -13,7 +13,7 @@ import { cityFacts, compareFacts, comparisonPairs, levelText, appQuery, referenc
 import { assumptionsText, citiesPage, cityPage, comparePage, comparisonsPage, homeJsonLd, mainDataset, shell, siteFooter, sourcesPage, toRoot, type Page, type Site } from "../src/site/render.ts";
 import { TAX_MODELS } from "../src/tax/index.ts";
 import { html } from "../src/ui/dom.ts";
-import { abs, productHeader, CREATOR, DATA_LICENCE, SIGNATURE, SITE_NAME, SITE_ORIGIN, type NavLink } from "./site.ts";
+import { abs, chipFile, productHeader, signatureAt, CHIP_FILE, CREATOR, DATA_LICENCE, SITE_NAME, SITE_ORIGIN, type NavLink } from "./site.ts";
 import { manifestOf, PARTS, type PartId } from "../src/registry/licences.ts";
 import { placesMeta, type MapPlace } from "../src/community/meta.ts";
 import { FIGURES } from "../src/community/figures.ts";
@@ -66,7 +66,7 @@ export const WELCOME_BOTS = [
 export async function prerender(dist: string, data: Dataset, opts: PrerenderOptions = {}): Promise<Manifest> {
   const today = opts.today ?? new Date().toISOString().slice(0, 10);
   const hashes: Record<string, string> = {};
-  const site: Site = { origin: SITE_ORIGIN, name: SITE_NAME, creator: { ...CREATOR }, dataLicence: { ...DATA_LICENCE }, version: data.version, signature: SIGNATURE };
+  const site: Site = { origin: SITE_ORIGIN, name: SITE_NAME, creator: { ...CREATOR }, dataLicence: { ...DATA_LICENCE }, version: data.version, signature: signatureAt };
   const files: string[] = [];
   const write = async (rel: string, body: string) => {
     const path = join(dist, rel);
@@ -86,6 +86,9 @@ export async function prerender(dist: string, data: Dataset, opts: PrerenderOpti
     ...all.map((f) => cityPage(site, data, f, appQuery([f.city.id, ...neighbours(f)]))),
     ...pairs.map(([a, b]) => comparePage(site, data, compareFacts(data, a, b, pairs))),
   ];
+
+  // Chip's drawing, which every page's signature refers to (scripts/site.ts signatureAt).
+  await write(CHIP_FILE, chipFile());
 
   // Pages, each with its markdown twin at index.md (llms.txt v2).
   for (const page of pages) {

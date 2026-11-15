@@ -20,7 +20,7 @@
     "binding": "ASSETS",
     // The Worker answers pages and the API first; the app's own files (script, styles, fonts, favicon, data) come
     // straight from the static host, so the script costs them nothing. dist/_headers keeps the data open to any origin.
-    "run_worker_first": ["/*", "!/app.js", "!/app.css", "!/favicon.svg", "!/fonts/*", "!/data/*"],
+    "run_worker_first": ["/*", "!/app.js", "!/app.css", "!/favicon.svg", "!/fonts/*", "!/data/*", "!/castor/*"],
     // /cities answers from /cities/index.html and redirects to /cities/, the canonical form of every page.
     "html_handling": "auto-trailing-slash",
     // The app routes by #fragment, so an unknown path is a real 404: dist/404.html with status 404, never the app

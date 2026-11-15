@@ -19,6 +19,7 @@ const pageFile = (path: string) => `${path.slice(1)}index.html`;
 const escText = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 const jsonLd = (htmlText: string) => [...htmlText.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => JSON.parse(m[1]!));
 const nodes = (ld: any): any[] => (ld["@graph"] ? ld["@graph"] : [ld]);
+const toRootOf = (path: string) => "../".repeat(path.split("/").filter(Boolean).length);
 
 before(async () => {
   // The app page's shape as public/index.html has it: the footer's place after the app's own, inside .site (checked below).
@@ -174,18 +175,27 @@ test("the app page keeps the app and gains metadata and links to every city", ()
 });
 
 test("every page ends with one footer: the links, how fresh the figures are, and the Castor signature copied as it is", () => {
-  const signature = readFileSync(join(ROOT, "src/ui/castor/footer.html"), "utf8").trim();
+  const master = readFileSync(join(ROOT, "src/ui/castor/footer.html"), "utf8").trim();
+  // Chip's body and tail sit in one cached file; put them back and the page's signature is the master's markup, byte for byte.
+  const chip = read("castor/chip.svg");
+  const groups = new Map([...chip.matchAll(/<g id="(c-[a-z]+)">([\s\S]*?)<\/g>/g)].map((m) => [m[1]!, m[2]!]));
+  assert.deepEqual([...groups.keys()], ["c-body", "c-tail"]);
   const sample = [...manifest.pages.filter((p) => !p.startsWith("/compare/") || p === "/compare/"), ...manifest.pages.filter((p) => /^\/compare\/.+-vs-/.test(p)).slice(0, 20)];
-  for (const p of [...sample.map(pageFile), "404.html"]) {
+  for (const [p, root] of [...sample.map((x) => [pageFile(x), toRootOf(x)]), ["404.html", ""]] as [string, string][]) {
     const page = read(p);
     assert.equal(page.split('class="sig"').length - 1, 1, `${p}: one signature`);
     assert.equal(page.split('class="bfoot"').length - 1, 1, `${p}: one footer`);
     assert.ok(!page.includes("site-foot"), `${p}: the old footer is gone`);
-    assert.ok(page.includes(signature), `${p}: the signature is the master's markup, unchanged`);
-    // The signature is the last thing on the page: nothing but closing tags (and the app's script) after it.
-    const after = page.slice(page.indexOf(signature) + signature.length);
+    const sig = page.match(/<footer class="sig">[\s\S]*?<\/footer>/)![0];
+    const restored = sig.replace(/<g class="(c-[a-z]+)"><use href="([^"#]*)#\1"\/><\/g>/g, (_, id: string, href: string) => {
+      assert.equal(href, `${root}castor/chip.svg`, `${p}: Chip's drawing is found from this page`);
+      return `<g class="${id}">${groups.get(id)}</g>`;
+    });
+    assert.equal(restored, master, `${p}: the signature is the master's markup`);
+    // The signature is the last thing on the page: nothing but closing tags (and the app's own elements) after it.
+    const after = page.slice(page.indexOf(sig) + sig.length);
     assert.match(after.replace(/<div id="pop"[\s\S]*$/, ""), /^\s*<\/div>\s*<\/div>\s*(<\/body>|$)/, `${p}: content after the signature`);
-    const foot = page.slice(page.indexOf('class="bfoot"'));
+  const foot = page.slice(page.indexOf('class="bfoot"'));
     for (const href of ["https://abcastor.com/", "https://github.com/ABCastor/borgo", "https://www.npmjs.com/package/@abcastor/borgo", "docs/agents.md", "llms.txt", "api/index.json", "sources/", "cities/", "compare/", "api/community/dataset.json", "LICENSE", "https://creativecommons.org/licenses/by/4.0/", "#/contact"]) {
       assert.ok(foot.includes(href), `${p}: footer misses ${href}`);
     }
