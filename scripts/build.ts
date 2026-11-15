@@ -11,6 +11,7 @@ import { ROOT } from "../pipeline/lib.ts";
 import { loadPublishedDataset } from "../src/registry/load.ts";
 import type { Published } from "../src/registry/licences.ts";
 import { writeFirstPages } from "./first-page.ts";
+import { viewHtml } from "../src/mcp/view.ts";
 import type { Dataset } from "../src/core/types.ts";
 import { prerender, type PageDates } from "./prerender.ts";
 import { MARK } from "../src/ui/brand/index.ts";
@@ -51,6 +52,8 @@ await writeFile(join(DIST, "index.html"), page);
 await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK));
 await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });
 await cp(join(ROOT, "public/data"), join(DIST, "data"), { recursive: true });
+// The compare chart's MCP App document, which the remote MCP server (/mcp) reads; the local one builds its own.
+await writeFile(join(DIST, "data/mcp-view.txt"), viewHtml());
 // Files that must sit at the site root as they are (search engine verification, the IndexNow key).
 if (existsSync(join(ROOT, "public/root"))) await cp(join(ROOT, "public/root"), DIST, { recursive: true });
 // Open data stays open to other sites' browser code: the API and the data snapshot answer any origin.

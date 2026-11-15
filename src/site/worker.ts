@@ -7,13 +7,16 @@
 //   through for the app's place fetch (/api/wb/), cached for a day;
 // - the app page (/) starts where the visitor is: the page prerendered for the region of the request's country
 //   (src/core/visit-region.ts), with that country named in why its cities are shown. The country is read for this one
-//   answer and never stored or logged; the region pages themselves (/r/...) are not addresses anyone else can open.
+//   answer and never stored or logged; the region pages themselves (/r/...) are not addresses anyone else can open;
+// - /mcp is Borgo's MCP server for assistants (src/mcp/remote.ts): Streamable HTTP, stateless, rate-limited per
+//   network, counting calls per tool and nothing else.
 // Everything else is the file as the host serves it; the app's own files (script, styles, fonts, data) skip this script
 // altogether (wrangler.jsonc run_worker_first), so the Worker costs them nothing.
 import { cityFigures, communityApi, loadMeta, type CommunityEnv, type D1Like } from "./community-api.ts";
 import { communityFigures, removedNote, sentNote } from "../community/view.ts";
 import { html } from "../ui/dom.ts";
 import { countryName, fromText, regionOf, regionPage, type VisitSpread } from "../core/visit-region.ts";
+import { MCP_PATH, mcpRemote, type RateLimit, type Waiter } from "../mcp/remote.ts";
 
 /** The static-files binding, as much of it as this Worker uses. */
 export interface Assets {
@@ -23,6 +26,8 @@ export interface Assets {
 export interface Env extends CommunityEnv {
   ASSETS: Assets;
   COMMUNITY?: D1Like;
+  /** Requests a minute per network to /mcp (wrangler.jsonc ratelimits). */
+  MCP_LIMIT?: RateLimit;
 }
 
 /** A redirect the host made temporary, made permanent: same target, status 301 for a read, 308 for anything else. */
@@ -112,12 +117,13 @@ async function appPage(request: Request, env: Env, url: URL): Promise<Response> 
   return new Response(request.method === "HEAD" ? null : page, { status: 200, headers });
 }
 
-export async function handle(request: Request, env: Env): Promise<Response> {
+export async function handle(request: Request, env: Env, ctx?: Waiter): Promise<Response> {
   const url = new URL(request.url);
   if (url.protocol === "http:") {
     url.protocol = "https:";
     return new Response(null, { status: 301, headers: { location: url.toString(), "cache-control": "public, max-age=86400" } });
   }
+  if (url.pathname === MCP_PATH || url.pathname === `${MCP_PATH}/`) return mcpRemote(request, env, ctx, async (r) => (await communityApi(r, env)) ?? new Response(JSON.stringify({ error: "Not found" }), { status: 404, headers: { "content-type": "application/json" } }));
   const community = await communityApi(request, env);
   if (community) return community;
   const wb = WB_PATH.exec(url.pathname);
@@ -136,4 +142,4 @@ export async function handle(request: Request, env: Env): Promise<Response> {
   return res;
 }
 
-export default { fetch: handle };
+export default { fetch: (request: Request, env: Env, ctx: Waiter) => handle(request, env, ctx) };

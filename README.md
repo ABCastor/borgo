@@ -4,13 +4,22 @@
 
 Borgo (Italian for a village) compares any number of cities on open data, weighted by what you value: what you would earn after tax and keep after rent, who in your household can move there without a visa, and how each place does on climate, air, safety, health and research. Every figure shows its source, the period it describes, and whether it describes the city itself or only its country.
 
-It runs in the browser with no account and no server. The same engine runs as a command-line tool (`borgo`, which also answers to `where-to-live`) and as an MCP server, so an AI assistant can answer "where should I live?" with the numbers you would see.
+It runs in the browser with no account and no server. The same engine runs as a command-line tool (`borgo`, which also answers to `where-to-live`) and as an MCP server, on the web at `https://borgo.abcastor.com/mcp` or on your own machine, so an AI assistant can answer "where should I live?" with the numbers you would see.
 
 > **Why I built this:** I was deciding with a co-founder where to live and start a company, weighing San Francisco, London and Dublin against staying here in Torino. When I put together my own comparison, every site I pulled from answered one slice: one had price levels, another weather, another a salary calculator, and none weighted them by what mattered to me or said whether both of us could legally work there. Teleport, which once put those pieces together, is gone. So I built the comparison I wanted and made it open, for anyone (or their agent) to run with their own weights.
 
 **Status:** early. Any city can be fetched on demand; 57 have public pages. Take-home pay for 26 countries (most of Europe, the United Kingdom, the United States with eight state modules and New York City, Canada, Australia, Singapore, Japan and the UAE), and 17 tax regimes for people moving in, with their conditions and how long they last.
 
 ## Quickstart
+
+An AI assistant connects to Borgo with one address and nothing to install: **`https://borgo.abcastor.com/mcp`** (MCP over Streamable HTTP, no account).
+
+```sh
+claude mcp add --transport http borgo https://borgo.abcastor.com/mcp    # Claude Code
+codex mcp add borgo --url https://borgo.abcastor.com/mcp                # Codex
+```
+
+In Claude (web or desktop) or ChatGPT, add a custom connector with that address. It answers for the published cities and keeps nothing you send, only a count of calls per tool. To compare any other place, or to keep figures on your own machine, run the same server locally.
 
 With [Node.js](https://nodejs.org/) 22.13 or newer, one command runs Borgo, with no clone:
 
@@ -19,7 +28,7 @@ npx -y @abcastor/borgo mcp                                       # the MCP serve
 npx -y @abcastor/borgo compare Lisbon Berlin --salary "60k EUR"   # the command line
 ```
 
-Add the MCP server to your assistant.
+Add the local MCP server to your assistant.
 
 **Claude Code**
 

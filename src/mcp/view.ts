@@ -2,10 +2,9 @@
 // document the host renders in a sandboxed iframe, fed the compare_cities result over postMessage.
 // It needs no network, so it declares no CSP domains.
 import { chartSource } from "./chart-source.ts";
+import { APPS_PROTOCOL } from "./view-id.ts";
 
-export const VIEW_URI = "ui://borgo/compare.html";
-export const VIEW_MIME = "text/html;profile=mcp-app";
-export const APPS_PROTOCOL = "2026-01-26";
+export { APPS_PROTOCOL, VIEW_MIME, VIEW_URI } from "./view-id.ts";
 
 const STYLE = `
 :root{color-scheme:light dark;

@@ -1,6 +1,6 @@
 // D1's interface over node:sqlite, as much of it as the Worker uses, with the real migrations applied; and the
 // Worker wired to it, for tests that drive the community inbox end to end.
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import { DatabaseSync } from "node:sqlite";
 import type { PlacesMeta } from "../src/community/figures.ts";
 import { resetMetaCache, type D1Like, type D1Statement } from "../src/site/community-api.ts";
@@ -8,7 +8,8 @@ import { handle, type Env } from "../src/site/worker.ts";
 
 export function fakeD1(): D1Like & { raw: DatabaseSync } {
   const raw = new DatabaseSync(":memory:");
-  raw.exec(readFileSync(new URL("../migrations/0001_community.sql", import.meta.url), "utf8"));
+  const dir = new URL("../migrations/", import.meta.url);
+  for (const f of readdirSync(dir).filter((f) => f.endsWith(".sql")).sort()) raw.exec(readFileSync(new URL(f, dir), "utf8"));
   const stmt = (sql: string, args: unknown[] = []): D1Statement => ({
     bind: (...v) => stmt(sql, v),
     all: async <T,>() => ({ results: raw.prepare(sql).all(...(args as never[])) as T[] }),

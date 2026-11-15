@@ -26,5 +26,11 @@
         }
       ]
     }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://borgo.abcastor.com/mcp"
+    }
   ]
 }

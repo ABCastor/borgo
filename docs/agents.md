@@ -6,7 +6,28 @@ Borgo runs from npm with Node 22.13 or newer, with no clone: `npx -y @abcastor/b
 
 ## MCP server
 
-The server speaks MCP over stdio: `npx -y @abcastor/borgo mcp`. Desktop apps often start with a shorter `PATH` than your shell: if they cannot find `npx`, or the Node it runs is older than 22.13, give the full path to `npx` (`which npx` prints it) instead of `npx`.
+### On the web: one address, nothing to install
+
+`https://borgo.abcastor.com/mcp` is the same server for any assistant that takes a remote MCP address: Streamable HTTP, MCP 2025-11-25, no account and no key.
+
+```sh
+claude mcp add --transport http borgo https://borgo.abcastor.com/mcp    # Claude Code
+codex mcp add borgo --url https://borgo.abcastor.com/mcp                # Codex
+```
+
+In Claude (web or desktop) and ChatGPT, add it as a custom connector with that address. JSON-configured clients that take remote servers use `{ "mcpServers": { "borgo": { "type": "http", "url": "https://borgo.abcastor.com/mcp" } } }` (some name the key `serverUrl` or the type `streamable-http`). The MCP Registry lists it as a remote of `io.github.ABCastor/borgo`.
+
+What it is and is not:
+
+- **Tools:** `search_cities`, `get_city`, `compare_cities` (with the chart view), `net_pay`, `list_metrics_and_sources`, `methodology`, `list_sources`, `community_figures`, `submit_figures` and `remove_figures`, answering exactly as the local server does on the same data. It holds Borgo's published cities only: `fetch_city`, `record_observation`, `list_stale` and `propose_change` need the person's own machine, so they run in the local server below. A place it does not hold is answered with that hint.
+- **Sending figures:** `submit_figures` sends nothing without `confirm: true`, which an assistant passes only after the person said yes to the exact draft; the figures then go through the same inbox, daily limits per network and automated review as the site's form.
+- **What it keeps:** a count per day of calls to each method and tool, and how many failed. Never the arguments, the answers, the address or anything else about who asked. Arguments reach the server only to compute that answer and go to no other provider.
+- **Limits:** 60 requests a minute from one network (a 429 with `retry-after` beyond that), request bodies up to 64 KB.
+- **Stateless:** each POST carries a JSON-RPC message and gets its answer as JSON. There are no sessions and no stream to open: `GET` and `DELETE` answer 405. Browser clients may call it from any origin; it reads no cookies.
+
+### On your machine
+
+The local server speaks MCP over stdio: `npx -y @abcastor/borgo mcp`. Desktop apps often start with a shorter `PATH` than your shell: if they cannot find `npx`, or the Node it runs is older than 22.13, give the full path to `npx` (`which npx` prints it) instead of `npx`.
 
 **Claude Code**
 
@@ -41,11 +62,13 @@ command = "npx"
 args = ["-y", "@abcastor/borgo", "mcp"]
 ```
 
-The server is also listed in the [MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.ABCastor/borgo`, for clients that install from it.
+The server is also listed in the [MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.ABCastor/borgo`, for clients that install from it, with the npm package and the web address.
 
 **From a clone** (Node 26 or newer, which runs the TypeScript sources directly): `npm install`, then use `node /path/to/borgo/bin/borgo.ts mcp` as the command, with absolute paths: `claude mcp add borgo -- node /path/to/borgo/bin/borgo.ts mcp`, or `"command": "node"` with `"args": ["/path/to/borgo/bin/borgo.ts", "mcp"]`. A clone answers with your own changes to the engine and the data.
 
 ### Tools
+
+The local server has all of these; the web one all but `fetch_city`, `record_observation`, `list_stale` and `propose_change`.
 
 | Tool | Use it for |
 |---|---|

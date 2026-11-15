@@ -75,8 +75,18 @@ export function matchCity(data: Dataset, query: string): { city: City; note: str
     throw new Error(`"${query}" could mean ${exact.map((h) => `${h.city.name}, ${h.city.country} (${h.city.id})`).join(" or ")}. Add the country ("${exact[0]!.city.name}, ${exact[0]!.city.country}") or use the id.`);
   if (best && (best.score >= 0.7 || hits.length === 1))
     return { city: best.city, note: best.score < 1 ? `Read "${query}" as ${best.city.name}, ${best.city.country} (${best.city.id}).` : null };
-  const near = hits.map((h) => `${h.city.name} (${h.city.id})`).join(", ");
-  throw new Error(`No city matches "${query}".${near ? ` Closest: ${near}.` : ""} Search for its id (search_cities, or borgo search), or fetch any real place first (fetch_city, or borgo fetch "${query}").`);
+  throw new UnknownCity(query, hits.map((h) => `${h.city.name} (${h.city.id})`).join(", "));
+}
+
+/** No city in the data matches: the query and the closest candidates, for an answer that fits where it is asked. */
+export class UnknownCity extends Error {
+  readonly query: string;
+  readonly near: string;
+  constructor(query: string, near: string) {
+    super(`No city matches "${query}".${near ? ` Closest: ${near}.` : ""} Search for its id (search_cities, or borgo search), or fetch any real place first (fetch_city, or borgo fetch "${query}").`);
+    this.query = query;
+    this.near = near;
+  }
 }
 
 /** One city for a query, or an error that names the closest candidates. */

@@ -206,6 +206,7 @@ export async function prerender(dist: string, data: Dataset, opts: PrerenderOpti
         communityPlaces: abs("/api/community/places.json"),
         communitySubmit: abs("/api/community/submit"),
       },
+      mcp: { url: abs("/mcp"), transport: "streamable-http" },
       docs: { llms: abs("/llms.txt"), agents: abs("/docs/agents.md") },
     }),
   );
@@ -374,7 +375,8 @@ function llmsTxt(data: Dataset, all: CityFacts[], pairCount: number): string {
     `Every HTML page has a markdown twin at the same URL with index.md appended.`,
     "",
   );
-  L.push("## Use it", "", `- [The app](${abs("/")}): compare any cities with your own salary, household, weights and numbers. A comparison opens pre-filled with ?cities=<id>,<id> (the visitor keeps their own saved settings). Its Map tab (#/map) colours the whole world by the visitor's own values (score, nice days in their range, who may live where, money kept or any other line), ranks their cities on it, and adds any town in one click`, `- [Agents: MCP server and CLI](${abs("/docs/agents.md")}): the same engine as tools for AI assistants and the command line`, `- [Sources and method](${abs("/sources/index.md")}): where every figure comes from, how figures are chosen and scored`, "");
+  L.push("## Use it", "", `- [The app](${abs("/")}): compare any cities with your own salary, household, weights and numbers. A comparison opens pre-filled with ?cities=<id>,<id> (the visitor keeps their own saved settings). Its Map tab (#/map) colours the whole world by the visitor's own values (score, nice days in their range, who may live where, money kept or any other line), ranks their cities on it, and adds any town in one click`, `- [MCP server on the web](${abs("/docs/agents.md")}): connect an assistant with one address, ${abs("/mcp")}, nothing to install (Streamable HTTP, MCP 2025-11-25, no account): compare_cities, get_city, net_pay, search_cities, list_sources, methodology, list_metrics_and_sources, community_figures, and submit_figures, which sends a person's own figures only after their yes. It keeps no arguments, only a count of calls per tool. For places beyond the published cities, the same server runs locally with \`npx -y @abcastor/borgo mcp\` and adds fetch_city`,
+    `- [Agents: MCP server and CLI](${abs("/docs/agents.md")}): the same engine as tools for AI assistants and the command line`, `- [Sources and method](${abs("/sources/index.md")}): where every figure comes from, how figures are chosen and scored`, "");
   const kinds = WORK_KINDS.map((k) => k.id);
   L.push(
     "## Work and quality of life",
