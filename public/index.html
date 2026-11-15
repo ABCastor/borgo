@@ -9,12 +9,13 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#EFECE3">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121110">
-<!--PRELOAD-->
 <script>/* A returning visitor, a shared link or another view: the first visit's screen below is not theirs. */try{var h=location.hash;if(localStorage.getItem("borgo:profile:v1")||localStorage.getItem("where-to-live:profile:v1")||localStorage.getItem("borgo:intro-hidden")||/[?&](p|cities)=/.test(location.search)||(h&&h!=="#/"&&h!=="#"))document.documentElement.className+=" not-first"}catch(e){}</script>
-<link rel="preload" href="fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Only the headline's font is preloaded: the body font (88 KB) would hold back the first screen on a slow link, and it swaps in. -->
 <link rel="preload" href="fonts/barlow-condensed-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="app.css">
+<!-- The data the app needs, after the stylesheet the first screen waits for (scripts/first-page.ts). -->
+<!--PRELOAD-->
 </head>
 <body class="app">
 <div class="site">
