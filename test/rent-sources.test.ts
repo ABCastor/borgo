@@ -224,6 +224,9 @@ test("a rent that covers every tenancy says, beside it, that newcomers usually p
   const berlin = cityMarkdown(cityReport(data, "berlin-de", { metrics: ["rent_1bed"] }));
   assert.match(berlin, /\| Rent, one bedroom \| 382 EUR\/month \(all tenancies; newcomers usually pay more\) \|/);
   assert.doesNotMatch(cityMarkdown(cityReport(data, "lisbon-pt", { metrics: ["rent_1bed"] })), /newcomers usually pay more/);
+  // The compact answer (MCP get_city's default) keeps the words in the citation it shows.
+  assert.match(cityMarkdown(cityReport(data, "tokyo-jp", { metrics: ["rent_1bed"], detail: "summary" })), /\| Rent, one bedroom \| 105,273 JPY\/month \| Statistics Bureau of Japan, 2023-10; all tenancies; newcomers usually pay more \|/);
+  assert.doesNotMatch(cityMarkdown(cityReport(data, "milan-it", { metrics: ["rent_1bed"], detail: "summary" })), /newcomers/);
   const { validateEntry } = await import("../src/registry/schema.ts");
   const entry = registry("nsw-rent-sales") as unknown as Parameters<typeof validateEntry>[0];
   const metrics = new Set(Object.keys(data.metrics));

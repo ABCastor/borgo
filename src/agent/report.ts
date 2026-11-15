@@ -1,5 +1,6 @@
 // The answers agents and terminals get: plain JSON built from the same engine the site runs.
 // Every figure carries its provenance; every gap is named, with what would fill it.
+import { ALL_TENANCIES, rentBasis } from "../core/rent-basis.ts";
 import { workWhy } from "../core/work-why.ts";
 import { qualityOfLife, QOL_PARTS, QOL_MIN_COVERAGE } from "../core/qol.ts";
 import { QOL_INDICES } from "../core/links.ts";
@@ -72,7 +73,8 @@ export function figure(data: Dataset, city: City, metric: string, r: Resolved | 
     ...base,
     value: r.value,
     origin: "source",
-    cite: `${sname}, ${o.period}${r.level !== "city" ? `, ${r.level} level` : ""}`,
+    // A rent of every tenancy says so wherever its citation goes, compact answers included (core/rent-basis.ts).
+    cite: `${sname}, ${o.period}${r.level !== "city" ? `, ${r.level} level` : ""}${rentBasis(data, metric, [o.source]) ? `; ${ALL_TENANCIES}` : ""}`,
     period: o.period,
     level: r.level,
     approximate: r.level !== "city" && r.level !== "metro",
