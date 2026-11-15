@@ -21,7 +21,8 @@ const jsonLd = (htmlText: string) => [...htmlText.matchAll(/<script type="applic
 const nodes = (ld: any): any[] => (ld["@graph"] ? ld["@graph"] : [ld]);
 
 before(async () => {
-  writeFileSync(join(dist, "index.html"), `<!doctype html><html><head><title>app</title></head><body><div class="site"><div id="page"></div>\n</div>\n<aside id="sheet" hidden></aside></body></html>`);
+  // The app page's shape as public/index.html has it: the footer's place after the app's own, inside .site (checked below).
+  writeFileSync(join(dist, "index.html"), `<!doctype html><html><head><title>app</title></head><body><div class="site"><div id="page"></div>\n<!--FOOTER-->\n</div>\n<div id="pop" hidden></div></body></html>`);
   cpSync(join(ROOT, "public/data"), join(dist, "data"), { recursive: true }); // as scripts/build.ts does
   manifest = await prerender(dist, data);
 });
@@ -170,6 +171,36 @@ test("the app page keeps the app and gains metadata and links to every city", ()
   for (const c of data.cities) assert.ok(app.includes(`href="city/${c.id}/"`), `${c.id} not linked from the app page`);
   const types = jsonLd(app).flatMap(nodes).map((n) => n["@type"]);
   assert.ok(types.includes("WebSite") && types.includes("WebApplication"));
+});
+
+test("every page ends with one footer: the links, how fresh the figures are, and the Castor signature copied as it is", () => {
+  const signature = readFileSync(join(ROOT, "src/ui/castor/footer.html"), "utf8").trim();
+  const sample = [...manifest.pages.filter((p) => !p.startsWith("/compare/") || p === "/compare/"), ...manifest.pages.filter((p) => /^\/compare\/.+-vs-/.test(p)).slice(0, 20)];
+  for (const p of [...sample.map(pageFile), "404.html"]) {
+    const page = read(p);
+    assert.equal(page.split('class="sig"').length - 1, 1, `${p}: one signature`);
+    assert.equal(page.split('class="bfoot"').length - 1, 1, `${p}: one footer`);
+    assert.ok(!page.includes("site-foot"), `${p}: the old footer is gone`);
+    assert.ok(page.includes(signature), `${p}: the signature is the master's markup, unchanged`);
+    // The signature is the last thing on the page: nothing but closing tags (and the app's script) after it.
+    const after = page.slice(page.indexOf(signature) + signature.length);
+    assert.match(after.replace(/<div id="pop"[\s\S]*$/, ""), /^\s*<\/div>\s*<\/div>\s*(<\/body>|$)/, `${p}: content after the signature`);
+    const foot = page.slice(page.indexOf('class="bfoot"'));
+    for (const href of ["https://abcastor.com/", "https://github.com/ABCastor/borgo", "https://www.npmjs.com/package/@abcastor/borgo", "docs/agents.md", "llms.txt", "api/index.json", "sources/", "cities/", "compare/", "api/community/dataset.json", "LICENSE", "https://creativecommons.org/licenses/by/4.0/", "#/contact"]) {
+      assert.ok(foot.includes(href), `${p}: footer misses ${href}`);
+    }
+    assert.ok(foot.includes("borgo.abcastor.com/mcp"), `${p}: footer misses the MCP address`);
+    assert.ok(foot.includes(`Figures as of ${data.version}`), `${p}: footer misses the figures' date`);
+    assert.match(foot, /which builds software and writes essays/);
+  }
+  // The real app page has the footer's place where the stub above has it: after the app's own element, inside .site.
+  assert.match(readFileSync(join(ROOT, "public/index.html"), "utf8"), /<div class="site">[\s\S]*<div id="page"[^>]*>[\s\S]*?<\/div>\n<!--FOOTER-->\n<\/div>/);
+  // A city page's "Add your figures" goes to its own form; the form is there to go to.
+  const city = read("city/turin-it/index.html");
+  assert.ok(city.includes('href="#add-figures">Add your figures') && city.includes('id="add-figures"'));
+  // Links resolve from where the page sits.
+  assert.ok(city.slice(city.indexOf('class="bfoot"')).includes('href="../../cities/"'));
+  assert.ok(read("sources/index.html").includes('id="licences"'));
 });
 
 test("design rules hold on the static pages: no disclosure triangles, no shadows", () => {

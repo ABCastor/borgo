@@ -20,6 +20,8 @@ export interface Site {
   dataLicence: { id: string; url: string };
   /** The dataset version (its build date): every page says how fresh its numbers are. */
   version: string;
+  /** The Castor signature's markup (castor-identity master/footer), the last thing on every page. */
+  signature?: string;
 }
 
 export interface Page {
@@ -85,7 +87,7 @@ export function shell(site: Site, page: Page, header: string): string {
 <div class="site">
 ${header}
 <main class="page">${page.body.value}</main>
-${siteFoot(site, root).value}
+${siteFooter(site, root, { addFigures: page.path.startsWith("/city/") ? "#add-figures" : undefined }).value}
 </div>
 </body>
 </html>
@@ -95,8 +97,51 @@ ${siteFoot(site, root).value}
 const ESC: Record<string, string> = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" };
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ESC[c]!);
 
-export function siteFoot(site: Site, root: string): Raw {
-  return html`<footer class="site-foot"><p>Open data, open code. Figures as of ${site.version}; each page names its sources and licences. <a href="${root}cities/">All cities</a> · <a href="${root}compare/">All comparisons</a> · <a href="${root}sources/">Sources and method</a> · <a href="${root}llms.txt">For AI agents</a> · <a href="${root}api/index.json">API</a></p></footer>`;
+const REPO = "https://github.com/ABCastor/borgo";
+const NPM = "https://www.npmjs.com/package/@abcastor/borgo";
+/** The address assistants connect to (src/mcp/remote.ts). */
+const MCP_URL = "https://borgo.abcastor.com/mcp";
+
+/**
+ * The footer of every page, the app's included: where everything else is (the pages, adding to the data, the ways in
+ * for assistants, the code and its licences), how fresh the figures are, and last the Castor signature. `root` leads
+ * back to the site root from the page ("" on the app, "../../" on a city page); `addFigures` is where "Add your
+ * figures" goes on this page (a city page's own form), the guide to every way of adding them otherwise. `cities`,
+ * on the app page, links every city page, so readers and crawlers reach them before the app has run.
+ */
+export function siteFooter(site: Site, root: string, o: { addFigures?: string; cities?: CityFacts[] } = {}): Raw {
+  const groups: [string, Raw[]][] = [
+    ["Borgo", [
+      html`<a href="${root || "./"}">Compare your cities</a>`,
+      html`<a href="${root}cities/">All cities</a>`,
+      html`<a href="${root}compare/">All comparisons</a>`,
+      html`<a href="${root}sources/">Sources and method</a>`,
+    ]],
+    ["Add to it", [
+      html`<a href="${o.addFigures ?? `${REPO}/blob/main/CONTRIBUTING.md#your-own-figures`}">Add your figures</a>`,
+      html`<a href="${REPO}/issues/new?template=proposal.yml">Correct a figure</a>`,
+      html`<a href="${root}api/community/dataset.json">Community figures (JSON)</a>`,
+      html`<a href="${root}#/contact">Contact</a>`,
+    ]],
+    ["For assistants", [
+      html`<a href="${root}docs/agents.md">MCP server</a><span class="bf-addr">${MCP_URL.replace("https://", "")}</span>`,
+      html`<a href="${NPM}">npm package</a><span class="bf-addr">@abcastor/borgo</span>`,
+      html`<a href="${root}llms.txt">Guide for AI assistants</a>`,
+      html`<a href="${root}api/index.json">API</a>`,
+    ]],
+    ["Code and licences", [
+      html`<a href="${REPO}">Source on GitHub</a>`,
+      html`<a href="${REPO}/blob/main/LICENSE" rel="license">Code: Apache 2.0</a>`,
+      html`<a href="${site.dataLicence.url}" rel="license">Data: CC BY 4.0</a>`,
+      html`<a href="${root}sources/#licences">Each source's terms</a>`,
+    ]],
+  ];
+  return html`<div class="bfoot">
+<nav class="bf-nav" aria-label="Everything on ${site.name}">${groups.map(([h, links], i) => html`<div class="bf-group"><p class="bf-h" id="bf-${i}">${h}</p><ul aria-labelledby="bf-${i}">${links.map((l) => html`<li>${l}</li>`)}</ul></div>`)}</nav>
+${o.cities ? html`<p class="bf-cities">Every city has its own page of sourced figures: ${[...o.cities].sort((a, b) => a.city.name.localeCompare(b.city.name)).map((f, i) => html`${i ? ", " : ""}<a href="${root}${f.path.slice(1)}">${f.city.name}</a>`)}.</p>` : ""}
+<p class="bf-meta">Figures as of ${site.version}; every page names its sources and their licences. ${site.name} is made by <span translate="no">Castor</span>, which builds software and writes essays at <a href="https://abcastor.com/">abcastor.com</a>.</p>
+${raw(site.signature ?? "")}
+</div>`;
 }
 
 // ---------- Pieces shared by the pages ----------
@@ -616,7 +661,7 @@ export function sourcesPage(site: Site, data: Dataset, all: CityFacts[]): Page {
     <p>For each city and measure, the most local figure wins (city, then metro area, region, country), and among those the most recent. When several sources describe the city at the same level within two years, the page shows their median and their range. A country-wide figure standing in for a city is labelled as such.</p>
     <h2>How the score works</h2>
     <p>Each line turns a figure into a score from 0 to 1 against a fixed worst and best. Your weights decide how many of the 100 points each line can give. Comparison pages use the balanced weights and a reference profile (one person, a gross salary of €60,000 a year, a one-bedroom home); the app starts from no salary and lets you set all of it.</p>
-    <h2>Licences and attribution</h2>
+    <h2 id="licences">Licences and attribution</h2>
     <p>The figures are published in files that each carry one set of terms:</p>
     <ul class="plain">${partsList(data).map((p) => html`<li><a href="../${p.file}">${p.file}</a>: <a href="${p.licence.url}" rel="license">${p.licence.name}</a>. ${p.notice}</li>`)}</ul>
     <p>Every source exported, with the edition read, its licence and the credit it requires, is listed in <a href="../data/licences.json">data/licences.json</a>. The required attributions:</p>
@@ -688,12 +733,6 @@ export function homeJsonLd(site: Site, data: Dataset): object[] {
       creator: site.creator,
     },
   ];
-}
-
-/** The app page's footer: links every crawler and person can follow to the static pages. */
-export function homeFooter(site: Site, all: CityFacts[]): Raw {
-  const list = [...all].sort((a, b) => a.city.name.localeCompare(b.city.name));
-  return html`<footer class="site-foot"><p>Every city has its own page of sourced figures: ${list.map((f, i) => html`${i ? ", " : ""}<a href="${f.path.slice(1)}">${f.city.name}</a>`)}. See also <a href="compare/">every comparison</a>, <a href="sources/">sources and method</a>, and <a href="llms.txt">the guide for AI agents</a>. Figures as of ${site.version}.</p></footer>`;
 }
 
 function groupBy<T>(xs: T[], key: (x: T) => string): [string, T[]][] {

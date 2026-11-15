@@ -10,10 +10,10 @@ import { ROOT } from "../pipeline/lib.ts";
 import { CRITERIA } from "../src/core/criteria.ts";
 import type { Dataset } from "../src/core/types.ts";
 import { cityFacts, compareFacts, comparisonPairs, levelText, appQuery, referenceProfile, summaryLine, type CityFacts } from "../src/site/facts.ts";
-import { assumptionsText, citiesPage, cityPage, comparePage, comparisonsPage, homeFooter, homeJsonLd, mainDataset, shell, sourcesPage, toRoot, type Page, type Site } from "../src/site/render.ts";
+import { assumptionsText, citiesPage, cityPage, comparePage, comparisonsPage, homeJsonLd, mainDataset, shell, siteFooter, sourcesPage, toRoot, type Page, type Site } from "../src/site/render.ts";
 import { TAX_MODELS } from "../src/tax/index.ts";
 import { html } from "../src/ui/dom.ts";
-import { abs, productHeader, CREATOR, DATA_LICENCE, SITE_NAME, SITE_ORIGIN, type NavLink } from "./site.ts";
+import { abs, productHeader, CREATOR, DATA_LICENCE, SIGNATURE, SITE_NAME, SITE_ORIGIN, type NavLink } from "./site.ts";
 import { manifestOf, PARTS, type PartId } from "../src/registry/licences.ts";
 import { placesMeta, type MapPlace } from "../src/community/meta.ts";
 import { FIGURES } from "../src/community/figures.ts";
@@ -66,7 +66,7 @@ export const WELCOME_BOTS = [
 export async function prerender(dist: string, data: Dataset, opts: PrerenderOptions = {}): Promise<Manifest> {
   const today = opts.today ?? new Date().toISOString().slice(0, 10);
   const hashes: Record<string, string> = {};
-  const site: Site = { origin: SITE_ORIGIN, name: SITE_NAME, creator: { ...CREATOR }, dataLicence: { ...DATA_LICENCE }, version: data.version };
+  const site: Site = { origin: SITE_ORIGIN, name: SITE_NAME, creator: { ...CREATOR }, dataLicence: { ...DATA_LICENCE }, version: data.version, signature: SIGNATURE };
   const files: string[] = [];
   const write = async (rel: string, body: string) => {
     const path = join(dist, rel);
@@ -157,7 +157,7 @@ export async function prerender(dist: string, data: Dataset, opts: PrerenderOpti
     `<meta name="twitter:image" content="${abs("/og.png")}">`,
     `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": homeJsonLd(site, data).map(({ "@context": _, ...r }: any) => r) }).replace(/</g, "\\u003c")}</script>`,
   ].join("\n");
-  const app = appHtml.replace("</head>", `${head}\n</head>`).replace(/<\/div>\s*<aside id="sheet"/, `${homeFooter(site, all).value}\n</div>\n<aside id="sheet"`);
+  const app = appHtml.replace("</head>", `${head}\n</head>`).replace("<!--FOOTER-->", siteFooter(site, "", { cities: all }).value);
   await writeFile(join(dist, "index.html"), app);
   // The app page changes when its page or its script does.
   hashes["/"] = pageHash(app, existsSync(join(dist, "app.js")) ? await readFile(join(dist, "app.js"), "utf8") : "");

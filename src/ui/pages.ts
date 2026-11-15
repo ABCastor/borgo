@@ -1,8 +1,7 @@
 import { ENGINE_VERSION } from "../core/engine.ts";
 import { CRITERIA } from "../core/criteria.ts";
 import { resolve } from "../core/lookup.ts";
-import { html, raw, type Raw } from "./dom.ts";
-import footer from "./castor/footer.html";
+import { html, type Raw } from "./dom.ts";
 import { local, num } from "./format.ts";
 import type { AppState } from "./state.ts";
 import { manifestOf, PARTS } from "../registry/licences.ts";
@@ -78,7 +77,6 @@ export function aboutPage(s: AppState): Raw {
     <p>The same engine runs as a command-line tool and as an MCP server, so an AI assistant can answer "where should I live?" with the same sourced numbers you see here, salary by salary and line by line.</p>
     <h2>Licences</h2>
     <p>Code under the Apache License 2.0. Our compiled data under CC BY 4.0, with each source's own licence and attribution kept beside its figures. Fonts under the SIL Open Font License. The source is on <a href="${REPO}" target="_blank" rel="noopener">GitHub</a>; to say something, see <a href="#/contact">Contact</a>.</p>
-    ${raw(footer)}
   </div>`;
 }
 

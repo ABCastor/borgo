@@ -54,8 +54,25 @@
 .crumbs a { color: inherit; }
 .cite { font-size: 13px; color: var(--quiet); max-width: 68ch; }
 
-.site-foot { margin-top: 3rem; padding: 1.1rem 0 2rem; border-top: 1px solid var(--rule); color: var(--quiet); font-size: 12.5px; line-height: 1.6; }
-.site-foot p { margin: 0; max-width: 90ch; }
+/* The footer of every page, the app's too (render.ts siteFooter): four short lists of where everything else is, a line
+   on how fresh the figures are and who makes Borgo, and last the Castor signature (castor/footer.css), which stands
+   on the page's only coloured line. The lists stay ink so that line keeps the colour to itself. */
+.bfoot { margin-top: 2.5rem; }
+.bf-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 13rem)); gap: 1.75rem 2rem; }
+.bf-h { margin: 0 0 .5rem; color: var(--quiet); font: 600 11.5px/1.2 var(--ui); letter-spacing: .07em; text-transform: uppercase; }
+.bf-group ul { margin: 0; padding: 0; list-style: none; }
+.bf-group li { padding: .2rem 0; font-size: 13.5px; line-height: 1.35; }
+.bf-group a { color: var(--ink); text-decoration: none; }
+.bf-group a:hover { text-decoration: underline; }
+.bf-addr { display: block; color: var(--quiet); font-size: 12px; overflow-wrap: anywhere; }
+.bf-cities, .bf-meta { margin: 1.75rem 0 0; max-width: 92ch; color: var(--quiet); font-size: 12.5px; line-height: 1.6; }
+.bf-meta { margin-top: 1.25rem; }
+.bf-cities a, .bf-meta a { color: inherit; text-decoration-color: color-mix(in oklab, currentColor 40%, transparent); }
+.bf-cities a:hover, .bf-meta a:hover { color: var(--ink); }
+@media (max-width: 720px) {
+  .bf-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1.25rem; }
+  .bf-group li { padding: .3rem 0; }
+}
 
 @media (max-width: 560px) {
   .doc h1 { font-size: 32px; }

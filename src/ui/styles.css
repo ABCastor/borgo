@@ -6,7 +6,9 @@
    variable font (OFL 1.1, fonts/OFL-literata.txt), 22 KB instead of 110. fonts/literata.woff2 stays for the OG image. */
 @font-face { font-family: Word; font-weight: 560; src: url(fonts/literata-560.woff2) format("woff2"); font-display: swap; }
 @font-face { font-family: UI; font-weight: 100 900; font-stretch: 62% 125%; src: url(fonts/archivo-variable.woff2) format("woff2"); font-display: swap; }
-@font-face { font-family: Hand; font-weight: 500; src: url(fonts/randosans-500-sharpie.woff2) format("woff2"); font-display: swap; }
+/* Rando Sans only ever sets the signature's note, "we give a dam", on every page: this file is those letters of the face
+   (OFL 1.1, fonts/Rando-Sans-OFL.txt, its contextual alternates kept), 9 KB instead of 100. */
+@font-face { font-family: Hand; font-weight: 500; src: url(fonts/randosans-500-sharpie-note.woff2) format("woff2"); font-display: swap; }
 
 :root {
   color-scheme: light dark;

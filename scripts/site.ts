@@ -26,6 +26,9 @@ export interface NavLink {
   current?: boolean;
 }
 
+/** The Castor signature (Chip, "Castor*" and "we give a dam*" on the two-colour line), copied byte for byte from castor-identity master/footer. */
+export const SIGNATURE = (await readFile(join(ROOT, "src/ui/castor/footer.html"), "utf8")).trim();
+
 /** The settings gear, copied from castor-identity master/toolbar. */
 const SETTINGS_ICON = (await readFile(join(ROOT, "src/ui/castor/settings.svg"), "utf8")).trim();
 
