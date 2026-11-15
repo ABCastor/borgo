@@ -8,6 +8,7 @@ import { failText } from "./glance.ts";
 import { CLOSE, moneyAdds } from "./results.ts";
 import { linkPlaceName, type AppState } from "./state.ts";
 import { niceTestsShort, rangeButton } from "./cards.ts";
+import { exampleMoney } from "./first-visit.ts";
 
 // The top of the app, under the Castor mast: who the comparison is for, which cities are in it, and the
 // answer so far, stated in words.
@@ -236,16 +237,22 @@ export function verdict(s: AppState, e: Evaluation): Raw {
   const unknownText = unknown.length ? html`Not known yet for ${names(unknown.map((r) => r.city.name))}: ${names([...new Set(unknown.flatMap((r) => r.unresolved))].map((l) => l.toLowerCase()))}, which you marked must pass.` : "";
   const ruled = out.length ? html`${out.map((r, i) => html`${i ? " " : ""}<b>${r.city.name}</b> is ruled out: ${failText(r.ruledOut, r.lines)}.`)}` : "";
   // A lead that missing figures could still change is said so, with what is missing; so is money on another basis.
-  const open = lead && e.provisional && noPay
+  // Without pay, money can still count on what a month costs where every city has its costs: said so, not hidden.
+  const onCosts = noPay && e.moneyBasis?.used === "cost";
+  const open = lead && e.provisional && onCosts
+    ? html`Money is ${shareOf(e, ["money_left", "living_cost"])}% of your score; until your salary is in, it compares what a month costs (rent and everyday spending), not what you keep. ${e.provisionalReasons.filter((r) => !/salary|money|take-home|pay/i.test(r)).join(" ")}`
+    : lead && e.provisional && noPay
     ? html`Money is ${shareOf(e, ["money_left", "living_cost"])}% of your score and counts once your salary is in; until then the ranking rests on ${restingOn || "the other lines"}. ${e.provisionalReasons.filter((r) => !/salary|money|take-home|pay/i.test(r)).join(" ")}`
     : lead && e.provisional ? html`The lead is not settled: ${names(e.rivals)} could still overtake it once what is missing is known. ${e.provisionalReasons.join(" ")}` : "";
-  const basis = e.moneyBasis?.used === "net_pay" ? html`Money was compared on take-home pay only, without costs.` : e.moneyBasis?.used === "cost" ? html`Money was compared on costs only, without pay.` : "";
+  const basis = e.moneyBasis?.used === "net_pay" ? html`Money was compared on take-home pay only, without costs.` : e.moneyBasis?.used === "cost" && !onCosts ? html`Money was compared on costs only, without pay.` : "";
   const more = [open, basis, money_, visaText, unknownText, ruled].filter(Boolean);
   const ask = nextInput(s, e);
   // While the salary itself is the next input, the engine's note on money says the same thing less directly.
   const noSalary = e.results.every((r) => r.money.missing.includes("salary"));
   const notes = e.notes.filter((n) => !(noSalary && /^(Money left|Cost of living)/.test(n)));
-  return html`<div class="answer" aria-live="polite"><p class="v-lead">${headline}</p>${notFoundNote(s)}${more.length ? html`<p class="v-more">${more.map((x, i) => html`${i ? " " : ""}${x}`)}</p>` : ""}
+  // Before a salary, a first visit still sees what money is left after rent: at an example salary, said so.
+  const example = s.intro && noSalary ? exampleMoney(s.data, s.profile, s.visit) : "";
+  return html`<div class="answer" aria-live="polite"><p class="v-lead">${headline}</p>${notFoundNote(s)}${more.length ? html`<p class="v-more">${more.map((x, i) => html`${i ? " " : ""}${x}`)}</p>` : ""}${example}
     ${notes.length ? html`<ul class="v-notes">${notes.map((n) => html`<li>${n}</li>`)}</ul>` : ""}
     ${ask ?? ""}</div>`;
 }

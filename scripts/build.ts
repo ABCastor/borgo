@@ -1,6 +1,7 @@
 // Builds the static site into dist/: bundles the app, joins the stylesheets, copies fonts and the dataset,
 // puts the product header and the favicon into the page, then prerenders the crawlable
-// pages, the JSON API and the files for search engines and AI agents (scripts/prerender.ts).
+// pages, the JSON API and the files for search engines and AI agents (scripts/prerender.ts), and last the app page's
+// first screen per region with the data split per city (scripts/first-page.ts).
 // --serve also starts a local server.
 import { build } from "esbuild";
 import { existsSync } from "node:fs";
@@ -8,7 +9,8 @@ import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { ROOT } from "../pipeline/lib.ts";
 import { loadPublishedDataset } from "../src/registry/load.ts";
-import { partFiles } from "../src/registry/licences.ts";
+import type { Published } from "../src/registry/licences.ts";
+import { writeFirstPages } from "./first-page.ts";
 import type { Dataset } from "../src/core/types.ts";
 import { prerender, type PageDates } from "./prerender.ts";
 import { MARK } from "../src/ui/brand/index.ts";
@@ -42,11 +44,9 @@ const header = productHeader("#/", [
   { href: "#/data", label: "Data" },
   { href: "#/about", label: "About" },
 ], { settings: true });
-// The app's data starts downloading with the page, beside the script, instead of after it has run: the comparison
-// needs dataset.json and the part files under other terms before it can draw anything.
-const published = JSON.parse(await readFile(join(ROOT, "public/data/dataset.json"), "utf8")) as Dataset;
-const preload = ["data/dataset.json", ...partFiles(published)].map((f) => `<link rel="preload" href="${f}" as="fetch" crossorigin fetchpriority="high">`).join("\n");
-const page = (await readFile(join(ROOT, "public/index.html"), "utf8")).replace("<!--HEADER-->", header).replace("<!--PRELOAD-->", preload);
+// The first screen, its preload hints and the region pages are filled in last (scripts/first-page.ts).
+const published = JSON.parse(await readFile(join(ROOT, "public/data/dataset.json"), "utf8")) as Dataset & Published;
+const page = (await readFile(join(ROOT, "public/index.html"), "utf8")).replace("<!--HEADER-->", header);
 await writeFile(join(DIST, "index.html"), page);
 await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK));
 await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });
@@ -65,6 +65,8 @@ const manifest = await prerender(DIST, data, { dates: JSON.parse(before) as Page
 const after = `${JSON.stringify(Object.fromEntries(Object.entries(manifest.dates).sort(([a], [b]) => a.localeCompare(b))), null, 1)}\n`;
 const changed = Object.entries(manifest.dates).filter(([p, d]) => (JSON.parse(before) as PageDates)[p]?.hash !== d.hash).length;
 if (after !== before) await writeFile(DATES, after);
+// The app page with each region's first screen in it, and the data split per city that the app reads.
+await writeFirstPages(DIST, published, data);
 console.log(`built dist/: the app, ${manifest.pages.length} pages, ${manifest.files.length} files; ${changed} pages changed since the last recorded build`);
 
 if (serve) {

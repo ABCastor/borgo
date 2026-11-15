@@ -4,11 +4,16 @@
 // - the community inbox (src/site/community-api.ts) takes and serves the figures people add, and each city page gets
 //   that city's community figures filled in where the page marks them;
 // - the World Bank's API, which answers browsers without the header that lets another site read it, is passed
-//   through for the app's place fetch (/api/wb/), cached for a day.
-// Everything else is the file as the host serves it.
+//   through for the app's place fetch (/api/wb/), cached for a day;
+// - the app page (/) starts where the visitor is: the page prerendered for the region of the request's country
+//   (src/core/visit-region.ts), with that country named in why its cities are shown. The country is read for this one
+//   answer and never stored or logged; the region pages themselves (/r/...) are not addresses anyone else can open.
+// Everything else is the file as the host serves it; the app's own files (script, styles, fonts, data) skip this script
+// altogether (wrangler.jsonc run_worker_first), so the Worker costs them nothing.
 import { cityFigures, communityApi, loadMeta, type CommunityEnv, type D1Like } from "./community-api.ts";
 import { communityFigures, removedNote, sentNote } from "../community/view.ts";
 import { html } from "../ui/dom.ts";
+import { countryName, fromText, regionOf, regionPage, type VisitSpread } from "../core/visit-region.ts";
 
 /** The static-files binding, as much of it as this Worker uses. */
 export interface Assets {
@@ -86,6 +91,27 @@ async function cityPage(request: Request, env: Env, res: Response): Promise<Resp
   return new Response(page.replace(MARK, `${note}<div class="cm-figs" data-community-figs="${m[1]}">${body}</div>`), { status: 200, headers });
 }
 
+const FROM = /<span class="v-from" data-where="(in|mixed|out)">[^<]*<\/span>/;
+
+/** The app page for the request's country: its region's prerendered page, with the country in the html element and the reason. */
+async function appPage(request: Request, env: Env, url: URL): Promise<Response> {
+  const country = ((request as Request & { cf?: { country?: string } }).cf?.country ?? "").toUpperCase();
+  const region = regionOf(country);
+  // A plain read of the region's file: the visitor's conditional headers belong to whichever variant they saw last.
+  const res = await env.ASSETS.fetch(new Request(new URL(regionPage(region), url), { method: "GET" }));
+  if (res.status !== 200 || !(res.headers.get("content-type") ?? "").includes("text/html")) return res;
+  // Only a code that names a country is passed on (Cloudflare sends XX when it cannot tell, T1 for Tor).
+  const code = countryName(country) ? country : "";
+  let page = await res.text();
+  if (code) page = page.replace(/<html([^>]*) data-country=""/, `<html$1 data-country="${code}"`).replace(FROM, (_, w: VisitSpread) => `<span class="v-from" data-where="${w}">${fromText(region, code, w)}</span>`);
+  const headers = new Headers(res.headers);
+  headers.delete("content-length");
+  headers.delete("etag");
+  // The page depends on where the request comes from: never kept by a shared cache, checked again by the browser.
+  headers.set("cache-control", "private, no-cache");
+  return new Response(request.method === "HEAD" ? null : page, { status: 200, headers });
+}
+
 export async function handle(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url);
   if (url.protocol === "http:") {
@@ -96,6 +122,9 @@ export async function handle(request: Request, env: Env): Promise<Response> {
   if (community) return community;
   const wb = WB_PATH.exec(url.pathname);
   if (wb && (request.method === "GET" || request.method === "HEAD")) return worldBank(url, wb[1]!);
+  // The region pages are served as / only.
+  if (url.pathname.startsWith("/r/")) return env.ASSETS.fetch(new Request(new URL("/r/-", url), { method: request.method }));
+  if (url.pathname === "/" && (request.method === "GET" || request.method === "HEAD")) return appPage(request, env, url);
   let res = permanent(await env.ASSETS.fetch(request), request.method);
   if (CITY_PAGE.test(url.pathname) && request.method === "GET") res = await cityPage(request, env, res);
   // Open data stays open to other sites' browser code (as dist/_headers says), also when the file passes through here.

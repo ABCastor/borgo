@@ -5,6 +5,8 @@ import { cleanPermits } from "../core/rights.ts";
 import { PRESETS } from "../core/presets.ts";
 import type { Dataset, Profile } from "../core/types.ts";
 import type { CityFetch } from "../fetch/index.ts";
+import type { RegionId } from "../core/visit-region.ts";
+import { shortlistOf, type VisitFrom } from "./first-visit.ts";
 
 export { PRESETS };
 
@@ -42,6 +44,8 @@ export interface AppState {
   refused?: string[];
   /** A first visit: Borgo says what it is and asks first for the answers that move the ranking most. Kept for the visit once shown. */
   intro?: boolean;
+  /** Where a first visit's cities came from: the region of the request's country (src/ui/first-visit.ts). */
+  visit?: VisitFrom;
 }
 
 const INTRO_KEY = "borgo:intro-hidden";
@@ -115,8 +119,11 @@ export function storedOverride(unit: string, value: number, per: "month" | "year
   return unit === "/month" ? monthlyFrom(value, per) : value;
 }
 
-export function defaultProfile(data: Dataset): Profile {
-  const pick = ["lisbon-pt", "barcelona-es", "amsterdam-nl", "berlin-de", "london-gb"].filter((id) => data.cities.some((c) => c.id === id));
+/** The cities a profile starts with when nothing chooses them: the reference pages and the agents' defaults. */
+export const DEFAULT_PICK = ["lisbon-pt", "barcelona-es", "amsterdam-nl", "berlin-de", "london-gb"];
+
+export function defaultProfile(data: Dataset, cities: string[] = DEFAULT_PICK): Profile {
+  const pick = cities.filter((id) => data.cities.some((c) => c.id === id));
   return {
     name: "",
     displayCurrency: "EUR",
@@ -139,6 +146,12 @@ export function defaultProfile(data: Dataset): Profile {
     overrides: {},
     dealBreakers: [],
   };
+}
+
+/** A first visit's profile: the default, with the region's shortlist and everyday spending based in its first city. */
+export function firstProfile(data: Dataset, region: RegionId): Profile {
+  const cities = shortlistOf(data, region, defaultProfile(data));
+  return defaultProfile(data, cities.length ? cities : DEFAULT_PICK);
 }
 
 // ---------- What a share link carries ----------
@@ -241,8 +254,9 @@ export function sharedParam(): string | null {
 }
 
 /** A profile from the link, else from this browser, else the default. Cities neither in the data nor fetched in this browser are dropped. */
-export function loadProfile(data: Dataset): Profile {
-  const base = defaultProfile(data);
+/** The saved or shared profile, or for a first visit the default one starting from `region`'s shortlist. */
+export function loadProfile(data: Dataset, region?: RegionId): Profile {
+  const base = region ? firstProfile(data, region) : defaultProfile(data);
   let loaded: Partial<Profile> | null = null;
   const shared = sharedParam();
   if (shared) {

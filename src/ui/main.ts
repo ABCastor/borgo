@@ -3,11 +3,13 @@ import { criteriaFor, evaluate, profileProblems, weightOf, type Evaluation } fro
 import { chooseWork, grouped, splitGroupWeight } from "../core/groups.ts";
 import { resolve } from "../core/lookup.ts";
 import { convert } from "../core/money.ts";
-import type { Dataset, Profile } from "../core/types.ts";
+import type { Dataset, Observation, Profile } from "../core/types.ts";
+import { regionById } from "../core/visit-region.ts";
 import { browserRoute, makeCtx } from "../fetch/context.ts";
 import { BROWSER_FETCHERS, fetchCity, withFetched } from "../fetch/index.ts";
 import { resolvePlace } from "../places/resolve.ts";
-import { lazyFiles, partFiles, withParts, type PartFile } from "../registry/licences.ts";
+import { lazyFiles, partFiles, withCity, withParts, type PartFile } from "../registry/licences.ts";
+import { shortlistOf } from "./first-visit.ts";
 import { defaultTests } from "../core/weather-days.ts";
 import { citiesView, comfortEditor } from "./cards.ts";
 import { climateOf, drawHours, hourReadout, narrow } from "./climate.ts";
@@ -43,6 +45,50 @@ function readRoute(): void {
   const views: Record<string, View> = { "": "cities", map: "map", compare: "compare", money: "money", city: "city", data: "data", about: "about", contact: "contact" };
   state.view = views[head] ?? "cities";
   state.city = state.view === "city" ? decodeURIComponent(rest) : null;
+}
+
+// ---------- The figures, per city: read for the cities on screen, not all at once ----------
+
+/** Seed cities whose figures are in state.data (all of them when the published data came whole). */
+const loaded = new Set<string>();
+const loading = new Map<string, Promise<void>>();
+
+/** The seed cities the current view needs figures for: the map scores every one; the rest only what they show. */
+function citiesNeeded(): string[] {
+  const seeds = state.data.cities.filter((c) => !state.fetchedHere.includes(c.id)).map((c) => c.id);
+  if (state.view === "map" || state.view === "data" || mapHere()) return seeds;
+  const p = state.profile;
+  const ids = new Set([...p.cities, ...(p.income.everyday?.homeCity ? [p.income.everyday.homeCity] : []), ...(state.city ? [state.city] : [])]);
+  return seeds.filter((id) => ids.has(id));
+}
+
+/** Reads the figures of the given seed cities that are not in yet (data/city/<id>.json) and merges them in. */
+function loadCities(ids: string[]): Promise<void> {
+  const perCity = (state.data as Dataset & { perCity?: string }).perCity;
+  const need = ids.filter((id) => !loaded.has(id));
+  if (!perCity || !need.length) return Promise.resolve();
+  return Promise.all(need.map((id) => {
+    let p = loading.get(id);
+    if (!p) {
+      p = fetch(`${perCity}${id}.json`).then((r) => (r.ok ? (r.json() as Promise<{ observations: Observation[] }>) : Promise.reject(new Error(`${r.status}`)))).then((f) => {
+        state.data = withCity(state.data, id, f.observations);
+        loaded.add(id);
+      }).finally(() => loading.delete(id));
+      loading.set(id, p);
+    }
+    return p;
+  })).then(() => undefined);
+}
+
+/** True when the view's cities are all in; otherwise starts reading them and calls `then` once they are. */
+function citiesReady(then: () => void): boolean {
+  const missing = citiesNeeded().filter((id) => !loaded.has(id));
+  if (!missing.length) return true;
+  loadCities(missing).then(then, (err) => {
+    console.error(err);
+    $("#page").innerHTML = html`<div class="empty"><h2>Some figures did not load</h2><p>Reload the page to try again.</p></div>`.value;
+  });
+  return false;
 }
 
 const NAV_OF: Record<View, string> = { cities: "#/", map: "#/map", city: "#/", compare: "#/compare", money: "#/money", data: "#/data", about: "#/about", contact: "#/contact" };
@@ -213,6 +259,7 @@ function render(): void {
     a.getAttribute("href") === NAV_OF[v] ? a.setAttribute("aria-current", "page") : a.removeAttribute("aria-current");
   }
   closePopover();
+  if (!citiesReady(render)) return;
   if (v === "data" || v === "about" || v === "contact") {
     $("#page").innerHTML = (v === "data" ? dataPage(state) : v === "about" ? aboutPage(state) : contactPage()).value;
     return;
@@ -246,6 +293,12 @@ function watchExplore(): void {
 function mountExplore(): void {
   const el = document.getElementById("explore");
   if (!el || document.getElementById("map-stage")) return;
+  // The map scores every city: their figures come in first.
+  const all = state.data.cities.filter((c) => !state.fetchedHere.includes(c.id)).map((c) => c.id);
+  if (all.some((id) => !loaded.has(id))) {
+    loadCities(all).then(mountExplore, (err) => console.error(err));
+    return;
+  }
   el.innerHTML = exploreShell(state, true).value;
   mountMap(state);
 }
@@ -263,6 +316,7 @@ function renderApp(): void {
 
 /** The top and the main view, recomputed live (a dial moving, the comfortable range, a rent). */
 function renderLive(): void {
+  if (!citiesReady(renderLive)) return;
   const before = flipFirst();
   applyUnits();
   evaluation = evaluate(state.data, state.profile);
@@ -501,6 +555,18 @@ function onClick(e: MouseEvent): void {
       });
       document.getElementById(`p${state.profile.household.length - 1}-pass`)?.focus();
       return;
+    case "region": {
+      // Start from another region's cities: its shortlist, with the everyday spending guess based in its first city.
+      const region = regionById(t.dataset.region).id;
+      const list = shortlistOf(state.data, region, state.profile);
+      if (!list.length) return;
+      state.visit = { region };
+      setProfile((p) => {
+        p.cities = [...list];
+        if (p.income.everyday?.assumed) p.income.everyday.homeCity = list[0]!;
+      });
+      return;
+    }
     case "intro-hide":
       hideIntro();
       state.intro = false;
@@ -1168,10 +1234,20 @@ function ensureKinds(c: AppState["profile"]["prefs"]["comfort"]): Promise<void> 
   return kinds;
 }
 
+/** The published data without its figures (data/core.json) when the site splits them per city, else all of it. */
+async function loadSnapshot(): Promise<Dataset> {
+  const core = await fetch("data/core.json").then((r) => (r.ok ? (r.json() as Promise<Dataset>) : null)).catch(() => null);
+  if (core) return core;
+  const whole = (await (await fetch("data/dataset.json")).json()) as Dataset;
+  for (const c of whole.cities) loaded.add(c.id);
+  return whole;
+}
+
 async function boot(): Promise<void> {
   const q = new URLSearchParams(location.search);
-  const res = await fetch("data/dataset.json");
-  const snapshot = (await res.json()) as Dataset;
+  const root = document.documentElement.dataset;
+  const region = root.region ? regionById(root.region).id : undefined;
+  const snapshot = await loadSnapshot();
   // The figures published under other terms (ODbL, WHO) sit in files of their own; a part that fails costs only its figures.
   const parts = await Promise.all(partFiles(snapshot).map((f) => fetch(f).then((r) => (r.ok ? (r.json() as Promise<PartFile>) : null)).catch(() => null)));
   // The committed snapshot, plus every place this browser fetched before.
@@ -1179,7 +1255,7 @@ async function boot(): Promise<void> {
   const data = withFetched(withParts(snapshot, parts.filter((p): p is PartFile => !!p)), here);
   state = {
     data,
-    profile: loadProfile(data),
+    profile: loadProfile(data, region),
     view: "cities",
     city: null,
     measure: "air",
@@ -1192,9 +1268,13 @@ async function boot(): Promise<void> {
     shareInclude: [],
     notFound: notFoundOnLoad,
   };
-  await ensureKinds(state.profile.prefs.comfort);
   const shared = !!sharedParam();
   state.intro = introFor(state.profile, shared);
+  if (state.intro && region) state.visit = { region, ...(root.country ? { country: root.country } : {}) };
+  // A salary typed into the first screen before the app had run is kept.
+  const typed = Number(document.querySelector<HTMLInputElement>("#intro-salary")?.value);
+  if (state.intro && typed > 0) state.profile.income.gross = typed;
+  await Promise.all([ensureKinds(state.profile.prefs.comfort), loadCities(citiesNeeded())]);
   if (applyCitiesQuery(data, state.profile) || shared) {
     saveProfile(state.profile);
     q.delete("p");
