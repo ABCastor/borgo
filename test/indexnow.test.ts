@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "node:test";
-import { INDEXNOW_MAX, indexNowBodies, indexNowKey, sitemapUrls } from "../scripts/indexnow.ts";
+import { changedUrls, INDEXNOW_MAX, indexNowBodies, indexNowKey, sitemapEntries, sitemapUrls } from "../scripts/indexnow.ts";
 
 const ROOT = join(import.meta.dirname, "..");
 
@@ -83,4 +83,84 @@ test("indexnow: --dry-run sends nothing", async () => {
   assert.equal(r.code, 0, r.out);
   assert.match(r.out, /dry run: would POST 2 URLs/);
   assert.deepEqual(r.posts, []);
+});
+
+test("indexnow: only addresses that are new or whose lastmod moved count as changed", () => {
+  const before = `<urlset><url><loc>https://x.example/</loc><lastmod>2026-11-14</lastmod></url><url><loc>https://x.example/a/</loc><lastmod>2026-11-14</lastmod></url><url><loc>https://x.example/gone/</loc><lastmod>2026-11-14</lastmod></url></urlset>`;
+  const now = `<urlset><url><loc>https://x.example/</loc><lastmod>2026-11-14</lastmod></url><url><loc>https://x.example/a/</loc><lastmod>2026-11-15</lastmod></url><url><loc>https://x.example/new/</loc><lastmod>2026-11-15</lastmod></url><url><loc>https://x.example/undated/</loc></url></urlset>`;
+  assert.equal(sitemapEntries(now).get("https://x.example/a/"), "2026-11-15");
+  assert.deepEqual(changedUrls(now, before), ["https://x.example/a/", "https://x.example/new/", "https://x.example/undated/"]);
+  assert.deepEqual(changedUrls(before, before), []);
+  assert.deepEqual(changedUrls(now, ""), sitemapUrls(now));
+});
+
+/** A deploy as npm run deploy does it: --save-live reads the site's sitemap before, the ping sends what changed after. */
+async function deploy(liveSitemap: string | null, newSitemap: string) {
+  const { createServer } = await import("node:http");
+  const { spawn } = await import("node:child_process");
+  const { existsSync, mkdtempSync, rmSync, writeFileSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const { key } = indexNowKey();
+  const posts: any[] = [];
+  const server = createServer((req, res) => {
+    if (req.method === "GET" && req.url === `/${key}.txt`) return res.end(key);
+    if (req.method === "GET" && req.url === "/sitemap.xml" && liveSitemap !== null) return res.end(liveSitemap);
+    if (req.method === "POST" && req.url === "/indexnow") {
+      let body = "";
+      req.on("data", (d) => (body += d));
+      req.on("end", () => {
+        posts.push(JSON.parse(body));
+        res.end();
+      });
+      return;
+    }
+    res.statusCode = 404;
+    res.end();
+  });
+  await new Promise<void>((ok) => server.listen(0, "127.0.0.1", ok));
+  const origin = `http://127.0.0.1:${(server.address() as { port: number }).port}`;
+  const dir = mkdtempSync(join(tmpdir(), "borgo-indexnow-"));
+  const previous = join(dir, "live-sitemap.xml");
+  writeFileSync(join(dir, "sitemap.xml"), newSitemap.replaceAll("ORIGIN", origin));
+  const env = { ...process.env, SITE_ORIGIN: origin, INDEXNOW_ENDPOINT: `${origin}/indexnow` };
+  const run = (args: string[]) =>
+    new Promise<{ code: number | null; out: string }>((ok) => {
+      const child = spawn(process.execPath, [join(ROOT, "scripts/indexnow.ts"), ...args], { env });
+      let out = "";
+      child.stdout.on("data", (d) => (out += d));
+      child.stderr.on("data", (d) => (out += d));
+      child.on("exit", (code) => ok({ code, out }));
+    });
+  if (liveSitemap !== null) liveSitemap = liveSitemap.replaceAll("ORIGIN", origin);
+  const saved = await run(["--save-live", "--previous", previous]);
+  const keptFile = existsSync(previous);
+  const ping = await run(["--sitemap", join(dir, "sitemap.xml"), "--previous", previous]);
+  const leftOver = existsSync(previous);
+  server.close();
+  rmSync(dir, { recursive: true, force: true });
+  return { saved, keptFile, ping, leftOver, posts, origin };
+}
+
+test("indexnow: a deploy sends only the pages whose lastmod moved since the live sitemap", async () => {
+  const live = `<urlset><url><loc>ORIGIN/</loc><lastmod>2026-11-14</lastmod></url><url><loc>ORIGIN/a/</loc><lastmod>2026-11-14</lastmod></url></urlset>`;
+  const next = `<urlset><url><loc>ORIGIN/</loc><lastmod>2026-11-14</lastmod></url><url><loc>ORIGIN/a/</loc><lastmod>2026-11-15</lastmod></url><url><loc>ORIGIN/b/</loc><lastmod>2026-11-15</lastmod></url></urlset>`;
+  const r = await deploy(live, next);
+  assert.equal(r.saved.code, 0, r.saved.out);
+  assert.ok(r.keptFile);
+  assert.equal(r.ping.code, 0, r.ping.out);
+  assert.match(r.ping.out, /sent 2 URLs changed since the last deploy \(of 3\)/);
+  assert.deepEqual(r.posts.map((p) => p.urlList), [[`${r.origin}/a/`, `${r.origin}/b/`]]);
+  assert.ok(!r.leftOver, "the saved sitemap is removed after a ping");
+  const same = await deploy(live, live);
+  assert.match(same.ping.out, /no page changed since the last deploy/);
+  assert.deepEqual(same.posts, []);
+});
+
+test("indexnow: when the live sitemap cannot be read, the ping sends every URL", async () => {
+  const r = await deploy(null, `<urlset><url><loc>ORIGIN/</loc><lastmod>2026-11-15</lastmod></url><url><loc>ORIGIN/a/</loc><lastmod>2026-11-15</lastmod></url></urlset>`);
+  assert.equal(r.saved.code, 0, r.saved.out);
+  assert.match(r.saved.out, /could not read the live sitemap/);
+  assert.ok(!r.keptFile);
+  assert.match(r.ping.out, /sent 2 URLs from the sitemap/);
+  assert.equal(r.posts[0].urlList.length, 2);
 });

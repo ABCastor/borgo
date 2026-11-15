@@ -10,7 +10,7 @@ import { ROOT } from "../pipeline/lib.ts";
 import { loadPublishedDataset } from "../src/registry/load.ts";
 import { partFiles } from "../src/registry/licences.ts";
 import type { Dataset } from "../src/core/types.ts";
-import { prerender } from "./prerender.ts";
+import { prerender, type PageDates } from "./prerender.ts";
 import { MARK } from "../src/ui/brand/index.ts";
 import { faviconSvg } from "../src/ui/brand/marks.ts";
 import { productHeader, serveDir } from "./site.ts";
@@ -57,8 +57,15 @@ if (existsSync(join(ROOT, "public/root"))) await cp(join(ROOT, "public/root"), D
 await writeFile(join(DIST, "_headers"), ["/api/*", "/data/*"].map((p) => `${p}\n  Access-Control-Allow-Origin: *\n`).join(""));
 // The pages show every published figure: dataset.json merged with the ODbL and WHO files beside it.
 const data = loadPublishedDataset(join(ROOT, "public/data/dataset.json"));
-const manifest = await prerender(DIST, data);
-console.log(`built dist/: the app, ${manifest.pages.length} pages, ${manifest.files.length} files`);
+// When each page last changed (the sitemap's lastmod): kept in data/page-dates.json, which a build rewrites only when a
+// page's content changes. Commit it with the change, so the deploy's own build finds nothing new.
+const DATES = join(ROOT, "data/page-dates.json");
+const before = existsSync(DATES) ? (await readFile(DATES, "utf8")) : "{}";
+const manifest = await prerender(DIST, data, { dates: JSON.parse(before) as PageDates, today: process.env.BUILD_DATE });
+const after = `${JSON.stringify(Object.fromEntries(Object.entries(manifest.dates).sort(([a], [b]) => a.localeCompare(b))), null, 1)}\n`;
+const changed = Object.entries(manifest.dates).filter(([p, d]) => (JSON.parse(before) as PageDates)[p]?.hash !== d.hash).length;
+if (after !== before) await writeFile(DATES, after);
+console.log(`built dist/: the app, ${manifest.pages.length} pages, ${manifest.files.length} files; ${changed} pages changed since the last recorded build`);
 
 if (serve) {
   const port = Number(process.env.PORT ?? 8794);

@@ -155,6 +155,7 @@ export function cityPage(site: Site, data: Dataset, f: CityFacts, appParam: stri
   const title = `Living in ${city.name}, ${cn}: take-home pay, rent, climate and open data`;
   const description = clip(`${city.name} on open data: ${f.keyFacts.slice(1, 3).join(" ")}`);
   const body = html`<article class="doc static-doc">
+    ${crumbs(root, [{ href: "cities/", label: "Every city" }], city.name)}
     <h1>Living in ${city.name}</h1>
     <p class="lede">${city.name}, ${cn}${city.population ? `, about ${num(city.population)} people` : ""}. What you would earn and keep, the climate month by month, and every open figure we hold, each with its source, period and licence.</p>
     ${makeIt(root, appParam, `Weigh ${city.name} against other cities, with your own numbers`)}
@@ -369,10 +370,16 @@ function cityJsonLd(site: Site, f: CityFacts): object[] {
     distribution: [{ "@type": "DataDownload", encodingFormat: "application/json", contentUrl: abs(site, `/api/city/${f.city.id}.json`) }],
   };
   const page = { "@context": "https://schema.org", "@type": "WebPage", "@id": url, url, name: `Living in ${f.city.name}`, dateModified: site.version, about: { "@id": `${url}#place` }, mainEntity: { "@id": `${url}#data` }, isPartOf: { "@id": `${site.origin}/#website` } };
-  return [page, place, dataset];
+  return [page, place, dataset, breadcrumbLd(site, [{ path: "/cities/", name: "Every city" }, { path: f.path, name: f.city.name }])];
 }
 
 // ---------- Comparison page ----------
+
+/** The title, H1 and opening of a comparison speak the searches it answers: "A vs B", "cost of living in A vs B", "A vs B weather". */
+export function compareTitle(site: Site, a: string, b: string): string {
+  const base = `${a} vs ${b}: cost of living, take-home pay and weather`;
+  return base.length <= 60 ? `${base} | ${site.name}` : base;
+}
 
 export function comparePage(site: Site, data: Dataset, c: CompareFacts): Page {
   const A = c.a.city;
@@ -383,15 +390,21 @@ export function comparePage(site: Site, data: Dataset, c: CompareFacts): Page {
   const lead = c.winner
     ? `On balanced weights, ${c.winner.name} comes out ahead: ${Math.round(c.winner.id === A.id ? ra.total : rb.total)} against ${Math.round(c.winner.id === A.id ? rb.total : ra.total)} out of 100${c.drivers.length ? `, mostly on ${c.drivers.filter((d) => d.leader.id === c.winner!.id).map((d) => d.label.toLowerCase()).slice(0, 2).join(" and ") || "small margins"}` : ""}.`
     : `On balanced weights, ${A.name} and ${B.name} are too close to call: ${Math.round(ra.total)} and ${Math.round(rb.total)} out of 100.`;
-  const title = `${A.name} vs ${B.name}: take-home pay, cost of living and climate compared | ${site.name}`;
-  const description = clip(`${A.name} or ${B.name}? ${lead} Every figure from open data, with its source.`);
+  const title = compareTitle(site, A.name, B.name);
+  const description = c.intent.description;
   const cov = (r: typeof ra) => Math.round(r.coverage * 100);
   const cell = (s: CompareFacts["lines"][number]["a"]) =>
     html`<td><span class="num">${s.text}</span>${s.sources.length ? html`<small>${srcLinks(s.sources)}${s.level === "country" ? html` <span class="quiet">(country)</span>` : ""}</small>` : ""}</td>`;
+  const pairLinks = (city: string, list: CompareFacts["related"]["a"]) =>
+    html`<h3>${city} against other cities</h3><ul class="pairs">${list.map((p) => html`<li><a href="${root}${p.path.slice(1)}">${city} vs ${p.other.name}</a></li>`)}</ul>`;
+  const niceBoth = !!(c.a.climate?.nice && c.b.climate?.nice);
   const body = html`<article class="doc static-doc">
-    <h1>${A.name} vs ${B.name}</h1>
-    <p class="lede">${lead} Your own weights, salary and household can change the answer; every figure below names its source.</p>
+    ${crumbs(root, [{ href: "compare/", label: "Every comparison" }], `${A.name} vs ${B.name}`)}
+    <h1>${A.name} vs ${B.name}: cost of living, pay and weather</h1>
+    <p class="lede">${c.intent.answer.length ? `${c.intent.answer.join(" ")} ` : ""}${lead} Your own weights, salary and household can change the answer; every figure below names its source.</p>
     ${makeIt(root, c.appParam, `Make it yours: compare ${A.name} and ${B.name} with your own numbers`)}
+
+    ${c.intent.moving ? html`<h2>Moving between ${A.name} and ${B.name}</h2>${c.intent.moving.map((s) => html`<p>${s}</p>`)}` : ""}
 
     <h2>The verdict on default settings</h2>
     <div class="duel">
@@ -416,54 +429,80 @@ export function comparePage(site: Site, data: Dataset, c: CompareFacts): Page {
     ${assumptions(data, c.profile)}
 
     ${c.a.climate && c.b.climate
-      ? html`<h2>Climate month by month</h2>
+      ? html`<h2>Weather month by month</h2>
         <table class="doc-table clim-table"><thead><tr><th>Month</th><th class="num">${A.name}</th><th class="num">${B.name}</th></tr></thead><tbody>
-          ${c.a.climate.high.map((h, i) => html`<tr><th scope="row">${MONTHS[i]}</th><td class="num">${num(c.a.climate!.low[i]!, 0)} to ${num(h, 0)} °C</td><td class="num">${num(c.b.climate!.low[i]!, 0)} to ${num(c.b.climate!.high[i]!, 0)} °C</td></tr>`)}
+          ${c.a.climate.high.map((h, i) => {
+            const cell = (cl: NonNullable<typeof c.a.climate>, hi: number) =>
+              html`<td class="num">${num(cl.low[i]!, 0)} to ${num(hi, 0)} °C${niceBoth ? html`<small>${num(cl.nice![i]!, 0)} nice ${Math.round(cl.nice![i]!) === 1 ? "day" : "days"}</small>` : ""}</td>`;
+            return html`<tr><th scope="row">${MONTHS[i]}</th>${cell(c.a.climate!, h)}${cell(c.b.climate!, c.b.climate!.high[i]!)}</tr>`;
+          })}
         </tbody></table>
-        <p class="hint">Air temperature in the shade, average daily low to high (${c.a.climate.source.name}, ${c.a.climate.period}).</p>`
+        <p class="hint">Air temperature in the shade, average daily low to high${niceBoth ? `; nice days are dry, mostly clear days that feel ${DEFAULT_COMFORT.min} to ${DEFAULT_COMFORT.max} °C from 8 am to 8 pm, the app's default, which you can change` : ""} (${c.a.climate.source.name}, ${c.a.climate.period}).</p>`
       : ""}
 
     <h2>Questions this page answers</h2>
     <div class="qa">${c.qa.map((x) => html`<h3>${x.q}</h3><p>${x.a}</p>`)}</div>
 
-    <h2>More</h2>
+    <h2>More comparisons</h2>
     <ul class="plain"><li><a href="${root}city/${A.id}/">Living in ${A.name}: every figure</a></li><li><a href="${root}city/${B.id}/">Living in ${B.name}: every figure</a></li><li><a href="${root}compare/">Every comparison</a></li></ul>
+    ${c.related.a.length ? pairLinks(A.name, c.related.a) : ""}
+    ${c.related.b.length ? pairLinks(B.name, c.related.b) : ""}
 
     <h2>Cite this page</h2>
     <p class="cite">${site.name}, “${A.name} vs ${B.name}”, ${abs(site, c.path)}, figures as of ${site.version}, reference profile. Name the original source of any figure you quote.</p>
   </article>`;
-  return { path: c.path, title: title.length > 90 ? `${A.name} vs ${B.name}: pay, costs, climate | ${site.name}` : title, description, section: "compare", body, markdown: compareMarkdown(site, data, c, lead), jsonld: compareJsonLd(site, c) };
+  return { path: c.path, title, description, section: "compare", body, markdown: compareMarkdown(site, data, c, lead), jsonld: compareJsonLd(site, c) };
 }
 
 function compareMarkdown(site: Site, data: Dataset, c: CompareFacts, lead: string): string {
   const A = c.a.city.name;
   const B = c.b.city.name;
   const [ra, rb] = c.results;
-  const L = [`# ${A} vs ${B}`, "", `> ${lead} Reference profile: ${assumptionsText(data, c.profile)}, balanced weights. Figures as of ${site.version}. Canonical page: ${abs(site, c.path)}`, ""];
+  const L = [`# ${A} vs ${B}: cost of living, pay and weather`, "", `> ${[...c.intent.answer, lead].join(" ")} Reference profile: ${assumptionsText(data, c.profile)}, balanced weights. Figures as of ${site.version}. Canonical page: ${abs(site, c.path)}`, ""];
   L.push(`Scores out of 100: ${A} ${Math.round(ra.total)}, ${B} ${Math.round(rb.total)}. Make it yours: ${abs(site, `/?${c.appParam}`)}`, "");
+  if (c.intent.moving) L.push(`## Moving between ${A} and ${B}`, "", ...c.intent.moving.flatMap((s) => [s, ""]));
   L.push("## Line by line", "", `| Line | ${A} | ${B} |`, "|---|---|---|");
   const cell = (s: CompareFacts["lines"][number]["a"]) => `${s.text}${s.sources.length ? ` (${s.sources.map((x) => x.name).join("; ")})` : ""}`;
   for (const l of c.lines.filter((x) => x.id !== "right_to_live")) L.push(`| ${l.label} | ${cell(l.a)} | ${cell(l.b)} |`);
   L.push("", "## Questions", "");
   for (const x of c.qa) L.push(`### ${x.q}`, "", x.a, "");
+  const more = (city: string, list: CompareFacts["related"]["a"]) => (list.length ? [`- ${city} against: ${list.map((p) => `[${p.other.name}](${abs(site, p.path)}index.md)`).join(", ")}`] : []);
+  L.push("## More comparisons", "", ...more(A, c.related.a), ...more(B, c.related.b), "");
   L.push("## Cite", "", `${site.name}, "${A} vs ${B}", ${abs(site, c.path)}, figures as of ${site.version}.`, "");
   return L.join("\n");
 }
 
+/** A visible breadcrumb trail, the same one BreadcrumbList states. */
+function crumbs(root: string, trail: { href: string; label: string }[], here: string): Raw {
+  return html`<nav class="crumbs" aria-label="Breadcrumb"><a href="${root || "./"}">Borgo</a>${trail.map((t) => html` › <a href="${root}${t.href}">${t.label}</a>`)} › <span aria-current="page">${here}</span></nav>`;
+}
+
+/** BreadcrumbList for Google's breadcrumb feature (supported, desktop): home, the hub, this page. */
+function breadcrumbLd(site: Site, trail: { path: string; name: string }[]): object {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [{ path: "/", name: site.name }, ...trail].map((t, i) => ({ "@type": "ListItem", position: i + 1, name: t.name, item: abs(site, t.path) })),
+  };
+}
+
+// FAQPage states the questions the page shows, for any reader of schema.org. Google has shown no FAQ rich result
+// since 7 May 2026, so it brings no search feature; it is kept for meaning only.
 function compareJsonLd(site: Site, c: CompareFacts): object[] {
   const url = abs(site, c.path);
+  const name = `${c.a.city.name} vs ${c.b.city.name}`;
   const page = {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "@id": url,
     url,
-    name: `${c.a.city.name} vs ${c.b.city.name}`,
+    name,
     dateModified: site.version,
     about: [c.a, c.b].map((f) => ({ "@id": `${abs(site, f.path)}#place` })),
     isPartOf: { "@id": `${site.origin}/#website` },
   };
   const places = [c.a, c.b].map((f) => ({ "@context": "https://schema.org", "@type": "City", "@id": `${abs(site, f.path)}#place`, name: f.city.name, url: abs(site, f.path) }));
-  const out: object[] = [page, ...places];
+  const out: object[] = [page, ...places, breadcrumbLd(site, [{ path: "/compare/", name: "Every comparison" }, { path: c.path, name }])];
   if (c.qa.length)
     out.push({
       "@context": "https://schema.org",
@@ -519,14 +558,15 @@ export function citiesPage(site: Site, data: Dataset, all: CityFacts[]): Page {
 export function comparisonsPage(site: Site, data: Dataset, pairs: [string, string][]): Page {
   const path = "/compare/";
   const name = (id: string) => data.cities.find((c) => c.id === id)!.name;
-  const byFirst = groupBy(
-    pairs.map(([a, b]) => ({ a, b })),
-    (p) => name(p.a),
-  );
+  // Each city lists every pair it is in, so a pair shows under both of its cities, the other city named second.
+  const byCity = groupBy(
+    pairs.flatMap(([a, b]) => [{ city: a, other: b, id: `${a}-vs-${b}` }, { city: b, other: a, id: `${a}-vs-${b}` }]),
+    (p) => name(p.city),
+  ).map(([city, list]) => [city, list.sort((x, y) => name(x.other).localeCompare(name(y.other)))] as const);
   const body = html`<article class="doc static-doc">
     <h1>Every comparison</h1>
-    <p class="lede">${pairs.length} pairs of cities people weigh against each other: same-country pairs, near neighbours, and cities of a similar size. Any other pair, or more than two cities, opens in <a href="../">the app</a>.</p>
-    ${byFirst.map(([first, list]) => html`<h2>${first}</h2><ul class="pairs">${list.map((p) => html`<li><a href="${p.a < p.b ? `${p.a}-vs-${p.b}` : `${p.b}-vs-${p.a}`}/">${name(p.a)} vs ${name(p.b)}</a></li>`)}</ul>`)}
+    <p class="lede">${pairs.length} pairs of cities people weigh against each other: same-country pairs, near neighbours, and cities of a similar size. Each page sets take-home pay, rent, money left and nice days side by side, and says what changes for someone moving from one to the other. Any other pair, or more than two cities, opens in <a href="../">the app</a>.</p>
+    ${byCity.map(([city, list]) => html`<h2>${city}</h2><ul class="pairs">${list.map((p) => html`<li><a href="${p.id}/">${city} vs ${name(p.other)}</a></li>`)}</ul>`)}
   </article>`;
   const md = [`# Every comparison`, "", `> ${pairs.length} city pairs compared on open data. Figures as of ${site.version}.`, ""];
   for (const [a, b] of pairs) md.push(`- [${name(a)} vs ${name(b)}](${abs(site, `/compare/${a}-vs-${b}/`)}index.md)`);

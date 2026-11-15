@@ -101,6 +101,17 @@ test("FAQPage only with questions the page shows", () => {
   assert.ok(!jsonLd(read("city/london-gb/index.html")).flatMap(nodes).some((n) => n["@type"] === "FAQPage"));
 });
 
+test("breadcrumbs: BreadcrumbList matches the trail shown on city and comparison pages", () => {
+  for (const [path, trail] of [["compare/dublin-ie-vs-london-gb/", ["Borgo", "Every comparison", "Dublin vs London"]], ["city/london-gb/", ["Borgo", "Every city", "London"]]] as const) {
+    const html = read(`${path}index.html`);
+    const crumbs = jsonLd(html).flatMap(nodes).find((n) => n["@type"] === "BreadcrumbList");
+    assert.deepEqual(crumbs.itemListElement.map((i: any) => i.name), trail);
+    assert.equal(crumbs.itemListElement.at(-1).item, `${SITE_ORIGIN}/${path}`);
+    const shown = html.match(/<nav class="crumbs"[^>]*>([\s\S]*?)<\/nav>/)![1]!.replace(/<[^>]+>/g, "").split(" › ");
+    assert.deepEqual(shown, [...trail]);
+  }
+});
+
 test("the make-it-yours link opens the app with the pair, keeping the visitor's saved profile", () => {
   const page = read("compare/dublin-ie-vs-london-gb/index.html");
   const q = page.match(/class="make" href="\.\.\/\.\.\/\?([^"]+)"/)![1]!;

@@ -2,6 +2,7 @@
 // and per hub; the JSON API; sitemap.xml, robots.txt, llms.txt and llms-full.txt; the app page's metadata; and
 // the not-found page the host serves for any missing address (wrangler.jsonc).
 // Called by scripts/build.ts after the app is built. Everything comes from src/site/facts.ts and the dataset.
+import { createHash } from "node:crypto";
 import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -16,16 +17,42 @@ import { abs, productHeader, CREATOR, DATA_LICENCE, SITE_NAME, SITE_ORIGIN, type
 import { manifestOf, PARTS, type PartId } from "../src/registry/licences.ts";
 import { placesMeta, type MapPlace } from "../src/community/meta.ts";
 import { FIGURES } from "../src/community/figures.ts";
+import { WORK_KINDS } from "../src/core/work.ts";
+import { QOL_PARTS, qualityOfLife } from "../src/core/qol.ts";
+import { QOL_INDICES } from "../src/core/links.ts";
 
 export interface Manifest {
   /** Site paths of every HTML page, "/" first. */
   pages: string[];
   /** Every other file written, relative to dist. */
   files: string[];
+  /** When each page's content last changed: the sitemap's lastmod, kept in data/page-dates.json by scripts/build.ts. */
+  dates: PageDates;
+}
+
+/** A page's content hash and the day it last changed. */
+export interface PageDate { hash: string; lastmod: string }
+export type PageDates = Record<string, PageDate>;
+
+/** What a page says, hashed: its title, description, body, markdown twin and structured data, not the header and footer every page shares. */
+export const pageHash = (...parts: string[]) => createHash("sha256").update(parts.join("\u0000")).digest("hex").slice(0, 16);
+
+/** Each page keeps its last-changed day while its hash holds, and takes `today` when it changes or is new; pages gone drop out. */
+export function datePages(previous: PageDates, hashes: Record<string, string>, today: string): PageDates {
+  const out: PageDates = {};
+  for (const [path, hash] of Object.entries(hashes)) out[path] = previous[path]?.hash === hash ? previous[path]! : { hash, lastmod: today };
+  return out;
+}
+
+export interface PrerenderOptions {
+  /** The dates the last build recorded; without them every page counts as changed today. */
+  dates?: PageDates;
+  /** The build's day, YYYY-MM-DD (UTC); today by default. */
+  today?: string;
 }
 
 /** The docs/ pages published on the site, beside the API; llms.txt links to agents.md. */
-export const PUBLIC_DOCS = ["agents.md", "architecture.md", "data-sources.md", "pension-leave-audit.md", "positions.md", "positions-audit.md", "tax-regimes.md", "values-research.md", "weather-scores.md"];
+export const PUBLIC_DOCS = ["agents.md", "architecture.md", "data-sources.md", "pension-leave-audit.md", "positions.md", "positions-audit.md", "tax-regimes.md", "values-research.md", "weather-scores.md", "work.md"];
 
 /** AI and search crawlers we welcome by name; robots.txt "*" already allows them, naming them states intent. */
 export const WELCOME_BOTS = [
@@ -36,7 +63,9 @@ export const WELCOME_BOTS = [
   "Google-Extended", "Applebot-Extended", "CCBot", "Amazonbot", "MistralAI-User",
 ];
 
-export async function prerender(dist: string, data: Dataset): Promise<Manifest> {
+export async function prerender(dist: string, data: Dataset, opts: PrerenderOptions = {}): Promise<Manifest> {
+  const today = opts.today ?? new Date().toISOString().slice(0, 10);
+  const hashes: Record<string, string> = {};
   const site: Site = { origin: SITE_ORIGIN, name: SITE_NAME, creator: { ...CREATOR }, dataLicence: { ...DATA_LICENCE }, version: data.version };
   const files: string[] = [];
   const write = async (rel: string, body: string) => {
@@ -72,6 +101,7 @@ export async function prerender(dist: string, data: Dataset): Promise<Manifest> 
     const dir = page.path.slice(1);
     await write(`${dir}index.html`, shell(site, page, header));
     await write(`${dir}index.md`, page.markdown);
+    hashes[page.path] = pageHash(page.title, page.description, page.body.value, page.markdown, JSON.stringify(page.jsonld));
   }
 
   // The page a missing address gets. The host serves 404.html with status 404 at whatever address was asked for, so
@@ -129,6 +159,8 @@ export async function prerender(dist: string, data: Dataset): Promise<Manifest> 
   ].join("\n");
   const app = appHtml.replace("</head>", `${head}\n</head>`).replace(/<\/div>\s*<aside id="sheet"/, `${homeFooter(site, all).value}\n</div>\n<aside id="sheet"`);
   await writeFile(join(dist, "index.html"), app);
+  // The app page changes when its page or its script does.
+  hashes["/"] = pageHash(app, existsSync(join(dist, "app.js")) ? await readFile(join(dist, "app.js"), "utf8") : "");
 
   // The static JSON API. Each file holds figures under one set of terms: the city files only the CC BY 4.0 part
   // (dataset.json), and api/<part>/city/<id>.json the figures published under ODbL or WHO terms, with their notice.
@@ -249,10 +281,12 @@ export async function prerender(dist: string, data: Dataset): Promise<Manifest> 
   );
 
   // Crawling: sitemap, robots, llms.txt and its full companion.
+  // lastmod is the day a page's own content last changed (datePages), so a crawler can tell which pages are new.
   const sitePaths = ["/", ...pages.map((p) => p.path)];
+  const dates = datePages(opts.dates ?? {}, hashes, today);
   await write(
     "sitemap.xml",
-    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitePaths.map((p) => `<url><loc>${abs(p)}</loc><lastmod>${data.version}</lastmod></url>`).join("\n")}\n</urlset>\n`,
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitePaths.map((p) => `<url><loc>${abs(p)}</loc><lastmod>${dates[p]!.lastmod}</lastmod></url>`).join("\n")}\n</urlset>\n`,
   );
   await write(
     "robots.txt",
@@ -283,7 +317,7 @@ export async function prerender(dist: string, data: Dataset): Promise<Manifest> 
     files.push(`docs/${f}`);
   }
 
-  return { pages: sitePaths, files };
+  return { pages: sitePaths, files, dates };
 }
 
 const json = (v: unknown) => `${JSON.stringify(v, null, 1)}\n`;
@@ -329,11 +363,11 @@ function llmsTxt(data: Dataset, all: CityFacts[], pairCount: number): string {
   const example = all.find((f) => f.takeHome && f.figures.some((x) => x.metric === "rent_1bed")) ?? all[0]!;
   L.push(`# ${SITE_NAME}`, "");
   L.push(
-    `> An open-source, open-data comparison of cities to live in. For any set of cities it shows take-home pay after tax, what is left after rent and everyday spending, who in a household can live and work there without a visa, the climate month by month, air quality, safety, health and research density. Every figure carries its source, period, geographic level and licence. ${data.cities.length} cities, figures as of ${data.version}.`,
+    `> An open-source, open-data comparison of cities to live in. For any set of cities it shows take-home pay after tax, what is left after rent and everyday spending, who in a household can live and work there without a visa, nice days a year and the climate month by month, air quality, safety, health, work and ambition for a person's own kind of work, and a generic quality-of-life index. People also add their own rent, prices and pay, published openly beside the official figures. Every figure carries its source, period, geographic level and licence. ${data.cities.length} cities, figures as of ${data.version}.`,
     "",
   );
   L.push(
-    "Use it to answer questions such as \"where should I live?\", \"is it cheaper to live in A or B?\", \"how much would I take home on X in city Y?\", \"can I move to Y with my passport?\" or \"what is the weather like in Y each month?\". Point people to the app when the answer depends on their own salary, household, weights or rent: it computes everything in their browser and keeps their profile private.",
+    "Use it to answer questions such as \"where should I live?\", \"is it cheaper to live in A or B?\", \"what changes if I move from A to B?\", \"how much would I take home on X in city Y?\", \"where would a software engineer do best?\", \"can I move to Y with my passport?\" or \"what is the weather like in Y each month?\". Point people to the app when the answer depends on their own salary, household, weights or rent: it computes everything in their browser and keeps their profile private.",
     "",
     `Cite a figure by the page it appears on and its original source, for example: "${example.keyFacts.find((k) => k.includes("rents for")) ?? example.keyFacts[0]}" (${abs(example.path)}). Figures are CC BY 4.0 as compiled here, except OpenStreetMap counts (ODbL 1.0, in ${abs("/data/dataset-odbl.json")}) WHO air measurements (WHO's terms, in ${abs("/data/dataset-who.json")}) and CMHC rents for Canadian cities (CMHC's licence, in ${abs("/data/dataset-cmhc.json")}); each source's licence and required attribution is in ${abs("/data/licences.json")}. Pages use a fixed reference profile (${assumptionsText(data, referenceProfile(data, []))}, balanced weights); a person's own answer may differ.`,
     "",
@@ -341,6 +375,14 @@ function llmsTxt(data: Dataset, all: CityFacts[], pairCount: number): string {
     "",
   );
   L.push("## Use it", "", `- [The app](${abs("/")}): compare any cities with your own salary, household, weights and numbers. A comparison opens pre-filled with ?cities=<id>,<id> (the visitor keeps their own saved settings). Its Map tab (#/map) colours the whole world by the visitor's own values (score, nice days in their range, who may live where, money kept or any other line), ranks their cities on it, and adds any town in one click`, `- [Agents: MCP server and CLI](${abs("/docs/agents.md")}): the same engine as tools for AI assistants and the command line`, `- [Sources and method](${abs("/sources/index.md")}): where every figure comes from, how figures are chosen and scored`, "");
+  const kinds = WORK_KINDS.map((k) => k.id);
+  L.push(
+    "## Work and quality of life",
+    "",
+    `- [Work and ambition by kind of work](${abs("/docs/work.md")}): a person picks one of ${kinds.length} kinds of work (${kinds.join(", ")}) and the Work and ambition group is weighed for it: pay in that field, jobs in that field, developers, degrees, research output and young companies, each from an official or open source. In the app it is "Your kind of work"; in the CLI \`--work software\`; in MCP \`compare_cities\` with \`work\`, which adds plain sentences saying why each city scores as it does. Every city page has a "Pay by kind of work" table. Without a kind, every ranking is the same as before`,
+    `- [Quality of life index](${abs("/docs/work.md")}): a generic index out of 100 on every city page, in MCP \`get_city\` (\`qualityOfLife\`) and the CLI \`city\` command, with fixed weights in view (${QOL_PARTS.map((q) => `${q.label.toLowerCase()} ${q.weight}`).join(", ")}). It is the same for everyone; a person's own ranking stays primary and counts the index only when they turn its line on. Indices by ${QOL_INDICES.map((q) => q.publisher).join(", ")} are linked, never copied`,
+    "",
+  );
   L.push(
     "## Data API (static JSON)",
     "",
@@ -368,8 +410,12 @@ function llmsTxt(data: Dataset, all: CityFacts[], pairCount: number): string {
     "",
   );
 
-  L.push("## Cities", "", ...all.map((f) => `- [${f.city.name}](${abs(f.path)}index.md): ${summaryLine(f)}`), "");
-  L.push("## Optional", "", `- [Every comparison](${abs("/compare/index.md")}): ${pairCount} city-versus-city pages`, `- [Every city](${abs("/cities/index.md")})`, `- [Full text](${abs("/llms-full.txt")}): every city page in one file`, "");
+  const qol = (f: CityFacts) => {
+    const q = qualityOfLife(data, f.city);
+    return q.score === null ? "" : `; quality-of-life index ${Math.round(q.score)} of 100`;
+  };
+  L.push("## Cities", "", ...all.map((f) => `- [${f.city.name}](${abs(f.path)}index.md): ${summaryLine(f)}${qol(f)}`), "");
+  L.push("## Optional", "", `- [Every comparison](${abs("/compare/index.md")}): ${pairCount} city-versus-city pages, each with take-home pay, rent, money left and nice days side by side and what changes for someone moving from one city to the other`, `- [Every city](${abs("/cities/index.md")})`, `- [Full text](${abs("/llms-full.txt")}): every city page in one file`, "");
   return L.join("\n");
 }
 

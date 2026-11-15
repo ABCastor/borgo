@@ -49,6 +49,9 @@
 .caveats { margin: .3rem 0 0; padding-left: 1.1rem; font-size: 12.5px; color: var(--quiet); }
 .pairs { margin: .4rem 0 0; padding: 0; list-style: none; columns: 2 14rem; column-gap: 1.5rem; }
 .pairs li { padding: .2rem 0; break-inside: avoid; }
+.static-doc .plain + h3, .static-doc .pairs + h3 { margin-top: 1.2rem; }
+.crumbs { margin: 0 0 .6rem; color: var(--quiet); font-size: 12.5px; }
+.crumbs a { color: inherit; }
 .cite { font-size: 13px; color: var(--quiet); max-width: 68ch; }
 
 .site-foot { margin-top: 3rem; padding: 1.1rem 0 2rem; border-top: 1px solid var(--rule); color: var(--quiet); font-size: 12.5px; line-height: 1.6; }

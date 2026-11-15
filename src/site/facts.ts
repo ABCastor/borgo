@@ -459,7 +459,34 @@ export interface CompareFacts {
   /** The lines that move the totals most, biggest first. */
   drivers: { label: string; leader: City; points: number }[];
   qa: { q: string; a: string }[];
+  /** The pair's headline numbers and the plain sentences built from them: what a search for "A vs B" or "moving from A to B" asks. */
+  intent: PairIntent;
+  /** The other comparison pages of each city, by the other city's name. */
+  related: { a: { path: string; other: City }[]; b: { path: string; other: City }[] };
   appParam: string;
+}
+
+/** One city's headline numbers on the reference profile, in the pair's currency; null when there is no figure that holds every tax or cost due. */
+export interface PairNumbers {
+  takeHome: number | null;
+  rent: number | null;
+  left: number | null;
+  niceDays: number | null;
+}
+
+export interface PairIntent {
+  /** The pair's own currency when both cities share it, else euros. */
+  currency: string;
+  /** The reference salary as words: "€60,000 a year before tax (£50,292)". */
+  salary: string;
+  a: PairNumbers;
+  b: PairNumbers;
+  /** Sentences that answer "A or B?" with the numbers, first thing on the page. */
+  answer: string[];
+  /** "Moving from A to B, ..." then "Moving from B to A, ...": what changes for a person who moves. */
+  moving: [string, string] | null;
+  /** The meta description: the numbers, in at most 160 characters. */
+  description: string;
 }
 
 function side(data: Dataset, r: CityResult, id: string): CompareLine["a"] {
@@ -487,7 +514,109 @@ export function compareFacts(data: Dataset, aId: string, bId: string, pairs: [st
   const gap = ra.total - rb.total;
   const winner = Math.abs(gap) < 2 ? null : gap > 0 ? a.city : b.city;
   const qa = compareQa(data, a, b, ra, rb);
-  return { path: comparePath(x, y), a, b, profile, results: [ra, rb], winner, lines, drivers, qa, appParam: appQuery([x, y]) };
+  const intent = pairIntent(data, a, b, ra, rb);
+  const others = (f: CityFacts, not: string) => f.comparisons.filter((c) => c.other.id !== not);
+  return { path: comparePath(x, y), a, b, profile, results: [ra, rb], winner, lines, drivers, qa, intent, related: { a: others(a, y), b: others(b, x) }, appParam: appQuery([x, y]) };
+}
+
+// Only figures that hold every tax and cost due are set side by side: a partial one would look like an advantage.
+const whole = (c: Completeness) => c.status === "complete" || c.status === "approximate";
+
+function pairNumbers(data: Dataset, f: CityFacts, r: CityResult, currency: string): PairNumbers {
+  const m = r.money;
+  const inPair = (v: number | null) => (v === null ? null : m.localCurrency === currency ? v : convert(data, v, m.localCurrency, currency));
+  const taxWhole = !!f.takeHome && whole(m.tax?.completeness ?? f.takeHome.completeness);
+  const nice = f.climate?.nice;
+  return {
+    takeHome: taxWhole && m.net !== null ? inPair(m.net / 12) : null,
+    rent: m.rent && m.rent.resolved.origin.kind !== "you" ? inPair(m.rent.monthly) : null,
+    left: whole(m.completeness) ? inPair(m.monthlyLeft) : null,
+    niceDays: nice ? Math.round(nice.reduce((s, v) => s + v, 0)) : null,
+  };
+}
+
+/** "£130 more", "£130 less" or "about the same" (within 2% of the larger). */
+function moreLess(d: number, scale: number, currency: string, more = "more", less = "less"): string {
+  return Math.abs(d) < 0.02 * Math.abs(scale) ? "about the same" : `about ${fmtMoney(Math.abs(d), currency)} ${d > 0 ? more : less}`;
+}
+
+/**
+ * The answer to "A vs B" and "moving from A to B" in plain words, from the figures the page shows: take-home pay,
+ * one-bedroom rent, money left and nice days a year on the reference profile. A number is said only when both
+ * cities have it; when one has a figure the other lacks, that is said too.
+ */
+function pairIntent(data: Dataset, a: CityFacts, b: CityFacts, ra: CityResult, rb: CityResult): PairIntent {
+  const A = a.city.name;
+  const B = b.city.name;
+  const same = ra.money.localCurrency === rb.money.localCurrency;
+  const currency = same ? ra.money.localCurrency : "EUR";
+  const na = pairNumbers(data, a, ra, currency);
+  const nb = pairNumbers(data, b, rb, currency);
+  const m = (v: number) => fmtMoney(v, currency);
+  const gross = ra.money.gross;
+  const salary = `${fmtMoney(REFERENCE_GROSS, "EUR")} a year before tax${same && currency !== "EUR" && gross !== null ? ` (${fmtMoney(gross, currency)})` : ""}`;
+  const both = (k: keyof PairNumbers) => na[k] !== null && nb[k] !== null;
+  const comfort = `dry, mostly clear days that feel ${DEFAULT_COMFORT.min} to ${DEFAULT_COMFORT.max} °C`;
+
+  const answer: string[] = [];
+  if (both("takeHome")) answer.push(`On ${salary}, you take home about ${m(na.takeHome!)} a month in ${A} and ${m(nb.takeHome!)} in ${B}.`);
+  if (both("rent")) answer.push(`A one-bedroom home rents for about ${m(na.rent!)} a month in ${A} and ${m(nb.rent!)} in ${B}.`);
+  else if (na.rent !== null || nb.rent !== null) {
+    const [has, lacks, v] = na.rent !== null ? [A, B, na.rent] : [B, A, nb.rent!];
+    answer.push(`A one-bedroom home rents for about ${m(v)} a month in ${has}; ${lacks} has no open rent figure yet.`);
+  }
+  else {
+    // Without rent, the cost of living the page can speak to is everyday prices, set by each country's price level.
+    const pa = a.figures.find((f) => f.metric === "price_level");
+    const pb = b.figures.find((f) => f.metric === "price_level");
+    if (pa && pb && a.country.code === b.country.code) answer.push(`Neither has an open rent figure yet; everyday prices follow ${inSentence(a.country.name)}'s price level in both.`);
+    else if (pa && pb) {
+      const [lo, hi] = pa.value <= pb.value ? [pa, pb] : [pb, pa];
+      const [loC, hiC] = pa.value <= pb.value ? [a.country, b.country] : [b.country, a.country];
+      answer.push(`Neither has an open rent figure yet; everyday prices are lower in ${inSentence(loC.name)}, ${num(lo.value, 1)} against ${num(hi.value, 1)} in ${inSentence(hiC.name)} on the World Bank price level index (United States = 100).`);
+    }
+  }
+  if (both("left")) answer.push(`After tax, rent and everyday spending, about ${m(na.left!)} a month is left in ${A} and ${m(nb.left!)} in ${B}.`);
+  const days = (n: number) => (n === 0 ? "none" : `about ${num(n)}`);
+  if (both("niceDays")) answer.push(`${A} has ${days(na.niceDays!)} nice days a year (${comfort}) and ${B} ${days(nb.niceDays!)}.`);
+
+  const move = (from: string, to: string, f: PairNumbers, t: PairNumbers, fromCountry: Country, toFacts: CityFacts): string | null => {
+    const parts: string[] = [];
+    if (f.takeHome !== null && t.takeHome !== null) {
+      const d = moreLess(t.takeHome - f.takeHome, Math.max(f.takeHome, t.takeHome), currency);
+      parts.push(d === "about the same" ? "you take home about the same" : `you take home ${d} a month`);
+    }
+    if (f.rent !== null && t.rent !== null) parts.push(`a one-bedroom home costs ${moreLess(t.rent - f.rent, Math.max(f.rent, t.rent), currency)} in rent`);
+    if (f.left !== null && t.left !== null) parts.push(`you keep ${moreLess(t.left - f.left, Math.max(Math.abs(f.left), Math.abs(t.left), 1), currency)} each month after rent and spending`);
+    if (f.niceDays !== null && t.niceDays !== null) {
+      const d = t.niceDays - f.niceDays;
+      parts.push(Math.abs(d) < 3 ? "you get about as many nice days a year" : `you get about ${num(Math.abs(d))} ${d > 0 ? "more" : "fewer"} nice days a year`);
+    }
+    if (!parts.length) return null;
+    let s = `Moving from ${from} to ${to} on the same salary, ${parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts.at(-1)}` : parts[0]}.`;
+    if (fromCountry.code !== toFacts.country.code) {
+      const area = toFacts.freeMovement.find((x) => x.members.includes(fromCountry.code));
+      s += area
+        ? ` A citizen of ${inSentence(fromCountry.name)} needs no visa to live and work there (${area.name}).`
+        : ` A citizen of ${inSentence(fromCountry.name)} needs a visa or permit to live and work there.`;
+    }
+    return s;
+  };
+  const ab = move(A, B, na, nb, a.country, b);
+  const ba = move(B, A, nb, na, b.country, a);
+
+  // The description: the question, then as many of the numbers as fit whole.
+  const clauses = [
+    both("takeHome") ? `Take-home on ${fmtMoney(REFERENCE_GROSS, "EUR")} gross: ${m(na.takeHome!)} vs ${m(nb.takeHome!)} a month.` : null,
+    both("rent") ? `One-bedroom rent: ${m(na.rent!)} vs ${m(nb.rent!)}.` : null,
+    both("niceDays") ? `Nice days a year: ${num(na.niceDays!)} vs ${num(nb.niceDays!)}.` : null,
+    both("left") ? `Left after rent: ${m(na.left!)} vs ${m(nb.left!)}.` : null,
+    "Every figure sourced.",
+  ].filter((x): x is string => !!x);
+  let description = `${A} or ${B}?`;
+  for (const c of clauses) if (`${description} ${c}`.length <= 160) description += ` ${c}`;
+
+  return { currency, salary, a: na, b: nb, answer, moving: ab && ba ? [ab, ba] : null, description };
 }
 
 /** Questions the page truly answers, each from a figure shown on it. */
@@ -515,8 +644,6 @@ function compareQa(data: Dataset, a: CityFacts, b: CityFacts, ra: CityResult, rb
   }
   const na = ra.money.net;
   const nb = rb.money.net;
-  // Only figures that hold every tax due are set side by side: a partial one would look like an advantage.
-  const whole = (c: Completeness) => c.status === "complete" || c.status === "approximate";
   if (na !== null && nb !== null && a.takeHome && b.takeHome && whole(ra.money.tax?.completeness ?? a.takeHome.completeness) && whole(rb.money.tax?.completeness ?? b.takeHome.completeness)) {
     const ga = ra.money.gross!;
     out.push({

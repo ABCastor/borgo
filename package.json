@@ -60,7 +60,7 @@
     "build:npm": "node scripts/build-npm.ts",
     "smoke:npm": "node scripts/smoke-npm.js",
     "dev": "node scripts/build.ts --serve",
-    "deploy": "node scripts/build.ts && npx --yes wrangler@4.158.0 deploy && node scripts/indexnow.ts",
+    "deploy": "node scripts/build.ts && node scripts/indexnow.ts --save-live --previous build/live-sitemap.xml && npx --yes wrangler@4.158.0 deploy && node scripts/indexnow.ts --previous build/live-sitemap.xml",
     "mcp": "node src/mcp/stdio.ts",
     "cli": "node bin/borgo.ts",
     "probe:site": "node scripts/probe-site.ts 390",

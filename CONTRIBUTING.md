@@ -124,4 +124,6 @@ node pipeline/build-data.ts
 node scripts/build.ts
 ```
 
+`node scripts/build.ts` updates `data/page-dates.json` when a page's content changes: it holds the day each page last changed, which the sitemap gives search engines as `lastmod`. Commit it with the change.
+
 A tax module comes with worked examples in `test/`; every figure it adds has a source and a licence.
