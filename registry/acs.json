@@ -33,6 +33,7 @@
       "definition": "Share of workers who commute (working from home left out) who walked or cycled to work (table B08301)."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "US"

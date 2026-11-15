@@ -1,6 +1,6 @@
 {
   "version": "2026-11-15",
-  "builtAt": "2026-11-15T01:42:53.560Z",
+  "builtAt": "2026-11-15T02:40:08.441Z",
   "cities": [
     {
       "id": "turin-it",
@@ -2305,7 +2305,8 @@
       "url": "https://www.census.gov/programs-surveys/acs/data/summary-file.html",
       "licence": "Public domain (US government work)",
       "redistributable": true,
-      "licenceUrl": "https://www.census.gov/about/policies/citation.html"
+      "licenceUrl": "https://www.census.gov/about/policies/citation.html",
+      "tenancies": "all"
     },
     "at-mikrozensus": {
       "id": "at-mikrozensus",
@@ -2314,7 +2315,8 @@
       "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/wohnen/wohnkosten",
       "licence": "StatAustria-reuse",
       "redistributable": true,
-      "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum"
+      "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+      "tenancies": "all"
     },
     "bls-oews": {
       "id": "bls-oews",
@@ -2341,7 +2343,8 @@
       "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85950NED/table",
       "licence": "CC-BY-4.0",
       "redistributable": true,
-      "licenceUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright"
+      "licenceUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+      "tenancies": "all"
     },
     "ch-afmp": {
       "id": "ch-afmp",
@@ -2359,7 +2362,8 @@
       "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/construction-housing/dwellings/rented-dwellings.html",
       "licence": "opendata-swiss-BY",
       "redistributable": true,
-      "licenceUrl": "https://opendata.swiss/en/terms-of-use"
+      "licenceUrl": "https://opendata.swiss/en/terms-of-use",
+      "tenancies": "all"
     },
     "cldr": {
       "id": "cldr",
@@ -2377,7 +2381,8 @@
       "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301",
       "licence": "CMHC Licence Agreement for the Use of Data (not CC BY)",
       "redistributable": true,
-      "licenceUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions"
+      "licenceUrl": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions",
+      "tenancies": "all"
     },
     "copenhagenize": {
       "id": "copenhagenize",
@@ -2411,7 +2416,8 @@
       "url": "https://data.cso.ie/table/RIA02",
       "licence": "CC-BY-4.0",
       "redistributable": true,
-      "licenceUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report"
+      "licenceUrl": "https://data.gov.ie/dataset/ria02-rtb-average-monthly-rent-report",
+      "tenancies": "new"
     },
     "cta": {
       "id": "cta",
@@ -2429,7 +2435,8 @@
       "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009",
       "licence": "DL-DE-BY-2.0",
       "redistributable": true,
-      "licenceUrl": "https://www.govdata.de/dl-de/by-2-0"
+      "licenceUrl": "https://www.govdata.de/dl-de/by-2-0",
+      "tenancies": "all"
     },
     "dealroom": {
       "id": "dealroom",
@@ -2463,7 +2470,8 @@
       "url": "https://www.mivau.gob.es/vivienda/alquila-bien-es-tu-derecho/serpavi",
       "licence": "ES-reuse",
       "redistributable": true,
-      "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal"
+      "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+      "tenancies": "all"
     },
     "eu-free-movement": {
       "id": "eu-free-movement",
@@ -2525,7 +2533,8 @@
       "url": "https://www.data.gouv.fr/datasets/carte-des-loyers-indicateurs-de-loyers-dannonce-par-commune-en-2025",
       "licence": "Licence Ouverte 2.0 (Etalab)",
       "redistributable": true,
-      "licenceUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/"
+      "licenceUrl": "https://www.etalab.gouv.fr/licence-ouverte-open-licence/",
+      "tenancies": "new"
     },
     "geonames": {
       "id": "geonames",
@@ -2578,6 +2587,26 @@
       "url": "https://www.iqair.com/",
       "licence": "Proprietary",
       "redistributable": false
+    },
+    "it-omi-locazioni": {
+      "id": "it-omi-locazioni",
+      "name": "OMI residential leases by municipality",
+      "publisher": "Agenzia delle Entrate, Osservatorio del Mercato Immobiliare (OMI)",
+      "url": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+      "licence": "AdE-OMI",
+      "redistributable": true,
+      "licenceUrl": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+      "tenancies": "new"
+    },
+    "jp-estat-housing": {
+      "id": "jp-estat-housing",
+      "name": "Housing and Land Survey 2023, rent of private rented homes by floor area",
+      "publisher": "Statistics Bureau of Japan (e-Stat)",
+      "url": "https://www.e-stat.go.jp/dbview?sid=0004021532",
+      "licence": "CC-BY-4.0",
+      "redistributable": true,
+      "licenceUrl": "https://www.e-stat.go.jp/en/terms-of-use",
+      "tenancies": "all"
     },
     "labour-law": {
       "id": "labour-law",
@@ -2656,7 +2685,8 @@
       "url": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
       "licence": "CC-BY-4.0",
       "redistributable": true,
-      "licenceUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html"
+      "licenceUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+      "tenancies": "new"
     },
     "numbeo-qol": {
       "id": "numbeo-qol",
@@ -2718,7 +2748,8 @@
       "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics",
       "licence": "OGL-UK-3.0",
       "redistributable": true,
-      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "tenancies": "all"
     },
     "open-meteo-cams": {
       "id": "open-meteo-cams",
@@ -2808,7 +2839,8 @@
       "url": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
       "licence": "CC-BY-4.0",
       "redistributable": true,
-      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "tenancies": "new"
     },
     "ror": {
       "id": "ror",
@@ -2826,7 +2858,8 @@
       "url": "https://www.statistikdatabasen.scb.se/pxweb/en/ssd/START__BO__BO0406__BO0406E/BO0406Tab03/",
       "licence": "CC0-1.0",
       "redistributable": true,
-      "licenceUrl": "https://www.scb.se/en/services/open-data-api/"
+      "licenceUrl": "https://www.scb.se/en/services/open-data-api/",
+      "tenancies": "all"
     },
     "scot-prs": {
       "id": "scot-prs",
@@ -2835,7 +2868,8 @@
       "url": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
       "licence": "OGL-UK-3.0",
       "redistributable": true,
-      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "tenancies": "new"
     },
     "sg-ura-rentals": {
       "id": "sg-ura-rentals",
@@ -2844,7 +2878,8 @@
       "url": "https://data.gov.sg/datasets/d_149ac00a2734bb0a03867bbe2ec0e7b0/view",
       "licence": "SG-ODL-1.0",
       "redistributable": true,
-      "licenceUrl": "https://data.gov.sg/open-data-licence"
+      "licenceUrl": "https://data.gov.sg/open-data-licence",
+      "tenancies": "new"
     },
     "ssb-rent": {
       "id": "ssb-rent",
@@ -2853,7 +2888,8 @@
       "url": "https://www.ssb.no/en/statbank/table/09895",
       "licence": "CC-BY-4.0",
       "redistributable": true,
-      "licenceUrl": "https://www.ssb.no/en/diverse/lisens"
+      "licenceUrl": "https://www.ssb.no/en/diverse/lisens",
+      "tenancies": "all"
     },
     "startup-genome": {
       "id": "startup-genome",
@@ -2879,7 +2915,8 @@
       "url": "https://pxdata.stat.fi/PxWeb/pxweb/en/StatFin/StatFin__asvu/statfin_asvu_pxt_15fc.px/",
       "licence": "CC-BY-4.0",
       "redistributable": true,
-      "licenceUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html"
+      "licenceUrl": "https://stat.fi/org/lainsaadanto/copyright_en.html",
+      "tenancies": "all"
     },
     "terrain-tiles": {
       "id": "terrain-tiles",
@@ -2898,6 +2935,16 @@
       "licence": "Borgo's summary of the official text (CC BY 4.0)",
       "redistributable": true,
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "vic-rental-report": {
+      "id": "vic-rental-report",
+      "name": "Victorian Rental Report, quarterly median rents by local government area",
+      "publisher": "Victorian Department of Families, Fairness and Housing",
+      "url": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+      "licence": "CC-BY-4.0",
+      "redistributable": true,
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "tenancies": "new"
     },
     "weatherspark": {
       "id": "weatherspark",
@@ -141353,6 +141400,24 @@
         "note": "63,481 accounts whose location names \"Tokyo\", over 9,733,276 residents"
       },
       {
+        "metric": "rent_1bed",
+        "value": 105273,
+        "period": "2023-10",
+        "level": "city",
+        "source": "jp-estat-housing",
+        "retrieved": "2026-11-15",
+        "note": "Tokyo's 23 special wards, average monthly rent of privately rented homes of 30-49 m² (used only for living, homes let for nothing left out), 2023 Housing and Land Survey, e-Stat table 0004021532: every tenancy, however long ago it began"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 168226,
+        "period": "2023-10",
+        "level": "city",
+        "source": "jp-estat-housing",
+        "retrieved": "2026-11-15",
+        "note": "Tokyo's 23 special wards, average monthly rent of privately rented homes of 70-99 m² (used only for living, homes let for nothing left out), 2023 Housing and Land Survey, e-Stat table 0004021532: every tenancy, however long ago it began"
+      },
+      {
         "metric": "annual_leave",
         "value": 10,
         "period": "2026",
@@ -148545,6 +148610,24 @@
         "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 2513,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "vic-rental-report",
+        "retrieved": "2026-11-15",
+        "note": "City of Melbourne (local government area), median weekly rent of 1 bedroom flats in new bonds lodged in the Jun 2026 quarter: A$580 a week (2152 bonds), × 52 / 12"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 4333,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "vic-rental-report",
+        "retrieved": "2026-11-15",
+        "note": "City of Melbourne (local government area), median weekly rent of 3 bedroom flats in new bonds lodged in the Jun 2026 quarter: A$1000 a week (342 bonds), × 52 / 12"
+      },
+      {
         "metric": "pay_software",
         "value": 143494,
         "period": "2026",
@@ -151338,6 +151421,18 @@
       "sources": [
         "cmhc-rms"
       ]
+    },
+    {
+      "part": "omi",
+      "file": "data/dataset-omi.json",
+      "licence": {
+        "id": "AdE-OMI",
+        "name": "Agenzia delle Entrate OMI terms",
+        "url": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali"
+      },
+      "sources": [
+        "it-omi-locazioni"
+      ]
     }
   ],
   "lazy": [
@@ -151350,7 +151445,7 @@
     }
   ],
   "manifest": {
-    "builtAt": "2026-11-15T01:42:53.560Z",
+    "builtAt": "2026-11-15T02:40:08.441Z",
     "parts": [
       {
         "id": "open",
@@ -151395,6 +151490,17 @@
           "url": "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions"
         },
         "notice": "Source: Canada Mortgage and Housing Corporation (CMHC), Rental Market Survey, average rents (October), via Statistics Canada table 34-10-0133-01. This information is reproduced and distributed on an \"as is\" basis with the permission of CMHC. Not licensed CC BY: it is redistributed under CMHC's Licence Agreement for the Use of Data, and anyone receiving it agrees to be bound by those terms."
+      },
+      {
+        "id": "omi",
+        "folder": "data/observations-omi",
+        "file": "data/dataset-omi.json",
+        "licence": {
+          "id": "AdE-OMI",
+          "name": "Agenzia delle Entrate OMI terms",
+          "url": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali"
+        },
+        "notice": "Fonte: Agenzia delle Entrate – OMI (Osservatorio del Mercato Immobiliare), Rapporto Immobiliare residenziale, annex of residential leases registered by municipality; rents per m² computed by Borgo from its totals. The Agenzia's terms allow use and processing with the source cited, and forbid selling, renting, transferring or assigning the data. Not licensed CC BY."
       }
     ],
     "sources": [
@@ -152202,6 +152308,58 @@
         "provides": []
       },
       {
+        "source": "it-omi-locazioni",
+        "name": "OMI residential leases by municipality",
+        "publisher": "Agenzia delle Entrate, Osservatorio del Mercato Immobiliare (OMI)",
+        "url": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+        "edition": "Rapporto Immobiliare 2026, residential leases annex (2018-2025), published 21 May 2026",
+        "licenceId": "AdE-OMI",
+        "licence": "Agenzia delle Entrate OMI terms: use and processing allowed with the source cited; the data may not be sold, rented, transferred or assigned",
+        "licenceUrl": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+        "termsUrl": "https://www.agenziaentrate.gov.it/portale/documents/20143/263076/RI2026_Residenziale20260521.pdf",
+        "termsRead": "2026-11-15",
+        "attribution": "Fonte: Agenzia delle Entrate – OMI",
+        "notices": [],
+        "part": "omi",
+        "file": "data/dataset-omi.json",
+        "observations": 12,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
+        "source": "jp-estat-housing",
+        "name": "Housing and Land Survey 2023, rent of private rented homes by floor area",
+        "publisher": "Statistics Bureau of Japan (e-Stat)",
+        "url": "https://www.e-stat.go.jp/dbview?sid=0004021532",
+        "edition": "2023 Housing and Land Survey, basic tabulation, table 0004021532",
+        "licenceId": "CC-BY-4.0",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "termsUrl": "https://www.e-stat.go.jp/en/terms-of-use",
+        "termsRead": "2026-11-15",
+        "attribution": "Source: Statistics Bureau of Japan, 2023 Housing and Land Survey (e-Stat), processed by Borgo",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
         "source": "labour-law",
         "name": "Paid holiday by law, from the labour codes cited",
         "publisher": "Borgo contributors",
@@ -152994,6 +153152,32 @@
         "provides": [
           "residence rules (Trans-Tasman Travel Arrangement)"
         ]
+      },
+      {
+        "source": "vic-rental-report",
+        "name": "Victorian Rental Report, quarterly median rents by local government area",
+        "publisher": "Victorian Department of Families, Fairness and Housing",
+        "url": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+        "edition": "Quarterly median rents by LGA, June quarter 2026",
+        "licenceId": "CC-BY-4.0",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "termsUrl": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+        "termsRead": "2026-11-15",
+        "attribution": "© State of Victoria (Department of Families, Fairness and Housing), Rental Report, CC BY 4.0",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
       },
       {
         "source": "who-aqdb",

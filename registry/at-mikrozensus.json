@@ -13,6 +13,7 @@
       "definition": "Average monthly rent per m² of every main tenancy in the province, service charges included, times 90 m²."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "AT"

@@ -13,6 +13,7 @@
       "definition": "Sitting rent: the median annual rent of every rented dwelling of 4 rooms or more (three bedrooms or more) in Stockholm municipality, divided by 12."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "SE"

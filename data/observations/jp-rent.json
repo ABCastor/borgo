@@ -1,0 +1,26 @@
+{
+  "source": "jp-estat-housing",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "tokyo-jp": [
+      {
+        "metric": "rent_1bed",
+        "value": 105273,
+        "period": "2023-10",
+        "level": "city",
+        "source": "jp-estat-housing",
+        "retrieved": "2026-11-15",
+        "note": "Tokyo's 23 special wards, average monthly rent of privately rented homes of 30-49 m² (used only for living, homes let for nothing left out), 2023 Housing and Land Survey, e-Stat table 0004021532: every tenancy, however long ago it began"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 168226,
+        "period": "2023-10",
+        "level": "city",
+        "source": "jp-estat-housing",
+        "retrieved": "2026-11-15",
+        "note": "Tokyo's 23 special wards, average monthly rent of privately rented homes of 70-99 m² (used only for living, homes let for nothing left out), 2023 Housing and Land Survey, e-Stat table 0004021532: every tenancy, however long ago it began"
+      }
+    ]
+  }
+}

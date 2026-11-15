@@ -13,6 +13,7 @@
       "definition": "Average monthly private rent of a three-bedroom home in the local authority."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "GB"

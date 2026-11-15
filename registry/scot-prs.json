@@ -13,6 +13,7 @@
       "definition": "Mean monthly rent of three-bedroom homes in the Broad Rental Market Area over the year to September, mostly advertised rents of homes let that year."
     }
   ],
+  "tenancies": "new",
   "coverage": {
     "geography": [
       "GB-SCT"

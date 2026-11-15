@@ -1,0 +1,59 @@
+{
+  "id": "jp-estat-housing",
+  "name": "Housing and Land Survey 2023, rent of private rented homes by floor area",
+  "publisher": "Statistics Bureau of Japan (e-Stat)",
+  "homepage": "https://www.e-stat.go.jp/dbview?sid=0004021532",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average monthly rent of privately rented homes used only for living, of 30-49 m², in the area, leaving out homes let for nothing (every tenancy), October 2023."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average monthly rent of privately rented homes used only for living, of 70-99 m², in the area, leaving out homes let for nothing (every tenancy), October 2023."
+    }
+  ],
+  "tenancies": "all",
+  "coverage": {
+    "geography": [
+      "JP"
+    ],
+    "level": "city",
+    "period": "2023-10"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://www.e-stat.go.jp/en/terms-of-use",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "2023 Housing and Land Survey, basic tabulation, table 0004021532",
+    "termsUrl": "https://www.e-stat.go.jp/en/terms-of-use",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Statistics Bureau of Japan, 2023 Housing and Land Survey (e-Stat), processed by Borgo"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.e-stat.go.jp/dbview/api_get_result?sid=0004021532",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/jp-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 2000
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official survey every five years. e-Stat's terms of use are the Government of Japan Standard Terms of Use 2.0, which state they are compatible with CC BY 4.0, so the content may be used under CC BY 4.0 instead. Read through e-Stat's table viewer, which needs no key."
+  },
+  "caveats": [
+    "Every tenancy, however long ago it began: newcomers usually pay more.",
+    "The 23 special wards as a whole; central wards cost more."
+  ]
+}

@@ -1,6 +1,6 @@
 {
  "/": {
-  "hash": "125002b937d581e3",
+  "hash": "1b82c20e91ff8aef",
   "lastmod": "2026-11-15"
  },
  "/cities/": {
@@ -8,7 +8,7 @@
   "lastmod": "2026-11-15"
  },
  "/city/amsterdam-nl/": {
-  "hash": "9278ca68c4f53668",
+  "hash": "f801cf53ec24d3ca",
   "lastmod": "2026-11-15"
  },
  "/city/athens-gr/": {
@@ -16,27 +16,27 @@
   "lastmod": "2026-11-15"
  },
  "/city/austin-us/": {
-  "hash": "dbb73c0a657328bd",
+  "hash": "a4ae093c9ccf0790",
   "lastmod": "2026-11-15"
  },
  "/city/barcelona-es/": {
-  "hash": "92e0ae2f614aa361",
+  "hash": "e1dc18a8724f80e0",
   "lastmod": "2026-11-15"
  },
  "/city/berlin-de/": {
-  "hash": "d981b984f27a9c4b",
+  "hash": "e7b20daa458d17e1",
   "lastmod": "2026-11-15"
  },
  "/city/bologna-it/": {
-  "hash": "eebdb4c96b735d2f",
+  "hash": "a562db6c972da7df",
   "lastmod": "2026-11-15"
  },
  "/city/boston-us/": {
-  "hash": "ab5a527b0f5b6c8e",
+  "hash": "c0f00be144322137",
   "lastmod": "2026-11-15"
  },
  "/city/bristol-gb/": {
-  "hash": "2581edbcd0a055ec",
+  "hash": "a4acecba33733faa",
   "lastmod": "2026-11-15"
  },
  "/city/brussels-be/": {
@@ -48,11 +48,11 @@
   "lastmod": "2026-11-15"
  },
  "/city/cambridge-gb/": {
-  "hash": "84e89c8b80050cf8",
+  "hash": "7e93f35c8b1ba971",
   "lastmod": "2026-11-15"
  },
  "/city/chicago-us/": {
-  "hash": "c6e46b4ce285dbbc",
+  "hash": "2b0e3d25d88e2392",
   "lastmod": "2026-11-15"
  },
  "/city/copenhagen-dk/": {
@@ -64,7 +64,7 @@
   "lastmod": "2026-11-15"
  },
  "/city/denver-us/": {
-  "hash": "f59cfc863588d6ca",
+  "hash": "cdb1e708ed2da917",
   "lastmod": "2026-11-15"
  },
  "/city/dubai-ae/": {
@@ -80,19 +80,19 @@
   "lastmod": "2026-11-15"
  },
  "/city/florence-it/": {
-  "hash": "7f41883f9c771746",
+  "hash": "43177ac2d4b67f71",
   "lastmod": "2026-11-15"
  },
  "/city/geneva-ch/": {
-  "hash": "d805b9efd202493b",
+  "hash": "7ddba05fad4c86bf",
   "lastmod": "2026-11-15"
  },
  "/city/hamburg-de/": {
-  "hash": "736376910d84e796",
+  "hash": "eafbffe56fc95bd4",
   "lastmod": "2026-11-15"
  },
  "/city/helsinki-fi/": {
-  "hash": "03eefea564430e04",
+  "hash": "6e39e55a220cbb2e",
   "lastmod": "2026-11-15"
  },
  "/city/krakow-pl/": {
@@ -104,11 +104,11 @@
   "lastmod": "2026-11-15"
  },
  "/city/london-gb/": {
-  "hash": "53182028262bd6dd",
+  "hash": "087139e71fefce92",
   "lastmod": "2026-11-15"
  },
  "/city/los-angeles-us/": {
-  "hash": "49976a541dc3ae72",
+  "hash": "dcd5c10cef546103",
   "lastmod": "2026-11-15"
  },
  "/city/lyon-fr/": {
@@ -116,47 +116,47 @@
   "lastmod": "2026-11-15"
  },
  "/city/madrid-es/": {
-  "hash": "b657968626d85b13",
+  "hash": "8670ac85e15ae3a0",
   "lastmod": "2026-11-15"
  },
  "/city/malaga-es/": {
-  "hash": "1c08248b0e83c6ff",
+  "hash": "944d93fd63d3181a",
   "lastmod": "2026-11-15"
  },
  "/city/manchester-gb/": {
-  "hash": "3893b7b77176f2fa",
+  "hash": "5634faa4fddb0de2",
   "lastmod": "2026-11-15"
  },
  "/city/melbourne-au/": {
-  "hash": "94c9792f80fffe7a",
+  "hash": "adc3dba25831f9ba",
   "lastmod": "2026-11-15"
  },
  "/city/miami-us/": {
-  "hash": "2456005ac138043a",
+  "hash": "182789f5468133b4",
   "lastmod": "2026-11-15"
  },
  "/city/milan-it/": {
-  "hash": "ddf5a9bae9b0c568",
+  "hash": "d3dfdfd75b6e80d7",
   "lastmod": "2026-11-15"
  },
  "/city/montreal-ca/": {
-  "hash": "d70fa3691e2bc6ba",
+  "hash": "a96db5a80af3d015",
   "lastmod": "2026-11-15"
  },
  "/city/munich-de/": {
-  "hash": "3f321ae8904333f2",
+  "hash": "ceca1269cc059989",
   "lastmod": "2026-11-15"
  },
  "/city/naples-it/": {
-  "hash": "16b440ef3141d31a",
+  "hash": "beb2a26273f01808",
   "lastmod": "2026-11-15"
  },
  "/city/new-york-us/": {
-  "hash": "678be7756a912b9e",
+  "hash": "124aeed2b5c6e2b0",
   "lastmod": "2026-11-15"
  },
  "/city/oslo-no/": {
-  "hash": "7760aa3c10c2e3e2",
+  "hash": "bc3ce083cc785c6e",
   "lastmod": "2026-11-15"
  },
  "/city/paris-fr/": {
@@ -172,19 +172,19 @@
   "lastmod": "2026-11-15"
  },
  "/city/rome-it/": {
-  "hash": "84d364562c55a271",
+  "hash": "51ab5751c3106149",
   "lastmod": "2026-11-15"
  },
  "/city/rotterdam-nl/": {
-  "hash": "2aa3a00c0c26b2f9",
+  "hash": "010ce45a7709bde6",
   "lastmod": "2026-11-15"
  },
  "/city/san-francisco-us/": {
-  "hash": "bbb6dffaf112beed",
+  "hash": "fe8c86dd4f5a8cfa",
   "lastmod": "2026-11-15"
  },
  "/city/seattle-us/": {
-  "hash": "ae1b8c0882e8f541",
+  "hash": "a5cb334aa1e9316d",
   "lastmod": "2026-11-15"
  },
  "/city/singapore-sg/": {
@@ -192,7 +192,7 @@
   "lastmod": "2026-11-15"
  },
  "/city/stockholm-se/": {
-  "hash": "18ff1a4e604104ce",
+  "hash": "84f687693370c443",
   "lastmod": "2026-11-15"
  },
  "/city/sydney-au/": {
@@ -204,27 +204,27 @@
   "lastmod": "2026-11-15"
  },
  "/city/tokyo-jp/": {
-  "hash": "8db869c82b8e9761",
+  "hash": "181040ed76bbd464",
   "lastmod": "2026-11-15"
  },
  "/city/toronto-ca/": {
-  "hash": "b255bd79911542fc",
+  "hash": "33f348b7a6460b60",
   "lastmod": "2026-11-15"
  },
  "/city/turin-it/": {
-  "hash": "452fe1c3ce4004e2",
+  "hash": "7f09fd9fdd0492fe",
   "lastmod": "2026-11-15"
  },
  "/city/valencia-es/": {
-  "hash": "7a583dc5124e682d",
+  "hash": "c5d6b6d78f3469e4",
   "lastmod": "2026-11-15"
  },
  "/city/vancouver-ca/": {
-  "hash": "7dc9f43789eaebee",
+  "hash": "b7bdd38c4351ecad",
   "lastmod": "2026-11-15"
  },
  "/city/vienna-at/": {
-  "hash": "c90df1fd19d887d1",
+  "hash": "5d9d2bbfc606227b",
   "lastmod": "2026-11-15"
  },
  "/city/warsaw-pl/": {
@@ -232,7 +232,7 @@
   "lastmod": "2026-11-15"
  },
  "/city/zurich-ch/": {
-  "hash": "d8ab207a0aac274f",
+  "hash": "6eb5d4d5197e3e75",
   "lastmod": "2026-11-15"
  },
  "/compare/": {
@@ -240,59 +240,59 @@
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-athens-gr/": {
-  "hash": "22298875c6a4d016",
+  "hash": "9ad94d6efb970de2",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-berlin-de/": {
-  "hash": "1b918f97b04d099b",
+  "hash": "b545f0c3b5e07c2c",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-brussels-be/": {
-  "hash": "f7b5652fc907e44c",
+  "hash": "e4e1cb7f40323065",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-cambridge-gb/": {
-  "hash": "49a331b173c67e8c",
+  "hash": "0607f7d7ec1a32ba",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-copenhagen-dk/": {
-  "hash": "f2221f556bc79781",
+  "hash": "113752a3c51d06dc",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-hamburg-de/": {
-  "hash": "7afbea460baad0d9",
+  "hash": "11f0be45ca2ca8af",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-helsinki-fi/": {
-  "hash": "19dd18b93c39f8d7",
+  "hash": "ba37d4870708e25e",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-krakow-pl/": {
-  "hash": "e2b629dacd1aeace",
+  "hash": "c7247758204637e4",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-london-gb/": {
-  "hash": "ff58c7cf13e6a098",
+  "hash": "89681e00f8ea234c",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-madrid-es/": {
-  "hash": "7369fd5cda8e76fa",
+  "hash": "8692894cb188e56a",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-rome-it/": {
-  "hash": "fdbbfaa6e5755ac1",
+  "hash": "021e41a54b92f553",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-rotterdam-nl/": {
-  "hash": "ad582ffab8d0572e",
+  "hash": "e30d21fe2f8e7ef8",
   "lastmod": "2026-11-15"
  },
  "/compare/amsterdam-nl-vs-valencia-es/": {
-  "hash": "4ec20022506dc40e",
+  "hash": "4e9914768cd17937",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-bologna-it/": {
-  "hash": "670c172275071175",
+  "hash": "6ffb9b2f51b12e37",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-budapest-hu/": {
@@ -304,27 +304,27 @@
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-florence-it/": {
-  "hash": "3facccbd4817e1dd",
+  "hash": "992fc3bd16209e39",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-helsinki-fi/": {
-  "hash": "93f0f25f86973982",
+  "hash": "582696a7f520df12",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-malaga-es/": {
-  "hash": "739f2115f5a7f01f",
+  "hash": "1073b4109d63fab7",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-munich-de/": {
-  "hash": "4a1fc0a096a9bd0f",
+  "hash": "a0e1f92e2a5dcbfb",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-naples-it/": {
-  "hash": "36c3cdd4517c2743",
+  "hash": "f258f96ac8cd00f0",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-rome-it/": {
-  "hash": "981b23c25956c180",
+  "hash": "1a6f3a24e87d0cd7",
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-singapore-sg/": {
@@ -332,355 +332,355 @@
   "lastmod": "2026-11-15"
  },
  "/compare/athens-gr-vs-vienna-at/": {
-  "hash": "78d8426e61add7c4",
+  "hash": "3deb5905f9b97839",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-boston-us/": {
-  "hash": "ef4938a42e73d584",
+  "hash": "7f56df04b85ba275",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-chicago-us/": {
-  "hash": "3debf4aaa462430b",
+  "hash": "f61a4239bd76548b",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-denver-us/": {
-  "hash": "eef1a4e3b3c913f7",
+  "hash": "cf2b9bc6bd552cc4",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-los-angeles-us/": {
-  "hash": "267bd264a20a5a01",
+  "hash": "132f76325a39204a",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-miami-us/": {
-  "hash": "a42188bbc2df7288",
+  "hash": "e36d6612c941053c",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-new-york-us/": {
-  "hash": "db76c1009a8400c0",
+  "hash": "ef7c101854563413",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-san-francisco-us/": {
-  "hash": "623b0d71ab0587c2",
+  "hash": "b67d76834f2047c4",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-seattle-us/": {
-  "hash": "c56b2f2c87c79152",
+  "hash": "8bcecf863e428a06",
   "lastmod": "2026-11-15"
  },
  "/compare/austin-us-vs-toronto-ca/": {
-  "hash": "c7105ddb33831edf",
+  "hash": "9acda5f9546ebc5c",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-budapest-hu/": {
-  "hash": "0c199bf7b3878a9c",
+  "hash": "093bd5be8347be6c",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-geneva-ch/": {
-  "hash": "aed314f03a5cc329",
+  "hash": "b78073d08956121a",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-lisbon-pt/": {
-  "hash": "dcd95c1e91d9bd9b",
+  "hash": "68b74187a3251d9f",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-london-gb/": {
-  "hash": "f591869ba689fb95",
+  "hash": "aba4699c9573b942",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-lyon-fr/": {
-  "hash": "10402a15218a01ef",
+  "hash": "de3a6adb6980962f",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-madrid-es/": {
-  "hash": "0fef3a10859c0769",
+  "hash": "a59eb8ed2922ecd7",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-malaga-es/": {
-  "hash": "19d92a13e2399326",
+  "hash": "539ce97e2213f52e",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-munich-de/": {
-  "hash": "aa4b8369cc0e3f32",
+  "hash": "be5d478cc9c43337",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-paris-fr/": {
-  "hash": "2b87dd4ae626b867",
+  "hash": "27ce5d026471537e",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-porto-pt/": {
-  "hash": "299686eb4867ded0",
+  "hash": "7aaa960ccb277ca0",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-rome-it/": {
-  "hash": "2a8d29337dbc0248",
+  "hash": "270f81b92f41d91f",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-stockholm-se/": {
-  "hash": "c40e8bdb120ce126",
+  "hash": "9c65af71e8c972f0",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-turin-it/": {
-  "hash": "ec554fca43215675",
+  "hash": "8e2b869d0aef5430",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-valencia-es/": {
-  "hash": "106e32d65cf9163a",
+  "hash": "c6aa06dc2728a2d3",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-vienna-at/": {
-  "hash": "85a775e2aa2d1a3e",
+  "hash": "fcf85e2dd570c281",
   "lastmod": "2026-11-15"
  },
  "/compare/barcelona-es-vs-warsaw-pl/": {
-  "hash": "d41003f9b8e98b97",
+  "hash": "27d6eac70eee7891",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-bologna-it/": {
-  "hash": "fe301911beecb7d9",
+  "hash": "522735d1cfab79da",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-bristol-gb/": {
-  "hash": "692990376deac243",
+  "hash": "2771a317c3464de5",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-brussels-be/": {
-  "hash": "0432f5135de05a46",
+  "hash": "e7ad83beb4c2f6e6",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-budapest-hu/": {
-  "hash": "4966778d514dc02c",
+  "hash": "b94166e4650cf4e7",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-cambridge-gb/": {
-  "hash": "4ec3d22827c3ed87",
+  "hash": "d100a22d0cf7af35",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-copenhagen-dk/": {
-  "hash": "8e686e7ae6967a44",
+  "hash": "b855a8060fae6e82",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-cork-ie/": {
-  "hash": "483633a10118f6b0",
+  "hash": "db8a7ab059b34d3c",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-dublin-ie/": {
-  "hash": "75252584c0e3deae",
+  "hash": "82c17bf7c6ba7e6e",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-edinburgh-gb/": {
-  "hash": "2f5aa4228d505456",
+  "hash": "f9a859541a428d76",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-florence-it/": {
-  "hash": "c9d972e814ba8231",
+  "hash": "9416c75ccfc41b02",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-geneva-ch/": {
-  "hash": "dddccf78a0823015",
+  "hash": "0d7215737369885f",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-hamburg-de/": {
-  "hash": "4f64b15be5550478",
+  "hash": "65068005c2e9c6e3",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-helsinki-fi/": {
-  "hash": "f84afcb00771cf70",
+  "hash": "22d6c2f9265692d9",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-krakow-pl/": {
-  "hash": "64ea5e922bc5aff7",
+  "hash": "dcb57769b9e42adc",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-london-gb/": {
-  "hash": "4ee8b7b7f069bb1b",
+  "hash": "198885d8e1e461ef",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-lyon-fr/": {
-  "hash": "33864f208507fe3a",
+  "hash": "e370683f0103581d",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-madrid-es/": {
-  "hash": "b8d142f2b3aaabbf",
+  "hash": "e853c64cb11d3945",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-manchester-gb/": {
-  "hash": "180a3cd8c4a24610",
+  "hash": "4850391c93910cb8",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-milan-it/": {
-  "hash": "a777a572b82dabd1",
+  "hash": "5b8b3e41bac2d575",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-munich-de/": {
-  "hash": "ccdd1311458cc64b",
+  "hash": "75e2f76213136eb0",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-naples-it/": {
-  "hash": "5ddfd6bd92a67926",
+  "hash": "1dd096f05301bb22",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-oslo-no/": {
-  "hash": "67d578155f7fbbf8",
+  "hash": "c6615aa7087586ea",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-paris-fr/": {
-  "hash": "59472f3956d0419b",
+  "hash": "fd65a6ccb43201cb",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-prague-cz/": {
-  "hash": "bba0e7adb8a5245c",
+  "hash": "f74ec5c80058f6e3",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-rome-it/": {
-  "hash": "58a2fa2f6d058cd4",
+  "hash": "3445ad914150c506",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-rotterdam-nl/": {
-  "hash": "22048787a2791f88",
+  "hash": "386b40484ccd9c7f",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-stockholm-se/": {
-  "hash": "947675daf18a5066",
+  "hash": "ae99d2adcc56d714",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-tallinn-ee/": {
-  "hash": "cf70323ff809d18b",
+  "hash": "ce9cda97a339261c",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-turin-it/": {
-  "hash": "a99aabaf6c7ea38d",
+  "hash": "0b05bf056403aab1",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-vienna-at/": {
-  "hash": "a29ad720ea22c067",
+  "hash": "57efb186da48658b",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-warsaw-pl/": {
-  "hash": "6b60f48e243fe51a",
+  "hash": "98acb1cf99fb5f1c",
   "lastmod": "2026-11-15"
  },
  "/compare/berlin-de-vs-zurich-ch/": {
-  "hash": "7621de3fc410ad94",
+  "hash": "3ad94e3b82154bf8",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-florence-it/": {
-  "hash": "8d23c62b739a7531",
+  "hash": "58c5f3d3dc9994b9",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-london-gb/": {
-  "hash": "98887d7acda80deb",
+  "hash": "e1961a088e902420",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-madrid-es/": {
-  "hash": "b6bfe4034c8df26a",
+  "hash": "186a09ba933b8ff5",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-milan-it/": {
-  "hash": "351841a9cc9c66e2",
+  "hash": "40120bd4649f9382",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-munich-de/": {
-  "hash": "6c6f3ebabd5aa2a2",
+  "hash": "683de686d99e4a29",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-naples-it/": {
-  "hash": "c424a505d6f38d1b",
+  "hash": "e5ae63066a436bd6",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-rome-it/": {
-  "hash": "82869cfca87cc859",
+  "hash": "fa4b998c3b5f32ce",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-tallinn-ee/": {
-  "hash": "58ef31276b3e1277",
+  "hash": "5e7bb556cc37af98",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-turin-it/": {
-  "hash": "d00f11f3d7ad7463",
+  "hash": "d672335084bc9b36",
   "lastmod": "2026-11-15"
  },
  "/compare/bologna-it-vs-zurich-ch/": {
-  "hash": "24535b437763b921",
+  "hash": "2e6cf767637d6c19",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-chicago-us/": {
-  "hash": "f86986f1e0224708",
+  "hash": "baad14e622698ab4",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-denver-us/": {
-  "hash": "7e7ffb28abd43615",
+  "hash": "d5085931ac26a555",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-los-angeles-us/": {
-  "hash": "e5493d1dadc6d91d",
+  "hash": "3572360c1afddc6e",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-miami-us/": {
-  "hash": "08351d239c5ec0cf",
+  "hash": "226c8847ac0d93bf",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-montreal-ca/": {
-  "hash": "cd20306022779384",
+  "hash": "6dbab94990864904",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-new-york-us/": {
-  "hash": "4b35454f3405c92a",
+  "hash": "3758abd29fa2f687",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-san-francisco-us/": {
-  "hash": "3ca40c66b8190ac2",
+  "hash": "ec665aba474ce00e",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-seattle-us/": {
-  "hash": "948ea77b0b83d52e",
+  "hash": "482fb67e36ae3835",
   "lastmod": "2026-11-15"
  },
  "/compare/boston-us-vs-toronto-ca/": {
-  "hash": "7d3ebe1d7a658646",
+  "hash": "e5b731d3a5de0fda",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-cambridge-gb/": {
-  "hash": "ec825de88f8e7e1e",
+  "hash": "27a6334408fcffd3",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-cork-ie/": {
-  "hash": "44be1819ebaa767f",
+  "hash": "1840c19b0ce1f440",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-dublin-ie/": {
-  "hash": "0c094dbff3e304ee",
+  "hash": "e16b4f7187491813",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-edinburgh-gb/": {
-  "hash": "8e25bb941419b354",
+  "hash": "f1e2353857a91feb",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-lisbon-pt/": {
-  "hash": "7d60beeb6c3d5761",
+  "hash": "44659c737850ea18",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-london-gb/": {
-  "hash": "ca484096e43f79eb",
+  "hash": "5c7371bd40ba8247",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-lyon-fr/": {
-  "hash": "b18a5bca0bf528ba",
+  "hash": "1950ca59f3085725",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-madrid-es/": {
-  "hash": "94543c1f3f98f5f6",
+  "hash": "d49832759c098bae",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-manchester-gb/": {
-  "hash": "97b82983d0fcfc16",
+  "hash": "78dcaecfa25bdca1",
   "lastmod": "2026-11-15"
  },
  "/compare/bristol-gb-vs-paris-fr/": {
-  "hash": "a3f75b230e986708",
+  "hash": "2b478046309adb0f",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-cambridge-gb/": {
-  "hash": "4f5319534f16e567",
+  "hash": "375c94edcf9a9b5f",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-dublin-ie/": {
@@ -688,23 +688,23 @@
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-hamburg-de/": {
-  "hash": "291c9d431eef9baa",
+  "hash": "27489b5da8d318e1",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-london-gb/": {
-  "hash": "e7fe1e997f0b0a9c",
+  "hash": "4084673a21863188",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-madrid-es/": {
-  "hash": "c4222558853a3bb0",
+  "hash": "2cdcc392dba0a7a8",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-naples-it/": {
-  "hash": "e42e3dd2178b25e3",
+  "hash": "64d3d37ec276ca29",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-oslo-no/": {
-  "hash": "b05471118330862c",
+  "hash": "041c16716d5dcd81",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-paris-fr/": {
@@ -712,11 +712,11 @@
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-rome-it/": {
-  "hash": "3f50a8a7bbf87cb1",
+  "hash": "3d5219269dafc172",
   "lastmod": "2026-11-15"
  },
  "/compare/brussels-be-vs-rotterdam-nl/": {
-  "hash": "2b869c688655487b",
+  "hash": "3bf1f8797bd8a0a5",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-dubai-ae/": {
@@ -724,11 +724,11 @@
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-hamburg-de/": {
-  "hash": "c4dbb034a0b23682",
+  "hash": "14a172fa972fa658",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-helsinki-fi/": {
-  "hash": "28d0fae0fb326fa4",
+  "hash": "b4fd26fe81bbf02a",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-krakow-pl/": {
@@ -736,11 +736,11 @@
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-london-gb/": {
-  "hash": "a92c255a69037338",
+  "hash": "5779d621d2739366",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-munich-de/": {
-  "hash": "bd6af910c3d0ba3c",
+  "hash": "08bca89043c92c5f",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-paris-fr/": {
@@ -752,11 +752,11 @@
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-rome-it/": {
-  "hash": "d0fdac2dd05c047e",
+  "hash": "7c467adee6222c31",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-stockholm-se/": {
-  "hash": "3f29a3f2527391f5",
+  "hash": "3430bfbe006b3cf6",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-tallinn-ee/": {
@@ -764,7 +764,7 @@
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-vienna-at/": {
-  "hash": "e82a498029d8f5e7",
+  "hash": "a91a63f8855f1243",
   "lastmod": "2026-11-15"
  },
  "/compare/budapest-hu-vs-warsaw-pl/": {
@@ -772,83 +772,83 @@
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-cork-ie/": {
-  "hash": "171b78f0aa65d0dd",
+  "hash": "0f884dd20f45cedc",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-dublin-ie/": {
-  "hash": "9e47c1de241fbebb",
+  "hash": "bb61cafdc0bff5d8",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-edinburgh-gb/": {
-  "hash": "0b55e9d7bcf489f3",
+  "hash": "93e976bbbae0e026",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-geneva-ch/": {
-  "hash": "34eb241a1432df10",
+  "hash": "e984fd67095113b0",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-london-gb/": {
-  "hash": "716c72baf598a592",
+  "hash": "439409b1e84e9db3",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-madrid-es/": {
-  "hash": "e12f9956ba25e7b0",
+  "hash": "e9df918a99e51af0",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-manchester-gb/": {
-  "hash": "1c02e5cf21a4cd66",
+  "hash": "e84dc79a5d29b10d",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-paris-fr/": {
-  "hash": "7d0d35a62446ee03",
+  "hash": "73a1f336c8dd3659",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-porto-pt/": {
-  "hash": "5ef6611a40e51a0a",
+  "hash": "c03a607d6d500e8b",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-rome-it/": {
-  "hash": "d3abe91150e62de3",
+  "hash": "950816cf17bef0f2",
   "lastmod": "2026-11-15"
  },
  "/compare/cambridge-gb-vs-rotterdam-nl/": {
-  "hash": "9f9c28e1b5b05fc8",
+  "hash": "7bdab01ea8173017",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-denver-us/": {
-  "hash": "c289278e5a7405af",
+  "hash": "e44d691d97b957e5",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-los-angeles-us/": {
-  "hash": "aa400e2c53307aeb",
+  "hash": "040514d17a727ad9",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-miami-us/": {
-  "hash": "f54d2cd9ae642f44",
+  "hash": "e58b6694e0fdac65",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-montreal-ca/": {
-  "hash": "121c2a266a8523f5",
+  "hash": "101be4e1d148735b",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-new-york-us/": {
-  "hash": "d276bf6d4352142f",
+  "hash": "eab8fe27b2c765da",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-san-francisco-us/": {
-  "hash": "efe50d52a4a0d848",
+  "hash": "a724ae8321031e99",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-seattle-us/": {
-  "hash": "44e63e94f58547c2",
+  "hash": "0f3f2fc091a0c693",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-toronto-ca/": {
-  "hash": "f9a58efa9bb5484b",
+  "hash": "550773c54b531176",
   "lastmod": "2026-11-15"
  },
  "/compare/chicago-us-vs-vancouver-ca/": {
-  "hash": "3ca7d792fa5ee80e",
+  "hash": "7c1f5af3f9a28d49",
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-dublin-ie/": {
@@ -856,19 +856,19 @@
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-hamburg-de/": {
-  "hash": "688f90b313e4b846",
+  "hash": "bc268de603476829",
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-helsinki-fi/": {
-  "hash": "10d6baf795dea638",
+  "hash": "cccb62ae47850b1c",
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-london-gb/": {
-  "hash": "36d4dcaeb60543cb",
+  "hash": "593775245b2dbe68",
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-oslo-no/": {
-  "hash": "9a1fa6fee3549ddb",
+  "hash": "e238061451516d2c",
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-paris-fr/": {
@@ -880,7 +880,7 @@
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-stockholm-se/": {
-  "hash": "e5afaf5b462633d2",
+  "hash": "6012b1c4509b5c20",
   "lastmod": "2026-11-15"
  },
  "/compare/copenhagen-dk-vs-tallinn-ee/": {
@@ -896,19 +896,19 @@
   "lastmod": "2026-11-15"
  },
  "/compare/cork-ie-vs-geneva-ch/": {
-  "hash": "6f8aeddce923cb83",
+  "hash": "9043ef6fc2ac5358",
   "lastmod": "2026-11-15"
  },
  "/compare/cork-ie-vs-london-gb/": {
-  "hash": "3a7a1929b09f177f",
+  "hash": "e4e9e53c7cb8486b",
   "lastmod": "2026-11-15"
  },
  "/compare/cork-ie-vs-madrid-es/": {
-  "hash": "55de350ecaaadb53",
+  "hash": "9640f35a8891d7f3",
   "lastmod": "2026-11-15"
  },
  "/compare/cork-ie-vs-manchester-gb/": {
-  "hash": "15bec96de9a53cc7",
+  "hash": "512b6b2cfa908a79",
   "lastmod": "2026-11-15"
  },
  "/compare/cork-ie-vs-paris-fr/": {
@@ -920,27 +920,27 @@
   "lastmod": "2026-11-15"
  },
  "/compare/denver-us-vs-los-angeles-us/": {
-  "hash": "56471042d4d0d160",
+  "hash": "5214b1efb4cdee8c",
   "lastmod": "2026-11-15"
  },
  "/compare/denver-us-vs-miami-us/": {
-  "hash": "074bbbd7aaa97fd2",
+  "hash": "8afbe0a04a247d3d",
   "lastmod": "2026-11-15"
  },
  "/compare/denver-us-vs-new-york-us/": {
-  "hash": "cb750e61a4749484",
+  "hash": "13e88b9b9a0b07b1",
   "lastmod": "2026-11-15"
  },
  "/compare/denver-us-vs-san-francisco-us/": {
-  "hash": "17998fea08d3e772",
+  "hash": "586f2333bdc31c69",
   "lastmod": "2026-11-15"
  },
  "/compare/denver-us-vs-seattle-us/": {
-  "hash": "72d7d4bc9b8b7e54",
+  "hash": "28a7493f88a2e565",
   "lastmod": "2026-11-15"
  },
  "/compare/denver-us-vs-vancouver-ca/": {
-  "hash": "f9a3c31ce15b7d60",
+  "hash": "b74045dc9788e033",
   "lastmod": "2026-11-15"
  },
  "/compare/dubai-ae-vs-krakow-pl/": {
@@ -948,11 +948,11 @@
   "lastmod": "2026-11-15"
  },
  "/compare/dubai-ae-vs-melbourne-au/": {
-  "hash": "9be7967381c2c2ab",
+  "hash": "fef09d05ffef3e0a",
   "lastmod": "2026-11-15"
  },
  "/compare/dubai-ae-vs-naples-it/": {
-  "hash": "c13f1415e2b8b736",
+  "hash": "30af1400e495d5f6",
   "lastmod": "2026-11-15"
  },
  "/compare/dubai-ae-vs-singapore-sg/": {
@@ -972,23 +972,23 @@
   "lastmod": "2026-11-15"
  },
  "/compare/dublin-ie-vs-london-gb/": {
-  "hash": "ad39f84c09574b08",
+  "hash": "4e043ff49e2f8b84",
   "lastmod": "2026-11-15"
  },
  "/compare/dublin-ie-vs-madrid-es/": {
-  "hash": "c843ca462cfe31f1",
+  "hash": "82d575d4c06d067d",
   "lastmod": "2026-11-15"
  },
  "/compare/dublin-ie-vs-manchester-gb/": {
-  "hash": "18c572522c113094",
+  "hash": "cd9f957adccb4df4",
   "lastmod": "2026-11-15"
  },
  "/compare/dublin-ie-vs-naples-it/": {
-  "hash": "956a146de24f14e3",
+  "hash": "647cdf746ac5185d",
   "lastmod": "2026-11-15"
  },
  "/compare/dublin-ie-vs-oslo-no/": {
-  "hash": "ad42a3fb9633502b",
+  "hash": "0b9821fe0d010664",
   "lastmod": "2026-11-15"
  },
  "/compare/dublin-ie-vs-paris-fr/": {
@@ -1000,7 +1000,7 @@
   "lastmod": "2026-11-15"
  },
  "/compare/edinburgh-gb-vs-hamburg-de/": {
-  "hash": "5884aeea89dfe948",
+  "hash": "6c2552b6f8b7eaec",
   "lastmod": "2026-11-15"
  },
  "/compare/edinburgh-gb-vs-lisbon-pt/": {
@@ -1008,7 +1008,7 @@
   "lastmod": "2026-11-15"
  },
  "/compare/edinburgh-gb-vs-london-gb/": {
-  "hash": "800c737371383d5c",
+  "hash": "5754e43573f8642e",
   "lastmod": "2026-11-15"
  },
  "/compare/edinburgh-gb-vs-lyon-fr/": {
@@ -1016,7 +1016,7 @@
   "lastmod": "2026-11-15"
  },
  "/compare/edinburgh-gb-vs-manchester-gb/": {
-  "hash": "e04496c0f3105c0c",
+  "hash": "dff8e09794ab1dc0",
   "lastmod": "2026-11-15"
  },
  "/compare/edinburgh-gb-vs-paris-fr/": {
@@ -1024,147 +1024,147 @@
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-london-gb/": {
-  "hash": "d30c20e1b23984c0",
+  "hash": "b2ef233b0455ca39",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-madrid-es/": {
-  "hash": "127c7d7708d25050",
+  "hash": "93804091402f91a9",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-milan-it/": {
-  "hash": "8e76ac3ecb101d4f",
+  "hash": "6d3d742e06e6835a",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-naples-it/": {
-  "hash": "50b859faabbb390b",
+  "hash": "05da7ac51702f48e",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-porto-pt/": {
-  "hash": "39b7726441056548",
+  "hash": "feb38d8555f4c9d3",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-rome-it/": {
-  "hash": "8a4e7a13219febf3",
+  "hash": "754d9d605aaef23d",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-tallinn-ee/": {
-  "hash": "5a4cd971654d958f",
+  "hash": "7009b982a10b1611",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-turin-it/": {
-  "hash": "6be5fcac7a8c8a79",
+  "hash": "7f2b7b51930a4395",
   "lastmod": "2026-11-15"
  },
  "/compare/florence-it-vs-zurich-ch/": {
-  "hash": "b6912f3baa2604ac",
+  "hash": "9b42b51a20543d1f",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-london-gb/": {
-  "hash": "77544b70d2ba59a4",
+  "hash": "f58f53151687314b",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-lyon-fr/": {
-  "hash": "4f25a012bc90c00c",
+  "hash": "0c7ff1f5ef4cddcc",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-madrid-es/": {
-  "hash": "de49dc2609e2f16d",
+  "hash": "cec1d0f45f1e0dab",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-milan-it/": {
-  "hash": "614c8fb411a60dd9",
+  "hash": "ca71eef37a570142",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-paris-fr/": {
-  "hash": "8c96edb656bcbe0e",
+  "hash": "c90423dad7667c1e",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-porto-pt/": {
-  "hash": "771c810b343bf5d3",
+  "hash": "ceaad7f19595dc1c",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-rome-it/": {
-  "hash": "6c6228f283fbafcf",
+  "hash": "ac586be8bf90d667",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-turin-it/": {
-  "hash": "c9cd986d77dc1741",
+  "hash": "b40c2bcad59e5d95",
   "lastmod": "2026-11-15"
  },
  "/compare/geneva-ch-vs-zurich-ch/": {
-  "hash": "e536adc55b664c71",
+  "hash": "baafcde2c13db636",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-helsinki-fi/": {
-  "hash": "7e60441e293230a3",
+  "hash": "402563eb5fc81efc",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-london-gb/": {
-  "hash": "69e9559cb4b8037c",
+  "hash": "eabbc90752bba169",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-munich-de/": {
-  "hash": "8f61866d47cab260",
+  "hash": "aa5de5ce9b294db9",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-naples-it/": {
-  "hash": "5b36b0b347520a34",
+  "hash": "a0ba3978aae01ac8",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-oslo-no/": {
-  "hash": "a885fa43a8452c3f",
+  "hash": "d6ae1e75ae288698",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-paris-fr/": {
-  "hash": "50e765230a1475c7",
+  "hash": "ef0c18dfcf028ed2",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-rome-it/": {
-  "hash": "d7a39da4adebd4c7",
+  "hash": "136988b6d7cff5d6",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-rotterdam-nl/": {
-  "hash": "fd3497624ec90f95",
+  "hash": "e8082cf33cbe2aa7",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-stockholm-se/": {
-  "hash": "1eba39de1298c0e8",
+  "hash": "f9b19f31ba1c1141",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-tallinn-ee/": {
-  "hash": "f2531b2c31d72357",
+  "hash": "582bfae6be5dcff4",
   "lastmod": "2026-11-15"
  },
  "/compare/hamburg-de-vs-warsaw-pl/": {
-  "hash": "763f57d90e85867c",
+  "hash": "5a8014c8afd1b95b",
   "lastmod": "2026-11-15"
  },
  "/compare/helsinki-fi-vs-manchester-gb/": {
-  "hash": "8158e56f74ecd610",
+  "hash": "5147a76a358794ea",
   "lastmod": "2026-11-15"
  },
  "/compare/helsinki-fi-vs-oslo-no/": {
-  "hash": "847f1fd8c9af79fe",
+  "hash": "ac7577e4294d45c1",
   "lastmod": "2026-11-15"
  },
  "/compare/helsinki-fi-vs-stockholm-se/": {
-  "hash": "d02c4d51ca2a93e1",
+  "hash": "1a44b0369e4b0bab",
   "lastmod": "2026-11-15"
  },
  "/compare/helsinki-fi-vs-tallinn-ee/": {
-  "hash": "e61a7c4da594a172",
+  "hash": "8eea2cf641331373",
   "lastmod": "2026-11-15"
  },
  "/compare/helsinki-fi-vs-tokyo-jp/": {
-  "hash": "7b02c76fc9af0f11",
+  "hash": "b192c67a33b19d98",
   "lastmod": "2026-11-15"
  },
  "/compare/helsinki-fi-vs-warsaw-pl/": {
-  "hash": "a5a9bf223488e1de",
+  "hash": "d46c382246a0e5cd",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-london-gb/": {
-  "hash": "2a3ad96b68b268ca",
+  "hash": "951523f28b60d201",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-paris-fr/": {
@@ -1176,23 +1176,23 @@
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-rome-it/": {
-  "hash": "43163666c00c3c04",
+  "hash": "7180029d4364f4a0",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-rotterdam-nl/": {
-  "hash": "6a666d2634cb6241",
+  "hash": "759e5cacc52f596d",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-turin-it/": {
-  "hash": "c1e37f93a9f27e9e",
+  "hash": "7de435e468d5c300",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-valencia-es/": {
-  "hash": "041bc20a6ca3d423",
+  "hash": "4945e3ad6716774e",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-vienna-at/": {
-  "hash": "95fbe292fa0675b6",
+  "hash": "ec756a647f192778",
   "lastmod": "2026-11-15"
  },
  "/compare/krakow-pl-vs-warsaw-pl/": {
@@ -1204,15 +1204,15 @@
   "lastmod": "2026-11-15"
  },
  "/compare/lisbon-pt-vs-madrid-es/": {
-  "hash": "b57c897e20adf64f",
+  "hash": "a17586badccf22c1",
   "lastmod": "2026-11-15"
  },
  "/compare/lisbon-pt-vs-malaga-es/": {
-  "hash": "d43b568022d98370",
+  "hash": "d9e347986764f147",
   "lastmod": "2026-11-15"
  },
  "/compare/lisbon-pt-vs-manchester-gb/": {
-  "hash": "14d6bbc442ad5867",
+  "hash": "dcde95d63b8a0d6f",
   "lastmod": "2026-11-15"
  },
  "/compare/lisbon-pt-vs-paris-fr/": {
@@ -1224,111 +1224,111 @@
   "lastmod": "2026-11-15"
  },
  "/compare/lisbon-pt-vs-valencia-es/": {
-  "hash": "b81b46d3f2cb6f7a",
+  "hash": "9e757df4d917fc68",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-lyon-fr/": {
-  "hash": "eea80c9ccae6b602",
+  "hash": "011c352947fa4c6c",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-madrid-es/": {
-  "hash": "7f03cf59a8e40ac9",
+  "hash": "0ba3d8fe1f13c50d",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-manchester-gb/": {
-  "hash": "26c8982423121bbf",
+  "hash": "5c5bc875712db0b5",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-milan-it/": {
-  "hash": "b2603d580d9e9cda",
+  "hash": "cec511a88e230d4f",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-munich-de/": {
-  "hash": "6b477008839f57a8",
+  "hash": "6113d5cb6541cb30",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-oslo-no/": {
-  "hash": "42beb4156a0a27cf",
+  "hash": "81f89f833689d747",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-paris-fr/": {
-  "hash": "b48e02dcd04af9e7",
+  "hash": "79d622cfaf735fe9",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-porto-pt/": {
-  "hash": "9a9280a8ee6aa1e6",
+  "hash": "f3031fbd116bccbd",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-prague-cz/": {
-  "hash": "2f4da9f6d7cab085",
+  "hash": "2f6865b37ed9ba74",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-rome-it/": {
-  "hash": "fa43f3a3f9a328fb",
+  "hash": "22127fa7e08e4146",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-rotterdam-nl/": {
-  "hash": "9f0ac897690db1ad",
+  "hash": "5ea402d8429af44c",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-stockholm-se/": {
-  "hash": "8ab1de9022ed4366",
+  "hash": "3d88f6fbad14dab9",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-turin-it/": {
-  "hash": "5e2a232ffc7ad251",
+  "hash": "49ee9ce9b31dea54",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-valencia-es/": {
-  "hash": "20f9dc87f9208b09",
+  "hash": "6e5b8d0115016fb0",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-vienna-at/": {
-  "hash": "33d8bc86c2262ac8",
+  "hash": "d2ec63a44c062e4c",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-warsaw-pl/": {
-  "hash": "e2b6bd468ba620df",
+  "hash": "bdf5f19164a6eb09",
   "lastmod": "2026-11-15"
  },
  "/compare/london-gb-vs-zurich-ch/": {
-  "hash": "41dbc1aa7019048b",
+  "hash": "7f6dcda58fa825fa",
   "lastmod": "2026-11-15"
  },
  "/compare/los-angeles-us-vs-miami-us/": {
-  "hash": "5d1c0e983ca7d761",
+  "hash": "62136b18f3665279",
   "lastmod": "2026-11-15"
  },
  "/compare/los-angeles-us-vs-new-york-us/": {
-  "hash": "406c068e9be710e6",
+  "hash": "88a40359e0cc28c6",
   "lastmod": "2026-11-15"
  },
  "/compare/los-angeles-us-vs-san-francisco-us/": {
-  "hash": "c8a33d214db2a06b",
+  "hash": "847aa9607027fe9a",
   "lastmod": "2026-11-15"
  },
  "/compare/los-angeles-us-vs-seattle-us/": {
-  "hash": "3ac46363b370e2b8",
+  "hash": "17d3fac5aa5d3a1d",
   "lastmod": "2026-11-15"
  },
  "/compare/los-angeles-us-vs-vancouver-ca/": {
-  "hash": "1d7cc955c14f5b8f",
+  "hash": "3ced2bd46dc20620",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-madrid-es/": {
-  "hash": "f08ea62941af305e",
+  "hash": "21590a2af39daf30",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-malaga-es/": {
-  "hash": "5f9bf871a71c4cc2",
+  "hash": "e5c4bf978511ce71",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-manchester-gb/": {
-  "hash": "949cf33ee6d5a48d",
+  "hash": "1a33892f642a7cb4",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-milan-it/": {
-  "hash": "db666cbd85cc02b4",
+  "hash": "e5e78fd4b2526461",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-paris-fr/": {
@@ -1336,227 +1336,227 @@
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-rome-it/": {
-  "hash": "1565de0477fb9678",
+  "hash": "032a8e675821bf87",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-turin-it/": {
-  "hash": "add276cd226df06f",
+  "hash": "0b23109c7e6c10cc",
   "lastmod": "2026-11-15"
  },
  "/compare/lyon-fr-vs-zurich-ch/": {
-  "hash": "2f8170d2f8f7f6ac",
+  "hash": "757ba8e3a0dadd45",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-malaga-es/": {
-  "hash": "63f552578d42dfde",
+  "hash": "56b9bd829fc7b6b4",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-manchester-gb/": {
-  "hash": "f53bb5c71e60077d",
+  "hash": "5245836cd7b51631",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-milan-it/": {
-  "hash": "07689b9c390c248f",
+  "hash": "d3c699445336622e",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-munich-de/": {
-  "hash": "3072032b03b197cb",
+  "hash": "6dc1afd849368f5f",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-paris-fr/": {
-  "hash": "5c85366ba8876597",
+  "hash": "881d22bf6fcb7823",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-porto-pt/": {
-  "hash": "a7033bc95df1bd4f",
+  "hash": "67102c0c047b0556",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-rome-it/": {
-  "hash": "fcd21274343176ea",
+  "hash": "4acbad68c4db7bc8",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-rotterdam-nl/": {
-  "hash": "404c4b9f311dcd93",
+  "hash": "d4a6296584ac451b",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-turin-it/": {
-  "hash": "856a06d9e19fd58a",
+  "hash": "9fb9c45a58dcfb60",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-valencia-es/": {
-  "hash": "a4df2abb830ccd2f",
+  "hash": "57e56b7081a394ea",
   "lastmod": "2026-11-15"
  },
  "/compare/madrid-es-vs-zurich-ch/": {
-  "hash": "c2f81be133ac8fcd",
+  "hash": "b040af0bc91fbc0e",
   "lastmod": "2026-11-15"
  },
  "/compare/malaga-es-vs-manchester-gb/": {
-  "hash": "5e46506baf1cc757",
+  "hash": "2d37154596545dae",
   "lastmod": "2026-11-15"
  },
  "/compare/malaga-es-vs-milan-it/": {
-  "hash": "fb435e98a67f3487",
+  "hash": "8a10afe8124a8ab0",
   "lastmod": "2026-11-15"
  },
  "/compare/malaga-es-vs-paris-fr/": {
-  "hash": "e75eea9dbdb989af",
+  "hash": "d132ccd29dba699f",
   "lastmod": "2026-11-15"
  },
  "/compare/malaga-es-vs-porto-pt/": {
-  "hash": "4e9cce04490d5d01",
+  "hash": "c253a9de6c395cf7",
   "lastmod": "2026-11-15"
  },
  "/compare/malaga-es-vs-valencia-es/": {
-  "hash": "a535b6c92bd77173",
+  "hash": "d81eca67da979d94",
   "lastmod": "2026-11-15"
  },
  "/compare/manchester-gb-vs-paris-fr/": {
-  "hash": "632d81841a2da4ef",
+  "hash": "3d25986b47484e25",
   "lastmod": "2026-11-15"
  },
  "/compare/melbourne-au-vs-san-francisco-us/": {
-  "hash": "e62d6733cb5c4086",
+  "hash": "f1ff3457c23a9f7b",
   "lastmod": "2026-11-15"
  },
  "/compare/melbourne-au-vs-singapore-sg/": {
-  "hash": "abc2f1bbef3430b3",
+  "hash": "72f666f358bcec46",
   "lastmod": "2026-11-15"
  },
  "/compare/melbourne-au-vs-sydney-au/": {
-  "hash": "573e4f4c0ed1b5fb",
+  "hash": "8a02b622cd42d631",
   "lastmod": "2026-11-15"
  },
  "/compare/melbourne-au-vs-tokyo-jp/": {
-  "hash": "4725b29df40e7640",
+  "hash": "1071986ab8856269",
   "lastmod": "2026-11-15"
  },
  "/compare/miami-us-vs-montreal-ca/": {
-  "hash": "da7e972b283426a5",
+  "hash": "0d946ea9ea3e3b9b",
   "lastmod": "2026-11-15"
  },
  "/compare/miami-us-vs-new-york-us/": {
-  "hash": "6a4c606a8183567b",
+  "hash": "f570478863c1c57b",
   "lastmod": "2026-11-15"
  },
  "/compare/miami-us-vs-san-francisco-us/": {
-  "hash": "dd8bfee21a686c8f",
+  "hash": "3e7a6fd99dc0fb13",
   "lastmod": "2026-11-15"
  },
  "/compare/miami-us-vs-seattle-us/": {
-  "hash": "28cdf387e0fe51af",
+  "hash": "bb2638a3969b102c",
   "lastmod": "2026-11-15"
  },
  "/compare/miami-us-vs-toronto-ca/": {
-  "hash": "e2f256a51e80c729",
+  "hash": "c0d4e9b513d3ffe0",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-munich-de/": {
-  "hash": "67fedf6c32b251b6",
+  "hash": "7604489448e894c4",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-naples-it/": {
-  "hash": "a54a77cee45139e4",
+  "hash": "3708dff224a6ff4a",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-prague-cz/": {
-  "hash": "90148fc40e9da4d1",
+  "hash": "f74039d5b33d2623",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-rome-it/": {
-  "hash": "27debdc6b9b1edf2",
+  "hash": "f66e9bb32797e306",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-stockholm-se/": {
-  "hash": "7e995950bc292108",
+  "hash": "49f5411127d827c7",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-turin-it/": {
-  "hash": "19bcd423c6bba400",
+  "hash": "c8ccc3debe22d329",
   "lastmod": "2026-11-15"
  },
  "/compare/milan-it-vs-zurich-ch/": {
-  "hash": "86c53d4d5bb9d23a",
+  "hash": "608f9b0dc19572ec",
   "lastmod": "2026-11-15"
  },
  "/compare/montreal-ca-vs-new-york-us/": {
-  "hash": "00fbc0fcf204fbe2",
+  "hash": "46882aaea00ea0ad",
   "lastmod": "2026-11-15"
  },
  "/compare/montreal-ca-vs-toronto-ca/": {
-  "hash": "941d46b62cc87b0f",
+  "hash": "7feafed1dafa811d",
   "lastmod": "2026-11-15"
  },
  "/compare/montreal-ca-vs-vancouver-ca/": {
-  "hash": "0a3113c18f03787f",
+  "hash": "377e69f2450f233a",
   "lastmod": "2026-11-15"
  },
  "/compare/munich-de-vs-prague-cz/": {
-  "hash": "7138e51a27a6ee9f",
+  "hash": "39d53b4b864ff1b5",
   "lastmod": "2026-11-15"
  },
  "/compare/munich-de-vs-rome-it/": {
-  "hash": "c3eefe4a91c581d2",
+  "hash": "d59f3a7ff408cb90",
   "lastmod": "2026-11-15"
  },
  "/compare/munich-de-vs-stockholm-se/": {
-  "hash": "cc88366a0eca69e5",
+  "hash": "77161520893d9595",
   "lastmod": "2026-11-15"
  },
  "/compare/munich-de-vs-vienna-at/": {
-  "hash": "310e1da01dd58a04",
+  "hash": "16836be1ec6ed0f8",
   "lastmod": "2026-11-15"
  },
  "/compare/munich-de-vs-zurich-ch/": {
-  "hash": "919154a0595ae1c8",
+  "hash": "7373622e06cf5f78",
   "lastmod": "2026-11-15"
  },
  "/compare/naples-it-vs-paris-fr/": {
-  "hash": "d1cc73c953cc5ff2",
+  "hash": "17c4fa70caa2c60a",
   "lastmod": "2026-11-15"
  },
  "/compare/naples-it-vs-rome-it/": {
-  "hash": "159f9603c1baa5e4",
+  "hash": "1e0876d58a8c25e3",
   "lastmod": "2026-11-15"
  },
  "/compare/naples-it-vs-rotterdam-nl/": {
-  "hash": "62ee46aca985477b",
+  "hash": "e91ad21b16872b91",
   "lastmod": "2026-11-15"
  },
  "/compare/naples-it-vs-turin-it/": {
-  "hash": "24ccfe7099c62ffd",
+  "hash": "4209fc871bf1e7be",
   "lastmod": "2026-11-15"
  },
  "/compare/naples-it-vs-valencia-es/": {
-  "hash": "4d7d280634d2957e",
+  "hash": "acfbb6980b5298f9",
   "lastmod": "2026-11-15"
  },
  "/compare/new-york-us-vs-san-francisco-us/": {
-  "hash": "8a24954da9d6b962",
+  "hash": "c31f3e1df5e153f7",
   "lastmod": "2026-11-15"
  },
  "/compare/new-york-us-vs-seattle-us/": {
-  "hash": "f003f8c16066c901",
+  "hash": "ecfa7f21f1fcc922",
   "lastmod": "2026-11-15"
  },
  "/compare/new-york-us-vs-toronto-ca/": {
-  "hash": "e90066b51d3a451f",
+  "hash": "199ad6f893112d59",
   "lastmod": "2026-11-15"
  },
  "/compare/oslo-no-vs-paris-fr/": {
-  "hash": "acd7a9a3ed9664b0",
+  "hash": "f7ac2e0d25194cbb",
   "lastmod": "2026-11-15"
  },
  "/compare/oslo-no-vs-prague-cz/": {
-  "hash": "a445820e95f3c7d2",
+  "hash": "c4431b263db609b4",
   "lastmod": "2026-11-15"
  },
  "/compare/oslo-no-vs-stockholm-se/": {
-  "hash": "6ab5736b17567d46",
+  "hash": "a6cca75b10c329b8",
   "lastmod": "2026-11-15"
  },
  "/compare/oslo-no-vs-tallinn-ee/": {
-  "hash": "61bd617e1996f78f",
+  "hash": "14234ac01171b056",
   "lastmod": "2026-11-15"
  },
  "/compare/paris-fr-vs-porto-pt/": {
@@ -1568,19 +1568,19 @@
   "lastmod": "2026-11-15"
  },
  "/compare/paris-fr-vs-rome-it/": {
-  "hash": "dbd28086b3bee8ed",
+  "hash": "70580720ef8fce38",
   "lastmod": "2026-11-15"
  },
  "/compare/paris-fr-vs-rotterdam-nl/": {
-  "hash": "80251508f2e4b8d0",
+  "hash": "61a8e7644fef29bf",
   "lastmod": "2026-11-15"
  },
  "/compare/paris-fr-vs-valencia-es/": {
-  "hash": "50aef8a8822d09d2",
+  "hash": "e9dff7dc0876ff59",
   "lastmod": "2026-11-15"
  },
  "/compare/paris-fr-vs-vienna-at/": {
-  "hash": "a9325ef0a8ea954c",
+  "hash": "997459089ccfb2d9",
   "lastmod": "2026-11-15"
  },
  "/compare/paris-fr-vs-warsaw-pl/": {
@@ -1588,15 +1588,15 @@
   "lastmod": "2026-11-15"
  },
  "/compare/porto-pt-vs-valencia-es/": {
-  "hash": "d42efe48a5b3b837",
+  "hash": "488b0966b55600ef",
   "lastmod": "2026-11-15"
  },
  "/compare/prague-cz-vs-rome-it/": {
-  "hash": "0384524779f6c3ef",
+  "hash": "e7a7675bd86b8fea",
   "lastmod": "2026-11-15"
  },
  "/compare/prague-cz-vs-vienna-at/": {
-  "hash": "ba719ba7aef12a5a",
+  "hash": "0f9db008759c7e6b",
   "lastmod": "2026-11-15"
  },
  "/compare/prague-cz-vs-warsaw-pl/": {
@@ -1604,55 +1604,55 @@
   "lastmod": "2026-11-15"
  },
  "/compare/rome-it-vs-rotterdam-nl/": {
-  "hash": "3399024938d94ae4",
+  "hash": "fdd7592bb191f456",
   "lastmod": "2026-11-15"
  },
  "/compare/rome-it-vs-turin-it/": {
-  "hash": "31df5485dffecf90",
+  "hash": "d6dd716e0b1de1f9",
   "lastmod": "2026-11-15"
  },
  "/compare/rome-it-vs-valencia-es/": {
-  "hash": "e64f37115cfc263a",
+  "hash": "177668bfefc2be74",
   "lastmod": "2026-11-15"
  },
  "/compare/rome-it-vs-vienna-at/": {
-  "hash": "c3523fad3e492db4",
+  "hash": "89eb0bcaa2076298",
   "lastmod": "2026-11-15"
  },
  "/compare/rome-it-vs-warsaw-pl/": {
-  "hash": "855efdc4ecbc855b",
+  "hash": "8babe6abfb6f2573",
   "lastmod": "2026-11-15"
  },
  "/compare/rome-it-vs-zurich-ch/": {
-  "hash": "00d08236ddbaa3c5",
+  "hash": "b152e669719e3ed8",
   "lastmod": "2026-11-15"
  },
  "/compare/rotterdam-nl-vs-turin-it/": {
-  "hash": "7538ad52ac498c15",
+  "hash": "ae3fd866457a5259",
   "lastmod": "2026-11-15"
  },
  "/compare/rotterdam-nl-vs-valencia-es/": {
-  "hash": "e5c294fc0ac6305f",
+  "hash": "1d53af227ccd95cb",
   "lastmod": "2026-11-15"
  },
  "/compare/san-francisco-us-vs-seattle-us/": {
-  "hash": "10095b30bd5e012f",
+  "hash": "b3e9819471054a8a",
   "lastmod": "2026-11-15"
  },
  "/compare/san-francisco-us-vs-sydney-au/": {
-  "hash": "eca171c70e2b41eb",
+  "hash": "fb6ce91780b0d5d6",
   "lastmod": "2026-11-15"
  },
  "/compare/san-francisco-us-vs-vancouver-ca/": {
-  "hash": "ebf9489ad8fc608a",
+  "hash": "0957ed015278d32d",
   "lastmod": "2026-11-15"
  },
  "/compare/seattle-us-vs-tokyo-jp/": {
-  "hash": "a6298245a2fb39fe",
+  "hash": "2e74ad8f183e2305",
   "lastmod": "2026-11-15"
  },
  "/compare/seattle-us-vs-vancouver-ca/": {
-  "hash": "ef40d444ef3643c1",
+  "hash": "2931857859ff8e81",
   "lastmod": "2026-11-15"
  },
  "/compare/singapore-sg-vs-sydney-au/": {
@@ -1660,15 +1660,15 @@
   "lastmod": "2026-11-15"
  },
  "/compare/singapore-sg-vs-tokyo-jp/": {
-  "hash": "f9478c3d58f8a1a9",
+  "hash": "918d95a9b11dcb2b",
   "lastmod": "2026-11-15"
  },
  "/compare/stockholm-se-vs-tallinn-ee/": {
-  "hash": "a4783ae057a3719e",
+  "hash": "da909fd6fb8f2da8",
   "lastmod": "2026-11-15"
  },
  "/compare/sydney-au-vs-tokyo-jp/": {
-  "hash": "33604a9b4b63dc2d",
+  "hash": "0477fd866473db85",
   "lastmod": "2026-11-15"
  },
  "/compare/tallinn-ee-vs-warsaw-pl/": {
@@ -1676,31 +1676,31 @@
   "lastmod": "2026-11-15"
  },
  "/compare/tallinn-ee-vs-zurich-ch/": {
-  "hash": "d90ada0328846744",
+  "hash": "79a109c2e6a74652",
   "lastmod": "2026-11-15"
  },
  "/compare/tokyo-jp-vs-vancouver-ca/": {
-  "hash": "0ba2c3b760d2f25d",
+  "hash": "657913cc1bfa4b08",
   "lastmod": "2026-11-15"
  },
  "/compare/toronto-ca-vs-vancouver-ca/": {
-  "hash": "165370270b9da871",
+  "hash": "686256db9d53374f",
   "lastmod": "2026-11-15"
  },
  "/compare/turin-it-vs-valencia-es/": {
-  "hash": "ca9feff8bfdf12c9",
+  "hash": "2fdc90fbfa7e66eb",
   "lastmod": "2026-11-15"
  },
  "/compare/turin-it-vs-zurich-ch/": {
-  "hash": "5475c71f3516579d",
+  "hash": "63d69f6a6b479684",
   "lastmod": "2026-11-15"
  },
  "/compare/vienna-at-vs-warsaw-pl/": {
-  "hash": "2c22f61980973f77",
+  "hash": "d274b5484ab6c305",
   "lastmod": "2026-11-15"
  },
  "/sources/": {
-  "hash": "fc56d80788721f34",
+  "hash": "6c081ddc95911f43",
   "lastmod": "2026-11-15"
  }
 }

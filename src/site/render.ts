@@ -1,5 +1,6 @@
 // The published pages: HTML for people and crawlers, a markdown twin for agents (llms.txt v2), and the
 // schema.org JSON-LD that describes them. Everything is built from src/site/facts.ts; nothing here computes.
+import { ALL_TENANCIES, isRent } from "../core/rent-basis.ts";
 import { qualityOfLife, QOL_PARTS } from "../core/qol.ts";
 import { QOL_INDICES } from "../core/links.ts";
 import { WORK_KINDS, payMetric } from "../core/work.ts";
@@ -109,9 +110,12 @@ function licenceLinks(sources: SourceRef[]): Raw {
   return html`${uniq.map((s, i) => html`${i ? ", " : ""}${s.licenceUrl ? html`<a href="${s.licenceUrl}" rel="noopener license">${s.licence}</a>` : s.licence}`)}`;
 }
 
+/** A rent figure that covers every tenancy (core/rent-basis.ts). */
+const allTenancies = (f: Figure) => isRent(f.metric) && f.sources.some((s) => s.tenancies === "all");
+
 function figureRow(f: Figure, country: string): Raw {
   return html`<tr>
-    <th scope="row">${f.label}<span class="fig-v num">${f.text}${f.method === "median" && f.range ? html` <span class="quiet">(range ${num(f.range[0], 0)} to ${num(f.range[1], 0)})</span>` : ""}</span></th>
+    <th scope="row">${f.label}<span class="fig-v num">${f.text}${f.method === "median" && f.range ? html` <span class="quiet">(range ${num(f.range[0], 0)} to ${num(f.range[1], 0)})</span>` : ""}${allTenancies(f) ? html` <span class="quiet">(${ALL_TENANCIES})</span>` : ""}</span></th>
     <td class="fig-src">${f.method === "median" ? `Median of ${f.sources.length} sources: ` : ""}${srcLinks(f.sources)}<span class="quiet"> · ${f.period} · ${levelText(f.level, country)} · </span>${licenceLinks(f.sources)}</td>
   </tr>`;
 }
@@ -282,7 +286,7 @@ function monthTable(b: CityFacts["budget"], name: string): Raw {
     html`<tr class="${cls}"><th scope="row">${label}${note ? html`<small>${note}</small>` : ""}</th><td class="num">${v === null ? html`<span class="quiet">not known</span>` : money(v, b.currency)}</td></tr>`;
   return html`<table class="doc-table wf-table"><tbody>
     ${row("Take-home pay", b.net === null ? null : b.net / 12, b.net === null ? "tax not modelled yet" : "after income tax and contributions")}
-    ${row("Rent, one bedroom", b.rent === null ? null : -b.rent, b.rentFigure ? html`${srcLinks(b.rentFigure.sources)}, ${b.rentFigure.period}, ${levelText(b.rentFigure.level, "country")}` : "no open rent data yet: add your own in the app")}
+    ${row("Rent, one bedroom", b.rent === null ? null : -b.rent, b.rentFigure ? html`${srcLinks(b.rentFigure.sources)}, ${b.rentFigure.period}, ${levelText(b.rentFigure.level, "country")}${b.rentFigure.sources.some((s) => s.tenancies === "all") ? `; ${ALL_TENANCIES}` : ""}` : "no open rent data yet: add your own in the app")}
     ${row("Everyday spending", b.everyday === null ? null : -b.everyday, b.everydayHow ? `${b.everydayHow} by the World Bank price level` : "")}
     ${b.childcare !== null ? row("Childcare", -b.childcare, "after public support") : ""}
     ${b.health !== null ? row("Health care", -b.health, "out of pocket") : ""}
@@ -305,7 +309,7 @@ function cityMarkdown(site: Site, data: Dataset, f: CityFacts): string {
   const b = f.budget;
   const m = (v: number | null) => (v === null ? "not known" : money(v, b.currency));
   L.push("## A month on the reference profile", "", `Assumed: ${assumptionsText(data, referenceProfile(data, [city.id]))}.`, "");
-  L.push(`- Take-home pay: ${m(b.net === null ? null : b.net / 12)}`, `- Rent: ${m(b.rent)}${b.rentFigure ? ` (${b.rentFigure.sources.map((s) => s.name).join(", ")}, ${b.rentFigure.period})` : " (no open rent data yet)"}`, `- Everyday spending: ${m(b.everyday)}`, ...(b.childcare !== null ? [`- Childcare: ${m(b.childcare)}`] : []), ...(b.health !== null ? [`- Health care, out of pocket: ${m(b.health)}`] : []), `- Left each month: ${m(b.left)}${b.left !== null && b.completeness.status === "partial" ? ` (partial: leaves out ${b.completeness.missing.join(", ")})` : ""}`, "");
+  L.push(`- Take-home pay: ${m(b.net === null ? null : b.net / 12)}`, `- Rent: ${m(b.rent)}${b.rentFigure ? ` (${b.rentFigure.sources.map((s) => s.name).join(", ")}, ${b.rentFigure.period}${b.rentFigure.sources.some((s) => s.tenancies === "all") ? `; ${ALL_TENANCIES}` : ""})` : " (no open rent data yet)"}`, `- Everyday spending: ${m(b.everyday)}`, ...(b.childcare !== null ? [`- Childcare: ${m(b.childcare)}`] : []), ...(b.health !== null ? [`- Health care, out of pocket: ${m(b.health)}`] : []), `- Left each month: ${m(b.left)}${b.left !== null && b.completeness.status === "partial" ? ` (partial: leaves out ${b.completeness.missing.join(", ")})` : ""}`, "");
   L.push("## From people who live here", "", `Rents, everyday prices, take-home pay and a 1 to 5 rating that people report for themselves, after automated review, live as JSON: ${abs(site, `/api/community/city/${city.id}.json`)} (CC BY 4.0, Borgo contributors). Never mixed into the figures above. Add your own on the page, with \`borgo submit\` or the MCP tool submit_figures.`, "");
   const pays = payRows(f);
   if (pays.length) {
@@ -330,7 +334,7 @@ function cityMarkdown(site: Site, data: Dataset, f: CityFacts): string {
   }
   L.push("## Every figure", "", "| Figure | Value | Period | Level | Source | Licence |", "|---|---:|---|---|---|---|");
   for (const x of f.figures)
-    L.push(`| ${x.label} | ${x.text}${x.method === "median" ? ` (median of ${x.sources.length})` : ""} | ${x.period} | ${levelText(x.level, country.name)} | ${x.sources.map((s) => `[${s.name}](${s.url})`).join("; ")} | ${[...new Set(x.sources.map((s) => s.licence))].join(", ")} |`);
+    L.push(`| ${x.label} | ${x.text}${x.method === "median" ? ` (median of ${x.sources.length})` : ""}${allTenancies(x) ? ` (${ALL_TENANCIES})` : ""} | ${x.period} | ${levelText(x.level, country.name)} | ${x.sources.map((s) => `[${s.name}](${s.url})`).join("; ")} | ${[...new Set(x.sources.map((s) => s.licence))].join(", ")} |`);
   L.push("");
   if (f.gaps.length) L.push(`No open figure yet for: ${f.gaps.map((g) => g.label.toLowerCase()).join(", ")}.`, "");
   if (f.comparisons.length) L.push("## Comparisons", "", ...f.comparisons.map((c) => `- [${city.name} vs ${c.other.name}](${abs(site, c.path)}index.md)`), "");

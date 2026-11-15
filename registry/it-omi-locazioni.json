@@ -1,0 +1,59 @@
+{
+  "id": "it-omi-locazioni",
+  "name": "OMI residential leases by municipality",
+  "publisher": "Agenzia delle Entrate, Osservatorio del Mercato Immobiliare (OMI)",
+  "homepage": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average rent per m² a month of homes let whole in new long-term open-market leases (ORD_L) registered in the year in the municipality (the year's total rent over the total floor area), times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average rent per m² a month of homes let whole in new long-term open-market leases (ORD_L) registered in the year in the municipality (the year's total rent over the total floor area), times 90 m²."
+    }
+  ],
+  "tenancies": "new",
+  "coverage": {
+    "geography": [
+      "IT"
+    ],
+    "level": "city",
+    "period": "year"
+  },
+  "licence": "AdE-OMI",
+  "licenceUrl": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "AdE-OMI",
+    "edition": "Rapporto Immobiliare 2026, residential leases annex (2018-2025), published 21 May 2026",
+    "termsUrl": "https://www.agenziaentrate.gov.it/portale/documents/20143/263076/RI2026_Residenziale20260521.pdf",
+    "termsRead": "2026-11-15",
+    "attribution": "Fonte: Agenzia delle Entrate – OMI"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.agenziaentrate.gov.it/portale/documents/d/guest/dati_locazioni_capoluoghi_2018_2024-csv",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/it-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 550
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official: every residential lease registered with the Agenzia delle Entrate. The report's second page reads: the information may be used, also processed, provided that the source is cited when published; selling, renting, transferring or assigning the data is not allowed. Not a CC BY licence, so its figures sit in their own file. ORD_L is the open market for three years or more (canone libero in these cities, all of which are high housing-pressure municipalities); subsidised (canone concordato) and transitional leases are left out."
+  },
+  "caveats": [
+    "Rents declared on registration; a lease left unregistered is not counted.",
+    "Average over every home let, so a one- or three-bedroom rent is the rate per m² times a fixed size, not a figure for that size."
+  ]
+}

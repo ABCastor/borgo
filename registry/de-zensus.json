@@ -13,6 +13,7 @@
       "definition": "Average net cold rent per m² (without heating and service charges) of every rented flat of 80-99 m² on census day, 15 May 2022, times 90 m²."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "DE"

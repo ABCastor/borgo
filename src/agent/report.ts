@@ -37,7 +37,7 @@ export interface Figure {
   level?: Level;
   /** A wider area's figure standing in for the city. */
   approximate?: boolean;
-  source?: Pick<Source, "id" | "name" | "publisher" | "url" | "licence" | "licenceUrl">;
+  source?: Pick<Source, "id" | "name" | "publisher" | "url" | "licence" | "licenceUrl" | "tenancies">;
   retrieved?: string;
   note?: string;
 }
@@ -76,7 +76,7 @@ export function figure(data: Dataset, city: City, metric: string, r: Resolved | 
     period: o.period,
     level: r.level,
     approximate: r.level !== "city" && r.level !== "metro",
-    source: s ? { id: s.id, name: s.name, publisher: s.publisher, url: s.url, licence: s.licence, licenceUrl: s.licenceUrl } : { id: o.source, name: o.source, publisher: "", url: "", licence: "" },
+    source: s ? { id: s.id, name: s.name, publisher: s.publisher, url: s.url, licence: s.licence, licenceUrl: s.licenceUrl, ...(s.tenancies ? { tenancies: s.tenancies } : {}) } : { id: o.source, name: o.source, publisher: "", url: "", licence: "" },
     retrieved: o.retrieved,
     note: o.note,
   };

@@ -9,6 +9,7 @@
       "definition": "Sitting rent: the median monthly rent of every non-subsidised tenancy of a two-room flat (one bedroom; Finnish rooms leave out the kitchen) in Helsinki, old and new tenancies."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "FI"

@@ -14,6 +14,10 @@ import { uraObservations, uraRate, type UraRow } from "../pipeline/sources/sg-re
 import { nswObservations, quarterOf } from "../pipeline/sources/au-rent.ts";
 import { microcensusObservations, microcensusRate } from "../pipeline/sources/at-rent.ts";
 import { ineObservations, ineRates, quarterOf as ineQuarter, type IneIndicator } from "../pipeline/sources/pt-rent.ts";
+import { omiObservations, omiRates } from "../pipeline/sources/it-rent.ts";
+import { estatObservations, estatRents, form } from "../pipeline/sources/jp-rent.ts";
+import { quarterOf as vicQuarter, vicObservations, vicRent } from "../pipeline/sources/vic-rent.ts";
+import { gunzipSync } from "node:zlib";
 import { LICENCES } from "../src/registry/licences.ts";
 
 const ROOT = join(import.meta.dirname, "..");
@@ -28,11 +32,11 @@ function rents(list: Observation[] | undefined): Record<string, [number, string]
 }
 
 /** Every rent source is open, registered for both rent metrics, and its file's observations carry its id. */
-function registered(id: string, file: { source: string; observations: Record<string, Observation[]> }): void {
+function registered(id: string, file: { source: string; observations: Record<string, Observation[]> }, part = "open"): void {
   const r = registry(id);
   assert.equal(file.source, id);
   assert.ok(LICENCES[r.licence], `${id}: licence ${r.licence} is in LICENCES`);
-  assert.equal(LICENCES[r.licence]!.part, "open", `${id} is open data`);
+  assert.equal(LICENCES[r.licence]!.part, part, `${id} goes into the ${part} file`);
   for (const m of ["rent_1bed", "rent_3bed"]) assert.ok(r.measures.some((x) => x.metric === m), `${id} defines ${m}`);
   for (const o of Object.values(file.observations).flat()) assert.equal(o.source, id);
 }
@@ -142,6 +146,46 @@ test("pt-ine-rent: the median rent per m² of new leases in Lisbon's and Porto's
   assert.match(file.observations["lisbon-pt"]![0]!.note!, /new lease contracts.*17\.43 €\/m² × 50 m²/);
 });
 
+test("it-omi-locazioni: new long-term open-market leases of 2025 in each Italian seed, rent per m² from the totals, in their own file", () => {
+  const { csv } = fixture<{ csv: string }>("it-omi-locazioni");
+  const r = omiRates(csv, ["F205", "L219", "A182"]);
+  assert.equal(r.F205!.year, "2025", "the newest year, not 2024");
+  assert.equal(r.F205!.homes, 29173);
+  assert.equal(Math.round(r.F205!.perM2 * 100) / 100, 17.17, "412,543,596.1 € a year over 2,002,563.5 m², a twelfth");
+  assert.equal(Math.round(r.L219!.perM2 * 100) / 100, 9.44);
+  const file = omiObservations(csv, cities, DAY);
+  registered("it-omi-locazioni", file, "omi");
+  assert.deepEqual(Object.keys(file.observations).sort(), ["bologna-it", "florence-it", "milan-it", "naples-it", "rome-it", "turin-it"], "Alessandria is no seed");
+  assert.deepEqual(rents(file.observations["milan-it"]), { rent_1bed: [859, "2025"], rent_3bed: [1545, "2025"] });
+  assert.deepEqual(rents(file.observations["turin-it"]), { rent_1bed: [472, "2025"], rent_3bed: [850, "2025"] });
+  assert.match(file.observations["rome-it"]![0]!.note!, /new leases registered in 2025, long-term open-market contracts \(ORD_L.*€13\.51 per m² a month.*× 50 m²/);
+  assert.equal(LICENCES["AdE-OMI"]!.part, "omi", "not CC BY: the terms forbid handing on the data");
+});
+
+test("jp-estat-housing: Tokyo's special wards, private rents by floor area from the 2023 survey, every tenancy", () => {
+  const { reply } = fixture<{ reply: Parameters<typeof estatRents>[0] }>("jp-estat-housing");
+  assert.deepEqual(estatRents(reply), { rent_1bed: 105273, rent_3bed: 168226 });
+  assert.throws(() => estatRents({ ...reply, requestData: { rowItemList1: "2,4", rowItemList3: "13000" } }), /other rows/, "all of Tokyo-to is not the wards");
+  const file = estatObservations(reply, cities, DAY);
+  registered("jp-estat-housing", file);
+  assert.deepEqual(rents(file.observations["tokyo-jp"]), { rent_1bed: [105273, "2023-10"], rent_3bed: [168226, "2023-10"] });
+  assert.match(file.observations["tokyo-jp"]![0]!.note!, /23 special wards.*30-49 m².*every tenancy/);
+  // The form asks for exactly the wards, the two bands and rents above zero.
+  const rows = JSON.parse(gunzipSync(Buffer.from(form().get("rows")!, "base64")).toString()) as { dispTableName: string; listData: { code: string }[] }[];
+  assert.deepEqual(rows.map((d) => [d.dispTableName.split("_").at(-1), d.listData.map((x) => x.code)]), [["BUN01", ["0"]], ["BUN02", ["2", "4"]], ["AREA", ["13100"]]]);
+});
+
+test("vic-rental-report: the City of Melbourne's median weekly rent of new bonds for its newest quarter, as a month", () => {
+  const fx = fixture<{ rent_1bed: (string | number | null)[][]; rent_3bed: (string | number | null)[][] }>("vic-rental-report");
+  assert.equal(vicQuarter("Jun 2026"), "2026-Q2");
+  assert.deepEqual(vicRent(fx.rent_1bed), { quarter: "Jun 2026", bonds: 2152, weekly: 580 }, "the newest quarter, not March's 600");
+  assert.equal(vicRent(fx.rent_1bed, "Atlantis"), null);
+  const file = vicObservations(fx, cities, DAY);
+  registered("vic-rental-report", file);
+  assert.deepEqual(rents(file.observations["melbourne-au"]), { rent_1bed: [2513, "2026-Q2"], rent_3bed: [4333, "2026-Q2"] });
+  assert.match(file.observations["melbourne-au"]![0]!.note!, /City of Melbourne.*new bonds.*A\$580 a week \(2152 bonds\), × 52 \/ 12/);
+});
+
 test("each committed rent file holds what its parser reads from the source's file (re-fetch to update both)", () => {
   const parsed: Record<string, { observations: Record<string, Observation[]> }> = {
     "scot-rent": scotObservations(fixture<{ csv: string }>("scot-prs").csv, cities, DAY),
@@ -152,10 +196,37 @@ test("each committed rent file holds what its parser reads from the source's fil
     "au-rent": nswObservations(fixture<{ rows: (string | number | null)[][] }>("nsw-rent-sales").rows, cities, DAY),
     "pt-rent": ineObservations(fixture<{ indicator: IneIndicator }>("pt-ine-rent").indicator, cities, DAY),
     "at-rent": microcensusObservations(fixture<{ rows: (string | number | null)[][] }>("at-mikrozensus").rows, cities, DAY),
+    "jp-rent": estatObservations(fixture<{ reply: Parameters<typeof estatRents>[0] }>("jp-estat-housing").reply, cities, DAY),
+    "vic-rent": vicObservations(fixture<{ rent_1bed: (string | number | null)[][]; rent_3bed: (string | number | null)[][] }>("vic-rental-report"), cities, DAY),
+    "../observations-omi/it-rent": omiObservations(fixture<{ csv: string }>("it-omi-locazioni").csv, cities, DAY),
   };
   for (const [file, got] of Object.entries(parsed)) {
     const committed = JSON.parse(readFileSync(join(ROOT, "data/observations", `${file}.json`), "utf8")) as { observations: Record<string, Observation[]> };
     assert.deepEqual(Object.keys(committed.observations).sort(), Object.keys(got.observations).sort(), file);
     for (const id of Object.keys(got.observations)) assert.deepEqual(rents(committed.observations[id]), rents(got.observations[id]), `${file} ${id}`);
   }
+});
+
+test("a rent that covers every tenancy says, beside it, that newcomers usually pay more; a new-let rent does not", async () => {
+  const { rentBasis, ALL_TENANCIES } = await import("../src/core/rent-basis.ts");
+  const { loadPublishedDataset } = await import("../src/registry/load.ts");
+  const data = loadPublishedDataset(join(ROOT, "public/data/dataset.json"));
+  // Every rent source in the registry says which kind it is (the registry refuses one that does not).
+  const kinds = Object.fromEntries(Object.values(data.sources).filter((s) => s.tenancies).map((s) => [s.id, s.tenancies]));
+  for (const id of ["de-zensus", "es-serpavi", "ons-pipr", "acs", "jp-estat-housing"]) assert.equal(kinds[id], "all", id);
+  for (const id of ["pt-ine-rent", "it-omi-locazioni", "vic-rental-report", "nsw-rent-sales", "cso-rtb"]) assert.equal(kinds[id], "new", id);
+  assert.equal(rentBasis(data, "rent_1bed", ["de-zensus"]), ALL_TENANCIES);
+  assert.equal(rentBasis(data, "rent_1bed", ["pt-ine-rent"]), null);
+  assert.equal(rentBasis(data, "pm25", ["de-zensus"]), null, "only rents");
+  // On the page a person reads: Berlin's rent (Zensus) carries the words, Lisbon's (new leases) does not.
+  const { cityMarkdown } = await import("../src/agent/markdown.ts");
+  const { cityReport } = await import("../src/agent/report.ts");
+  const berlin = cityMarkdown(cityReport(data, "berlin-de", { metrics: ["rent_1bed"] }));
+  assert.match(berlin, /\| Rent, one bedroom \| 382 EUR\/month \(all tenancies; newcomers usually pay more\) \|/);
+  assert.doesNotMatch(cityMarkdown(cityReport(data, "lisbon-pt", { metrics: ["rent_1bed"] })), /newcomers usually pay more/);
+  const { validateEntry } = await import("../src/registry/schema.ts");
+  const entry = registry("nsw-rent-sales") as unknown as Parameters<typeof validateEntry>[0];
+  const metrics = new Set(Object.keys(data.metrics));
+  assert.deepEqual(validateEntry(entry, metrics), []);
+  assert.match(validateEntry({ ...entry, tenancies: undefined }, metrics).join(" "), /tenancies: a rent source says/);
 });

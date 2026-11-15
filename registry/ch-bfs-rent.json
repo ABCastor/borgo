@@ -13,6 +13,7 @@
       "definition": "Average monthly net rent (without service and heating charges) of every rented or cooperative 4-room flat (three bedrooms), three pooled years of the structural survey."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "CH"

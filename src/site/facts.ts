@@ -3,6 +3,7 @@
 import { evaluate, type CityResult } from "../core/engine.ts";
 import { CRITERIA, DEFAULT_COMFORT, figureWords, niceDays } from "../core/criteria.ts";
 import { resolve, series, type Resolved } from "../core/lookup.ts";
+import { ALL_TENANCIES, rentBasis } from "../core/rent-basis.ts";
 import { convert, money, type MoneyResult } from "../core/money.ts";
 import { longestDay, monthlyDaylight, shortestDay } from "../core/sun.ts";
 import type { City, Country, Dataset, Iso2, Level, Metric, Observation, Profile, Source } from "../core/types.ts";
@@ -19,6 +20,8 @@ export interface SourceRef {
   url: string;
   licence: string;
   licenceUrl?: string;
+  /** A rent source: "all" when it covers every tenancy (core/rent-basis.ts). */
+  tenancies?: "all" | "new";
 }
 
 export interface Figure {
@@ -126,7 +129,7 @@ export const comparePath = (a: string, b: string) => `/compare/${pairId(a, b)}/`
 
 function sourceRef(data: Dataset, id: string): SourceRef {
   const s: Source | undefined = data.sources[id];
-  return s ? { id: s.id, name: s.name, publisher: s.publisher, url: s.url, licence: s.licence, licenceUrl: s.licenceUrl } : { id, name: id, publisher: id, url: "", licence: "unknown" };
+  return s ? { id: s.id, name: s.name, publisher: s.publisher, url: s.url, licence: s.licence, licenceUrl: s.licenceUrl, ...(s.tenancies ? { tenancies: s.tenancies } : {}) } : { id, name: id, publisher: id, url: "", licence: "unknown" };
 }
 
 const regionNames = new Intl.DisplayNames(["en"], { type: "region" });
@@ -397,7 +400,7 @@ function keyFacts(data: Dataset, f: CityFacts): string[] {
     );
   }
   const rent = fig("rent_1bed");
-  if (rent) out.push(`A one-bedroom home in ${name} rents for about ${rent.text} (${levelText(rent.level, cn)} figure; ${cite(rent)}).`);
+  if (rent) out.push(`A one-bedroom home in ${name} rents for about ${rent.text} (${levelText(rent.level, cn)} figure; ${cite(rent)}${rent.sources.some((s) => s.tenancies === "all") ? `; ${ALL_TENANCIES}` : ""}).`);
   if (f.climate) {
     const c = f.climate;
     const hot = c.high.indexOf(Math.max(...c.high));
@@ -466,10 +469,15 @@ export interface CompareFacts {
   appParam: string;
 }
 
+/** The sources a resolved figure rests on. */
+const originSources = (r: Resolved) => (r.origin.kind === "consensus" ? r.origin.observations.map((o) => o.source) : r.origin.kind === "source" ? [r.origin.observation.source] : []);
+
 /** One city's headline numbers on the reference profile, in the pair's currency; null when there is no figure that holds every tax or cost due. */
 export interface PairNumbers {
   takeHome: number | null;
   rent: number | null;
+  /** The rent covers every tenancy, so newcomers usually pay more: said beside it. */
+  rentAll: boolean;
   left: number | null;
   niceDays: number | null;
 }
@@ -530,6 +538,7 @@ function pairNumbers(data: Dataset, f: CityFacts, r: CityResult, currency: strin
   return {
     takeHome: taxWhole && m.net !== null ? inPair(m.net / 12) : null,
     rent: m.rent && m.rent.resolved.origin.kind !== "you" ? inPair(m.rent.monthly) : null,
+    rentAll: !!m.rent && !!rentBasis(data, "rent_1bed", originSources(m.rent.resolved)),
     left: whole(m.completeness) ? inPair(m.monthlyLeft) : null,
     niceDays: nice ? Math.round(nice.reduce((s, v) => s + v, 0)) : null,
   };
@@ -560,10 +569,11 @@ function pairIntent(data: Dataset, a: CityFacts, b: CityFacts, ra: CityResult, r
 
   const answer: string[] = [];
   if (both("takeHome")) answer.push(`On ${salary}, you take home about ${m(na.takeHome!)} a month in ${A} and ${m(nb.takeHome!)} in ${B}.`);
-  if (both("rent")) answer.push(`A one-bedroom home rents for about ${m(na.rent!)} a month in ${A} and ${m(nb.rent!)} in ${B}.`);
+  const basis = (n: PairNumbers) => (n.rentAll ? ` (${ALL_TENANCIES})` : "");
+  if (both("rent")) answer.push(`A one-bedroom home rents for about ${m(na.rent!)} a month in ${A}${basis(na)} and ${m(nb.rent!)} in ${B}${basis(nb)}.`);
   else if (na.rent !== null || nb.rent !== null) {
-    const [has, lacks, v] = na.rent !== null ? [A, B, na.rent] : [B, A, nb.rent!];
-    answer.push(`A one-bedroom home rents for about ${m(v)} a month in ${has}; ${lacks} has no open rent figure yet.`);
+    const [has, lacks, v, n] = na.rent !== null ? [A, B, na.rent, na] : [B, A, nb.rent!, nb];
+    answer.push(`A one-bedroom home rents for about ${m(v)} a month in ${has}${basis(n)}; ${lacks} has no open rent figure yet.`);
   }
   else {
     // Without rent, the cost of living the page can speak to is everyday prices, set by each country's price level.

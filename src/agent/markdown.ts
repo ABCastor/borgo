@@ -1,4 +1,5 @@
 // Readable markdown for every report: what a chat shows when it cannot render the app view, and what a terminal prints.
+import { ALL_TENANCIES, isRent } from "../core/rent-basis.ts";
 import type { RightResult } from "../core/rights.ts";
 import type { Catalogue, CatalogueKind, CityReport, CompareReport, CompareSummary, Figure, NetPayReport } from "./report.ts";
 
@@ -33,7 +34,8 @@ export function sourceLabel(f: Figure): string {
   if (f.origin === "you") return "your number";
   if (f.origin === "none" || !f.source) return "no open data yet";
   const level = f.level && f.level !== "city" ? `, ${f.level} level` : "";
-  return `${f.source.publisher || f.source.name}, ${f.period}${level}`;
+  const basis = isRent(f.metric) && f.source.tenancies === "all" ? `; ${ALL_TENANCIES}` : "";
+  return `${f.source.publisher || f.source.name}, ${f.period}${level}${basis}`;
 }
 
 /** A person's right to live in a place, in a table cell. */
@@ -44,7 +46,8 @@ function rightCell(p: Pick<RightResult, "status" | "via">): string {
 function figureValue(f: Figure): string {
   if (f.value === null) return f.note && f.origin === "source" ? f.note : "–";
   if (Array.isArray(f.value)) return f.value.map((v) => num(v, 1)).join(" · ");
-  return `${num(f.value, Math.abs(f.value) < 100 ? 1 : 0)} ${f.unit}`.trim();
+  const basis = f.origin === "source" && isRent(f.metric) && f.source?.tenancies === "all" ? ` (${ALL_TENANCIES})` : "";
+  return `${num(f.value, Math.abs(f.value) < 100 ? 1 : 0)} ${f.unit}`.trim() + basis;
 }
 
 function sourcesUsed(figures: Figure[]): string[] {

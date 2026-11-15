@@ -1,0 +1,134 @@
+{
+  "part": "omi",
+  "licence": {
+    "id": "AdE-OMI",
+    "name": "Agenzia delle Entrate OMI terms",
+    "url": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali"
+  },
+  "notice": "Fonte: Agenzia delle Entrate – OMI (Osservatorio del Mercato Immobiliare), Rapporto Immobiliare residenziale, annex of residential leases registered by municipality; rents per m² computed by Borgo from its totals. The Agenzia's terms allow use and processing with the source cited, and forbid selling, renting, transferring or assigning the data. Not licensed CC BY.",
+  "sources": [
+    "it-omi-locazioni"
+  ],
+  "observations": {
+    "turin-it": [
+      {
+        "metric": "rent_1bed",
+        "value": 472,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Torino, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 14,125 homes, average €9.44 per m² a month (the year's total rent over the total floor area), × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 850,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Torino, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 14,125 homes, average €9.44 per m² a month (the year's total rent over the total floor area), × 90 m²"
+      }
+    ],
+    "milan-it": [
+      {
+        "metric": "rent_1bed",
+        "value": 859,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Milan, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 29,173 homes, average €17.17 per m² a month (the year's total rent over the total floor area), × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1545,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Milan, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 29,173 homes, average €17.17 per m² a month (the year's total rent over the total floor area), × 90 m²"
+      }
+    ],
+    "rome-it": [
+      {
+        "metric": "rent_1bed",
+        "value": 676,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Rome, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 10,818 homes, average €13.51 per m² a month (the year's total rent over the total floor area), × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1216,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Rome, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 10,818 homes, average €13.51 per m² a month (the year's total rent over the total floor area), × 90 m²"
+      }
+    ],
+    "naples-it": [
+      {
+        "metric": "rent_1bed",
+        "value": 383,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Naples, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 5,632 homes, average €7.65 per m² a month (the year's total rent over the total floor area), × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 689,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Naples, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 5,632 homes, average €7.65 per m² a month (the year's total rent over the total floor area), × 90 m²"
+      }
+    ],
+    "bologna-it": [
+      {
+        "metric": "rent_1bed",
+        "value": 651,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Bologna, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 7,863 homes, average €13.02 per m² a month (the year's total rent over the total floor area), × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1172,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Bologna, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 7,863 homes, average €13.02 per m² a month (the year's total rent over the total floor area), × 90 m²"
+      }
+    ],
+    "florence-it": [
+      {
+        "metric": "rent_1bed",
+        "value": 696,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Florence, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 4,232 homes, average €13.92 per m² a month (the year's total rent over the total floor area), × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1253,
+        "period": "2025",
+        "level": "city",
+        "source": "it-omi-locazioni",
+        "retrieved": "2026-11-15",
+        "note": "Comune di Florence, new leases registered in 2025, long-term open-market contracts (ORD_L, three years or more, not subsidised): 4,232 homes, average €13.92 per m² a month (the year's total rent over the total floor area), × 90 m²"
+      }
+    ]
+  }
+}

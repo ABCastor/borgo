@@ -203,6 +203,7 @@
         "definition": "Share of workers who commute (working from home left out) who walked or cycled to work (table B08301)."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "US"
@@ -260,6 +261,7 @@
         "definition": "Average monthly rent per m² of every main tenancy in the province, service charges included, times 90 m²."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "AT"
@@ -509,6 +511,7 @@
         "definition": "Median monthly rent paid by households renting a home of 75 to 100 m² from a private landlord (not a housing corporation), after any rent benefit."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "NL"
@@ -605,6 +608,7 @@
         "definition": "Average monthly net rent (without service and heating charges) of every rented or cooperative 4-room flat (three bedrooms), three pooled years of the structural survey."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "CH"
@@ -714,6 +718,7 @@
         "definition": "Sitting rent: the average monthly rent of every occupied three-bedroom unit in purpose-built rental apartments and rows of three units or more, surveyed each October, for the census metropolitan area."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "CA"
@@ -882,6 +887,7 @@
         "definition": "Average monthly rent agreed in new three-bedroom tenancies registered with the RTB."
       }
     ],
+    "tenancies": "new",
     "coverage": {
       "geography": [
         "IE"
@@ -978,6 +984,7 @@
         "definition": "Average net cold rent per m² (without heating and service charges) of every rented flat of 80-99 m² on census day, 15 May 2022, times 90 m²."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "DE"
@@ -1142,6 +1149,7 @@
         "definition": "Median monthly rent per m² of flats let as a main home, from every lease declared in that year's income tax returns, times 90 m²."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "ES"
@@ -1623,6 +1631,7 @@
         "definition": "Asking rent: the modelled rent per m², charges included, of an unfurnished flat of three rooms or more advertised in the third quarter, times 90 m² (Borgo's flat size for three bedrooms)."
       }
     ],
+    "tenancies": "new",
     "coverage": {
       "geography": [
         "FR"
@@ -2054,6 +2063,124 @@
     "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
   },
   {
+    "id": "it-omi-locazioni",
+    "name": "OMI residential leases by municipality",
+    "publisher": "Agenzia delle Entrate, Osservatorio del Mercato Immobiliare (OMI)",
+    "homepage": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average rent per m² a month of homes let whole in new long-term open-market leases (ORD_L) registered in the year in the municipality (the year's total rent over the total floor area), times 50 m²."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average rent per m² a month of homes let whole in new long-term open-market leases (ORD_L) registered in the year in the municipality (the year's total rent over the total floor area), times 90 m²."
+      }
+    ],
+    "tenancies": "new",
+    "coverage": {
+      "geography": [
+        "IT"
+      ],
+      "level": "city",
+      "period": "year"
+    },
+    "licence": "AdE-OMI",
+    "licenceUrl": "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "AdE-OMI",
+      "edition": "Rapporto Immobiliare 2026, residential leases annex (2018-2025), published 21 May 2026",
+      "termsUrl": "https://www.agenziaentrate.gov.it/portale/documents/20143/263076/RI2026_Residenziale20260521.pdf",
+      "termsRead": "2026-11-15",
+      "attribution": "Fonte: Agenzia delle Entrate – OMI"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.agenziaentrate.gov.it/portale/documents/d/guest/dati_locazioni_capoluoghi_2018_2024-csv",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/it-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 550
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official: every residential lease registered with the Agenzia delle Entrate. The report's second page reads: the information may be used, also processed, provided that the source is cited when published; selling, renting, transferring or assigning the data is not allowed. Not a CC BY licence, so its figures sit in their own file. ORD_L is the open market for three years or more (canone libero in these cities, all of which are high housing-pressure municipalities); subsidised (canone concordato) and transitional leases are left out."
+    },
+    "caveats": [
+      "Rents declared on registration; a lease left unregistered is not counted.",
+      "Average over every home let, so a one- or three-bedroom rent is the rate per m² times a fixed size, not a figure for that size."
+    ]
+  },
+  {
+    "id": "jp-estat-housing",
+    "name": "Housing and Land Survey 2023, rent of private rented homes by floor area",
+    "publisher": "Statistics Bureau of Japan (e-Stat)",
+    "homepage": "https://www.e-stat.go.jp/dbview?sid=0004021532",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average monthly rent of privately rented homes used only for living, of 30-49 m², in the area, leaving out homes let for nothing (every tenancy), October 2023."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average monthly rent of privately rented homes used only for living, of 70-99 m², in the area, leaving out homes let for nothing (every tenancy), October 2023."
+      }
+    ],
+    "tenancies": "all",
+    "coverage": {
+      "geography": [
+        "JP"
+      ],
+      "level": "city",
+      "period": "2023-10"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://www.e-stat.go.jp/en/terms-of-use",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "2023 Housing and Land Survey, basic tabulation, table 0004021532",
+      "termsUrl": "https://www.e-stat.go.jp/en/terms-of-use",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Statistics Bureau of Japan, 2023 Housing and Land Survey (e-Stat), processed by Borgo"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.e-stat.go.jp/dbview/api_get_result?sid=0004021532",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/jp-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 2000
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official survey every five years. e-Stat's terms of use are the Government of Japan Standard Terms of Use 2.0, which state they are compatible with CC BY 4.0, so the content may be used under CC BY 4.0 instead. Read through e-Stat's table viewer, which needs no key."
+    },
+    "caveats": [
+      "Every tenancy, however long ago it began: newcomers usually pay more.",
+      "The 23 special wards as a whole; central wards cost more."
+    ]
+  },
+  {
     "id": "labour-law",
     "name": "Paid holiday by law, from the labour codes cited",
     "publisher": "Borgo contributors",
@@ -2449,6 +2576,7 @@
         "definition": "Median weekly rent of three-bedroom homes (every dwelling type) in new bonds lodged in Greater Sydney in the quarter, times 52 over 12."
       }
     ],
+    "tenancies": "new",
     "coverage": {
       "geography": [
         "AU-NSW"
@@ -2879,6 +3007,7 @@
         "definition": "Average monthly private rent of a three-bedroom home in the local authority."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "GB"
@@ -3506,6 +3635,7 @@
         "definition": "Median monthly rent per m² of new lease contracts of family homes signed in the municipality over the last 12 months, times 90 m²."
       }
     ],
+    "tenancies": "new",
     "coverage": {
       "geography": [
         "PT"
@@ -3615,6 +3745,7 @@
         "definition": "Sitting rent: the median annual rent of every rented dwelling of 4 rooms or more (three bedrooms or more) in Stockholm municipality, divided by 12."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "SE"
@@ -3672,6 +3803,7 @@
         "definition": "Mean monthly rent of three-bedroom homes in the Broad Rental Market Area over the year to September, mostly advertised rents of homes let that year."
       }
     ],
+    "tenancies": "new",
     "coverage": {
       "geography": [
         "GB-SCT"
@@ -3730,6 +3862,7 @@
         "definition": "The same rate per m² as the one-bedroom figure, times 90 m²."
       }
     ],
+    "tenancies": "new",
     "coverage": {
       "geography": [
         "SG"
@@ -3791,6 +3924,7 @@
         "definition": "Sitting rent: the average monthly rent of every surveyed tenancy of a 4-room home (three bedrooms) in the Oslo and Bærum price zone."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "NO"
@@ -4017,6 +4151,7 @@
         "definition": "Sitting rent: the median monthly rent of every non-subsidised tenancy of a two-room flat (one bedroom; Finnish rooms leave out the kitchen) in Helsinki, old and new tenancies."
       }
     ],
+    "tenancies": "all",
     "coverage": {
       "geography": [
         "FI"
@@ -4144,6 +4279,65 @@
       "notes": "A legal text, encoded by hand in data/rights.json."
     },
     "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "vic-rental-report",
+    "name": "Victorian Rental Report, quarterly median rents by local government area",
+    "publisher": "Victorian Department of Families, Fairness and Housing",
+    "homepage": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Median weekly rent of one-bedroom flats in new bonds lodged in the quarter in the local government area, times 52 over 12."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Median weekly rent of three-bedroom flats in new bonds lodged in the quarter in the local government area, times 52 over 12."
+      }
+    ],
+    "tenancies": "new",
+    "coverage": {
+      "geography": [
+        "AU-VIC"
+      ],
+      "level": "city",
+      "period": "quarter"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Quarterly median rents by LGA, June quarter 2026",
+      "termsUrl": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+      "termsRead": "2026-11-15",
+      "attribution": "© State of Victoria (Department of Families, Fairness and Housing), Rental Report, CC BY 4.0"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://discover.data.vic.gov.au/api/3/action/package_show?id=rental-report-quarterly-quarterly-median-rents-by-lga",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/vic-rent.ts"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "maxAgeDays": 200
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official bond lodgements (new tenancies, from the Residential Tenancies Bond Authority). The dataset's DataVic page licenses it CC BY 4.0 (the department's website copyright notice covers the website, not this dataset). The department's host refuses plain HTTP clients, so the file is saved from a browser and passed to the fetcher."
+    },
+    "caveats": [
+      "The City of Melbourne local government area (the central city), not Greater Melbourne: the report gives no metro-wide figure.",
+      "Flats only; few three-bedroom houses are let in the central city."
+    ]
   },
   {
     "id": "weatherspark",

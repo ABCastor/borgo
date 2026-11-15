@@ -13,6 +13,7 @@
       "definition": "Asking rent: the modelled rent per m², charges included, of an unfurnished flat of three rooms or more advertised in the third quarter, times 90 m² (Borgo's flat size for three bedrooms)."
     }
   ],
+  "tenancies": "new",
   "coverage": {
     "geography": [
       "FR"

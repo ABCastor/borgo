@@ -13,6 +13,7 @@
       "definition": "Sitting rent: the average monthly rent of every occupied three-bedroom unit in purpose-built rental apartments and rows of three units or more, surveyed each October, for the census metropolitan area."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "CA"

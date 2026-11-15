@@ -1,0 +1,26 @@
+{
+  "source": "vic-rental-report",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "melbourne-au": [
+      {
+        "metric": "rent_1bed",
+        "value": 2513,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "vic-rental-report",
+        "retrieved": "2026-11-15",
+        "note": "City of Melbourne (local government area), median weekly rent of 1 bedroom flats in new bonds lodged in the Jun 2026 quarter: A$580 a week (2152 bonds), × 52 / 12"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 4333,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "vic-rental-report",
+        "retrieved": "2026-11-15",
+        "note": "City of Melbourne (local government area), median weekly rent of 3 bedroom flats in new bonds lodged in the Jun 2026 quarter: A$1000 a week (342 bonds), × 52 / 12"
+      }
+    ]
+  }
+}

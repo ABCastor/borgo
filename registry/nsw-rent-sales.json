@@ -13,6 +13,7 @@
       "definition": "Median weekly rent of three-bedroom homes (every dwelling type) in new bonds lodged in Greater Sydney in the quarter, times 52 over 12."
     }
   ],
+  "tenancies": "new",
   "coverage": {
     "geography": [
       "AU-NSW"

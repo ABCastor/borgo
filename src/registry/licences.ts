@@ -5,11 +5,13 @@
 //   odbl  public/data/dataset-odbl.json  ODbL 1.0 (figures derived from OpenStreetMap, a share-alike database)
 //   who   public/data/dataset-who.json   WHO's terms for data compilations (public-health use, unaltered values)
 //   cmhc  public/data/dataset-cmhc.json  CMHC's Licence Agreement for the Use of Data (recipients accept its terms)
+//   omi   public/data/dataset-omi.json   Agenzia delle Entrate's OMI terms (use and processing citing the source; the
+//                                        data themselves may not be sold, rented or handed on)
 // pipeline/build-data.ts writes a manifest of every source actually exported (public/data/licences.json) and refuses to
 // build when a figure's source has no rights block, an unknown licence, or sits in the wrong file. Browser-safe.
 import type { Dataset, Observation } from "../core/types.ts";
 
-export type PartId = "open" | "odbl" | "who" | "cmhc";
+export type PartId = "open" | "odbl" | "who" | "cmhc" | "omi";
 
 export interface Licence {
   id: string;
@@ -46,6 +48,7 @@ export const LICENCES: Record<string, Licence> = Object.fromEntries(
     { id: "ES-reuse", name: "Spanish public-sector reuse conditions (Real Decreto 1495/2011): any use, with the source and update date cited, not distorted", url: "https://www.mivau.gob.es/ministerio/aviso-legal", part: "open" },
     { id: "StatAustria-reuse", name: "Statistik Austria terms: reproduction for any purpose citing STATISTIK AUSTRIA, edits marked", url: "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum", part: "open" },
     { id: "CMHC-data", name: "CMHC Licence Agreement for the Use of Data", url: "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions", part: "cmhc" },
+    { id: "AdE-OMI", name: "Agenzia delle Entrate OMI terms: use and processing allowed with the source cited; the data may not be sold, rented, transferred or assigned", url: "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali", part: "omi" },
     { id: "WHO-data", name: "WHO terms and conditions for data compilations", url: "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions", part: "who" },
   ] satisfies Licence[]).map((l) => [l.id, l]),
 );
@@ -90,6 +93,13 @@ export const PARTS: Record<PartId, Part> = {
     file: "data/dataset-cmhc.json",
     licence: { id: "CMHC-data", name: "CMHC Licence Agreement for the Use of Data", url: "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions" },
     notice: "Source: Canada Mortgage and Housing Corporation (CMHC), Rental Market Survey, average rents (October), via Statistics Canada table 34-10-0133-01. This information is reproduced and distributed on an \"as is\" basis with the permission of CMHC. Not licensed CC BY: it is redistributed under CMHC's Licence Agreement for the Use of Data, and anyone receiving it agrees to be bound by those terms.",
+  },
+  omi: {
+    id: "omi",
+    folder: "data/observations-omi",
+    file: "data/dataset-omi.json",
+    licence: { id: "AdE-OMI", name: "Agenzia delle Entrate OMI terms", url: "https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali" },
+    notice: "Fonte: Agenzia delle Entrate – OMI (Osservatorio del Mercato Immobiliare), Rapporto Immobiliare residenziale, annex of residential leases registered by municipality; rents per m² computed by Borgo from its totals. The Agenzia's terms allow use and processing with the source cited, and forbid selling, renting, transferring or assigning the data. Not licensed CC BY.",
   },
 };
 

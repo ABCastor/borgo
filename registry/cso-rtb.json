@@ -13,6 +13,7 @@
       "definition": "Average monthly rent agreed in new three-bedroom tenancies registered with the RTB."
     }
   ],
+  "tenancies": "new",
   "coverage": {
     "geography": [
       "IE"

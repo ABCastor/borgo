@@ -50,16 +50,17 @@ test("a comparison's title, H1 and opening answer 'A vs B' and 'cost of living A
   // Both cities have an official rent (ONS for Bristol, the Scottish Government for Edinburgh): both are set side by side.
   assert.ok(c.intent.a.rent !== null && c.intent.b.rent !== null);
   assert.ok(m.description.includes(`One-bedroom rent: ${fmtMoney(c.intent.a.rent!, "GBP")} vs ${fmtMoney(c.intent.b.rent!, "GBP")}`), m.description);
-  assert.match(m.lede, /A one-bedroom home rents for about £[\d,]+ a month in Bristol and £[\d,]+ in Edinburgh/);
+  // ONS counts every tenancy, so Bristol's rent says newcomers pay more; Edinburgh's (homes let that year) does not.
+  assert.match(m.lede, /A one-bedroom home rents for about £[\d,]+ a month in Bristol \(all tenancies; newcomers usually pay more\) and £[\d,]+ in Edinburgh\./);
   assert.match(m.lede, /nice days a year/);
 });
 
 test("a city without an open rent figure is said to have none, and the description never sets a rent beside nothing", () => {
-  const c = compareFacts(data, "barcelona-es", "rome-it", pairs);
-  const m = meta(read("compare/barcelona-es-vs-rome-it/index.html"));
-  assert.ok(c.intent.a.rent !== null, "Barcelona has the SERPAVI rent");
-  assert.equal(c.intent.b.rent, null);
-  assert.match(m.lede, /Rome has no open rent figure yet/);
+  const c = compareFacts(data, "athens-gr", "malaga-es", pairs);
+  const m = meta(read("compare/athens-gr-vs-malaga-es/index.html"));
+  assert.ok(c.intent.b.rent !== null, "Málaga has the SERPAVI rent");
+  assert.equal(c.intent.a.rent, null);
+  assert.match(m.lede, /Athens has no open rent figure yet/);
   assert.ok(!/rent/i.test(m.description), m.description);
 });
 

@@ -63,7 +63,7 @@ test("registry: every fetcher has an entry that allows its runtimes, and every e
 });
 
 test("registry: every snapshot figure's metric is declared by its source", () => {
-  for (const dir of ["data/observations", "data/observations-odbl", "data/observations-who", "data/observations-cmhc"]) {
+  for (const dir of ["data/observations", "data/observations-odbl", "data/observations-who", "data/observations-cmhc", "data/observations-omi"]) {
     for (const f of readdirSync(join(REGISTRY_DIR, "..", dir))) {
       const file = JSON.parse(readFileSync(join(REGISTRY_DIR, "..", dir, f), "utf8"));
       for (const list of Object.values(file.observations) as { metric: string; source: string }[][]) {
@@ -143,12 +143,12 @@ test("rights: the published files keep each licence apart, and the manifest cred
   const partOf = new Map(manifest.sources.map((s) => [s.source, s.part]));
   const open = Object.values(dataset.observations).flat() as { source: string }[];
   for (const o of open) assert.equal(partOf.get(o.source), "open", `${o.source} is in dataset.json but not licensed for it`);
-  for (const p of dataset.parts as { part: "odbl" | "who" | "cmhc"; file: string }[]) {
+  for (const p of dataset.parts as { part: "odbl" | "who" | "cmhc" | "omi"; file: string }[]) {
     const file = read(p.file) as PartFile;
     assert.equal(file.licence.id, PARTS[p.part].licence.id);
     for (const o of Object.values(file.observations).flat()) assert.equal(partOf.get(o.source), p.part, `${o.source} in ${p.file}`);
   }
-  assert.deepEqual(dataset.parts.map((p: { part: string }) => p.part).sort(), ["cmhc", "odbl", "who"]);
+  assert.deepEqual(dataset.parts.map((p: { part: string }) => p.part).sort(), ["cmhc", "odbl", "omi", "who"]);
   for (const s of manifest.sources) {
     assert.ok(s.attribution && s.licenceId && s.edition && s.termsUrl, s.source);
     assert.notEqual(byId.get(s.source)!.access, "link-out", s.source);

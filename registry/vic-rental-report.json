@@ -1,0 +1,59 @@
+{
+  "id": "vic-rental-report",
+  "name": "Victorian Rental Report, quarterly median rents by local government area",
+  "publisher": "Victorian Department of Families, Fairness and Housing",
+  "homepage": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Median weekly rent of one-bedroom flats in new bonds lodged in the quarter in the local government area, times 52 over 12."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Median weekly rent of three-bedroom flats in new bonds lodged in the quarter in the local government area, times 52 over 12."
+    }
+  ],
+  "tenancies": "new",
+  "coverage": {
+    "geography": [
+      "AU-VIC"
+    ],
+    "level": "city",
+    "period": "quarter"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Quarterly median rents by LGA, June quarter 2026",
+    "termsUrl": "https://discover.data.vic.gov.au/dataset/rental-report-quarterly-quarterly-median-rents-by-lga",
+    "termsRead": "2026-11-15",
+    "attribution": "© State of Victoria (Department of Families, Fairness and Housing), Rental Report, CC BY 4.0"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://discover.data.vic.gov.au/api/3/action/package_show?id=rental-report-quarterly-quarterly-median-rents-by-lga",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/vic-rent.ts"
+  },
+  "refresh": {
+    "cadence": "monthly",
+    "maxAgeDays": 200
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official bond lodgements (new tenancies, from the Residential Tenancies Bond Authority). The dataset's DataVic page licenses it CC BY 4.0 (the department's website copyright notice covers the website, not this dataset). The department's host refuses plain HTTP clients, so the file is saved from a browser and passed to the fetcher."
+  },
+  "caveats": [
+    "The City of Melbourne local government area (the central city), not Greater Melbourne: the report gives no metro-wide figure.",
+    "Flats only; few three-bedroom houses are let in the central city."
+  ]
+}

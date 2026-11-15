@@ -13,6 +13,9 @@ export interface RegistryEntry {
   homepage: string;
   /** Metric ids this source fills, each with what *this source* counts, in plain words. */
   measures: { metric: string; definition: string }[];
+  /** For a rent source: whether its figure covers every tenancy, however long ago it began ("all"), or only new lets,
+   * asking rents or tenancies begun in the period ("new"). Newcomers pay new-let rents, so an "all" figure says so. */
+  tenancies?: "all" | "new";
   coverage: { geography: string | string[]; level: Level; period: string };
   licence: string;
   licenceUrl?: string;
@@ -64,6 +67,8 @@ export function validateEntry(e: RegistryEntry, metricIds: Set<string>, file?: s
   for (const k of ["name", "publisher", "homepage", "licence"] as const) need(typeof e[k] === "string" && e[k].length > 0, `${k} is required`);
   need(/^https:\/\//.test(e.homepage ?? ""), "homepage must be an https URL");
   need(Array.isArray(e.measures), "measures must be a list");
+  if ((e.measures ?? []).some((m) => m.metric === "rent_1bed" || m.metric === "rent_3bed") && e.redistribute !== "no")
+    need(e.tenancies === "all" || e.tenancies === "new", 'tenancies: a rent source says whether it covers "all" tenancies or only "new" lets');
   for (const m of e.measures ?? []) {
     need(metricIds.has(m.metric) || REFERENCE_MEASURES.has(m.metric), `measures: unknown metric ${m.metric}`);
     need(typeof m.definition === "string" && m.definition.length >= 12, `measures ${m.metric}: needs a plain-words definition`);
@@ -111,6 +116,7 @@ export function toSource(e: RegistryEntry): Source {
   const s: Source = { id: e.id, name: e.name, publisher: e.publisher, url: e.homepage, licence: e.licence, redistributable: e.redistribute !== "no" };
   if (e.licenceUrl) s.licenceUrl = e.licenceUrl;
   if (e.redistribute === "share-alike") s.shareAlike = true;
+  if (e.tenancies) s.tenancies = e.tenancies;
   return s;
 }
 

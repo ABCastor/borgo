@@ -13,6 +13,7 @@
       "definition": "Median monthly rent per m² of flats let as a main home, from every lease declared in that year's income tax returns, times 90 m²."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "ES"

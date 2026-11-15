@@ -7,6 +7,8 @@ import { eligibleRegimes, NO_WAGE_REGIME, regimesFor, withRegime } from "../tax/
 import { PENSION_RELIEF } from "../tax/pension.ts";
 import { moneyGap } from "../core/criteria.ts";
 import type { Resolved } from "../core/lookup.ts";
+import type { Dataset } from "../core/types.ts";
+import { rentBasis } from "../core/rent-basis.ts";
 import { html, raw, type Raw } from "./dom.ts";
 import { correctionUrl } from "../community/prefill.ts";
 import { REPO_URL } from "../community/proposal.ts";
@@ -63,6 +65,14 @@ export const SOURCE_SHORT: Record<string, string> = {
   "ons-ashe": "ONS",
   wikidata: "Wikidata",
 };
+
+/** Beside a rent figure that covers every tenancy: that newcomers usually pay more (core/rent-basis.ts). */
+export function rentTag(data: Dataset, r: Resolved | null | undefined, metric: string): Raw {
+  if (!r || r.origin.kind === "you") return html``;
+  const ids = r.origin.kind === "consensus" ? r.origin.observations.map((o) => o.source) : [r.origin.observation.source];
+  const words = rentBasis(data, metric, ids);
+  return words ? html` <span class="quiet rent-basis">${words}</span>` : html``;
+}
 
 /** A tiny teal marker naming where a figure came from; terracotta "yours" when the person set it. */
 export function srcMark(r: Resolved | null | undefined, city: string, metric?: string, compact = false): Raw {
@@ -164,7 +174,7 @@ export function waterfall(s: AppState, r: CityResult): Raw {
   }
   if (m.pension > 0) rows.push({ label: term("pension", "Into pensions"), v: -toShown(m.pension / 12), kind: "save", note: html`<span class="quiet">still yours, not spent; ${pensionPlan(r.city.country, countryName(s.data, r.city.country))}</span>` });
   if (m.net !== null) rows.push({ label: "Take-home pay", v: toShown(m.net / 12), kind: "sum" });
-  if (m.rent) rows.push({ label: s.profile.housing.size === "1bed" ? "Rent, one bedroom" : "Rent, three bedrooms", v: -toShown(m.rent.monthly), kind: "out", note: srcMark(m.rent.resolved, r.city.id, `rent_${s.profile.housing.size}`) });
+  if (m.rent) rows.push({ label: s.profile.housing.size === "1bed" ? "Rent, one bedroom" : "Rent, three bedrooms", v: -toShown(m.rent.monthly), kind: "out", note: html`${srcMark(m.rent.resolved, r.city.id, `rent_${s.profile.housing.size}`)}${rentTag(s.data, m.rent.resolved, `rent_${s.profile.housing.size}`)}` });
   if (m.everyday) rows.push({ label: "Everything else", v: -toShown(m.everyday.monthly), kind: "out", note: html`<span class="quiet">${m.everyday.how}</span>` });
   // Beside the childcare line: whether the household pays for care at all, and its own cost in place of the reference.
   const young = (s.profile.children ?? []).some((a) => a >= CHILDCARE_AGES.from && a < CHILDCARE_AGES.below);

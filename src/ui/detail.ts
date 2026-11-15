@@ -9,7 +9,7 @@ import { html, type Raw } from "./dom.ts";
 import { KM_PER_MILE } from "../core/units.ts";
 import { countryName, currentUnits, hours, local, money, num, tempUnit } from "./format.ts";
 import { failText, ruler, scoreShare, shortLabel } from "./glance.ts";
-import { advanced, cell, missingText, srcMark, waterfall } from "./results.ts";
+import { advanced, cell, missingText, rentTag, srcMark, waterfall } from "./results.ts";
 import { moneyGap } from "../core/criteria.ts";
 import type { AppState } from "./state.ts";
 import { term } from "./terms.ts";
@@ -145,7 +145,7 @@ function figures(s: AppState, r: CityResult): Raw {
           : inMiles
             ? html`<span>${local(`${v!.toLocaleString("en-GB", { maximumFractionDigits: d, minimumFractionDigits: d })} ${unit}`)}</span>`
             : html`${num(v, d)} <span class="quiet">${unit}</span>`);
-      return html`<tr><th scope="row">${local(m.label)}</th><td class="${words ? "" : "num"}">${shown}</td><td>${srcMark(rv, city.id, m.id)}</td></tr>`;
+      return html`<tr><th scope="row">${local(m.label)}</th><td class="${words ? "" : "num"}">${shown}${rentTag(s.data, rv, m.id)}</td><td>${srcMark(rv, city.id, m.id)}</td></tr>`;
     })}
   </tbody></table>`;
 }

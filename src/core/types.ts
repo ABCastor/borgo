@@ -46,6 +46,8 @@ export interface Source {
    * data/observations-odbl/ and the site credits them separately.
    */
   shareAlike?: boolean;
+  /** A rent source: "all" when its figure covers every tenancy, "new" when only new lets or asking rents. */
+  tenancies?: "all" | "new";
 }
 
 /** A number, twelve monthly numbers, 288 hourly numbers (12 months x 24 local hours, month by month), or 12 months of temperature bins (see src/core/weather-days.ts). */

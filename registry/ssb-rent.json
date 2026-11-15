@@ -13,6 +13,7 @@
       "definition": "Sitting rent: the average monthly rent of every surveyed tenancy of a 4-room home (three bedrooms) in the Oslo and Bærum price zone."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "NO"

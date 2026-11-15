@@ -13,6 +13,7 @@
       "definition": "The same rate per m² as the one-bedroom figure, times 90 m²."
     }
   ],
+  "tenancies": "new",
   "coverage": {
     "geography": [
       "SG"

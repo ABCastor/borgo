@@ -13,6 +13,7 @@
       "definition": "Median monthly rent paid by households renting a home of 75 to 100 m² from a private landlord (not a housing corporation), after any rent benefit."
     }
   ],
+  "tenancies": "all",
   "coverage": {
     "geography": [
       "NL"
