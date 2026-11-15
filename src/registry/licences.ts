@@ -40,6 +40,11 @@ export const LICENCES: Record<string, Licence> = Object.fromEntries(
     { id: "ODbL-1.0", name: "Open Database License 1.0", url: "https://opendatacommons.org/licenses/odbl/1-0/", part: "odbl" },
     { id: "StatCan-Open", name: "Statistics Canada Open Licence", url: "https://www.statcan.gc.ca/en/terms-conditions/open-licence", part: "open" },
     { id: "Etalab-2.0", name: "Licence Ouverte / Open Licence 2.0 (Etalab)", url: "https://www.etalab.gouv.fr/licence-ouverte-open-licence/", part: "open" },
+    { id: "DL-DE-BY-2.0", name: "Data licence Germany, attribution, version 2.0", url: "https://www.govdata.de/dl-de/by-2-0", part: "open" },
+    { id: "SG-ODL-1.0", name: "Singapore Open Data Licence 1.0", url: "https://data.gov.sg/open-data-licence", part: "open" },
+    { id: "opendata-swiss-BY", name: "opendata.swiss terms: open use, must provide the source", url: "https://opendata.swiss/en/terms-of-use", part: "open" },
+    { id: "ES-reuse", name: "Spanish public-sector reuse conditions (Real Decreto 1495/2011): any use, with the source and update date cited, not distorted", url: "https://www.mivau.gob.es/ministerio/aviso-legal", part: "open" },
+    { id: "StatAustria-reuse", name: "Statistik Austria terms: reproduction for any purpose citing STATISTIK AUSTRIA, edits marked", url: "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum", part: "open" },
     { id: "CMHC-data", name: "CMHC Licence Agreement for the Use of Data", url: "https://www.cmhc-schl.gc.ca/about-us/terms-conditions/hmip-terms-conditions", part: "cmhc" },
     { id: "WHO-data", name: "WHO terms and conditions for data compilations", url: "https://www.who.int/about/policies/publishing/data-policy/terms-and-conditions", part: "who" },
   ] satisfies Licence[]).map((l) => [l.id, l]),
@@ -171,6 +176,11 @@ export function withParts<D extends Dataset>(data: D, files: PartFile[]): D {
   const observations: Record<string, Observation[]> = Object.fromEntries(Object.entries(data.observations).map(([k, v]) => [k, [...v]]));
   for (const f of files) for (const [city, list] of Object.entries(f.observations)) (observations[city] ??= []).push(...list);
   return { ...data, observations };
+}
+
+/** The dataset with one city's figures (a data/city/<id>.json file) added beside any it already holds from part files. */
+export function withCity<D extends Dataset>(data: D, city: string, list: Observation[]): D {
+  return { ...data, observations: { ...data.observations, [city]: [...list, ...(data.observations[city] ?? [])] } };
 }
 
 /** The manifest a dataset carries, if it was built with one. */

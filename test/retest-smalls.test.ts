@@ -73,10 +73,11 @@ test("fetch_city rounds a figure to its metric's decimals", () => {
 });
 
 test("spending is one figure for every city: the next step never says 'your spending for Lisbon'", () => {
-  // Lisbon has no open rent, Dublin has one; neither has spending. The re-test read "add your rent; add your spending for Lisbon".
-  const r = compare(published, { cities: ["Lisbon", "Dublin"], salary: { amount: 60_000 } });
+  // The re-test read "add your rent; add your spending for Lisbon", when Lisbon had no open rent. Rome has none now,
+  // Dublin has one; neither has spending.
+  const r = compare(published, { cities: ["Rome", "Dublin"], salary: { amount: 60_000 } });
   const note = r.notes.find((n) => /spending/.test(n))!;
-  assert.match(note, /add your rent for Lisbon; add your spending\.$/);
+  assert.match(note, /add your rent for Rome; add your spending\.$/);
 });
 
 test("two compared cities of one name are told apart by country in every row", () => {
@@ -96,13 +97,14 @@ test("two compared cities of one name are told apart by country in every row", (
 
 test("a line's points never exceed the share shown beside it, when another line scores nowhere", () => {
   // The re-test's Lisbon sheet: nice days at "50% of your score" carried 47.2 points, because money (the other 50%)
-  // had no figure and its weight went to nice days. The share shown is now of this score.
+  // had no figure and its weight went to nice days. The share shown is now of this score. Lisbon has an open rent
+  // now, so the sheet is Rome's, which has none.
   const base = defaultProfile(published);
   const zero = Object.fromEntries(Object.keys(base.weights).map((k) => [k, 0]));
-  const p = { ...base, cities: ["lisbon-pt"], weights: { ...zero, nice_days: 50, money_left: 50 } };
+  const p = { ...base, cities: ["rome-it"], weights: { ...zero, nice_days: 50, money_left: 50 } };
   const e = evaluate(published, p);
   const r = e.results[0]!;
-  const sheet = text(cityView(app(published, p), e, "lisbon-pt"));
+  const sheet = text(cityView(app(published, p), e, "rome-it"));
   assert.match(sheet, /Nice days 100% of your score/);
   assert.match(sheet, /set to 50%, not in this score: no figure to compare/);
   for (const l of r.lines.filter((x) => x.weight > 0)) {

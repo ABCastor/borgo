@@ -1,0 +1,26 @@
+{
+  "source": "at-mikrozensus",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "vienna-at": [
+      {
+        "metric": "rent_1bed",
+        "value": 529,
+        "period": "2025",
+        "level": "city",
+        "source": "at-mikrozensus",
+        "retrieved": "2026-11-15",
+        "note": "Vienna, average monthly rent of every main tenancy in 2025, service charges included: 10.58 €/m² × 50 m² (STATISTIK AUSTRIA, Mikrozensus Wohnen; edited: rate times a flat size)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 952,
+        "period": "2025",
+        "level": "city",
+        "source": "at-mikrozensus",
+        "retrieved": "2026-11-15",
+        "note": "Vienna, average monthly rent of every main tenancy in 2025, service charges included: 10.58 €/m² × 90 m² (STATISTIK AUSTRIA, Mikrozensus Wohnen; edited: rate times a flat size)"
+      }
+    ]
+  }
+}

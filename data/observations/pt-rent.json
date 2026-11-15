@@ -1,0 +1,46 @@
+{
+  "source": "pt-ine-rent",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "lisbon-pt": [
+      {
+        "metric": "rent_1bed",
+        "value": 872,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Lisbon municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 17.43 €/m² × 50 m² (INE indicator 0014696, updated 2026-09-29)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1569,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Lisbon municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 17.43 €/m² × 90 m² (INE indicator 0014696, updated 2026-09-29)"
+      }
+    ],
+    "porto-pt": [
+      {
+        "metric": "rent_1bed",
+        "value": 724,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Porto municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 14.48 €/m² × 50 m² (INE indicator 0014696, updated 2026-09-29)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1303,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Porto municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 14.48 €/m² × 90 m² (INE indicator 0014696, updated 2026-09-29)"
+      }
+    ]
+  }
+}

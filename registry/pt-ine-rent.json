@@ -1,0 +1,57 @@
+{
+  "id": "pt-ine-rent",
+  "name": "INE median rent of new leases (0014696)",
+  "publisher": "Statistics Portugal (INE)",
+  "homepage": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Median monthly rent per m² of new lease contracts of family homes signed in the municipality over the last 12 months, times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Median monthly rent per m² of new lease contracts of family homes signed in the municipality over the last 12 months, times 90 m²."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "PT"
+    ],
+    "level": "city",
+    "period": "12 months to the quarter"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Indicator 0014696 (Metodologia 2026), latest quarter",
+    "termsUrl": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Statistics Portugal (INE), median rent of new lease contracts (indicator 0014696), CC BY 4.0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014696&lang=PT",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/pt-rent.ts"
+  },
+  "refresh": {
+    "cadence": "quarterly",
+    "maxAgeDays": 200
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official, from leases declared to the tax authority; INE publishes the indicator itself on dados.gov.pt under CC BY 4.0."
+  },
+  "caveats": [
+    "New leases only, every size of home: smaller homes rent for more per m², so 50 m² at the median rate is on the low side for a one-bedroom flat."
+  ]
+}

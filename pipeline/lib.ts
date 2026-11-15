@@ -28,6 +28,9 @@ export async function writeJson(rel: string, value: unknown): Promise<void> {
   await writeFile(path, JSON.stringify(value, null, 2) + "\n");
 }
 
+/** True when the module at `url` (its import.meta.url) is the script node was started with, not an import (a test). */
+export const isMain = (url: string) => !!process.argv[1] && fileURLToPath(url) === process.argv[1];
+
 export function today(): string {
   return new Date().toISOString().slice(0, 10);
 }

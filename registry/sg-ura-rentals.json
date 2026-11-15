@@ -1,0 +1,61 @@
+{
+  "id": "sg-ura-rentals",
+  "name": "URA rentals of non-landed homes, quarterly",
+  "publisher": "Urban Redevelopment Authority (Singapore)",
+  "homepage": "https://data.gov.sg/datasets/d_149ac00a2734bb0a03867bbe2ec0e7b0/view",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Median monthly rent per sq ft of private non-landed homes (condominiums and private flats) in major projects with at least 10 contracts in the latest quarter, weighted by contracts, converted to m² and times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "The same rate per m² as the one-bedroom figure, times 90 m²."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "SG"
+    ],
+    "level": "city",
+    "period": "quarter"
+  },
+  "licence": "SG-ODL-1.0",
+  "licenceUrl": "https://data.gov.sg/open-data-licence",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "SG-ODL-1.0",
+    "edition": "data.gov.sg dataset d_149ac00a2734bb0a03867bbe2ec0e7b0 (latest quarter)",
+    "termsUrl": "https://data.gov.sg/open-data-licence",
+    "termsRead": "2026-11-15",
+    "attribution": "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly (Urban Redevelopment Authority) accessed from data.gov.sg, made available under the terms of the Singapore Open Data Licence version 1.0 (https://data.gov.sg/open-data-licence)",
+    "notices": [
+      "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly accessed from data.gov.sg, which is made available under the terms of the Singapore Open Data Licence version 1.0 https://data.gov.sg/open-data-licence"
+    ]
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://data.gov.sg/api/action/datastore_search?resource_id=d_149ac00a2734bb0a03867bbe2ec0e7b0",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/sg-rent.ts"
+  },
+  "refresh": {
+    "cadence": "monthly",
+    "maxAgeDays": 150
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official contract rents; the Singapore Open Data Licence allows any use with the attribution notice. HDB's own median rents by town and flat type are also open (d_23000a00c52996c55106084ed0339566) and could join as a second figure."
+  },
+  "caveats": [
+    "Private condominiums and flats only; public (HDB) flats, cheaper and home to most residents, are not in it.",
+    "Smaller homes rent for more per sq ft, so a fixed 50 m² at the median rate is on the low side for a one-bedroom condominium."
+  ]
+}

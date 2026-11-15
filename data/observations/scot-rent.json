@@ -1,0 +1,26 @@
+{
+  "source": "scot-prs",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "edinburgh-gb": [
+      {
+        "metric": "rent_1bed",
+        "value": 1057,
+        "period": "2025",
+        "level": "metro",
+        "source": "scot-prs",
+        "retrieved": "2026-11-15",
+        "note": "Lothian Broad Rental Market Area (Edinburgh, Midlothian and East Lothian), mean monthly rent of 1 bedroom homes in the year to September 2025, mostly advertised rents (1754 records)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1802,
+        "period": "2025",
+        "level": "metro",
+        "source": "scot-prs",
+        "retrieved": "2026-11-15",
+        "note": "Lothian Broad Rental Market Area (Edinburgh, Midlothian and East Lothian), mean monthly rent of 3 bedroom homes in the year to September 2025, mostly advertised rents (1077 records)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "ch-bfs-rent",
+  "name": "BFS rent by rooms, largest cities (T 09.03.03.42)",
+  "publisher": "Federal Statistical Office (BFS), Switzerland",
+  "homepage": "https://www.bfs.admin.ch/bfs/en/home/statistics/construction-housing/dwellings/rented-dwellings.html",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average monthly net rent (without service and heating charges) of every rented or cooperative 2-room flat (one bedroom; Swiss rooms leave out the kitchen), three pooled years of the structural survey."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average monthly net rent (without service and heating charges) of every rented or cooperative 4-room flat (three bedrooms), three pooled years of the structural survey."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "CH"
+    ],
+    "level": "city",
+    "period": "three pooled years"
+  },
+  "licence": "opendata-swiss-BY",
+  "licenceUrl": "https://opendata.swiss/en/terms-of-use",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "opendata-swiss-BY",
+    "edition": "T 09.03.03.42, 2022-2024 pooled (published 26 March 2026)",
+    "termsUrl": "https://opendata.swiss/en/terms-of-use",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Federal Statistical Office (BFS), structural survey (SE) and buildings and dwellings statistics (GWS), table T 09.03.03.42"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://ckan.opendata.swiss/api/3/action/package_search",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/ch-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 500
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official; opendata.swiss marks it 'Open use. Must provide the source', commercial use allowed."
+  },
+  "caveats": [
+    "Every tenancy, sitting tenants included: flats newly offered in Zurich and Geneva cost more."
+  ]
+}

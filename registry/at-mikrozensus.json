@@ -1,0 +1,57 @@
+{
+  "id": "at-mikrozensus",
+  "name": "Mikrozensus Wohnen: housing costs",
+  "publisher": "Statistik Austria",
+  "homepage": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/wohnen/wohnkosten",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average monthly rent per m² of every main tenancy in the province, service charges included, times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average monthly rent per m² of every main tenancy in the province, service charges included, times 90 m²."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "AT"
+    ],
+    "level": "city",
+    "period": "yearly"
+  },
+  "licence": "StatAustria-reuse",
+  "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "StatAustria-reuse",
+    "edition": "Ergebnisse im Überblick: Wohnkosten (Mikrozensus), table 2, created 8 September 2026",
+    "termsUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: STATISTIK AUSTRIA, Mikrozensus Wohnen (edited: rate per m² times a flat size)"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.statistik.at/fileadmin/pages/351/ergebnisse_im_ueberblick_wohnkosten_Mikrozensus.ods",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/at-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official; the publisher's terms allow commercial and non-commercial reproduction citing STATISTIK AUSTRIA, with edits marked."
+  },
+  "caveats": [
+    "Every main tenancy, a little over half of them municipal or cooperative flats a newcomer rarely gets at once; private flats let in the last two years cost about a third more per m² nationally."
+  ]
+}

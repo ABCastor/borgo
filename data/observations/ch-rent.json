@@ -1,0 +1,46 @@
+{
+  "source": "ch-bfs-rent",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "zurich-ch": [
+      {
+        "metric": "rent_1bed",
+        "value": 1537,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Zurich, average monthly net rent (without service and heating charges) of every rented 2-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2085,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Zurich, average monthly net rent (without service and heating charges) of every rented 4-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      }
+    ],
+    "geneva-ch": [
+      {
+        "metric": "rent_1bed",
+        "value": 1242,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Geneva, average monthly net rent (without service and heating charges) of every rented 2-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1773,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Geneva, average monthly net rent (without service and heating charges) of every rented 4-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "source": "cbs-woonlasten",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "amsterdam-nl": [
+      {
+        "metric": "rent_1bed",
+        "value": 988,
+        "period": "2023",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Amsterdam, median monthly rent paid by households renting homes under 75 m² from a private landlord in 2023, after any rent benefit (66700 households; CBS 85950NED)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1309,
+        "period": "2023",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Amsterdam, median monthly rent paid by households renting homes of 75 to 100 m² from a private landlord in 2023, after any rent benefit (21600 households; CBS 85950NED)"
+      }
+    ],
+    "rotterdam-nl": [
+      {
+        "metric": "rent_1bed",
+        "value": 741,
+        "period": "2024",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Rotterdam, median monthly rent paid by households renting homes under 75 m² from a private landlord in 2024, after any rent benefit (24800 households; CBS 85950NED)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 986,
+        "period": "2024",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Rotterdam, median monthly rent paid by households renting homes of 75 to 100 m² from a private landlord in 2024, after any rent benefit (15500 households; CBS 85950NED)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "source": "nsw-rent-sales",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "sydney-au": [
+      {
+        "metric": "rent_1bed",
+        "value": 2990,
+        "period": "2026-Q2",
+        "level": "metro",
+        "source": "nsw-rent-sales",
+        "retrieved": "2026-11-15",
+        "note": "Greater Sydney, median weekly rent of 1 bedroom homes in new bonds lodged April to June 2026: A$690 a week (11782 bonds), × 52 / 12"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 3467,
+        "period": "2026-Q2",
+        "level": "metro",
+        "source": "nsw-rent-sales",
+        "retrieved": "2026-11-15",
+        "note": "Greater Sydney, median weekly rent of 3 bedrooms homes in new bonds lodged April to June 2026: A$800 a week (9863 bonds), × 52 / 12"
+      }
+    ]
+  }
+}

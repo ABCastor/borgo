@@ -1,0 +1,58 @@
+{
+  "id": "de-zensus",
+  "name": "Zensus 2022 net cold rent (4000W-0009)",
+  "publisher": "Statistische Ämter des Bundes und der Länder (Germany)",
+  "homepage": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average net cold rent per m² (without heating and service charges) of every rented flat of 40-59 m² on census day, 15 May 2022, times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average net cold rent per m² (without heating and service charges) of every rented flat of 80-99 m² on census day, 15 May 2022, times 90 m²."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "DE"
+    ],
+    "level": "city",
+    "period": "2022-05-15"
+  },
+  "licence": "DL-DE-BY-2.0",
+  "licenceUrl": "https://www.govdata.de/dl-de/by-2-0",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "DL-DE-BY-2.0",
+    "edition": "Zensus 2022, table 4000W-0009 (last changed 9 July 2026)",
+    "termsUrl": "https://www.govdata.de/dl-de/by-2-0",
+    "termsRead": "2026-11-15",
+    "attribution": "© Statistische Ämter des Bundes und der Länder, Deutschland, 2026. Zensus 2022, Datenlizenz Deutschland – Namensnennung – Version 2.0"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://ergebnisse.zensus2022.de/proxy/api/rest/tables/4000W-0009/download/csv/de",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/de-rent.ts"
+  },
+  "refresh": {
+    "cadence": "static",
+    "maxAgeDays": 4000
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official census, every tenancy; each table states the Datenlizenz Deutschland attribution licence. Asking rents for German cities come from commercial portals and are not open."
+  },
+  "caveats": [
+    "Sitting rents on 15 May 2022, net of heating and service charges: a new lease in Berlin, Hamburg or Munich costs far more, often twice as much per m².",
+    "The next census is years away; until then this is the latest official rent level for each city."
+  ]
+}

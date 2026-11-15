@@ -1,6 +1,6 @@
 {
-  "version": "2026-11-14",
-  "builtAt": "2026-11-14T23:55:50.242Z",
+  "version": "2026-11-15",
+  "builtAt": "2026-11-15T01:42:53.560Z",
   "cities": [
     {
       "id": "turin-it",
@@ -2307,6 +2307,15 @@
       "redistributable": true,
       "licenceUrl": "https://www.census.gov/about/policies/citation.html"
     },
+    "at-mikrozensus": {
+      "id": "at-mikrozensus",
+      "name": "Mikrozensus Wohnen: housing costs",
+      "publisher": "Statistik Austria",
+      "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/wohnen/wohnkosten",
+      "licence": "StatAustria-reuse",
+      "redistributable": true,
+      "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum"
+    },
     "bls-oews": {
       "id": "bls-oews",
       "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
@@ -2325,6 +2334,15 @@
       "redistributable": true,
       "licenceUrl": "https://www.usa.gov/government-copyright"
     },
+    "cbs-woonlasten": {
+      "id": "cbs-woonlasten",
+      "name": "CBS housing costs by municipality (85950NED)",
+      "publisher": "Statistics Netherlands (CBS)",
+      "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85950NED/table",
+      "licence": "CC-BY-4.0",
+      "redistributable": true,
+      "licenceUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright"
+    },
     "ch-afmp": {
       "id": "ch-afmp",
       "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
@@ -2333,6 +2351,15 @@
       "licence": "Borgo's summary of the official text (CC BY 4.0)",
       "redistributable": true,
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "ch-bfs-rent": {
+      "id": "ch-bfs-rent",
+      "name": "BFS rent by rooms, largest cities (T 09.03.03.42)",
+      "publisher": "Federal Statistical Office (BFS), Switzerland",
+      "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/construction-housing/dwellings/rented-dwellings.html",
+      "licence": "opendata-swiss-BY",
+      "redistributable": true,
+      "licenceUrl": "https://opendata.swiss/en/terms-of-use"
     },
     "cldr": {
       "id": "cldr",
@@ -2395,6 +2422,15 @@
       "redistributable": true,
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
     },
+    "de-zensus": {
+      "id": "de-zensus",
+      "name": "Zensus 2022 net cold rent (4000W-0009)",
+      "publisher": "Statistische Ämter des Bundes und der Länder (Germany)",
+      "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009",
+      "licence": "DL-DE-BY-2.0",
+      "redistributable": true,
+      "licenceUrl": "https://www.govdata.de/dl-de/by-2-0"
+    },
     "dealroom": {
       "id": "dealroom",
       "name": "Dealroom",
@@ -2419,6 +2455,15 @@
       "url": "https://www.eiu.com/n/campaigns/global-liveability-index/",
       "licence": "Proprietary",
       "redistributable": false
+    },
+    "es-serpavi": {
+      "id": "es-serpavi",
+      "name": "SERPAVI rent reference system",
+      "publisher": "Ministerio de Vivienda y Agenda Urbana (Spain)",
+      "url": "https://www.mivau.gob.es/vivienda/alquila-bien-es-tu-derecho/serpavi",
+      "licence": "ES-reuse",
+      "redistributable": true,
+      "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal"
     },
     "eu-free-movement": {
       "id": "eu-free-movement",
@@ -2604,6 +2649,15 @@
       "redistributable": true,
       "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/"
     },
+    "nsw-rent-sales": {
+      "id": "nsw-rent-sales",
+      "name": "NSW Rent and Sales Report",
+      "publisher": "NSW Department of Communities and Justice",
+      "url": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+      "licence": "CC-BY-4.0",
+      "redistributable": true,
+      "licenceUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html"
+    },
     "numbeo-qol": {
       "id": "numbeo-qol",
       "name": "Numbeo Quality of Life Index",
@@ -2747,6 +2801,15 @@
       "redistributable": true,
       "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
     },
+    "pt-ine-rent": {
+      "id": "pt-ine-rent",
+      "name": "INE median rent of new leases (0014696)",
+      "publisher": "Statistics Portugal (INE)",
+      "url": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+      "licence": "CC-BY-4.0",
+      "redistributable": true,
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
     "ror": {
       "id": "ror",
       "name": "Research Organization Registry",
@@ -2764,6 +2827,24 @@
       "licence": "CC0-1.0",
       "redistributable": true,
       "licenceUrl": "https://www.scb.se/en/services/open-data-api/"
+    },
+    "scot-prs": {
+      "id": "scot-prs",
+      "name": "Private Sector Rent Statistics, Scotland",
+      "publisher": "Scottish Government",
+      "url": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+      "licence": "OGL-UK-3.0",
+      "redistributable": true,
+      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+    },
+    "sg-ura-rentals": {
+      "id": "sg-ura-rentals",
+      "name": "URA rentals of non-landed homes, quarterly",
+      "publisher": "Urban Redevelopment Authority (Singapore)",
+      "url": "https://data.gov.sg/datasets/d_149ac00a2734bb0a03867bbe2ec0e7b0/view",
+      "licence": "SG-ODL-1.0",
+      "redistributable": true,
+      "licenceUrl": "https://data.gov.sg/open-data-licence"
     },
     "ssb-rent": {
       "id": "ssb-rent",
@@ -32297,6 +32378,24 @@
         "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 1057,
+        "period": "2025",
+        "level": "metro",
+        "source": "scot-prs",
+        "retrieved": "2026-11-15",
+        "note": "Lothian Broad Rental Market Area (Edinburgh, Midlothian and East Lothian), mean monthly rent of 1 bedroom homes in the year to September 2025, mostly advertised rents (1754 records)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1802,
+        "period": "2025",
+        "level": "metro",
+        "source": "scot-prs",
+        "retrieved": "2026-11-15",
+        "note": "Lothian Broad Rental Market Area (Edinburgh, Midlothian and East Lothian), mean monthly rent of 3 bedroom homes in the year to September 2025, mostly advertised rents (1077 records)"
+      },
+      {
         "metric": "jobs_j",
         "value": 49,
         "period": "2025",
@@ -43066,6 +43165,24 @@
         "note": "Marriage: Bürgerliches Gesetzbuch § 1353, since 2017 (checked against the source linked on 2026-11-05)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 382,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Berlin, average net cold rent (without heating and service charges) of every rented flat of 40 - 59 m² on census day 15 May 2022: 7.63 €/m² × 50 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 677,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Berlin, average net cold rent (without heating and service charges) of every rented flat of 80 - 99 m² on census day 15 May 2022: 7.52 €/m² × 90 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
         "metric": "degree_share",
         "value": 48.1,
         "period": "2025",
@@ -45689,6 +45806,24 @@
         "note": "Marriage: Bürgerliches Gesetzbuch § 1353, since 2017 (checked against the source linked on 2026-11-05)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 617,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Munich, average net cold rent (without heating and service charges) of every rented flat of 40 - 59 m² on census day 15 May 2022: 12.33 €/m² × 50 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1071,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Munich, average net cold rent (without heating and service charges) of every rented flat of 80 - 99 m² on census day 15 May 2022: 11.90 €/m² × 90 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
         "metric": "degree_share",
         "value": 47.4,
         "period": "2025",
@@ -48310,6 +48445,24 @@
         "retrieved": "2026-11-05",
         "url": "https://www.gesetze-im-internet.de/bgb/__1353.html",
         "note": "Marriage: Bürgerliches Gesetzbuch § 1353, since 2017 (checked against the source linked on 2026-11-05)"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 453,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Hamburg, average net cold rent (without heating and service charges) of every rented flat of 40 - 59 m² on census day 15 May 2022: 9.05 €/m² × 50 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 815,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Hamburg, average net cold rent (without heating and service charges) of every rented flat of 80 - 99 m² on census day 15 May 2022: 9.06 €/m² × 90 m² (Zensus 2022, table 4000W-0009)"
       },
       {
         "metric": "degree_share",
@@ -51067,6 +51220,24 @@
         "note": "Public holidays on Monday to Friday in 2026, nationwide"
       },
       {
+        "metric": "rent_1bed",
+        "value": 988,
+        "period": "2023",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Amsterdam, median monthly rent paid by households renting homes under 75 m² from a private landlord in 2023, after any rent benefit (66700 households; CBS 85950NED)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1309,
+        "period": "2023",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Amsterdam, median monthly rent paid by households renting homes of 75 to 100 m² from a private landlord in 2023, after any rent benefit (21600 households; CBS 85950NED)"
+      },
+      {
         "metric": "childcare_fees_1",
         "value": 22256,
         "period": "2025",
@@ -53643,6 +53814,24 @@
         "url": "https://date.nager.at/api/v3/PublicHolidays/2026/NL",
         "fetcher": "nager-date@1",
         "note": "Public holidays on Monday to Friday in 2026, nationwide"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 741,
+        "period": "2024",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Rotterdam, median monthly rent paid by households renting homes under 75 m² from a private landlord in 2024, after any rent benefit (24800 households; CBS 85950NED)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 986,
+        "period": "2024",
+        "level": "city",
+        "source": "cbs-woonlasten",
+        "retrieved": "2026-11-15",
+        "note": "Rotterdam, median monthly rent paid by households renting homes of 75 to 100 m² from a private landlord in 2024, after any rent benefit (15500 households; CBS 85950NED)"
       },
       {
         "metric": "childcare_fees_1",
@@ -69007,6 +69196,24 @@
         "note": "On written request to 12 weeks after the last period, the woman stating that she is in distress (Strafgesetzbuch Art. 119 Abs. 2; checked against the source linked on 2026-11-05)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 1537,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Zurich, average monthly net rent (without service and heating charges) of every rented 2-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 2085,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Zurich, average monthly net rent (without service and heating charges) of every rented 4-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      },
+      {
         "metric": "english_official",
         "value": 0,
         "period": "CLDR 49",
@@ -71610,6 +71817,24 @@
         "retrieved": "2026-11-09",
         "url": "https://www.fedlex.admin.ch/eli/cc/54/757_781_799/de#art_119",
         "note": "On written request to 12 weeks after the last period, the woman stating that she is in distress (Strafgesetzbuch Art. 119 Abs. 2; checked against the source linked on 2026-11-05)"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 1242,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Geneva, average monthly net rent (without service and heating charges) of every rented 2-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1773,
+        "period": "2022-2024",
+        "level": "city",
+        "source": "ch-bfs-rent",
+        "retrieved": "2026-11-15",
+        "note": "Geneva, average monthly net rent (without service and heating charges) of every rented 4-room flat, structural surveys 2022-2024 pooled (BFS T 09.03.03.42)"
       },
       {
         "metric": "english_official",
@@ -74224,6 +74449,24 @@
         "retrieved": "2026-11-09",
         "url": "https://www.ris.bka.gv.at/NormDokument.wxe?Abfrage=Bundesnormen&Gesetzesnummer=10002296&Paragraf=97",
         "note": "Not punished in the first three months, after a consultation with a doctor (Strafgesetzbuch § 97 Abs. 1 Z 1; checked against the source linked on 2026-11-05)"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 529,
+        "period": "2025",
+        "level": "city",
+        "source": "at-mikrozensus",
+        "retrieved": "2026-11-15",
+        "note": "Vienna, average monthly rent of every main tenancy in 2025, service charges included: 10.58 €/m² × 50 m² (STATISTIK AUSTRIA, Mikrozensus Wohnen; edited: rate times a flat size)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 952,
+        "period": "2025",
+        "level": "city",
+        "source": "at-mikrozensus",
+        "retrieved": "2026-11-15",
+        "note": "Vienna, average monthly rent of every main tenancy in 2025, service charges included: 10.58 €/m² × 90 m² (STATISTIK AUSTRIA, Mikrozensus Wohnen; edited: rate times a flat size)"
       },
       {
         "metric": "english_official",
@@ -89363,6 +89606,24 @@
         "note": "Estimate from the official result of Assembly of the Republic, 18 May 2025, with ParlGov party positions: AD (PSD, CDS) 33.2% (7.2, members' average), PS 23.8% (4), Chega 23.7% (8.7, party-family average), Iniciativa Liberal 5.6% (6, party-family average), Livre 4.2% (3.3, party-family average), CDU (PCP, PEV) 3% (2.2). Parties with a position took 97% of the vote."
       },
       {
+        "metric": "rent_1bed",
+        "value": 872,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Lisbon municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 17.43 €/m² × 50 m² (INE indicator 0014696, updated 2026-09-29)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1569,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Lisbon municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 17.43 €/m² × 90 m² (INE indicator 0014696, updated 2026-09-29)"
+      },
+      {
         "metric": "universities",
         "value": 134,
         "period": "2026-10-27",
@@ -91950,6 +92211,24 @@
         "note": "Estimate from the official result of Assembly of the Republic, 18 May 2025, with ParlGov party positions: AD (PSD, CDS) 33.2% (7.2, members' average), PS 23.8% (4), Chega 23.7% (8.7, party-family average), Iniciativa Liberal 5.6% (6, party-family average), Livre 4.2% (3.3, party-family average), CDU (PCP, PEV) 3% (2.2). Parties with a position took 97% of the vote."
       },
       {
+        "metric": "rent_1bed",
+        "value": 724,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Porto municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 14.48 €/m² × 50 m² (INE indicator 0014696, updated 2026-09-29)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1303,
+        "period": "2026-Q2",
+        "level": "city",
+        "source": "pt-ine-rent",
+        "retrieved": "2026-11-15",
+        "note": "Porto municipality, median rent of new lease contracts of family homes in the 12 months to the end of 2026-Q2: 14.48 €/m² × 90 m² (INE indicator 0014696, updated 2026-09-29)"
+      },
+      {
         "metric": "universities",
         "value": 59,
         "period": "2026-10-27",
@@ -92297,6 +92576,24 @@
         "retrieved": "2026-11-05",
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-11364",
         "note": "Marriage: Ley 13/2005 (checked against the source linked on 2026-11-05)"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 698,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Madrid municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (300447 flats): 13.97 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1257,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Madrid municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (300447 flats): 13.97 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
       },
       {
         "metric": "degree_share",
@@ -94885,6 +95182,24 @@
         "note": "Marriage: Ley 13/2005 (checked against the source linked on 2026-11-05)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 684,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Barcelona municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (140872 flats): 13.68 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1231,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Barcelona municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (140872 flats): 13.68 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
         "metric": "degree_share",
         "value": 46.9,
         "period": "2025",
@@ -97471,6 +97786,24 @@
         "note": "Marriage: Ley 13/2005 (checked against the source linked on 2026-11-05)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 409,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Valencia municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (65742 flats): 8.18 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 736,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Valencia municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (65742 flats): 8.18 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
         "metric": "degree_share",
         "value": 38.1,
         "period": "2025",
@@ -100028,6 +100361,24 @@
         "retrieved": "2026-11-05",
         "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2005-11364",
         "note": "Marriage: Ley 13/2005 (checked against the source linked on 2026-11-05)"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 478,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Málaga municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (25741 flats): 9.55 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 860,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Málaga municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (25741 flats): 9.55 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
       },
       {
         "metric": "degree_share",
@@ -140580,6 +140931,24 @@
         "note": "ROR organisations of type facility (research institutes, laboratories, observatories)"
       },
       {
+        "metric": "rent_1bed",
+        "value": 2976,
+        "period": "2026-Q3",
+        "level": "city",
+        "source": "sg-ura-rentals",
+        "retrieved": "2026-11-15",
+        "note": "Private non-landed homes (condominiums and private flats) in major projects, 2026-Q3: median rent S$5.53 per sq ft a month (the contract-weighted median over 743 projects, 21840 contracts) × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 5357,
+        "period": "2026-Q3",
+        "level": "city",
+        "source": "sg-ura-rentals",
+        "retrieved": "2026-11-15",
+        "note": "Private non-landed homes (condominiums and private flats) in major projects, 2026-Q3: median rent S$5.53 per sq ft a month (the contract-weighted median over 743 projects, 21840 contracts) × 90 m²"
+      },
+      {
         "metric": "sunshine_monthly",
         "value": [
           180,
@@ -143402,6 +143771,24 @@
         "retrieved": "2026-11-09",
         "url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-2019-011",
         "note": "With no ground to show in every state and territory but the Northern Territory, to a limit each sets: 16 weeks in Tasmania, 22 in New South Wales and Queensland, 22 weeks and 6 days in South Australia, 23 in Western Australia, 24 in Victoria, and none in the ACT; in the Northern Territory to 24 weeks when the doctor judges it appropriate in all the circumstances. Later abortions need further conditions; South Australia prohibits sex-selection terminations, except where there is a substantial risk that the child would have a sex-linked medical condition resulting in serious disability (Abortion Law Reform Act 2019 (NSW) s. 5; Abortion Law Reform Act 2008 (Vic) s. 4; Termination of Pregnancy Act 2018 (Qld) s. 5; Termination of Pregnancy Act 2021 (SA) ss. 5 and 12; Public Health Act 2016 (WA) s. 202MC; Reproductive Health (Access to Terminations) Act 2013 (Tas) s. 4; Termination of Pregnancy Law Reform Act 2017 (NT) s. 7; Health Act 1993 (ACT) pt 6; checked against the source linked on 2026-11-09)"
+      },
+      {
+        "metric": "rent_1bed",
+        "value": 2990,
+        "period": "2026-Q2",
+        "level": "metro",
+        "source": "nsw-rent-sales",
+        "retrieved": "2026-11-15",
+        "note": "Greater Sydney, median weekly rent of 1 bedroom homes in new bonds lodged April to June 2026: A$690 a week (11782 bonds), × 52 / 12"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 3467,
+        "period": "2026-Q2",
+        "level": "metro",
+        "source": "nsw-rent-sales",
+        "retrieved": "2026-11-15",
+        "note": "Greater Sydney, median weekly rent of 3 bedrooms homes in new bonds lodged April to June 2026: A$800 a week (9863 bonds), × 52 / 12"
       },
       {
         "metric": "english_official",
@@ -150963,7 +151350,7 @@
     }
   ],
   "manifest": {
-    "builtAt": "2026-11-14T23:55:50.242Z",
+    "builtAt": "2026-11-15T01:42:53.560Z",
     "parts": [
       {
         "id": "open",
@@ -151109,6 +151496,32 @@
         "provides": []
       },
       {
+        "source": "at-mikrozensus",
+        "name": "Mikrozensus Wohnen: housing costs",
+        "publisher": "Statistik Austria",
+        "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/wohnen/wohnkosten",
+        "edition": "Ergebnisse im Überblick: Wohnkosten (Mikrozensus), table 2, created 8 September 2026",
+        "licenceId": "StatAustria-reuse",
+        "licence": "Statistik Austria terms: reproduction for any purpose citing STATISTIK AUSTRIA, edits marked",
+        "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+        "termsUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+        "termsRead": "2026-11-15",
+        "attribution": "Source: STATISTIK AUSTRIA, Mikrozensus Wohnen (edited: rate per m² times a flat size)",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
         "source": "bls-oews",
         "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
         "publisher": "U.S. Bureau of Labor Statistics",
@@ -151181,6 +151594,32 @@
         "provides": []
       },
       {
+        "source": "cbs-woonlasten",
+        "name": "CBS housing costs by municipality (85950NED)",
+        "publisher": "Statistics Netherlands (CBS)",
+        "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85950NED/table",
+        "edition": "StatLine table 85950NED, 2015-2024",
+        "licenceId": "CC-BY-4.0",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "termsUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+        "termsRead": "2026-11-15",
+        "attribution": "Source: CBS (Statistics Netherlands), Woonlasten huishoudens; kenmerken huishouden, woning, gemeente (85950NED), CC BY 4.0",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 4,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
         "source": "ch-afmp",
         "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
         "publisher": "Swiss State Secretariat for Migration",
@@ -151201,6 +151640,32 @@
         "provides": [
           "residence rules (Swiss-EU free movement)"
         ]
+      },
+      {
+        "source": "ch-bfs-rent",
+        "name": "BFS rent by rooms, largest cities (T 09.03.03.42)",
+        "publisher": "Federal Statistical Office (BFS), Switzerland",
+        "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/construction-housing/dwellings/rented-dwellings.html",
+        "edition": "T 09.03.03.42, 2022-2024 pooled (published 26 March 2026)",
+        "licenceId": "opendata-swiss-BY",
+        "licence": "opendata.swiss terms: open use, must provide the source",
+        "licenceUrl": "https://opendata.swiss/en/terms-of-use",
+        "termsUrl": "https://opendata.swiss/en/terms-of-use",
+        "termsRead": "2026-11-15",
+        "attribution": "Source: Federal Statistical Office (BFS), structural survey (SE) and buildings and dwellings statistics (GWS), table T 09.03.03.42",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 4,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
       },
       {
         "source": "cldr",
@@ -151330,6 +151795,32 @@
         ]
       },
       {
+        "source": "de-zensus",
+        "name": "Zensus 2022 net cold rent (4000W-0009)",
+        "publisher": "Statistische Ämter des Bundes und der Länder (Germany)",
+        "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009",
+        "edition": "Zensus 2022, table 4000W-0009 (last changed 9 July 2026)",
+        "licenceId": "DL-DE-BY-2.0",
+        "licence": "Data licence Germany, attribution, version 2.0",
+        "licenceUrl": "https://www.govdata.de/dl-de/by-2-0",
+        "termsUrl": "https://www.govdata.de/dl-de/by-2-0",
+        "termsRead": "2026-11-15",
+        "attribution": "© Statistische Ämter des Bundes und der Länder, Deutschland, 2026. Zensus 2022, Datenlizenz Deutschland – Namensnennung – Version 2.0",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 6,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
         "source": "ecb-fx",
         "name": "Euro foreign exchange reference rates",
         "publisher": "European Central Bank",
@@ -151350,6 +151841,32 @@
         "provides": [
           "exchange rates"
         ]
+      },
+      {
+        "source": "es-serpavi",
+        "name": "SERPAVI rent reference system",
+        "publisher": "Ministerio de Vivienda y Agenda Urbana (Spain)",
+        "url": "https://www.mivau.gob.es/vivienda/alquila-bien-es-tu-derecho/serpavi",
+        "edition": "Base de datos SERPAVI 2011-2024 (edition of 9 March 2026), sheet Municipios",
+        "licenceId": "ES-reuse",
+        "licence": "Spanish public-sector reuse conditions (Real Decreto 1495/2011): any use, with the source and update date cited, not distorted",
+        "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+        "termsUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+        "termsRead": "2026-11-15",
+        "attribution": "Source: Ministerio de Vivienda y Agenda Urbana, Sistema Estatal de Referencia del Precio del Alquiler de Vivienda (SERPAVI), last updated 9 March 2026",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 8,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
       },
       {
         "source": "eu-free-movement",
@@ -151835,6 +152352,32 @@
         ]
       },
       {
+        "source": "nsw-rent-sales",
+        "name": "NSW Rent and Sales Report",
+        "publisher": "NSW Department of Communities and Justice",
+        "url": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+        "edition": "Rent tables, June 2026 quarter",
+        "licenceId": "CC-BY-4.0",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "termsUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+        "termsRead": "2026-11-15",
+        "attribution": "© State of New South Wales (Department of Communities and Justice), Rent and Sales Report, CC BY 4.0",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
         "source": "oecd-childcare",
         "name": "OECD Tax-Benefit Models: net childcare costs",
         "publisher": "OECD",
@@ -152175,6 +152718,32 @@
         "provides": []
       },
       {
+        "source": "pt-ine-rent",
+        "name": "INE median rent of new leases (0014696)",
+        "publisher": "Statistics Portugal (INE)",
+        "url": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+        "edition": "Indicator 0014696 (Metodologia 2026), latest quarter",
+        "licenceId": "CC-BY-4.0",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "termsUrl": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+        "termsRead": "2026-11-15",
+        "attribution": "Source: Statistics Portugal (INE), median rent of new lease contracts (indicator 0014696), CC BY 4.0",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 4,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
         "source": "ror",
         "name": "Research Organization Registry",
         "publisher": "ROR",
@@ -152223,6 +152792,60 @@
         "retrieved": [
           "2026-11-05",
           "2026-11-05"
+        ],
+        "provides": []
+      },
+      {
+        "source": "scot-prs",
+        "name": "Private Sector Rent Statistics, Scotland",
+        "publisher": "Scottish Government",
+        "url": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+        "edition": "Private Sector Rent Statistics, Scotland, 2010 to 2025 (published 25 November 2025), open-data CSV",
+        "licenceId": "OGL-UK-3.0",
+        "licence": "Open Government Licence v3.0",
+        "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+        "termsUrl": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+        "termsRead": "2026-11-15",
+        "attribution": "Contains public sector information licensed under the Open Government Licence v3.0: Scottish Government, Private Sector Rent Statistics, Scotland",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
+        ],
+        "provides": []
+      },
+      {
+        "source": "sg-ura-rentals",
+        "name": "URA rentals of non-landed homes, quarterly",
+        "publisher": "Urban Redevelopment Authority (Singapore)",
+        "url": "https://data.gov.sg/datasets/d_149ac00a2734bb0a03867bbe2ec0e7b0/view",
+        "edition": "data.gov.sg dataset d_149ac00a2734bb0a03867bbe2ec0e7b0 (latest quarter)",
+        "licenceId": "SG-ODL-1.0",
+        "licence": "Singapore Open Data Licence 1.0",
+        "licenceUrl": "https://data.gov.sg/open-data-licence",
+        "termsUrl": "https://data.gov.sg/open-data-licence",
+        "termsRead": "2026-11-15",
+        "attribution": "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly (Urban Redevelopment Authority) accessed from data.gov.sg, made available under the terms of the Singapore Open Data Licence version 1.0 (https://data.gov.sg/open-data-licence)",
+        "notices": [
+          "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly accessed from data.gov.sg, which is made available under the terms of the Singapore Open Data Licence version 1.0 https://data.gov.sg/open-data-licence"
+        ],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-15",
+          "2026-11-15"
         ],
         "provides": []
       },

@@ -1,0 +1,58 @@
+{
+  "id": "scot-prs",
+  "name": "Private Sector Rent Statistics, Scotland",
+  "publisher": "Scottish Government",
+  "homepage": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Mean monthly rent of one-bedroom homes in the Broad Rental Market Area over the year to September, mostly advertised rents of homes let that year."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Mean monthly rent of three-bedroom homes in the Broad Rental Market Area over the year to September, mostly advertised rents of homes let that year."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "GB-SCT"
+    ],
+    "level": "metro",
+    "period": "year to September"
+  },
+  "licence": "OGL-UK-3.0",
+  "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "OGL-UK-3.0",
+    "edition": "Private Sector Rent Statistics, Scotland, 2010 to 2025 (published 25 November 2025), open-data CSV",
+    "termsUrl": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+    "termsRead": "2026-11-15",
+    "attribution": "Contains public sector information licensed under the Open Government Licence v3.0: Scottish Government, Private Sector Rent Statistics, Scotland"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-{year}/documents/",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/scot-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 400
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official, by bedrooms; the page footer puts all content under OGL v3. ONS publishes Scotland only as a whole, so Edinburgh comes from here."
+  },
+  "caveats": [
+    "The Lothian area also holds Midlothian and East Lothian, where rents are lower than in Edinburgh, so the figure is a little below the city's own.",
+    "Advertised rents of homes let in the year: what a newcomer pays, above what sitting tenants pay."
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-14T23:55:50.242Z",
+  "builtAt": "2026-11-15T01:42:53.560Z",
   "parts": [
     {
       "id": "open",
@@ -145,6 +145,32 @@
       "provides": []
     },
     {
+      "source": "at-mikrozensus",
+      "name": "Mikrozensus Wohnen: housing costs",
+      "publisher": "Statistik Austria",
+      "url": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/wohnen/wohnkosten",
+      "edition": "Ergebnisse im Überblick: Wohnkosten (Mikrozensus), table 2, created 8 September 2026",
+      "licenceId": "StatAustria-reuse",
+      "licence": "Statistik Austria terms: reproduction for any purpose citing STATISTIK AUSTRIA, edits marked",
+      "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+      "termsUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: STATISTIK AUSTRIA, Mikrozensus Wohnen (edited: rate per m² times a flat size)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
+    },
+    {
       "source": "bls-oews",
       "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
       "publisher": "U.S. Bureau of Labor Statistics",
@@ -217,6 +243,32 @@
       "provides": []
     },
     {
+      "source": "cbs-woonlasten",
+      "name": "CBS housing costs by municipality (85950NED)",
+      "publisher": "Statistics Netherlands (CBS)",
+      "url": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85950NED/table",
+      "edition": "StatLine table 85950NED, 2015-2024",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: CBS (Statistics Netherlands), Woonlasten huishoudens; kenmerken huishouden, woning, gemeente (85950NED), CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 4,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
+    },
+    {
       "source": "ch-afmp",
       "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
       "publisher": "Swiss State Secretariat for Migration",
@@ -237,6 +289,32 @@
       "provides": [
         "residence rules (Swiss-EU free movement)"
       ]
+    },
+    {
+      "source": "ch-bfs-rent",
+      "name": "BFS rent by rooms, largest cities (T 09.03.03.42)",
+      "publisher": "Federal Statistical Office (BFS), Switzerland",
+      "url": "https://www.bfs.admin.ch/bfs/en/home/statistics/construction-housing/dwellings/rented-dwellings.html",
+      "edition": "T 09.03.03.42, 2022-2024 pooled (published 26 March 2026)",
+      "licenceId": "opendata-swiss-BY",
+      "licence": "opendata.swiss terms: open use, must provide the source",
+      "licenceUrl": "https://opendata.swiss/en/terms-of-use",
+      "termsUrl": "https://opendata.swiss/en/terms-of-use",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Federal Statistical Office (BFS), structural survey (SE) and buildings and dwellings statistics (GWS), table T 09.03.03.42",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 4,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
     },
     {
       "source": "cldr",
@@ -366,6 +444,32 @@
       ]
     },
     {
+      "source": "de-zensus",
+      "name": "Zensus 2022 net cold rent (4000W-0009)",
+      "publisher": "Statistische Ämter des Bundes und der Länder (Germany)",
+      "url": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009",
+      "edition": "Zensus 2022, table 4000W-0009 (last changed 9 July 2026)",
+      "licenceId": "DL-DE-BY-2.0",
+      "licence": "Data licence Germany, attribution, version 2.0",
+      "licenceUrl": "https://www.govdata.de/dl-de/by-2-0",
+      "termsUrl": "https://www.govdata.de/dl-de/by-2-0",
+      "termsRead": "2026-11-15",
+      "attribution": "© Statistische Ämter des Bundes und der Länder, Deutschland, 2026. Zensus 2022, Datenlizenz Deutschland – Namensnennung – Version 2.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 6,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
+    },
+    {
       "source": "ecb-fx",
       "name": "Euro foreign exchange reference rates",
       "publisher": "European Central Bank",
@@ -386,6 +490,32 @@
       "provides": [
         "exchange rates"
       ]
+    },
+    {
+      "source": "es-serpavi",
+      "name": "SERPAVI rent reference system",
+      "publisher": "Ministerio de Vivienda y Agenda Urbana (Spain)",
+      "url": "https://www.mivau.gob.es/vivienda/alquila-bien-es-tu-derecho/serpavi",
+      "edition": "Base de datos SERPAVI 2011-2024 (edition of 9 March 2026), sheet Municipios",
+      "licenceId": "ES-reuse",
+      "licence": "Spanish public-sector reuse conditions (Real Decreto 1495/2011): any use, with the source and update date cited, not distorted",
+      "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+      "termsUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Ministerio de Vivienda y Agenda Urbana, Sistema Estatal de Referencia del Precio del Alquiler de Vivienda (SERPAVI), last updated 9 March 2026",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 8,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
     },
     {
       "source": "eu-free-movement",
@@ -871,6 +1001,32 @@
       ]
     },
     {
+      "source": "nsw-rent-sales",
+      "name": "NSW Rent and Sales Report",
+      "publisher": "NSW Department of Communities and Justice",
+      "url": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+      "edition": "Rent tables, June 2026 quarter",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+      "termsRead": "2026-11-15",
+      "attribution": "© State of New South Wales (Department of Communities and Justice), Rent and Sales Report, CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
+    },
+    {
       "source": "oecd-childcare",
       "name": "OECD Tax-Benefit Models: net childcare costs",
       "publisher": "OECD",
@@ -1211,6 +1367,32 @@
       "provides": []
     },
     {
+      "source": "pt-ine-rent",
+      "name": "INE median rent of new leases (0014696)",
+      "publisher": "Statistics Portugal (INE)",
+      "url": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+      "edition": "Indicator 0014696 (Metodologia 2026), latest quarter",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Statistics Portugal (INE), median rent of new lease contracts (indicator 0014696), CC BY 4.0",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 4,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
+    },
+    {
       "source": "ror",
       "name": "Research Organization Registry",
       "publisher": "ROR",
@@ -1259,6 +1441,60 @@
       "retrieved": [
         "2026-11-05",
         "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "scot-prs",
+      "name": "Private Sector Rent Statistics, Scotland",
+      "publisher": "Scottish Government",
+      "url": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+      "edition": "Private Sector Rent Statistics, Scotland, 2010 to 2025 (published 25 November 2025), open-data CSV",
+      "licenceId": "OGL-UK-3.0",
+      "licence": "Open Government Licence v3.0",
+      "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "termsUrl": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+      "termsRead": "2026-11-15",
+      "attribution": "Contains public sector information licensed under the Open Government Licence v3.0: Scottish Government, Private Sector Rent Statistics, Scotland",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
+      ],
+      "provides": []
+    },
+    {
+      "source": "sg-ura-rentals",
+      "name": "URA rentals of non-landed homes, quarterly",
+      "publisher": "Urban Redevelopment Authority (Singapore)",
+      "url": "https://data.gov.sg/datasets/d_149ac00a2734bb0a03867bbe2ec0e7b0/view",
+      "edition": "data.gov.sg dataset d_149ac00a2734bb0a03867bbe2ec0e7b0 (latest quarter)",
+      "licenceId": "SG-ODL-1.0",
+      "licence": "Singapore Open Data Licence 1.0",
+      "licenceUrl": "https://data.gov.sg/open-data-licence",
+      "termsUrl": "https://data.gov.sg/open-data-licence",
+      "termsRead": "2026-11-15",
+      "attribution": "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly (Urban Redevelopment Authority) accessed from data.gov.sg, made available under the terms of the Singapore Open Data Licence version 1.0 (https://data.gov.sg/open-data-licence)",
+      "notices": [
+        "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly accessed from data.gov.sg, which is made available under the terms of the Singapore Open Data Licence version 1.0 https://data.gov.sg/open-data-licence"
+      ],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-15",
+        "2026-11-15"
       ],
       "provides": []
     },

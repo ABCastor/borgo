@@ -246,6 +246,63 @@
     ]
   },
   {
+    "id": "at-mikrozensus",
+    "name": "Mikrozensus Wohnen: housing costs",
+    "publisher": "Statistik Austria",
+    "homepage": "https://www.statistik.at/statistiken/bevoelkerung-und-soziales/wohnen/wohnkosten",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average monthly rent per m² of every main tenancy in the province, service charges included, times 50 m²."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average monthly rent per m² of every main tenancy in the province, service charges included, times 90 m²."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "AT"
+      ],
+      "level": "city",
+      "period": "yearly"
+    },
+    "licence": "StatAustria-reuse",
+    "licenceUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "StatAustria-reuse",
+      "edition": "Ergebnisse im Überblick: Wohnkosten (Mikrozensus), table 2, created 8 September 2026",
+      "termsUrl": "https://www.statistik.at/ueber-uns/aufgaben-und-grundsaetze/rechtsgrundlagen/impressum",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: STATISTIK AUSTRIA, Mikrozensus Wohnen (edited: rate per m² times a flat size)"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.statistik.at/fileadmin/pages/351/ergebnisse_im_ueberblick_wohnkosten_Mikrozensus.ods",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/at-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official; the publisher's terms allow commercial and non-commercial reproduction citing STATISTIK AUSTRIA, with edits marked."
+    },
+    "caveats": [
+      "Every main tenancy, a little over half of them municipal or cooperative flats a newcomer rarely gets at once; private flats let in the last two years cost about a third more per m² nationally."
+    ]
+  },
+  {
     "id": "bls-oews",
     "name": "Occupational Employment and Wage Statistics (OEWS), metropolitan areas",
     "publisher": "U.S. Bureau of Labor Statistics",
@@ -438,6 +495,64 @@
     ]
   },
   {
+    "id": "cbs-woonlasten",
+    "name": "CBS housing costs by municipality (85950NED)",
+    "publisher": "Statistics Netherlands (CBS)",
+    "homepage": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85950NED/table",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Median monthly rent paid by households renting a home under 75 m² from a private landlord (not a housing corporation), after any rent benefit."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Median monthly rent paid by households renting a home of 75 to 100 m² from a private landlord (not a housing corporation), after any rent benefit."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "NL"
+      ],
+      "level": "city",
+      "period": "yearly"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "StatLine table 85950NED, 2015-2024",
+      "termsUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: CBS (Statistics Netherlands), Woonlasten huishoudens; kenmerken huishouden, woning, gemeente (85950NED), CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://opendata.cbs.nl/ODataApi/odata/85950NED/TypedDataSet",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/nl-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 500
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official, CC BY 4.0. Private landlords only: housing-corporation homes go through waiting lists a newcomer cannot use."
+    },
+    "caveats": [
+      "Every private tenancy, sitting tenants included, and net of rent benefit; size bands, not bedrooms (under 75 m² for one bedroom, 75 to 100 m² for three).",
+      "CBS leaves out a figure it cannot publish reliably, so a city may show an earlier year than another."
+    ]
+  },
+  {
     "id": "ch-afmp",
     "name": "Agreement on the Free Movement of Persons (EU-Switzerland)",
     "publisher": "Swiss State Secretariat for Migration",
@@ -474,6 +589,63 @@
       "notes": "A legal text, encoded by hand in data/rights.json."
     },
     "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+    "id": "ch-bfs-rent",
+    "name": "BFS rent by rooms, largest cities (T 09.03.03.42)",
+    "publisher": "Federal Statistical Office (BFS), Switzerland",
+    "homepage": "https://www.bfs.admin.ch/bfs/en/home/statistics/construction-housing/dwellings/rented-dwellings.html",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average monthly net rent (without service and heating charges) of every rented or cooperative 2-room flat (one bedroom; Swiss rooms leave out the kitchen), three pooled years of the structural survey."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average monthly net rent (without service and heating charges) of every rented or cooperative 4-room flat (three bedrooms), three pooled years of the structural survey."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "CH"
+      ],
+      "level": "city",
+      "period": "three pooled years"
+    },
+    "licence": "opendata-swiss-BY",
+    "licenceUrl": "https://opendata.swiss/en/terms-of-use",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "opendata-swiss-BY",
+      "edition": "T 09.03.03.42, 2022-2024 pooled (published 26 March 2026)",
+      "termsUrl": "https://opendata.swiss/en/terms-of-use",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Federal Statistical Office (BFS), structural survey (SE) and buildings and dwellings statistics (GWS), table T 09.03.03.42"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://ckan.opendata.swiss/api/3/action/package_search",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/ch-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 500
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official; opendata.swiss marks it 'Open use. Must provide the source', commercial use allowed."
+    },
+    "caveats": [
+      "Every tenancy, sitting tenants included: flats newly offered in Zurich and Geneva cost more."
+    ]
   },
   {
     "id": "cldr",
@@ -792,6 +964,64 @@
     "licenceUrl": "https://creativecommons.org/licenses/by/4.0/"
   },
   {
+    "id": "de-zensus",
+    "name": "Zensus 2022 net cold rent (4000W-0009)",
+    "publisher": "Statistische Ämter des Bundes und der Länder (Germany)",
+    "homepage": "https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Average net cold rent per m² (without heating and service charges) of every rented flat of 40-59 m² on census day, 15 May 2022, times 50 m²."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Average net cold rent per m² (without heating and service charges) of every rented flat of 80-99 m² on census day, 15 May 2022, times 90 m²."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "DE"
+      ],
+      "level": "city",
+      "period": "2022-05-15"
+    },
+    "licence": "DL-DE-BY-2.0",
+    "licenceUrl": "https://www.govdata.de/dl-de/by-2-0",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "DL-DE-BY-2.0",
+      "edition": "Zensus 2022, table 4000W-0009 (last changed 9 July 2026)",
+      "termsUrl": "https://www.govdata.de/dl-de/by-2-0",
+      "termsRead": "2026-11-15",
+      "attribution": "© Statistische Ämter des Bundes und der Länder, Deutschland, 2026. Zensus 2022, Datenlizenz Deutschland – Namensnennung – Version 2.0"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://ergebnisse.zensus2022.de/proxy/api/rest/tables/4000W-0009/download/csv/de",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/de-rent.ts"
+    },
+    "refresh": {
+      "cadence": "static",
+      "maxAgeDays": 4000
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official census, every tenancy; each table states the Datenlizenz Deutschland attribution licence. Asking rents for German cities come from commercial portals and are not open."
+    },
+    "caveats": [
+      "Sitting rents on 15 May 2022, net of heating and service charges: a new lease in Berlin, Hamburg or Munich costs far more, often twice as much per m².",
+      "The next census is years away; until then this is the latest official rent level for each city."
+    ]
+  },
+  {
     "id": "dealroom",
     "name": "Dealroom",
     "publisher": "Dealroom.co",
@@ -896,6 +1126,64 @@
       "notes": "Paid index of 173 cities."
     },
     "personalUse": "For a person to read. Automated reading (an agent fetching the page) needs the publisher's permission; a figure the person reads there and gives their agent may be kept in that person's cache with the page's address, never committed or published."
+  },
+  {
+    "id": "es-serpavi",
+    "name": "SERPAVI rent reference system",
+    "publisher": "Ministerio de Vivienda y Agenda Urbana (Spain)",
+    "homepage": "https://www.mivau.gob.es/vivienda/alquila-bien-es-tu-derecho/serpavi",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Median monthly rent per m² of flats let as a main home, from every lease declared in that year's income tax returns, times 50 m²."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Median monthly rent per m² of flats let as a main home, from every lease declared in that year's income tax returns, times 90 m²."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "ES"
+      ],
+      "level": "city",
+      "period": "tax year"
+    },
+    "licence": "ES-reuse",
+    "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "ES-reuse",
+      "edition": "Base de datos SERPAVI 2011-2024 (edition of 9 March 2026), sheet Municipios",
+      "termsUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Ministerio de Vivienda y Agenda Urbana, Sistema Estatal de Referencia del Precio del Alquiler de Vivienda (SERPAVI), last updated 9 March 2026"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://cdn.mivau.gob.es/portal-web-mivau/vivienda/serpavi/",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/es-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 500
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official, from tax returns; the ministry's legal notice allows commercial and non-commercial reuse with the source and update date cited and the content not distorted (Real Decreto 1495/2011). Idealista and Fotocasa asking rents are proprietary and stay links."
+    },
+    "caveats": [
+      "Every declared lease, sitting tenants included, so below the asking rents a newcomer meets in Madrid and Barcelona.",
+      "Per m² times a fixed flat size, the same 50 m² and 90 m² as every per-m² source."
+    ]
   },
   {
     "id": "eu-free-movement",
@@ -2147,6 +2435,63 @@
     "licenceUrl": "https://www.naturalearthdata.com/about/terms-of-use/"
   },
   {
+    "id": "nsw-rent-sales",
+    "name": "NSW Rent and Sales Report",
+    "publisher": "NSW Department of Communities and Justice",
+    "homepage": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Median weekly rent of one-bedroom homes (every dwelling type) in new bonds lodged in Greater Sydney in the quarter, times 52 over 12."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Median weekly rent of three-bedroom homes (every dwelling type) in new bonds lodged in Greater Sydney in the quarter, times 52 over 12."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "AU-NSW"
+      ],
+      "level": "metro",
+      "period": "quarter"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Rent tables, June 2026 quarter",
+      "termsUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+      "termsRead": "2026-11-15",
+      "attribution": "© State of New South Wales (Department of Communities and Justice), Rent and Sales Report, CC BY 4.0"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/au-rent.ts"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "maxAgeDays": 200
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official bond lodgements (new tenancies); the department's copyright page puts its material under CC BY 4.0. Victoria's equivalent (DataVic, CC BY 4.0) is open too, but its files refuse non-browser downloads, so Melbourne has no figure yet."
+    },
+    "caveats": [
+      "Greater Sydney as a whole; the inner city costs more."
+    ]
+  },
+  {
     "id": "numbeo-qol",
     "name": "Numbeo Quality of Life Index",
     "publisher": "Numbeo",
@@ -3147,6 +3492,63 @@
     ]
   },
   {
+    "id": "pt-ine-rent",
+    "name": "INE median rent of new leases (0014696)",
+    "publisher": "Statistics Portugal (INE)",
+    "homepage": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Median monthly rent per m² of new lease contracts of family homes signed in the municipality over the last 12 months, times 50 m²."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Median monthly rent per m² of new lease contracts of family homes signed in the municipality over the last 12 months, times 90 m²."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "PT"
+      ],
+      "level": "city",
+      "period": "12 months to the quarter"
+    },
+    "licence": "CC-BY-4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "CC-BY-4.0",
+      "edition": "Indicator 0014696 (Metodologia 2026), latest quarter",
+      "termsUrl": "https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696",
+      "termsRead": "2026-11-15",
+      "attribution": "Source: Statistics Portugal (INE), median rent of new lease contracts (indicator 0014696), CC BY 4.0"
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0014696&lang=PT",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/pt-rent.ts"
+    },
+    "refresh": {
+      "cadence": "quarterly",
+      "maxAgeDays": 200
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official, from leases declared to the tax authority; INE publishes the indicator itself on dados.gov.pt under CC BY 4.0."
+    },
+    "caveats": [
+      "New leases only, every size of home: smaller homes rent for more per m², so 50 m² at the median rate is on the low side for a one-bedroom flat."
+    ]
+  },
+  {
     "id": "ror",
     "name": "Research Organization Registry",
     "publisher": "ROR",
@@ -3253,6 +3655,125 @@
     },
     "caveats": [
       "Swedish first-hand rents are negotiated and allocated by queue; a newcomer often rents second hand at a higher price, which this figure does not show."
+    ]
+  },
+  {
+    "id": "scot-prs",
+    "name": "Private Sector Rent Statistics, Scotland",
+    "publisher": "Scottish Government",
+    "homepage": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Mean monthly rent of one-bedroom homes in the Broad Rental Market Area over the year to September, mostly advertised rents of homes let that year."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "Mean monthly rent of three-bedroom homes in the Broad Rental Market Area over the year to September, mostly advertised rents of homes let that year."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "GB-SCT"
+      ],
+      "level": "metro",
+      "period": "year to September"
+    },
+    "licence": "OGL-UK-3.0",
+    "licenceUrl": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "OGL-UK-3.0",
+      "edition": "Private Sector Rent Statistics, Scotland, 2010 to 2025 (published 25 November 2025), open-data CSV",
+      "termsUrl": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-2025/",
+      "termsRead": "2026-11-15",
+      "attribution": "Contains public sector information licensed under the Open Government Licence v3.0: Scottish Government, Private Sector Rent Statistics, Scotland"
+    },
+    "access": "bulk",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://www.gov.scot/publications/private-sector-rent-statistics-scotland-2010-to-{year}/documents/",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/scot-rent.ts"
+    },
+    "refresh": {
+      "cadence": "yearly",
+      "maxAgeDays": 400
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official, by bedrooms; the page footer puts all content under OGL v3. ONS publishes Scotland only as a whole, so Edinburgh comes from here."
+    },
+    "caveats": [
+      "The Lothian area also holds Midlothian and East Lothian, where rents are lower than in Edinburgh, so the figure is a little below the city's own.",
+      "Advertised rents of homes let in the year: what a newcomer pays, above what sitting tenants pay."
+    ]
+  },
+  {
+    "id": "sg-ura-rentals",
+    "name": "URA rentals of non-landed homes, quarterly",
+    "publisher": "Urban Redevelopment Authority (Singapore)",
+    "homepage": "https://data.gov.sg/datasets/d_149ac00a2734bb0a03867bbe2ec0e7b0/view",
+    "measures": [
+      {
+        "metric": "rent_1bed",
+        "definition": "Median monthly rent per sq ft of private non-landed homes (condominiums and private flats) in major projects with at least 10 contracts in the latest quarter, weighted by contracts, converted to m² and times 50 m²."
+      },
+      {
+        "metric": "rent_3bed",
+        "definition": "The same rate per m² as the one-bedroom figure, times 90 m²."
+      }
+    ],
+    "coverage": {
+      "geography": [
+        "SG"
+      ],
+      "level": "city",
+      "period": "quarter"
+    },
+    "licence": "SG-ODL-1.0",
+    "licenceUrl": "https://data.gov.sg/open-data-licence",
+    "redistribute": "yes",
+    "rights": {
+      "licenceId": "SG-ODL-1.0",
+      "edition": "data.gov.sg dataset d_149ac00a2734bb0a03867bbe2ec0e7b0 (latest quarter)",
+      "termsUrl": "https://data.gov.sg/open-data-licence",
+      "termsRead": "2026-11-15",
+      "attribution": "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly (Urban Redevelopment Authority) accessed from data.gov.sg, made available under the terms of the Singapore Open Data Licence version 1.0 (https://data.gov.sg/open-data-licence)",
+      "notices": [
+        "Contains information from Rentals of Non-Landed Residential Buildings, Quarterly accessed from data.gov.sg, which is made available under the terms of the Singapore Open Data Licence version 1.0 https://data.gov.sg/open-data-licence"
+      ]
+    },
+    "access": "api",
+    "fetch": {
+      "mode": "batch",
+      "runtimes": [
+        "node"
+      ],
+      "endpoint": "https://data.gov.sg/api/action/datastore_search?resource_id=d_149ac00a2734bb0a03867bbe2ec0e7b0",
+      "cors": false,
+      "key": null,
+      "fetcher": "pipeline/sources/sg-rent.ts"
+    },
+    "refresh": {
+      "cadence": "monthly",
+      "maxAgeDays": 150
+    },
+    "vetted": {
+      "humanSelected": false,
+      "by": "Claude (agent), under the owner's brief",
+      "on": "2026-11-15",
+      "notes": "Official contract rents; the Singapore Open Data Licence allows any use with the attribution notice. HDB's own median rents by town and flat type are also open (d_23000a00c52996c55106084ed0339566) and could join as a second figure."
+    },
+    "caveats": [
+      "Private condominiums and flats only; public (HDB) flats, cheaper and home to most residents, are not in it.",
+      "Smaller homes rent for more per sq ft, so a fixed 50 m² at the median rate is on the low side for a one-bedroom condominium."
     ]
   },
   {

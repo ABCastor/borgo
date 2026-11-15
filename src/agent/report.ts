@@ -390,7 +390,8 @@ function whatToAdd(data: Dataset, profile: Profile, results: CityResult[]): stri
 /** Lines whose figures describe different periods across the cities compared: precision the inputs do not have. */
 function periodNotes(cities: CityVerdict[]): string[] {
   const out: string[] = [];
-  const ids = cities[0]?.lines.filter((l) => l.weight > 0 && !l.personal).map((l) => l.id) ?? [];
+  // A line that counts for no city is already in the notes as left out; its periods would say nothing more.
+  const ids = cities[0]?.lines.filter((l) => l.weight > 0 && !l.personal && cities.some((c) => c.lines.find((x) => x.id === l.id)?.score !== null)).map((l) => l.id) ?? [];
   for (const id of ids) {
     const per = new Map<string, string[]>();
     for (const c of cities) {
@@ -583,14 +584,16 @@ export function summarize(r: CompareReport, opts: { limit?: number } = {}): Comp
   const top = r.cities.slice(0, limit);
   const salaryGiven = r.cities.some((c) => c.money.salaryFrom !== "none");
   const costsGiven = r.cities.some((c) => c.money.monthly.cost.shown !== null);
+  // Lines that count for at least one city, and must-pass lines; a line no city has a figure for is in the notes.
+  const counted = (top[0]?.lines ?? []).filter((l) => l.dealBreaker || (l.weight > 0 && r.cities.some((c) => c.lines.find((x) => x.id === l.id)?.score !== null)));
+  // The sources of the lines shown: a line that counts for no city shows no figure, so its sources are not cited here.
+  const shown = new Set(counted.map((l) => l.id));
   const used = new Map<string, CompareSummary["sources"][number]>();
   const taxSources: CompareSummary["taxSources"] = {};
   for (const c of top) {
-    for (const l of c.lines) if (l.weight > 0) for (const f of l.sources) if (f.origin === "source" && f.source) used.set(f.source.id, { id: f.source.id, name: f.source.name, licence: f.source.licence, url: f.source.url });
+    for (const l of c.lines) if (shown.has(l.id)) for (const f of l.sources) if (f.origin === "source" && f.source) used.set(f.source.id, { id: f.source.id, name: f.source.name, licence: f.source.licence, url: f.source.url });
     if (c.money.taxModel && (salaryGiven || costsGiven)) taxSources[c.money.taxModel.country] ??= c.money.taxModel.sources.slice(0, 1);
   }
-  // Lines that count for at least one city, and must-pass lines; a line no city has a figure for is in the notes.
-  const counted = (top[0]?.lines ?? []).filter((l) => l.dealBreaker || (l.weight > 0 && r.cities.some((c) => c.lines.find((x) => x.id === l.id)?.score !== null)));
   const cites = new Map(counted.map((l) => {
     const all = new Set(top.map((c) => c.lines.find((x) => x.id === l.id)?.sources[0]?.cite));
     return [l.id, all.size === 1 ? [...all][0] : undefined];

@@ -1,0 +1,58 @@
+{
+  "id": "cbs-woonlasten",
+  "name": "CBS housing costs by municipality (85950NED)",
+  "publisher": "Statistics Netherlands (CBS)",
+  "homepage": "https://opendata.cbs.nl/statline/#/CBS/nl/dataset/85950NED/table",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Median monthly rent paid by households renting a home under 75 m² from a private landlord (not a housing corporation), after any rent benefit."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Median monthly rent paid by households renting a home of 75 to 100 m² from a private landlord (not a housing corporation), after any rent benefit."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "NL"
+    ],
+    "level": "city",
+    "period": "yearly"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "StatLine table 85950NED, 2015-2024",
+    "termsUrl": "https://www.cbs.nl/en-gb/about-us/website/copyright",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: CBS (Statistics Netherlands), Woonlasten huishoudens; kenmerken huishouden, woning, gemeente (85950NED), CC BY 4.0"
+  },
+  "access": "api",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://opendata.cbs.nl/ODataApi/odata/85950NED/TypedDataSet",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/nl-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 500
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official, CC BY 4.0. Private landlords only: housing-corporation homes go through waiting lists a newcomer cannot use."
+  },
+  "caveats": [
+    "Every private tenancy, sitting tenants included, and net of rent benefit; size bands, not bedrooms (under 75 m² for one bedroom, 75 to 100 m² for three).",
+    "CBS leaves out a figure it cannot publish reliably, so a city may show an earlier year than another."
+  ]
+}

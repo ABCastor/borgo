@@ -1,0 +1,66 @@
+{
+  "source": "de-zensus",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "berlin-de": [
+      {
+        "metric": "rent_1bed",
+        "value": 382,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Berlin, average net cold rent (without heating and service charges) of every rented flat of 40 - 59 m² on census day 15 May 2022: 7.63 €/m² × 50 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 677,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Berlin, average net cold rent (without heating and service charges) of every rented flat of 80 - 99 m² on census day 15 May 2022: 7.52 €/m² × 90 m² (Zensus 2022, table 4000W-0009)"
+      }
+    ],
+    "munich-de": [
+      {
+        "metric": "rent_1bed",
+        "value": 617,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Munich, average net cold rent (without heating and service charges) of every rented flat of 40 - 59 m² on census day 15 May 2022: 12.33 €/m² × 50 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1071,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Munich, average net cold rent (without heating and service charges) of every rented flat of 80 - 99 m² on census day 15 May 2022: 11.90 €/m² × 90 m² (Zensus 2022, table 4000W-0009)"
+      }
+    ],
+    "hamburg-de": [
+      {
+        "metric": "rent_1bed",
+        "value": 453,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Hamburg, average net cold rent (without heating and service charges) of every rented flat of 40 - 59 m² on census day 15 May 2022: 9.05 €/m² × 50 m² (Zensus 2022, table 4000W-0009)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 815,
+        "period": "2022",
+        "level": "city",
+        "source": "de-zensus",
+        "retrieved": "2026-11-15",
+        "note": "Hamburg, average net cold rent (without heating and service charges) of every rented flat of 80 - 99 m² on census day 15 May 2022: 9.06 €/m² × 90 m² (Zensus 2022, table 4000W-0009)"
+      }
+    ]
+  }
+}

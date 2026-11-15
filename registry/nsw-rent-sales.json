@@ -1,0 +1,57 @@
+{
+  "id": "nsw-rent-sales",
+  "name": "NSW Rent and Sales Report",
+  "publisher": "NSW Department of Communities and Justice",
+  "homepage": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Median weekly rent of one-bedroom homes (every dwelling type) in new bonds lodged in Greater Sydney in the quarter, times 52 over 12."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Median weekly rent of three-bedroom homes (every dwelling type) in new bonds lodged in Greater Sydney in the quarter, times 52 over 12."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "AU-NSW"
+    ],
+    "level": "metro",
+    "period": "quarter"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "Rent tables, June 2026 quarter",
+    "termsUrl": "https://dcj.nsw.gov.au/statements/copyright-and-disclaimer.html",
+    "termsRead": "2026-11-15",
+    "attribution": "© State of New South Wales (Department of Communities and Justice), Rent and Sales Report, CC BY 4.0"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://dcj.nsw.gov.au/about-us/families-and-communities-statistics/housing-rent-and-sales/rent-and-sales-report.html",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/au-rent.ts"
+  },
+  "refresh": {
+    "cadence": "monthly",
+    "maxAgeDays": 200
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official bond lodgements (new tenancies); the department's copyright page puts its material under CC BY 4.0. Victoria's equivalent (DataVic, CC BY 4.0) is open too, but its files refuse non-browser downloads, so Melbourne has no figure yet."
+  },
+  "caveats": [
+    "Greater Sydney as a whole; the inner city costs more."
+  ]
+}

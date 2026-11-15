@@ -1,0 +1,86 @@
+{
+  "source": "es-serpavi",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "madrid-es": [
+      {
+        "metric": "rent_1bed",
+        "value": 698,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Madrid municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (300447 flats): 13.97 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1257,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Madrid municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (300447 flats): 13.97 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
+      }
+    ],
+    "barcelona-es": [
+      {
+        "metric": "rent_1bed",
+        "value": 684,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Barcelona municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (140872 flats): 13.68 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 1231,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Barcelona municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (140872 flats): 13.68 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
+      }
+    ],
+    "valencia-es": [
+      {
+        "metric": "rent_1bed",
+        "value": 409,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Valencia municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (65742 flats): 8.18 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 736,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Valencia municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (65742 flats): 8.18 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
+      }
+    ],
+    "malaga-es": [
+      {
+        "metric": "rent_1bed",
+        "value": 478,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Málaga municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (25741 flats): 9.55 €/m² × 50 m² (SERPAVI, edition 2026-03-09)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 860,
+        "period": "2024",
+        "level": "city",
+        "source": "es-serpavi",
+        "retrieved": "2026-11-15",
+        "note": "Málaga municipality, median rent of flats let as a main home in 2024, every lease declared in income tax returns (25741 flats): 9.55 €/m² × 90 m² (SERPAVI, edition 2026-03-09)"
+      }
+    ]
+  }
+}

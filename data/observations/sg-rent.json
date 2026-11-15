@@ -1,0 +1,26 @@
+{
+  "source": "sg-ura-rentals",
+  "retrieved": "2026-11-15",
+  "observations": {
+    "singapore-sg": [
+      {
+        "metric": "rent_1bed",
+        "value": 2976,
+        "period": "2026-Q3",
+        "level": "city",
+        "source": "sg-ura-rentals",
+        "retrieved": "2026-11-15",
+        "note": "Private non-landed homes (condominiums and private flats) in major projects, 2026-Q3: median rent S$5.53 per sq ft a month (the contract-weighted median over 743 projects, 21840 contracts) × 50 m²"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 5357,
+        "period": "2026-Q3",
+        "level": "city",
+        "source": "sg-ura-rentals",
+        "retrieved": "2026-11-15",
+        "note": "Private non-landed homes (condominiums and private flats) in major projects, 2026-Q3: median rent S$5.53 per sq ft a month (the contract-weighted median over 743 projects, 21840 contracts) × 90 m²"
+      }
+    ]
+  }
+}

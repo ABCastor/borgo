@@ -1,0 +1,58 @@
+{
+  "id": "es-serpavi",
+  "name": "SERPAVI rent reference system",
+  "publisher": "Ministerio de Vivienda y Agenda Urbana (Spain)",
+  "homepage": "https://www.mivau.gob.es/vivienda/alquila-bien-es-tu-derecho/serpavi",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Median monthly rent per m² of flats let as a main home, from every lease declared in that year's income tax returns, times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Median monthly rent per m² of flats let as a main home, from every lease declared in that year's income tax returns, times 90 m²."
+    }
+  ],
+  "coverage": {
+    "geography": [
+      "ES"
+    ],
+    "level": "city",
+    "period": "tax year"
+  },
+  "licence": "ES-reuse",
+  "licenceUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "ES-reuse",
+    "edition": "Base de datos SERPAVI 2011-2024 (edition of 9 March 2026), sheet Municipios",
+    "termsUrl": "https://www.mivau.gob.es/ministerio/aviso-legal",
+    "termsRead": "2026-11-15",
+    "attribution": "Source: Ministerio de Vivienda y Agenda Urbana, Sistema Estatal de Referencia del Precio del Alquiler de Vivienda (SERPAVI), last updated 9 March 2026"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://cdn.mivau.gob.es/portal-web-mivau/vivienda/serpavi/",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/es-rent.ts"
+  },
+  "refresh": {
+    "cadence": "yearly",
+    "maxAgeDays": 500
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-15",
+    "notes": "Official, from tax returns; the ministry's legal notice allows commercial and non-commercial reuse with the source and update date cited and the content not distorted (Real Decreto 1495/2011). Idealista and Fotocasa asking rents are proprietary and stay links."
+  },
+  "caveats": [
+    "Every declared lease, sitting tenants included, so below the asking rents a newcomer meets in Madrid and Barcelona.",
+    "Per m² times a fixed flat size, the same 50 m² and 90 m² as every per-m² source."
+  ]
+}
