@@ -112,6 +112,9 @@ Coverage of the committed snapshot; regenerate this table with `npm run data && 
 - **Pay and jobs by kind of work** come from each country's own earnings and labour surveys at different levels: the metro in the US (BLS OEWS) and county for jobs (BLS QCEW, withheld cells as 0), the region in the UK (ONS ASHE) and Canada (Statistics Canada), the country elsewhere (Eurostat SES 2022, ABS, ILOSTAT; Japan's figure leaves bonuses out). Dubai has no pay figure. **Young companies** count Wikidata entries with two or more sitelinks, so they follow how well each country's companies are written about. Details in `docs/work.md`.
 - **Walking or cycling to work** needs both shares from the same year, 2010 or later, so Copenhagen and Amsterdam (last reported 2003) have none; the US figure leaves people working from home out, like the Urban Audit.
 - **Out of the dense city** measures to the edge of the GHSL urban centre (1 km squares with at least 1,500 residents per km²): suburbs, farmland, hills or a large park lie beyond, not always open country. Directions that meet the sea or a lake within 3 km of the edge are dropped. Dubai's centre point falls in a gap inside its urban centre and has no figure.
+- **Research output** counts papers per resident from universities, labs, hospitals and companies; it is a proxy for "who is in the room", not a count of startups.
+- **Homicides and the other World Bank lines** are national figures standing in for the city, and say "national" beside the number.
+- **Rent:** no open source gives a one-bedroom rent for cities worldwide. Where no official figure exists, the app asks for the person's own figure rather than inventing one, and people who live there can add theirs as community figures (CONTRIBUTING.md).
 
 ## Computed in the engine, not stored
 

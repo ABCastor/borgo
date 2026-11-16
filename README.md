@@ -4,31 +4,28 @@
 
 Borgo (Italian for a village) compares any number of cities on open data, weighted by what you value: what you would earn after tax and keep after rent, who in your household can move there without a visa, and how each place does on climate, air, safety, health and research. Every figure shows its source, the period it describes, and whether it describes the city itself or only its country.
 
-It runs in the browser with no account and no server. The same engine runs as a command-line tool (`borgo`, which also answers to `where-to-live`) and as an MCP server, on the web at `https://borgo.abcastor.com/mcp` or on your own machine, so an AI assistant can answer "where should I live?" with the numbers you would see.
+It runs in the browser at https://borgo.abcastor.com with no account, and what you type stays there. The same engine runs as a command-line tool (`borgo`) and as an [MCP](https://modelcontextprotocol.io) server, the protocol AI assistants use to call tools, so an assistant can answer "where should I live?" with the numbers you would see.
+
+<p><a href="docs/media/borgo-demo.mp4"><img src="docs/media/borgo-demo.webp" width="880" alt="Borgo in 34 seconds: San Francisco joins Lisbon and London, a salary of 120,000 dollars and software work go in, Lisbon ranks first and leaves the most each month, a health premium no open source has is typed in, and the rent figure opens on its US Census source and licence"></a></p>
+
+<sub>34 seconds, silent. Open [the MP4](docs/media/borgo-demo.mp4) for the full-size video.</sub>
 
 > **Why I built this:** I was deciding with a co-founder where to live and start a company, weighing San Francisco, London and Dublin against staying here in Torino. When I put together my own comparison, every site I pulled from answered one slice: one had price levels, another weather, another a salary calculator, and none weighted them by what mattered to me or said whether both of us could legally work there. Teleport, which once put those pieces together, is gone. So I built the comparison I wanted and made it open, for anyone (or their agent) to run with their own weights.
 
-**Status:** early. Any city can be fetched on demand; 57 have public pages. Take-home pay for 26 countries (most of Europe, the United Kingdom, the United States with eight state modules and New York City, Canada, Australia, Singapore, Japan and the UAE), and 17 tax regimes for people moving in, with their conditions and how long they last.
+**Status:** early. Any city can be fetched on demand; 57 have public pages, and 48 of those have an official rent. Take-home pay covers 26 countries (most of Europe, the United Kingdom, the United States with eight state modules and New York City, Canada, Australia, Singapore, Japan and the UAE), with 17 tax regimes for people moving in, their conditions and how long they last.
 
-## Quickstart
+## In an AI assistant
 
-An AI assistant connects to Borgo with one address and nothing to install: **`https://borgo.abcastor.com/mcp`** (MCP over Streamable HTTP, no account).
+One address, nothing to install: **`https://borgo.abcastor.com/mcp`** (MCP over Streamable HTTP, no account).
 
 ```sh
 claude mcp add --transport http borgo https://borgo.abcastor.com/mcp    # Claude Code
 codex mcp add borgo --url https://borgo.abcastor.com/mcp                # Codex
 ```
 
-In Claude (web or desktop) or ChatGPT, add a custom connector with that address. It answers for the published cities and keeps nothing you send, only a count of calls per tool. To compare any other place, or to keep figures on your own machine, run the same server locally.
+In Claude (web or desktop) or ChatGPT, add a custom connector with that address. It answers for the 57 published cities. It keeps none of what you send; it counts calls per tool, nothing more.
 
-With [Node.js](https://nodejs.org/) 22.13 or newer, one command runs Borgo, with no clone:
-
-```sh
-npx -y @abcastor/borgo mcp                                       # the MCP server, over stdio
-npx -y @abcastor/borgo compare Lisbon Berlin --salary "60k EUR"   # the command line
-```
-
-Add the local MCP server to your assistant.
+To compare any other place, or to keep everything on your own machine, run the same server locally with [Node.js](https://nodejs.org/) 22.13 or newer:
 
 **Claude Code**
 
@@ -55,7 +52,30 @@ claude mcp add borgo -- npx -y @abcastor/borgo mcp
 codex mcp add borgo -- npx -y @abcastor/borgo mcp
 ```
 
-[docs/agents.md](docs/agents.md) has every tool, every command and where each client keeps its configuration.
+[docs/agents.md](docs/agents.md) lists every tool and where each client keeps its configuration.
+
+## In the terminal
+
+```sh
+npx -y @abcastor/borgo compare "San Francisco" London \
+  --salary "120k USD" --spending "1500 USD" --home "San Francisco" \
+  --health-premium "San Francisco=250/month"
+```
+
+```
+**San Francisco ranks first on your weights, 60.1/100. London is within 0.3 points: a near tie.**
+
+| # | City | Score /100 | Observed | Left a month (USD) |
+| ---: | --- | ---: | ---: | ---: |
+| 1 | San Francisco | 60.1 | 73% | US$2,794 |
+| 2 | London | 59.8 | 83% | US$3,163 |
+```
+
+On the same pay, London leaves $369 more a month. San Francisco still edges ahead on dry days, winter daylight and research output. Below this, the answer lists every line's points with its source, the tax on each salary, and what to add next.
+
+No open source publishes a health insurance premium for San Francisco, which is why the command passes one. Without it, San Francisco's money reads "at most US$3,044" and stays out of the score until you give a figure.
+
+Any real place works, with or without a public page: `borgo fetch "Oakland, US"` reads every source that covers it into your cache. `npm install -g @abcastor/borgo` installs the `borgo` command; the full list of commands and flags is in [docs/agents.md](docs/agents.md#cli).
 
 From a clone, with Node.js 26 or newer, which runs the TypeScript sources directly:
 
@@ -67,23 +87,33 @@ node scripts/build.ts --serve    # build dist/ and serve it at http://127.0.0.1:
 npm test                         # engine, money model and tax modules
 ```
 
-On a first visit Borgo starts near you: the region of the country your request comes from (read at the edge for that one answer, never stored or logged; any other region is one click away), five cities there whose money figure is whole, and what an example salary of €60,000 leaves each month in each after tax, rent and everyday spending, labelled as an example until you type your own. That first screen is in the page itself, so it shows before the app has loaded. Borgo then says what it is and asks first for what moves the ranking most: your salary, your nice days and a passport, each in place, with the share of the score it carries. Pick your cities and the answer is there: the cities ranked on two dials, money left and nice days, with one sentence saying who leads and the one input that would make the answer firmer (your salary, a rent no open source has, a passport). Nice days are yours to define: the range, 18 to 30 °C feels-like to start, sits on the nice-days dial and on every sheet, and beside it the tests a nice day passes: dry and sunny to start, and you can add not muggy, calm and a minimum of daylight, or drop the rain or sky test (rain, sky, humidity and wind from hourly ERA5 via Open-Meteo; daylight computed from the latitude). Add a third priority if you like; the rest (the right to live there as a weight, health, safety, children once you have them, people, work and ambition, getting around, nature, where you stand, and lines of your own) waits under **More priorities**, each group one dial with its parts inside. **Right to live and work** is a check, not a dial: give each person's passports (as many as they hold) and any right they hold that is not citizenship (permanent residence, settled status, a residence permit, a work visa, an EU Blue Card, for a country or a free-movement area, with its end date if it has one), and every sheet says yes, needs a visa or permit, or not checked; mark it must pass to rule out the rest. No salary is assumed: money counts once you give one (one figure everywhere, or one per city), and pension shares, tax settings and newcomer regimes sit behind each money sheet's advanced section. Click any figure to see where it came from, or replace it with your own number. **Settings** (the gear) switches °C or °F, km or miles, the currency money is shown in, and how numbers and dates are written.
+## In the browser
 
-**Your comparison stays in your browser** (its local storage) and is sent nowhere. **Share** shows what its link will carry before you copy it: the cities, the weights and must-pass lines, the nice-day range, the home size and the settings. Pay, spending and savings; who is moving (names, passports and other rights, ages, children); your own numbers (rents and replaced figures); your own lines; and where you stand stay out unless you tick them. The link carries them after `#share=`, the part of an address browsers never send to a server, and the app removes it from the address once read. The page loads its own files and nothing else; adding a place sends only its name and coordinates to the sources that cover it.
+A first visit starts in your region with five cities whose money figures are complete, and shows what an example salary leaves each month after tax, rent and everyday spending. Type your own salary and it takes over.
 
-**Explore more places**, under your cities (and on its own page, **Map**), colours the whole world by what you value: your own score, nice days in your own range, who in your household may live there, money kept or any other dial, and it follows the dials as you move them. The land shows how many months of the year, 0 to 12, have an afternoon high in your nice-day range, and changes as you change the range. Your cities are ringed and ranked on whatever the map shows. Point at any city or town to read it; click it to pin its card (its months in your range, take-home pay once you give a salary, and the figures its rank rests on), and add it from there with **Add to my cities**. The card works from the keyboard and closes with Escape; on a phone it rises from the bottom of the screen.
+<p><img src="docs/media/first-visit.webp" width="880" alt="Borgo's first screen for North America: Montreal, Vancouver, Toronto, Dublin and London, with what 60,000 euros a year leaves each month after tax, rent and everyday spending, from 1,505 euros in Montreal to 552 in London, and a note that New York, San Francisco, Boston, Austin, Seattle and Chicago wait for a missing figure"></p>
+
+Money left and nice days start the score at half each, and a third priority such as health or safety is one click away. Nice days are yours to define: a feels-like range, 18 to 30 °C to start, and the tests a day must pass.
+
+<p><img src="docs/media/nice-days.webp" width="880" alt="The nice-day editor open over a comparison of Lisbon and San Francisco: a feels-like range from 18 to 30 degrees, dry and sunny ticked, not muggy and calm left off, and a minimum of daylight"></p>
+
+**Right to live and work** checks each person's passports and other rights, such as permanent residence or an EU Blue Card. Click any figure to see where it came from or to replace it with your own. **Share** shows what its link carries before you copy it; pay, passports and your own numbers stay out unless you tick them.
+
+How each screen behaves, the map that colours the world by your own values, and what the share link carries are in [docs/architecture.md](docs/architecture.md#37-the-app-from-the-first-visit).
 
 ## How the score works
 
-Each line turns one figure into a score from 0 to 1 against a fixed worst and best: PM2.5 runs from 35 µg/m³ down to the WHO guideline of 5, the shortest day of the year from 6 to 11 hours. Your weight decides how many of the 100 points that line can give. A group's dial is the sum of its lines' weights: moving it shares the new weight over them in the proportions they had, so the score is the same as setting each line by hand. A missing figure never scores better than a real one. Where a city has no figure on a line, it scores as the lowest of your other cities on it, so a gap can only cost it, never win it a place; a line no city has a figure for counts for none of them; and a city that lacks a figure your other cities have is marked "Partial data", with the share of its score that rests on its own figures and what it lacks. A passport, a salary or a rent you have not given is not partial data: the answer asks for it instead. Money is never filled in: when one city lacks rent, every city is compared on take-home pay alone, less the health premium where cover is bought outside pay (or on cost alone when no salary is given, or money is left out of the score), and one line says so with the input that would fix it, such as "add your rent for Zurich". When a city's missing figures could still carry it past the leader, the answer says the lead is provisional and what is missing. A line marked *must pass* passes, fails or is unknown: a city that fails is ruled out, and a city that cannot be checked yet (no figure, no passport or other right given) is shown as unknown and ranks after every city that passes. "Everyone can move there" is the usual one; a person whose passports are not given is not checked, rather than called in need of a visa.
+Each line turns one figure into a score from 0 to 1 between a fixed worst and best (fine dust from 35 µg/m³ down to the WHO guideline of 5), and your weight decides how many of the 100 points it can give. Three rules keep gaps from deciding the answer:
 
-"What you keep" each month is take-home pay (gross salary through the country's tax model, after pension contributions) minus rent, minus your own monthly spending scaled by the city's price level, minus childcare for children under 6 after public support (your own cost when you give it, none when you use no paid care), minus health costs paid out of pocket and any health insurance premium bought outside pay. A figure that leaves out a cost that is due (a premium, childcare with no open figure) reads "at most", names what it lacks with a field to add it, and is not scored until it is whole; a tax approximation is named beside the figure; a newcomer regime you count without confirming every condition is labelled a scenario. Cost of living is shown beside it and counts on its own only if you weight it, since money left already counts every cost. Savings show as months of expenses covered with no income. You can override any of it.
+- **A missing figure never scores better than a real one.** A city without a figure on a line scores as the lowest of your other cities there, and is marked "Partial data".
+- **Money is never filled in.** When a city lacks rent or a cost that is due, every city is compared on take-home pay alone, and one line names the input that would fix it.
+- **A *must pass* line passes, fails or is unknown.** An unknown city ranks after every city that passes.
+
+"What you keep" is take-home pay after tax and pension contributions, minus rent, everyday spending scaled by the city's prices, childcare after public support, and health costs. The full rules are in [docs/architecture.md](docs/architecture.md#35-engine-and-merge), the tax models and newcomer regimes in [docs/tax-regimes.md](docs/tax-regimes.md).
 
 ## Where the data comes from
 
-The project keeps a curated list of sources, not a copy of their figures. `registry/` holds one file per source: what it measures in plain words, where and when it applies, its licence, whether we may redistribute it, how to fetch it (endpoint, whether a browser may read it, any key), how often it changes, and who vetted it. Your browser, the CLI or the MCP server fetch from those sources for the places you ask about and keep the figures, each with the address it was read from, on your side. See [docs/architecture.md](docs/architecture.md).
-
-Any real place works: type "Palermo" in the app, run `borgo fetch "Palermo, IT"`, or ask your agent through the MCP server. A small snapshot of open-licensed figures for 57 seed cities is committed so the public city pages can show numbers.
+<p><img src="docs/media/city-page.webp" width="560" alt="The public San Francisco page: about 827,526 residents from GeoNames, take-home pay on 67,000 dollars, a one-bedroom rent of 2,398 dollars a month from the US Census American Community Survey, and climate facts from Open-Meteo, each with its source and period"></p>
 
 | What | Source | Licence | Level |
 |---|---|---|---|
@@ -91,7 +121,8 @@ Any real place works: type "Palermo" in the app, run `borgo fetch "Palermo, IT"`
 | Air and feels-like temperature, hourly temperature, cloud, wet days | [Open-Meteo](https://open-meteo.com/) (ERA5 reanalysis, last five full years) | CC BY 4.0 | city coordinates |
 | Sunshine, measured | [WMO 1991-2020 normals](https://www.ncei.noaa.gov/products/wmo-climate-normals) (NOAA NCEI), [Meteostat](https://dev.meteostat.net/) | WMO policy, CC BY 4.0 | nearest station |
 | Fine dust (PM2.5) | [WHO Ambient Air Quality Database](https://www.who.int/data/gho/data/themes/air-pollution/who-air-quality-database), else [CAMS](https://open-meteo.com/en/docs/air-quality-api) modelled | WHO terms, CC BY 4.0 | city |
-| Rents | [ONS](https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics) (UK), [CSO and RTB](https://data.cso.ie/table/RIA02) (Ireland) | OGL v3, CC BY 4.0 | city or region |
+| Rents | Official statistics in 18 countries, among them the [US Census ACS](https://www.census.gov/programs-surveys/acs), [ONS](https://www.ons.gov.uk/economy/inflationandpriceindices/datasets/priceindexofprivaterentsukmonthlypricestatistics) (UK), [CMHC](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410013301) (Canada), [INE](https://dados.gov.pt/datasets/valor-mediano-das-rendas-de-novos-contratos-de-arrendamento-de-alojamentos-familiares-nos-ultimos-12-meses-metodologia-2026-eur-m2-0014696) (Portugal), [Zensus 2022](https://ergebnisse.zensus2022.de/datenbank/online/statistic/4000W/table/4000W-0009) (Germany) and [OMI](https://www.agenziaentrate.gov.it/portale/web/guest/schede/fabbricatiterreni/omi/pubblicazioni/rapporti-immobiliari-residenziali) (Italy); every one with what it measures in [docs/data-sources.md](docs/data-sources.md#rent-what-each-source-measures) | each publisher's own: public domain, OGL, CC BY 4.0, national reuse terms | city or region |
+| Pay by kind of work | [BLS OEWS](https://www.bls.gov/oes/) (US), [ONS ASHE](https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/bulletins/annualsurveyofhoursandearnings/latest) (UK), [Eurostat Structure of Earnings Survey](https://ec.europa.eu/eurostat/web/microdata/structure-of-earnings-survey) (EU and EFTA), Statistics Canada, ABS, ILOSTAT; see [docs/work.md](docs/work.md) | public domain, OGL, CC BY 4.0, Eurostat reuse with acknowledgement | metro area, region or country |
 | Price levels, homicides, life expectancy, doctors, unemployment | [World Bank WDI](https://databank.worldbank.org/source/world-development-indicators) | CC BY 4.0 | country |
 | Control of corruption | [World Bank Worldwide Governance Indicators](https://www.worldbank.org/en/publication/worldwide-governance-indicators) | CC BY 4.0 | country |
 | Politics, left to right | Latest national election: official results from the electoral authorities, party positions from [ParlGov](https://doi.org/10.7910/DVN/2VZ5ZC); 18 countries, Swiss cantons, Canadian provinces and Australian states, no figure where too little of the vote is positioned; see [docs/positions.md](docs/positions.md) | CC BY 4.0 (as compiled here) | country, canton, province or state |
@@ -106,36 +137,26 @@ Any real place works: type "Palermo" in the app, run `borgo fetch "Palermo, IT"`
 | The world map: afternoon high by month | [NASA POWER](https://power.larc.nasa.gov/) climatology (MERRA-2, 2001-2025) | CC0 | grid of about 50 km, averaged per map tile |
 | Free movement | EU Directive 2004/38/EC, the EEA Agreement, the EU-Swiss agreement, the UK-Ireland Common Travel Area, the Trans-Tasman arrangement | official texts | country |
 
-Numbeo, WeatherSpark, the EIU and similar closed sources are in the registry as link-only pages: their terms forbid copying and automated reading, so the app links to them and no agent fetches them. A figure you read there yourself can be kept as your own number, in your browser or your own cache, and is never copied into this project.
+`registry/` holds one file per source: what it measures, its licence, whether it may be redistributed, and how to fetch it. The browser, the CLI or your local MCP server fetch from those sources for the places you ask about and keep each figure, with the address it was read from, on your side. The 57 seed cities ship with a snapshot of open-licensed figures for their public pages.
 
-**Politics and the law are positions, not scores.** You say where you stand and a place scores by how close it is; until you do, those lines show the fact and count for nothing. See [docs/positions.md](docs/positions.md), and [docs/values-research.md](docs/values-research.md) for what people weigh when choosing where to live and the open data behind each dial.
+Numbeo, WeatherSpark, the EIU and similar closed sources are link-only: their terms forbid copying and automated reading, so the app links to them and no agent fetches them.
 
-**Sunshine is measured, not modelled.** Reanalysis models overstate sunshine by 30 to 90% against weather stations (ERA5 gives London 2,765 hours a year; Heathrow measures 1,595), so sunshine comes only from station normals and is missing where no station is close.
+**Sunshine is measured at weather stations.** Reanalysis models overstate it by 30 to 90% against stations (ERA5 gives London 2,765 hours a year; Heathrow measures 1,595), so a city with no station close enough has no sunshine figure. San Francisco is one of them.
 
-**The real gap is rent.** No open source gives a one-bedroom rent for cities worldwide: official data covers the UK and Ireland today. Elsewhere the app asks for your own figure rather than inventing one, and people who live there can add theirs (below). Research output counts papers per resident from universities, labs, hospitals and companies; it is a proxy for "who is in the room", not a count of startups. Homicides and the other World Bank lines are national figures standing in for the city, and say "national" beside the number.
+**Rent is the hardest gap.** No open source gives a one-bedroom rent for cities worldwide. Nine of the 57 seed cities have no official rent yet (Brussels, Copenhagen, Prague, Warsaw, Krakow, Budapest, Athens, Tallinn and Dubai), and there the app asks for your own figure. Every source, its coverage and its known caveats are in [docs/data-sources.md](docs/data-sources.md).
+
+**Politics and the law are position lines.** You say where you stand and a place scores by how close it is; until you do, those lines show the fact and count for nothing. See [docs/positions.md](docs/positions.md).
 
 ## Figures people add
 
-Anyone can add what they pay and earn where they live, without an account: rent by bedrooms and area, six everyday prices (a cheap meal, a cappuccino, milk, a transit pass, a gym, home internet), take-home pay by kind of work, and a 1 to 5 rating of living there. Use the form on any city page or city sheet, `borgo submit`, or the MCP tool `submit_figures`. Nothing about the sender is kept; an automated review holds amounts far from what others report or from the official figure, and a burst of entries at once. What passes shows from the first entry, labelled as community with its count and months, beside the official figures and never in a score. Every entry is open data under CC BY 4.0 ([dataset.json](https://borgo.abcastor.com/api/community/dataset.json), [CSV](https://borgo.abcastor.com/api/community/dataset.csv)). See [CONTRIBUTING.md](CONTRIBUTING.md#your-own-figures).
+Anyone can add what they pay and earn where they live, without an account: rent, six everyday prices, take-home pay by kind of work, and a 1 to 5 rating. Use the form on any city page or the MCP tool `submit_figures`. Nothing about the sender is kept, an automated review holds outliers, and what passes shows labelled as community beside the official figures, never in a score. Every entry is open data under CC BY 4.0 ([JSON](https://borgo.abcastor.com/api/community/dataset.json), [CSV](https://borgo.abcastor.com/api/community/dataset.csv)).
 
-## Adding to it
+## Contributing
 
-Everything is a small, separate piece.
-
-- **A city** needs nothing: any place resolves on demand. A seed city (one with a public page) is one line in `data/cities.seed.json`; run `node pipeline/sources/geonames.ts`, then the snapshot sources.
-- **A source** is one file in `registry/` (copy a similar one; `npm test` validates it) and, to fetch it on demand, one fetcher in `src/fetch/` registered in `src/fetch/index.ts` (browser and Node) or `src/fetch/node/index.ts` (Node only). `pipeline/build-data.ts` refuses snapshot figures from a source the registry does not clear for redistribution, or does not declare for that metric.
-- **A metric** is one entry in `src/core/metrics.ts`.
-- **A scoring line** is one entry in `src/core/criteria.ts`: what it asks, its worst and best, and how it reads the data. It joins a group by its category, or by name in `src/core/groups.ts`.
-- **A country's tax** is one module in `src/tax/` with its official sources and caveats, registered in `src/tax/index.ts`, with worked examples in `test/`.
-
-Pull requests need a source and a licence for every number they add.
-
-**Corrections** to any figure, rule or source are welcome from people and their agents: **Suggest a correction** under any figure's sources, the [proposal form](https://github.com/ABCastor/borgo/issues/new?template=proposal.yml), or `propose_change` in the MCP server (`borgo propose` on the command line). Each proposal cites the official text it comes from and is checked on GitHub, then reviewed; `borgo stale` lists the curated facts due for review. See [CONTRIBUTING.md](CONTRIBUTING.md).
+**Corrections** to any figure, rule or source are welcome from people and their agents: **Suggest a correction** under any figure's sources, the [proposal form](https://github.com/ABCastor/borgo/issues/new?template=proposal.yml), or `propose_change` in the local MCP server. Each one cites the official text it comes from. New sources, metrics and tax models are small separate files; [CONTRIBUTING.md](CONTRIBUTING.md) says where each goes and what a pull request needs.
 
 ## Licence
 
-The Map follows the spirit of Nick Winans' [Where to Live](https://github.com/Nicell/where-to-live) map of pleasant days in the US (MIT); no code is copied from it.
-
-Code under the [Apache License 2.0](LICENSE). Compiled data under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with each source's own licence kept beside its figures. Fonts under the SIL Open Font License, with their licence files in `public/fonts/`.
+Code under the [Apache License 2.0](LICENSE). Compiled data under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), with each source's own licence kept beside its figures. Fonts under the SIL Open Font License, with their licence files in `public/fonts/`. The Map follows the spirit of Nick Winans' [Where to Live](https://github.com/Nicell/where-to-live) map of pleasant days in the US (MIT); no code is copied from it.
 
 <p><a href="https://abcastor.com"><img src="docs/castor-footer.svg" width="350" alt="Chip, the Castor beaver, Castor, we give a dam"></a></p>

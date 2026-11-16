@@ -115,7 +115,15 @@ A proposal is a public GitHub issue under your account, and its edit history is 
 
 ## Code
 
-For changes to the code, a new source, a new metric or a country's tax model, see "Adding to it" in the [README](README.md). Before a pull request:
+Everything is a small, separate piece.
+
+- **A city** needs nothing: any place resolves on demand. A seed city (one with a public page) is one line in `data/cities.seed.json`; run `node pipeline/sources/geonames.ts`, then the snapshot sources.
+- **A source** is one file in `registry/` (copy a similar one; `npm test` validates it) and, to fetch it on demand, one fetcher in `src/fetch/` registered in `src/fetch/index.ts` (browser and Node) or `src/fetch/node/index.ts` (Node only). `pipeline/build-data.ts` refuses snapshot figures from a source the registry does not clear for redistribution, or does not declare for that metric.
+- **A metric** is one entry in `src/core/metrics.ts`.
+- **A scoring line** is one entry in `src/core/criteria.ts`: what it asks, its worst and best, and how it reads the data. It joins a group by its category, or by name in `src/core/groups.ts`.
+- **A country's tax** is one module in `src/tax/` with its official sources and caveats, registered in `src/tax/index.ts`, with worked examples in `test/`.
+
+Pull requests need a source and a licence for every number they add. Before a pull request:
 
 ```sh
 npm test
