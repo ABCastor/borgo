@@ -80,6 +80,16 @@ test("before a salary, the answer shows what an example salary leaves, says it i
   // With a salary, the person's own money takes over: no example.
   const own = { ...p, income: { ...p.income, gross: 70_000 } };
   assert.doesNotMatch(text(verdict(app(own), evaluate(data, own))), /An example/);
+  // Shown in US dollars, the example salary and spending are in US dollars too, each labelled with the euros it
+  // came from, so no euro figure sits beside the dollar rows unexplained.
+  const usd = { ...p, displayCurrency: "USD" };
+  const inUsd = text(exampleMoney(data, usd, s.visit));
+  const $ = (eur: number) => `US$${Math.round((eur / 1) * data.fx.rates.USD!).toLocaleString("en-GB")}`;
+  assert.match(inUsd, new RegExp(`What ${$(EXAMPLE_GROSS).replace("$", "\\$")} \\(converted from €60,000\\) a year before tax`));
+  assert.match(inUsd, new RegExp(`and ${$(p.income.everyday!.amount).replace("$", "\\$")} \\(converted from €1,200\\) of everyday spending`));
+  assert.equal(inUsd.replace(/\(converted from €[\d,]+\)/g, "").includes("€"), false, "every other figure is in dollars");
+  assert.match(text(exampleMoney(data, p, s.visit)), /What €60,000 a year/, "in euros it says so once, with nothing converted");
+  assert.doesNotMatch(text(exampleMoney(data, p, s.visit)), /converted/);
   // Once the person changes the cities, the reason for the region's list is not given any more.
   const moved = { ...p, cities: [...p.cities.slice(1), "berlin-de"] };
   assert.doesNotMatch(text(exampleMoney(data, moved, s.visit)), /This visit comes from/);

@@ -2,7 +2,7 @@
 // cities whose money figure is whole (take-home pay, rent for one bedroom and everyday costs all known), and what an
 // example salary leaves each month in each, so the first screen answers "what would I have left?" before anything is
 // typed. The example is labelled as one and never becomes the person's own salary.
-import { money, type MoneyResult } from "../core/money.ts";
+import { convert, money, type MoneyResult } from "../core/money.ts";
 import type { Dataset, Profile } from "../core/types.ts";
 import { fromText, REGIONS, regionById, spreadOf, type RegionId } from "../core/visit-region.ts";
 import { html, type Raw } from "./dom.ts";
@@ -69,6 +69,15 @@ export function exampleRows(data: Dataset, p: Profile): ExampleRow[] {
   return rows.sort((a, b) => b.left - a.left);
 }
 
+/**
+ * An amount in the display currency, converted from the currency it is set in and labelled so: "US$69,612 (converted
+ * from €60,000)". Unconverted when the currencies match or no rate is known.
+ */
+export function shownIn(data: Dataset, amount: number, from: string, to: string): Raw {
+  const v = from === to ? null : convert(data, amount, from, to);
+  return v === null ? html`<b class="num">${fmtMoney(amount, from)}</b>` : html`<b class="num">${fmtMoney(v, to)}</b> (converted from ${fmtMoney(amount, from)})`;
+}
+
 const listOf = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`);
 
 /** Where the first visit's cities come from, for the sentence that says why they are shown. */
@@ -86,6 +95,8 @@ export function exampleMoney(data: Dataset, p: Profile, from: VisitFrom | undefi
   const rows = exampleRows(data, p);
   if (!rows.length) return html``;
   const region = regionById(from?.region);
+  // The rows are in the display currency, so the salary and spending they rest on are too.
+  const shown = p.displayCurrency;
   const everyday = p.income.everyday;
   const base = everyday ? data.cities.find((c) => c.id === everyday.homeCity)?.name : null;
   // The reason is given only while the cities are still the ones the region started with.
@@ -93,7 +104,7 @@ export function exampleMoney(data: Dataset, p: Profile, from: VisitFrom | undefi
   const where = spreadOf(region.id, p.cities.map((id) => data.cities.find((c) => c.id === id)?.country ?? ""));
   const skipped = fresh ? passedOver(region.id, p.cities).map((id) => data.cities.find((c) => c.id === id)?.name).filter((n): n is string => !!n) : [];
   return html`<div class="v-example" data-region="${region.id}">
-    <p class="v-ex-h">What <b class="num">${fmtMoney(EXAMPLE_GROSS, "EUR")}</b> a year before tax leaves you each month, after tax, rent for one bedroom${everyday ? html` and ${fmtMoney(everyday.amount, everyday.currency)} of everyday spending${base ? html` in ${base}, scaled to each city's prices` : ""}` : ""}:</p>
+    <p class="v-ex-h">What ${shownIn(data, EXAMPLE_GROSS, "EUR", shown)} a year before tax leaves you each month, after tax, rent for one bedroom${everyday ? html` and ${shownIn(data, everyday.amount, everyday.currency, shown)} of everyday spending${base ? html` in ${base}, scaled to each city's prices` : ""}` : ""}:</p>
     <ol class="v-ex-list">${rows.map((r) => html`<li><a href="#/city/${r.id}">${r.name}</a> <b class="num">${fmtMoney(r.left, r.currency)}</b> <span class="quiet">rent ${fmtMoney(r.rent, r.currency)}</span></li>`)}</ol>
     <p class="v-ex-why quiet">An example until you type your salary above.${fresh ? html` <span class="v-from" data-where="${where}">${fromText(region.id, from?.country, where)}</span> Each has every money figure: pay after tax, an official rent and everyday costs.${skipped.length ? html` ${listOf(skipped)} ${skipped.length > 1 ? "wait" : "waits"} for a figure that is still missing.` : ""} Start from <span class="v-regions">${REGIONS.filter((r) => r.id !== region.id).map((r, i, all) => html`${i ? (i === all.length - 1 ? " or " : ", ") : ""}<button class="link" data-act="region" data-region="${r.id}">${r.name}</button>`)}</span> instead.` : ""}</p>
   </div>`;
