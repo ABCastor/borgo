@@ -1,6 +1,6 @@
 {
   "version": "2026-11-16",
-  "builtAt": "2026-11-16T06:36:37.628Z",
+  "builtAt": "2026-11-16T21:10:00.512Z",
   "cities": [
     {
       "id": "turin-it",
@@ -2562,6 +2562,16 @@
       "licence": "No data licence: only total counts of profiles are stored (GitHub Acceptable Use Policies, section 7)",
       "redistributable": true,
       "licenceUrl": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies#7-information-usage-restrictions"
+    },
+    "hu-ksh-rent": {
+      "id": "hu-ksh-rent",
+      "name": "KSH–ingatlan.com rent index, asking rents (table annex)",
+      "publisher": "Hungarian Central Statistical Office (KSH)",
+      "url": "https://www.ksh.hu/s/kiserleti-statisztika/kiadvanyok/kshingatlancom-lakberindex-2026-oktober/",
+      "licence": "CC-BY-4.0",
+      "redistributable": true,
+      "licenceUrl": "https://www.ksh.hu/copyright",
+      "tenancies": "new"
     },
     "ilostat": {
       "id": "ilostat",
@@ -84939,6 +84949,24 @@
         "note": "14,903 accounts whose location names \"Budapest\", over 1,741,041 residents"
       },
       {
+        "metric": "rent_1bed",
+        "value": 257547,
+        "period": "2026-H1",
+        "level": "city",
+        "source": "hu-ksh-rent",
+        "retrieved": "2026-11-16",
+        "note": "Budapest, average monthly asking rent of flats advertised for rent on ingatlan.com in the first half of 2026: 273 thousand Ft over an average 53 m², 5,151 Ft/m² × 50 m² (Forrás: KSH, KSH–ingatlan.com-lakbérindex, tables 3 and 4; edited: rate times a flat size)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 463585,
+        "period": "2026-H1",
+        "level": "city",
+        "source": "hu-ksh-rent",
+        "retrieved": "2026-11-16",
+        "note": "Budapest, average monthly asking rent of flats advertised for rent on ingatlan.com in the first half of 2026: 273 thousand Ft over an average 53 m², 5,151 Ft/m² × 90 m² (Forrás: KSH, KSH–ingatlan.com-lakbérindex, tables 3 and 4; edited: rate times a flat size)"
+      },
+      {
         "metric": "annual_leave",
         "value": 20,
         "period": "2026",
@@ -151445,7 +151473,7 @@
     }
   ],
   "manifest": {
-    "builtAt": "2026-11-16T06:36:37.628Z",
+    "builtAt": "2026-11-16T21:10:00.512Z",
     "parts": [
       {
         "id": "open",
@@ -152256,6 +152284,32 @@
         "retrieved": [
           "2026-11-05",
           "2026-11-05"
+        ],
+        "provides": []
+      },
+      {
+        "source": "hu-ksh-rent",
+        "name": "KSH–ingatlan.com rent index, asking rents (table annex)",
+        "publisher": "Hungarian Central Statistical Office (KSH)",
+        "url": "https://www.ksh.hu/s/kiserleti-statisztika/kiadvanyok/kshingatlancom-lakberindex-2026-oktober/",
+        "edition": "KSH–ingatlan.com-lakbérindex, 2026. október, table annex (tablamelleklet.xlsx), tables 3 and 4, first half of 2026",
+        "licenceId": "CC-BY-4.0",
+        "licence": "CC BY 4.0",
+        "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "termsUrl": "https://www.ksh.hu/copyright",
+        "termsRead": "2026-11-16",
+        "attribution": "Forrás: KSH (www.ksh.hu), KSH–ingatlan.com-lakbérindex, CC BY 4.0 (edited: rate per m² times a flat size)",
+        "notices": [],
+        "part": "open",
+        "file": "data/dataset.json",
+        "observations": 2,
+        "metrics": [
+          "rent_1bed",
+          "rent_3bed"
+        ],
+        "retrieved": [
+          "2026-11-16",
+          "2026-11-16"
         ],
         "provides": []
       },

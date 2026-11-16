@@ -1,5 +1,5 @@
 {
-  "builtAt": "2026-11-16T06:36:37.628Z",
+  "builtAt": "2026-11-16T21:10:00.512Z",
   "parts": [
     {
       "id": "open",
@@ -810,6 +810,32 @@
       "retrieved": [
         "2026-11-05",
         "2026-11-05"
+      ],
+      "provides": []
+    },
+    {
+      "source": "hu-ksh-rent",
+      "name": "KSH–ingatlan.com rent index, asking rents (table annex)",
+      "publisher": "Hungarian Central Statistical Office (KSH)",
+      "url": "https://www.ksh.hu/s/kiserleti-statisztika/kiadvanyok/kshingatlancom-lakberindex-2026-oktober/",
+      "edition": "KSH–ingatlan.com-lakbérindex, 2026. október, table annex (tablamelleklet.xlsx), tables 3 and 4, first half of 2026",
+      "licenceId": "CC-BY-4.0",
+      "licence": "CC BY 4.0",
+      "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "termsUrl": "https://www.ksh.hu/copyright",
+      "termsRead": "2026-11-16",
+      "attribution": "Forrás: KSH (www.ksh.hu), KSH–ingatlan.com-lakbérindex, CC BY 4.0 (edited: rate per m² times a flat size)",
+      "notices": [],
+      "part": "open",
+      "file": "data/dataset.json",
+      "observations": 2,
+      "metrics": [
+        "rent_1bed",
+        "rent_3bed"
+      ],
+      "retrieved": [
+        "2026-11-16",
+        "2026-11-16"
       ],
       "provides": []
     },

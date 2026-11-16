@@ -17,6 +17,7 @@ import { ineObservations, ineRates, quarterOf as ineQuarter, type IneIndicator }
 import { omiObservations, omiRates } from "../pipeline/sources/it-rent.ts";
 import { estatObservations, estatRents, form } from "../pipeline/sources/jp-rent.ts";
 import { quarterOf as vicQuarter, vicObservations, vicRent } from "../pipeline/sources/vic-rent.ts";
+import { halfYearValue, kshObservations, kshRate } from "../pipeline/sources/hu-rent.ts";
 import { gunzipSync } from "node:zlib";
 import { LICENCES } from "../src/registry/licences.ts";
 
@@ -186,6 +187,27 @@ test("vic-rental-report: the City of Melbourne's median weekly rent of new bonds
   assert.match(file.observations["melbourne-au"]![0]!.note!, /City of Melbourne.*new bonds.*A\$580 a week \(2152 bonds\), × 52 \/ 12/);
 });
 
+test("hu-ksh-rent: Budapest's average asking rent over its average floor area for the newest half-year, not Pest county's", async () => {
+  const fx = fixture<{ rent: (string | number | null)[][]; size: (string | number | null)[][] }>("hu-ksh-rent");
+  assert.deepEqual(halfYearValue(fx.rent), { period: "2026-H1", value: 273 }, "the newest half-year, not 2025's 272");
+  assert.deepEqual(halfYearValue(fx.size), { period: "2026-H1", value: 53 });
+  assert.equal(halfYearValue(fx.rent, "Pest Régió")!.value, 281, "the next column is Pest county, not the city");
+  assert.equal(halfYearValue(fx.rent, "Atlantis"), null);
+  assert.equal(Math.round(kshRate(fx.rent, fx.size)!.perM2), 5151, "273 thousand Ft over 53 m²");
+  assert.equal(kshRate(fx.rent, fx.size.slice(0, -2)), null, "the two tables must give the same half-year");
+  const file = kshObservations(fx, cities, DAY);
+  registered("hu-ksh-rent", file);
+  assert.deepEqual(Object.keys(file.observations), ["budapest-hu"]);
+  assert.deepEqual(rents(file.observations["budapest-hu"]), { rent_1bed: [257547, "2026-H1"], rent_3bed: [463585, "2026-H1"] });
+  // ingatlan.com's listings, which KSH's figure is computed from, are proprietary: Budapest's page links them only.
+  const { cityFacts } = await import("../src/site/facts.ts");
+  const { loadPublishedDataset } = await import("../src/registry/load.ts");
+  const data = loadPublishedDataset(join(ROOT, "public/data/dataset.json"));
+  assert.deepEqual(cityFacts(data, "budapest-hu").linkOut.filter((l) => /ingatlan/.test(l.url)), [{ label: "ingatlan.com: flats to rent in Budapest", url: "https://ingatlan.com/lista/kiado+lakas+budapest" }]);
+  assert.ok(!cityFacts(data, "prague-cz").linkOut.some((l) => /ingatlan/.test(l.url)));
+  assert.match(file.observations["budapest-hu"]![0]!.note!, /asking rent of flats advertised.*first half of 2026: 273 thousand Ft over an average 53 m², 5,151 Ft\/m² × 50 m² \(Forrás: KSH/);
+});
+
 test("each committed rent file holds what its parser reads from the source's file (re-fetch to update both)", () => {
   const parsed: Record<string, { observations: Record<string, Observation[]> }> = {
     "scot-rent": scotObservations(fixture<{ csv: string }>("scot-prs").csv, cities, DAY),
@@ -197,6 +219,7 @@ test("each committed rent file holds what its parser reads from the source's fil
     "pt-rent": ineObservations(fixture<{ indicator: IneIndicator }>("pt-ine-rent").indicator, cities, DAY),
     "at-rent": microcensusObservations(fixture<{ rows: (string | number | null)[][] }>("at-mikrozensus").rows, cities, DAY),
     "jp-rent": estatObservations(fixture<{ reply: Parameters<typeof estatRents>[0] }>("jp-estat-housing").reply, cities, DAY),
+    "hu-rent": kshObservations(fixture<{ rent: (string | number | null)[][]; size: (string | number | null)[][] }>("hu-ksh-rent"), cities, DAY),
     "vic-rent": vicObservations(fixture<{ rent_1bed: (string | number | null)[][]; rent_3bed: (string | number | null)[][] }>("vic-rental-report"), cities, DAY),
     "../observations-omi/it-rent": omiObservations(fixture<{ csv: string }>("it-omi-locazioni").csv, cities, DAY),
   };
@@ -214,7 +237,7 @@ test("a rent that covers every tenancy says, beside it, that newcomers usually p
   // Every rent source in the registry says which kind it is (the registry refuses one that does not).
   const kinds = Object.fromEntries(Object.values(data.sources).filter((s) => s.tenancies).map((s) => [s.id, s.tenancies]));
   for (const id of ["de-zensus", "es-serpavi", "ons-pipr", "acs", "jp-estat-housing"]) assert.equal(kinds[id], "all", id);
-  for (const id of ["pt-ine-rent", "it-omi-locazioni", "vic-rental-report", "nsw-rent-sales", "cso-rtb"]) assert.equal(kinds[id], "new", id);
+  for (const id of ["pt-ine-rent", "it-omi-locazioni", "vic-rental-report", "nsw-rent-sales", "cso-rtb", "hu-ksh-rent"]) assert.equal(kinds[id], "new", id);
   assert.equal(rentBasis(data, "rent_1bed", ["de-zensus"]), ALL_TENANCIES);
   assert.equal(rentBasis(data, "rent_1bed", ["pt-ine-rent"]), null);
   assert.equal(rentBasis(data, "pm25", ["de-zensus"]), null, "only rents");

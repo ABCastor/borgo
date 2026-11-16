@@ -1,6 +1,6 @@
 {
  "/": {
-  "hash": "d84f7a2e1783a777",
+  "hash": "2978d52ad5194540",
   "lastmod": "2026-11-16"
  },
  "/cities/": {
@@ -44,7 +44,7 @@
   "lastmod": "2026-11-16"
  },
  "/city/budapest-hu/": {
-  "hash": "d0ee9b1ec016e3fd",
+  "hash": "f80c3b9bf8fb45b7",
   "lastmod": "2026-11-16"
  },
  "/city/cambridge-gb/": {
@@ -296,7 +296,7 @@
   "lastmod": "2026-11-16"
  },
  "/compare/athens-gr-vs-budapest-hu/": {
-  "hash": "42e98a932af10962",
+  "hash": "cccad19a6934b485",
   "lastmod": "2026-11-16"
  },
  "/compare/athens-gr-vs-dubai-ae/": {
@@ -372,7 +372,7 @@
   "lastmod": "2026-11-16"
  },
  "/compare/barcelona-es-vs-budapest-hu/": {
-  "hash": "3262c3b73e6a993c",
+  "hash": "6ff08e2bf6ffcb43",
   "lastmod": "2026-11-16"
  },
  "/compare/barcelona-es-vs-geneva-ch/": {
@@ -448,7 +448,7 @@
   "lastmod": "2026-11-16"
  },
  "/compare/berlin-de-vs-budapest-hu/": {
-  "hash": "5a94b47a8f840938",
+  "hash": "e94a959998a4203a",
   "lastmod": "2026-11-16"
  },
  "/compare/berlin-de-vs-cambridge-gb/": {
@@ -720,55 +720,55 @@
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-dubai-ae/": {
-  "hash": "0893a0d39556106f",
+  "hash": "362612128b013353",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-hamburg-de/": {
-  "hash": "e5486b047bf8770b",
+  "hash": "78edec267d0e083b",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-helsinki-fi/": {
-  "hash": "18e3ba3503111bf8",
+  "hash": "0c613b4345b46f61",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-krakow-pl/": {
-  "hash": "515e8d594cc77938",
+  "hash": "cc99f7843481025e",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-london-gb/": {
-  "hash": "57a3f78483390b13",
+  "hash": "c3f13b750e6bb48e",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-munich-de/": {
-  "hash": "5a5a6734cd4ab120",
+  "hash": "a1caec87efcd5b28",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-paris-fr/": {
-  "hash": "aabe9809458b3dcd",
+  "hash": "f579cdfffa3cb9da",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-prague-cz/": {
-  "hash": "016107e4ba30b6bf",
+  "hash": "e027b952104237f8",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-rome-it/": {
-  "hash": "41199a33d46de351",
+  "hash": "60117009dea3e7cb",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-stockholm-se/": {
-  "hash": "6a035eb64eb8f0da",
+  "hash": "b390bdd0b0078812",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-tallinn-ee/": {
-  "hash": "9761c9764c0498ec",
+  "hash": "b738e50f452ba77a",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-vienna-at/": {
-  "hash": "95ce63dac5776aa5",
+  "hash": "0e0b4e0d543b8b8b",
   "lastmod": "2026-11-16"
  },
  "/compare/budapest-hu-vs-warsaw-pl/": {
-  "hash": "1bb4d5fc41252979",
+  "hash": "89ce75ca975436ef",
   "lastmod": "2026-11-16"
  },
  "/compare/cambridge-gb-vs-cork-ie/": {
@@ -1700,7 +1700,7 @@
   "lastmod": "2026-11-16"
  },
  "/sources/": {
-  "hash": "6210e619e62468cd",
+  "hash": "65a6984f6f9becd3",
   "lastmod": "2026-11-16"
  }
 }

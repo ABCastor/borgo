@@ -326,6 +326,14 @@ export function summaryLine(f: CityFacts): string {
   return parts.join("; ");
 }
 
+/**
+ * The listings site behind a city's official rent, where a statistics office computes the rent from one site's adverts
+ * (KSH from ingatlan.com for Budapest): linked for a person to read, never copied, as the listings are proprietary.
+ */
+export const LISTINGS: Record<string, { label: string; url: string }> = {
+  "budapest-hu": { label: "ingatlan.com: flats to rent in Budapest", url: "https://ingatlan.com/lista/kiado+lakas+budapest" },
+};
+
 export function cityFacts(data: Dataset, cityId: string, pairs: [string, string][] = comparisonPairs(data)): CityFacts {
   const city = data.cities.find((c) => c.id === cityId);
   if (!city) throw new Error(`unknown city ${cityId}`);
@@ -352,6 +360,7 @@ export function cityFacts(data: Dataset, cityId: string, pairs: [string, string]
   const slug = encodeURIComponent(city.name.replace(/ /g, "-"));
   const linkOut = [
     { label: `Numbeo: cost of living in ${city.name}`, url: `https://www.numbeo.com/cost-of-living/in/${slug}` },
+    ...(LISTINGS[city.id] ? [LISTINGS[city.id]!] : []),
     { label: `WeatherSpark: year-round weather in ${city.name}`, url: `https://weatherspark.com/search?q=${encodeURIComponent(city.name)}` },
     { label: `Wikipedia: ${city.name}`, url: `https://en.wikipedia.org/wiki/${encodeURIComponent(city.name.replace(/ /g, "_"))}` },
   ];

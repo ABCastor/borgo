@@ -1,0 +1,59 @@
+{
+  "id": "hu-ksh-rent",
+  "name": "KSH–ingatlan.com rent index, asking rents (table annex)",
+  "publisher": "Hungarian Central Statistical Office (KSH)",
+  "homepage": "https://www.ksh.hu/s/kiserleti-statisztika/kiadvanyok/kshingatlancom-lakberindex-2026-oktober/",
+  "measures": [
+    {
+      "metric": "rent_1bed",
+      "definition": "Average monthly asking rent of flats advertised for rent in the half-year over their average floor area, times 50 m²."
+    },
+    {
+      "metric": "rent_3bed",
+      "definition": "Average monthly asking rent of flats advertised for rent in the half-year over their average floor area, times 90 m²."
+    }
+  ],
+  "tenancies": "new",
+  "coverage": {
+    "geography": [
+      "HU"
+    ],
+    "level": "city",
+    "period": "half-year"
+  },
+  "licence": "CC-BY-4.0",
+  "licenceUrl": "https://www.ksh.hu/copyright",
+  "redistribute": "yes",
+  "rights": {
+    "licenceId": "CC-BY-4.0",
+    "edition": "KSH–ingatlan.com-lakbérindex, 2026. október, table annex (tablamelleklet.xlsx), tables 3 and 4, first half of 2026",
+    "termsUrl": "https://www.ksh.hu/copyright",
+    "termsRead": "2026-11-16",
+    "attribution": "Forrás: KSH (www.ksh.hu), KSH–ingatlan.com-lakbérindex, CC BY 4.0 (edited: rate per m² times a flat size)"
+  },
+  "access": "bulk",
+  "fetch": {
+    "mode": "batch",
+    "runtimes": [
+      "node"
+    ],
+    "endpoint": "https://www.ksh.hu/s/kiserleti-statisztika/kiadvanyok/kshingatlancom-lakberindex-2026-oktober/tablamelleklet.xlsx",
+    "cors": false,
+    "key": null,
+    "fetcher": "pipeline/sources/hu-rent.ts"
+  },
+  "refresh": {
+    "cadence": "monthly",
+    "maxAgeDays": 200
+  },
+  "vetted": {
+    "humanSelected": false,
+    "by": "Claude (agent), under the owner's brief",
+    "on": "2026-11-16",
+    "notes": "Official experimental statistics: KSH computes them from ingatlan.com's listings under a cooperation agreement and publishes the tables as its own (\"Forrás: KSH\"). KSH's terms of use license all content on ksh.hu, tables included, under CC BY 4.0, with KSH named as the source and an active link; only datasets extracted on individual request are CC BY-NC. ingatlan.com's own listings are proprietary and are only linked. ksh.hu refuses plain HTTP clients, so the table annex is saved from a browser and passed to the fetcher."
+  },
+  "caveats": [
+    "Asking rents of flats on offer on one listings site (ingatlan.com), not rents agreed; KSH notes they differ markedly from what sitting tenants pay.",
+    "The rate per m² is the half-year's average rent over its average floor area (53 m² in Budapest); the three-bedroom figure is that rate times 90 m², an estimate rather than an average of three-bedroom listings."
+  ]
+}

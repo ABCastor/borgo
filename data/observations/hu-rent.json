@@ -1,0 +1,26 @@
+{
+  "source": "hu-ksh-rent",
+  "retrieved": "2026-11-16",
+  "observations": {
+    "budapest-hu": [
+      {
+        "metric": "rent_1bed",
+        "value": 257547,
+        "period": "2026-H1",
+        "level": "city",
+        "source": "hu-ksh-rent",
+        "retrieved": "2026-11-16",
+        "note": "Budapest, average monthly asking rent of flats advertised for rent on ingatlan.com in the first half of 2026: 273 thousand Ft over an average 53 m², 5,151 Ft/m² × 50 m² (Forrás: KSH, KSH–ingatlan.com-lakbérindex, tables 3 and 4; edited: rate times a flat size)"
+      },
+      {
+        "metric": "rent_3bed",
+        "value": 463585,
+        "period": "2026-H1",
+        "level": "city",
+        "source": "hu-ksh-rent",
+        "retrieved": "2026-11-16",
+        "note": "Budapest, average monthly asking rent of flats advertised for rent on ingatlan.com in the first half of 2026: 273 thousand Ft over an average 53 m², 5,151 Ft/m² × 90 m² (Forrás: KSH, KSH–ingatlan.com-lakbérindex, tables 3 and 4; edited: rate times a flat size)"
+      }
+    ]
+  }
+}
