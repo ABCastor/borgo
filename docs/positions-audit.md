@@ -74,7 +74,9 @@ Steps: 0 same-sex relations a crime; 1 legal, no union in national law; 2 civil 
 | DK | 3 | [Lov nr. 532 af 12. juni 2012](https://www.retsinformation.dk/eli/lta/2012/532), in force 15 Jun 2012; current consolidated act LBK nr. 663 af 1. juli 2026, § 1; read 10 Nov 2026 | Checked |
 | EE | 3 | [Perekonnaseadus § 1(1)](https://www.riigiteataja.ee/akt/PKS) "kahe füüsilise isiku vahel", RT I, 06.07.2023, 6, in force 1 Jan 2024; read 10 Nov 2026 | Checked |
 | AU | 3 | [Marriage Act 1961 s. 5](https://www.legislation.gov.au/C1961A00012/latest/text), compilation of 28 Mar 2026: "the union of 2 people"; read 10 Nov 2026 | Checked |
-| IT, FR, NL, PT, GR, US, NZ | 3 (IT 2) | Official pages blocked, need JavaScript or were not found | Not verifiable |
+| FR | 3 | Loi n° 2013-404; [Service Public F930](https://www.service-public.gouv.fr/particuliers/vosdroits/F930), verified 28 Oct 2026: "Deux personnes, de sexe différent ou de même sexe" (Légifrance blocks automated reads); read 16 Nov 2026 | Checked |
+| NL | 3 | [Burgerlijk Wetboek Boek 1 art. 30(1)](https://wetten.overheid.nl/BWBR0002656/) "twee personen van verschillend of van gelijk geslacht"; in force 1 Apr 2001 ([Stb. 2001, 9](https://zoek.officielebekendmakingen.nl/stb-2001-9.html), [Stb. 2001, 145](https://zoek.officielebekendmakingen.nl/stb-2001-145.html)); read 16 Nov 2026 | Checked |
+| IT, PT, GR, US, NZ | 3 (IT 2) | Official pages blocked, need JavaScript or were not found (16 Nov 2026: Legge 76/2016 art. 1 shows the civil union but no text read states that marriage stays closed to same-sex couples; PT needs JavaScript, NZ answers a bot challenge, the US opinion PDF returns 404) | Not verifiable |
 
 ## Politics
 

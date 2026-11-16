@@ -32,6 +32,8 @@ const R = "2026-11-07";
 const S = "2026-11-09";
 /** The date the entries marked `checked: T` were read in the source linked. */
 const T = "2026-11-10";
+/** The date the entries marked `checked: U` were read in the source linked. */
+const U = "2026-11-16";
 
 export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
   IT: { level: 4, text: "in the first 90 days when the woman states that continuing would seriously endanger her physical or mental health, given her health, economic, social or family circumstances, how conception occurred, or a fetal anomaly", law: "Legge 22 maggio 1978, n. 194, art. 4", url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1978-05-22;194~art4", checked: C },
@@ -79,9 +81,9 @@ export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: 
   IT: { standing: 2, law: "Civil unions: Legge 20 maggio 2016, n. 76 (Cirinnà)", url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:2016-05-20;76" },
   GB: { standing: 3, law: "Marriage: Marriage (Same Sex Couples) Act 2013; Marriage and Civil Partnership (Scotland) Act 2014; Northern Ireland from 13 January 2020 (S.I. 2019/1514, reg. 3)", url: "https://www.legislation.gov.uk/ukpga/2013/30/section/1", checked: C },
   IE: { standing: 3, law: "Marriage: Constitution, Art. 41.4 (34th Amendment, 2015)", url: "https://www.irishstatutebook.ie/eli/cons/en/html", checked: C },
-  FR: { standing: 3, law: "Marriage: Loi n° 2013-404 du 17 mai 2013", url: "https://www.legifrance.gouv.fr/loda/id/JORFTEXT000027414540" },
+  FR: { standing: 3, law: "Marriage: Loi n° 2013-404 du 17 mai 2013", url: "https://www.service-public.gouv.fr/particuliers/vosdroits/F930", checked: U },
   DE: { standing: 3, law: "Marriage: Bürgerliches Gesetzbuch § 1353, since 2017", url: "https://www.gesetze-im-internet.de/bgb/__1353.html", checked: C },
-  NL: { standing: 3, law: "Marriage: Burgerlijk Wetboek Boek 1, art. 30, since 1 April 2001", url: "https://wetten.overheid.nl/BWBR0002656/" },
+  NL: { standing: 3, law: "Marriage: Burgerlijk Wetboek Boek 1, art. 30(1), since 1 April 2001", url: "https://wetten.overheid.nl/BWBR0002656/", checked: U },
   BE: { standing: 3, law: "Marriage: Code civil, art. 143, since 1 June 2003", url: "https://www.ejustice.just.fgov.be/cgi_loi/change_lg.pl?language=fr&la=F&cn=1804032130&table_name=loi", checked: C },
   DK: { standing: 3, law: "Marriage: Lov nr. 532 af 12. juni 2012, § 1, nr. 2, in force 15 June 2012; now LBK nr. 663 af 1. juli 2026, § 1", url: "https://www.retsinformation.dk/eli/lta/2012/532", checked: T },
   SE: { standing: 3, law: "Marriage: Äktenskapsbalk (1987:230), 1 kap. 1 §, since 1 May 2009", url: "https://rkrattsbaser.gov.se/sfst?bet=1987:230", checked: C },

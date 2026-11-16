@@ -205,6 +205,23 @@ test("stale-fact round of 10 Nov 2026: Denmark, Estonia and Australia marriage m
   assert.match(COUPLES.AU!.law, /Marriage Act 1961, s\. 5\(1\)/);
 });
 
+test("stale-fact round of 16 Nov 2026: France and the Netherlands marriage match the words of their official texts", () => {
+  // https://www.service-public.gouv.fr/particuliers/vosdroits/F930 (verified 28 Oct 2026): "Deux personnes, de sexe différent ou de
+  // même sexe, doivent remplir certaines conditions pour se marier." (Légifrance, which holds Loi n° 2013-404, blocks automated reads.)
+  // https://wetten.overheid.nl/BWBR0002656/ art. 30(1): "Een huwelijk kan worden aangegaan door twee personen van verschillend of van
+  // gelijk geslacht."; wording from https://zoek.officielebekendmakingen.nl/stb-2001-9.html, in force 1 April 2001 by
+  // https://zoek.officielebekendmakingen.nl/stb-2001-145.html art. 2.
+  for (const k of ["FR", "NL"] as const) {
+    assert.equal(COUPLES[k]!.standing, 3);
+    assert.match(COUPLES[k]!.law, /^Marriage: /);
+    assert.equal(COUPLES[k]!.checked, "2026-11-16");
+  }
+  assert.match(COUPLES.FR!.law, /Loi n° 2013-404 du 17 mai 2013/);
+  assert.match(COUPLES.FR!.url!, /service-public\.gouv\.fr\/particuliers\/vosdroits\/F930$/);
+  assert.match(COUPLES.NL!.law, /art\. 30\(1\), since 1 April 2001/);
+  assert.equal(COUPLES.IT!.checked, undefined, "Italy stays unchecked: no text read says marriage stays closed to same-sex couples");
+});
+
 test("cli and mcp take stances", async () => {
   const out = execFileSync(process.execPath, [join(ROOT, "bin/where-to-live.ts"), "compare", "Torino", "Dublin", "--weight", "politics=20", "--stance", "politics=4", "--json", "--full"], { cwd: ROOT, encoding: "utf8" });
   const r = JSON.parse(out) as { profile: { stances: Record<string, number> }; ranking: { id: string }[] };
