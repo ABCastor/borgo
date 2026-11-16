@@ -72,7 +72,7 @@ The local server has all of these; the web one all but `fetch_city`, `record_obs
 
 | Tool | Use it for |
 |---|---|
-| `fetch_city` | Any real place, not only the cities in the snapshot: resolves "Palermo, IT" (or `geonames:<id>`) and fetches every registry source that covers it into the person's cache, with each figure's URL and time. Reused for 30 days unless `refresh`. Returns the id for the other tools, what each source gave and what the place lacks; long series are counted unless `detail: "full"`. |
+| `fetch_city` | Any real place, not only the cities in the snapshot: resolves "Oakland, US" or "San Francisco, US" (or `geonames:<id>`) and fetches every registry source that covers it into the person's cache, with each figure's URL and time. Reused for 30 days unless `refresh`. Returns the id for the other tools, what each source gave and what the place lacks; long series are counted unless `detail: "full"`. |
 | `list_sources` | The curated source registry: what each source measures in plain words, coverage, licence, whether it may be redistributed, how it is fetched (endpoint, CORS, key), who vetted it, and link-only pages (Numbeo, WeatherSpark) with the publisher's page for a given city. |
 | `record_observation` | Keep a figure the person read on a link-only page and gave the agent, or one the agent read in an open source (a city statistics table), in the person's cache, with source id, URL, period and, ideally, its unit; it replaces that source's earlier figure for the metric and returns the one it replaced. It refuses a figure whose source does not measure that metric, whose unit is not the metric's (rent in Lisbon is `EUR/month`), that falls outside the metric's plausible range (a negative rent, a 70 °C month), or whose page is not an http(s) address; a refused figure leaves the kept one in place. Figures from link-only sources stay private to that person. |
 | `compare_cities` | The main one. Ranks any number of cities for a person or a household: a verdict, the score out of 100 from their weights, points and reasons per line with each figure's publisher and period, must-pass lines as pass, fail or unknown, take-home pay and money left, who can move there, how the set was scored, and what to add next. Compact by default; `detail: "full"` adds every tax line, pensions, childcare, health, leave and the break-even salary. |
@@ -141,7 +141,7 @@ borgo compare Berlin Lisbon --person US --right DE:permanent   # a right to live
 borgo compare Lisbon Singapore --comfort 20-30 --nice-day not-muggy,calm   # your own nice day
 borgo net-pay Edinburgh 50k --currency GBP
 borgo net-pay IT 60000 --regime it-impatriati     # a newcomer regime, by id (see catalogue --kind regimes)
-borgo fetch "Palermo, IT"                         # any place: resolve, fetch every source, keep it in your cache
+borgo fetch "Oakland, US"                         # any place: resolve, fetch every source, keep it in your cache
 borgo search --country US
 borgo sources --metric rent_1bed                  # the source registry, filtered
 borgo catalogue --kind regimes --country NL       # one part of the catalogue
@@ -174,7 +174,7 @@ borgo compare Turin London Dublin "San Francisco" \
   --svg chart.svg
 
 borgo net-pay US 150000 --region US-CA --married --partner 40k --age 40 --children 3 --pension 6%
-borgo fetch Palermo --only oecd-wellbeing --refresh
+borgo fetch "San Francisco" --only openalex --refresh
 borgo data build                 # from a clone: validate data/ and rebuild the dataset
 borgo data refresh worldbank     # re-fetch one source, then rebuild
 borgo data refresh               # every source; failures are listed, their previous files kept
