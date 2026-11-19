@@ -29,10 +29,11 @@ export function comfortSteps(s: AppState): Raw {
 }
 
 function scoreTable(s: AppState, r: CityResult): Raw {
-  const lines = r.lines.filter((l) => l.weight > 0).sort((a, b) => b.points - a.points);
+  const lines = r.lines.filter((l) => l.weight > 0 || s.profile.dealBreakers.includes(l.id)).sort((a, b) => b.points - a.points);
   const set = lines.reduce((t, l) => t + l.weight, 0) || 1;
   // The share beside a line is of this score; a line that scores nowhere here says so, and its weight goes to the rest.
   const shareText = (l: LineResult) => {
+    if (s.profile.dealBreakers.includes(l.id)) return "requirement, not scored";
     const sh = scoreShare(r, l);
     return sh === null ? `set to ${Math.round((100 * l.weight) / set)}%, not in this score: no figure to compare` : `${Math.round(100 * sh)}% of your score`;
   };
@@ -41,8 +42,8 @@ function scoreTable(s: AppState, r: CityResult): Raw {
       const c = criterionById(l.id);
       const fails = s.profile.dealBreakers.includes(l.id) && l.failed;
       return html`<tr class="${fails ? "is-fail" : ""} ${l.imputed ? "is-imputed" : ""}">
-        <th scope="row">${shortLabel(l)}<small>${shareText(l)}${s.profile.dealBreakers.includes(l.id) ? " · must pass" : ""}</small></th>
-        <td>${l.personal ? cell(s, r, l) : html`<span class="lv">${l.imputed ? html`<span class="quiet">no figure: scored as the lowest of your other cities</span>` : c?.metric ? html`<button class="edit" data-act="edit" data-city="${r.city.id}" data-metric="${c.metric}" title="Use your own number">${l.raw.text}</button>` : l.raw.text}${!l.imputed && c?.metric ? srcMark(l.raw.sources[0], r.city.id, c.metric) : ""}</span>`}${fails ? html`<span class="fail"> fails, so the city is ruled out</span>` : ""}</td>
+        <th scope="row">${shortLabel(l)}<small>${shareText(l)}${s.profile.dealBreakers.includes(l.id) ? " · Required" : ""}</small></th>
+        <td>${l.personal ? cell(s, r, l) : html`<span class="lv" title="${l.explanation ?? ""}">${l.imputed ? html`<span class="quiet">no figure: scored as the lowest of your other cities</span>` : c?.metric ? html`<button class="edit" data-act="edit" data-city="${r.city.id}" data-metric="${c.metric}" title="Use your own number">${l.raw.text}</button>` : l.raw.text}${!l.imputed && c?.metric ? srcMark(l.raw.sources[0], r.city.id, c.metric) : ""}</span>`}${fails ? html`<span class="fail"> fails, so the city is ruled out</span>` : ""}</td>
         <td class="num"><span class="res"><i style="width:${((l.score ?? 0) * 100).toFixed(1)}%"></i></span>${l.score === null ? "–" : Math.round(l.score * 100)}</td>
         <td class="num pts">${num(l.points, 1)}</td></tr>`;
     })}</tbody>
@@ -170,7 +171,7 @@ export function cityView(s: AppState, e: Evaluation, id: string): Raw {
         <p class="dmeta"><b class="rankw">${r.ruledOut.length ? "Ruled out" : `No. ${r.rank} of ${passing}`}</b> · ${countryName(s.data, city.country)}${city.population ? ` · ${num(city.population)} people` : ""}${!s.profile.income.everyday?.assumed && s.profile.income.everyday?.homeCity === city.id ? html` · <b>you live here</b>` : ""}</p>
         ${r.ruledOut.length ? html`<span class="stamp">Ruled out: ${failText(r.ruledOut, r.lines)}</span>` : partialNote(s, r, true)}</div>
       <div class="bh-keep"><span class="k">${term("kept", "You keep")}</span><span class="a num">${m.display.monthlyLeft === null ? "–" : html`${moneyGap(m) ? html`<small>at most </small>` : ""}${money(m.display.monthlyLeft, m.display.currency)}`}</span><span class="quiet">${m.display.monthlyLeft === null ? missingText(m) : "a month"}</span>
-        ${r.rights.length ? html`<ul class="rights">${r.rights.map((x) => html`<li class="r-${x.status}"><b>${x.person}</b> ${x.status === "yes" ? `can live and work here (${x.via === "citizen" ? "citizen" : x.via})` : x.status === "no" ? html`<span class="${s.profile.dealBreakers.includes("right_to_live") ? "fail" : ""}">${x.person === "You" ? "need" : "needs"} a visa or permit</span>` : html`<span class="quiet">not checked:</span> <button class="link" data-act="household">add a passport</button>`}<small class="r-why">${x.text}</small></li>`)}</ul>` : html`<p class="quiet small"><button class="link" data-act="household">Add your passport</button> to see if you can live and work here.</p>`}</div>
+        ${r.rights.length ? html`<ul class="rights">${r.rights.map((x) => html`<li class="r-${x.status}"><b>${x.person}</b> ${x.status === "yes" ? `can live and work here (${x.via === "citizen" ? "citizen" : x.via})` : x.status === "no" ? html`<span class="${s.profile.dealBreakers.includes("right_to_live") ? "fail" : ""}">${x.person === "You" ? "need" : "needs"} a visa or permit</span>` : html`<span class="quiet">not checked:</span> <button class="link" data-act="household">add a passport</button>`}<small class="r-why">${x.text} ${x.sources.map((source) => html`<a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.name}</a> `)}</small></li>`)}</ul>` : html`<p class="quiet small"><button class="link" data-act="household">Add your passport</button> to see if you can live and work here.</p>`}</div>
     </header>
     <section class="part" id="score"><h2 class="ph">How the score is built</h2>${ruler(r, s.profile.dealBreakers)}${scoreTable(s, r)}</section>
     ${workPart(s, r, e)}

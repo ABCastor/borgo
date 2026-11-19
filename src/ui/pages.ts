@@ -43,7 +43,7 @@ export function dataPage(s: AppState): Raw {
     </tbody></table></div>
 
     <h2>How the score works</h2>
-    <p>Each line turns a figure into a score from 0 to 1 against a fixed worst and best (or, if you choose, against the best and worst of your own cities). Your weight decides how many of the 100 points each line can give. Where a city has no data on a line, it gets the average score of your other cities on that line, so missing data neither helps nor hurts; the ranking shows how much of each score comes from real data. A line marked "must pass" rules a city out when it fails.</p>
+    <p>Each line turns a figure into a score from 0 to 1 against a fixed worst and best (or, if you choose, against the best and worst of your own cities). Your weight decides how many of the 100 points each line can give. In default fixed scoring, a missing line does not count for that city; adding another city never changes its score. Check gaps and coverage: a high score on few figures is not proof of a good fit. A Required line rules cities out without taking a share of the score. Relative scoring is opt-in.</p>
     <table class="doc-table"><thead><tr><th>Line</th><th>Worst</th><th>Best</th><th>Question</th></tr></thead><tbody>
       ${CRITERIA.map((c) => {
         const [w, b] = c.scale(s.profile, s.data);

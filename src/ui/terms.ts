@@ -7,7 +7,7 @@ export const TERMS: Record<string, string> = {
   air: "Air temperature: what a thermometer reads in the shade, 2 m above the ground.",
   feels: "Feels like: the air temperature corrected for humidity, wind and sun, as a person would feel it (the apparent temperature Open-Meteo computes from ERA5).",
   comfortable:
-    "Nice day: a day that is dry (under 1 mm of rain from 8 am to 8 pm), mostly clear (half the sky or less clouded on average) and whose daytime temperature, feels-like or air as you choose, sits in your range. Nice days are yours to define: the range starts at 18 to 30 °C feels-like, and you change it at the head of Climate in What matters or on any nice-days line.",
+    "Nice day: a day that is dry (under 1 mm of rain from 8 am to 8 pm), mostly clear (half the sky or less clouded on average) and whose daytime temperature, feels-like or air as you choose, sits in your range. Nice days are yours to define: the range starts at 18 to 30 °C feels-like, and you change it at the head of Weather in What matters or on any nice-days line.",
   sunshine:
     "Sunshine: hours when the sun is strong enough to cast a sharp shadow (direct sunlight above 120 W/m², the World Meteorological Organization's definition), measured by a sunshine recorder at a weather station.",
   daylight: "Daylight: time from sunrise to sunset, worked out from the city's latitude. Cloudy or clear, it counts.",
@@ -30,7 +30,7 @@ export const TERMS: Record<string, string> = {
   hourly: "Every hour of the year: the average air temperature at each hour of the local day (down) through the year (across), in your own bands, from ERA5 2021 to 2025.",
   wins: "Where it wins and loses: the lines where this city earns more (or fewer) points than the average of your other cities, in points of the 100-point score.",
   ruler: "The points ruler: one segment per value, as wide as your share of it, filled as far as this city scores on it. The filled length adds up to the score.",
-  mustpass: "Must pass: a line that rules a city out when it fails, whatever the rest of its score.",
+  mustpass: "Required: rule out cities that fail this line. A requirement takes no score share; turning it off restores its weight.",
   record: "Lowest and highest: the coldest and hottest air temperature reached in that month over the five years shown; older records can be more extreme.",
   typical: "One day in ten beyond: one night in ten is colder than the bottom of the pale bar, one afternoon in ten hotter than its top (the 10th percentile of daily lows and the 90th of daily highs).",
 };

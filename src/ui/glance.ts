@@ -95,7 +95,7 @@ function row(x: Delta, scale: number, kind: "win" | "loss", alone: boolean, fail
   const sign = alone ? "" : x.d > 0 ? "+" : "−";
   const scope = scopeOf(x.line.raw.sources[0]);
   return html`<li class="wl ${kind} ${failing ? "is-fail" : ""}" title="${x.line.label}: ${x.line.raw.text}${scope ? ` (${scope})` : ""}. ${alone ? `${num(x.d, 1)} points of your score` : `${sign}${num(Math.abs(x.d), 1)} points against the average of your other cities`}.">
-    <span class="wl-n">${shortLabel(x.line)}</span><span class="wl-v">${failing ? "must pass, fails" : html`${x.line.raw.text}${scope ? html`<span class="wl-s"> · ${scope}</span>` : ""}`}</span>
+    <span class="wl-n">${shortLabel(x.line)}</span><span class="wl-v">${failing ? "Required, fails" : html`${x.line.raw.text}${scope ? html`<span class="wl-s"> · ${scope}</span>` : ""}`}</span>
     <span class="wl-d num">${sign}${num(Math.abs(x.d), 1)}</span><span class="wl-bar" aria-hidden="true"><i style="width:${w.toFixed(1)}%"></i></span></li>`;
 }
 

@@ -117,7 +117,7 @@ export function summaryMarkdown(r: CompareSummary, why: Record<string, string[]>
     return lineCell({ ...x, observed: !x.noFigure, score: !x.noFigure || x.points > 0 ? 1 : null, dealBreaker: x.check !== undefined });
   };
   const head = (l: CompareSummary["lines"][number]) => `${l.label}${l.mustPass ? ", must pass" : ""}${l.cite ? ` (${l.cite})` : ""}`;
-  if (lines.length && r.cities.length <= 6)
+  if (lines.length && lines.length <= 8 && r.cities.length <= 6)
     out.push("### Points by line\n" + table(["Line", "Weight", ...r.cities.map((c) => c.name)], lines.map((l) => [head(l), String(l.weight), ...r.cities.map((c) => cellOf(c, l.id))]), ["l", "r", ...r.cities.map(() => "r" as const)]));
   else if (lines.length && lines.length <= 4)
     out.push("### Points by line\n" + table(["City", ...lines.map((l) => `${head(l)}, weight ${l.weight}`)], r.cities.map((c) => [c.name, ...lines.map((l) => cellOf(c, l.id))])));

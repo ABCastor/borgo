@@ -2,6 +2,7 @@
 // (server.ts, over stdio from npm) adds the tools that fetch any place, write to their cache and post proposals; the
 // remote one (remote.ts, Streamable HTTP on borgo.abcastor.com/mcp) carries only these. Nothing here reads files or
 // the process environment, so it runs in a Cloudflare Worker as it runs in Node.
+import { suggest, suggestionsMarkdown } from "../agent/suggest.ts";
 import { WORK_KINDS } from "../core/work.ts";
 import type { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import type { CallToolResult } from "@modelcontextprotocol/sdk/types.js";
@@ -25,7 +26,7 @@ import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../commun
 export const SERVER_VERSION = "0.2.0";
 
 /** The tools both servers carry, in the order they are registered. */
-export const SHARED_TOOLS = ["search_cities", "get_city", "compare_cities", "net_pay", "list_metrics_and_sources", "methodology", "list_sources", "community_figures", "submit_figures", "remove_figures"] as const;
+export const SHARED_TOOLS = ["search_cities", "get_city", "compare_cities", "suggest_cities", "net_pay", "list_metrics_and_sources", "methodology", "list_sources", "community_figures", "submit_figures", "remove_figures"] as const;
 
 /** Where a place outside the published data can still be compared. */
 export const LOCAL_HINT = "This server answers for Borgo's published cities only. Any other real place can be compared with Borgo's local server, which fetches it into the person's own cache: npx -y @abcastor/borgo mcp, then fetch_city.";
@@ -39,9 +40,10 @@ export function instructions(local = true): string {
 Use it for any question about where to live, relocating or moving abroad, comparing cities, cost of living, rent, take-home pay or net salary in another country, quality of life, climate or air quality of a city, or whether someone's passports let them live and work there.`,
     "",
     "How to use it well:",
+    `- suggest_cities ranks all published cities for the current profile and returns five not already chosen, with their two biggest observed reasons; missing figures can favour thinly covered cities, so check coverage.`,
     `- compare_cities is the main tool. Pass the cities and only what the person told you: passports and any other right to live and work they hold, such as permanent residence, a work visa or an EU Blue Card (household; leave a person's passports out when you do not know them, and that person's right to live and work there is reported as not checked), salary or per-city offers with currency, a partner's pay and whether they are married, ages, children's ages, a pension share, monthly spending and where they live now (this unlocks the break-even salary), housing size, what matters to them (a preset, explicit weights 0-100, or \`only\` for a one-line question such as only: ["nice_days"]), must-pass lines (dealBreakers), their own 1-5 lines. Never invent a salary, spending or passports: leave them out and relay "what to add next".`,
     `- Answers are compact by default (detail "summary", the top 10 cities). Ask for detail "full" only when the person wants every tax line and source; use \`limit\` for long lists.`,
-    `- Lead with the verdict and its qualifiers: a must-pass that cannot be checked is "unknown" and is never a pass; a city without a figure on a line is scored as the lowest compared city on it; money is compared on one basis for every city, and the notes say which and what input would fix it. Relay the notes, the required unknowns and the next inputs.`,
+    `- Lead with the verdict and its qualifiers: a must-pass that cannot be checked is "unknown" and is never a pass; in default fixed scoring, a missing line does not count for that city, and adding another city never changes its score. Required lines filter without taking any score share. Money's fallback basis is city-local and named in notes. Relative scoring is opt-in. Relay the notes, the required unknowns and the next inputs.`,
     local ? `- Any real place works, not only the cities already in the dataset: fetch_city resolves it ("Palermo, IT") and fetches every source that covers it into the person's cache, with provenance; then use its id in the other tools.` : `- This server answers for Borgo's published cities (search_cities lists them, with their ids). Any other place needs Borgo's local server (npx -y @abcastor/borgo mcp), whose fetch_city fetches any real place into the person's own cache: suggest it when a place is missing.`,
     local ? `- Link-only sources (Numbeo, WeatherSpark and the other pages list_sources marks link-out) forbid copying and automated reading: never fetch or read them yourself. Give the person the link; if they read a figure there and tell you, record_observation keeps it in their own cache with the page's address, never published. Open sources you may read (a statistics office table) can be recorded the same way.` : `- Link-only sources (Numbeo, WeatherSpark and the other pages list_sources marks link-out) forbid copying and automated reading: never fetch or read them yourself. Give the person the link.`,
     local ? `- The places the person asks about go to the named data providers (Open-Meteo, the World Bank and others) as names or coordinates; their salary, weights and household never do.` : `- Each call's arguments reach Borgo's server only to compute that answer: it keeps none of them and counts only how many calls each tool gets. Nothing goes on to other providers. Send only what the person told you.`,
@@ -92,6 +94,7 @@ const compareInput = {
       z.object({
         label: z.string().optional(),
         passports: z.array(z.string()).optional().describe("ISO alpha-2 codes, e.g. ['IT','US'], if known. Leave out when you do not know them: that person's right to live there is then reported as not checked, never as needing a visa"),
+        entryRoutes: z.record(z.string(), z.string()).optional().describe("Country to route id, only if conditions are confirmed: GB gb-ancestry (Commonwealth citizenship, eligible grandparent, support and work), gb-skilled (sponsored eligible job, salary and English); US us-h1b (cap-subject employer petition). Rough guide, not legal advice; other routes are not checked."),
         rights: z.array(permitArg).optional().describe("Rights to live and work this person holds that are not citizenship, only if they told you: permanent residence (a green card, indefinite leave to remain), settled status, a residence permit, a work visa, an EU Blue Card. Each has a kind, where it holds (a country or a free-movement area id such as EEA), and its last valid day if it ends. A permit counts until that day; one that ended, or bars work (work: false), does not"),
         regimeConfirmations: z.record(z.string(), z.boolean()).optional().describe('This person\'s answers to newcomer-regime conditions no dataset can check, by condition id (list_metrics_and_sources kind "regimes"), e.g. {"nl-recruited-abroad": true}. Only what the person told you'),
         age: z.number().int().min(14).max(110).optional().describe("Age in years: age-dependent tax (youth relief, care insurance), pension caps, paid leave, newcomer regimes"),
@@ -130,9 +133,9 @@ const compareInput = {
       daylight: z.number().min(0).max(24).optional().describe("At least this many hours of daylight, from the latitude (default none)"),
     })
     .optional()
-    .describe("What a nice day is, for the Nice days line: the daytime temperature range, °C (default 18-30 on the feels-like temperature; basis \"air\" uses the air in the shade), then the tests a day must pass. Only the person's own words: rain and sky are on unless they drop them; humidity, wind and daylight only when they ask. All from ERA5 (Open-Meteo, CC BY 4.0) and the latitude"),
-  normalise: z.enum(["absolute", "relative"]).optional(),
-  missing: z.enum(["lowest", "skip", "worst"]).optional().describe("A city without a figure on a line: \"lowest\" (default) scores it as the lowest compared city, \"worst\" as 0, \"skip\" leaves the line out for every city. Money is never filled in either way"),
+    .describe("Weather: what a nice day is, for criterion nice_days: the daytime temperature range, °C (default 18-30 on the feels-like temperature; basis \"air\" uses the air in the shade), then the tests a day must pass. Only the person's own words: rain and sky are on unless they drop them; humidity, wind and daylight only when they ask. All from ERA5 (Open-Meteo, CC BY 4.0) and the latitude"),
+  normalise: z.enum(["absolute", "relative"]).optional().describe("Default absolute: fixed city-local scores. Relative is opt-in: adding cities can change other scores, gap handling and the shared money basis."),
+  missing: z.enum(["lowest", "skip", "worst"]).optional().describe("In fixed scoring, missing lines do not count for that city. Only with opt-in relative scoring: lowest scores gaps at the lowest compared score, worst at 0, skip drops the line for all. Money is never imputed"),
   overrides: z.record(z.string(), z.record(z.string(), z.number())).optional().describe("Your own numbers: city -> metric id -> value; money in the city's currency. health_premium is the household's premium a month (prefer healthPremium, which takes the period); childcare_cost is the household's own childcare a month (prefer childcareCost); childcare_net_couple_1 and similar replace the OECD reference figure, a year"),
   dealBreakers: z.array(z.string()).optional().describe("Must-pass criterion ids, e.g. right_to_live, money_left: a city fails, passes, or is unknown (no figure, no passport or other right given); unknown ranks after every city that passes"),
   stances: z
@@ -308,6 +311,18 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
       const s = summarize(r, { limit });
       return reply(summaryMarkdown(s, summaryWhy(r, limit)), s);
     }),
+  );
+
+  server.registerTool(
+    "suggest_cities",
+    {
+      title: "Suggest cities for me",
+      description: "Rank all published cities by the current profile: top five not already in cities, with their two biggest observed score contributions. Same inputs as compare_cities; cities may be empty. Fixed scoring by default; Weather uses your nice-day definition. Missing lines do not count there: check coverage before deciding.",
+      inputSchema: { ...compareInput, cities: z.array(z.string()).optional().describe("Already chosen cities to exclude, if any") },
+      outputSchema: looseOutput,
+      annotations: readOnly,
+    },
+    guarded((args) => { const r = suggest(data, args); return reply(suggestionsMarkdown(r), { reportVersion: REPORT_VERSION, ...r }); }),
   );
 
   server.registerTool(

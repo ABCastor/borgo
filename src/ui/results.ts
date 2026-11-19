@@ -105,7 +105,7 @@ export function cell(s: AppState, r: CityResult, l: LineResult): Raw {
   }
   const src = l.raw.sources[0];
   const dotClass = src?.origin.kind === "you" ? "is-yours" : l.imputed ? "is-imputed" : "";
-  return html`<div class="cmp-val ${l.score === null ? "is-missing" : ""}">
+  return html`<div class="cmp-val ${l.score === null ? "is-missing" : ""}" title="${l.explanation ?? ""}">
       <span class="v">${crit?.metric ? html`<button class="edit" data-act="edit" data-city="${r.city.id}" data-metric="${crit.metric}" title="Use your own number">${l.raw.text}</button>` : l.raw.text}${crit?.metric ? srcMark(src, r.city.id, crit.metric) : ""}</span>
       ${l.score !== null ? html`<span class="scale" title="${l.imputed ? "No figure: scored as the lowest of your other cities" : ""}"><i style="left:${(l.score * 100).toFixed(1)}%" class="${dotClass}"></i></span>` : ""}
     </div>`;
@@ -143,7 +143,7 @@ export function compareView(s: AppState, e: Evaluation): Raw {
       })}</tr>
       ${lines.map((l) => {
         const b = best(l.id);
-        return html`<tr class="${l.weight === 0 ? "is-off" : ""}"><th scope="row">${l.label}<small>${l.personal ? "your line · " : ""}${Math.round((100 * l.weight) / wsum)}% of the score${s.profile.dealBreakers.includes(l.id) ? " · must pass" : ""}</small></th>
+        return html`<tr class="${l.weight === 0 ? "is-off" : ""}"><th scope="row">${l.label}<small>${l.personal ? "your line · " : ""}${s.profile.dealBreakers.includes(l.id) ? "requirement, not scored" : `${Math.round((100 * l.weight) / wsum)}% of the score`}</small></th>
           ${results.map((r) => {
             const rl = r.lines.find((x) => x.id === l.id)!;
             return html`<td class="${b !== null && rl.score === b ? "is-best" : ""} ${rl.failed && s.profile.dealBreakers.includes(l.id) ? "is-fail" : ""}">${cell(s, r, rl)}</td>`;

@@ -2,6 +2,7 @@
 // PLAYWRIGHT_MODULE to an installed playwright index.mjs. CHROME selects an unbranded Chromium.
 // A temporary extension uses chrome.tabs.setZoom: real browser zoom, not CSS zoom or pinch emulation.
 import assert from 'node:assert/strict';
+import { extraFlows } from './walkthrough-flows.mjs';
 import { createServer } from 'node:http';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { join, extname, resolve } from 'node:path';
@@ -29,6 +30,7 @@ await mkdir(extension);
 await writeFile(join(extension, 'manifest.json'), JSON.stringify({ manifest_version: 3, name: 'Borgo zoom test', version: '1.0', permissions: ['tabs'], background: { service_worker: 'worker.js' } }));
 await writeFile(join(extension, 'worker.js'), 'chrome.runtime.onInstalled.addListener(() => {}); setInterval(() => chrome.runtime.getPlatformInfo(), 20000);');
 const evidence = [];
+let screenshots = 0;
 const world = JSON.parse(await readFile(join(root, 'data/map.json'), 'utf8'));
 const { project } = await import('../src/core/equal-earth.ts');
 try {
@@ -51,6 +53,7 @@ try {
       });
       const wordCounts = {};
       const shot = async name => {
+        screenshots++;
         await page.screenshot({ path: join(out, `${width}-${theme}-${name}.png`) });
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `overflow: ${width}/${theme}/${name}`);
       };
@@ -72,11 +75,14 @@ try {
         await page.waitForTimeout(350);
       }
       await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 3);
-      if (width < 820) await page.locator('[data-act="fold"]').click();
-      await page.locator('[data-act="group"][data-id="money"]').click();
+      const flows = await extraFlows(page, { capture: shot });
+      evidence.push({ width, theme, ...flows });
+      if (await page.locator('[data-act="fold"]').isVisible() && await page.locator('[data-act="fold"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="fold"]').click();
+      if (await page.locator('[data-act="group"][data-id="money"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="group"][data-id="money"]').click();
       await page.locator('#wg-money').scrollIntoViewIfNeeded();
       wordCounts.weightExplanation = await words('#vs-body > .vs-lede');
       wordCounts.moneyParts = await words('#vg-money');
+      wordCounts.moneyPartsExplanation = await words('#vg-money > .vs-lede');
       wordCounts.eligibility = await words('.elig');
       await shot('weights');
       await page.locator('[data-act="comfort"][data-where="values-tests"]').click();
@@ -99,6 +105,8 @@ try {
       await page.waitForFunction(() => !document.querySelector('#map-load'));
       await page.locator('#map-canvas').scrollIntoViewIfNeeded();
       await page.waitForTimeout(500);
+      wordCounts.mapHelpCollapsed = await words('.map-help');
+      await page.locator('.map-help summary').click();
       wordCounts.mapHelp = await words('.mhow');
       await shot('map-score');
       // Exercise the real UI caller of refreshMap, not only the scoring engine.
@@ -185,7 +193,7 @@ try {
     } finally { await context.close(); }
   }
   await writeFile(join(out, 'walkthrough.json'), JSON.stringify(evidence, null, 2) + '\n');
-  console.log(JSON.stringify({ screenshots: 44, checks: evidence.length, result: 'passed', wordCounts: evidence.find(e => e.wordCounts)?.wordCounts }));
+  console.log(JSON.stringify({ screenshots, checks: evidence.length, result: 'passed', wordCounts: evidence.find(e => e.wordCounts)?.wordCounts }));
 } finally {
   await new Promise(r => server.close(r));
   await rm(scratch, { recursive: true, force: true });

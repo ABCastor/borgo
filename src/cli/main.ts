@@ -7,6 +7,7 @@ import { parseArgs } from "node:util";
 import { DEFAULT_COMFORT } from "../core/criteria.ts";
 import type { Comfort, HousingSize, PermitKind, TaxTweak } from "../core/types.ts";
 import { findCity, searchCities } from "../agent/cities.ts";
+import { suggest, suggestionsMarkdown } from "../agent/suggest.ts";
 import { chartInput, compareSvg } from "../agent/chart.ts";
 import { loadDataset, ROOT } from "../agent/dataset.ts";
 import { catalogueMarkdown, cataloguePartMarkdown, cityMarkdown, compareMarkdown, netPayMarkdown, summaryMarkdown } from "../agent/markdown.ts";
@@ -30,6 +31,7 @@ Start here
       rank two cities on the balanced weights, with take-home pay and what to add next
 
 Usage
+  borgo suggest [city ...] [options]          suggest five published cities not already chosen
   borgo compare <city> <city> ... [options]     rank cities for you (compact; --full for every line and tax line)
   borgo city <city> [--person US] [--right DE:permanent] [--metric rent_1bed,pm25] [--full]
                                                 a city's figures with sources, and who may live there
@@ -447,6 +449,12 @@ export async function main(argv: string[]): Promise<number> {
   }
   const ds = loadDataset();
   switch (cmd) {
+    case "suggest": {
+      const args = compareArgs(rest, f);
+      const r = suggest(ds, args);
+      print(r, suggestionsMarkdown(r));
+      return 0;
+    }
     case "compare": {
       const r = compare(ds, compareArgs(rest, f));
       if (f.svg) writeFileSync(f.svg, compareSvg(chartInput(r)));

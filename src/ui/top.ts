@@ -1,6 +1,7 @@
 import { profileProblems, type Evaluation } from "../core/engine.ts";
 import type { Person } from "../core/types.ts";
 import { hasRightsGiven, PERMIT_KIND_IDS, PERMIT_KINDS } from "../core/rights.ts";
+import { ENTRY_ROUTES, ENTRY_LABEL } from "../core/entry-routes.ts";
 import { SETUP_STEPS, aiSetup } from "./onboarding.ts";
 import { html, type Raw } from "./dom.ts";
 import { CURRENCIES, money } from "./format.ts";
@@ -75,6 +76,10 @@ function rightsEditor(s: AppState, person: Person | undefined, i: number): Raw {
   </div>`;
 }
 
+function entryEditor(person: Person | undefined, i: number): Raw {
+  return html`<details><summary>How hard to get in</summary><p class="hint">A rough guide, not legal advice. Choose a route only if its listed conditions apply to you. Other countries and routes: not checked. Existing rights take precedence.</p>${["GB", "US"].map((cc) => html`<label class="fld">${regionName(cc)}<select id="p${i}-entry-${cc}" data-person="${i}" data-field="entry-route" data-country="${cc}"><option value="">No checked route</option>${ENTRY_ROUTES.filter((r) => r.country === cc).map((r) => html`<option value="${r.id}" ${person?.entryRoutes?.[cc] === r.id ? "selected" : ""}>${r.label}: ${ENTRY_LABEL[r.level]}</option>`)}</select></label>${ENTRY_ROUTES.filter((r) => r.country === cc).map((r) => html`<p class="hint"><a href="${r.url}" target="_blank" rel="noopener noreferrer">${r.label} · ${r.source} · ${r.period}</a>: ${r.conditions}. ${r.fact}</p>`)}`)}</details>`;
+}
+
 /** Who is moving, in the popover the "You" button opens. Just you unless you add someone. */
 export function householdPanel(s: AppState): string {
   const hh = s.profile.household;
@@ -84,7 +89,7 @@ export function householdPanel(s: AppState): string {
     <b id="hh-title">Who is moving</b>
     <p class="hint">Just you, unless you add someone. Passports, free movement and the rights each person already holds decide where they can live and work without applying for a visa.</p>
     <fieldset class="person"><legend>You</legend>
-      ${rightsEditor(s, me, 0)}
+      ${rightsEditor(s, me, 0)}${entryEditor(me, 0)}
       <p class="hint">For newcomer tax regimes, age-dependent tax and childcare (optional):</p>
       <div class="row3"><label>Age<input id="p0-age" type="number" min="16" max="99" value="${me?.newcomer?.age ?? ""}" data-person="0" data-field="age"></label>
         <label>Children's ages<input id="p0-kids" inputmode="numeric" value="${(s.profile.children ?? []).join(", ")}" placeholder="e.g. 2, 5" data-field="children"></label>
@@ -93,8 +98,8 @@ export function householdPanel(s: AppState): string {
     ${others.map(
       (p, j) => html`<fieldset class="person"><legend>${p.label || "Someone"}</legend>
         <div class="row2"><label>Name<input id="p${j + 1}-name" value="${p.label}" data-person="${j + 1}" data-field="label" maxlength="24"></label></div>
-        ${rightsEditor(s, p, j + 1)}
-        <button class="link" data-act="remove-person" data-i="${j + 1}">Remove ${p.label || "this person"}</button></fieldset>`,
+        ${rightsEditor(s, p, j + 1)}${entryEditor(p, j + 1)}
+        <button class="chip-x" data-act="remove-person" data-i="${j + 1}" aria-label="Remove ${p.label || "this person"}">×</button></fieldset>`,
     )}
     <div class="hh-add"><span class="quiet">Add</span>${["Partner", "Family member", "Co-founder"].map((l) => html`<button class="pill-btn" data-act="add-person" data-label="${l}">${l}</button>`)}</div>
   </div>`.value;
@@ -194,7 +199,8 @@ function notFoundNote(s: AppState): Raw | "" {
   return html`<p class="v-more">The link also named ${names(lost)}, fetched in the sender's browser and not in this one: add ${one ? "it" : "them"} by name to compare ${one ? "it" : "them"} here.</p>`;
 }
 
-export function verdict(s: AppState, e: Evaluation): Raw {
+export function verdict(s: AppState, e: Evaluation, mode: "full" | "headline" | "notes" = "full"): Raw {
+  if (!e.results.length && mode === "notes") return html``;
   if (!e.results.length) return html`<div class="answer" aria-live="polite"><p class="v-lead">Add the cities you are weighing.</p>${notFoundNote(s)}</div>`;
   const passing = e.results.filter((r) => !r.ruledOut.length && !r.unresolved.length);
   const unknown = e.results.filter((r) => !r.ruledOut.length && r.unresolved.length);
@@ -207,8 +213,8 @@ export function verdict(s: AppState, e: Evaluation): Raw {
   const restingOn = names([...new Set((e.results[0]?.lines ?? []).filter((l) => l.weight > 0 && l.id !== "money_left" && l.id !== "living_cost").map((l) => l.label.toLowerCase()))]);
   const headline = !lead
     ? unknown.length
-      ? html`No city can be ranked yet: a must-pass line is not known`
-      : html`Every city is ruled out by a must-pass line`
+      ? html`No city can be ranked yet: a required line is not known`
+      : html`Every city is ruled out by a required line`
     : e.provisional && noPay
       ? html`So far, <b>${lead.city.name}</b> fits you best`
       : e.provisional
@@ -233,7 +239,7 @@ export function verdict(s: AppState, e: Evaluation): Raw {
   // Someone who would need a visa where the answer points is said here, not left to a weight.
   const visa = lead ? lead.rights.filter((x) => x.status === "no").map((x) => (x.person === "You" ? "you" : x.person)) : [];
   const visaText = visa.length ? html`In ${lead!.city.name}, ${names(visa)} would need a visa or permit.` : "";
-  const unknownText = unknown.length ? html`Not known yet for ${names(unknown.map((r) => r.city.name))}: ${names([...new Set(unknown.flatMap((r) => r.unresolved))].map((l) => l.toLowerCase()))}, which you marked must pass.` : "";
+  const unknownText = unknown.length ? html`Not known yet for ${names(unknown.map((r) => r.city.name))}: ${names([...new Set(unknown.flatMap((r) => r.unresolved))].map((l) => l.toLowerCase()))}, which you marked Required.` : "";
   const ruled = out.length ? html`${out.map((r, i) => html`${i ? " " : ""}<b>${r.city.name}</b> is ruled out: ${failText(r.ruledOut, r.lines)}.`)}` : "";
   // A lead that missing figures could still change is said so, with what is missing; so is money on another basis.
   // Without pay, money can still count on what a month costs where every city has its costs: said so, not hidden.
@@ -249,7 +255,8 @@ export function verdict(s: AppState, e: Evaluation): Raw {
   // While the salary itself is the next input, the engine's note on money says the same thing less directly.
   const noSalary = e.results.every((r) => r.money.missing.includes("salary"));
   const notes = e.notes.filter((n) => !(noSalary && /^(Money left|Cost of living)/.test(n)));
-  return html`<div class="answer" aria-live="polite"><p class="v-lead">${headline}</p>${notFoundNote(s)}${more.length ? html`<p class="v-more">${more.map((x, i) => html`${i ? " " : ""}${x}`)}</p>` : ""}
+  if (mode === "headline") return html`<div class="answer" aria-live="polite"><p class="v-lead">${headline}</p><p class="v-more">Scores follow your priorities; check the details below.</p></div>`;
+  return html`<div class="answer result-notes" aria-label="Comparison notes">${mode === "full" ? html`<p class="v-lead">${headline}</p>` : ""}${notFoundNote(s)}${more.length ? html`<p class="v-more">${more.map((x, i) => html`${i ? " " : ""}${x}`)}</p>` : ""}
     ${notes.length ? html`<ul class="v-notes">${notes.map((n) => html`<li>${n}</li>`)}</ul>` : ""}
     ${ask ?? ""}</div>`;
 }
@@ -278,14 +285,13 @@ function intro(s: AppState, _e: Evaluation): Raw {
     ${step === 2 ? html`<label for="setup-salary">Your salary, gross a year</label><span class="v-field"><input id="setup-salary" type="number" min="0" step="1000" data-field="gross" placeholder="Not given" value="${s.profile.income.gross || ""}"><select data-field="income-currency" aria-label="Currency of your salary">${CURRENCIES.map((c) => html`<option ${c === s.profile.income.currency ? "selected" : ""}>${c}</option>`)}</select></span>${problemsFor(s, "salary")}` : ""}
     ${step === 3 ? html`<button class="pill-btn" data-act="household">Edit people, passports and rights</button>` : step === 4 ? html`<button class="pill-btn" data-act="comfort" aria-haspopup="dialog">Edit your nice-day weather</button>` : step === 2 ? html`<a class="pill-btn" href="#/money">Pay, spending and savings</a>` : html`<button class="pill-btn" data-act="focus" data-target="${item.target}">Edit ${item.title.toLowerCase()}</button>`}
     <div class="setup-controls">${step ? html`<button class="pill-btn" data-act="setup-step" data-step="${step - 1}">Back</button>` : ""}${step < SETUP_STEPS.length - 1 ? html`<button class="pill-btn" data-act="setup-step" data-step="${step + 1}">Next</button>` : html`<button class="pill-btn" data-act="intro-hide">Finish setup</button>`}<button class="link" data-act="intro-hide">Skip walkthrough</button></div>
-    ${aiSetup()}
   </section>`;
 }
 
 export function topQuestion(s: AppState, e: Evaluation): Raw {
   const rank = new Map(e.results.map((r) => [r.city.id, r]));
   const chosen = s.profile.cities.map((id) => s.data.cities.find((c) => c.id === id)).filter((c) => !!c).sort((a, b) => (rank.get(a!.id)?.rank ?? 99) - (rank.get(b!.id)?.rank ?? 99));
-  return html`${intro(s, e)}<section class="ask" aria-label="Your comparison">
+  return html`${aiSetup()}${intro(s, e)}<section class="ask" aria-label="Your comparison">
     <div class="ask-row">
       ${whoButton(s)}
       <ul class="roster" aria-label="Your cities, best first">${chosen.map((c) => {
@@ -293,11 +299,12 @@ export function topQuestion(s: AppState, e: Evaluation): Raw {
         return html`<li class="cchip ${r?.ruledOut.length ? "is-out" : ""}" data-flip="chip-${c!.id}"><a href="#/city/${c!.id}">${r ? html`<b class="chip-r num">${r.ruledOut.length ? "Out" : r.rank}</b>` : ""}${c!.name}</a><button class="chip-x" data-act="remove-city" data-city="${c!.id}" aria-label="Remove ${c!.name}">${CLOSE}</button></li>`;
       })}${s.live && !s.live.error ? html`<li class="cchip is-loading" aria-busy="true"><span class="chip-wait" aria-hidden="true"></span>${s.live.name ?? s.live.query}<span class="sr">, being added</span></li>` : ""}</ul>
       ${addField(s)}
+      <button class="pill-btn" data-act="suggest">Suggest cities for me</button>
       <button class="share-btn" data-act="share">Share</button>
       <button class="link" data-act="setup-open">Guided setup</button>
       <button class="link" data-act="reset">Reset</button>
     </div>
-    ${verdict(s, e)}
+    ${verdict(s, e, "headline")}
     ${livePanel(s)}
   </section>`;
 }

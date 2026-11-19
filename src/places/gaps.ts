@@ -29,9 +29,9 @@ export function placeGaps(data: Dataset, city: City): Gap[] {
 /** The place's gaps plus every weighted scoring line with no figure for it, the heaviest first. */
 export function resultGaps(data: Dataset, r: CityResult): Gap[] {
   const lines = r.lines
-    .filter((l) => l.imputed && l.weight > 0 && !l.personal)
+    .filter((l) => (l.imputed || l.raw.value === null) && l.weight > 0 && !l.personal)
     .sort((a, b) => b.weight - a.weight)
-    .map((l): Gap => ({ what: l.label, why: "no figure here yet" }));
+    .map((l): Gap => ({ what: l.label, why: `no figure for ${r.city.name}, so it does not count there` }));
   return [...placeGaps(data, r.city), ...lines];
 }
 

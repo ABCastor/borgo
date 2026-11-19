@@ -172,14 +172,17 @@ test("completeness partial (a compulsory premium left out): money left is unknow
   const l = await scoredLeft(d, profile(), "san-francisco-us");
   assert.equal(l.basis, null);
   assert.equal(l.score, null);
-  // With the premium given (and a rent missing elsewhere), take-home pay is compared less the premium: $300 at 1.1 USD.
+  // With the premium given, San Francisco's complete money is scored as asked even when another city lacks rent.
   const d2 = fixture();
   d2.observations["dublin-ie"] = d2.observations["dublin-ie"]!.filter((o) => o.metric !== "rent_1bed");
   const given = profile({ overrides: { "san-francisco-us": { health_premium: 300 } } });
   const l2 = await scoredLeft(d2, given, "san-francisco-us");
   const m2 = money(d2, given, city(d2, "san-francisco-us"));
-  assert.equal(l2.basis, "take-home pay less any compulsory health premium (rent and spending not counted)");
-  assert.ok(Math.abs(l2.raw.value! - (m2.display.net! / 12 - 300 / 1.1)) < 1e-9);
+  assert.equal(l2.basis, null);
+  assert.equal(l2.raw.value, m2.display.monthlyLeft);
+  const alone = await scoredLeft(d2, { ...given, cities: ["san-francisco-us"] }, "san-francisco-us");
+  assert.equal(l2.points, alone.points);
+  assert.equal(l2.score, alone.score);
 });
 
 test("completeness unsupported (no tax model): money left is unknown", async () => {

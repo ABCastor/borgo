@@ -1,5 +1,6 @@
+import { suggestCities } from "../core/suggest.ts";
 import { AI_PROMPT } from "./onboarding.ts";
-import { emptyProfile } from "./state.ts";
+import { addEarner, emptyProfile } from "./state.ts";
 import { niceDefinition } from "./cards.ts";
 import { politicsWord } from "../core/criteria.ts";
 import { criteriaFor, evaluate, profileProblems, weightOf, type Evaluation } from "../core/engine.ts";
@@ -30,7 +31,7 @@ import { KM_PER_MILE, tempFrom, tempIn, unitsOf, type Units } from "../core/unit
 import { hasRightsGiven } from "../core/rights.ts";
 import type { PermitKind } from "../core/types.ts";
 import { browserTowns, knownCity, pickedPlace, suggestPlaces } from "./place-search.ts";
-import { householdPanel, regionName, topQuestion } from "./top.ts";
+import { householdPanel, regionName, topQuestion, verdict } from "./top.ts";
 import { moneySheet, share, THIRD_WEIGHT, valuesSheet } from "./values.ts";
 import { exploreShell } from "./cards.ts";
 
@@ -269,6 +270,7 @@ function render(): void {
   const side = v !== "city";
   $("#page").innerHTML = html`<div id="top" class="top-slot"></div>
     <div class="layout ${side ? "has-side" : "no-side"} view-${v}">${side ? html`<aside class="sheet side" id="side" aria-label="${v === "money" ? "Your money" : "What matters to you"}"></aside>` : ""}<main id="main" class="main"></main></div>
+    <div id="result-notes"></div>
     ${v === "cities" ? html`<section class="explore" id="explore" aria-labelledby="explore-h"></section>` : ""}`.value;
   renderApp();
   if (v === "cities") watchExplore();
@@ -325,6 +327,7 @@ function renderLive(): void {
   // Each line's text carries its figure in the data's units; it is shown in the person's.
   for (const r of evaluation.results) for (const l of r.lines) l.raw = { ...l.raw, text: local(l.raw.text) };
   place(document.getElementById("top"), topQuestion(state, evaluation).value);
+  place(document.getElementById("result-notes"), verdict(state, evaluation, "notes").value);
   const main = document.getElementById("main");
   const v = state.view;
   if (v === "map") {
@@ -508,8 +511,22 @@ function onClick(e: MouseEvent): void {
       setProfile((p) => (p.cities = p.cities.filter((c) => c !== t.dataset.city)));
       break;
     case "add-known":
-      setProfile((p) => p.cities.push(t.dataset.city!));
+      setProfile((p) => { if (!p.cities.includes(t.dataset.city!)) p.cities.push(t.dataset.city!); });
+      closePopover();
       break;
+    case "suggest": {
+      t.textContent = "Checking published cities…";
+      const ids = state.data.publishedCityIds ?? state.data.cities.map((c) => c.id);
+      void loadCities(ids.filter((id) => !state.fetchedHere.includes(id))).then(() => {
+        const rows = suggestCities(state.data, state.profile, ids);
+        openPopover(t, html`<div class="pop-body"><b>Suggested cities</b><p class="hint">Your profile, available figures only. Gaps can favour partial-data cities; check coverage before deciding.</p>${rows.length ? rows.map((r) => html`<section><h3>${r.name} · ${Math.round(r.score)}/100</h3><small>${Math.round(r.requestedCoverage * 100)}% of priority weight has its requested figure${r.missing.length ? `; missing: ${r.missing.join(", ")}` : ""}.</small><p>${r.reasons.map((x) => `${x.line}: ${x.figure}`).join("; ") || "No scored figures: set your priorities first."}</p>${r.reasons.length === 1 ? html`<small>Only one scored line has a figure; no second reason is checked.</small>` : ""}<button class="pill-btn" data-act="add-known" data-city="${r.id}">Add ${r.name}</button></section>`) : html`<p>No more cities pass your requirements.</p>`}</div>`.value, "suggest");
+        t.textContent = "Suggest cities for me";
+      }, () => { t.textContent = "Could not load suggestions. Try again."; });
+      return;
+    }
+    case "copy-mcp":
+      void navigator.clipboard.writeText("https://borgo.abcastor.com/mcp").then(() => { t.textContent = "URL copied"; }, () => { t.textContent = "Copy https://borgo.abcastor.com/mcp"; });
+      return;
     case "dismiss-live":
       state.live = null;
       renderLive();
@@ -528,6 +545,19 @@ function onClick(e: MouseEvent): void {
         p.dealBreakers = p.dealBreakers.includes(id) ? p.dealBreakers.filter((x) => x !== id) : [...p.dealBreakers, id];
       });
       break;
+    case "stance-toggle": {
+      const id = t.dataset.id!;
+      const c = criteriaFor(state.profile).find((c) => c.id === id)!;
+      setProfile((p) => {
+        p.stances ??= {};
+        if (!(t as HTMLInputElement).checked) delete p.stances[id];
+        else {
+          p.stances[id] = c.position!.levels ? c.position!.levels[0]!.value : (c.position!.min + c.position!.max) / 2;
+          if (!(p.weights[id]! > 0)) p.weights[id] = 10;
+        }
+      });
+      return;
+    }
     case "clear-stance": {
       const id = t.dataset.id!;
       setProfile((p) => {
@@ -538,7 +568,12 @@ function onClick(e: MouseEvent): void {
       break;
     }
     case "remove-line":
-      setProfile((p) => (p.personal = p.personal.filter((l) => l.id !== t.dataset.id)));
+      setProfile((p) => {
+        const id = t.dataset.id!;
+        p.personal = p.personal.filter((l) => l.id !== id);
+        delete p.weights[id];
+        p.dealBreakers = p.dealBreakers.filter((line) => line !== id);
+      });
       break;
     case "score":
       setProfile((p) => {
@@ -592,9 +627,10 @@ function onClick(e: MouseEvent): void {
         if (status) status.textContent = "Copied";
       }).catch(() => {
         const field = document.getElementById("ai-prompt") as HTMLTextAreaElement | null;
+        field?.closest("details")?.setAttribute("open", "");
         field?.select();
         const status = document.getElementById("ai-copy-status");
-        if (status) status.textContent = "Select and copy the prompt above.";
+        if (status) status.textContent = "Select and copy the prompt below.";
       });
       return;
     case "intro-hide":
@@ -675,11 +711,7 @@ function onClick(e: MouseEvent): void {
       return;
     }
     case "add-earner":
-      setProfile((p) => {
-        if (!p.household.length) p.household.push({ label: "You", citizenships: [] });
-        const partner = t.dataset.label === "Partner";
-        p.household.push({ label: t.dataset.label ?? "Someone", citizenships: [], relation: partner ? "partner" : "cofounder", pay: { gross: 0, currency: p.income.currency } });
-      });
+      setProfile((p) => addEarner(p, t.dataset.label ?? "Someone"));
       document.getElementById(`pay-${state.profile.household.length - 1}`)?.focus();
       return;
     case "housing":
@@ -826,7 +858,11 @@ function onSubmit(e: SubmitEvent): void {
   if (act === "add-line") {
     const label = String(new FormData(f).get("label") ?? "").trim();
     if (!label) return;
-    setProfile((p) => p.personal.push({ id: `mine-${Date.now().toString(36)}`, label, scores: {} }));
+    setProfile((p) => {
+      const id = `mine-${crypto.randomUUID()}`;
+      p.personal.push({ id, label, scores: {} });
+      p.weights[id] = 10;
+    });
   }
   if (act === "save-override") {
     const form = new FormData(f);
@@ -865,7 +901,7 @@ function onInput(e: Event): void {
   });
   if (t.dataset.groupWeight) {
     // A group's dial: its new weight is shared over its parts in the proportions they had.
-    const parts = grouped(criteriaFor(state.profile)).find((g) => g.group.id === t.dataset.groupWeight)?.parts ?? [];
+    const parts = (grouped(criteriaFor(state.profile)).find((g) => g.group.id === t.dataset.groupWeight)?.parts ?? []).filter((c) => !state.profile.dealBreakers.includes(c.id));
     const split = splitGroupWeight(parts.map((c) => ({ id: c.id, weight: weightOf(state.profile, c), defaultWeight: c.defaultWeight, applies: !c.applies || c.applies(state.profile) })), v);
     setProfile((p) => Object.assign(p.weights, split), "values");
   } else {
@@ -884,7 +920,7 @@ function refreshShares(active: HTMLInputElement | null): void {
   for (const c of crit) {
     const w = weightOf(p, c);
     const out = document.getElementById(`o-${c.id}`);
-    if (out) out.textContent = `${share(w, total)} of score`;
+    if (out) out.textContent = p.dealBreakers.includes(c.id) ? "requirement, not scored" : `${share(w, total)} of score`;
     const el = document.getElementById(`w-${c.id}`) as HTMLInputElement | null;
     if (el && el !== active) el.value = String(w);
     if (el) fill(el, w);
@@ -999,6 +1035,7 @@ function changed(e: Event): void {
       const rest = { ...p.stances };
       delete rest[id];
       p.stances = t.value === "" ? rest : { ...rest, [id]: n };
+      if (t.value !== "" && !(p.weights[id]! > 0)) p.weights[id] = 10;
     });
     return;
   }
@@ -1007,6 +1044,11 @@ function changed(e: Event): void {
     setProfile((p) => {
       if (!p.household.length) p.household.push({ label: "You", citizenships: [] });
       const person = p.household[i]!;
+      if (f === "entry-route") {
+        person.entryRoutes ??= {};
+        if (t.value) person.entryRoutes[t.dataset.country!] = t.value;
+        else delete person.entryRoutes[t.dataset.country!];
+      }
       if (f === "label") person.label = t.value;
       if (f === "citizenship") person.citizenships = [t.value, ...person.citizenships.slice(1)].filter(Boolean);
       if (f === "add-passport" && t.value && !person.citizenships.includes(t.value)) person.citizenships = [...person.citizenships, t.value];

@@ -13,7 +13,7 @@ export function sharePanel(s: AppState, copied = false): string {
   const left = SHARE_PARTS.filter((x) => held.includes(x.key) && !include.includes(x.key));
   return html`<div class="pop-body share">
     <b id="share-title">Share this comparison</b>
-    <p class="hint">The link carries your ${n} ${n === 1 ? "city" : "cities"}, what matters (the weights and must-pass lines), your nice-day range, the home size and your settings. It rides after the # in the address, which browsers never send to a server; it reaches only whoever you give it to.</p>
+    <p class="hint">The link carries your ${n} ${n === 1 ? "city" : "cities"}, what matters (the weights and requirements), your nice-day range, the home size and your settings. It rides after the # in the address, which browsers never send to a server; it reaches only whoever you give it to.</p>
     ${held.length
       ? html`<fieldset class="share-parts"><legend>Also put in the link</legend>${SHARE_PARTS.filter((x) => held.includes(x.key)).map(
           (x) => html`<label class="check share-part"><input type="checkbox" id="share-${x.key}" data-act="share-include" data-part="${x.key}" ${include.includes(x.key) ? "checked" : ""}><span><b>${x.label}</b> <span class="quiet">${x.what}</span></span></label>`,

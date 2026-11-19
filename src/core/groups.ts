@@ -30,7 +30,7 @@ export const GROUPS: Group[] = [
   { id: "right_to_live", label: "Right to live and work", question: "Whether everyone moving with you can live and work there without applying for a visa: by citizenship, free movement or a right they already hold.", members: ["right_to_live"] },
   {
     id: "climate",
-    label: "Climate",
+    label: "Weather",
     question: "How the weather feels through the year, by your own idea of a nice day.",
     members: ["nice_days", "sunshine", "winter_light", "dry_days", "beach", "run_ride", "muggy", "grey", "hot_nights", "heat", "snow", "wind"],
   },

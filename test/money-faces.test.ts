@@ -145,8 +145,8 @@ test("pension: every face says where relief is modelled and where the share is o
 
 test("a lead that a missing figure could change is provisional (the reviewer's 70/30 example)", () => {
   // Own lines 1-5 score (v - 1) / 4. A = (0.5, 0.8), B = (0.6, missing), C = (0, 0); weights 70 and 30.
-  // B's gap is scored at the lowest compared score, 0, so B = 42 and A = 0.35 + 0.24 = 59 leads; at the highest
-  // observed (0.8) B would be 66. B's range 42-66 reaches above A's 59: the lead is provisional.
+  // Fixed scoring leaves B's gap out, so B scores 60 on its known line and A scores 59.
+  // B's full-weight range is 42-72; A can beat its lower bound, so the lead remains provisional.
   const d = fixture();
   const cities = ["turin-it", "dublin-ie", "london-gb"];
   const p = profile({
@@ -161,24 +161,25 @@ test("a lead that a missing figure could change is provisional (the reviewer's 7
   const e = evaluate(d, p);
   const by = (id: string) => e.results.find((r) => r.city.id === id)!;
   assert.ok(Math.abs(by("turin-it").total - 59) < 1e-9);
-  assert.ok(Math.abs(by("dublin-ie").total - 42) < 1e-9);
+  assert.ok(Math.abs(by("dublin-ie").total - 60) < 1e-9);
   assert.ok(Math.abs(by("dublin-ie").bounds.low - 42) < 1e-9);
-  assert.ok(Math.abs(by("dublin-ie").bounds.high - 66) < 1e-9);
-  assert.equal(e.results[0]!.city.id, "turin-it");
+  assert.ok(Math.abs(by("dublin-ie").bounds.high - 72) < 1e-9);
+  assert.equal(e.results[0]!.city.id, "dublin-ie");
   assert.equal(e.provisional, true);
-  assert.deepEqual(e.rivals, ["Dublin"]);
+  assert.deepEqual(e.rivals, ["Torino"]);
   assert.match(e.provisionalReasons.join(" "), /Two: no figure for Dublin/);
   // Falsifier: with Dublin's figure given the lead is settled.
   const settled = evaluate(d, { ...p, personal: [p.personal[0]!, { ...p.personal[1]!, scores: { ...p.personal[1]!.scores, "dublin-ie": 1 } }] });
   assert.equal(settled.provisional, false);
 });
 
-test("money compared on take-home pay says so, coverage of the money asked for drops, and the verdict is provisional where it could change", () => {
+test("relative opt-in: shared take-home basis is named and its incomplete lead remains provisional", () => {
   // Dublin pays more but its rent leaves less: on take-home pay it leads, on money left (as asked) Torino does.
   const d = fixture();
   d.observations["london-gb"] = d.observations["london-gb"]!.filter((o) => o.metric !== "rent_1bed");
   const p = profile({
     cities: ["turin-it", "dublin-ie", "london-gb"],
+    prefs: { ...profile().prefs, normalise: "relative" },
     weights: only({ money_left: 20 }),
     income: { ...profile().income, mode: "per-city", perCity: { "dublin-ie": { gross: 120_000, currency: "EUR" } } },
     overrides: { "dublin-ie": { rent_1bed: 7_000 } },
@@ -192,7 +193,7 @@ test("money compared on take-home pay says so, coverage of the money asked for d
   const lon = e.results.find((r) => r.city.id === "london-gb")!;
   assert.equal(lon.requestedCoverage, 0, "London's money left is not");
   assert.equal(e.provisional, true);
-  const r = compare(d, { cities: ["Turin", "Dublin", "London"], only: ["money_left"], salaryByCity: { Dublin: { amount: 120_000 } }, salary: { amount: 60_000 }, spending: { amount: 900, homeCity: "Turin" }, overrides: { Dublin: { rent_1bed: 7_000 } } });
+  const r = compare(d, { cities: ["Turin", "Dublin", "London"], normalise: "relative", only: ["money_left"], salaryByCity: { Dublin: { amount: 120_000 } }, salary: { amount: 60_000 }, spending: { amount: 900, homeCity: "Turin" }, overrides: { Dublin: { rent_1bed: 7_000 } } });
   assert.equal(r.provisional, true);
   assert.match(r.verdict, /^Provisional: Dublin leads for now/);
   assert.match(r.verdict, /Money was compared on take-home pay only/);
@@ -203,14 +204,14 @@ test("money compared on take-home pay says so, coverage of the money asked for d
   assert.match(ui, /Money was compared on take-home pay only/);
 });
 
-test("money that counts for no city makes the lead provisional, and says what blocks take-home pay too", () => {
+test("relative opt-in: unavailable shared money basis leaves a provisional lead and names the blocked fallback", () => {
   // San Francisco buys cover outside pay and gives no premium; Dublin has no rent: no money basis is fair to both.
   // San Francisco leads on the gut line (4 against 3, so 75 against 50); Dublin's unknown money could take it to 75,
   // above San Francisco's lowest (37.5), so the lead is provisional. San Francisco's own money is at most what it
   // shows before the premium, which caps its high at 41.8: had Dublin led, San Francisco could not have overtaken.
   const d = fixture();
   d.observations["dublin-ie"] = d.observations["dublin-ie"]!.filter((o) => o.metric !== "rent_1bed");
-  const p = profile({ cities: ["dublin-ie", "san-francisco-us"], weights: only({ money_left: 50, you_a: 50 }), personal: [{ id: "you_a", label: "Gut", scores: { "dublin-ie": 3, "san-francisco-us": 4 } }] });
+  const p = profile({ cities: ["dublin-ie", "san-francisco-us"], prefs: { ...profile().prefs, normalise: "relative" }, weights: only({ money_left: 50, you_a: 50 }), personal: [{ id: "you_a", label: "Gut", scores: { "dublin-ie": 3, "san-francisco-us": 4 } }] });
   const e = evaluate(d, p);
   assert.deepEqual(e.moneyBasis, { requested: "money_left", used: "none" });
   assert.equal(e.provisional, true);

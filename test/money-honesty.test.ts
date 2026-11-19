@@ -44,12 +44,15 @@ test("N1: a must-pass on money left fails when even the partial, too-high figure
   const line = r.lines.find((l) => l.id === "money_left")!;
   assert.equal(line.check, "fail", "at most a negative figure: failed for certain");
   assert.deepEqual(r.ruledOut, ["Money left each month"]);
-  // Its own figure says so, though the line is scored on take-home pay for both cities.
+  // The original figure drives the requirement, even though Required has zero scoring weight.
   const own = CRITERIA.find((c) => c.id === "money_left")!.raw({ data: d, profile: p, city: city(d, "san-francisco-us"), money: sf, rights: [] });
   assert.equal(own.value, null);
   assert.match(own.text, /^at most -?€/);
-  // Take-home pay is no basis either while San Francisco's premium is missing: money counts for no city, and says so.
-  assert.equal(e.moneyBasis?.used, "none");
+  // A requirement is not a scoring basis. Its saved weight remains available when it is turned off.
+  assert.equal(e.moneyBasis, null);
+  assert.equal(line.weight, 0);
+  assert.equal(line.points, 0);
+  assert.equal(p.weights.money_left, 20);
   // Falsifier: a partial figure above zero proves nothing either way: unknown, never a pass.
   const ok = evaluate(d, { ...p, overrides: { "san-francisco-us": { rent_1bed: 500 } } }).results.find((x) => x.city.id === "san-francisco-us")!;
   assert.equal(ok.lines.find((l) => l.id === "money_left")!.check, "unknown");

@@ -396,11 +396,22 @@ export const CRITERIA: Criterion[] = [
   {
     id: "right_to_live",
     label: "Everyone can move there",
-    question: "Can every person in your household live and work there without applying for a visa: by citizenship, free movement or a right they already hold?",
+    question: "How difficult is entry for the person with the hardest route? Existing rights score best; only routes you confirm apply count. A rough guide, not legal advice.",
     category: "access",
     scale: () => [0, 1],
     raw: ({ rights }) => {
       if (rights.length === 0) return { value: null, text: "add your passport or other right to live and work", sources: [] };
+      if (rights.some((r) => r.entryLevel !== undefined)) {
+        const levels = rights.map((r) => r.entryScore ?? null);
+        const missing = rights.filter((_, i) => levels[i] === null);
+        if (rights.every((r) => r.status === "unknown" && r.entryScore === null)) return { value: null, text: "not checked: add passports or other rights", sources: [] };
+        const allowed = rights.filter((r) => r.allowed).length;
+        const unchecked = rights.filter((r) => r.status === "unknown");
+        const existing = unchecked.length ? `${allowed} to ${allowed + unchecked.length} of ${rights.length} people; ${unchecked.map((r) => r.person).join(", ")} not checked` : `${allowed} of ${rights.length} ${rights.length === 1 ? "person" : "people"} already allowed`;
+        const text = existing + "; entry difficulty: " + rights.map((r) => `${r.person}: ${r.entryLevel === "already" ? "already allowed" : r.entryLevel === "straightforward" ? "straightforward route" : r.entryLevel === "demanding" ? "demanding route" : r.entryLevel === "very-hard" ? "very hard" : "not checked"}`).join("; ");
+        if (missing.length) return { value: null, text: `${text}. Entry difficulty is a rough guide, not legal advice.`, sources: [], ...(rights.some((r) => r.status === "no") ? { upperBound: 0.99 } : {}) };
+        return { value: Math.min(...levels as number[]), text: `${text}. A rough guide, not legal advice.`, sources: [] };
+      }
       const n = rights.length;
       const unknown = rights.filter((r) => r.status === "unknown");
       const ok = rights.filter((r) => r.status === "yes").length;

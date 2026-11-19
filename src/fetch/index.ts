@@ -95,7 +95,7 @@ export function withFetched(data: Dataset, fetched: CityFetch[]): Dataset {
     const fresh = new Set(f.observations.map((o) => `${o.source} ${o.metric}`));
     observations[f.city.id] = [...(observations[f.city.id] ?? []).filter((o) => !fresh.has(`${o.source} ${o.metric}`)), ...f.observations];
   }
-  return { ...data, cities, observations };
+  return { ...data, publishedCityIds: data.publishedCityIds ?? data.cities.map((c) => c.id), cities, observations };
 }
 
 /** Adds fetched places to a dataset in place (the MCP server keeps one dataset for its whole session). */

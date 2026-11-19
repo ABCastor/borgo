@@ -32,18 +32,18 @@ test("empty start and reset factory clear personal inputs, not dataset defaults 
   assert.match(AI_PROMPT, /Only include facts I confirmed/);
 });
 
-test("weights explain score shares, parts add up, one priority can hold the full score; exclusions are separate", () => {
+test("weights explain score shares; Required is placed with its line and never takes a share", () => {
   const s = app();
   s.profile.weights = Object.fromEntries(Object.keys(s.profile.weights).map((k) => [k, k === "money_left" ? 100 : 0]));
   assert.equal(share(100, 100), "100%");
   const html = valuesSheet(s).value;
   assert.match(html, /100% of score/);
-  assert.match(html, /not a savings rate/);
-  assert.match(html, /These lines split Money/);
+  assert.match(html, /Share.*of your score, not money/);
+  assert.match(html, /Lines split Money/);
   assert.match(html, /max="100"/);
-  assert.match(html, /Rule cities out, regardless of score/);
+  assert.match(html, /Required: rule out cities that fail/);
   const weights = html.slice(html.indexOf('<ul class="vals vgroups">'), html.indexOf('<section class="elig"'));
-  assert.doesNotMatch(weights, /toggle-breaker/);
+  assert.match(weights, /toggle-breaker.*data-id="money_left"/);
 });
 
 test("nice-day description and extensible table use the person's current weather, including wind and heat", () => {
@@ -55,8 +55,9 @@ test("nice-day description and extensible table use the person's current weather
   assert.match(desc, /calm/);
   assert.doesNotMatch(desc, /18 to 30|dry, sunny/);
   const table = niceDayTable(s).value;
-  for (const label of ["Temperature", "Rain", "Sun / cloud", "Heat", "Wind", "Humidity", "Daylight"]) assert.ok(table.includes(label));
-  assert.match(table, /No separate percentages/);
+  for (const label of ["Temperature", "Dry", "Sunny", "Heat", "Calm", "Not muggy", "Daylight"]) assert.ok(table.includes(label));
+  assert.match(table, /annual count, not each test/);
+  assert.equal((table.match(/id="nt-calm"/g) ?? []).length, 1, "each weather switch occurs once, in its definition row");
   s.profile.cities = ["lisbon-pt", "london-gb"];
   assert.match(windImpact(s).value, /days excluded a year/);
 });

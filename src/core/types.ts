@@ -112,6 +112,8 @@ export interface RightsArea {
 }
 
 export interface Dataset {
+  /** Snapshot membership, preserved when a person's fetched places are merged in. */
+  publishedCityIds?: string[];
   version: string;
   builtAt: string;
   cities: City[];
@@ -145,6 +147,8 @@ export interface Permit {
 }
 
 export interface Person {
+  /** Routes the person confirms apply, by destination country. No route is inferred from nationality. */
+  entryRoutes?: Record<string, string>;
   label: string;
   /** Passports: citizenship, and the free movement it brings. */
   citizenships: Iso2[];

@@ -89,11 +89,13 @@ npm test                         # engine, money model and tax modules
 
 ## In the browser
 
-A first visit starts in your region with five cities whose money figures are complete, and shows what an example salary leaves each month after tax, rent and everyday spending. Type your own salary and it takes over.
+A first visit starts empty, with no assumed cities, salary, spending or household. Guided setup helps you add your own choices; you can skip it, return to any step or reset the comparison.
 
-<p><img src="docs/media/first-visit.webp" width="880" alt="Borgo's first screen for North America: Montreal, Vancouver, Toronto, Dublin and London, with what 60,000 euros a year leaves each month after tax, rent and everyday spending, from 1,505 euros in Montreal to 552 in London, and a note that New York, San Francisco, Boston, Austin, Seattle and Chicago wait for a missing figure"></p>
+<p><img src="docs/media/first-visit.webp" width="880" alt="Example comparison with cities and a salary entered: Montreal, Vancouver, Toronto, Dublin and London, with money left after tax, rent and spending"></p>
 
-Money left and nice days start the score at half each, and a third priority such as health or safety is one click away. Nice days are yours to define: a feels-like range, 18 to 30 °C to start, and the tests a day must pass.
+Money left and Weather start the score at half each, and a third priority such as health or safety is one click away. **Suggest cities for me** offers the five highest-scoring published cities not already chosen, with two leading reasons and one-click add. The CLI has `borgo suggest` and MCP has `suggest_cities`. Right-to-live difficulty uses [sourced, person-confirmed routes](docs/entry-routes.md), not blanket country verdicts. It is a rough guide, not legal advice.
+
+Nice days are yours to define: a feels-like range, 18 to 30 °C to start, and the tests a day must pass.
 
 <p><img src="docs/media/nice-days.webp" width="880" alt="The nice-day editor open over a comparison of Lisbon and San Francisco: a feels-like range from 18 to 30 degrees, dry and sunny ticked, not muggy and calm left off, and a minimum of daylight"></p>
 
@@ -103,11 +105,11 @@ How each screen behaves, the map that colours the world by your own values, and 
 
 ## How the score works
 
-Each line turns one figure into a score from 0 to 1 between a fixed worst and best (fine dust from 35 µg/m³ down to the WHO guideline of 5), and your weight decides how many of the 100 points it can give. Three rules keep gaps from deciding the answer:
+Each line turns one figure into a score from 0 to 1 between a fixed worst and best (fine dust from 35 µg/m³ down to the WHO guideline of 5), and your weight decides how many of the 100 points it can give. Three rules make the score and its limits explicit:
 
-- **A missing figure never scores better than a real one.** A city without a figure on a line scores as the lowest of your other cities there, and is marked "Partial data".
-- **Money is never filled in.** When a city lacks rent or a cost that is due, every city is compared on take-home pay alone, and one line names the input that would fix it.
-- **A *must pass* line passes, fails or is unknown.** An unknown city ranks after every city that passes.
+- **Fixed scores do not depend on other cities.** A missing line does not count for that city, and its row says so. Thin coverage can favour an incomplete city: read its gaps and provisional bounds, not just the score. Relative scoring is opt-in.
+- **Money is never filled in.** A city's fallback uses its own known take-home pay less compulsory premiums, else known costs, else no money score. Notes name its basis and the input to add; other cities keep their own scores.
+- **A Required line filters without taking score share.** It passes, fails or is unknown; unknown cities rank after those that pass. Turning Required off restores the line's weight.
 
 "What you keep" is take-home pay after tax and pension contributions, minus rent, everyday spending scaled by the city's prices, childcare after public support, and health costs. The full rules are in [docs/architecture.md](docs/architecture.md#35-engine-and-merge), the tax models and newcomer regimes in [docs/tax-regimes.md](docs/tax-regimes.md).
 

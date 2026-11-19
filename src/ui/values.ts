@@ -1,11 +1,10 @@
 import { CRITERIA, politicsWord, stanceOf, type Criterion } from "../core/criteria.ts";
-import { criteriaFor, weightOf } from "../core/engine.ts";
+import { criteriaFor, evaluate, weightOf } from "../core/engine.ts";
 import { grouped, type Group } from "../core/groups.ts";
-import type { Person, Profile } from "../core/types.ts";
-import { PERMIT_KINDS } from "../core/rights.ts";
+import type { Profile } from "../core/types.ts";
 import { niceTestsShort, rangeButton } from "./cards.ts";
 import { html, type Raw } from "./dom.ts";
-import { passportOptions, problemsFor, regionName } from "./top.ts";
+import { passportOptions, problemsFor } from "./top.ts";
 import { CURRENCIES, money } from "./format.ts";
 import { shortLabel } from "./glance.ts";
 import { PRESETS, type AppState } from "./state.ts";
@@ -22,29 +21,32 @@ export function share(weight: number, total: number): string {
 const PART_MAX = 100;
 const GROUP_MAX = 100;
 
-function dial(id: string, label: string, weight: number, total: number, o: { personal?: boolean; mustPass?: boolean; canBreak?: boolean; question?: string; stance?: Raw }): Raw {
+function dial(id: string, label: string, weight: number, total: number, o: { personal?: boolean; mustPass?: boolean; canBreak?: boolean; question?: string; stance?: Raw; missing?: string[] }): Raw {
   return html`<li class="vline ${o.personal ? "is-personal" : ""} ${o.stance ? "is-position" : ""} ${weight === 0 ? "is-zero" : ""}">
     <label class="val-n" for="w-${id}" title="${o.question ?? ""}">${label}</label>
-    <output class="val-p num" id="o-${id}" for="w-${id}">${share(weight, total)} of score</output>
-    <input type="range" id="w-${id}" min="0" max="${PART_MAX}" step="1" value="${weight}" data-weight="${id}" style="--fill:${((Math.min(weight, PART_MAX) / PART_MAX) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
+    <output class="val-p num" id="o-${id}" for="w-${id}">${o.mustPass ? "requirement, not scored" : `${share(weight, total)} of score`}</output>
+    <input type="range" id="w-${id}" min="0" max="${PART_MAX}" step="1" value="${weight}" data-weight="${id}" ${o.mustPass ? "disabled" : ""} style="--fill:${((Math.min(weight, PART_MAX) / PART_MAX) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
 
     ${o.personal ? html`<button class="link val-x" data-act="remove-line" data-id="${id}">Remove</button>` : ""}
     ${o.stance ?? ""}
+    ${o.canBreak ? html`<label class="check"><input type="checkbox" data-act="toggle-breaker" data-id="${id}" ${o.mustPass ? "checked" : ""}> Required: rule out cities that fail</label><small class="hint">A requirement filters cities; it takes no share of the score.</small>` : ""}
+    ${o.missing?.length ? html`<small class="hint">No figure for ${o.missing.join(", ")}, so it does not count there.</small>` : ""}
   </li>`;
 }
 
 /** Where you stand on a position line: a choice of steps, or a left-to-right slider. Unset until you set it. */
 function stanceControl(c: Criterion, stance: number | undefined): Raw {
   const spec = c.position!;
+  const toggle = html`<label class="check"><input type="checkbox" data-act="stance-toggle" data-id="${c.id}" ${stance === undefined ? "" : "checked"}> On</label>`;
   if (spec.levels) {
-    return html`<label class="stance"><span class="stance-k">You want</span><select data-stance="${c.id}" aria-label="Where you stand: ${c.label}">
+    return html`<div class="stance">${toggle}<label><span class="stance-k">You want</span><select data-stance="${c.id}" aria-label="Where you stand: ${c.label}">
       <option value="" ${stance === undefined ? "selected" : ""}>Not said</option>
       ${spec.levels.map((l) => html`<option value="${l.value}" ${stance === l.value ? "selected" : ""}>${l.label}</option>`)}
-    </select></label>`;
+    </select></label></div>`;
   }
   const v = stance ?? (spec.min + spec.max) / 2;
   return html`<div class="stance stance-range ${stance === undefined ? "is-unset" : ""}">
-    <span class="stance-k">You</span>
+    ${toggle}<span class="stance-k">You want</span>
     <span class="stance-end">${spec.ends![0]}</span>
     <input type="range" min="${spec.min}" max="${spec.max}" step="${spec.step}" value="${v}" data-stance="${c.id}" aria-label="Where you stand: ${c.label}, ${spec.ends![0]} ${spec.min} to ${spec.ends![1]} ${spec.max}" aria-valuetext="${stance === undefined ? "not said" : `${politicsWord(v)}, ${v}`}">
     <span class="stance-end">${spec.ends![1]}</span>
@@ -96,7 +98,7 @@ function alsoSummary(p: Profile, parts: Criterion[], lead: string): string {
 /** The dial's name on the first view: the lead line's own name while it is the only part that counts. */
 function leadLabel(p: Profile, g: Group, parts: Criterion[]): string {
   const lead = LEADS[g.id];
-  if (!lead) return g.label;
+  if (!lead || g.id === "climate") return g.label;
   const only = parts.every((c) => c.id === lead || weightOf(p, c) === 0);
   return only ? shortLabel(parts.find((c) => c.id === lead) ?? { id: lead, label: g.label }) : g.label;
 }
@@ -108,7 +110,7 @@ const NOT_THIRD = new Set(["money", "climate", "right_to_live", "stand", "own"])
 /** What a third priority starts at, shared over its parts by their default weights. */
 export const THIRD_WEIGHT = 10;
 
-function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o: { first?: boolean; noMust?: boolean } = {}): Raw {
+function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o: { first?: boolean; noMust?: boolean; missing?: Record<string, string[]> } = {}): Raw {
   const p = s.profile;
   const weight = parts.reduce((t, c) => t + weightOf(p, c), 0);
   const single = parts.length === 1 && g.id !== "own" && g.id !== "stand";
@@ -123,6 +125,7 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
           canBreak: !!c.fails || !!c.position,
           mustPass: p.dealBreakers.includes(c.id),
           question: c.question,
+          missing: o.missing?.[c.id],
           stance: c.position ? stanceControl(c, stanceOf(p, c.id)) : undefined,
         });
   const only = single ? parts[0]! : null;
@@ -130,16 +133,17 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
     <div class="vline vg-head">
       <label class="val-n" for="wg-${g.id}" title="${g.question}">${label}</label>
       <output class="val-p num" id="og-${g.id}" for="wg-${g.id}">${share(weight, total)} of score</output>
-      <input type="range" id="wg-${g.id}" min="0" max="${max}" step="1" value="${Math.round(weight)}" data-group-weight="${g.id}" style="--fill:${((Math.min(weight, max) / max) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
+      <input type="range" id="wg-${g.id}" min="0" max="${max}" step="1" value="${Math.round(weight)}" data-group-weight="${g.id}" ${parts.length && parts.every((c) => p.dealBreakers.includes(c.id)) ? "disabled" : ""} style="--fill:${((Math.min(weight, max) / max) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
 
     </div>
+    ${only && (only.fails || only.position) ? html`<label class="check"><input type="checkbox" data-act="toggle-breaker" data-id="${only.id}" ${p.dealBreakers.includes(only.id) ? "checked" : ""}> Required: rule out cities that fail</label><small class="hint">${p.dealBreakers.includes(only.id) ? "Requirement, not scored." : "A requirement filters cities, without taking a score share."}</small>` : ""}
     ${g.id === "climate" ? niceDaysLine(s) : ""}
     ${g.id === "ambition" ? workLine(s) : ""}
     ${single
       ? ""
       : html`<button class="vg-toggle" data-act="group" data-id="${g.id}" aria-expanded="${open}" aria-controls="vg-${g.id}"><span>${open ? "Close" : g.id === "own" && !parts.length ? "Add a line of your own" : lead ? alsoSummary(p, parts, lead) || partsSummary(p, parts) : partsSummary(p, parts)}</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>`}
     ${open
-      ? html`<div class="vg-parts" id="vg-${g.id}"><p class="vs-lede">These lines split ${g.label}'s <span id="sg-${g.id}">${share(weight, total)}</span> share. Their shares of your score add up to the group's share (rounding may differ by 1%). Moving a line also changes the group total.</p>
+      ? html`<div class="vg-parts" id="vg-${g.id}"><p class="vs-lede">Lines split ${g.label}'s <span id="sg-${g.id}">${share(weight, total)}</span> share; moving one changes the total.</p>
           ${g.id === "stand" ? html`<p class="vs-lede">Say where you stand and a place scores by how close it is; nothing is assumed about you.</p>` : ""}
           ${g.id === "own" ? html`<p class="vs-lede">What no dataset knows: family nearby, a partner's job, a feeling. Score each city 1 to 5 in its dossier or in Compare.</p>` : ""}
           ${parts.length ? html`<ul class="vals">${parts.map(part)}</ul>` : ""}
@@ -150,36 +154,28 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
   </li>`;
 }
 
-/** What else a person holds beyond the first passport, in a few words: "+ US passport, permanent residence in Germany". */
-function moreRights(s: AppState, x: Person): string {
-  const more = [
-    ...x.citizenships.slice(1).map((c) => `${regionName(c)} passport`),
-    ...(x.permits ?? []).filter((r) => r.where).map((r) => `${PERMIT_KINDS[r.kind].label.toLowerCase()} in ${(s.data.rights ?? []).find((a) => a.id === r.where)?.name ?? regionName(r.where)}`),
-  ];
-  return more.length ? `+ ${more.join(", ")}` : "";
-}
-
 /** Right to live and work: a check, not a dial. A passport per person here; more passports and other rights behind "For You". */
 function eligibility(s: AppState): Raw {
   const p = s.profile;
   const people = p.household.length ? p.household : [{ label: "You", citizenships: [] as string[] }];
   const must = p.dealBreakers.includes("right_to_live");
   return html`<section class="elig" aria-labelledby="elig-h">
-    <div class="elig-head"><h3 class="val-n" id="elig-h">Right to live and work</h3><button class="must ${must ? "is-on" : ""}" data-act="toggle-breaker" data-id="right_to_live" aria-pressed="${must}" title="Rule out a city where someone moving would need to apply for a visa or permit">Require everyone to qualify</button></div>
+    <div class="elig-head"><h3 class="val-n" id="elig-h">Right to live and work</h3><button class="must ${must ? "is-on" : ""}" data-act="toggle-breaker" data-id="right_to_live" aria-pressed="${must}" title="Rule out a city where someone moving would need to apply for a visa or permit">Required: existing rights</button></div>
     <ul class="elig-people">${people.map(
-      (x, i) => html`<li><label for="e${i}-pass">${x.label || "Someone"}</label><select id="e${i}-pass" data-person="${i}" data-field="citizenship"><option value="">Passport not given</option>${passportOptions(x.citizenships[0] ?? "")}</select>${moreRights(s, x) ? html`<span class="elig-more">${moreRights(s, x)}</span>` : ""}</li>`,
+      (x, i) => html`<li><label for="e${i}-pass">${x.label || "Someone"}</label><select id="e${i}-pass" data-person="${i}" data-field="citizenship"><option value="">Passport not given</option>${passportOptions(x.citizenships[0] ?? "")}</select>${i > 0 ? html`<button class="chip-x" data-act="remove-person" data-i="${i}" aria-label="Remove ${x.label || "this person"}">×</button>` : ""}</li>`,
     )}</ul>
-    <p class="vs-lede">A requirement, not a score weight: turn it on to rule out cities where someone cannot qualify. Passports, free movement, and rights you already hold, such as permanent residence, a work visa or an EU Blue Card. Each sheet says yes, no or not checked. <button class="link" data-act="household">${(p.household[0]?.citizenships.length ?? 0) > 1 || p.household.some((h) => h.permits?.length) ? "Edit passports and rights" : "Add another passport or right"}</button>${p.household.length > 1 ? "" : html` · <button class="link" data-act="household">Add someone</button>`}</p>
+    <p class="vs-lede">Rule out cities that fail: everyone must already be allowed. Entry difficulty is a rough guide, not legal advice. <button class="link" data-act="household">${(p.household[0]?.citizenships.length ?? 0) > 1 || p.household.some((h) => h.permits?.length) ? "Edit passports and rights" : "Add another passport or right"}</button>${p.household.length > 1 ? "" : html` · <button class="link" data-act="household">Add someone</button>`}</p>
   </section>`;
-}
-
-function exclusions(s: AppState, criteria: Criterion[]): Raw {
-  return html`<details class="exclusions"><summary>Rule cities out, regardless of score</summary><p>These are requirements, not weights. A failing city is ruled out even with a high score. A requirement that cannot be checked is shown as unknown.</p>${criteria.filter((c) => (c.fails || c.position) && c.id !== "right_to_live").map((c) => html`<p><button class="must ${s.profile.dealBreakers.includes(c.id) ? "is-on" : ""}" data-act="toggle-breaker" data-id="${c.id}" aria-pressed="${s.profile.dealBreakers.includes(c.id)}">Require: ${c.label}</button><span class="hint">${c.question}</span></p>`)}</details>`;
 }
 
 export function valuesSheet(s: AppState): Raw {
   const p = s.profile;
   const crit = criteriaFor(p);
+  const missing: Record<string, string[]> = {};
+  for (const r of evaluate(s.data, p).results) for (const l of r.lines) {
+    const c = crit.find((c) => c.id === l.id)!;
+    if (l.raw.value === null && (!c.applies || c.applies(p))) (missing[l.id] ??= []).push(r.city.name);
+  }
   const presetActive = PRESETS.find((pr) => CRITERIA.every((c) => (p.weights[c.id] ?? c.defaultWeight) === (pr.weights[c.id] ?? c.defaultWeight)))?.id;
   const total = crit.reduce((t, c) => t + weightOf(p, c), 0);
   const groups = grouped(crit).filter(({ group }) => !group.shows || group.shows(p));
@@ -199,10 +195,10 @@ export function valuesSheet(s: AppState): Raw {
   return html`<div class="vs-fold ${s.valuesOpen ? "is-open" : ""}"><button class="vs-sum" data-act="fold" aria-expanded="${s.valuesOpen}" aria-controls="vs-body"><span>What matters</span><span class="quiet">${on} of ${groups.length} count · ${s.valuesOpen ? "close" : "edit"}</span></button>
     <div class="vs-body" id="vs-body">
     <h2 class="sh">What matters</h2>
-    <p class="vs-lede">How much does each priority count for you compared with the others? Each percentage is its ${term("share", "share")} of your score, not a savings rate or money amount. Sliders set relative importance from 0 to 100, not percentages. To give one priority 100% of the score, set every other priority to zero.</p>
-    <ul class="vals vgroups">${firstTwo.map(({ group, parts }) => groupBlock(s, group, parts, total, { first: true }))}${third ? groupBlock(s, third.group, third.parts, total) : picker}</ul>
+    <p class="vs-lede">Set relative importance; each percentage is a ${term("share", "Share")} of your score, not money.</p>
+    <ul class="vals vgroups">${firstTwo.map(({ group, parts }) => groupBlock(s, group, parts, total, { first: true, missing }))}${third ? groupBlock(s, third.group, third.parts, total, { missing }) : picker}</ul>
     ${eligibility(s)}
-    ${exclusions(s, crit)}
+
     <button class="more" data-act="more" aria-expanded="${s.moreOpen}" aria-controls="more-body">More priorities<span class="more-n">${restOn.length ? ` · ${restOn.length} more count, ${share(restShare, total)}` : " · nothing else counts"}</span></button>
     ${s.moreOpen
       ? html`<div class="more-body" id="more-body">
@@ -210,11 +206,11 @@ export function valuesSheet(s: AppState): Raw {
         <div class="presets" role="group" aria-label="Start from">
           ${PRESETS.map((pr) => html`<button class="pill-btn ${presetActive === pr.id ? "is-on" : ""}" aria-pressed="${presetActive === pr.id}" data-act="preset" data-id="${pr.id}">${pr.label}</button>`)}
         </div>
-        <ul class="vals vgroups">${rest.map(({ group, parts }) => groupBlock(s, group, parts, total, { noMust: group.id === "right_to_live" }))}</ul>
+        <ul class="vals vgroups">${rest.map(({ group, parts }) => groupBlock(s, group, parts, total, { noMust: group.id === "right_to_live", missing }))}</ul>
         <h3 class="vs-h">How each line is scored</h3>
         <div class="seg" role="radiogroup" aria-label="How each line is scored">
           <button role="radio" aria-checked="${p.prefs.normalise === "absolute"}" data-act="normalise" data-mode="absolute" title="Each value against a fixed best and worst">Fixed</button>
-          <button role="radio" aria-checked="${p.prefs.normalise === "relative"}" data-act="normalise" data-mode="relative" title="Best of your cities scores full marks">Against your cities</button>
+          <button role="radio" aria-checked="${p.prefs.normalise === "relative"}" data-act="normalise" data-mode="relative" title="Best of your cities scores full marks">Relative (opt-in): against your cities</button>
         </div>
       </div>`
       : ""}
@@ -231,7 +227,7 @@ function payFields(s: AppState, i: number): Raw {
   const perCity = pay.mode === "per-city";
   const cur = html`<select data-pay="${i}" data-pay-field="currency" aria-label="Currency of ${who.toLowerCase()} pay">${CURRENCIES.map((c) => html`<option ${c === pay.currency ? "selected" : ""}>${c}</option>`)}</select>`;
   const alone = own && p.household.slice(1).every((x) => !x.pay && !x.spouse);
-  return html`<fieldset class="earner"><legend class="${alone ? "sr" : ""}">${own ? "You" : person?.label || "Someone"}</legend>
+  return html`<fieldset class="earner"><legend class="${alone ? "sr" : ""}">${own ? "You" : person?.label || "Someone"}${!own ? html` <button type="button" class="chip-x" data-act="remove-person" data-i="${i}" aria-label="Remove ${person?.label || "this person"}">×</button>` : ""}</legend>
     <label class="fld">Gross pay a year${perCity ? ", where not set per city" : ""}<span class="fld-row"><input id="pay-${i}" type="number" inputmode="numeric" min="0" step="1000" value="${pay.gross || ""}" placeholder="${own ? "e.g. 60000" : "0 if they do not earn"}" data-pay="${i}" data-pay-field="gross">${cur}</span></label>
     ${problemsFor(s, own ? "salary" : `household[${i}].salary`)}
     <label class="check tick"><input type="checkbox" id="per-city-${i}" data-act="pay-mode" data-i="${i}" ${perCity ? "checked" : ""}> Differs by city</label>${perCity ? html`<p class="vs-lede">Set it on each city, here in Money or on its sheet.</p>` : ""}

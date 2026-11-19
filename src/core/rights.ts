@@ -1,3 +1,4 @@
+import { ENTRY_LABEL, ENTRY_POINTS, selectedEntryRoute, type EntryLevel } from "./entry-routes.ts";
 import type { Dataset, Iso2, Permit, PermitKind, Person } from "./types.ts";
 
 /** "yes": a right through citizenship, free movement or a permit the person holds; "no": none applies; "unknown": nothing given to check. */
@@ -5,6 +6,9 @@ export type RightStatus = "yes" | "no" | "unknown";
 
 export interface RightResult {
   person: string;
+  entryLevel?: EntryLevel;
+  entryScore?: number | null;
+  entryEvidence?: { route: string; source: string; url: string; period: string; retrieved: string; licence: string; licenceUrl: string; level: "country"; country: string };
   /** True only when the right is established (status "yes"). */
   allowed: boolean;
   status: RightStatus;
@@ -111,13 +115,23 @@ export function rightToLiveWork(data: Dataset, person: Person, country: Iso2, on
     allowed: false,
     status: "no",
     via: "",
-    text: `No automatic right to live and work in ${place}: ${why.join("; ")}. Living there needs a residence and work permit from ${place}; Borgo does not model permits.`,
+    text: `No automatic right to live and work in ${place}: ${why.join("; ")}. Living there needs a residence and work permit from ${place}.`,
     sources: [...new Map(areas.map((a) => [a.source, cite(a.source, a.name)])).values()],
   };
 }
 
 export function householdRights(data: Dataset, household: Person[], country: Iso2, on?: string): RightResult[] {
-  return household.map((p) => rightToLiveWork(data, p, country, on));
+  return household.map((p) => {
+    const right = rightToLiveWork(data, p, country, on);
+    const route = selectedEntryRoute(p, country);
+    const level: EntryLevel = right.allowed ? "already" : route ? route.level : "not-checked";
+    return {
+      ...right, entryLevel: level, entryScore: ENTRY_POINTS[level],
+      ...(route && !right.allowed ? { entryEvidence: { route: route.id, source: route.source, url: route.url, period: route.period, retrieved: route.read, licence: route.licence, licenceUrl: route.licenceUrl, level: "country" as const, country } } : {}),
+      text: `${right.text}${route && !right.allowed ? ` Entry difficulty: ${ENTRY_LABEL[level]}. ${route.label}: ${route.fact} Assumes you confirm: ${route.conditions}. Rough guide, not legal advice (${route.period}).` : !right.allowed && right.status !== "unknown" ? " Entry difficulty: not checked; no applicable route is confirmed." : ""}`,
+      sources: [...right.sources, ...(route && !right.allowed ? [{ name: `${route.source} · ${route.period} · ${route.licence}`, url: route.url }] : [])],
+    };
+  });
 }
 
 /** Whether anything is given for this person to check: a passport or another right. */

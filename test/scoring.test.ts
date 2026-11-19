@@ -11,7 +11,7 @@ import { fixture, profile } from "./fixture.ts";
 
 const data = fixture();
 const zero = Object.fromEntries(CRITERIA.map((c) => [c.id, 0]));
-const missing = (m: Profile["prefs"]["missing"]): Profile["prefs"] => ({ comfort: { min: 12, max: 24 }, normalise: "absolute", missing: m });
+const missing = (m: Profile["prefs"]["missing"]): Profile["prefs"] => ({ comfort: { min: 12, max: 24 }, normalise: "relative", missing: m });
 const line = (r: { lines: { id: string }[] }, id: string) => r.lines.find((l) => l.id === id) as ReturnType<typeof evaluate>["results"][number]["lines"][number];
 
 // Personal lines score (v - 1) / 4, so 3.4 is 0.6, 1.8 is 0.2, 3 is 0.5.
@@ -32,7 +32,7 @@ function twoLines(cities: string[], scores: Record<string, [number, number | und
   );
 }
 
-test("adding a last-placed city cannot reverse the winner through a gap (the imputation counterexample)", () => {
+test("relative opt-in: adding a last-placed city cannot raise a gap through imputation", () => {
   const A = "turin-it", B = "dublin-ie", C = "london-gb";
   const scores: Record<string, [number, number | undefined]> = { [A]: [3.4, 1.8], [B]: [3, undefined], [C]: [1, 5] };
   const before = twoLines([A, B], scores);
@@ -66,10 +66,10 @@ test("a gap never scores above any city that has a figure on that line", () => {
 // San Francisco's compulsory health premium is given, so its money is whole and only the case under test is missing.
 const premium = { "san-francisco-us": { health_premium: 400 } };
 
-test("money is compared on one basis for every city: take-home pay when a rent is missing, and says which rent to add", () => {
+test("relative opt-in: money uses one basis for the set and names the missing rent", () => {
   const d = fixture();
   d.observations["dublin-ie"] = d.observations["dublin-ie"]!.filter((o) => o.metric !== "rent_1bed");
-  const e = evaluate(d, profile({ weights: { ...zero, money_left: 20 }, overrides: premium }));
+  const e = evaluate(d, profile({ weights: { ...zero, money_left: 20 }, overrides: premium, prefs: { ...profile().prefs, normalise: "relative" } }));
   for (const r of e.results) {
     const l = line(r, "money_left");
     assert.equal(l.basis, "take-home pay less any compulsory health premium (rent and spending not counted)");
@@ -81,12 +81,12 @@ test("money is compared on one basis for every city: take-home pay when a rent i
   assert.ok(Math.abs(line(sf, "money_left").raw.value! - (sf.money.display.net! / 12 - 400 / 1.1)) < 1e-9);
   assert.match(e.notes.join(" "), /Money left each month is scored on take-home pay .* because Dublin has no figure: add your rent for Dublin\./);
   // With the same salary everywhere, take-home differs only by tax: a real rent cannot sink one city below another that lacks it.
-  const full = evaluate(fixture(), profile({ weights: { ...zero, money_left: 20 }, overrides: premium }));
+  const full = evaluate(fixture(), profile({ weights: { ...zero, money_left: 20 }, overrides: premium, prefs: { ...profile().prefs, normalise: "relative" } }));
   assert.ok(full.results.every((r) => line(r, "money_left").basis === null), "with every rent known, money left is itself");
 });
 
-test("money with no salary anywhere is scored on cost alone; with neither, it counts for no city", () => {
-  const noPay = profile({ weights: { ...zero, money_left: 20 }, overrides: premium, income: { ...profile().income, gross: 0 } });
+test("relative opt-in: no salary uses shared costs; with neither, money counts for no city", () => {
+  const noPay = profile({ weights: { ...zero, money_left: 20 }, overrides: premium, prefs: { ...profile().prefs, normalise: "relative" }, income: { ...profile().income, gross: 0 } });
   const e = evaluate(data, noPay);
   assert.ok(e.results.every((r) => line(r, "money_left").basis === "cost a month (pay not counted)"));
   assert.match(e.notes.join(" "), /because no city has a figure: add a salary/);
@@ -97,10 +97,10 @@ test("money with no salary anywhere is scored on cost alone; with neither, it co
   assert.match(out.notes.join(" "), /left out of the score for every city/);
 });
 
-test("the real snapshot: no seed city gains on money from a missing rent", async () => {
+test("relative opt-in snapshot: money is never imputed and uses a shared basis", async () => {
   const { loadDataset } = await import("../src/agent/dataset.ts");
   const ds = loadDataset();
-  const p = profile({ cities: ds.cities.map((c) => c.id), household: [], income: { ...profile().income, gross: 100_000 } });
+  const p = profile({ cities: ds.cities.map((c) => c.id), household: [], prefs: { ...profile().prefs, normalise: "relative" }, income: { ...profile().income, gross: 100_000 } });
   const e = evaluate(ds, p);
   const ml = e.results.map((r) => line(r, "money_left"));
   assert.ok(ml.every((l) => !l.imputed), "money is never imputed");

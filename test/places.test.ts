@@ -186,7 +186,7 @@ test("gaps: a place in a country without a tax model or free-movement rules says
   const r = ev.results.find((x) => x.city.id === "tel-aviv-il")!;
   assert.ok(r.coverage < 1);
   const gaps = resultGaps(d, r);
-  assert.ok(gaps.some((g) => g.why === "no figure here yet"), "lines with no figure are listed too");
+  assert.ok(gaps.some((g) => g.why === "no figure for Tel Aviv, so it does not count there"), "lines with no figure are listed too");
   assert.match(gapsShort(gaps), /^no tax model for Israel yet, no exchange rate for ILS, no free-movement rules; no figure for .+/);
 });
 

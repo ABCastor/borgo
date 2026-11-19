@@ -1,6 +1,7 @@
 import { WORK_BY_ID } from "../core/work.ts";
 import { CRITERIA, DEFAULT_COMFORT, upgradeProfile } from "../core/criteria.ts";
 import { monthlyFrom } from "../core/money.ts";
+import { cleanEntryRoutes } from "../core/entry-routes.ts";
 import { cleanPermits } from "../core/rights.ts";
 import { PRESETS } from "../core/presets.ts";
 import type { Dataset, Profile } from "../core/types.ts";
@@ -9,6 +10,16 @@ import type { RegionId } from "../core/visit-region.ts";
 import type { VisitFrom } from "./first-visit.ts";
 
 export { PRESETS };
+
+/** Adding pay reuses a matching person with no pay instead of creating a second partner. */
+export function addEarner(p: Profile, label: string): void {
+  if (!p.household.length) p.household.push({ label: "You", citizenships: [] });
+  const relation = label === "Partner" ? "partner" : "cofounder";
+  const existing = p.household.slice(1).find((h) => h.relation === relation && !h.pay);
+  if (existing) existing.pay = { gross: 0, currency: p.income.currency };
+  else p.household.push({ label, citizenships: [], relation, pay: { gross: 0, currency: p.income.currency } });
+}
+
 
 const STORAGE_KEY = "borgo:profile:v1";
 /** The older key, still read when this browser holds no profile under the current one. */
@@ -301,7 +312,7 @@ export function loadProfile(data: Dataset, region?: RegionId): Profile {
   p.household = (Array.isArray(p.household) ? p.household : []).map((h) => {
     const permits = cleanPermits(h.permits);
     const { permits: _drop, ...rest } = h;
-    return { ...rest, citizenships: Array.isArray(h.citizenships) ? h.citizenships.filter((c) => typeof c === "string" && /^[A-Z]{2}$/.test(c)) : [], ...(permits.length ? { permits } : {}) };
+    return { ...rest, entryRoutes: cleanEntryRoutes(h.entryRoutes), citizenships: Array.isArray(h.citizenships) ? h.citizenships.filter((c) => typeof c === "string" && /^[A-Z]{2}$/.test(c)) : [], ...(permits.length ? { permits } : {}) };
   });
   if (p.work !== undefined && !WORK_BY_ID[p.work]) delete p.work;
   notFoundOnLoad = p.cities.filter((id) => !data.cities.some((c) => c.id === id));

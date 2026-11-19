@@ -800,11 +800,11 @@ function legend(s: AppState): Raw {
   } else {
     rows.push(
       !ui.span
-        ? html`<div class="mlg-row"><span class="mlg-what">${ui.lens === "score" ? "Every city on the map is ruled out by a must-pass line. Turn one off in What matters to see them scored." : `No city on the map has data on ${lensLabel(ui.lens, s).toLowerCase()} yet.`}</span></div>`
+        ? html`<div class="mlg-row"><span class="mlg-what">${ui.lens === "score" ? "Every city on the map is ruled out by a required line. Turn one off in What matters to see them scored." : `No city on the map has data on ${lensLabel(ui.lens, s).toLowerCase()} yet.`}</span></div>`
         : rampBar(lo, hi, ui.lens === "score" ? html`<b>Cities:</b> your score, as each would score among your cities${ends}` : html`<b>Cities:</b> ${lensLabel(ui.lens, s).toLowerCase()}${/ a (year|month)$/.test(lensText(ui.span.hi)) ? lensText(ui.span.hi).match(/ a (year|month)$/)![0] : ""}${ends}`),
     );
     rows.push(land);
-    if (s.profile.dealBreakers.includes("right_to_live") && hasPassports(s)) rows.push(html`<div class="mlg-row"><span class="mlg-sw is-faint"></span><span class="mlg-what">Faint land: countries your must-pass right to live rules out</span></div>`);
+    if (s.profile.dealBreakers.includes("right_to_live") && hasPassports(s)) rows.push(html`<div class="mlg-row"><span class="mlg-sw is-faint"></span><span class="mlg-what">Faint land: countries your Required right to live rules out</span></div>`);
   }
   const fadeOut = Math.round(ui.fade * 100);
   return html`<div class="mlg">${rows}
@@ -857,7 +857,7 @@ export function mapShell(s: AppState): Raw {
       <h2 class="sh">Colour the world by</h2>
       <div id="map-lens" class="ml">${lensPicker(s)}</div>
     </div>
-    <p class="mhow">City dots follow the selected lens. On Your score, only the dots change with your priorities: the land still shows temperature-range months, because global work and money figures are not available. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p>
+    <details class="map-help"><summary>Map help</summary><p class="mhow">City dots follow the selected lens. On Your score, only the dots change with your priorities: the land still shows temperature-range months, because global work and money figures are not available. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p></details>
     <div class="mstage" id="map-stage">
       <canvas id="map-canvas" tabindex="0" role="application" aria-roledescription="map" aria-label="${mapLabel(s)}"></canvas>
       <div class="mzoom" role="group" aria-label="Zoom">

@@ -20,12 +20,14 @@ export interface LineResult {
   failed: boolean;
   /** As a must-pass: observed to pass, observed to fail, or unknown (no figure, or not everyone checked). */
   check: Check;
-  /** No figure for this city: scored at the lowest score a compared city has on the line, or 0 (Preferences.missing). */
+  /** Opt-in relative scoring only: a gap filled at the lowest peer score or zero. Fixed scoring never imputes. */
   imputed: boolean;
   /** Scored on an observed figure. Coverage counts only these, whatever the missing-data policy. */
   observed: boolean;
   /** Set when the line is scored on another basis for every city (money left on take-home pay). */
   basis: string | null;
+  /** A local explanation, never an invented world median. */
+  explanation?: string;
 }
 
 export interface CityResult {
@@ -102,7 +104,7 @@ export function criteriaFor(profile: Profile): Criterion[] {
 }
 
 export function weightOf(profile: Profile, c: Criterion): number {
-  if (c.applies && !c.applies(profile)) return 0;
+  if (profile.dealBreakers?.includes(c.id) || (c.applies && !c.applies(profile))) return 0;
   const w = profile.weights[c.id];
   return w === undefined ? c.defaultWeight : Number.isFinite(w) ? Math.min(100, Math.max(0, w)) : 0;
 }
@@ -205,24 +207,59 @@ function prepare(s: Setup, city: City): Prepared {
 export function evaluate(data: Dataset, profile: Profile): Evaluation {
   const s = setup(data, profile);
   const cities = profile.cities.map((id) => cityById(data, id)).filter((c): c is City => !!c);
-  return scoreSet(s, cities.map((c) => prepare(s, c)));
+  const prepared = cities.map((c) => prepare(s, c));
+  if (profile.prefs.normalise === "relative") return scoreSet(s, prepared);
+  // Fixed scoring is city-local, including missing figures and money's fallback basis.
+  // A new comparison must never change an existing city's numerator or denominator.
+  const singles = prepared.map((p) => scoreSet(s, [p]));
+  const results = singles.flatMap((e) => e.results);
+  const tier = (r: CityResult) => r.ruledOut.length ? 2 : r.unresolved.length ? 1 : 0;
+  results.sort((a, b) => tier(a) - tier(b) || b.total - a.total || a.city.id.localeCompare(b.city.id));
+  results.forEach((r, i) => r.rank = i + 1);
+  const leader = results[0];
+  const rivals = leader ? results.slice(1).filter((r) => tier(r) === tier(leader) && r.bounds.high > leader.bounds.low) : [];
+  const uncertain = new Map<string, string[]>();
+  if (rivals.length) for (const r of [leader!, ...rivals]) for (const l of r.lines) {
+    if (l.weight > 0 && (l.raw.value === null || l.basis)) uncertain.set(l.label, [...(uncertain.get(l.label) ?? []), r.city.name]);
+  }
+  const reasons = [...uncertain].map(([line, names]) => `${line}: no figure for ${listNames([...new Set(names)])} on the requested basis.`);
+  const bases = singles.map((e) => e.moneyBasis).filter((b) => b !== null);
+  return {
+    results, weightTotal: criteriaFor(profile).reduce((n, c) => n + weightOf(profile, c), 0),
+    notes: localNotes(singles, prepared),
+    moneyBasis: bases.length && bases.every((b) => b.used === bases[0]!.used) ? bases[0]! : null,
+    provisional: rivals.length > 0, provisionalReasons: reasons, rivals: rivals.map((r) => r.city.name),
+  };
 }
 
-/**
- * Each candidate scored as if the person added it to their cities, with the numbers evaluate() would then give it
- * (missing data and relative scoring both depend on the set). Cities already chosen keep their own result.
- */
+/** Combine identical local notes without repeating the same explanation for each city. */
+function localNotes(singles: Evaluation[], prepared: Prepared[]): string[] {
+  const groups = new Map<string, string[]>();
+  singles.forEach((e, i) => e.notes.forEach((n) => {
+    const note = n.replaceAll("counts for no city", "does not count here").replaceAll("for every city", "here").replaceAll("no city has a figure", "a figure is missing");
+    groups.set(note, [...(groups.get(note) ?? []), prepared[i]!.city.name]);
+  }));
+  return [...groups].map(([note, names]) => `${listNames(names)}: ${note}`);
+}
+
+/** Candidates match evaluate() after adding them; only opt-in relative scoring depends on the set. */
 export function scoreCandidates(data: Dataset, profile: Profile, candidates: string[]): Map<string, CityResult> {
   const s = setup(data, profile);
   const chosen = profile.cities.map((id) => cityById(data, id)).filter((c): c is City => !!c).map((c) => prepare(s, c));
   const out = new Map<string, CityResult>();
-  for (const r of scoreSet(s, chosen).results) out.set(r.city.id, r);
+  for (const r of evaluate(data, profile).results) out.set(r.city.id, r);
   for (const id of candidates) {
     if (out.has(id)) continue;
     const city = cityById(data, id);
     if (!city) continue;
-    const r = scoreSet(s, [...chosen, prepare(s, city)]).results.find((x) => x.city.id === id);
-    if (r) out.set(id, r);
+    const r = scoreSet(s, profile.prefs.normalise === "relative" ? [...chosen, prepare(s, city)] : [prepare(s, city)]).results.find((x) => x.city.id === id);
+    if (r) {
+      if (profile.prefs.normalise !== "relative") {
+        const tier = (x: CityResult) => x.ruledOut.length ? 2 : x.unresolved.length ? 1 : 0;
+        r.rank = 1 + [...out.values()].filter((x) => profile.cities.includes(x.city.id) && (tier(x) < tier(r) || tier(x) === tier(r) && (x.total > r.total || x.total === r.total && x.city.id.localeCompare(r.city.id) < 0))).length;
+      }
+      out.set(id, r);
+    }
   }
   return out;
 }
@@ -281,7 +318,7 @@ function scoreSet(s: Setup, prepared: Prepared[]): Evaluation {
       const why = lacking.length === prepared.length ? "no city has a figure" : `${listNames(lacking.map((p) => p.city.name))} ${lacking.length === 1 ? "has" : "have"} no figure`;
       const texts = new Set(lacking.map((p) => p.raws[i]!.text));
       const first = lacking[0]!.raws[i]!.text;
-      const next = lacking.length === prepared.length && texts.size === 1 ? first.charAt(0).toLowerCase() + first.slice(1) : nextFor(lacking[0]!.city.name, first);
+      const next = profile.prefs.normalise === "relative" && lacking.length === prepared.length && texts.size === 1 ? first.charAt(0).toLowerCase() + first.slice(1) : nextFor(lacking[0]!.city.name, first);
       if (fb) {
         raws = prepared.map((p) => p.fallbacks[i]![j]!);
         scale = fb.scale(profile, data);
@@ -318,7 +355,7 @@ function scoreSet(s: Setup, prepared: Prepared[]): Evaluation {
     const ownObserved = ownValues.map(ownScorer);
     const range = (r: Raw): [number, number] | null => {
       if (r.value !== null) return [ownScorer(r.value), ownScorer(r.value)];
-      if (!ownObserved.length) return c.sameBasis ? [0, r.upperBound !== undefined ? ownScorer(r.upperBound) : 1] : null;
+      if (!ownObserved.length) return profile.prefs.normalise !== "relative" || c.sameBasis ? [0, r.upperBound !== undefined ? ownScorer(r.upperBound) : 1] : null;
       let lo = Math.min(...ownObserved, ...(policy === "worst" ? [0] : []));
       let hi = Math.max(...ownObserved);
       if (r.upperBound !== undefined) {
@@ -345,13 +382,17 @@ function scoreSet(s: Setup, prepared: Prepared[]): Evaluation {
           imputed = true;
         }
       }
-      const check = checkOf(c, raw, plan.worst, plan.best);
+      // Entry difficulty and existing rights answer different questions: an applicable future route
+      // can be scored without proving an existing right, and an unchecked passport is not a known failure.
+      const check: Check = c.id === "right_to_live"
+        ? p.rights.some((r) => r.status === "no") ? "fail" : !p.rights.length || p.rights.some((r) => r.status === "unknown") ? "unknown" : "pass"
+        : checkOf(c, raw, plan.worst, plan.best);
       return {
         id: c.id,
         label: c.label,
         question: c.question,
         personal: c.category === "personal",
-        raw: plan.basis ? scored : raw,
+        raw: raw.value === null && !plan.basis && c.category !== "access" && !c.sameBasis && (!c.applies || c.applies(profile)) ? { ...raw, text: `No figure for ${p.city.name}, so it does not count there (${raw.text}).` } : plan.basis ? scored : raw,
         score,
         weight: weights[i]!,
         points: 0,
@@ -365,7 +406,13 @@ function scoreSet(s: Setup, prepared: Prepared[]): Evaluation {
     const scoredWeight = lines.reduce((s, l) => s + (l.score === null ? 0 : l.weight), 0);
     const observedWeight = lines.reduce((s, l) => s + (l.observed ? l.weight : 0), 0);
     const ownWeight = lines.reduce((s, l, i) => s + (p.raws[i]!.value !== null ? l.weight : 0), 0);
-    for (const l of lines) l.points = l.score === null || scoredWeight === 0 ? 0 : (100 * l.weight * l.score) / scoredWeight;
+    for (const l of lines) {
+      l.points = l.score === null || scoredWeight === 0 ? 0 : (100 * l.weight * l.score) / scoredWeight;
+      l.explanation = profile.dealBreakers.includes(l.id) ? "Required: filters cities, not scored."
+        : l.score === null ? l.raw.text
+        : !l.weight ? `${l.raw.text}; this line is off, so it changes no score.`
+        : `${l.raw.text}; ${Math.round(l.score * 100)}/100 on this line, contributing ${l.points.toFixed(1)} points.${Math.abs(l.score - 0.5) < 0.025 ? " About the middle of the fixed scale, so it neither helps nor hurts relative to that midpoint." : ""}`;
+    }
     const total = lines.reduce((s, l) => s + l.points, 0);
     // The total on the lines as asked, with each gap at the ends of its range: what this city could score.
     let wSum = 0;

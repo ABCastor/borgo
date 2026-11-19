@@ -460,7 +460,7 @@ export function comparePage(site: Site, data: Dataset, c: CompareFacts): Page {
       ${[ra, rb].map((r) => html`<div class="duel-side"><a class="duel-city" href="${root}${`city/${r.city.id}/`}">${r.city.name}</a><span class="duel-score num">${Math.round(r.total)}<small>/100</small></span><span class="hint">${cov(r)}% of the weight rests on real data for this city</span></div>`)}
     </div>
     ${c.drivers.length ? html`<p>The lines that move the score most: ${c.drivers.map((d, i) => html`${i ? "; " : ""}${d.label.toLowerCase()} (${d.leader.name}, +${num(d.points, 1)} points)`)}.</p>` : ""}
-    <p class="hint">Balanced weights are the app's starting point, not a judgement: weights are set by you. Where a city lacks a figure, it gets the average score of the two on that line, so missing data neither helps nor hurts.</p>
+    <p class="hint">Balanced weights are the app's starting point, not a judgement: weights are set by you. Fixed scoring leaves out a city's missing lines; adding another city never changes its score. Check coverage and gaps, since fewer figures can favour an incomplete city.</p>
 
     <h2>Line by line</h2>
     <table class="doc-table cmp-table"><thead><tr><th>Line</th><th>${A.name}</th><th>${B.name}</th></tr></thead><tbody>

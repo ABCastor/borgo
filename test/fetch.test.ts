@@ -149,7 +149,11 @@ test("engine: a fetched city is scored like a snapshot city, and its figures rep
   const sun = palermo.lines.find((l) => l.id === "sunshine")!;
   assert.equal(sun.raw.value, 2725);
   assert.equal(sun.imputed, false, "Palermo's sunshine is its own figure, not the others' average");
-  assert.equal(ev.results.find((r) => r.city.id === "turin-it")!.lines.find((l) => l.id === "sunshine")!.imputed, true);
+  const turinSun = ev.results.find((r) => r.city.id === "turin-it")!.lines.find((l) => l.id === "sunshine")!;
+  assert.equal(turinSun.imputed, false, "fixed scoring never borrows Palermo's sunshine");
+  assert.equal(turinSun.score, null);
+  assert.match(turinSun.raw.text, /No figure for Torino, so it does not count there/);
+  assert.deepEqual(merged.publishedCityIds, d.cities.map((c) => c.id), "fetching does not turn a private place into a published suggestion");
   // Re-fetching Turin's PM2.5 from CAMS replaces only that source's figure, not the snapshot's other figures.
   const turin = { city: d.cities[0]!, observations: [{ metric: "pm25", value: 15, period: "2025", level: "city" as const, source: "test", retrieved: "2026-10-27" }], outcomes: [], fetchedAt: NOW.toISOString() };
   const again = withFetched(d, [turin]);

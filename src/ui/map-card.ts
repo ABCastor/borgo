@@ -53,7 +53,7 @@ function takeHome(m: MoneyResult): Raw | "" {
 }
 
 function figure(l: LineResult): Raw {
-  const v = l.failed ? "must pass, fails" : l.imputed || l.score === null ? "no figure" : localText(l.raw.text);
+  const v = l.failed ? "Required, fails" : l.imputed || l.score === null ? "no figure" : localText(l.raw.text);
   return html`<li><span class="mc-k">${shortLabel(l)}</span> <span>${v}</span></li>`;
 }
 

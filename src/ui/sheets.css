@@ -186,6 +186,11 @@ body.app ::selection { background: light-dark(#E8D9CD, #4A3326); }
 .val-p { font: 700 15px/1.3 var(--cond); color: var(--human-ink); }
 .vline.is-zero .val-n, .vline.is-zero .val-p { color: var(--quiet); }
 .vline input[type="range"] { grid-column: 1 / -1; }
+.vline > .check, .vline > .hint { grid-column: 1 / -1; min-width: 0; }
+.vline > .check { display: flex; align-items: center; gap: 6px; margin: 7px 0 2px; font-size: 13px; }
+.vline > .hint { display: block; margin: 3px 0; line-height: 1.45; }
+.stance > label { min-width: 0; }
+.elig-people .chip-x { flex-shrink: 0; }
 .vline .must { grid-row: 1; grid-column: 2; margin: 0; }
 .vline .val-p { grid-row: 1; grid-column: 3; }
 .vline .val-x { grid-row: 1; grid-column: 2; font-size: 12px; }

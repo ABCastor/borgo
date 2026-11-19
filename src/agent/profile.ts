@@ -1,5 +1,6 @@
 // Builds a full engine Profile from the few arguments an agent or a terminal passes, and says which
 // defaults it filled in, so nothing is assumed silently.
+import { cleanEntryRoutes } from "../core/entry-routes.ts";
 import { CRITERIA, DEFAULT_COMFORT, niceTestsText } from "../core/criteria.ts";
 import { profileProblems } from "../core/engine.ts";
 import { METRICS } from "../core/metrics.ts";
@@ -86,6 +87,8 @@ export interface PeriodAmount {
 }
 
 export interface HouseholdArg {
+  /** Only routes whose conditions the person confirms apply: country -> route id. */
+  entryRoutes?: Record<string, string>;
   label?: string;
   /** Passports if known (ISO alpha-2). Leave out to skip this person's right-to-live check: never guess them. */
   passports?: string[];
@@ -217,6 +220,7 @@ export function buildProfile(data: Dataset, args: QueryArgs): BuiltProfile {
       label,
       citizenships: (p.passports ?? []).map((c) => c.toUpperCase()),
       ...(permits.length ? { permits } : {}),
+      entryRoutes: cleanEntryRoutes(p.entryRoutes),
       ...(Object.keys(newcomer).length ? { newcomer } : {}),
       ...(i > 0 && p.spouse ? { spouse: true } : {}),
       ...(i > 0 ? { relation: p.relation ?? (p.spouse ? "partner" : "family") } : {}),

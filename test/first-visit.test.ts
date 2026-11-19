@@ -23,7 +23,7 @@ test("a newcomer sees a five-step skippable walkthrough, and can reopen it", () 
   assert.match(top, /The best place to live, for you/);
   assert.match(top, /Borgo is yours. It ranks cities on what you value/);
   assert.match(top, /Every number shows its source/);
-  for (const name of ["Cities", "What matters", "Money", "People and right to live", "Nice days: the weather"]) assert.ok(top.includes(name));
+  for (const name of ["Cities", "Priorities", "Money", "People", "Weather"]) assert.ok(top.includes(name));
   assert.match(top, /Skip walkthrough/);
   assert.match(top, /Guided setup/);
   assert.match(top, /Reset/);

@@ -117,11 +117,11 @@ test("sources that agree in level and time are consolidated into their median", 
   assert.ok(r.others.some((o) => o.source === "third"));
 });
 
-test("a city without a figure scores the lowest score a compared city has on that line; coverage counts only real data", () => {
+test("opt-in relative gap policies remain available; coverage counts only real data", () => {
   const d = fixture();
   d.observations["dublin-ie"] = d.observations["dublin-ie"]!.filter((o) => o.metric !== "pm25");
   const weights = Object.fromEntries(["money_left", "living_cost", "right_to_live", "climate_comfort", "winter_light", "sunshine", "dry_days", "safety", "long_life", "happiness", "builders"].map((k) => [k, 0]));
-  const e = evaluate(d, profile({ weights: { ...weights, clean_air: 10 } }));
+  const e = evaluate(d, profile({ weights: { ...weights, clean_air: 10 }, prefs: { ...profile().prefs, normalise: "relative" } }));
   const dub = e.results.find((r) => r.city.id === "dublin-ie")!;
   const air = dub.lines.find((l) => l.id === "clean_air")!;
   assert.equal(air.imputed, true);
@@ -130,12 +130,12 @@ test("a city without a figure scores the lowest score a compared city has on tha
   assert.equal(air.score, Math.min(...others));
   assert.equal(dub.coverage, 0);
   // "worst" scores the gap 0 and still counts it as no data.
-  const worst = evaluate(d, profile({ weights: { ...weights, clean_air: 10 }, prefs: { comfort: { min: 12, max: 24 }, normalise: "absolute", missing: "worst" } }));
+  const worst = evaluate(d, profile({ weights: { ...weights, clean_air: 10 }, prefs: { comfort: { min: 12, max: 24 }, normalise: "relative", missing: "worst" } }));
   const w = worst.results.find((r) => r.city.id === "dublin-ie")!;
   assert.equal(w.lines.find((l) => l.id === "clean_air")!.score, 0);
   assert.equal(w.coverage, 0);
   // "skip" leaves the line out for every city, so no city is scored on fewer lines than another.
-  const skip = evaluate(d, profile({ weights: { ...weights, clean_air: 10 }, prefs: { comfort: { min: 12, max: 24 }, normalise: "absolute", missing: "skip" } }));
+  const skip = evaluate(d, profile({ weights: { ...weights, clean_air: 10 }, prefs: { comfort: { min: 12, max: 24 }, normalise: "relative", missing: "skip" } }));
   assert.ok(skip.results.every((r) => r.lines.find((l) => l.id === "clean_air")!.score === null));
   assert.match(skip.notes.join(" "), /Clean air is left out for every city/);
 });
