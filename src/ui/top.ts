@@ -291,7 +291,7 @@ function intro(s: AppState, _e: Evaluation): Raw {
 export function topQuestion(s: AppState, e: Evaluation): Raw {
   const rank = new Map(e.results.map((r) => [r.city.id, r]));
   const chosen = s.profile.cities.map((id) => s.data.cities.find((c) => c.id === id)).filter((c) => !!c).sort((a, b) => (rank.get(a!.id)?.rank ?? 99) - (rank.get(b!.id)?.rank ?? 99));
-  return html`${aiSetup()}${intro(s, e)}<section class="ask" aria-label="Your comparison">
+  return html`${intro(s, e)}${aiSetup()}<section class="ask" aria-label="Your comparison">
     <div class="ask-row">
       ${whoButton(s)}
       <ul class="roster" aria-label="Your cities, best first">${chosen.map((c) => {

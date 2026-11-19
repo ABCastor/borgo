@@ -145,6 +145,25 @@ test("suggestions exclude selected cities, use exactly their added scores, suppl
   assert.ok(suggestCities(merged, p).every((c) => c.id !== fetched.city.id), "unpublished cached places are not suggested");
 });
 
+test("suggestions put cities with figures for most weighted lines ahead of cities with gaps", () => {
+  const p = profile({ cities: [], weights: { ...zero, clean_air: 50, winter_light: 50 } });
+  let checked = 0;
+  for (const city of fixture().cities) {
+    const d = fixture();
+    d.observations[city.id] = (d.observations[city.id] ?? []).filter((o) => o.metric !== "pm25");
+    const all = [...scoreCandidates(d, p, d.cities.map((c) => c.id)).values()];
+    const gap = all.find((r) => r.city.id === city.id)!;
+    const full = all.filter((r) => r.city.id !== city.id && r.coverage === 1);
+    if (gap.coverage === 1 || !full.some((r) => r.total < gap.total)) continue;
+    checked++;
+    const order = suggestCities(d, p).map((c) => c.id);
+    const lastFull = Math.max(...full.map((r) => order.indexOf(r.city.id)).filter((i) => i >= 0));
+    const at = order.indexOf(city.id);
+    assert.ok(at === -1 || at > lastFull, `${city.id}, missing clean air, outranks a fully covered city`);
+  }
+  assert.ok(checked > 0, "the fixture has a gap city scoring above a fully covered one");
+});
+
 test("CLI and MCP expose suggestions with profile parity and no sending or browser mutation", async () => {
   const [clientSide, serverSide] = InMemoryTransport.createLinkedPair();
   const server = createServer(fixture());
