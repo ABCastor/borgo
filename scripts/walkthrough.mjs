@@ -8,7 +8,7 @@ import { join, extname, resolve } from 'node:path';
 import { tmpdir } from 'node:os';
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE ?? 'playwright');
 const root = resolve('dist');
-const out = resolve(process.env.SHOTS_DIR ?? 'docs/round-ix-a-shots');
+const out = resolve(process.env.SHOTS_DIR ?? '/tmp/borgo-walkthrough');
 await mkdir(out, { recursive: true });
 const server = createServer(async (req, res) => {
   try {
