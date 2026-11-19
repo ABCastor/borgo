@@ -1,3 +1,6 @@
+import { AI_PROMPT } from "./onboarding.ts";
+import { emptyProfile } from "./state.ts";
+import { niceDefinition } from "./cards.ts";
 import { politicsWord } from "../core/criteria.ts";
 import { criteriaFor, evaluate, profileProblems, weightOf, type Evaluation } from "../core/engine.ts";
 import { chooseWork, grouped, splitGroupWeight } from "../core/groups.ts";
@@ -9,7 +12,6 @@ import { browserRoute, makeCtx } from "../fetch/context.ts";
 import { BROWSER_FETCHERS, fetchCity, withFetched } from "../fetch/index.ts";
 import { resolvePlace } from "../places/resolve.ts";
 import { lazyFiles, partFiles, withCity, withParts, type PartFile } from "../registry/licences.ts";
-import { shortlistOf } from "./first-visit.ts";
 import { defaultTests } from "../core/weather-days.ts";
 import { citiesView, comfortEditor } from "./cards.ts";
 import { climateOf, drawHours, hourReadout, narrow } from "./climate.ts";
@@ -443,7 +445,7 @@ function editPopover(cityId: string, metric: string): string {
 
 function showTip(el: HTMLElement): void {
   const tip = $("#tip");
-  const text = TERMS[el.dataset.term ?? ""];
+  const text = el.dataset.term === "comfortable" ? niceDefinition(state.profile.prefs.comfort) : TERMS[el.dataset.term ?? ""];
   if (!text) return;
   tip.textContent = local(text);
   tip.hidden = false;
@@ -555,18 +557,46 @@ function onClick(e: MouseEvent): void {
       });
       document.getElementById(`p${state.profile.household.length - 1}-pass`)?.focus();
       return;
-    case "region": {
-      // Start from another region's cities: its shortlist, with the everyday spending guess based in its first city.
-      const region = regionById(t.dataset.region).id;
-      const list = shortlistOf(state.data, region, state.profile);
-      if (!list.length) return;
-      state.visit = { region };
-      setProfile((p) => {
-        p.cities = [...list];
-        if (p.income.everyday?.assumed) p.income.everyday.homeCity = list[0]!;
+    case "reset":
+      if (!confirm("Reset this comparison? This clears your cities, money, people, weights, weather choices and own figures. Cached public city data stays available.")) return;
+      closePopover();
+      liveEpoch++;
+      state.profile = emptyProfile(state.data);
+      state.live = null;
+      state.notFound = [];
+      state.refused = [];
+      state.openGroups = [];
+      state.moreOpen = false;
+      state.shareInclude = [];
+      state.intro = true;
+      state.onboardingStep = 0;
+      saveProfile(state.profile);
+      location.hash = "#/";
+      state.view = "cities";
+      state.city = null;
+      render();
+      return;
+    case "setup-open":
+      state.intro = true;
+      state.onboardingStep = 0;
+      renderLive();
+      return;
+    case "setup-step":
+      state.onboardingStep = Math.max(0, Math.min(4, Number(t.dataset.step) || 0));
+      renderLive();
+      document.getElementById("intro-h")?.scrollIntoView({ block: "start" });
+      return;
+    case "copy-ai":
+      navigator.clipboard.writeText(AI_PROMPT).then(() => {
+        const status = document.getElementById("ai-copy-status");
+        if (status) status.textContent = "Copied";
+      }).catch(() => {
+        const field = document.getElementById("ai-prompt") as HTMLTextAreaElement | null;
+        field?.select();
+        const status = document.getElementById("ai-copy-status");
+        if (status) status.textContent = "Select and copy the prompt above.";
       });
       return;
-    }
     case "intro-hide":
       hideIntro();
       state.intro = false;
@@ -695,7 +725,7 @@ function onClick(e: MouseEvent): void {
     case "focus": {
       // A next input named in the answer: the field it means, scrolled to and focused.
       const target = t.dataset.target ?? "";
-      if (/^e\d+-pass$/.test(target) && !state.valuesOpen && innerWidth < 820) {
+      if ((/^e\d+-pass$/.test(target) || target.startsWith("wg-")) && !state.valuesOpen && innerWidth < 820) {
         // On a phone the values sheet is folded: open it to reach the passport.
         state.valuesOpen = true;
         renderApp();
@@ -854,7 +884,7 @@ function refreshShares(active: HTMLInputElement | null): void {
   for (const c of crit) {
     const w = weightOf(p, c);
     const out = document.getElementById(`o-${c.id}`);
-    if (out) out.textContent = share(w, total);
+    if (out) out.textContent = `${share(w, total)} of score`;
     const el = document.getElementById(`w-${c.id}`) as HTMLInputElement | null;
     if (el && el !== active) el.value = String(w);
     if (el) fill(el, w);
@@ -863,7 +893,9 @@ function refreshShares(active: HTMLInputElement | null): void {
   for (const { group, parts } of grouped(crit)) {
     const w = parts.reduce((s, c) => s + weightOf(p, c), 0);
     const out = document.getElementById(`og-${group.id}`);
-    if (out) out.textContent = share(w, total);
+    if (out) out.textContent = `${share(w, total)} of score`;
+    const splitShare = document.getElementById(`sg-${group.id}`);
+    if (splitShare) splitShare.textContent = share(w, total);
     const el = document.getElementById(`wg-${group.id}`) as HTMLInputElement | null;
     if (el && el !== active) el.value = String(Math.round(w));
     if (el) fill(el, w);
@@ -1179,13 +1211,16 @@ function scrollToAdding(): void {
   });
 }
 
+let liveEpoch = 0;
 async function fetchLive(text: string, shown = text, fromMap = false): Promise<void> {
+  const epoch = ++liveEpoch;
   state.live = { query: shown, label: "", name: shown.split(",")[0]!.trim(), sources: [] };
   if (state.view === "cities") scrollToAdding();
   renderLive();
   const ctx = makeCtx({ runtime: "browser", route: browserRoute(location.origin) });
   try {
     const found = await resolvePlace(text, ctx, { countries: state.data.countries, known: state.data.cities, limit: 1, towns: browserTowns });
+    if (epoch !== liveEpoch) return;
     const pick = found[0];
     if (!pick) throw new Error(`No place called "${shown}" was found. Try adding the country: "${shown}, IT".`);
     if (pick.known) {
@@ -1199,12 +1234,14 @@ async function fetchLive(text: string, shown = text, fromMap = false): Promise<v
     renderLive();
     const fetched = await fetchCity(pick.city, ctx, BROWSER_FETCHERS, {
       onProgress: (o) => {
+        if (epoch !== liveEpoch) return;
         const row = state.live?.sources.find((x) => x.source === o.source);
         if (!row) return;
         Object.assign(row, o);
         renderLive();
       },
     });
+    if (epoch !== liveEpoch) return;
     if (!fetched.outcomes.some((o) => o.status === "ok")) throw new Error(`None of the sources answered for ${pick.city.name}. Check the connection and try again.`);
     saveFetchedCity(fetched);
     state.data = withFetched(state.data, [fetched]);
@@ -1213,6 +1250,7 @@ async function fetchLive(text: string, shown = text, fromMap = false): Promise<v
     if (state.view === "map" || fromMap) pinCity(fetched.city.id);
     setProfile((p) => p.cities.push(fetched.city.id));
   } catch (err) {
+    if (epoch !== liveEpoch) return;
     if (state.live) state.live.error = err instanceof Error ? err.message : String(err);
     renderLive();
   }

@@ -1,3 +1,4 @@
+import { canvasPoint, canvasBuffer, scoreShade } from "./map-geometry.ts";
 import { criteriaFor, scoreCandidates, weightOf, type CityResult } from "../core/engine.ts";
 import { project } from "../core/equal-earth.ts";
 import { rightToLiveWork } from "../core/rights.ts";
@@ -98,7 +99,7 @@ function lenses(s: AppState): Lens[] {
  */
 function lensValue(r: CityResult | undefined): number | null {
   if (!r) return null;
-  if (ui.lens === "score") return r.ruledOut.length ? null : r.total / 100;
+  if (ui.lens === "score") return r.ruledOut.length ? null : scoreShade(r.total);
   const l = r.lines.find((x) => x.id === ui.lens);
   if (!l || l.score === null || l.imputed || l.raw.value === null) return null;
   const sc = ui.scale;
@@ -108,7 +109,7 @@ function lensValue(r: CityResult | undefined): number | null {
 
 /** A city's shade: its value stretched over the lowest to highest city on the map, so differences show. */
 function shade(v: number | null): number | null {
-  if (v === null || !ui.span) return v;
+  if (v === null || !ui.span || ui.lens === "score") return v;
   const { min, max } = ui.span;
   return max - min < 1e-9 ? 1 : (v - min) / (max - min);
 }
@@ -188,7 +189,11 @@ function readPalette(host: HTMLElement): Palette {
 
 const mix = (a: number[], b: number[], t: number) => a.map((x, i) => Math.round(x + (b[i]! - x) * t));
 const rgb = (c: number[]) => `rgb(${c[0]} ${c[1]} ${c[2]})`;
-const ramp = (p: Palette, t: number) => rgb(mix(p.lo, p.hi, Math.max(0, Math.min(1, t))));
+const ramp = (p: Palette, t: number) => {
+  const v = Math.max(0, Math.min(1, t));
+  const mid = [241, 228, 201];
+  return rgb(v < 0.5 ? mix(p.lo, mid, v * 2) : mix(mid, p.hi, (v - 0.5) * 2));
+};
 /** The land's own scale, lighter than the cities' so their dots stay on top of it: one hue, darker with more months. */
 const landRamp = (p: Palette, t: number) => rgb(mix(p.land, p.landHi, Math.max(0, Math.min(1, t))));
 
@@ -290,18 +295,22 @@ function draw(): void {
     ui.W = W;
     ui.H = H;
     cv.style.height = `${H}px`;
-    cv.width = Math.round(W * dpr);
-    cv.height = Math.round(H * dpr);
+
     if (!ui.fitted) {
       fit(s, map, "cities");
       ui.fitted = true;
     }
     clampView(map);
   }
+  const [bw, bh] = canvasBuffer(W, H, dpr);
+  if (cv.width !== bw || cv.height !== bh) {
+    cv.width = bw;
+    cv.height = bh;
+  }
   if (!ui.palette) ui.palette = readPalette(stage);
   const p = ui.palette;
   const ctx = cv.getContext("2d")!;
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.setTransform(cv.width / W, 0, 0, cv.height / H, 0, 0);
   ctx.clearRect(0, 0, W, H);
 
   // Land tiles, grouped by colour so each colour is one fill. A wider gap where two countries meet.
@@ -499,13 +508,17 @@ function at(map: WorldMap, s: AppState, x: number, y: number): Target | null {
     const reach = (s.profile.cities.includes(c.id) ? rd + 5 : rd + 3) + 4;
     if (d < reach && d < bd) [best, bd] = [{ kind: "city", id: c.id }, d];
   }
-  if (best) return best;
+  // A nearby seed city's generous hit target must not swallow a town directly under the pointer,
+  // especially on a zoomed-out phone map (Riyadh used to open Dubai).
+  const place = nearestPlace(map, x, y);
+  const pp = place ? toScreen(map, ...project(place[3], place[2])) : null;
+  if (best && (!pp || bd <= Math.hypot(pp[0] - x, pp[1] - y) + 0.5)) return best;
   const [X, Y] = toWorld(map, x, y);
   const col = Math.floor((X - map.x0) / map.pitch);
   const row = Math.floor((map.y0 - Y) / map.pitch);
   const tile = ui.byCell.get(cell(col, row));
   if (tile === undefined) return null;
-  return { kind: "land", tile, place: nearestPlace(map, x, y) };
+  return { kind: "land", tile, place };
 }
 
 /** The populated place nearest the pointer, within reach of it on screen (bigger reach when zoomed out). */
@@ -523,7 +536,7 @@ function nearestPlace(map: WorldMap, x: number, y: number): WorldMap["places"][n
 
 function local(e: PointerEvent): [number, number] {
   const r = canvas()!.getBoundingClientRect();
-  return [e.clientX - r.left, e.clientY - r.top];
+  return canvasPoint(e.clientX, e.clientY, r, ui.W, ui.H);
 }
 
 function onDown(e: PointerEvent): void {
@@ -634,7 +647,8 @@ function onWheel(e: WheelEvent): void {
   if (!map || !(e.ctrlKey || e.metaKey)) return;
   e.preventDefault();
   const r = canvas()!.getBoundingClientRect();
-  zoomAt(map, e.clientX - r.left, e.clientY - r.top, Math.exp(-e.deltaY * 0.01));
+  const [x, y] = canvasPoint(e.clientX, e.clientY, r, ui.W, ui.H);
+  zoomAt(map, x, y, Math.exp(-e.deltaY * 0.01));
 }
 
 function zoomAt(map: WorldMap, x: number, y: number, f: number): void {
@@ -759,7 +773,7 @@ function lensPicker(s: AppState): Raw {
 /** The two ends of the cities' colour scale: the lowest and the highest city on the map, in the value's own words. */
 function scaleEnds(): [string, string] {
   if (!ui.span) return ["", ""];
-  if (ui.lens === "score") return [`${Math.round(ui.span.lo.total)}`, `${Math.round(ui.span.hi.total)} / 100`];
+  if (ui.lens === "score") return ["0", "100 / 100"];
   // Short ends: the unit's words ("nice days a year", "a month") are in the sentence beside the scale.
   const short = (r: CityResult) => lensText(r).replace(/ nice days a year$| days a year$| a year$| a month$/, "");
   return [short(ui.span.lo), short(ui.span.hi)];
@@ -843,7 +857,7 @@ export function mapShell(s: AppState): Raw {
       <h2 class="sh">Colour the world by</h2>
       <div id="map-lens" class="ml">${lensPicker(s)}</div>
     </div>
-    <p class="mhow"><span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p>
+    <p class="mhow">City dots follow the selected lens. On Your score, only the dots change with your priorities: the land still shows temperature-range months, because global work and money figures are not available. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p>
     <div class="mstage" id="map-stage">
       <canvas id="map-canvas" tabindex="0" role="application" aria-roledescription="map" aria-label="${mapLabel(s)}"></canvas>
       <div class="mzoom" role="group" aria-label="Zoom">

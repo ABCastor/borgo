@@ -228,3 +228,19 @@ input, select { caret-color: var(--human); accent-color: var(--human); }
 .live-list li.is-ok > span:last-child { color: var(--machine); }
 .live-list li.is-failed > span:last-child { color: var(--fail); }
 .live-list li.is-waiting, .live-list li.is-skipped { opacity: .65; }
+
+/* Guided setup remains usable without a pointer or a wide viewport. */
+.setup-steps, .setup-controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.setup-steps [aria-current="step"] { background: var(--ink); color: var(--sheet); }
+.ai-setup { margin-top: 20px; border-top: 1px solid var(--rule); padding-top: 12px; }
+.ai-setup summary, .exclusions summary { cursor: pointer; font-weight: 600; }
+.ai-setup textarea { display: block; width: 100%; min-height: 150px; margin: 10px 0; box-sizing: border-box; font: inherit; }
+.ai-setup code { overflow-wrap: anywhere; }
+.exclusions { border: 1px solid var(--rule); border-left: 4px solid var(--fail); padding: 12px; margin: 20px 0; }
+.exclusions .hint { display: block; }
+.nice-definition { border-collapse: collapse; width: 100%; font-size: 13px; }
+.nice-definition caption { text-align: left; font-weight: 700; margin: 12px 0; }
+.nice-definition th, .nice-definition td { padding: 8px 5px; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; }
+.nice-definition th:first-child { width: 22%; }
+.val-p { white-space: nowrap; font-size: 12px; }
+.wind-impact ul { padding-left: 18px; }

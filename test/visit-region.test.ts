@@ -50,8 +50,8 @@ test("each region's shortlist: up to five of its candidates, in order, each with
     assert.ok(list.length > 0 && list.length <= 5, `${r.id}: ${list}`);
     const order = list.map((id) => r.candidates.indexOf(id));
     assert.deepEqual(order, [...order].sort((a, b) => a - b), `${r.id} keeps the candidates' order`);
-    const p = firstProfile(data, r.id);
-    assert.deepEqual(p.cities, list);
+    const p = defaultProfile(data, list);
+    assert.deepEqual(firstProfile(data, r.id).cities, [], "first visits no longer use the reference shortlist");
     for (const id of list) assert.ok(wholeMoney(money(data, exampleProfile(p), data.cities.find((c) => c.id === id)!)), `${id} has whole money`);
   }
   // Europe starts from the cities the reference pages use; Amsterdam's money leaves out the health premium, so a list
@@ -63,36 +63,16 @@ test("each region's shortlist: up to five of its candidates, in order, each with
   assert.ok(!shortlist(data, "europe", base, 12).includes("amsterdam-nl"));
 });
 
-test("before a salary, the answer shows what an example salary leaves, says it is an example, and why these cities", () => {
-  const p = firstProfile(data, "north-america");
-  const s = app(p, { visit: { region: "north-america", country: "US" } });
-  const v = text(verdict(s, evaluate(data, p)));
-  assert.match(v, /What €60,000 a year before tax leaves you each month, after tax, rent for one bedroom/);
-  assert.match(v, /An example until you type your salary above/);
-  assert.match(v, /This visit comes from the United States \(read from the request, never kept\)/);
-  assert.match(v, /New York, San Francisco, Boston, Austin, Seattle and Chicago wait for a figure that is still missing/);
-  assert.match(v, /Start from Europe , Latin America , Asia and Oceania or the Middle East and Africa instead/);
-  assert.equal(p.income.gross, defaultProfile(data).income.gross, "the example never becomes the person's salary");
-  assert.notEqual(p.income.gross, EXAMPLE_GROSS);
-  // Each row is the money of a city with every figure, highest first.
-  const rows = [...exampleMoney(data, p, s.visit).value.matchAll(/<li><a href="#\/city\/([^"]+)">/g)].map((m) => m[1]);
-  assert.deepEqual([...rows].sort(), [...p.cities].sort());
-  // With a salary, the person's own money takes over: no example.
-  const own = { ...p, income: { ...p.income, gross: 70_000 } };
-  assert.doesNotMatch(text(verdict(app(own), evaluate(data, own))), /An example/);
-  // Shown in US dollars, the example salary and spending are in US dollars too, each labelled with the euros it
-  // came from, so no euro figure sits beside the dollar rows unexplained.
-  const usd = { ...p, displayCurrency: "USD" };
-  const inUsd = text(exampleMoney(data, usd, s.visit));
-  const $ = (eur: number) => `US$${Math.round((eur / 1) * data.fx.rates.USD!).toLocaleString("en-GB")}`;
-  assert.match(inUsd, new RegExp(`What ${$(EXAMPLE_GROSS).replace("$", "\\$")} \\(converted from €60,000\\) a year before tax`));
-  assert.match(inUsd, new RegExp(`and ${$(p.income.everyday!.amount).replace("$", "\\$")} \\(converted from €1,200\\) of everyday spending`));
-  assert.equal(inUsd.replace(/\(converted from €[\d,]+\)/g, "").includes("€"), false, "every other figure is in dollars");
-  assert.match(text(exampleMoney(data, p, s.visit)), /What €60,000 a year/, "in euros it says so once, with nothing converted");
-  assert.doesNotMatch(text(exampleMoney(data, p, s.visit)), /converted/);
-  // Once the person changes the cities, the reason for the region's list is not given any more.
-  const moved = { ...p, cities: [...p.cities.slice(1), "berlin-de"] };
-  assert.doesNotMatch(text(exampleMoney(data, moved, s.visit)), /This visit comes from/);
+test("before a salary, first visits are empty in every region and never display example money", () => {
+  for (const region of REGIONS) {
+    const p = firstProfile(data, region.id);
+    assert.deepEqual(p.cities, []);
+    assert.equal(p.income.gross, 0);
+    assert.equal(p.income.everyday, null);
+    const v = text(verdict(app(p), evaluate(data, p)));
+    assert.match(v, /Add the cities you are weighing/);
+    assert.doesNotMatch(v, /60,000|example|fits you best/);
+  }
 });
 
 test("the split data: the core has no figures, the per-city files put every figure back, the shortlists are the app's", () => {
@@ -103,15 +83,16 @@ test("the split data: the core has no figures, the per-city files put every figu
   let back: Dataset = { ...core };
   for (const [id, list] of Object.entries(cities)) back = withCity(back, id, list);
   assert.deepEqual(back.observations, data.observations);
-  for (const r of REGIONS) assert.deepEqual(lists[r.id], shortlist(data, r.id, defaultProfile(data)));
+  for (const r of REGIONS) assert.deepEqual(lists[r.id], [], "empty first pages preload no example cities");
 });
 
-test("each region's first screen is in the page: the verdict and the example money, before the app runs", () => {
+test("each region's first screen is empty with guided setup before the app runs", () => {
   const html = firstScreen({ ...data, shortlists: shortlists(data) } as Dataset, "europe");
   assert.match(html, /class="answer"/);
   assert.match(html, /class="v-lead"/);
-  assert.match(html, /class="v-example"/);
-  assert.match(html, /<span class="v-from" data-where="in">These cities are in Europe\.<\/span>/);
+  assert.doesNotMatch(html, /class="v-example"|class="v-from"/);
+  assert.match(html, /Add a city to start/);
+  assert.match(html, /1 of 5: Cities/);
 });
 
 // ---------- The edge: the region's page for the request's country, never kept ----------

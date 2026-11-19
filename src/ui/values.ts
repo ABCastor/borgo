@@ -19,15 +19,15 @@ export function share(weight: number, total: number): string {
   return total > 0 ? `${Math.round((100 * weight) / total)}%` : "0%";
 }
 
-const PART_MAX = 40;
-const GROUP_MAX = 60;
+const PART_MAX = 100;
+const GROUP_MAX = 100;
 
 function dial(id: string, label: string, weight: number, total: number, o: { personal?: boolean; mustPass?: boolean; canBreak?: boolean; question?: string; stance?: Raw }): Raw {
   return html`<li class="vline ${o.personal ? "is-personal" : ""} ${o.stance ? "is-position" : ""} ${weight === 0 ? "is-zero" : ""}">
     <label class="val-n" for="w-${id}" title="${o.question ?? ""}">${label}</label>
-    <output class="val-p num" id="o-${id}" for="w-${id}">${share(weight, total)}</output>
+    <output class="val-p num" id="o-${id}" for="w-${id}">${share(weight, total)} of score</output>
     <input type="range" id="w-${id}" min="0" max="${PART_MAX}" step="1" value="${weight}" data-weight="${id}" style="--fill:${((Math.min(weight, PART_MAX) / PART_MAX) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
-    ${o.canBreak ? html`<button class="must ${o.mustPass ? "is-on" : ""}" data-act="toggle-breaker" data-id="${id}" aria-pressed="${!!o.mustPass}" title="Rule out a city that fails this line">Must pass</button>` : ""}
+
     ${o.personal ? html`<button class="link val-x" data-act="remove-line" data-id="${id}">Remove</button>` : ""}
     ${o.stance ?? ""}
   </li>`;
@@ -67,7 +67,7 @@ function partsSummary(p: Profile, parts: Criterion[]): string {
 
 /** Nice days are the person's own: the range, said once at the head of Climate, where everyone looks for it. */
 function niceDaysLine(s: AppState): Raw {
-  return html`<p class="nice-own">Nice days are yours to define. ${rangeButton(s, "values")} <button class="link nice-sum" data-act="comfort" data-where="values-tests" aria-haspopup="dialog">${niceTestsShort(s.profile.prefs.comfort)}</button></p>`;
+  return html`<p class="nice-own">Nice days means the weather you enjoy. ${rangeButton(s, "values")} <button class="link nice-sum" data-act="comfort" data-where="values-tests" aria-haspopup="dialog">Edit weather tests: ${niceTestsShort(s.profile.prefs.comfort)}</button></p>`;
 }
 
 /** The kind of work, said once at the head of Work and ambition: it decides which of the group's parts count. */
@@ -129,9 +129,9 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
   return html`<li class="vgroup ${weight === 0 ? "is-zero" : ""} ${open ? "is-open" : ""}" data-group="${g.id}">
     <div class="vline vg-head">
       <label class="val-n" for="wg-${g.id}" title="${g.question}">${label}</label>
-      <output class="val-p num" id="og-${g.id}" for="wg-${g.id}">${share(weight, total)}</output>
+      <output class="val-p num" id="og-${g.id}" for="wg-${g.id}">${share(weight, total)} of score</output>
       <input type="range" id="wg-${g.id}" min="0" max="${max}" step="1" value="${Math.round(weight)}" data-group-weight="${g.id}" style="--fill:${((Math.min(weight, max) / max) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
-      ${only && only.fails && !o.noMust ? html`<button class="must ${p.dealBreakers.includes(only.id) ? "is-on" : ""}" data-act="toggle-breaker" data-id="${only.id}" aria-pressed="${p.dealBreakers.includes(only.id)}" title="Rule out a city that fails this line">Must pass</button>` : ""}
+
     </div>
     ${g.id === "climate" ? niceDaysLine(s) : ""}
     ${g.id === "ambition" ? workLine(s) : ""}
@@ -139,7 +139,7 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
       ? ""
       : html`<button class="vg-toggle" data-act="group" data-id="${g.id}" aria-expanded="${open}" aria-controls="vg-${g.id}"><span>${open ? "Close" : g.id === "own" && !parts.length ? "Add a line of your own" : lead ? alsoSummary(p, parts, lead) || partsSummary(p, parts) : partsSummary(p, parts)}</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5 6 7.5 9 4.5"/></svg></button>`}
     ${open
-      ? html`<div class="vg-parts" id="vg-${g.id}">
+      ? html`<div class="vg-parts" id="vg-${g.id}"><p class="vs-lede">These lines split ${g.label}'s <span id="sg-${g.id}">${share(weight, total)}</span> share. Their shares of your score add up to the group's share (rounding may differ by 1%). Moving a line also changes the group total.</p>
           ${g.id === "stand" ? html`<p class="vs-lede">Say where you stand and a place scores by how close it is; nothing is assumed about you.</p>` : ""}
           ${g.id === "own" ? html`<p class="vs-lede">What no dataset knows: family nearby, a partner's job, a feeling. Score each city 1 to 5 in its dossier or in Compare.</p>` : ""}
           ${parts.length ? html`<ul class="vals">${parts.map(part)}</ul>` : ""}
@@ -165,12 +165,16 @@ function eligibility(s: AppState): Raw {
   const people = p.household.length ? p.household : [{ label: "You", citizenships: [] as string[] }];
   const must = p.dealBreakers.includes("right_to_live");
   return html`<section class="elig" aria-labelledby="elig-h">
-    <div class="elig-head"><h3 class="val-n" id="elig-h">Right to live and work</h3><button class="must ${must ? "is-on" : ""}" data-act="toggle-breaker" data-id="right_to_live" aria-pressed="${must}" title="Rule out a city where someone moving would need to apply for a visa or permit">Must pass</button></div>
+    <div class="elig-head"><h3 class="val-n" id="elig-h">Right to live and work</h3><button class="must ${must ? "is-on" : ""}" data-act="toggle-breaker" data-id="right_to_live" aria-pressed="${must}" title="Rule out a city where someone moving would need to apply for a visa or permit">Require everyone to qualify</button></div>
     <ul class="elig-people">${people.map(
       (x, i) => html`<li><label for="e${i}-pass">${x.label || "Someone"}</label><select id="e${i}-pass" data-person="${i}" data-field="citizenship"><option value="">Passport not given</option>${passportOptions(x.citizenships[0] ?? "")}</select>${moreRights(s, x) ? html`<span class="elig-more">${moreRights(s, x)}</span>` : ""}</li>`,
     )}</ul>
-    <p class="vs-lede">Passports, free movement, and rights you already hold, such as permanent residence, a work visa or an EU Blue Card. Each sheet says yes, no or not checked. <button class="link" data-act="household">${(p.household[0]?.citizenships.length ?? 0) > 1 || p.household.some((h) => h.permits?.length) ? "Edit passports and rights" : "Add another passport or right"}</button>${p.household.length > 1 ? "" : html` · <button class="link" data-act="household">Add someone</button>`}</p>
+    <p class="vs-lede">A requirement, not a score weight: turn it on to rule out cities where someone cannot qualify. Passports, free movement, and rights you already hold, such as permanent residence, a work visa or an EU Blue Card. Each sheet says yes, no or not checked. <button class="link" data-act="household">${(p.household[0]?.citizenships.length ?? 0) > 1 || p.household.some((h) => h.permits?.length) ? "Edit passports and rights" : "Add another passport or right"}</button>${p.household.length > 1 ? "" : html` · <button class="link" data-act="household">Add someone</button>`}</p>
   </section>`;
+}
+
+function exclusions(s: AppState, criteria: Criterion[]): Raw {
+  return html`<details class="exclusions"><summary>Rule cities out, regardless of score</summary><p>These are requirements, not weights. A failing city is ruled out even with a high score. A requirement that cannot be checked is shown as unknown.</p>${criteria.filter((c) => (c.fails || c.position) && c.id !== "right_to_live").map((c) => html`<p><button class="must ${s.profile.dealBreakers.includes(c.id) ? "is-on" : ""}" data-act="toggle-breaker" data-id="${c.id}" aria-pressed="${s.profile.dealBreakers.includes(c.id)}">Require: ${c.label}</button><span class="hint">${c.question}</span></p>`)}</details>`;
 }
 
 export function valuesSheet(s: AppState): Raw {
@@ -195,9 +199,10 @@ export function valuesSheet(s: AppState): Raw {
   return html`<div class="vs-fold ${s.valuesOpen ? "is-open" : ""}"><button class="vs-sum" data-act="fold" aria-expanded="${s.valuesOpen}" aria-controls="vs-body"><span>What matters</span><span class="quiet">${on} of ${groups.length} count · ${s.valuesOpen ? "close" : "edit"}</span></button>
     <div class="vs-body" id="vs-body">
     <h2 class="sh">What matters</h2>
-    <p class="vs-lede">Each dial controls a ${term("share", "share")} of the score. Money left and nice days start it; add a third if you like.</p>
+    <p class="vs-lede">How much does each priority count for you compared with the others? Each percentage is its ${term("share", "share")} of your score, not a savings rate or money amount. Sliders set relative importance from 0 to 100, not percentages. To give one priority 100% of the score, set every other priority to zero.</p>
     <ul class="vals vgroups">${firstTwo.map(({ group, parts }) => groupBlock(s, group, parts, total, { first: true }))}${third ? groupBlock(s, third.group, third.parts, total) : picker}</ul>
     ${eligibility(s)}
+    ${exclusions(s, crit)}
     <button class="more" data-act="more" aria-expanded="${s.moreOpen}" aria-controls="more-body">More priorities<span class="more-n">${restOn.length ? ` · ${restOn.length} more count, ${share(restShare, total)}` : " · nothing else counts"}</span></button>
     ${s.moreOpen
       ? html`<div class="more-body" id="more-body">

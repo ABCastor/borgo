@@ -1,0 +1,594 @@
+[
+  {
+    "width": 1440,
+    "theme": "light",
+    "liveScoreChange": {
+      "workScore": "45 / 100",
+      "weatherScore": "1 / 100"
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "zoom": 0.67,
+    "resized": false,
+    "buffer": [
+      754,
+      368
+    ],
+    "rect": [
+      1126.026123046875,
+      548.9971923828125
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "zoom": 0.67,
+    "resized": true,
+    "buffer": [
+      754,
+      368
+    ],
+    "rect": [
+      1126.026123046875,
+      548.9971923828125
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "zoom": 0.8,
+    "resized": false,
+    "buffer": [
+      901,
+      439
+    ],
+    "rect": [
+      1126.015625,
+      548.984375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "zoom": 0.8,
+    "resized": true,
+    "buffer": [
+      901,
+      439
+    ],
+    "rect": [
+      1126.015625,
+      548.984375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "zoom": 1.1,
+    "resized": false,
+    "buffer": [
+      977,
+      476
+    ],
+    "rect": [
+      887.8408813476562,
+      432.99713134765625
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "zoom": 1.1,
+    "resized": true,
+    "buffer": [
+      977,
+      476
+    ],
+    "rect": [
+      887.8408813476562,
+      432.99713134765625
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "light",
+    "walkthrough": "passed",
+    "pageErrors": [],
+    "wordCounts": {
+      "walkthrough": 82,
+      "weightExplanation": 51,
+      "moneyParts": 41,
+      "eligibility": 66,
+      "weatherEditor": 335,
+      "mapHelp": 84
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "liveScoreChange": {
+      "workScore": "45 / 100",
+      "weatherScore": "1 / 100"
+    }
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "zoom": 0.67,
+    "resized": false,
+    "buffer": [
+      754,
+      368
+    ],
+    "rect": [
+      1126.026123046875,
+      548.9971923828125
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "zoom": 0.67,
+    "resized": true,
+    "buffer": [
+      754,
+      368
+    ],
+    "rect": [
+      1126.026123046875,
+      548.9971923828125
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "zoom": 0.8,
+    "resized": false,
+    "buffer": [
+      901,
+      439
+    ],
+    "rect": [
+      1126.015625,
+      548.984375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "zoom": 0.8,
+    "resized": true,
+    "buffer": [
+      901,
+      439
+    ],
+    "rect": [
+      1126.015625,
+      548.984375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "zoom": 1.1,
+    "resized": false,
+    "buffer": [
+      977,
+      476
+    ],
+    "rect": [
+      887.8408813476562,
+      432.99713134765625
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "zoom": 1.1,
+    "resized": true,
+    "buffer": [
+      977,
+      476
+    ],
+    "rect": [
+      887.8408813476562,
+      432.99713134765625
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 1440,
+    "theme": "dark",
+    "walkthrough": "passed",
+    "pageErrors": [],
+    "wordCounts": {
+      "walkthrough": 82,
+      "weightExplanation": 51,
+      "moneyParts": 41,
+      "eligibility": 66,
+      "weatherEditor": 335,
+      "mapHelp": 84
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "liveScoreChange": {
+      "workScore": "45 / 100",
+      "weatherScore": "1 / 100"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "zoom": 0.67,
+    "resized": false,
+    "buffer": [
+      350,
+      322
+    ],
+    "rect": [
+      522.1082153320312,
+      479.99066162109375
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "zoom": 0.67,
+    "resized": true,
+    "buffer": [
+      325,
+      299
+    ],
+    "rect": [
+      485.3078308105469,
+      445.9888000488281
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "zoom": 0.8,
+    "resized": false,
+    "buffer": [
+      318,
+      293
+    ],
+    "rect": [
+      398.0078125,
+      365.99609375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "zoom": 0.8,
+    "resized": true,
+    "buffer": [
+      318,
+      293
+    ],
+    "rect": [
+      398.0078125,
+      365.99609375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "zoom": 1.1,
+    "resized": false,
+    "buffer": [
+      303,
+      278
+    ],
+    "rect": [
+      275.2840881347656,
+      252.9971466064453
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "zoom": 1.1,
+    "resized": true,
+    "buffer": [
+      303,
+      278
+    ],
+    "rect": [
+      275.2840881347656,
+      252.9971466064453
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "light",
+    "walkthrough": "passed",
+    "pageErrors": [],
+    "wordCounts": {
+      "walkthrough": 82,
+      "weightExplanation": 51,
+      "moneyParts": 41,
+      "eligibility": 66,
+      "weatherEditor": 335,
+      "mapHelp": 84
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "liveScoreChange": {
+      "workScore": "45 / 100",
+      "weatherScore": "1 / 100"
+    }
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "zoom": 0.67,
+    "resized": false,
+    "buffer": [
+      350,
+      322
+    ],
+    "rect": [
+      522.1082153320312,
+      479.99066162109375
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "zoom": 0.67,
+    "resized": true,
+    "buffer": [
+      325,
+      299
+    ],
+    "rect": [
+      485.3078308105469,
+      445.9888000488281
+    ],
+    "dpr": 0.6700000166893005,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "zoom": 0.8,
+    "resized": false,
+    "buffer": [
+      318,
+      293
+    ],
+    "rect": [
+      398.0078125,
+      365.99609375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "zoom": 0.8,
+    "resized": true,
+    "buffer": [
+      318,
+      293
+    ],
+    "rect": [
+      398.0078125,
+      365.99609375
+    ],
+    "dpr": 0.800000011920929,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "zoom": 1.1,
+    "resized": false,
+    "buffer": [
+      303,
+      278
+    ],
+    "rect": [
+      275.2840881347656,
+      252.9971466064453
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "zoom": 1.1,
+    "resized": true,
+    "buffer": [
+      303,
+      278
+    ],
+    "rect": [
+      275.2840881347656,
+      252.9971466064453
+    ],
+    "dpr": 1.100000023841858,
+    "pointerTargets": [
+      "New York",
+      "London",
+      "Riyadh",
+      "Anchorage"
+    ]
+  },
+  {
+    "width": 390,
+    "theme": "dark",
+    "walkthrough": "passed",
+    "pageErrors": [],
+    "wordCounts": {
+      "walkthrough": 82,
+      "weightExplanation": 51,
+      "moneyParts": 41,
+      "eligibility": 66,
+      "weatherEditor": 335,
+      "mapHelp": 84
+    }
+  }
+]

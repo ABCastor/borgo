@@ -77,15 +77,15 @@ export function rentTag(data: Dataset, r: Resolved | null | undefined, metric: s
 /** A tiny teal marker naming where a figure came from; terracotta "yours" when the person set it. */
 export function srcMark(r: Resolved | null | undefined, city: string, metric?: string, compact = false): Raw {
   if (!r) return html``;
-  if (r.origin.kind === "you") return html`<span class="yours">yours</span>`;
+  if (r.origin.kind === "you") return html`<span class="yours">Source: yours</span>`;
   const o = r.origin.observation;
   if (r.origin.kind === "consensus") {
     const n = r.origin.observations.length;
-    return html`<button class="src" data-act="source" data-city="${city}" data-metric="${metric ?? o.metric}" title="Median of ${n} sources">${n} sources<span class="src-yr">${o.period.slice(0, 4)}</span></button>`;
+    return html`<button class="src" data-act="source" data-city="${city}" data-metric="${metric ?? o.metric}" title="Median of ${n} sources">Sources: ${n}<span class="src-yr">${o.period.slice(0, 4)}</span></button>`;
   }
   const country = r.level === "country" ? " · national figure" : r.level === "region" ? " · region" : "";
   const when = o.period.includes("-") && o.period.length === 9 ? o.period : o.period.slice(0, 4);
-  return html`<button class="src" data-act="source" data-city="${city}" data-metric="${metric ?? o.metric}" title="${SOURCE_SHORT[o.source] ?? o.source}, ${o.period}${country}">${SOURCE_SHORT[o.source] ?? o.source}${compact ? "" : html`<span class="src-yr">${when}</span>`}${!compact && r.level === "country" ? html`<span class="src-lv">national</span>` : ""}</button>`;
+  return html`<button class="src" data-act="source" data-city="${city}" data-metric="${metric ?? o.metric}" title="${SOURCE_SHORT[o.source] ?? o.source}, ${o.period}${country}">Source: ${SOURCE_SHORT[o.source] ?? o.source}${compact ? "" : html`<span class="src-yr">${when}</span>`}${!compact && r.level === "country" ? html`<span class="src-lv">national</span>` : ""}</button>`;
 }
 
 export const missingText = (m: CityResult["money"]) => describeMissing(m.missing);

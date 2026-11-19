@@ -1,14 +1,13 @@
 import { profileProblems, type Evaluation } from "../core/engine.ts";
 import type { Person } from "../core/types.ts";
 import { hasRightsGiven, PERMIT_KIND_IDS, PERMIT_KINDS } from "../core/rights.ts";
+import { SETUP_STEPS, aiSetup } from "./onboarding.ts";
 import { html, type Raw } from "./dom.ts";
 import { CURRENCIES, money } from "./format.ts";
 import { moneyGap } from "../core/criteria.ts";
 import { failText } from "./glance.ts";
 import { CLOSE, moneyAdds } from "./results.ts";
 import { linkPlaceName, type AppState } from "./state.ts";
-import { niceTestsShort, rangeButton } from "./cards.ts";
-import { exampleMoney } from "./first-visit.ts";
 
 // The top of the app, under the Castor mast: who the comparison is for, which cities are in it, and the
 // answer so far, stated in words.
@@ -250,9 +249,7 @@ export function verdict(s: AppState, e: Evaluation): Raw {
   // While the salary itself is the next input, the engine's note on money says the same thing less directly.
   const noSalary = e.results.every((r) => r.money.missing.includes("salary"));
   const notes = e.notes.filter((n) => !(noSalary && /^(Money left|Cost of living)/.test(n)));
-  // Before a salary, a first visit still sees what money is left after rent: at an example salary, said so.
-  const example = s.intro && noSalary ? exampleMoney(s.data, s.profile, s.visit) : "";
-  return html`<div class="answer" aria-live="polite"><p class="v-lead">${headline}</p>${notFoundNote(s)}${more.length ? html`<p class="v-more">${more.map((x, i) => html`${i ? " " : ""}${x}`)}</p>` : ""}${example}
+  return html`<div class="answer" aria-live="polite"><p class="v-lead">${headline}</p>${notFoundNote(s)}${more.length ? html`<p class="v-more">${more.map((x, i) => html`${i ? " " : ""}${x}`)}</p>` : ""}
     ${notes.length ? html`<ul class="v-notes">${notes.map((n) => html`<li>${n}</li>`)}</ul>` : ""}
     ${ask ?? ""}</div>`;
 }
@@ -269,28 +266,19 @@ function shareOf(e: Evaluation, ids: string[]): number {
  * salary (money is the biggest dial and counts for nothing without it), the nice-day range (the other default dial) and
  * a passport (who may live and work where). Each step shows what was given once it is.
  */
-function intro(s: AppState, e: Evaluation): Raw {
+function intro(s: AppState, _e: Evaluation): Raw {
   if (!s.intro) return html``;
-  const p = s.profile;
-  const money = shareOf(e, ["money_left", "living_cost"]);
-  const nice = shareOf(e, ["nice_days"]);
-  const me = p.household[0];
-  const salaryDone = p.income.gross > 0;
+  const step = Math.max(0, Math.min(SETUP_STEPS.length - 1, s.onboardingStep ?? 0));
+  const item = SETUP_STEPS[step]!;
   return html`<section class="intro" aria-labelledby="intro-h">
     <h1 class="intro-h" id="intro-h">The best place to live, <span>for you</span></h1>
-    <p class="intro-lede">Borgo is yours. It ranks cities on what you value: what you keep after tax and rent, days that feel the way you like, where you have the right to live and work. Every number shows its source, and nothing you enter leaves your browser.</p>
-    <ol class="intro-steps" aria-label="Start with what moves the ranking most">
-      <li class="step ${salaryDone ? "is-done" : ""}"><span class="step-n num" aria-hidden="true">1</span><label class="step-k" for="intro-salary">Your salary</label>
-        <span class="v-field"><input type="number" inputmode="numeric" min="0" step="1000" id="intro-salary" placeholder="Gross a year" value="${salaryDone ? p.income.gross : ""}" data-field="gross"><select data-field="income-currency" aria-label="Currency of your salary">${CURRENCIES.map((c) => html`<option ${c === p.income.currency ? "selected" : ""}>${c}</option>`)}</select></span>
-        <span class="step-why">${money ? `Money is ${money}% of your score and needs it` : "For what you keep after tax and rent"}</span>${problemsFor(s, "salary")}</li>
-      <li class="step"><span class="step-n num" aria-hidden="true">2</span><span class="step-k">Your nice days</span>
-        <span class="step-in">${rangeButton(s, "intro")} <button class="link nice-sum" data-act="comfort" data-where="intro-tests" aria-haspopup="dialog">${niceTestsShort(p.prefs.comfort)}</button></span>
-        <span class="step-why">${nice ? `Nice days are ${nice}% of your score` : "Days that feel the way you like"}</span></li>
-      <li class="step ${me?.citizenships.length ? "is-done" : ""}"><span class="step-n num" aria-hidden="true">3</span><label class="step-k" for="intro-pass">Your passport</label>
-        <select id="intro-pass" data-person="0" data-field="citizenship"><option value="">Not given</option>${passportOptions(me?.citizenships[0] ?? "")}</select>
-        <span class="step-why">Where you can live and work without applying for a visa. <button class="link" data-act="household">More passports, permanent residence, a work visa…</button></span></li>
-    </ol>
-    <button class="link intro-x" data-act="intro-hide">Hide this</button>
+    <p class="intro-lede">Borgo is yours. It ranks cities on what you value. Every number shows its source. Your comparison stays in this browser.</p>
+    <nav class="setup-steps" aria-label="Guided setup">${SETUP_STEPS.map((x, i) => html`<button class="pill-btn" data-act="setup-step" data-step="${i}" aria-current="${step === i ? "step" : "false"}">${i + 1}. ${x.title}</button>`)}</nav>
+    <h2>${step + 1} of ${SETUP_STEPS.length}: ${item.title}</h2><p>${item.text}</p>
+    ${step === 2 ? html`<label for="setup-salary">Your salary, gross a year</label><span class="v-field"><input id="setup-salary" type="number" min="0" step="1000" data-field="gross" placeholder="Not given" value="${s.profile.income.gross || ""}"><select data-field="income-currency" aria-label="Currency of your salary">${CURRENCIES.map((c) => html`<option ${c === s.profile.income.currency ? "selected" : ""}>${c}</option>`)}</select></span>${problemsFor(s, "salary")}` : ""}
+    ${step === 3 ? html`<button class="pill-btn" data-act="household">Edit people, passports and rights</button>` : step === 4 ? html`<button class="pill-btn" data-act="comfort" aria-haspopup="dialog">Edit your nice-day weather</button>` : step === 2 ? html`<a class="pill-btn" href="#/money">Pay, spending and savings</a>` : html`<button class="pill-btn" data-act="focus" data-target="${item.target}">Edit ${item.title.toLowerCase()}</button>`}
+    <div class="setup-controls">${step ? html`<button class="pill-btn" data-act="setup-step" data-step="${step - 1}">Back</button>` : ""}${step < SETUP_STEPS.length - 1 ? html`<button class="pill-btn" data-act="setup-step" data-step="${step + 1}">Next</button>` : html`<button class="pill-btn" data-act="intro-hide">Finish setup</button>`}<button class="link" data-act="intro-hide">Skip walkthrough</button></div>
+    ${aiSetup()}
   </section>`;
 }
 
@@ -306,6 +294,8 @@ export function topQuestion(s: AppState, e: Evaluation): Raw {
       })}${s.live && !s.live.error ? html`<li class="cchip is-loading" aria-busy="true"><span class="chip-wait" aria-hidden="true"></span>${s.live.name ?? s.live.query}<span class="sr">, being added</span></li>` : ""}</ul>
       ${addField(s)}
       <button class="share-btn" data-act="share">Share</button>
+      <button class="link" data-act="setup-open">Guided setup</button>
+      <button class="link" data-act="reset">Reset</button>
     </div>
     ${verdict(s, e)}
     ${livePanel(s)}

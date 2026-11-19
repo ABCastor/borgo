@@ -109,6 +109,25 @@ test("remote mcp: compare_cities and get_city answer exactly as the person's own
   await local.close();
 });
 
+test("remote mcp: the onboarding AI prompt's confirmed settings all reach compare_cities", async () => {
+  const client = await remoteClient(remoteEnv());
+  try {
+    const common = {
+      cities: ["Lisbon", "London", "Geneva"], only: ["money_left", "nice_days", "field_pay", "field_jobs"],
+      weights: { money_left: 30, nice_days: 50, field_pay: 10, field_jobs: 10 }, work: "software",
+      displayCurrency: "EUR", housing: "1bed", spending: { amount: 1200, currency: "EUR", homeCity: "Lisbon" },
+      household: [{ label: "You", passports: ["IT"] }, { label: "Partner", passports: ["US"], rights: [{ kind: "permanent", where: "GB" }] }],
+      children: [8], dealBreakers: ["right_to_live"],
+      comfort: { min: 16, max: 27, basis: "air", dry: false, clear: true, notMuggy: true, calm: true, daylight: 10 },
+    };
+    for (const pay of [{ salary: { amount: 60000, currency: "EUR" } }, { salaryByCity: { Lisbon: { amount: 60000, currency: "EUR" }, London: { amount: 70000, currency: "GBP" }, Geneva: { amount: 90000, currency: "CHF" } } }]) {
+      const result = await client.callTool({ name: "compare_cities", arguments: { ...common, ...pay } });
+      assert.equal(result.isError, undefined, text(result));
+      assert.equal((result.structuredContent as { ranking: unknown[] }).ranking.length, 3);
+    }
+  } finally { await client.close(); }
+});
+
 test("remote mcp: a place outside the published data points to the local server, never to a tool it lacks", async () => {
   const client = await remoteClient(remoteEnv());
   const miss = await client.callTool({ name: "search_cities", arguments: { query: "Ouagadougou" } });

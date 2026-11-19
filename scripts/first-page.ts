@@ -13,8 +13,7 @@ import type { Dataset } from "../src/core/types.ts";
 import { REGIONS, regionPage, type RegionId } from "../src/core/visit-region.ts";
 import { partFiles, type Published } from "../src/registry/licences.ts";
 import { html } from "../src/ui/dom.ts";
-import { shortlist } from "../src/ui/first-visit.ts";
-import { defaultProfile, firstProfile, type AppState } from "../src/ui/state.ts";
+import { firstProfile, type AppState } from "../src/ui/state.ts";
 import { topQuestion } from "../src/ui/top.ts";
 
 export const CORE_FILE = "data/core.json";
@@ -22,8 +21,7 @@ export const cityFile = (id: string) => `data/city/${id}.json`;
 
 /** Each region's shortlist, from the full data: the same list the app starts a first visit with. */
 export function shortlists(data: Dataset): Record<RegionId, string[]> {
-  const base = defaultProfile(data);
-  return Object.fromEntries(REGIONS.map((r) => [r.id, shortlist(data, r.id, base)])) as Record<RegionId, string[]>;
+  return Object.fromEntries(REGIONS.map((r) => [r.id, [] as string[]])) as Record<RegionId, string[]>;
 }
 
 /** The open dataset split into its core (no figures, with the shortlists) and one list of figures per city. */

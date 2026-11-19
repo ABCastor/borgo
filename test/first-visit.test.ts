@@ -16,22 +16,19 @@ const data = loadPublishedDataset(join(ROOT, "public/data/dataset.json")) as Dat
 const app = (profile: Profile, over: Partial<AppState> = {}): AppState => ({ data, profile, view: "cities", city: null, measure: "air", valuesOpen: false, openGroups: [], live: null, fetchedHere: [], taxOpen: [], moreOpen: false, shareInclude: [], ...over });
 const text = (h: { value: string }) => h.value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ");
 
-test("a newcomer reads what Borgo is, then the salary, nice days and passport, each with the share of the score it moves", () => {
+test("a newcomer sees a five-step skippable walkthrough, and can reopen it", () => {
   const p = defaultProfile(data);
   const e = evaluate(data, p);
   const top = text(topQuestion(app(p, { intro: true }), e));
   assert.match(top, /The best place to live, for you/);
-  assert.match(top, /Borgo is yours\. It ranks cities on what you value/);
+  assert.match(top, /Borgo is yours. It ranks cities on what you value/);
   assert.match(top, /Every number shows its source/);
-  assert.match(top, /Your salary .*Money is 50% of your score/);
-  assert.match(top, /Your nice days .*Nice days are 50% of your score/);
-  assert.match(top, /Your passport/);
-  // The answer does not ask again for what the greeting asks, nor for rent before there is pay.
-  const v = text(verdict(app(p, { intro: true }), e));
-  assert.match(v, /So far, \w+ fits you best/);
-  assert.match(v, /Money is 50% of your score and counts once your salary is in; until then the ranking rests on nice days/);
-  assert.doesNotMatch(v, /add your salary|Add your rent/i);
-  // A returning visitor sees no greeting.
+  for (const name of ["Cities", "What matters", "Money", "People and right to live", "Nice days: the weather"]) assert.ok(top.includes(name));
+  assert.match(top, /Skip walkthrough/);
+  assert.match(top, /Guided setup/);
+  assert.match(top, /Reset/);
+  const salaryStep = topQuestion(app(p, { intro: true, onboardingStep: 2 }), e).value;
+  assert.match(salaryStep, /id="setup-salary"/);
   assert.doesNotMatch(text(topQuestion(app(p), e)), /The best place to live/);
 });
 

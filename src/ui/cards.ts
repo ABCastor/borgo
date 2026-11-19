@@ -1,5 +1,5 @@
 import type { CityResult, Evaluation } from "../core/engine.ts";
-import { moneyGap } from "../core/criteria.ts";
+import { moneyGap, niceDays } from "../core/criteria.ts";
 import { convert } from "../core/money.ts";
 import type { RightResult } from "../core/rights.ts";
 import { shortestDay } from "../core/sun.ts";
@@ -38,7 +38,7 @@ export function comfortStep(f: "min" | "max", v: number, label: string, prefix: 
 }
 
 /** The tests a nice day can be asked to pass besides temperature, each with what it reads and where that comes from. */
-const NICE_TESTS: { id: "dry" | "clear" | "notMuggy" | "calm"; label: string; what: string; on: (c: AppState["profile"]["prefs"]["comfort"]) => boolean }[] = [
+export const NICE_TESTS: { id: "dry" | "clear" | "notMuggy" | "calm"; label: string; what: string; on: (c: AppState["profile"]["prefs"]["comfort"]) => boolean }[] = [
   { id: "dry", label: "Dry", what: "under 1 mm of rain from 8 am to 8 pm", on: (c) => c.dry !== false },
   { id: "clear", label: "Sunny", what: "at most half the sky clouded from 8 am to 8 pm", on: (c) => c.clear !== false },
   { id: "notMuggy", label: "Not muggy", what: "the day's dew point under 18 °C", on: (c) => !!c.notMuggy },
@@ -53,11 +53,39 @@ export function niceTestsShort(c: AppState["profile"]["prefs"]["comfort"]): stri
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
+export function niceDefinition(c: AppState["profile"]["prefs"]["comfort"]): string {
+  return `Your nice-day weather: ${tempValue(c.min)} to ${tempValue(c.max)} ${tempUnit()}, ${c.basis === "air" ? "air" : "feels-like"} daytime temperature; ${niceTestsShort(c)}. All enabled tests must pass on the same day. Tests do not have separate score weights; the Nice days priority weights the resulting annual count.`;
+}
+
+export function niceDayTable(s: AppState): Raw {
+  const c = s.profile.prefs.comfort;
+  const rows = [
+    { label: "Temperature", what: `${tempValue(c.min)} to ${tempValue(c.max)} ${tempUnit()}, ${c.basis === "air" ? "air" : "feels-like"}`, on: true },
+    ...NICE_TESTS.map((x) => ({ label: x.id === "dry" ? "Rain" : x.id === "clear" ? "Sun / cloud" : x.id === "calm" ? "Wind" : "Humidity", what: x.what, on: x.on(c) })),
+    { label: "Heat", what: `Above ${tempValue(c.max)} ${tempUnit()} fails the temperature range, not a separate test`, on: true },
+    { label: "Daylight", what: c.daylight ? `At least ${c.daylight} hours` : "Any length", on: !!c.daylight },
+  ];
+  return html`<table class="nice-definition"><caption>Your nice day: weather tests</caption><thead><tr><th>Test</th><th>Your definition</th><th>How much it counts</th></tr></thead><tbody>${rows.map((x) => html`<tr><th scope="row">${x.label}</th><td>${x.what}</td><td>${x.on ? "Required" : "Off"}</td></tr>`)}</tbody></table><p class="hint">All required tests must pass on the same day. No separate percentages: Nice days’ share of your score applies to the annual count, not to individual tests.</p>`;
+}
+
+export function windImpact(s: AppState): Raw {
+  if (!s.profile.prefs.comfort.calm || !s.profile.cities.length) return html``;
+  const without = { ...s.profile, prefs: { ...s.profile.prefs, comfort: { ...s.profile.prefs.comfort, calm: false } } };
+  return html`<div class="wind-impact"><h3>Why wind changes your ranking</h3><p>Calm requires daytime wind under 20 km/h. Days that pass your other tests but fail wind stop counting. Cities lose different numbers of nice days; the score impact depends on your Nice days share.</p><ul>${s.profile.cities.map((id) => {
+    const city = s.data.cities.find((x) => x.id === id);
+    if (!city) return html``;
+    const withWind = niceDays(s.data, s.profile, city);
+    const noWind = niceDays(s.data, without, city);
+    const sum = (m: number[]) => Math.round(m.reduce((a, b) => a + b, 0));
+    return html`<li>${city.name}: ${withWind && noWind ? `${sum(noWind.months)} without wind → ${sum(withWind.months)} with wind, ${sum(noWind.months) - sum(withWind.months)} days excluded a year` : "weather-test data not available yet; not treated as zero nice days"}.</li>`;
+  })}</ul></div>`;
+}
+
 export function comfortEditor(s: AppState): string {
   const c = s.profile.prefs.comfort;
   const { min, max } = c;
   return html`<div class="pop-body comfort-ed"><b>Your nice days</b>
-    <p class="hint">Nice days are yours to define. From 8 am to 8 pm a ${term("comfortable", "nice day")} feels the way you like:</p>
+    <p class="hint">${niceDefinition(c)}</p>${niceDayTable(s)}
     <p class="cl-line">${comfortStep("min", min, "Coolest nice daytime temperature", "cs")} to ${comfortStep("max", max, "Warmest nice daytime temperature", "cs")} ${tempUnit()}</p>
     <div class="ce-row">${basisSeg(s)}</div>
     <fieldset class="nice-tests"><legend>And it is</legend>
@@ -65,6 +93,7 @@ export function comfortEditor(s: AppState): string {
       <label class="nt nt-day"><b>Long</b><span class="nt-al">at least</span><select id="nt-daylight" data-act-change="nice-daylight" aria-label="Hours of daylight a nice day has at least">${[0, 9, 10, 11, 12, 13, 14, 15].map((h) => html`<option value="${h}" ${(c.daylight ?? 0) === h ? "selected" : ""}>${h ? `${h} h of daylight` : "any daylight"}</option>`)}</select></label>
     </fieldset>
     <p class="hint nt-src">Rain, sky, humidity and wind: hourly ERA5 reanalysis 2021-2025, via ${ERA5_LINK} (CC BY 4.0). Daylight: sunrise to sunset, computed from each city's latitude. Dry and sunny are on to start.</p>
+    ${windImpact(s)}
     <p class="hint">Every sheet, strip and rank follows. In a city's dossier you can also drag the band on its chart.</p></div>`.value;
 }
 

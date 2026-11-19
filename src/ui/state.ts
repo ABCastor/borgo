@@ -6,7 +6,7 @@ import { PRESETS } from "../core/presets.ts";
 import type { Dataset, Profile } from "../core/types.ts";
 import type { CityFetch } from "../fetch/index.ts";
 import type { RegionId } from "../core/visit-region.ts";
-import { shortlistOf, type VisitFrom } from "./first-visit.ts";
+import type { VisitFrom } from "./first-visit.ts";
 
 export { PRESETS };
 
@@ -44,6 +44,8 @@ export interface AppState {
   refused?: string[];
   /** A first visit: Borgo says what it is and asks first for the answers that move the ranking most. Kept for the visit once shown. */
   intro?: boolean;
+  /** Current guided setup step, independent of the saved comparison. */
+  onboardingStep?: number;
   /** Where a first visit's cities came from: the region of the request's country (src/ui/first-visit.ts). */
   visit?: VisitFrom;
 }
@@ -148,10 +150,17 @@ export function defaultProfile(data: Dataset, cities: string[] = DEFAULT_PICK): 
   };
 }
 
-/** A first visit's profile: the default, with the region's shortlist and everyday spending based in its first city. */
+/** A clean comparison, with no invented salary, spending, cities or people. Also used by Reset. */
+export function emptyProfile(data: Dataset): Profile {
+  const p = defaultProfile(data, []);
+  p.income.everyday = null;
+  return p;
+}
+
+/** First visits are empty, regardless of request region. Reference and agent defaults stay separate. */
 export function firstProfile(data: Dataset, region: RegionId): Profile {
-  const cities = shortlistOf(data, region, defaultProfile(data));
-  return defaultProfile(data, cities.length ? cities : DEFAULT_PICK);
+  void region;
+  return emptyProfile(data);
 }
 
 // ---------- What a share link carries ----------
@@ -256,7 +265,7 @@ export function sharedParam(): string | null {
 /** A profile from the link, else from this browser, else the default. Cities neither in the data nor fetched in this browser are dropped. */
 /** The saved or shared profile, or for a first visit the default one starting from `region`'s shortlist. */
 export function loadProfile(data: Dataset, region?: RegionId): Profile {
-  const base = region ? firstProfile(data, region) : defaultProfile(data);
+  const base = firstProfile(data, region ?? "europe");
   let loaded: Partial<Profile> | null = null;
   const shared = sharedParam();
   if (shared) {
