@@ -1,10 +1,16 @@
 # A tag v<version> matching package.json publishes that version to npm with provenance (npm trusted
-# publishing, no token) and to the official MCP Registry (GitHub OIDC), after the tests pass.
+# publishing, no token) and to the official MCP Registry (GitHub OIDC), after the tests pass. Each step
+# skips what is already published, so a rerun or a manual run for an existing tag finishes the rest.
 name: release
 
 on:
   push:
     tags: ["v*"]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Existing tag to (re)publish, for example v0.2.0"
+        required: true
 
 permissions:
   contents: read
@@ -15,21 +21,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.tag || github.ref }}
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 26
           registry-url: https://registry.npmjs.org
       - name: The tag matches package.json and server.json
         run: |
-          v="${GITHUB_REF_NAME#v}"
+          tag="${{ inputs.tag || github.ref_name }}"
+          v="${tag#v}"
           test "$(node -p 'require("./package.json").version')" = "$v"
           test "$(node -p 'require("./server.json").version')" = "$v"
       - run: npm ci
       - run: npm test
       - run: node scripts/check-server-json.ts
-      - run: npm publish --provenance --access public
+      - name: npm
+        run: |
+          v="$(node -p 'require("./package.json").version')"
+          if npm view "@abcastor/borgo@$v" version >/dev/null 2>&1; then
+            echo "npm already has $v"
+          else
+            npm publish --provenance --access public
+          fi
       - name: MCP Registry
         run: |
+          v="$(node -p 'require("./package.json").version')"
+          # A fresh npm version takes a few minutes to appear; the registry checks it exists.
+          for i in $(seq 1 30); do npm view "@abcastor/borgo@$v" version >/dev/null 2>&1 && break; sleep 20; done
           curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
           ./mcp-publisher login github-oidc
           ./mcp-publisher publish
