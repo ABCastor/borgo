@@ -92,7 +92,7 @@ test("each region's first screen is empty with guided setup before the app runs"
   assert.match(html, /class="v-lead"/);
   assert.doesNotMatch(html, /class="v-example"|class="v-from"/);
   assert.match(html, /Add a city to start/);
-  assert.match(html, /1 of 5: Cities/);
+  assert.match(html, /Which cities are you weighing\?/);
 });
 
 // ---------- The edge: the region's page for the request's country, never kept ----------

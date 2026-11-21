@@ -3,10 +3,12 @@ import type { Person } from "../core/types.ts";
 import { hasRightsGiven, PERMIT_KIND_IDS, PERMIT_KINDS } from "../core/rights.ts";
 import { ENTRY_ROUTES, ENTRY_LABEL } from "../core/entry-routes.ts";
 import { SETUP_STEPS, aiSetup } from "./onboarding.ts";
-import { html, type Raw } from "./dom.ts";
+import { html, raw, type Raw } from "./dom.ts";
 import { CURRENCIES, money } from "./format.ts";
 import { moneyGap } from "../core/criteria.ts";
 import { failText } from "./glance.ts";
+import { valuesSheet } from "./values.ts";
+import { comfortEditor } from "./cards.ts";
 import { CLOSE, moneyAdds } from "./results.ts";
 import { linkPlaceName, type AppState } from "./state.ts";
 
@@ -277,32 +279,33 @@ function intro(s: AppState, _e: Evaluation): Raw {
   if (!s.intro) return html``;
   const step = Math.max(0, Math.min(SETUP_STEPS.length - 1, s.onboardingStep ?? 0));
   const item = SETUP_STEPS[step]!;
-  return html`<section class="intro" aria-labelledby="intro-h">
-    <h1 class="intro-h" id="intro-h">The best place to live, <span>for you</span></h1>
-    <p class="intro-lede">Borgo is yours. It ranks cities on what you value. Every number shows its source. Your comparison stays in this browser.</p>
-    <nav class="setup-steps" aria-label="Guided setup">${SETUP_STEPS.map((x, i) => html`<button class="pill-btn" data-act="setup-step" data-step="${i}" aria-current="${step === i ? "step" : "false"}">${i + 1}. ${x.title}</button>`)}</nav>
-    <h2>${step + 1} of ${SETUP_STEPS.length}: ${item.title}</h2><p>${item.text}</p>
-    ${step === 2 ? html`<label for="setup-salary">Your salary, gross a year</label><span class="v-field"><input id="setup-salary" type="number" min="0" step="1000" data-field="gross" placeholder="Not given" value="${s.profile.income.gross || ""}"><select data-field="income-currency" aria-label="Currency of your salary">${CURRENCIES.map((c) => html`<option ${c === s.profile.income.currency ? "selected" : ""}>${c}</option>`)}</select></span>${problemsFor(s, "salary")}` : ""}
-    ${step === 3 ? html`<button class="pill-btn" data-act="household">Edit people, passports and rights</button>` : step === 4 ? html`<button class="pill-btn" data-act="comfort" aria-haspopup="dialog">Edit your nice-day weather</button>` : step === 2 ? html`<a class="pill-btn" href="#/money">Pay, spending and savings</a>` : html`<button class="pill-btn" data-act="focus" data-target="${item.target}">Edit ${item.title.toLowerCase()}</button>`}
-    <div class="setup-controls">${step ? html`<button class="pill-btn" data-act="setup-step" data-step="${step - 1}">Back</button>` : ""}${step < SETUP_STEPS.length - 1 ? html`<button class="pill-btn" data-act="setup-step" data-step="${step + 1}">Next</button>` : html`<button class="pill-btn" data-act="intro-hide">Finish setup</button>`}<button class="link" data-act="intro-hide">Skip walkthrough</button></div>
-  </section>`;
+  const questions = ["Which cities are you weighing?", "What matters most to you?", "What do you earn?", "Who is coming with you?", "What is your kind of nice day?"];
+  const quick = ["lisbon-pt", "london-gb", "berlin-de", "dublin-ie"].map(id => s.data.cities.find(c => c.id === id)).filter(c => c && !s.profile.cities.includes(c.id));
+  return html`<div class="first-visit"><header class="setup-heading"><h1 class="intro-h" id="intro-h">The best place to live, <span>for you</span></h1><p class="intro-lede">Borgo ranks cities on what you value. Every number shows its source. Your comparison stays in this browser.</p></header><div class="setup-grid"><section class="intro" aria-label="Guided setup">
+    <nav class="setup-steps" aria-label="Guided setup">${SETUP_STEPS.map((x, i) => html`<button data-act="setup-step" data-step="${i}" aria-current="${step === i ? "step" : "false"}">${x.title}</button>`)}</nav>
+    <h2 tabindex="-1" id="setup-question">${questions[step]}</h2><p>${item.text}</p>
+    <div class="setup-answer">
+    ${step === 0 ? html`<div class="setup-city">${addField(s)}<button class="pill-btn" data-act="add-city-input">Add</button></div><div class="quick-cities">${quick.map(c => html`<button class="pill-btn" data-act="add-known" data-city="${c!.id}">+ ${c!.name}</button>`)}</div><button class="link" data-act="suggest">Suggest cities for me</button>` : ""}
+    ${step === 1 ? valuesSheet({ ...s, valuesOpen: true }) : ""}
+    ${step === 2 ? html`<label for="setup-salary">Your salary, gross a year</label><span class="v-field"><input id="setup-salary" type="number" min="0" step="1000" data-field="gross" placeholder="Not given" value="${s.profile.income.gross || ""}"><select data-field="income-currency" aria-label="Currency of your salary">${CURRENCIES.map((c) => html`<option ${c === s.profile.income.currency ? "selected" : ""}>${c}</option>`)}</select></span>${problemsFor(s, "salary")}<p class="hint">Pay, spending and savings can be refined on Money.</p>` : ""}
+    ${step === 3 ? raw(householdPanel(s)) : ""}
+    ${step === 4 ? raw(comfortEditor(s)) : ""}
+    </div>
+    <div class="setup-controls">${step ? html`<button class="link" data-act="setup-step" data-step="${step - 1}">Back</button>` : ""}${step < SETUP_STEPS.length - 1 ? html`<button class="pill-btn setup-next" data-act="setup-step" data-step="${step + 1}">Next: ${SETUP_STEPS[step + 1]!.title}</button>` : html`<button class="pill-btn setup-next" data-act="intro-hide">See my cities</button>`}<button class="link" data-act="intro-hide">Skip setup</button></div>
+  </section>${aiSetup()}</div></div>`;
 }
 
 export function topQuestion(s: AppState, e: Evaluation): Raw {
   const rank = new Map(e.results.map((r) => [r.city.id, r]));
   const chosen = s.profile.cities.map((id) => s.data.cities.find((c) => c.id === id)).filter((c) => !!c).sort((a, b) => (rank.get(a!.id)?.rank ?? 99) - (rank.get(b!.id)?.rank ?? 99));
-  return html`${intro(s, e)}${aiSetup()}<section class="ask" aria-label="Your comparison">
+  return html`${intro(s, e)}<section class="ask" aria-label="Your comparison">
     <div class="ask-row">
       ${whoButton(s)}
       <ul class="roster" aria-label="Your cities, best first">${chosen.map((c) => {
         const r = rank.get(c!.id);
         return html`<li class="cchip ${r?.ruledOut.length ? "is-out" : ""}" data-flip="chip-${c!.id}"><a href="#/city/${c!.id}">${r ? html`<b class="chip-r num">${r.ruledOut.length ? "Out" : r.rank}</b>` : ""}${c!.name}</a><button class="chip-x" data-act="remove-city" data-city="${c!.id}" aria-label="Remove ${c!.name}">${CLOSE}</button></li>`;
       })}${s.live && !s.live.error ? html`<li class="cchip is-loading" aria-busy="true"><span class="chip-wait" aria-hidden="true"></span>${s.live.name ?? s.live.query}<span class="sr">, being added</span></li>` : ""}</ul>
-      ${addField(s)}
-      <button class="pill-btn" data-act="suggest">Suggest cities for me</button>
-      <button class="share-btn" data-act="share">Share</button>
-      <button class="link" data-act="setup-open">Guided setup</button>
-      <button class="link" data-act="reset">Reset</button>
+      ${s.intro && (s.onboardingStep ?? 0) === 0 ? "" : html`${addField(s)}<button class="pill-btn" data-act="suggest">Suggest cities for me</button>`}
     </div>
     ${verdict(s, e, "headline")}
     ${livePanel(s)}

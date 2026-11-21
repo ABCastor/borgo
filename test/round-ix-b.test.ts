@@ -110,7 +110,7 @@ test("a fetched-style city gap is explicit both in the score and its priority ro
     assert.equal(line.imputed, false);
     assert.match(line.raw.text, /No figure for Foligno, so it does not count there/);
   }
-  assert.match(valuesSheet(app(d, p)).value, /No figure for Foligno, so it does not count there/);
+  assert.match(valuesSheet(app(d, p)).value, /No figures for (?:Foligno and Torino|Torino and Foligno): .* counts once you add its missing inputs or figures/);
 });
 
 test("own lines and ratings persist through save/load and change the fixed score", () => {

@@ -30,7 +30,6 @@ function dial(id: string, label: string, weight: number, total: number, o: { per
     ${o.personal ? html`<button class="link val-x" data-act="remove-line" data-id="${id}">Remove</button>` : ""}
     ${o.stance ?? ""}
     ${o.canBreak ? html`<label class="check"><input type="checkbox" data-act="toggle-breaker" data-id="${id}" ${o.mustPass ? "checked" : ""}> Required: rule out cities that fail</label><small class="hint">A requirement filters cities; it takes no share of the score.</small>` : ""}
-    ${o.missing?.map(name => html`<small class="hint">No figure for ${name}, so it does not count there.</small>`) ?? ""}
   </li>`;
 }
 
@@ -100,6 +99,24 @@ const LEADS: Partial<Record<Group["id"], string>> = { money: "money_left", clima
 /** What a third priority starts at, shared over its parts by their default weights. */
 export const THIRD_WEIGHT = 10;
 
+/** Missing scoring inputs belong to the group, not every dial and requirement. */
+export function groupMissing(s: AppState, g: Group, parts: Criterion[], missing: Record<string, string[]>): Raw {
+  const active = parts.filter(c => weightOf(s.profile, c) > 0);
+  const absent = [...new Set(active.flatMap(c => missing[c.id] ?? []))];
+  if (!absent.length) return html``;
+  const list = (xs: string[]) => xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`;
+  const noPay = g.id === "money" && !s.profile.income.gross && !Object.values(s.profile.income.perCity).some(v => (typeof v === "number" ? v : v.gross) > 0);
+  const allMissing = s.profile.cities.length > 0 && active.every(c => (missing[c.id]?.length ?? 0) === s.profile.cities.length);
+  const wholeAbsent = absent.filter(name => active.every(c => missing[c.id]?.includes(name)));
+  const covered = s.profile.cities.map(id => s.data.cities.find(c => c.id === id)?.name).filter((n): n is string => !!n && !wholeAbsent.includes(n));
+  const text = noPay ? "Money counts once you add your salary." : allMissing
+    ? `No figures for ${list(absent)}: ${g.label} counts once you add its missing inputs or figures.`
+    : wholeAbsent.length === absent.length && covered.length
+      ? `No figure for ${list(absent)}: ${g.label} counts only for ${list(covered)}.`
+      : `Some ${g.label.toLowerCase()} figures are missing for ${list(absent)}; only known lines count there.`;
+  return html`<p class="hint group-missing">${text}</p>`;
+}
+
 function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o: { missing?: Record<string, string[]> } = {}): Raw {
   const p = s.profile;
   const weight = parts.reduce((t, c) => t + weightOf(p, c), 0);
@@ -114,7 +131,6 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
           canBreak: !!c.fails || !!c.position,
           mustPass: p.dealBreakers.includes(c.id),
           question: c.question,
-          missing: o.missing?.[c.id],
           stance: c.position ? stanceControl(c, stanceOf(p, c.id)) : undefined,
         });
   return html`<li class="vgroup ${weight === 0 ? "is-zero" : ""} ${open ? "is-open" : ""}" data-group="${g.id}">
@@ -124,7 +140,7 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
       <input type="range" id="wg-${g.id}" min="0" max="${max}" step="1" value="${Math.round(weight)}" data-group-weight="${g.id}" ${parts.length && parts.every((c) => p.dealBreakers.includes(c.id)) ? "disabled" : ""} style="--fill:${((Math.min(weight, max) / max) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
 
     </div>
-    ${parts.filter(c => weightOf(p,c) > 0 && o.missing?.[c.id]?.length).map(c => html`<small class="hint">${c.label}: ${o.missing![c.id]!.map(name => `No figure for ${name}, so it does not count there.`).join(" ")}</small>`)}
+    ${groupMissing(s, g, parts, o.missing ?? {})}
     <div class="priority-actions"><button class="link" data-act="group" data-id="${g.id}" aria-expanded="${open}" aria-controls="vg-${g.id}">Edit</button><button class="link" data-act="remove-priority" data-id="${g.id}">Remove</button></div>
     ${g.id === "climate" ? html`<h3 class="nice-headline">Nice days</h3>${niceDaysLine(s)}` : ""}
     ${g.id === "ambition" ? workLine(s) : ""}

@@ -50,7 +50,6 @@ input, select { caret-color: var(--human); accent-color: var(--human); }
 
 /* ---------- Shell ---------- */
 .site { max-width: 1480px; margin: 0 auto; padding: 0 1.25rem; }
-.mast { --paper: var(--paper); }
 .page { padding-bottom: 3rem; }
 
 
@@ -231,10 +230,10 @@ input, select { caret-color: var(--human); accent-color: var(--human); }
 
 /* Guided setup remains usable without a pointer or a wide viewport. */
 .setup-steps, .setup-controls { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
-.setup-steps [aria-current="step"] { background: var(--ink); color: var(--sheet); }
+.setup-steps [aria-current="step"] { color: var(--human-ink); }
 .ai-setup { margin-top: 20px; padding: 16px; border: 0; border-radius: 8px; background: var(--sheet); }
 .ai-setup h2 { margin: 0 0 8px; }
-.ai-setup .setup-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ai-setup .setup-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .ai-setup .pill-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 38px; box-sizing: border-box; text-decoration: none; line-height: 1; padding: 0 12px; }
 .ai-setup .pill-btn svg { width: 18px; height: 18px; flex: none; }
 .wf th small .src { white-space: normal; overflow-wrap: anywhere; line-height: 1.4; text-align: left; }

@@ -67,7 +67,7 @@ const INTRO_KEY = "borgo:intro-hidden";
 /** Whether to greet this visitor: nobody has told Borgo about themselves yet (no salary, no household) and they did not hide it. */
 export function introFor(p: Profile, shared: boolean): boolean {
   try {
-    if (localStorage.getItem(INTRO_KEY)) return false;
+    if (localStorage.getItem(INTRO_KEY) || localStorage.getItem("borgo:profile:v1")) return false;
   } catch {}
   return !shared && p.income.gross <= 0 && !Object.keys(p.income.perCity).length && !p.household.length;
 }

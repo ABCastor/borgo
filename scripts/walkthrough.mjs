@@ -3,7 +3,7 @@
 // A temporary extension uses chrome.tabs.setZoom: real browser zoom, not CSS zoom or pinch emulation.
 import assert from 'node:assert/strict';
 import { extraFlows } from './walkthrough-flows.mjs';
-import { populatedAudit } from './layout-audit.mjs';
+import { populatedAudit, layoutHits } from './layout-audit.mjs';
 import { createServer } from 'node:http';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { join, extname, resolve } from 'node:path';
@@ -35,7 +35,7 @@ let screenshots = 0;
 const world = JSON.parse(await readFile(join(root, 'data/map.json'), 'utf8'));
 const { project } = await import('../src/core/equal-earth.ts');
 try {
-  for (const width of [1440, 1024, 768, 390]) for (const theme of ['light', 'dark']) {
+  for (const width of (process.env.WIDTHS ? process.env.WIDTHS.split(",").map(Number) : [1440, 1024, 768, 390])) for (const theme of ['light', 'dark']) {
     const context = await chromium.launchPersistentContext(join(scratch, `${width}-${theme}`), {
       headless: true, executablePath: process.env.CHROME,
       viewport: { width, height: 1000 }, colorScheme: theme,
@@ -68,19 +68,92 @@ try {
       await page.waitForFunction(() => !!document.querySelector('[data-act="setup-open"]') && !document.querySelector('.intro-wait'));
       assert.equal(await page.locator('.roster .cchip').count(), 0);
       wordCounts.walkthrough = await words('.intro');
+      assert.equal(await page.locator('.intro').count(), 1, 'first visit has setup');
+      assert.equal(await page.locator('.ai-setup .setup-controls .pill-btn').count(), 4);
+      const aiGrid = await page.locator('.ai-setup .setup-controls .pill-btn').evaluateAll(els => els.map(el => { const r=el.getBoundingClientRect(); return {x:r.x,y:r.y,w:r.width,h:r.height}; }));
+      assert.equal(aiGrid[0].y, aiGrid[1].y); assert.equal(aiGrid[2].y, aiGrid[3].y);
+      assert.ok(aiGrid.every(r => Math.abs(r.w-aiGrid[0].w)<1 && Math.abs(r.h-aiGrid[0].h)<1));
+      const nav = page.locator(width <= 900 ? '.phone-sections' : '.desktop-sections');
+      if (width <= 900) await nav.locator('summary').click();
+      assert.equal(await nav.locator('a').count(), 6);
+      await nav.locator('a[href="#/compare"]').click();
+      await page.waitForFunction(() => document.body.dataset.route === 'compare');
+      assert.equal(await nav.locator('a[aria-current="page"]').getAttribute('href'), '#/compare');
+      if (width <= 900) await nav.locator('summary').click();
+      await page.evaluate(() => location.hash='#/');
+      await page.waitForFunction(() => document.body.dataset.route === 'cities');
       await shot('empty');
       for (let i = 0; i < 5; i++) {
         await page.locator(`[data-act="setup-step"][data-step="${i}"]`).first().click();
-        await page.locator('#intro-h').scrollIntoViewIfNeeded();
+        await page.locator('#setup-question').scrollIntoViewIfNeeded();
+        if (i === 0) {
+          await page.locator('.quick-cities [data-city="lisbon-pt"]').click();
+          await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 1);
+          await page.locator('#add-city').fill('London, United Kingdom');
+          await page.locator('[data-act="add-city-input"]').click();
+          await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 2);
+          assert.ok(await page.locator('#main .dos').count() >= 2, 'results remain below setup');
+        }
+        if (i === 1) {
+          await page.locator('.setup-answer .priority-catalogue summary').click();
+          await page.locator('.setup-answer [data-act="add-priority"][data-id="safety"]').click();
+          const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('borgo:profile:v1')));
+          assert.ok(saved.weights.safety > 0);
+          await page.locator('.setup-answer [data-act="remove-priority"][data-id="safety"]').click();
+        }
+        if (i === 2) {
+          await page.locator('#setup-salary').fill('60000');
+          await page.locator('#setup-salary').press('Tab');
+          await page.waitForFunction(() => JSON.parse(localStorage.getItem('borgo:profile:v1')).income.gross === 60000);
+          await page.locator('#setup-salary').fill('');
+          await page.locator('#setup-salary').press('Tab');
+          await page.waitForFunction(() => JSON.parse(localStorage.getItem('borgo:profile:v1')).income.gross === 0);
+        }
+        if (i === 3) {
+          await page.locator('#p0-pass').selectOption('IT');
+          await page.waitForFunction(() => JSON.parse(localStorage.getItem('borgo:profile:v1')).household[0].citizenships.includes('IT'));
+          await page.locator('.setup-answer [data-act="remove-passport"]').click();
+        }
+        if (i === 4) {
+          const before = await page.locator('.nice-live').innerText();
+          await page.locator('#cs-min').fill('17');
+          await page.locator('#cs-min').press('Tab');
+          await page.waitForFunction(() => JSON.parse(localStorage.getItem('borgo:profile:v1')).prefs.comfort.min === 17);
+          await page.waitForFunction(before => document.querySelector('.nice-live')?.innerText !== before, before);
+          assert.notEqual(await page.locator('.nice-live').innerText(), before, 'inline nice-day count follows definition');
+          await page.locator('#cs-min').fill('18');
+          await page.locator('#cs-min').press('Tab');
+          await page.waitForFunction(before => document.querySelector('.nice-live')?.innerText === before, before);
+        }
+        await page.locator('#setup-question').evaluate(el => el.scrollIntoView({block:'start'}));
+        assert.deepEqual(await layoutHits(page), [], `setup ${i + 1}: ${width}/${theme}`);
         await shot(`setup-${i + 1}`);
       }
-      await page.locator('[data-act="intro-hide"]').first().click();
+      await page.locator('[data-act="intro-hide"]').last().click();
+      assert.equal(await page.locator('.intro').count(), 0, 'skip collapses setup');
+      assert.equal(await page.locator('#top .ai-setup').count(), 0, 'skip collapses AI card');
+      await page.reload();
+      await page.waitForSelector('.ask');
+      assert.equal(await page.locator('.intro').count(), 0, 'skip persists');
+      await page.locator('.header-more summary').click();
+      await page.locator('[data-act="assistant-open"]').click();
+      await page.waitForSelector('.pop .ai-setup');
+      await shot('assistant-reopened');
+      await page.keyboard.press('Escape');
+      await page.locator('.header-more').evaluate(el => el.open=false);
       for (const city of ['Lisbon, Portugal', 'London, United Kingdom', 'Geneva, Switzerland']) {
         await page.locator('#add-city').fill(city);
         await page.locator('#add-city').press('Enter');
         await page.waitForTimeout(350);
       }
       await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 3);
+      await page.reload();
+      await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 3);
+      assert.equal(await page.locator('.intro').count(), 0, 'saved comparison does not show setup');
+      const groupNotes = await page.locator('[data-group="money"] .group-missing').allTextContents();
+      assert.equal(groupNotes.length, 1);
+      assert.match(groupNotes[0], /Money counts once you add your salary/);
+      assert.equal(await page.locator('#vs-body').innerText().then(t => (t.match(/No figure for .*so it does not count there/g) ?? []).length), 0);
       const flows = await extraFlows(page, { capture: shot });
       evidence.push({ width, theme, ...flows });
       if (await page.locator('[data-act="fold"]').isVisible() && await page.locator('[data-act="fold"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="fold"]').click();
@@ -178,6 +251,10 @@ try {
             await page.mouse.move(xy.x, xy.y);
             await page.mouse.click(xy.x, xy.y);
             await page.waitForTimeout(80);
+            if (!await page.locator("#map-card").count()) {
+              console.log("missing card", {width, theme, zoom, resized, name, xy, sizes}, await page.evaluate(({x,y}) => document.elementFromPoint(x,y)?.outerHTML.slice(0,500), xy));
+              await shot("missing-card");
+            }
             const card = await page.locator('#map-card').innerText();
             assert.ok(card.toLowerCase().includes(name.toLowerCase()), `${name} at zoom ${zoom}, width ${width}: ${card}`);
             targets.push(name);
@@ -189,7 +266,8 @@ try {
       await worker.evaluate(async () => { const tabs = await chrome.tabs.query({}); await chrome.tabs.setZoom(tabs.find(t => t.url?.startsWith('http://127.0.0.1:')).id, 1); });
       await page.setViewportSize({ width, height: 1000 });
       await page.evaluate(() => location.hash = '#/');
-      await page.waitForSelector('[data-act="reset"]');
+      await page.waitForSelector('[data-act="reset"]', { state: 'attached' });
+      await page.locator('.header-more').evaluate(el => el.open=true);
       page.once('dialog', d => d.dismiss());
       await page.locator('[data-act="reset"]').click();
       assert.equal(await page.locator('.roster .cchip').count(), 3, 'cancel preserves comparison');
@@ -197,10 +275,12 @@ try {
       await page.locator('[data-act="reset"]').click();
       await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 0);
       await page.locator('#intro-h').scrollIntoViewIfNeeded();
+      assert.equal(await page.locator('.intro').count(), 1, 'reset brings setup back');
       await shot('reset');
       await page.reload();
       await page.waitForFunction(() => !!document.querySelector('[data-act="setup-open"]') && !document.querySelector('.intro-wait'));
       assert.equal(await page.locator('.roster .cchip').count(), 0, 'reset stays empty after reload');
+      assert.equal(await page.locator('.intro').count(), 0, 'saved empty profile is returning visitor');
       const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('borgo:profile:v1')));
       assert.equal(saved.income.gross, 0);
       assert.equal(saved.income.everyday, null);

@@ -1,40 +1,47 @@
-/* Borgo's header: the Castor header's line and navigation (castor/header.css), with the product's own mark at the
-   left standing on the line, the name with Castor's typed asterisk right beside it, then the sections. Everything
-   stands on the line: the nav and the name sit 10px above it (the master's padding), the mark's ground on the line. */
-.bmast { column-gap: 1.6rem; }
-.bmast .nav { margin-left: .4rem; }
-.bmark { display: block; flex: 0 0 auto; align-self: flex-end; margin: 0 0 -10px; color: var(--ink); line-height: 0; }
+/* Borgo's house stands on the header's single ground rule. */
+.bmast { position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: 40px auto 1fr auto; align-items: end; gap: 10px; flex-wrap: nowrap; padding-top: 16px; padding-bottom: 10px; background: var(--paper); }
+.bmark { display: block; align-self: end; margin-bottom: -10px; color: var(--ink); line-height: 0; }
 .bmark .mark { display: block; width: 40px; height: auto; overflow: visible; }
 .mk-ink { fill: currentColor; }
 .mk-you { fill: var(--human); transform-box: fill-box; transform-origin: 50% 100%; }
-/* The mark's one move: your house settles into its place, a short damped hop. Two targets, never crossed: the mark
-   moves only the mark, the name only its asterisk. */
 .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: settle .9s var(--ease) 1; }
 @keyframes settle { 0%, 100% { transform: none; } 30% { transform: translateY(-9%); } 62% { transform: translateY(2%); } 82% { transform: translateY(-1.5%); } }
-
-.bname { margin-left: calc(10px - 1.6rem); font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: 30px; line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
-.bname .star { display: inline-block; margin-left: .1em; line-height: .88; color: var(--human); transition: transform .45s cubic-bezier(.45, 0, .55, 1); }
+.bname { font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: 30px; line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
+.bname .star { display: inline-block; margin-left: .1em; color: var(--human); transition: transform .45s var(--ease); }
 .bname:hover .star { transform: rotate(90deg); }
-
-/* Settings: the canonical Castor gear (castor/settings.svg), terracotta on light and teal on dark, a 44px target
-   whose icon centres on the name's cap-height middle. */
-.bmast .bar-tools { margin-left: auto; align-self: flex-end; margin-bottom: -11.5px; display: flex; color: light-dark(var(--human), var(--machine)); }
-.settings-toggle { display: grid; place-items: center; width: 44px; height: 44px; border: 0; padding: 0; background: none; color: inherit; border-radius: 50%; }
-.settings-toggle:hover { background: color-mix(in oklab, currentColor 10%, transparent); }
-.settings-toggle[aria-expanded="true"] { background: color-mix(in oklab, currentColor 14%, transparent); }
+.bmast .desktop-sections { justify-self: center; display: flex; align-items: center; gap: 2px; margin: 0 0 -4px; padding: 3px; background: var(--wash); border-radius: 7px; }
+.bmast .desktop-sections a { margin: 0; padding: 9px 13px; text-box: normal; border-radius: 4px; font-size: 13px; line-height: 1.2; }
+.bmast .nav a[aria-current] { background: var(--ink); color: var(--paper); }
+.bmast .nav a::after { display: none; }
+.bmast .bar-tools { display: flex; align-items: center; justify-self: end; gap: 4px; margin-bottom: -8px; color: var(--ink); }
+.settings-toggle { display: grid; place-items: center; width: 40px; height: 40px; border: 0; padding: 0; background: none; color: var(--human-ink); border-radius: 6px; }
+.settings-toggle:hover { background: var(--wash); }
 .settings-toggle svg { display: block; width: 19px; height: 19px; }
-
+.header-more, .phone-sections { position: relative; }
+.header-more > summary, .phone-sections > summary { display: grid; place-items: center; min-width: 40px; min-height: 40px; padding: 0 6px; cursor: pointer; list-style: none; border-radius: 6px; }
+.header-more > summary { font-size: 24px; }
+.header-more > summary::-webkit-details-marker, .phone-sections > summary::-webkit-details-marker { display: none; }
+.header-more[open] > summary, .phone-sections[open] > summary { background: var(--wash); }
+.bmast .header-menu { position: absolute; right: 0; top: calc(100% + 10px); min-width: 200px; display: flex; flex-direction: column; align-items: stretch; padding: 8px; margin: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
+.header-menu button, .bmast .header-menu a { display: block; text-align: left; padding: 12px; margin: 0; border: 0; border-radius: 3px; background: none; color: var(--ink); font: inherit; line-height: 1.3; }
+.header-menu button:hover, .header-menu a:hover { background: var(--wash); }
+.phone-sections { display: none; }
+@media (max-width: 900px) {
+  .bmast { grid-template-columns: 34px auto 1fr auto; gap: 8px; }
+  .bmark .mark { width: 34px; }
+  .bname { font-size: 26px; }
+  .bmast .desktop-sections { display: none; }
+  .phone-sections { display: block; justify-self: end; margin-bottom: -8px; font-size: 13px; }
+}
+@media (max-width: 560px) {
+  .bmast { grid-template-columns: 30px auto 1fr auto; gap: 6px; }
+  .bmark .mark { width: 30px; }
+  .bname { font-size: 24px; }
+  .bmast .bar-tools { gap: 0; }
+  .bmast .settings-toggle { display: none; }
+  .bmast .bar-tools .pill-btn { padding: 0 10px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: none; }
   .bname .star { transition: none; }
-}
-
-/* A phone: the mark, the name and the gear on the first line; the sections take the second. */
-@media (max-width: 560px) {
-  .bmast { column-gap: .6rem; row-gap: 16px; }
-  .bmark { margin-bottom: 0; }
-  .bmark .mark { width: 34px; }
-  .bname { font-size: 26px; margin-left: calc(8px - .6rem); }
-  .bmast .nav { order: 3; flex-basis: 100%; margin-left: 0; justify-content: space-between; gap: .4rem; }
-  .bmast .bar-tools { margin-bottom: -13px; }
 }

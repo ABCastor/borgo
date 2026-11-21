@@ -83,7 +83,7 @@ export async function populatedAudit(context, origin, root) {
     console.log('audit route', route);
     await page.goto(`${origin}/#${route}`);
     await page.waitForFunction(() => !!document.querySelector('#page') && !document.querySelector('.intro-wait'));
-    if (route !== '/data') await page.waitForSelector('[data-act="setup-open"]');
+    if (route !== '/data') await page.waitForSelector('[data-act="setup-open"]', { state: 'attached' });
     if (route === '/map') await page.waitForFunction(() => !!document.querySelector('#map-canvas') && !document.querySelector('#map-load'));
     const fold = page.locator('[data-act="fold"]');
     if (await fold.isVisible() && await fold.getAttribute('aria-expanded') !== 'true') await fold.click();

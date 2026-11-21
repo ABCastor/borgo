@@ -21,12 +21,13 @@ test("a newcomer sees a five-step skippable walkthrough, and can reopen it", () 
   const e = evaluate(data, p);
   const top = text(topQuestion(app(p, { intro: true }), e));
   assert.match(top, /The best place to live, for you/);
-  assert.match(top, /Borgo is yours. It ranks cities on what you value/);
+  assert.match(top, /Borgo ranks cities on what you value/);
   assert.match(top, /Every number shows its source/);
-  for (const name of ["Cities", "Priorities", "Money", "People", "Weather"]) assert.ok(top.includes(name));
-  assert.match(top, /Skip walkthrough/);
-  assert.match(top, /Guided setup/);
-  assert.match(top, /Reset/);
+  for (const name of ["Cities", "What matters", "Money", "People and right to live", "Nice days"]) assert.ok(top.includes(name));
+  assert.match(top, /Skip setup/);
+  const header = productHeader("#/", [], { settings: true });
+  assert.match(header, /Guided setup/);
+  assert.match(header, /Reset comparison/);
   const salaryStep = topQuestion(app(p, { intro: true, onboardingStep: 2 }), e).value;
   assert.match(salaryStep, /id="setup-salary"/);
   assert.doesNotMatch(text(topQuestion(app(p), e)), /The best place to live/);
@@ -54,5 +55,5 @@ test("a place being added has its sheet on the wall at once, named, with each so
 test("the header: the mark, the name right beside it, then the sections, then the gear", () => {
   const h = productHeader("#/", [{ href: "#/", label: "Cities", current: true }], { settings: true });
   const at = (s: string) => h.indexOf(s);
-  assert.ok(at('class="bmark"') < at('class="bname"') && at('class="bname"') < at('class="nav"') && at('class="nav"') < at("settings-toggle"));
+  assert.ok(at('class="bmark"') < at('class="bname"') && at('class="bname"') < at('class="nav desktop-sections"') && at('class="nav desktop-sections"') < at("settings-toggle"));
 });

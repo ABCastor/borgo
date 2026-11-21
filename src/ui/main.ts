@@ -1,5 +1,5 @@
 import { suggestCities } from "../core/suggest.ts";
-import { AI_PROMPT } from "./onboarding.ts";
+import { AI_PROMPT, aiSetup } from "./onboarding.ts";
 import { addEarner, emptyProfile } from "./state.ts";
 import { niceDefinition } from "./cards.ts";
 import { politicsWord } from "../core/criteria.ts";
@@ -319,7 +319,9 @@ const mapHere = () => !!document.getElementById("map-stage");
 function renderApp(): void {
   if (state.view === "data" || state.view === "about" || state.view === "contact") return render();
   const side = document.getElementById("side");
-  if (side) place(side, (state.view === "money" ? moneySheet(state) : valuesSheet(state)).value);
+  if (side) side.hidden = !!state.intro;
+  document.querySelector(".layout")?.classList.toggle("setup-active", !!state.intro);
+  if (side) place(side, state.intro ? "" : (state.view === "money" ? moneySheet(state) : valuesSheet(state)).value);
   renderLive();
 }
 
@@ -630,24 +632,36 @@ function onClick(e: MouseEvent): void {
       state.city = null;
       render();
       return;
+    case "assistant-open":
+      openPopover(t, aiSetup().value, "assistant");
+      return;
+    case "add-city-input":
+      document.getElementById("add-city")?.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+      return;
     case "setup-open":
+      document.querySelectorAll(".header-more").forEach(el => el.removeAttribute("open"));
+      location.hash = "#/";
       state.intro = true;
       state.onboardingStep = 0;
-      renderLive();
+      renderApp();
       return;
     case "setup-step":
       state.onboardingStep = Math.max(0, Math.min(4, Number(t.dataset.step) || 0));
       renderLive();
-      document.getElementById("intro-h")?.scrollIntoView({ block: "start" });
+      document.getElementById("setup-question")?.focus({ preventScroll: true });
       return;
     case "copy-ai":
       navigator.clipboard.writeText(AI_PROMPT).then(() => {
         const status = document.getElementById("ai-copy-status");
         if (status) status.textContent = "Copied";
       }).catch(() => {
-        const field = document.getElementById("ai-prompt") as HTMLTextAreaElement | null;
-        field?.closest("details")?.setAttribute("open", "");
-        field?.select();
+        const field = document.getElementById("ai-prompt");
+        if (field) {
+          const range = document.createRange();
+          range.selectNodeContents(field);
+          window.getSelection()?.removeAllRanges();
+          window.getSelection()?.addRange(range);
+        }
         const status = document.getElementById("ai-copy-status");
         if (status) status.textContent = "Select and copy the prompt below.";
       });
@@ -655,7 +669,7 @@ function onClick(e: MouseEvent): void {
     case "intro-hide":
       hideIntro();
       state.intro = false;
-      renderLive();
+      renderApp();
       document.getElementById("add-city")?.focus({ preventScroll: true });
       return;
     case "remove-passport":
@@ -1209,6 +1223,12 @@ function onKey(e: KeyboardEvent): void {
   }
   if (e.key !== "Escape") return;
   hideTip();
+  const menu = document.querySelector<HTMLDetailsElement>(".header-more[open], .phone-sections[open]");
+  if (menu && $("#pop").hidden) {
+    menu.open = false;
+    menu.querySelector<HTMLElement>("summary")?.focus();
+    return;
+  }
   if ((state.view === "map" || mapHere()) && $("#pop").hidden && unpinMap()) return;
   const pop = $("#pop");
   if (!pop.hidden) {

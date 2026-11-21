@@ -1,0 +1,38 @@
+/* Conversational setup shares the app's controls and profile. */
+.setup-heading { padding: 30px 0 24px; }
+.setup-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 22px; align-items: start; margin-bottom: 24px; }
+.setup-grid .intro { margin: 0; padding: 24px; background: var(--sheet); border: 0; border-radius: 10px; min-width: 0; }
+.setup-grid .ai-setup { margin: 0; padding: 24px; min-width: 0; }
+.setup-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin: 0 0 28px; }
+.setup-steps button { display: flex; flex-direction: column; justify-content: flex-start; align-self: stretch; min-width: 0; padding: 9px 0 0; border: 0; border-top: 2px solid var(--rule); border-radius: 0; background: none; text-align: left; color: var(--quiet); font: 500 12px/1.35 var(--ui); }
+.setup-steps [aria-current="step"] { border-color: var(--human); font-weight: 650; color: var(--human-ink); }
+.setup-grid .intro h2 { font: 650 clamp(28px, 3vw, 40px)/1.15 var(--ui); letter-spacing: -.025em; }
+.setup-answer { margin: 24px 0; min-width: 0; }
+.setup-city, .quick-cities { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 16px; }
+.setup-city .add { flex: 1; min-width: 160px; border: 1px solid var(--rule); border-radius: 6px; }
+.setup-city .add input { width: 100%; min-width: 0; }
+.setup-next { min-height: 44px; padding: 0 18px; background: var(--ink); color: var(--sheet); }
+.setup-answer .pop-body { padding: 0; }
+.setup-answer .vs-sum, .setup-answer .sh { display: none; }
+.setup-answer .vgroup { padding: 14px 0; }
+.setup-answer .nice-def { width: 100%; }
+.connection-row { display: grid; gap: 4px; padding-top: 10px; color: var(--quiet); font-size: 12px; }
+.connection-row code { color: var(--ink); font-size: 12px; }
+.assistant-prompt { background: var(--paper); color: var(--ink); border-radius: 6px; padding: 12px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
+.layout.has-side.setup-active { grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 821px) { .side { top: 80px; max-height: calc(100vh - 94px); } }
+.phone-settings { display: none !important; }
+:where(button, a, summary):focus-visible { outline: 2px solid var(--human-ink); outline-offset: 3px; }
+html { scroll-padding-top: 80px; }
+#setup-question, #map-canvas { scroll-margin-top: 80px; }
+@media (max-width: 900px) {
+  .setup-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .setup-heading { padding-top: 24px; }
+  .setup-grid .intro, .setup-grid .ai-setup { padding: 18px; }
+  .setup-steps { gap: 6px; }
+  .setup-steps button { font-size: 11px; }
+  .ai-setup .pill-btn { padding: 0 6px; font-size: 12px; }
+  .phone-settings { display: block !important; }
+}

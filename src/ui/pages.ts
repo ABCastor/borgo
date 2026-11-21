@@ -57,12 +57,15 @@ export function dataPage(s: AppState): Raw {
 }
 
 /** Where the project lives in public: issues and discussions are the only way to reach it. */
+import { aiSetup } from "./onboarding.ts";
+
 export const REPO = "https://github.com/ABCastor/borgo";
 
 export function aboutPage(s: AppState): Raw {
   const countries = new Set(s.data.cities.map((c) => c.country)).size;
   return html`<div class="sheet doc">
     <h1>About</h1>
+    ${aiSetup()}
     <p class="lede">Borgo, Italian for a village: an open comparison of the places you might live, weighted by what you value, with every number traceable to its source.</p>
     <h2>What it does</h2>
     <p>You pick the cities you are weighing and say how much each thing matters to you. It ranks them for you, and says in words where each one wins and loses: climate day by day, air, safety, health, research, and whether everyone in your household can move there without a visa.</p>

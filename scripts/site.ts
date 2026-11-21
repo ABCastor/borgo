@@ -39,12 +39,12 @@ const SETTINGS_ICON = (await readFile(join(ROOT, "src/ui/castor/settings.svg"), 
 export function productHeader(home: string, nav: NavLink[], o: { settings?: boolean } = {}): string {
   const links = nav.map((l) => `<a href="${l.href}"${l.current ? ' aria-current="page"' : ""}>${l.label}</a>`).join("");
   const tools = o.settings
-    ? `<span class="bar-tools"><button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings: units and formats">${SETTINGS_ICON}</button></span>`
+    ? `<span class="bar-tools"><button class="pill-btn" data-act="share">Share</button><button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings: units and formats">${SETTINGS_ICON}</button><details class="header-more"><summary aria-label="More comparison tools">⋯</summary><div class="header-menu"><button class="phone-settings" data-act="settings">Settings</button><button data-act="setup-open">Guided setup</button><button data-act="assistant-open">Use your AI assistant</button><button data-act="reset">Reset comparison</button></div></details></span>`
     : "";
   // The mark, then the name right beside it, then the sections; the gear, when there is one, at the far right.
   return `<header class="mast bmast"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${markSvg(MARK)}</a>` +
     `<a class="bname" href="${home}" tabindex="-1" aria-hidden="true">${SITE_NAME}<span class="star">*</span></a>` +
-    `<nav class="nav" aria-label="Sections">${links}</nav>${tools}</header>`;
+    `<nav class="nav desktop-sections" aria-label="Sections">${links}</nav>${o.settings ? `<details class="phone-sections"><summary>Sections</summary><nav class="nav header-menu" aria-label="Sections">${links}</nav></details>` : ""}${tools}</header>`;
 }
 
 export const CONTENT_TYPES: Record<string, string> = {
