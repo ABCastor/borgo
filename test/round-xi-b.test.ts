@@ -70,3 +70,11 @@ test('AI card orders the visible prompt, paired assistants, copy actions and lab
   assert.match(ui,/Remote MCP/); assert.match(ui,/Local install/);
   assert.ok(AI_PROMPT.includes('MCP does not change my browser comparison'));
 });
+
+test("every source has a readable short name, never its internal id", async () => {
+  const { SOURCE_SHORT } = await import("../src/ui/results.ts");
+  const { readFileSync } = await import("node:fs");
+  const d = JSON.parse(readFileSync(new URL("../public/data/dataset.json", import.meta.url), "utf8"));
+  const missing = Object.keys(d.sources).filter((id) => !SOURCE_SHORT[id]);
+  assert.deepEqual(missing, []);
+});
