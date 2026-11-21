@@ -177,6 +177,15 @@ export function hourCanvas(cityId: string, kind: "strip" | "map", label: string)
   return html`<canvas class="hours hours-${kind}" data-hours="${cityId}" role="img" aria-label="${label}"></canvas>`;
 }
 
+/** Whole-day labels sum to the rounded annual count, without rounding twelve months independently. */
+export function niceMonthCounts(months: number[]): number[] {
+  const counts = months.map(Math.floor);
+  let left = Math.round(months.reduce((a,b)=>a+b,0)) - counts.reduce((a,b)=>a+b,0);
+  const order = months.map((n,i)=>({i,remainder:n-Math.floor(n)})).sort((a,b)=>b.remainder-a.remainder || a.i-b.i);
+  for (const {i} of order) if (left-- > 0) counts[i]!++;
+  return counts;
+}
+
 /** Nice days in each month as twelve small columns, so the good season shows at a glance. */
 export function niceStrip(c: Climate, cityName: string, k?: Comfort): Raw {
   if (!c.nice) {
@@ -189,9 +198,10 @@ export function niceStrip(c: Climate, cityName: string, k?: Comfort): Raw {
       return html`<i class="${st}" title="${MONTH_NAMES[i]}: usual high ${temp(t, { short: true })}${feels ? " (feels like)" : ""}, ${st === "in" ? "in your range" : st === "below" ? "below your range" : "above your range"}">${MONTHS[i]}</i>`;
     })}</span>`;
   }
-  const total = Math.round(c.nice.reduce((a, b) => a + b, 0));
-  return html`<span class="nstrip" role="img" aria-label="${cityName}: ${total} nice days a year, by month">${c.nice.map(
-    (n, i) => html`<span class="nm" title="${MONTH_NAMES[i]}: ${num(n, 0)} nice days"><i style="height:${Math.max(4, Math.min(100, (n / 31) * 100)).toFixed(1)}%"></i><b>${MONTHS[i]}</b></span>`,
+  const counts = niceMonthCounts(c.nice);
+  const total = counts.reduce((a,b)=>a+b,0);
+  return html`<span class="nstrip" role="img" aria-label="${cityName}: ${total} nice days a year. ${counts.map((n,i) => `${MONTH_NAMES[i]}: ${n}`).join('; ')}">${c.nice.map(
+    (n, i) => html`<span class="nm" title="${MONTH_NAMES[i]}: ${counts[i]} nice days"><i style="height:${Math.max(4, Math.min(100, (n / 31) * 100)).toFixed(1)}%"></i><b>${MONTHS[i]}</b><small>${counts[i]}</small></span>`,
   )}</span>`;
 }
 

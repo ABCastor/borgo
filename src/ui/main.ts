@@ -4,7 +4,7 @@ import { addEarner, emptyProfile } from "./state.ts";
 import { niceDefinition } from "./cards.ts";
 import { politicsWord } from "../core/criteria.ts";
 import { criteriaFor, evaluate, profileProblems, weightOf, type Evaluation } from "../core/engine.ts";
-import { chooseWork, grouped, splitGroupWeight } from "../core/groups.ts";
+import { addPriority, removePriority, chooseWork, grouped, splitGroupWeight } from "../core/groups.ts";
 import { resolve } from "../core/lookup.ts";
 import { convert } from "../core/money.ts";
 import type { Dataset, Observation, Profile } from "../core/types.ts";
@@ -112,6 +112,11 @@ function setProfile(mut: (p: Profile) => void, scope: "all" | "values" = "all"):
   state.refused = fresh;
   if (!fresh.length) {
     mut(state.profile);
+    // An empty catalogue editor stays open only until its first scoring input. Turning it off later returns it to the catalogue.
+    if (state.profile.addedPriorities?.length) {
+      const groups = grouped(criteriaFor(state.profile));
+      state.profile.addedPriorities = state.profile.addedPriorities.filter(id => !groups.find(g => g.group.id === id)?.parts.some(c => weightOf(state.profile, c) > 0));
+    }
     saveProfile(state.profile);
   }
   if (inChange) return later(scope);
@@ -534,9 +539,22 @@ function onClick(e: MouseEvent): void {
     case "open-city":
       location.hash = `#/city/${t.dataset.city}`;
       break;
+    case "remove-priority": {
+      state.removedPriority = t.dataset.id!;
+      setProfile(p => removePriority(p, t.dataset.id!, criteriaFor(p)));
+      break;
+    }
+    case "add-priority":
+    case "undo-priority": {
+      state.openGroups = [...new Set([...state.openGroups, t.dataset.id!])];
+      state.removedPriority = undefined;
+      setProfile(p => addPriority(p, t.dataset.id!, criteriaFor(p)));
+      break;
+    }
     case "preset": {
+      state.removedPriority = undefined;
       const pr = PRESETS.find((x) => x.id === t.dataset.id)!;
-      setProfile((p) => (p.weights = { ...p.weights, ...pr.weights }));
+      setProfile((p) => { p.weights = { ...Object.fromEntries(criteriaFor(p).map(c => [c.id, 0])), ...pr.weights }; p.parkedPriorities = {}; p.addedPriorities = []; });
       break;
     }
     case "toggle-breaker":
@@ -601,6 +619,7 @@ function onClick(e: MouseEvent): void {
       state.notFound = [];
       state.refused = [];
       state.openGroups = [];
+      state.removedPriority = undefined;
       state.moreOpen = false;
       state.shareInclude = [];
       state.intro = true;
@@ -880,6 +899,10 @@ function onSubmit(e: SubmitEvent): void {
 
 function onInput(e: Event): void {
   const t = e.target as HTMLInputElement;
+  if (t.dataset.prioritySearch !== undefined) {
+    for (const item of document.querySelectorAll<HTMLElement>("[data-catalogue-label]")) item.hidden = !item.dataset.catalogueLabel!.includes(t.value.trim().toLowerCase());
+    return;
+  }
   if (t.id === "add-city") {
     suggestPlaces(t, state.data);
     return;
@@ -957,6 +980,10 @@ function onChange(e: Event): void {
 function changed(e: Event): void {
   const t = e.target as HTMLInputElement | HTMLSelectElement;
   if (t.dataset.mapLens || t.id === "map-fade") return;
+  if (t.dataset.weight || t.dataset.groupWeight) {
+    place(document.getElementById("side"), valuesSheet(state).value);
+    return;
+  }
   // The community form is what the person sends, not their profile: it changes nothing until sent.
   if (t.closest("form[data-community], form.cm-remove")) return;
   if (t.dataset.actChange === "paid-childcare") {

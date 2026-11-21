@@ -32,7 +32,8 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
   await page.waitForSelector('#wg-money', { state: 'attached' });
   await showSide();
   if (await page.locator('[data-act="more"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="more"]').click();
-  await page.locator('[data-act="group"][data-id="own"]').click();
+  await page.locator('.priority-catalogue summary').click();
+  await page.locator('[data-act="add-priority"][data-id="own"]').click();
   await page.locator('form.addline input').fill('Family nearby');
   await page.locator('form.addline button').click();
   const personal = (await profile()).personal[0];
@@ -47,6 +48,21 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
   assert.equal((await profile()).personal[0].scores[ratedCity], 5, 'own rating survives reload');
   if (!baseline) { await page.locator(`[data-act="score"][data-line="${personal.id}"][aria-checked="true"]`).scrollIntoViewIfNeeded(); await capture('own-rating'); }
   if (!baseline) {
+    await showSide();
+    const ownWeight = (await profile()).weights[personal.id];
+    await page.locator('[data-act="remove-priority"][data-id="own"]').click();
+    assert.equal((await profile()).weights[personal.id], 0);
+    assert.equal((await profile()).personal[0].scores[ratedCity], 5);
+    await page.locator('[data-act="undo-priority"]').click();
+    assert.equal((await profile()).weights[personal.id], ownWeight);
+    await page.locator('[data-act="remove-priority"][data-id="own"]').click();
+    await page.reload();
+    await page.waitForSelector('[data-act="setup-open"]');
+    await showSide();
+    await page.locator('.priority-catalogue summary').click();
+    await page.locator('[data-act="add-priority"][data-id="own"]').click();
+    assert.equal((await profile()).weights[personal.id], ownWeight);
+    assert.equal((await profile()).personal[0].scores[ratedCity], 5);
     await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
     await page.locator('[data-act="copy-ai"]').click();
     const copiedPrompt = await page.evaluate(() => navigator.clipboard.readText());
@@ -56,19 +72,20 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
     await showSide();
     if (await page.locator('[data-act="group"][data-id="money"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="group"][data-id="money"]').click();
     const savedWeight = (await profile()).weights.money_left;
-    await page.locator('input[data-act="toggle-breaker"][data-id="money_left"]').check();
+    await page.locator('input[data-act="toggle-breaker"][data-id="money_left"]').click();
     assert.ok((await profile()).dealBreakers.includes('money_left'));
-    assert.match(await page.locator('#o-money_left').innerText(), /requirement, not scored/);
-    await page.locator('#o-money_left').scrollIntoViewIfNeeded();
+    assert.match(await page.locator('.requirements').innerText(), /Money|money/);
+    await page.locator('.requirements').scrollIntoViewIfNeeded();
     await capture('required');
     const weatherWeight = (await profile()).weights.nice_days;
     await page.locator('#wg-climate').evaluate(el => { el.value = '50'; el.dispatchEvent(new Event('input', { bubbles: true })); });
-    assert.match(await page.locator('#o-money_left').innerText(), /requirement, not scored/, 'moving another dial cannot put Required back in the score');
+    assert.match(await page.locator('.requirements').innerText(), /Money|money/, 'moving another dial cannot put Required back in the score');
     await page.locator('#wg-climate').evaluate((el, value) => { el.value = String(value); el.dispatchEvent(new Event('input', { bubbles: true })); }, weatherWeight);
-    await page.locator('input[data-act="toggle-breaker"][data-id="money_left"]').uncheck();
+    await page.locator('.requirements [data-act="toggle-breaker"][data-id="money_left"]').click();
     assert.equal((await profile()).weights.money_left, savedWeight);
     if (await page.locator('[data-act="more"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="more"]').click();
-    await page.locator('[data-act="group"][data-id="stand"]').click();
+    await page.locator('.priority-catalogue summary').click();
+    await page.locator('[data-act="add-priority"][data-id="stand"]').click();
     const stance = page.locator('[data-stance="politics"]');
     await stance.evaluate(el => { el.value = '3'; el.dispatchEvent(new Event('change', { bubbles: true })); });
     await page.waitForFunction(() => JSON.parse(localStorage.getItem('borgo:profile:v1')).weights.politics > 0);
@@ -86,7 +103,7 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
     assert.ok((await profile()).cities.includes(id));
     await page.locator(`[data-act="remove-city"][data-city="${id}"]`).click();
     // Return to the base weights for the original map charter.
-    await page.locator('[data-act="stance-toggle"][data-id="politics"]').uncheck();
+    await page.locator('[data-act="stance-toggle"][data-id="politics"]').click();
   }
   await page.evaluate(() => location.hash = '#/');
   await page.waitForSelector('#wg-money', { state: 'attached' });

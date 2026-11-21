@@ -3,6 +3,7 @@
 // A temporary extension uses chrome.tabs.setZoom: real browser zoom, not CSS zoom or pinch emulation.
 import assert from 'node:assert/strict';
 import { extraFlows } from './walkthrough-flows.mjs';
+import { populatedAudit } from './layout-audit.mjs';
 import { createServer } from 'node:http';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { join, extname, resolve } from 'node:path';
@@ -34,7 +35,7 @@ let screenshots = 0;
 const world = JSON.parse(await readFile(join(root, 'data/map.json'), 'utf8'));
 const { project } = await import('../src/core/equal-earth.ts');
 try {
-  for (const width of [1440, 390]) for (const theme of ['light', 'dark']) {
+  for (const width of [1440, 1024, 768, 390]) for (const theme of ['light', 'dark']) {
     const context = await chromium.launchPersistentContext(join(scratch, `${width}-${theme}`), {
       headless: true, executablePath: process.env.CHROME,
       viewport: { width, height: 1000 }, colorScheme: theme,
@@ -42,6 +43,11 @@ try {
     });
     try {
       console.log('walkthrough', width, theme);
+      const audit = await populatedAudit(context, origin, root);
+      evidence.push({width, theme, audit});
+      await writeFile(join(out, 'layout-audit.json'), JSON.stringify(evidence, null, 2));
+      if (!process.env.BASELINE_AUDIT) assert.deepEqual(audit.flatMap(r => r.hits), [], `layout audit ${width}/${theme}`);
+      if (process.env.AUDIT_ONLY) continue;
       const worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker', { timeout: 15000 });
       const page = context.pages()[0];
       const errors = [];
@@ -90,10 +96,12 @@ try {
       await page.locator('#cs-min').press('Tab');
       await page.locator('#cs-max').fill('27');
       await page.locator('#cs-max').press('Tab');
+      const countsBeforeWind = await page.locator('.nice-live').innerText();
       await page.locator('#nt-calm').check();
       await page.waitForTimeout(400);
       assert.match(await page.locator('.comfort-ed').innerText(), /Wind|wind/);
       assert.match(await page.locator('.wind-impact').innerText(), /days excluded/);
+      assert.notEqual(await page.locator('.nice-live').innerText(), countsBeforeWind, 'live city counts follow the weather tests');
       await page.locator('.pop').evaluate(el => { el.scrollTop = 0; el.scrollIntoView({ block: 'start' }); });
       wordCounts.weatherEditor = await words('.comfort-ed');
       await shot('nice-days');
@@ -110,7 +118,8 @@ try {
       wordCounts.mapHelp = await words('.mhow');
       await shot('map-score');
       // Exercise the real UI caller of refreshMap, not only the scoring engine.
-      await page.locator('#third').selectOption('ambition');
+      await page.locator('.priority-catalogue summary').click();
+      await page.locator('[data-act="add-priority"][data-id="ambition"]').click();
       await page.locator('#work-kind').selectOption('software');
       const dial = async (id, value) => {
         await page.locator(id).evaluate((el, value) => { el.value = String(value); el.dispatchEvent(new Event('input', { bubbles: true })); }, value);
@@ -125,10 +134,17 @@ try {
       await dial('#wg-climate', 100);
       const weatherScore = await page.locator('[data-act="map-pin"][data-city="london-gb"] .mr-v').innerText();
       assert.notEqual(workScore, weatherScore, 'score lens updates after priorities change');
+      await page.locator('#wg-climate').evaluate(el => el.dispatchEvent(new Event('change', {bubbles:true})));
+      assert.deepEqual(await page.locator('.vgroups > [data-group]').evaluateAll(els => els.map(el => el.dataset.group)), ['climate','ambition'], 'slider release orders only scoring priorities by share');
       evidence.push({ width, theme, liveScoreChange: { workScore, weatherScore } });
       await page.locator('[data-act="map-lens"][data-lens="nice_days"]').click();
       await page.locator('#map-canvas').scrollIntoViewIfNeeded();
       await shot('map-weather');
+      const vision = await context.newCDPSession(page);
+      await vision.send('Emulation.setEmulatedVisionDeficiency', {type:'deuteranopia'});
+      await shot('map-deuteranopia');
+      await vision.send('Emulation.setEmulatedVisionDeficiency', {type:'none'});
+      await vision.detach();
       // Test actual browser zoom and resize. The oracle projects independently named coordinates
       // in the World view, checks the backing buffer, then clicks those points and checks the card.
       for (const zoom of [0.67, 0.8, 1.1]) {
@@ -193,7 +209,7 @@ try {
     } finally { await context.close(); }
   }
   await writeFile(join(out, 'walkthrough.json'), JSON.stringify(evidence, null, 2) + '\n');
-  console.log(JSON.stringify({ screenshots, checks: evidence.length, result: 'passed', wordCounts: evidence.find(e => e.wordCounts)?.wordCounts }));
+  console.log(JSON.stringify({ screenshots, checks: evidence.length, result: process.env.BASELINE_AUDIT ? 'baseline-recorded' : 'passed', wordCounts: evidence.find(e => e.wordCounts)?.wordCounts }));
 } finally {
   await new Promise(r => server.close(r));
   await rm(scratch, { recursive: true, force: true });

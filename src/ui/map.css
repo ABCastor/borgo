@@ -5,9 +5,9 @@
    on a phone. */
 
 body.app {
-  --map-lo: light-dark(#AC3E16, #EE8654);
-  --map-hi: light-dark(#075786, #50B3E8);
-  --map-mid: #F1E4C9;
+  --map-lo: #8f1231;
+  --map-hi: #a5e3ae;
+  --map-mid: #dca82b;
   --map-land: light-dark(#E3DFD4, #36332D);
   --map-land-hi: color-mix(in oklab, var(--map-hi) 62%, var(--map-land));
   --map-faint: light-dark(#EDEAE2, #282622);
@@ -75,7 +75,7 @@ body.app {
 .mlg-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 12.5px; color: var(--quiet); }
 .mlg-row b { color: var(--ink); font-weight: 600; }
 .mlg-ramp { flex: 0 1 120px; min-width: 48px; height: 10px; border-radius: 2px; background: linear-gradient(90deg, var(--map-lo), var(--map-mid), var(--map-hi)); }
-.mlg-ramp.is-land { background: linear-gradient(90deg, var(--map-land), var(--map-land-hi)); box-shadow: inset 0 0 0 1px var(--rule); }
+.mlg-ramp.is-land { background: linear-gradient(90deg, var(--map-lo), var(--map-mid), var(--map-hi)); box-shadow: inset 0 0 0 1px var(--rule); }
 .mlg-end { font: 600 13px/1 var(--cond); letter-spacing: .04em; text-transform: uppercase; color: var(--ink); white-space: nowrap; }
 .mlg-what { flex: 1 1 16rem; }
 .mlg-row .range { margin: 0 2px; }

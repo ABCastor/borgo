@@ -68,6 +68,32 @@ const CATEGORY_GROUP: Record<Criterion["category"], GroupId> = {
   personal: "own",
 };
 
+/** A saved zero-weight group is inactive, without requiring a schema version or changing criterion ids. */
+export function priorityGroups(p: Profile, criteria: Criterion[]) {
+  const weight = (parts: Criterion[]) => parts.reduce((sum, c) => sum + weightOf(p, c), 0);
+  const all = grouped(criteria).filter(({ group }) => !group.shows || group.shows(p));
+  const active = all.filter(({ group, parts }) => weight(parts) > 0 || p.addedPriorities?.includes(group.id));
+  active.sort((a, b) => weight(b.parts) - weight(a.parts));
+  return { active, catalogue: all.filter(g => !active.includes(g)) };
+}
+
+/** Stop scoring only: stances, personal ratings and must-pass checks remain intact. */
+export function removePriority(p: Profile, id: string, criteria: Criterion[]): void {
+  const parts = grouped(criteria).find(g => g.group.id === id)?.parts ?? [];
+  p.parkedPriorities ??= {};
+  p.parkedPriorities[id] = Object.fromEntries(parts.map(c => [c.id, p.weights[c.id] ?? c.defaultWeight]));
+  for (const c of parts) p.weights[c.id] = 0;
+  p.addedPriorities = (p.addedPriorities ?? []).filter(g => g !== id);
+}
+
+export function addPriority(p: Profile, id: string, criteria: Criterion[]): void {
+  const parts = grouped(criteria).find(g => g.group.id === id)?.parts ?? [];
+  const parked = p.parkedPriorities?.[id];
+  Object.assign(p.weights, parked ?? splitGroupWeight(parts.map(c => ({id:c.id, weight:0, defaultWeight:c.defaultWeight, applies:!c.applies || c.applies(p)})), 10));
+  if (p.parkedPriorities) delete p.parkedPriorities[id];
+  p.addedPriorities = [...new Set([...(p.addedPriorities ?? []), id])];
+}
+
 export function groupOf(c: Criterion): GroupId {
   if (c.category === "personal") return "own";
   if (c.position) return "stand";

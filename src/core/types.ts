@@ -283,6 +283,10 @@ export interface Profile {
   housing: { size: HousingSize };
   income: IncomePlan;
   weights: Record<string, number>; // criterion id -> 0..100
+  /** Browser catalogue: removed groups keep their last weights without affecting agent criterion ids. */
+  parkedPriorities?: Record<string, Record<string, number>>;
+  /** Explicitly added groups that need a stance or personal line before they score. */
+  addedPriorities?: string[];
   personal: PersonalLine[];
   prefs: Preferences;
   /** Your own numbers where you know better than the data: cityId -> metricId -> value. */

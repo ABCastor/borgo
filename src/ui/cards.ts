@@ -86,6 +86,12 @@ export function comfortEditor(s: AppState): string {
   const { min, max } = c;
   return html`<div class="pop-body comfort-ed"><b>Your nice days</b>
     ${niceDayTable(s)}
+    <section class="nice-live" aria-live="polite"><h3>Nice days with this definition</h3><ul>${s.profile.cities.map(id => {
+      const city = s.data.cities.find(c => c.id === id)!;
+      const n = niceDays(s.data, s.profile, city);
+      const c = climateOf(s, city);
+      return html`<li><strong>${city.name}</strong>: ${n ? `${Math.round(n.months.reduce((a,b) => a+b,0))} nice days a year` : "weather-test data not available"}${c ? niceStrip(c, city.name) : ""}</li>`;
+    })}</ul></section>
     <p class="hint nt-src">Rain, sky, humidity and wind: hourly ERA5 reanalysis 2021-2025, via ${ERA5_LINK} (CC BY 4.0). Daylight: sunrise to sunset, computed from each city's latitude. Dry and sunny are on to start.</p>
     ${windImpact(s)}
     <p class="hint">Every sheet, strip and rank follows. In a city's dossier you can also drag the band on its chart.</p></div>`.value;

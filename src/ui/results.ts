@@ -15,6 +15,7 @@ import { REPO_URL } from "../community/proposal.ts";
 import { term } from "./terms.ts";
 import { countryName, money, num } from "./format.ts";
 import type { AppState } from "./state.ts";
+import { climateOf, niceStrip } from "./climate.ts";
 
 /** The drawn close mark, one stroke weight everywhere. */
 export const CLOSE = raw('<svg viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M1 1l8 8M9 1L1 9" stroke-linecap="round"/></svg>');
@@ -134,6 +135,10 @@ export function compareView(s: AppState, e: Evaluation): Raw {
         </button></th>`,
       )}</tr></thead>
     <tbody>
+      <tr class="cmp-nice"><th scope="row">Nice days by month<small>Your own weather definition · days</small></th>${results.map(r => {
+        const c = climateOf(s, r.city);
+        return html`<td>${c ? niceStrip(c, r.city.name) : "No monthly weather data"}</td>`;
+      })}</tr>
       <tr class="cmp-info"><th scope="row">Net pay a month<small>your salary after tax</small></th>${results.map(
         (r) => html`<td><div class="cmp-val ${r.money.display.net === null ? "is-missing" : ""}"><span class="v num">${r.money.display.net === null ? describeMissing(r.money.missing.filter((x) => x.startsWith("a tax") || x === "salary")) : money(r.money.display.net / 12, r.money.display.currency)}</span></div></td>`,
       )}</tr>

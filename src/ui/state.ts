@@ -47,6 +47,7 @@ export interface AppState {
   taxOpen: string[];
   /** "More priorities" is open on the values sheet. */
   moreOpen: boolean;
+  removedPriority?: string;
   /** The private parts the person chose to put in the share link (SharePart keys); none until they tick one. */
   shareInclude: SharePart[];
   /** Places the opened link named that this browser has no data for, until they are added again. */
@@ -215,6 +216,8 @@ export function sharedProfile(p: Profile, include: SharePart[]): Partial<Profile
     housing: { ...p.housing },
     weights: Object.fromEntries(Object.entries(p.weights).filter(([id]) => keep(id))),
     dealBreakers: p.dealBreakers.filter(keep),
+    ...(p.addedPriorities ? { addedPriorities: p.addedPriorities.filter(id => (id !== "stand" || inc.has("stances")) && (id !== "own" || inc.has("lines"))) } : {}),
+    ...(p.parkedPriorities ? { parkedPriorities: Object.fromEntries(Object.entries(p.parkedPriorities).filter(([id]) => (id !== "stand" || inc.has("stances")) && (id !== "own" || inc.has("lines"))).map(([id, weights]) => [id, Object.fromEntries(Object.entries(weights).filter(([key]) => keep(key)))])) } : {}),
     prefs: { ...p.prefs, comfort: { ...p.prefs.comfort } },
   };
   if (inc.has("money")) {

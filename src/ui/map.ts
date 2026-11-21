@@ -19,6 +19,8 @@ import { cardFor, pinAfterClick, sameTarget as same, type Target } from "./map-c
 // right to live, the land says how many months of its year are in the person's nice-day range. Pointing at a place
 // reads it; clicking pins its card (src/ui/map-card.ts), and only the card's button adds it.
 
+import { stretchScale, stretched, MAP_COLOURS } from "./map-scale.ts";
+
 interface Palette { lo: number[]; hi: number[]; land: number[]; landHi: number[]; faint: number[]; ink: string; sheet: string; quiet: string }
 
 const ui = {
@@ -41,6 +43,8 @@ const ui = {
   /** The current value's worst and best ends, in its raw unit. */
   scale: null as [number, number] | null,
   palette: null as Palette | null,
+  landSpan: [0, 1] as [number, number],
+  colourKey: "",
   W: 0,
   H: 0,
   frame: 0,
@@ -109,22 +113,31 @@ function lensValue(r: CityResult | undefined): number | null {
 
 /** A city's shade: its value stretched over the lowest to highest city on the map, so differences show. */
 function shade(v: number | null): number | null {
-  if (v === null || !ui.span || ui.lens === "score") return v;
-  const { min, max } = ui.span;
-  return max - min < 1e-9 ? 1 : (v - min) / (max - min);
+  if (v === null || !ui.span) return v;
+  return stretched(v, [ui.span.min, ui.span.max]);
 }
 
 function measureSpan(s: AppState): void {
   let lo: CityResult | null = null;
   let hi: CityResult | null = null;
   for (const c of s.data.cities) {
+    if (ui.map && ui.W) {
+      const [x,y] = toScreen(ui.map, ...project(c.lon, c.lat));
+      if (x < 0 || x > ui.W || y < 0 || y > ui.H) continue;
+    }
     const r = ui.results.get(c.id);
     const v = lensValue(r);
     if (v === null) continue;
     if (!lo || v < lensValue(lo)!) lo = r!;
     if (!hi || v > lensValue(hi)!) hi = r!;
   }
-  ui.span = lo && hi ? { lo, hi, min: lensValue(lo)!, max: lensValue(hi)! } : null;
+  const values = [...ui.results.values()].filter(r => {
+    if (!ui.map || !ui.W) return true;
+    const [x,y] = toScreen(ui.map, ...project(r.city.lon,r.city.lat));
+    return x >= 0 && x <= ui.W && y >= 0 && y <= ui.H;
+  }).map(lensValue).filter((v): v is number => v !== null);
+  const span = stretchScale(values);
+  ui.span = lo && hi && span ? {lo,hi,min:span[0],max:span[1]} : null;
 }
 
 function lensText(r: CityResult): string {
@@ -191,11 +204,11 @@ const mix = (a: number[], b: number[], t: number) => a.map((x, i) => Math.round(
 const rgb = (c: number[]) => `rgb(${c[0]} ${c[1]} ${c[2]})`;
 const ramp = (p: Palette, t: number) => {
   const v = Math.max(0, Math.min(1, t));
-  const mid = [241, 228, 201];
+  const mid = MAP_COLOURS[1]!;
   return rgb(v < 0.5 ? mix(p.lo, mid, v * 2) : mix(mid, p.hi, (v - 0.5) * 2));
 };
 /** The land's own scale, lighter than the cities' so their dots stay on top of it: one hue, darker with more months. */
-const landRamp = (p: Palette, t: number) => rgb(mix(p.land, p.landHi, Math.max(0, Math.min(1, t))));
+const landRamp = (p: Palette, t: number) => ramp(p, t);
 
 /**
  * Each tile's colour key: "r" and a share for the right to live, "m" and a share of the twelve months in the person's
@@ -307,6 +320,21 @@ function draw(): void {
     cv.width = bw;
     cv.height = bh;
   }
+  measureSpan(s);
+  const landValues: number[] = [];
+  for (let i = 0; i < tileCount(map); i++) {
+    const [x,y] = toScreen(map,map.x0 + map.tiles[i*3]! * map.pitch,map.y0 - map.tiles[i*3+1]! * map.pitch);
+    if (x < 0 || x > W || y < 0 || y > H) continue;
+    const v = tileValue(s,map,i);
+    if (typeof v !== "string") landValues.push(v.v);
+  }
+  ui.landSpan = stretchScale(landValues) ?? [0,1];
+  const colourKey = JSON.stringify([ui.lens, ui.span?.min, ui.span?.max, ui.landSpan]);
+  if (colourKey !== ui.colourKey) {
+    ui.colourKey = colourKey;
+    swap("map-legend", legend(s));
+    swap("map-list", lists(s));
+  }
   if (!ui.palette) ui.palette = readPalette(stage);
   const p = ui.palette;
   const ctx = cv.getContext("2d")!;
@@ -335,7 +363,7 @@ function draw(): void {
     const t = side(col, row - 1) / 2;
     const b = side(col, row + 1) / 2;
     const tv = tileValue(s, map, i);
-    const key = typeof tv === "string" ? tv : `${tv.k}${tv.v < ui.fade - 1e-9 ? "f" : "v"}${Math.round(tv.v * 48)}`;
+    const key = typeof tv === "string" ? tv : `${tv.k}${tv.v < ui.fade - 1e-9 ? "f" : "v"}${Math.round(stretched(tv.v, ui.landSpan) * 48)}`;
     let path = paths.get(key);
     if (!path) paths.set(key, (path = new Path2D()));
     if (radius >= 0.8) path.roundRect(x + l, y + t, size - l - r, size - t - b, radius);
@@ -773,10 +801,9 @@ function lensPicker(s: AppState): Raw {
 /** The two ends of the cities' colour scale: the lowest and the highest city on the map, in the value's own words. */
 function scaleEnds(): [string, string] {
   if (!ui.span) return ["", ""];
-  if (ui.lens === "score") return ["0", "100 / 100"];
-  // Short ends: the unit's words ("nice days a year", "a month") are in the sentence beside the scale.
-  const short = (r: CityResult) => lensText(r).replace(/ nice days a year$| days a year$| a year$| a month$/, "");
-  return [short(ui.span.lo), short(ui.span.hi)];
+  const raw = (v: number) => ui.lens === "score" ? v * 100 : ui.scale ? ui.scale[0] + v * (ui.scale[1]-ui.scale[0]) : v;
+  const ends = [raw(ui.span.min),raw(ui.span.max)];
+  return ends.map(v => localText(v.toFixed(1))) as [string,string];
 }
 
 function rampBar(lo: string, hi: string, what: Raw | string, land = false): Raw {
@@ -787,16 +814,17 @@ function legend(s: AppState): Raw {
   const [lo, hi] = scaleEnds();
   const ends = ui.span ? html` <span class="quiet">(${ui.span.lo.city.name} lowest, ${ui.span.hi.city.name} highest)</span>` : "";
   const rows: Raw[] = [];
-  const land = rampBar("0", "12", html`<b>Land:</b> 0 to 12 months in your range ${rangeButton(s, "map")}, by each month's average afternoon high <span class="quiet">(air temperature)</span>`, true);
+  const land = rampBar((ui.landSpan[0]*12).toFixed(1), (ui.landSpan[1]*12).toFixed(1), html`<b>Land:</b> 0 to 12 months in your range ${rangeButton(s, "map")}, by each month's average afternoon high <span class="quiet">(air temperature)</span>`, true);
   if (ui.lens === "nice_days") {
     rows.push(land);
     rows.push(rampBar(lo, hi, html`<b>Cities:</b> nice days a year, dry and mostly clear with the day in your range${ends}`));
   } else if (ui.lens === "right_to_live") {
     rows.push(
       hasPassports(s)
-        ? html`<div class="mlg-row"><span class="mlg-sw is-hi"></span>all of you <span class="mlg-sw is-mid"></span>some of you <span class="mlg-sw is-lo"></span>no one, without a visa <span class="mlg-what">by citizenship and free-movement areas (EU and EEA, Swiss-EU, Common Travel Area, Trans-Tasman)</span></div>`
+        ? rampBar(`${(ui.landSpan[0]*100).toFixed(0)}%`, `${(ui.landSpan[1]*100).toFixed(0)}%`, "Land: share of your household already allowed, by citizenship and free-movement areas", true)
         : html`<div class="mlg-row"><span class="mlg-what">Add your passports and the map shows where each of you may live and work without a visa.</span><button class="pill-btn" data-act="household">Add passports</button></div>`,
     );
+    if (ui.span) rows.push(rampBar(lo, hi, "Cities: existing rights and confirmed entry difficulty, a rough guide, not legal advice"));
   } else {
     rows.push(
       !ui.span
@@ -808,6 +836,7 @@ function legend(s: AppState): Raw {
   }
   const fadeOut = Math.round(ui.fade * 100);
   return html`<div class="mlg">${rows}
+    <p class="hint">Red: lower fit; yellow: middle; green: higher fit. Colour spans the visible 5th–95th percentile, not a fixed score. Numbers and ranks do not change.</p>
     <div class="mlg-row mlg-keys"><span class="mlg-dot is-mine"></span>your cities, numbered in this order <span class="mlg-dot is-none"></span>${ui.lens === "score" ? "ruled out" : "no data"}</div>
     <label class="mlg-fade"><span>Fade the weakest</span><input type="range" id="map-fade" min="0" max="90" step="5" value="${fadeOut}" style="--fill:${(fadeOut / 90) * 100}%" aria-valuetext="${fadeOut ? `below ${fadeOut}% of the scale` : "nothing faded"}"><output class="num" for="map-fade">${fadeOut ? `below ${fadeOut}%` : "off"}</output></label>
   </div>`;
