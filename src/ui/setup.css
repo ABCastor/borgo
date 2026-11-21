@@ -36,3 +36,9 @@ html { scroll-padding-top: 80px; }
   .ai-setup .pill-btn { padding: 0 6px; font-size: 12px; }
   .phone-settings { display: block !important; }
 }
+
+.assistant-prompt-box { margin: 0 0 12px; }
+.assistant-prompt-box summary { cursor: pointer; font-size: 14px; color: var(--quiet); min-height: 44px; display: list-item; padding-block: 12px; }
+.assistant-prompt-box[open] summary { margin-bottom: 8px; }
+/* While guided setup asks for the first city, the empty results card would ask the same thing again. */
+body:has(.first-visit) .empty { display: none; }

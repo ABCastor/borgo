@@ -307,7 +307,7 @@ export function topQuestion(s: AppState, e: Evaluation): Raw {
       })}${s.live && !s.live.error ? html`<li class="cchip is-loading" aria-busy="true"><span class="chip-wait" aria-hidden="true"></span>${s.live.name ?? s.live.query}<span class="sr">, being added</span></li>` : ""}</ul>
       ${s.intro && (s.onboardingStep ?? 0) === 0 ? "" : html`${addField(s)}<button class="pill-btn" data-act="suggest">Suggest cities for me</button>`}
     </div>
-    ${verdict(s, e, "headline")}
+    ${s.intro && !e.results.length ? "" : verdict(s, e, "headline")}
     ${livePanel(s)}
   </section>`;
 }

@@ -28,7 +28,7 @@ test("empty start and reset factory clear personal inputs, not dataset defaults 
     assert.equal(evaluate(data, p).results.length, 0);
   }
   assert.equal(SETUP_STEPS.length, 5);
-  assert.match(AI_PROMPT, /Never call fetch_city on the remote server/);
+  assert.match(AI_PROMPT, /never call fetch_city on the remote server/);
   assert.match(AI_PROMPT, /Only include facts I confirmed/);
 });
 

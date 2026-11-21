@@ -88,8 +88,7 @@ test("the split data: the core has no figures, the per-city files put every figu
 
 test("each region's first screen is empty with guided setup before the app runs", () => {
   const html = firstScreen({ ...data, shortlists: shortlists(data) } as Dataset, "europe");
-  assert.match(html, /class="answer"/);
-  assert.match(html, /class="v-lead"/);
+  assert.doesNotMatch(html, /Add the cities you are weighing\./, "setup asks for cities once, not twice");
   assert.doesNotMatch(html, /class="v-example"|class="v-from"/);
   assert.match(html, /Add a city to start/);
   assert.match(html, /Which cities are you weighing\?/);
