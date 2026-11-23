@@ -222,6 +222,25 @@ test("stale-fact round of 16 Nov 2026: France and the Netherlands marriage match
   assert.equal(COUPLES.IT!.checked, undefined, "Italy stays unchecked: no text read says marriage stays closed to same-sex couples");
 });
 
+test("stale-fact round of 23 Nov 2026: Portugal and United States marriage match the words of their official texts", () => {
+  // https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?artigo_id=775A1577&nid=775&tabela=leis&pagina=1&ficha=1&so_miolo=&nversao=
+  // Código Civil art. 1577.º: "Casamento é o contrato celebrado entre duas pessoas que pretendem constituir família", as amended by
+  // Lei n.º 9/2010, de 31/05 (Diário da República needs JavaScript).
+  // https://tile.loc.gov/storage-services/service/ll/usrep/usrep576/usrep576644/usrep576644.pdf (576 U.S. 644): "The Fourteenth
+  // Amendment requires a State to license a marriage between two people of the same sex"; Respect for Marriage Act,
+  // https://www.govinfo.gov/content/pkg/PLAW-117publ228/html/PLAW-117publ228.htm s. 4-5.
+  for (const k of ["PT", "US"] as const) {
+    assert.equal(COUPLES[k]!.standing, 3);
+    assert.match(COUPLES[k]!.law, /^Marriage: /);
+    assert.equal(COUPLES[k]!.checked, "2026-11-23");
+  }
+  assert.match(COUPLES.PT!.law, /Lei n\.º 9\/2010; Código Civil, art\. 1577\.º/);
+  assert.match(COUPLES.PT!.url!, /^https:\/\/www\.pgdlisboa\.pt\/leis\/.*artigo_id=775A1577/);
+  assert.match(COUPLES.US!.law, /576 U\.S\. 644 \(2015\); Respect for Marriage Act 2022 \(Pub\. L\. 117-228\)/);
+  assert.match(COUPLES.US!.url!, /^https:\/\/tile\.loc\.gov\/.*usrep576644\.pdf$/);
+  for (const k of ["GR", "NZ"] as const) assert.equal(COUPLES[k]!.checked, undefined, `${k} stays unchecked: its official text could not be read`);
+});
+
 test("cli and mcp take stances", async () => {
   const out = execFileSync(process.execPath, [join(ROOT, "bin/where-to-live.ts"), "compare", "Torino", "Dublin", "--weight", "politics=20", "--stance", "politics=4", "--json", "--full"], { cwd: ROOT, encoding: "utf8" });
   const r = JSON.parse(out) as { profile: { stances: Record<string, number> }; ranking: { id: string }[] };

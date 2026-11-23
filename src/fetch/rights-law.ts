@@ -34,6 +34,8 @@ const S = "2026-11-09";
 const T = "2026-11-10";
 /** The date the entries marked `checked: U` were read in the source linked. */
 const U = "2026-11-16";
+/** The date the entries marked `checked: W` were read in the source linked. */
+const W = "2026-11-23";
 
 export const ABORTION: Record<string, LawFact<AbortionLevel>> = {
   IT: { level: 4, text: "in the first 90 days when the woman states that continuing would seriously endanger her physical or mental health, given her health, economic, social or family circumstances, how conception occurred, or a fetal anomaly", law: "Legge 22 maggio 1978, n. 194, art. 4", url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1978-05-22;194~art4", checked: C },
@@ -94,11 +96,11 @@ export const COUPLES: Record<Iso2, { standing: CouplesLevel; law: string; url?: 
   CZ: { standing: 2, law: "Partnership: Civil Code as amended by Act 123/2024 Coll., since 1 January 2025", url: "https://mv.gov.cz/partnerstvi", checked: C, note: "a partnership to which most marriage rules apply, with exceptions; registered partnerships formed before 2025 continue" },
   PL: { standing: 1, law: "No marriage or partnership in Polish law", url: "https://www.sejm.gov.pl/Sejm10.nsf/PrzebiegProc.xsp?nr=2110", checked: C, note: "a 'closest person' bill passed by Parliament in 2026 was vetoed by the President on 17 July 2026, and the Sejm did not override the veto on 17 September 2026. Under the EU Court of Justice's judgment in C-713/23 (25 November 2025), Poland must recognise a same-sex marriage its citizens lawfully concluded in another EU country" },
   HU: { standing: 2, law: "Registered partnership: Act XXIX of 2009, § 1; the Fundamental Law, Art. L, defines marriage as between a man and a woman", url: "https://net.jogtar.hu/jogszabaly?docid=a0900029.tv", checked: C },
-  PT: { standing: 3, law: "Marriage: Lei n.º 9/2010", url: "https://diariodarepublica.pt/dr/detalhe/lei/9-2010-332190" },
+  PT: { standing: 3, law: "Marriage: Lei n.º 9/2010; Código Civil, art. 1577.º", url: "https://www.pgdlisboa.pt/leis/lei_mostra_articulado.php?artigo_id=775A1577&nid=775&tabela=leis&pagina=1&ficha=1&so_miolo=&nversao=", checked: W },
   ES: { standing: 3, law: "Marriage: Ley 13/2005", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2005-11364", checked: C },
   GR: { standing: 3, law: "Marriage: Law 5089/2024" },
   EE: { standing: 3, law: "Marriage: Perekonnaseadus (Family Law Act), § 1(1), as amended by RT I, 06.07.2023, 6, in force 1 January 2024", url: "https://www.riigiteataja.ee/akt/PKS", checked: T },
-  US: { standing: 3, law: "Marriage: Obergefell v. Hodges, 576 U.S. 644 (2015); Respect for Marriage Act 2022", url: "https://www.supremecourt.gov/opinions/14pdf/14-556_3204.pdf" },
+  US: { standing: 3, law: "Marriage: Obergefell v. Hodges, 576 U.S. 644 (2015); Respect for Marriage Act 2022 (Pub. L. 117-228)", url: "https://tile.loc.gov/storage-services/service/ll/usrep/usrep576/usrep576644/usrep576644.pdf", checked: W },
   CA: { standing: 3, law: "Marriage: Civil Marriage Act, S.C. 2005, c. 33, s. 2", url: "https://laws-lois.justice.gc.ca/eng/acts/c-31.5/page-1.html", checked: C },
   SG: { standing: 1, law: "No recognition: a marriage between persons of the same sex is void (Women's Charter 1961, s. 12); the Constitution, Art. 156, lets Parliament define marriage", url: "https://sso.agc.gov.sg/Act/WC1961", checked: C, note: "Penal Code s. 377A, on sex between men, was repealed in 2022" },
   JP: { standing: 1, law: "No marriage or partnership for same-sex couples in national law", url: "https://elaws.e-gov.go.jp/document?lawid=129AC0000000089", note: "partnership certificates issued by Tokyo and many municipalities are not a marriage or partnership under national law" },
