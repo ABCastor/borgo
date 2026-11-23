@@ -20,5 +20,6 @@ export function settingsPanel(s: AppState): string {
     <label class="set-row"><span class="set-k">Numbers</span><select id="set-numbers" data-unit-select="numbers">${NUMBER_STYLES.map((v) => html`<option value="${v}" ${v === u.numbers ? "selected" : ""}>${v}</option>`)}</select></label>
     <label class="set-row"><span class="set-k">Dates</span><select id="set-dates" data-unit-select="dates">${DATE_STYLES.map((v) => html`<option value="${v}" ${v === u.dates ? "selected" : ""}>${v}</option>`)}</select></label>
     <p class="hint">Saved with your comparison and carried by its share link.</p>
+    <div class="set-actions"><button type="button" data-act="setup-open">Guided setup</button><button type="button" data-act="assistant-open">Use your AI assistant</button><button type="button" data-act="reset">Reset comparison</button></div>
   </div>`.value;
 }

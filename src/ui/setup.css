@@ -21,7 +21,6 @@
 .assistant-prompt { background: var(--paper); color: var(--ink); border-radius: 6px; padding: 12px; font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }
 .layout.has-side.setup-active { grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 821px) { .side { top: 80px; max-height: calc(100vh - 94px); } }
-.phone-settings { display: none !important; }
 :where(button, a, summary):focus-visible { outline: 2px solid var(--human-ink); outline-offset: 3px; }
 html { scroll-padding-top: 80px; }
 #setup-question, #map-canvas { scroll-margin-top: 80px; }
@@ -34,7 +33,6 @@ html { scroll-padding-top: 80px; }
   .setup-steps { gap: 6px; }
   .setup-steps button { font-size: 11px; }
   .ai-setup .pill-btn { padding: 0 6px; font-size: 12px; }
-  .phone-settings { display: block !important; }
 }
 
 .assistant-prompt-box { margin: 0 0 12px; }

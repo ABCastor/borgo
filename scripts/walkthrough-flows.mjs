@@ -57,14 +57,14 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
     assert.equal((await profile()).weights[personal.id], ownWeight);
     await page.locator('[data-act="remove-priority"][data-id="own"]').click();
     await page.reload();
-    await page.waitForSelector('[data-act="setup-open"]', { state: 'attached' });
+    await page.waitForSelector('[data-act="settings"]', { state: 'attached' });
     await showSide();
     await page.locator('.priority-catalogue > button').click();
     await page.locator('[data-act="add-priority"][data-id="own"]').click();
     assert.equal((await profile()).weights[personal.id], ownWeight);
     assert.equal((await profile()).personal[0].scores[ratedCity], 5);
     await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
-    await page.locator('.header-more').evaluate(el => el.open=true);
+    await page.locator('.bar-tools [data-act="settings"]').click();
     await page.locator('[data-act="assistant-open"]').click();
     await page.locator('[data-act="copy-ai"]').click();
     const copiedPrompt = await page.evaluate(() => navigator.clipboard.readText());
@@ -72,7 +72,6 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
     await page.locator('[data-act="copy-mcp"]').click();
     assert.equal(await page.evaluate(() => navigator.clipboard.readText()), 'https://borgo.abcastor.com/mcp');
     await page.keyboard.press('Escape');
-    await page.locator('.header-more').evaluate(el => el.open=false);
     await showSide();
     if (await page.locator('[data-act="group"][data-id="money"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="group"][data-id="money"]').click();
     const savedWeight = (await profile()).weights.money_left;

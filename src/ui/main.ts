@@ -646,13 +646,13 @@ function onClick(e: MouseEvent): void {
       render();
       return;
     case "assistant-open":
-      openPopover(t, aiSetup().value, "assistant");
+      openPopover(t.closest("#pop") ? document.querySelector<HTMLElement>(".settings-toggle:not([hidden])") ?? t : t, aiSetup().value, "assistant");
       return;
     case "add-city-input":
       document.getElementById("add-city")?.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
       return;
     case "setup-open":
-      document.querySelectorAll(".header-more").forEach(el => el.removeAttribute("open"));
+      closePopover();
       location.hash = "#/";
       state.intro = true;
       state.onboardingStep = 0;
@@ -1242,7 +1242,7 @@ function onKey(e: KeyboardEvent): void {
   }
   if (e.key !== "Escape") return;
   hideTip();
-  const menu = document.querySelector<HTMLDetailsElement>(".header-more[open], .phone-sections[open]");
+  const menu = document.querySelector<HTMLDetailsElement>(".phone-sections[open]");
   if (menu && $("#pop").hidden) {
     menu.open = false;
     menu.querySelector<HTMLElement>("summary")?.focus();

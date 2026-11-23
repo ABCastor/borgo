@@ -67,7 +67,7 @@ try {
       };
       await page.goto(origin);
       await page.waitForSelector('#app .ask, .app .ask');
-      await page.waitForFunction(() => !!document.querySelector('[data-act="setup-open"]') && !document.querySelector('.intro-wait'));
+      await page.waitForFunction(() => !!document.querySelector('[data-act="settings"]') && !document.querySelector('.intro-wait'));
       assert.equal(await page.locator('.roster .cchip').count(), 0);
       evidence.push({width, theme, roundXii: await roundXiiStart(page, theme, shot)});
       wordCounts.walkthrough = await words('.intro');
@@ -138,12 +138,11 @@ try {
       await page.reload();
       await page.waitForSelector('.ask');
       assert.equal(await page.locator('.intro').count(), 0, 'skip persists');
-      await page.locator('.header-more summary').click();
+      await page.locator('.bar-tools [data-act="settings"]').click();
       await page.locator('[data-act="assistant-open"]').click();
       await page.waitForSelector('.pop .ai-setup');
       await shot('assistant-reopened');
       await page.keyboard.press('Escape');
-      await page.locator('.header-more').evaluate(el => el.open=false);
       for (const city of ['Lisbon, Portugal', 'London, United Kingdom', 'Geneva, Switzerland']) {
         await page.locator('#add-city').fill(city);
         await page.locator('#add-city').press('Enter');
@@ -270,19 +269,20 @@ try {
       await page.setViewportSize({ width, height: 1000 });
       evidence.push({width, theme, land: await roundXiiLand(page, shot)});
       await page.evaluate(() => location.hash = '#/');
-      await page.waitForSelector('[data-act="reset"]', { state: 'attached' });
-      await page.locator('.header-more').evaluate(el => el.open=true);
+      await page.locator('.bar-tools [data-act="settings"]').click();
+      await page.waitForSelector('#pop [data-act="reset"]');
+      await shot('settings-actions');
       page.once('dialog', d => d.dismiss());
-      await page.locator('[data-act="reset"]').click();
+      await page.locator('#pop [data-act="reset"]').click();
       assert.equal(await page.locator('.roster .cchip').count(), 3, 'cancel preserves comparison');
       page.once('dialog', d => d.accept());
-      await page.locator('[data-act="reset"]').click();
+      await page.locator('#pop [data-act="reset"]').click();
       await page.waitForFunction(() => document.querySelectorAll('.roster .cchip').length === 0);
       await page.locator('#intro-h').scrollIntoViewIfNeeded();
       assert.equal(await page.locator('.intro').count(), 1, 'reset brings setup back');
       await shot('reset');
       await page.reload();
-      await page.waitForFunction(() => !!document.querySelector('[data-act="setup-open"]') && !document.querySelector('.intro-wait'));
+      await page.waitForFunction(() => !!document.querySelector('[data-act="settings"]') && !document.querySelector('.intro-wait'));
       assert.equal(await page.locator('.roster .cchip').count(), 0, 'reset stays empty after reload');
       assert.equal(await page.locator('.intro').count(), 0, 'saved empty profile is returning visitor');
       const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('borgo:profile:v1')));

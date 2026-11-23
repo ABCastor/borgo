@@ -17,11 +17,10 @@
 .settings-toggle { display: grid; place-items: center; width: 40px; height: 40px; border: 0; padding: 0; background: none; color: var(--human-ink); border-radius: 6px; }
 .settings-toggle:hover { background: var(--wash); }
 .settings-toggle svg { display: block; width: 19px; height: 19px; }
-.header-more, .phone-sections { position: relative; }
-.header-more > summary, .phone-sections > summary { display: grid; place-items: center; min-width: 40px; min-height: 40px; padding: 0 6px; cursor: pointer; list-style: none; border-radius: 6px; }
-.header-more > summary { font-size: 24px; }
-.header-more > summary::-webkit-details-marker, .phone-sections > summary::-webkit-details-marker { display: none; }
-.header-more[open] > summary, .phone-sections[open] > summary { background: var(--wash); }
+.phone-sections { position: relative; }
+.phone-sections > summary { display: grid; place-items: center; min-width: 40px; min-height: 40px; padding: 0 6px; cursor: pointer; list-style: none; border-radius: 6px; }
+.phone-sections > summary::-webkit-details-marker { display: none; }
+.phone-sections[open] > summary { background: var(--wash); }
 .bmast .header-menu { position: absolute; right: 0; top: calc(100% + 10px); min-width: 200px; display: flex; flex-direction: column; align-items: stretch; padding: 8px; margin: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
 .header-menu button, .bmast .header-menu a { display: block; text-align: left; padding: 12px; margin: 0; border: 0; border-radius: 3px; background: none; color: var(--ink); font: inherit; line-height: 1.3; }
 .header-menu button:hover, .header-menu a:hover { background: var(--wash); }
@@ -38,8 +37,6 @@
   .bmark .mark { width: 30px; }
   .bname { font-size: 24px; }
   .bmast .bar-tools { gap: 0; }
-  .bmast .settings-toggle { display: none; }
-  .bmast .bar-tools .pill-btn { padding: 0 10px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: none; }

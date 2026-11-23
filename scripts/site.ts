@@ -30,6 +30,8 @@ export interface NavLink {
 export const SIGNATURE = (await readFile(join(ROOT, "src/ui/castor/footer.html"), "utf8")).trim();
 
 /** The settings gear, copied from castor-identity master/toolbar. */
+// Share in the Castor toolbar family: the same 24-unit grid and 1.6 stroke as the gear and the theme toggle.
+const SHARE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 14.5V3.5M7.5 8 12 3.5 16.5 8M5.5 11.5v8.5h13v-8.5"/></svg>';
 const SETTINGS_ICON = (await readFile(join(ROOT, "src/ui/castor/settings.svg"), "utf8")).trim();
 
 /**
@@ -41,7 +43,7 @@ const THEME_TOGGLE = (await readFile(join(ROOT, "src/ui/castor/castor-theme-togg
 export function productHeader(home: string, nav: NavLink[], o: { settings?: boolean } = {}): string {
   const links = nav.map((l) => `<a href="${l.href}"${l.current ? ' aria-current="page"' : ""}>${l.label}${o.settings ? '<span class="section-indicator" aria-hidden="true"></span>' : ''}</a>`).join("");
   const tools = o.settings
-    ? `<span class="bar-tools"><button class="pill-btn" data-act="share">Share</button><details class="header-more"><summary aria-label="More comparison tools">⋯</summary><div class="header-menu"><button class="phone-settings" data-act="settings">Settings</button><button data-act="setup-open">Guided setup</button><button data-act="assistant-open">Use your AI assistant</button><button data-act="reset">Reset comparison</button></div></details>${THEME_TOGGLE}<button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings: units and formats">${SETTINGS_ICON}</button></span>`
+    ? `<span class="bar-tools"><button type="button" class="share-toggle" data-act="share" aria-label="Share this comparison">${SHARE_ICON}</button>${THEME_TOGGLE}<button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings, guided setup, AI assistant and reset">${SETTINGS_ICON}</button></span>`
     : "";
   // The mark, then the name right beside it, then the sections; the gear, when there is one, at the far right.
   return `<header class="mast bmast"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${markSvg(MARK)}</a>` +

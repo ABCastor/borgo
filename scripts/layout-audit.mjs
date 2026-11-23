@@ -64,7 +64,7 @@ export async function populatedAudit(context, origin, root) {
   const reports = [];
   const empty = await context.newPage();
   await empty.goto(origin);
-  await empty.waitForFunction(() => !!document.querySelector('[data-act="setup-open"]') && !document.querySelector('.intro-wait'));
+  await empty.waitForFunction(() => !!document.querySelector('[data-act="settings"]') && !document.querySelector('.intro-wait'));
   reports.push({route:'empty-with-intro',hits:await layoutHits(empty)});
   await empty.close();
   const data = JSON.parse(await readFile(`${root}/data/dataset.json`, 'utf8'));
@@ -83,7 +83,7 @@ export async function populatedAudit(context, origin, root) {
     console.log('audit route', route);
     await page.goto(`${origin}/#${route}`);
     await page.waitForFunction(route => !!document.querySelector('#page') && !document.querySelector('.intro-wait') && document.body.dataset.route === (route === '/' ? 'cities' : route.slice(1)), route);
-    if (route !== '/data') await page.waitForSelector('[data-act="setup-open"]', { state: 'attached' });
+    if (route !== '/data') await page.waitForSelector('[data-act="settings"]', { state: 'attached' });
     if (route === '/map') await page.waitForFunction(() => !!document.querySelector('#map-canvas') && !document.querySelector('#map-load'));
     const fold = page.locator('[data-act="fold"]');
     if (await fold.isVisible() && await fold.getAttribute('aria-expanded') !== 'true') await fold.click();

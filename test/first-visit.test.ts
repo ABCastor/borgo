@@ -1,5 +1,6 @@
 // A first visit: Borgo says what it is and asks first for what moves the ranking most; a place being added
 // shows its sheet at once; the header carries the name beside the mark. Checked on the published dataset, no browser.
+import { settingsPanel } from '../src/ui/settings.ts';
 import assert from "node:assert/strict";
 import { join } from "node:path";
 import { test } from "node:test";
@@ -26,8 +27,12 @@ test("a newcomer sees a five-step skippable walkthrough, and can reopen it", () 
   for (const name of ["Cities", "What matters", "Money", "People and right to live", "Nice days"]) assert.ok(top.includes(name));
   assert.match(top, /Skip setup/);
   const header = productHeader("#/", [], { settings: true });
-  assert.match(header, /Guided setup/);
-  assert.match(header, /Reset comparison/);
+  assert.match(header, /aria-label="Share this comparison"/);
+  assert.doesNotMatch(header, /header-more|⋯/, 'no separate three-dot menu');
+  const settings = settingsPanel({ profile: p } as never);
+  assert.match(settings, /data-act="setup-open">Guided setup/);
+  assert.match(settings, /data-act="assistant-open">Use your AI assistant/);
+  assert.match(settings, /data-act="reset">Reset comparison/);
   const salaryStep = topQuestion(app(p, { intro: true, onboardingStep: 2 }), e).value;
   assert.match(salaryStep, /id="setup-salary"/);
   assert.doesNotMatch(text(topQuestion(app(p), e)), /The best place to live/);
