@@ -82,7 +82,7 @@ export async function populatedAudit(context, origin, root) {
   for (const route of ['/', '/map', '/compare', '/money', '/data']) {
     console.log('audit route', route);
     await page.goto(`${origin}/#${route}`);
-    await page.waitForFunction(() => !!document.querySelector('#page') && !document.querySelector('.intro-wait'));
+    await page.waitForFunction(route => !!document.querySelector('#page') && !document.querySelector('.intro-wait') && document.body.dataset.route === (route === '/' ? 'cities' : route.slice(1)), route);
     if (route !== '/data') await page.waitForSelector('[data-act="setup-open"]', { state: 'attached' });
     if (route === '/map') await page.waitForFunction(() => !!document.querySelector('#map-canvas') && !document.querySelector('#map-load'));
     const fold = page.locator('[data-act="fold"]');

@@ -1,8 +1,9 @@
 import { canvasPoint, canvasBuffer, scoreShade } from "./map-geometry.ts";
-import { criteriaFor, scoreCandidates, weightOf, type CityResult } from "../core/engine.ts";
+import { candidateScorer, criteriaFor, weightOf, type CityResult } from "../core/engine.ts";
 import { project } from "../core/equal-earth.ts";
 import { rightToLiveWork } from "../core/rights.ts";
 import type { City } from "../core/types.ts";
+import { countryLineScores, weightedLand } from "../core/land-score.ts";
 import { monthsInRange, tileCount, type WorldMap } from "../core/world-map.ts";
 import { rangeButton } from "./cards.ts";
 import { html, raw, type Raw } from "./dom.ts";
@@ -214,6 +215,12 @@ const landRamp = (p: Palette, t: number) => ramp(p, t);
  * Each tile's colour key: "r" and a share for the right to live, "m" and a share of the twelve months in the person's
  * range for every other value, or "land" or "faint" (a country a must-pass right to live rules out).
  */
+const scoreMapCities = candidateScorer();
+let landLines = new Map<string, Map<string, number>>();
+let landContext = "";
+let landData: AppState['data'] | null = null;
+let landValues = new Map<string, ReturnType<typeof weightedLand>>();
+
 function tileValue(s: AppState, map: WorldMap, i: number): { k: "r" | "m"; v: number } | "land" | "faint" {
   const cc = map.countries[map.tiles[i * 3 + 2]!] ?? "";
   if (ui.lens === "right_to_live") {
@@ -223,6 +230,10 @@ function tileValue(s: AppState, map: WorldMap, i: number): { k: "r" | "m"; v: nu
   if (s.profile.dealBreakers.includes("right_to_live")) {
     const a = allowedIn(s, cc);
     if (a && a.yes < a.of) return "faint";
+  }
+  if (ui.lens === "score") {
+    const value = landValues.get(cc)?.score;
+    return value == null ? "land" : { k: "r", v: value };
   }
   const k = s.profile.prefs.comfort;
   return { k: "m", v: monthsInRange(map, i, k.min, k.max) / 12 };
@@ -814,6 +825,9 @@ function legend(s: AppState): Raw {
   const [lo, hi] = scaleEnds();
   const ends = ui.span ? html` <span class="quiet">(${ui.span.lo.city.name} lowest, ${ui.span.hi.city.name} highest)</span>` : "";
   const rows: Raw[] = [];
+  const coverages = [...landValues.values()].map(v => Math.round(v.coverage * 100));
+  const coverage = coverages.length ? `${Math.min(...coverages)}–${Math.max(...coverages)}%` : "0%";
+  const scoreLand = rampBar((ui.landSpan[0]*100).toFixed(0), (ui.landSpan[1]*100).toFixed(0), `Land: ${coverage} of your priorities, depending on country; city-only figures omitted, nice days unavailable on land`, true);
   const land = rampBar((ui.landSpan[0]*12).toFixed(1), (ui.landSpan[1]*12).toFixed(1), html`<b>Land:</b> 0 to 12 months in your range ${rangeButton(s, "map")}, by each month's average afternoon high <span class="quiet">(air temperature)</span>`, true);
   if (ui.lens === "nice_days") {
     rows.push(land);
@@ -831,7 +845,7 @@ function legend(s: AppState): Raw {
         ? html`<div class="mlg-row"><span class="mlg-what">${ui.lens === "score" ? "Every city on the map is ruled out by a required line. Turn one off in What matters to see them scored." : `No city on the map has data on ${lensLabel(ui.lens, s).toLowerCase()} yet.`}</span></div>`
         : rampBar(lo, hi, ui.lens === "score" ? html`<b>Cities:</b> your score, as each would score among your cities${ends}` : html`<b>Cities:</b> ${lensLabel(ui.lens, s).toLowerCase()}${/ a (year|month)$/.test(lensText(ui.span.hi)) ? lensText(ui.span.hi).match(/ a (year|month)$/)![0] : ""}${ends}`),
     );
-    rows.push(land);
+    rows.push(ui.lens === "score" ? scoreLand : land);
     if (s.profile.dealBreakers.includes("right_to_live") && hasPassports(s)) rows.push(html`<div class="mlg-row"><span class="mlg-sw is-faint"></span><span class="mlg-what">Faint land: countries your Required right to live rules out</span></div>`);
   }
   const fadeOut = Math.round(ui.fade * 100);
@@ -874,7 +888,7 @@ function lists(s: AppState): Raw {
 }
 
 function mapLabel(s: AppState): string {
-  const land = ui.lens === "right_to_live" ? "" : ", the land by months in your nice-day range";
+  const land = ui.lens === "right_to_live" ? "" : ui.lens === "score" ? ", land by your scored country-level priorities" : ", the land by months in your nice-day range";
   return `World map: cities coloured by ${lensLabel(ui.lens, s).toLowerCase()}${land}. Arrows move, plus and minus zoom, Enter opens the card of the place in the middle. Your cities are listed under the map.`;
 }
 
@@ -886,7 +900,7 @@ export function mapShell(s: AppState): Raw {
       <h2 class="sh">Colour the world by</h2>
       <div id="map-lens" class="ml">${lensPicker(s)}</div>
     </div>
-    <details class="map-help"><summary>Map help</summary><p class="mhow">City dots follow the selected lens. On Your score, only the dots change with your priorities: the land still shows temperature-range months, because global work and money figures are not available. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p></details>
+    <details class="map-help"><summary>Map help</summary><p class="mhow">City dots follow the selected lens. On Your score, land follows your priorities with country-level figures and household rights, renormalised over the lines known there. City-only work and money figures are omitted, as are nice days: the land tiles know monthly temperature, not daily rain, cloud, humidity or wind. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p></details>
     <div class="mstage" id="map-stage">
       <canvas id="map-canvas" tabindex="0" role="application" aria-roledescription="map" aria-label="${mapLabel(s)}"></canvas>
       <div class="mzoom" role="group" aria-label="Zoom">
@@ -916,7 +930,15 @@ export function refreshMap(s: AppState): void {
   }
   document.getElementById("map-load")?.remove();
   if (!lenses(s).some((l) => l.id === ui.lens)) ui.lens = "score";
-  ui.results = scoreCandidates(s.data, s.profile, s.data.cities.map((c) => c.id));
+  const { weights: _weights, cities: _cities, overrides: _overrides, ...landProfile } = s.profile;
+  const context = JSON.stringify(landProfile);
+  if (context !== landContext || landData !== s.data) {
+    landLines = countryLineScores(s.data, s.profile);
+    landContext = context;
+    landData = s.data;
+  }
+  landValues = new Map(ui.map.countries.map(cc => [cc, weightedLand(landLines.get(cc), s.profile)]));
+  ui.results = scoreMapCities(s.data, s.profile, s.data.cities.map((c) => c.id));
   const crit = criteriaFor(s.profile).find((c) => c.id === ui.lens);
   ui.scale = crit ? crit.scale(s.profile, s.data) : null;
   measureSpan(s);

@@ -137,9 +137,10 @@ export function siteFooter(site: Site, root: string, o: { addFigures?: string; c
     ]],
   ];
   return html`<div class="bfoot">
-<nav class="bf-nav" aria-label="Everything on ${site.name}">${groups.map(([h, links], i) => html`<div class="bf-group"><p class="bf-h" id="bf-${i}">${h}</p><ul aria-labelledby="bf-${i}">${links.map((l) => html`<li>${l}</li>`)}</ul></div>`)}</nav>
-${o.cities ? html`<p class="bf-cities">Every city has its own page of sourced figures: ${[...o.cities].sort((a, b) => a.city.name.localeCompare(b.city.name)).map((f, i) => html`${i ? ", " : ""}<a href="${root}${f.path.slice(1)}">${f.city.name}</a>`)}.</p>` : ""}
-<p class="bf-meta">Figures as of ${site.version}; every page names its sources and their licences. ${site.name} is made by <span translate="no">Castor</span>, which builds software and writes essays at <a href="https://abcastor.com/">abcastor.com</a>.</p>
+${o.cities ? html`<details class="footer-links"><summary>Sources, tools and licences</summary>` : ''}<nav class="bf-nav" aria-label="Everything on ${site.name}">${groups.map(([h, links], i) => html`<div class="bf-group"><p class="bf-h" id="bf-${i}">${h}</p><ul aria-labelledby="bf-${i}">${links.map((l) => html`<li>${l}</li>`)}</ul></div>`)}</nav>
+${o.cities ? html`</details>` : ''}
+${o.cities ? html`<details><summary>Browse all city pages</summary><p class="bf-cities">Every city has its own page of sourced figures: ${[...o.cities].sort((a, b) => a.city.name.localeCompare(b.city.name)).map((f, i) => html`${i ? ", " : ""}<a href="${root}${f.path.slice(1)}">${f.city.name}</a>`)}.</p></details>` : ""}
+${o.cities ? html`<details><summary>About these figures</summary>` : ''}<p class="bf-meta">Figures as of ${site.version}; every page names its sources and their licences. ${site.name} is made by <span translate="no">Castor</span>, which builds software and writes essays at <a href="https://abcastor.com/">abcastor.com</a>.</p>${o.cities ? html`</details>` : ''}
 ${raw(site.signature ?? "")}
 </div>`;
 }

@@ -30,7 +30,7 @@ export function splitDataset(published: Dataset & Published, lists: Record<Regio
 }
 
 // Links into the crawlable side, for readers and crawlers before the app has run.
-const MORE = html`<p class="intro-more">Browse <a href="sources/">the sources</a>, a city such as <a href="city/lisbon-pt/">Lisbon</a> or <a href="city/berlin-de/">Berlin</a>, a comparison such as <a href="compare/amsterdam-nl-vs-berlin-de/">Amsterdam vs Berlin</a>, or the <a href="llms.txt">guide for AI assistants</a>; the same engine answers from the command line and as an MCP server. The code is open at <a href="https://github.com/ABCastor/borgo">github.com/ABCastor/borgo</a>.</p>`;
+const MORE = html`<details><summary>Sources and more ways to use Borgo</summary><p class="intro-more">Browse <a href="sources/">the sources</a>, a city such as <a href="city/lisbon-pt/">Lisbon</a> or <a href="city/berlin-de/">Berlin</a>, a comparison such as <a href="compare/amsterdam-nl-vs-berlin-de/">Amsterdam vs Berlin</a>, or the <a href="llms.txt">guide for AI assistants</a>; the same engine answers from the command line and as an MCP server. The code is open at <a href="https://github.com/ABCastor/borgo">github.com/ABCastor/borgo</a>.</p></details>`;
 
 /** The app's first screen for a region, as the app itself draws it before anything is typed. */
 export function firstScreen(data: Dataset, region: RegionId): string {

@@ -244,15 +244,42 @@ function localNotes(singles: Evaluation[], prepared: Prepared[]): string[] {
 
 /** Candidates match evaluate() after adding them; only opt-in relative scoring depends on the set. */
 export function scoreCandidates(data: Dataset, profile: Profile, candidates: string[]): Map<string, CityResult> {
+  return candidateResults(data, profile, candidates, prepare);
+}
+
+/** A map's weight-only redraw reuses raw figures; any other profile change or new dataset resets them. */
+export function candidateScorer(): typeof scoreCandidates {
+  let previousData: Dataset | null = null;
+  let previousObservations: Dataset['observations'] | null = null;
+  let previousContext = '';
+  const prepared = new Map<string, Prepared>();
+  return (data, profile, candidates) => {
+    const { weights: _weights, ...context } = profile;
+    const key = JSON.stringify(context);
+    if (data !== previousData || data.observations !== previousObservations || key !== previousContext) {
+      prepared.clear();
+      previousData = data;
+      previousObservations = data.observations;
+      previousContext = key;
+    }
+    return candidateResults(data, profile, candidates, (s, city) => {
+      let raw = prepared.get(city.id);
+      if (!raw) { raw = prepare(s, city); prepared.set(city.id, raw); }
+      return raw;
+    });
+  };
+}
+
+function candidateResults(data: Dataset, profile: Profile, candidates: string[], prepareCity: typeof prepare): Map<string, CityResult> {
   const s = setup(data, profile);
-  const chosen = profile.cities.map((id) => cityById(data, id)).filter((c): c is City => !!c).map((c) => prepare(s, c));
+  const chosen = profile.cities.map((id) => cityById(data, id)).filter((c): c is City => !!c).map((c) => prepareCity(s, c));
   const out = new Map<string, CityResult>();
   for (const r of evaluate(data, profile).results) out.set(r.city.id, r);
   for (const id of candidates) {
     if (out.has(id)) continue;
     const city = cityById(data, id);
     if (!city) continue;
-    const r = scoreSet(s, profile.prefs.normalise === "relative" ? [...chosen, prepare(s, city)] : [prepare(s, city)]).results.find((x) => x.city.id === id);
+    const r = scoreSet(s, profile.prefs.normalise === "relative" ? [...chosen, prepareCity(s, city)] : [prepareCity(s, city)]).results.find((x) => x.city.id === id);
     if (r) {
       if (profile.prefs.normalise !== "relative") {
         const tier = (x: CityResult) => x.ruledOut.length ? 2 : x.unresolved.length ? 1 : 0;

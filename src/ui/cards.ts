@@ -209,7 +209,7 @@ function sheet(s: AppState, r: CityResult, e: Evaluation, scale: number): Raw {
 /** Explore more places: the world map under the first results. Drawn when it scrolls into view (`mounted`). */
 export function exploreShell(s: AppState, mounted: boolean): Raw {
   return html`<h2 class="explore-h" id="explore-h">Explore more places</h2>
-    <p class="explore-lede">Every city in the data, and any town on the map, coloured by what matters to you. Point at one to see where it would rank among yours; click to open its card, and add it from there.</p>
+    <details class="explore-notes"><summary>How to explore the map</summary><p class="explore-lede">Every city in the data, and any town on the map, coloured by what matters to you. Point at one to see where it would rank among yours; click to open its card, and add it from there.</p></details>
     ${mounted ? mapShell(s) : html`<div class="sheet explore-wait"><p class="quiet">The map loads as you reach it. <a href="#/map">Open it on its own page</a>.</p></div>`}`;
 }
 
@@ -241,5 +241,5 @@ export function citiesView(s: AppState, e: Evaluation): Raw {
   const feels = (k.basis ?? "feels") === "feels";
   const lead = html`${waiting ? html`<p class="wall-key">Nice-day counts arrive with the next climate update. Until then each sheet's strip shows the usual ${feels ? "feels-like " : ""}afternoon high of each month against your ${tempValue(k.min)}–${tempValue(k.max)}° range: <i class="kx in">filled</i> in range, <i class="kx above">mark on top</i> warmer, <i class="kx below">mark below</i> cooler.</p>` : ""}`;
   return html`${lead}<section class="wall" aria-label="Your cities, best first">${adding}${e.results.map((r) => sheet(s, r, e, scale))}</section>
-    <p class="key">Wins and losses are in points of the 100-point score, against the average of your other cities. In fixed scoring, a line with no figure for a city does not count there; check the gaps below. Temperature bands follow your comfortable range.</p>`;
+    <details class="score-notes"><summary>How to read the scores</summary><p class="key">Wins and losses are in points of the 100-point score, against the average of your other cities. In fixed scoring, a line with no figure for a city does not count there; check the gaps below. Temperature bands follow your comfortable range.</p></details>`;
 }

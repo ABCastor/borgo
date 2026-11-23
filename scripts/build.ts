@@ -34,7 +34,7 @@ await build({
   loader: { ".html": "text" },
   outfile: join(DIST, "app.js"),
 });
-const css = await Promise.all(["src/ui/castor/header.css", "src/ui/castor/footer.css", "src/ui/styles.css", "src/site/site.css", "src/ui/sheets.css", "src/ui/map.css", "src/ui/community.css", "src/ui/brand/brand.css", "src/ui/setup.css"].map((f) => readFile(join(ROOT, f), "utf8")));
+const css = await Promise.all(["src/ui/castor/header.css", "src/ui/castor/footer.css", "src/ui/styles.css", "src/site/site.css", "src/ui/sheets.css", "src/ui/map.css", "src/ui/community.css", "src/ui/brand/brand.css", "src/ui/setup.css", "src/ui/controls.css", "src/ui/castor/castor-toolbar.css"].map((f) => readFile(join(ROOT, f), "utf8")));
 await writeFile(join(DIST, "app.css"), css.join("\n"));
 
 const header = productHeader("#/", [
@@ -50,6 +50,7 @@ const published = JSON.parse(await readFile(join(ROOT, "public/data/dataset.json
 const page = (await readFile(join(ROOT, "public/index.html"), "utf8")).replace("<!--HEADER-->", header);
 await writeFile(join(DIST, "index.html"), page);
 await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK));
+await cp(join(ROOT, "public/media"), join(DIST, "media"), { recursive: true });
 await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });
 await cp(join(ROOT, "public/data"), join(DIST, "data"), { recursive: true });
 // The compare chart's MCP App document, which the remote MCP server (/mcp) reads; the local one builds its own.

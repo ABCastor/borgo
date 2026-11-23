@@ -281,7 +281,7 @@ function intro(s: AppState, _e: Evaluation): Raw {
   const item = SETUP_STEPS[step]!;
   const questions = ["Which cities are you weighing?", "What matters most to you?", "What do you earn?", "Who is coming with you?", "What is your kind of nice day?"];
   const quick = ["lisbon-pt", "london-gb", "berlin-de", "dublin-ie"].map(id => s.data.cities.find(c => c.id === id)).filter(c => c && !s.profile.cities.includes(c.id));
-  return html`<div class="first-visit"><header class="setup-heading"><h1 class="intro-h" id="intro-h">The best place to live, <span>for you</span></h1><p class="intro-lede">Borgo ranks cities on what you value. Every number shows its source. Your comparison stays in this browser.</p></header><div class="setup-grid"><section class="intro" aria-label="Guided setup">
+  return html`<div class="first-visit"><header class="setup-heading"><h1 class="intro-h" id="intro-h">The best place to live, <span>for you</span></h1><button class="link film-control" data-film>Watch the film (53 s)</button><p class="intro-lede">Borgo ranks cities on what you value. Every number shows its source. Your comparison stays in this browser.</p></header><div class="setup-grid"><section class="intro" aria-label="Guided setup">
     <nav class="setup-steps" aria-label="Guided setup">${SETUP_STEPS.map((x, i) => html`<button data-act="setup-step" data-step="${i}" aria-current="${step === i ? "step" : "false"}">${x.title}</button>`)}</nav>
     <h2 tabindex="-1" id="setup-question">${questions[step]}</h2><p>${item.text}</p>
     <div class="setup-answer">

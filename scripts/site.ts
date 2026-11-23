@@ -36,10 +36,12 @@ const SETTINGS_ICON = (await readFile(join(ROOT, "src/ui/castor/settings.svg"), 
  * The product header: the Castor header's line and navigation (castor/header.css), with Borgo's own mark at the left
  * standing on the line, and the name with Castor's typed asterisk at the right. `settings` adds the app's gear.
  */
+const THEME_TOGGLE = (await readFile(join(ROOT, "src/ui/castor/castor-theme-toggle.html"), "utf8")).trim();
+
 export function productHeader(home: string, nav: NavLink[], o: { settings?: boolean } = {}): string {
-  const links = nav.map((l) => `<a href="${l.href}"${l.current ? ' aria-current="page"' : ""}>${l.label}</a>`).join("");
+  const links = nav.map((l) => `<a href="${l.href}"${l.current ? ' aria-current="page"' : ""}>${l.label}${o.settings ? '<span class="section-indicator" aria-hidden="true"></span>' : ''}</a>`).join("");
   const tools = o.settings
-    ? `<span class="bar-tools"><button class="pill-btn" data-act="share">Share</button><button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings: units and formats">${SETTINGS_ICON}</button><details class="header-more"><summary aria-label="More comparison tools">⋯</summary><div class="header-menu"><button class="phone-settings" data-act="settings">Settings</button><button data-act="setup-open">Guided setup</button><button data-act="assistant-open">Use your AI assistant</button><button data-act="reset">Reset comparison</button></div></details></span>`
+    ? `<span class="bar-tools"><button class="pill-btn" data-act="share">Share</button><details class="header-more"><summary aria-label="More comparison tools">⋯</summary><div class="header-menu"><button class="phone-settings" data-act="settings">Settings</button><button data-act="setup-open">Guided setup</button><button data-act="assistant-open">Use your AI assistant</button><button data-act="reset">Reset comparison</button></div></details>${THEME_TOGGLE}<button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings: units and formats">${SETTINGS_ICON}</button></span>`
     : "";
   // The mark, then the name right beside it, then the sections; the gear, when there is one, at the far right.
   return `<header class="mast bmast"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${markSvg(MARK)}</a>` +

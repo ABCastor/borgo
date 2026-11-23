@@ -24,6 +24,9 @@ import { aboutPage, contactPage, dataPage } from "./pages.ts";
 import { compareView, moneyView, sourcePopover } from "./results.ts";
 import { applyCitiesQuery, fetchedNames, placeFromId, hideIntro, introFor, loadFetchedCities, loadProfile, notFoundOnLoad, PRESETS, saveFetchedCity, saveProfile, sharedParam, storedOverride, shareUrl, sharePartsHeld, type AppState, type LiveStatus, type SharePart, type View } from "./state.ts";
 import { sharePanel } from "./share.ts";
+import { applyTheme, cycleTheme, themeChoice } from "./theme.ts";
+import { transitionView, enhanceDisclosures } from "./transitions.ts";
+import { openFilm } from "./film.ts";
 import { settingsPanel } from "./settings.ts";
 import { TERMS } from "./terms.ts";
 import { local, num, useUnits } from "./format.ts";
@@ -486,6 +489,16 @@ function setComfort(field: "min" | "max", v: number): void {
 
 function onClick(e: MouseEvent): void {
   const target = e.target as HTMLElement;
+  const theme = target.closest<HTMLElement>('[data-theme-toggle]');
+  if (theme) { cycleTheme(); paintCanvases(); repaletteMap(); return; }
+  const film = target.closest<HTMLElement>('[data-film]');
+  if (film) { openFilm(film); return; }
+  const disclosure = target.closest<HTMLElement>('[data-disclose]');
+  if (disclosure) {
+    const panel = document.getElementById(disclosure.dataset.disclose!);
+    if (panel) { panel.hidden = !panel.hidden; disclosure.setAttribute('aria-expanded', String(!panel.hidden)); }
+    return;
+  }
   const termEl = target.closest<HTMLElement>(".term");
   if (termEl) {
     e.preventDefault();
@@ -770,7 +783,13 @@ function onClick(e: MouseEvent): void {
       const on = (t as HTMLInputElement).checked;
       state.shareInclude = on ? [...new Set([...state.shareInclude, part])] : state.shareInclude.filter((x) => x !== part);
       refreshPopover();
+      document.querySelector<HTMLDetailsElement>('.share details')?.setAttribute('open', '');
       document.getElementById(`share-${part}`)?.focus();
+      return;
+    }
+    case "share-native": {
+      const url = shareUrl(p, state.shareInclude.filter(k => sharePartsHeld(p).includes(k)), fetchedNames(state.data, state.fetchedHere));
+      void navigator.share?.({ title: 'Borgo comparison', url }).catch(() => {});
       return;
     }
     case "share-copy": {
@@ -1463,11 +1482,15 @@ async function boot(): Promise<void> {
     paintCanvases();
     repaletteMap();
   });
+  applyTheme(themeChoice(document.documentElement.dataset.themeChoice ?? null));
+  const disclosures = new MutationObserver(() => enhanceDisclosures());
+  disclosures.observe(document.body, { childList: true, subtree: true });
+  document.addEventListener('toggle', () => enhanceDisclosures(), true);
   addEventListener("hashchange", () => {
-    render();
-    scrollTo(0, 0);
+    transitionView(() => { render(); scrollTo(0, 0); });
   });
   render();
+  enhanceDisclosures();
 }
 
 boot().catch((err) => {

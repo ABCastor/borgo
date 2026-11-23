@@ -113,6 +113,14 @@ const isCountry = (h: GeoHit) => /^PCL/.test(h.feature_code ?? "");
 /** Below this, the geocoder's best town may be a namesake of a bigger place it knows by another name. */
 const SIZEABLE = 100_000;
 
+/** Ambiguous island names and an older city name: fetch the exact gazetteer record, retain qualified namesakes. */
+export const PLACE_ALIASES: Record<string, { id: number; country: string; stands: string }> = {
+  hawaii: { id: 5856195, country: 'US', stands: 'the capital of Hawaii, on Oʻahu' },
+  'la palma': { id: 2511180, country: 'ES', stands: 'the capital of La Palma island' },
+  menorca: { id: 2514301, country: 'ES', stands: 'the capital of Menorca island' },
+  bombay: { id: 1275339, country: 'IN', stands: 'Mumbai, also known as Bombay' },
+};
+
 /**
  * Candidate places for a query, most populous first. `known` are the cities already in the dataset: a candidate with
  * the same GeoNames id returns that city, so seed ids stay stable.
@@ -120,6 +128,13 @@ const SIZEABLE = 100_000;
 export async function resolvePlace(text: string, ctx: FetchCtx, opts: ResolveOptions): Promise<Resolved[]> {
   const q = parsePlace(text, opts.countries);
   const byGeonames = new Map(opts.known.filter((c) => c.geonames).map((c) => [c.geonames!, c]));
+  const alias = PLACE_ALIASES[fold(q.name)];
+  const preferred = alias && (!q.country || q.country === alias.country) ? alias : undefined;
+  let preferredHit: GeoHit | undefined;
+  if (preferred) {
+    const hit = await ctx.json<GeoHit>(`${GEOCODER}/get?id=${preferred.id}`).catch(() => null);
+    if (hit?.id === preferred.id && hit.country_code === preferred.country) preferredHit = hit;
+  }
   let hits: GeoHit[] = [];
   if (q.geonamesId) {
     const r = await ctx.json<GeoHit>(`${GEOCODER}/get?id=${q.geonamesId}`);
@@ -130,7 +145,7 @@ export async function resolvePlace(text: string, ctx: FetchCtx, opts: ResolveOpt
     if (!hits.some(isPopulated) && opts.geonamesUser) hits.push(...(await geonamesSearch(ctx, q, opts.geonamesUser)));
     // No sizeable town by that name: the name may be another one's (an older name, an exonym, a spelling).
     const best = Math.max(0, ...hits.filter((h) => isPopulated(h) && inCountry(h, q)).map((h) => h.population ?? 0));
-    if (best < SIZEABLE) {
+    if (best < SIZEABLE && !preferredHit) {
       const seen = new Set(hits.map((h) => h.id));
       for (const h of await wikidataSearch(ctx, q, seen)) if (!seen.has(h.id)) hits.push(h);
     }
@@ -146,6 +161,7 @@ export async function resolvePlace(text: string, ctx: FetchCtx, opts: ResolveOpt
   hits.sort((a, b) => (b.population ?? 0) - (a.population ?? 0));
   // Hamlets only crowd the list: keep the best match, and alternatives of at least 1,000 people.
   hits = hits.filter((h, i) => i === 0 || (h.population ?? 0) >= 1_000);
+  if (preferredHit && preferred) stand = { hit: preferredHit, stands: preferred.stands };
   if (stand) hits = [stand.hit, ...hits.filter((h) => h.id !== stand!.hit.id)];
   const out: Resolved[] = [];
   const ids = new Set(opts.known.map((c) => c.id));
@@ -161,7 +177,8 @@ export async function resolvePlace(text: string, ctx: FetchCtx, opts: ResolveOpt
     const id = cityId(h.name, h.country_code!, h.admin1, String(h.id), (x) => ids.has(x));
     ids.add(id);
     const city = toCity(h, region, id);
-    if (stands && area && fold(area.name) !== fold(h.name)) city.aliases = [area.name];
+    if (preferredHit === h) city.aliases = [q.name];
+    else if (stands && area && fold(area.name) !== fold(h.name)) city.aliases = [area.name];
     out.push({ city, known: false, label, ...(stands ? { stands } : {}) });
   }
   return out;

@@ -32,7 +32,7 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
   await page.waitForSelector('#wg-money', { state: 'attached' });
   await showSide();
   if (await page.locator('[data-act="more"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="more"]').click();
-  await page.locator('.priority-catalogue summary').click();
+  await page.locator('.priority-catalogue > button').click();
   await page.locator('[data-act="add-priority"][data-id="own"]').click();
   await page.locator('form.addline input').fill('Family nearby');
   await page.locator('form.addline button').click();
@@ -59,7 +59,7 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
     await page.reload();
     await page.waitForSelector('[data-act="setup-open"]', { state: 'attached' });
     await showSide();
-    await page.locator('.priority-catalogue summary').click();
+    await page.locator('.priority-catalogue > button').click();
     await page.locator('[data-act="add-priority"][data-id="own"]').click();
     assert.equal((await profile()).weights[personal.id], ownWeight);
     assert.equal((await profile()).personal[0].scores[ratedCity], 5);
@@ -88,7 +88,7 @@ export async function extraFlows(page, { baseline = false, capture = async () =>
     await page.locator('.requirements [data-act="toggle-breaker"][data-id="money_left"]').click();
     assert.equal((await profile()).weights.money_left, savedWeight);
     if (await page.locator('[data-act="more"]').getAttribute('aria-expanded') !== 'true') await page.locator('[data-act="more"]').click();
-    await page.locator('.priority-catalogue summary').click();
+    await page.locator('.priority-catalogue > button').click();
     await page.locator('[data-act="add-priority"][data-id="stand"]').click();
     const stance = page.locator('[data-stance="politics"]');
     await stance.evaluate(el => { el.value = '3'; el.dispatchEvent(new Event('change', { bubbles: true })); });

@@ -2,6 +2,7 @@
 // PLAYWRIGHT_MODULE to an installed playwright index.mjs. CHROME selects an unbranded Chromium.
 // A temporary extension uses chrome.tabs.setZoom: real browser zoom, not CSS zoom or pinch emulation.
 import assert from 'node:assert/strict';
+import { roundXiiStart, roundXiiLand } from './walkthrough-xii.mjs';
 import { extraFlows } from './walkthrough-flows.mjs';
 import { populatedAudit, layoutHits } from './layout-audit.mjs';
 import { createServer } from 'node:http';
@@ -59,6 +60,7 @@ try {
       });
       const wordCounts = {};
       const shot = async name => {
+        await page.waitForTimeout(260);
         screenshots++;
         await page.screenshot({ path: join(out, `${width}-${theme}-${name}.png`) });
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), `overflow: ${width}/${theme}/${name}`);
@@ -67,6 +69,7 @@ try {
       await page.waitForSelector('#app .ask, .app .ask');
       await page.waitForFunction(() => !!document.querySelector('[data-act="setup-open"]') && !document.querySelector('.intro-wait'));
       assert.equal(await page.locator('.roster .cchip').count(), 0);
+      evidence.push({width, theme, roundXii: await roundXiiStart(page, theme, shot)});
       wordCounts.walkthrough = await words('.intro');
       assert.equal(await page.locator('.intro').count(), 1, 'first visit has setup');
       assert.equal(await page.locator('.ai-setup .setup-controls .pill-btn').count(), 4);
@@ -95,7 +98,7 @@ try {
           assert.ok(await page.locator('#main .dos').count() >= 2, 'results remain below setup');
         }
         if (i === 1) {
-          await page.locator('.setup-answer .priority-catalogue summary').click();
+          await page.locator('.setup-answer .priority-catalogue > button').click();
           await page.locator('.setup-answer [data-act="add-priority"][data-id="safety"]').click();
           const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('borgo:profile:v1')));
           assert.ok(saved.weights.safety > 0);
@@ -191,7 +194,7 @@ try {
       wordCounts.mapHelp = await words('.mhow');
       await shot('map-score');
       // Exercise the real UI caller of refreshMap, not only the scoring engine.
-      await page.locator('.priority-catalogue summary').click();
+      await page.locator('.priority-catalogue > button').click();
       await page.locator('[data-act="add-priority"][data-id="ambition"]').click();
       await page.locator('#work-kind').selectOption('software');
       const dial = async (id, value) => {
@@ -265,6 +268,7 @@ try {
       }
       await worker.evaluate(async () => { const tabs = await chrome.tabs.query({}); await chrome.tabs.setZoom(tabs.find(t => t.url?.startsWith('http://127.0.0.1:')).id, 1); });
       await page.setViewportSize({ width, height: 1000 });
+      evidence.push({width, theme, land: await roundXiiLand(page, shot)});
       await page.evaluate(() => location.hash = '#/');
       await page.waitForSelector('[data-act="reset"]', { state: 'attached' });
       await page.locator('.header-more').evaluate(el => el.open=true);
