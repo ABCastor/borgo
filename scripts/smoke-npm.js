@@ -99,15 +99,19 @@ async function mcp() {
 
     const list = await request("tools/list", {});
     const tools = (list.result?.tools ?? []).map((t) => t.name);
-    check("mcp tools/list", tools.includes("compare_cities") && tools.includes("fetch_city"), `${tools.length} tools`);
+    check("mcp tools/list", tools.includes("compare_cities") && tools.includes("rank_cities") && tools.includes("fetch_city"), `${tools.length} tools`);
 
     const call = await request("tools/call", { name: "compare_cities", arguments: { cities: ["Lisbon", "Berlin"] } });
     const ranked = (call.result?.structuredContent?.ranking ?? []).map((r) => r.name);
     check("mcp tools/call compare_cities", !call.result?.isError && ranked.length === 2 && ranked.includes("Lisbon"), ranked.join(", ") || JSON.stringify(call).slice(0, 500));
 
+    const ranking = await request("tools/call", { name: "rank_cities", arguments: { criterion: "nice_days", view: "world", limit: 3 } });
+    const rows = ranking.result?.structuredContent?.rows ?? [];
+    check("mcp rank_cities with sourced world points", !ranking.result?.isError && rows.length === 3 && rows.every((r) => r.sources.length && r.point.length === 2), `${rows.length} ranked rows`);
+
     const view = await request("resources/read", { uri: "ui://borgo/compare.html" });
     const html = view.result?.contents?.[0]?.text ?? "";
-    check("mcp chart view", /function compareSvg/.test(html) && !/:\s*ChartInput\b/.test(html), `${html.length} characters`);
+    check("mcp chart view", /function compareSvg/.test(html) && /function renderRanking/.test(html) && /const borgoLand/.test(html) && !/:\s*ChartInput\b/.test(html), `${html.length} characters`);
   } finally {
     child.stdin.end();
     const code = await Promise.race([exited, new Promise((ok) => setTimeout(() => ok("timeout"), 5_000))]);

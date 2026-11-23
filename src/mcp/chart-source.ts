@@ -3,8 +3,19 @@
 import { readFileSync } from "node:fs";
 import { stripTypeScriptTypes } from "node:module";
 import { join } from "node:path";
+import type { WorldMap } from "../core/world-map.ts";
 import { ROOT } from "../agent/dataset.ts";
 
 export function chartSource(): string {
-  return stripTypeScriptTypes(readFileSync(join(ROOT, "src/agent/chart.ts"), "utf8"));
+  const map = JSON.parse(readFileSync(join(ROOT, "public/data/map.json"), "utf8")) as WorldMap;
+  // One compact path of the published land grid, in the same Equal Earth coordinates as city dots.
+  const f = (n: number) => Number(n.toFixed(2));
+  const d: string[] = [];
+  for (let i = 0; i < map.tiles.length; i += 3) {
+    const x = 360 + (map.x0 + map.tiles[i]! * map.pitch) * 125;
+    const y = 180 - (map.y0 - map.tiles[i + 1]! * map.pitch) * 125;
+    const p = f(map.pitch * 125);
+    d.push(`M${f(x)},${f(y)}h${p}v${p}h${-p}z`);
+  }
+  return stripTypeScriptTypes(readFileSync(join(ROOT, "src/agent/chart.ts"), "utf8")) + `\nconst borgoLand = ${JSON.stringify(d.join(""))};`;
 }

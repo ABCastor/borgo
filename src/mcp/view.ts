@@ -1,6 +1,7 @@
 // The compare chart as an MCP App view (extension io.modelcontextprotocol/ui, January 2026 spec): one HTML
 // document the host renders in a sandboxed iframe, fed the compare_cities result over postMessage.
 // It needs no network, so it declares no CSP domains.
+import { RANK_VIEW } from "./rank-view.ts";
 import { chartSource } from "./chart-source.ts";
 import { APPS_PROTOCOL } from "./view-id.ts";
 
@@ -18,6 +19,10 @@ table{border-collapse:collapse;width:100%;margin:6px 0}
 td,th{padding:4px 6px;border-bottom:1px solid var(--color-border-primary);text-align:left;vertical-align:top}
 td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
 svg{max-width:100%;height:auto;display:block;margin:6px 0}
+:root{--rank-accent:light-dark(#287069,#75c8bb)}
+.source{display:block;font-size:11px}.bar-row{margin:12px 0}.bar-row .value{float:right}
+.bar-track{height:9px;background:var(--color-border-primary);margin:5px 0}.rank-bar{height:100%;background:var(--rank-accent)}
+.month-view{overflow-x:auto}.month-cell{font-variant-numeric:tabular-nums}small{font-weight:normal}a{color:inherit}
 ul{margin:4px 0;padding-left:18px}li{margin:2px 0}
 `;
 
@@ -38,7 +43,9 @@ function applyContext(ctx) {
 }
 
 const app = document.getElementById("app");
+${RANK_VIEW}
 function render(report) {
+  if (report?.kind === "ranking") return renderRanking(report);
   if (!report || !Array.isArray(report.cities)) return;
   const cur = report.displayCurrency;
   const rows = report.ranking.map((r) => "<tr><td class=n>" + r.rank + "</td><td>" + esc(r.name) + "</td><td class=n>" + r.total.toFixed(1) +
@@ -67,7 +74,7 @@ window.addEventListener("message", (event) => {
     try {
       render(m.params?.structuredContent);
     } catch (e) {
-      app.textContent = "Could not draw the comparison: " + e.message;
+      app.textContent = "Could not draw the answer: " + e.message;
       notify("notifications/message", { level: "error", logger: "borgo view", data: String(e) });
     }
   }
