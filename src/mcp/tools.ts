@@ -344,7 +344,13 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
       annotations: readOnly,
       _meta: { ui: { resourceUri: VIEW_URI }, "ui/resourceUri": VIEW_URI },
     },
-    guarded((args) => { const r = rankCities(data, args); return reply(rankingMarkdown(r), r); }),
+    guarded((args) => {
+      const r = rankCities(data, args);
+      // Ranked on exact values; handed over at two decimals so float noise (170.99999999999997) never reaches a model or a reader.
+      const clean = (n: number) => Math.round(n * 100) / 100;
+      const out = { ...r, rows: r.rows.map((x) => ({ ...x, value: clean(x.value), months: x.months?.map(clean) ?? null })) };
+      return reply(rankingMarkdown(r), out);
+    }),
   );
 
   server.registerTool(
