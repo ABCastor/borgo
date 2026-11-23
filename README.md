@@ -6,9 +6,9 @@ Borgo (Italian for a village) compares any number of cities on open data, weight
 
 It runs in the browser at https://borgo.abcastor.com with no account, and what you type stays there. The same engine runs as a command-line tool (`borgo`) and as an [MCP](https://modelcontextprotocol.io) server, the protocol AI assistants use to call tools, so an assistant can answer "where should I live?" with the numbers you would see.
 
-<p><a href="docs/media/borgo-demo.mp4?raw=true"><img src="docs/media/borgo-demo.webp" width="880" alt="Borgo in 34 seconds: San Francisco joins Lisbon and London, a salary of 120,000 dollars and software work go in, Lisbon ranks first and leaves the most each month, a health premium no open source has is typed in, and the rent figure opens on its US Census source and licence"></a></p>
+<p><a href="docs/media/borgo-film.mp4?raw=true"><img src="docs/media/borgo-loop.webp" width="880" alt="The world map coloured from red to green by what one person values, pushing in on Lisbon and Berlin and back out"></a></p>
 
-<sub>34 seconds, silent. [Download the full-size MP4](docs/media/borgo-demo.mp4?raw=true) (4 MB).</sub>
+<sub>[Watch the 53-second film](docs/media/borgo-film.mp4?raw=true) (10 MB, with sound): cities, priorities, take-home pay, a partner's passport, your own nice weather, the map and sources. Music: "[Happy Soul](https://freemusicarchive.org/music/Ketsa/vintage-modernity/happy-soul/)" by Ketsa, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0).</sub>
 
 > **Why I built this:** I was deciding with a co-founder where to live and start a company, weighing San Francisco, London and Dublin against staying here in Torino. When I put together my own comparison, every site I pulled from answered one slice: one had price levels, another weather, another a salary calculator, and none weighted them by what mattered to me or said whether both of us could legally work there. Teleport, which once put those pieces together, is gone. So I built the comparison I wanted and made it open, for anyone (or their agent) to run with their own weights.
 
