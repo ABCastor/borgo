@@ -187,7 +187,7 @@ try {
       await page.evaluate(() => location.hash = '#/map');
       await page.waitForSelector('#map-canvas');
       await page.waitForFunction(() => !document.querySelector('#map-load'));
-      await page.locator('#map-canvas').scrollIntoViewIfNeeded();
+      await page.waitForFunction(() => { const c = document.querySelector('#map-canvas'); if (c) c.scrollIntoView({ block: 'center' }); return !!c; });
       await page.waitForTimeout(500);
       wordCounts.mapHelpCollapsed = await words('.map-help');
       await page.locator('.map-help summary').click();
@@ -214,7 +214,7 @@ try {
       assert.deepEqual(await page.locator('.vgroups > [data-group]').evaluateAll(els => els.map(el => el.dataset.group)), ['climate','ambition'], 'slider release orders only scoring priorities by share');
       evidence.push({ width, theme, liveScoreChange: { workScore, weatherScore } });
       await page.locator('[data-act="map-lens"][data-lens="nice_days"]').click();
-      await page.locator('#map-canvas').scrollIntoViewIfNeeded();
+      await page.waitForFunction(() => { const c = document.querySelector('#map-canvas'); if (c) c.scrollIntoView({ block: 'center' }); return !!c; });
       await shot('map-weather');
       const vision = await context.newCDPSession(page);
       await vision.send('Emulation.setEmulatedVisionDeficiency', {type:'deuteranopia'});
@@ -235,7 +235,7 @@ try {
           await page.locator('[data-act="map-fit"][data-to="world"]').count().then(async count => {
             if (count) await page.locator('[data-act="map-fit"][data-to="world"]').evaluate(el => el.click());
           });
-          await page.locator('#map-canvas').scrollIntoViewIfNeeded();
+          await page.waitForFunction(() => { const c = document.querySelector('#map-canvas'); if (c) c.scrollIntoView({ block: 'center' }); return !!c; });
           await page.waitForTimeout(300);
           const sizes = await page.locator('#map-canvas').evaluate(cv => ({ buffer: [cv.width, cv.height], rect: [cv.getBoundingClientRect().width, cv.getBoundingClientRect().height], dpr: devicePixelRatio }));
           assert.ok(Math.abs(sizes.buffer[0] - sizes.rect[0] * Math.min(2, sizes.dpr)) <= 2, JSON.stringify(sizes));

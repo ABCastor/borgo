@@ -3,7 +3,7 @@ import { candidateScorer, criteriaFor, weightOf, type CityResult } from "../core
 import { project } from "../core/equal-earth.ts";
 import { rightToLiveWork } from "../core/rights.ts";
 import type { City } from "../core/types.ts";
-import { countryLineScores, weightedLand } from "../core/land-score.ts";
+import { countryLineScores, tileLand, weightedLand } from "../core/land-score.ts";
 import { monthsInRange, tileCount, type WorldMap } from "../core/world-map.ts";
 import { rangeButton } from "./cards.ts";
 import { html, raw, type Raw } from "./dom.ts";
@@ -231,11 +231,11 @@ function tileValue(s: AppState, map: WorldMap, i: number): { k: "r" | "m"; v: nu
     const a = allowedIn(s, cc);
     if (a && a.yes < a.of) return "faint";
   }
+  const k = s.profile.prefs.comfort;
   if (ui.lens === "score") {
-    const value = landValues.get(cc)?.score;
+    const value = tileLand(landValues.get(cc), monthsInRange(map, i, k.min, k.max) / 12).score;
     return value == null ? "land" : { k: "r", v: value };
   }
-  const k = s.profile.prefs.comfort;
   return { k: "m", v: monthsInRange(map, i, k.min, k.max) / 12 };
 }
 
@@ -825,9 +825,9 @@ function legend(s: AppState): Raw {
   const [lo, hi] = scaleEnds();
   const ends = ui.span ? html` <span class="quiet">(${ui.span.lo.city.name} lowest, ${ui.span.hi.city.name} highest)</span>` : "";
   const rows: Raw[] = [];
-  const coverages = [...landValues.values()].map(v => Math.round(v.coverage * 100));
+  const coverages = [...landValues.values()].map(v => Math.round(tileLand(v, 0).coverage * 100));
   const coverage = coverages.length ? `${Math.min(...coverages)}–${Math.max(...coverages)}%` : "0%";
-  const scoreLand = rampBar((ui.landSpan[0]*100).toFixed(0), (ui.landSpan[1]*100).toFixed(0), `Land: ${coverage} of your priorities, depending on country; city-only figures omitted, nice days unavailable on land`, true);
+  const scoreLand = rampBar((ui.landSpan[0]*100).toFixed(0), (ui.landSpan[1]*100).toFixed(0), `Land: ${coverage} of your priorities, depending on country; work and money only at cities; on land, nice days are the months in your temperature range`, true);
   const land = rampBar((ui.landSpan[0]*12).toFixed(1), (ui.landSpan[1]*12).toFixed(1), html`<b>Land:</b> 0 to 12 months in your range ${rangeButton(s, "map")}, by each month's average afternoon high <span class="quiet">(air temperature)</span>`, true);
   if (ui.lens === "nice_days") {
     rows.push(land);
@@ -900,7 +900,7 @@ export function mapShell(s: AppState): Raw {
       <h2 class="sh">Colour the world by</h2>
       <div id="map-lens" class="ml">${lensPicker(s)}</div>
     </div>
-    <details class="map-help"><summary>Map help</summary><p class="mhow">City dots follow the selected lens. On Your score, land follows your priorities with country-level figures and household rights, renormalised over the lines known there. City-only work and money figures are omitted, as are nice days: the land tiles know monthly temperature, not daily rain, cloud, humidity or wind. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p></details>
+    <details class="map-help"><summary>Map help</summary><p class="mhow">City dots follow the selected lens. On Your score, land follows your priorities with country-level figures and household rights, renormalised over the lines known there. Work and money figures exist only at cities; on land, nice days are read as the months whose afternoon high sits in your range, since the land tiles hold monthly temperature, not daily rain, cloud or wind. The rights lens colours land by eligibility instead. <span class="for-mouse">Point at a place to read it; click to pin its card, and add it to your cities from there. Drag to move; pinch or ⌘ + scroll to zoom. By keyboard: arrows move, + and − zoom, Enter pins the place under the cross.</span><span class="for-touch">Tap a place to open its card, and add it to your cities from there. Drag sideways or pinch to move.</span></p></details>
     <div class="mstage" id="map-stage">
       <canvas id="map-canvas" tabindex="0" role="application" aria-roledescription="map" aria-label="${mapLabel(s)}"></canvas>
       <div class="mzoom" role="group" aria-label="Zoom">

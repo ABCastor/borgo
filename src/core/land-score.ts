@@ -20,12 +20,22 @@ export function countryLineScores(data: Dataset, profile: Profile) {
 }
 
 export function weightedLand(scores: Map<string, number> | undefined, profile: Profile) {
-  let points = 0, covered = 0, total = 0;
+  let points = 0, covered = 0, total = 0, weather = 0;
   for (const c of criteriaFor(profile)) {
     const w = weightOf(profile, c);
     total += w;
     const score = scores?.get(c.id);
     if (score !== undefined) { points += w * score; covered += w; }
+    else if (c.id === 'nice_days') weather = w;
   }
-  return { score: covered ? points / covered : null, coverage: total ? covered / total : 0 };
+  return { score: covered ? points / covered : null, coverage: total ? covered / total : 0, points, covered, total, weather };
+}
+
+/** One land tile: the country's figures plus the nice-days weight, read on land as the share of the twelve months
+ * whose average afternoon high sits in the person's range (the tiles hold monthly temperature, not daily weather). */
+export function tileLand(country: ReturnType<typeof weightedLand> | undefined, monthsShare: number) {
+  if (!country) return { score: null, coverage: 0 };
+  const points = country.points + country.weather * monthsShare;
+  const covered = country.covered + country.weather;
+  return { score: covered ? points / covered : null, coverage: country.total ? covered / country.total : 0 };
 }

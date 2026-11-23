@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readFileSync } from 'node:fs';
 import { fixture, profile } from './fixture.ts';
-import { countryLineScores, weightedLand } from '../src/core/land-score.ts';
+import { countryLineScores, tileLand, weightedLand } from '../src/core/land-score.ts';
 import { candidateScorer, evaluate, scoreCandidates } from '../src/core/engine.ts';
 import { themeChoice, nextTheme, applyTheme, cycleTheme, THEME_KEY } from '../src/ui/theme.ts';
 import { transitionView } from '../src/ui/transitions.ts';
@@ -106,4 +106,16 @@ test('a country qualifier preserves a Bombay namesake instead of redirecting to 
   const result=await resolvePlace('Bombay, US',ctx.ctx,{countries,known:[],regions:false});
   assert.equal(result[0]!.city.geonames,'5109718');
   assert.equal(result[0]!.stands,undefined);
+});
+
+test('with only Money and Weather weighted, land still follows the sliders: nice days read as months in range', () => {
+  const p = profile({ weights: { money_left: 50, nice_days: 50 }, dealBreakers: [] });
+  const country = weightedLand(new Map(), p);
+  const warm = tileLand(country, 10 / 12), cold = tileLand(country, 2 / 12);
+  assert.ok(warm.score !== null && cold.score !== null && warm.score > cold.score, 'a tile with more months in range scores higher');
+  assert.ok(warm.coverage > 0 && warm.coverage < 1, 'money stays city-only, so coverage is partial');
+  const withSafety = weightedLand(new Map([['safety', .1]]), profile({ weights: { nice_days: 50, safety: 50 }, dealBreakers: [] }));
+  const lowSafety = tileLand(withSafety, 10 / 12).score!;
+  const heavyWeather = tileLand(weightedLand(new Map([['safety', .1]]), profile({ weights: { nice_days: 90, safety: 10 }, dealBreakers: [] })), 10 / 12).score!;
+  assert.ok(heavyWeather > lowSafety, 'moving weight to weather moves a warm, unsafe tile up');
 });
