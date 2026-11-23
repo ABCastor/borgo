@@ -216,7 +216,7 @@ const cell = (s: string) => s.replace(/\|/g, "\\|").replace(/[\r\n]/g, " ");
 export function rankingMarkdown(r: Ranking): string {
   const c = r.coverage;
   return `## ${r.label}\n\n${c.matched} match from ${c.candidates} candidates (${c.known} known cities); ${c.missing} lack the ranking figure; ${c.filterUnknown} cannot pass an unknown filter. Showing ${c.returned}.\n\n` +
-    (r.definition ? `Nice day: ${JSON.stringify(r.definition)}.\n\n` : "") +
-    `| # | City | Value | Unit | Source and year |\n|---:|---|---:|---|---|\n` + r.rows.map((x) => `| ${x.rank} | ${cell(x.name)} (${x.country}) | ${x.value.toLocaleString("en-GB", { maximumFractionDigits: 2 })} | ${cell(x.unit)} | ${x.sources.map((s) => `${cell(s.label.split(":")[0]!)} [${cell(s.id)}]${/^https?:\/\//.test(s.url) ? `(${s.url.replace(/\s/g, "%20").replace(/\)/g, "%29")})` : ""}, ${cell(s.year ?? "period not recorded")}${s.level && !["city", "metro"].includes(s.level) ? `, ${s.level} level` : ""}`).join("; ")} |`).join("\n") +
+    
+    `| # | City | Value | Unit | Source and year |\n|---:|---|---:|---|---|\n` + r.rows.map((x) => `| ${x.rank} | ${cell(x.name)} (${x.country}) | ${x.value.toLocaleString("en-GB", { maximumFractionDigits: Math.abs(x.value) >= 100 ? 0 : 1 })} | ${cell(x.unit)} | ${x.sources.map((s) => `${cell(s.label.split(":")[0]!)} [${cell(s.id)}]${/^https?:\/\//.test(s.url) ? `(${s.url.replace(/\s/g, "%20").replace(/\)/g, "%29")})` : ""}, ${cell(s.year ?? "period not recorded")}${s.level && !["city", "metro"].includes(s.level) ? `, ${s.level} level` : ""}`).join("; ")} |`).join("\n") +
     `\n\n[Open these cities in Borgo](${r.link})\n\n` + [...r.notes, ...r.rows.flatMap((x) => x.notes.map((n) => `${x.name}: ${n}`))].map((n) => `- ${n}`).join("\n");
 }

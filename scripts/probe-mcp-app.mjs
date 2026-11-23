@@ -1,11 +1,12 @@
 // Network-free MCP Apps host stub. Runs the actual view in a sandboxed iframe, completes its JSON-RPC
 // initialize exchange and delivers real remote-tool results. Optional Playwright install is not a runtime dependency.
-// PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs node scripts/probe-mcp-app.mjs [evidence-directory]
+// PLAYWRIGHT_MODULE=/absolute/path/to/playwright/index.mjs [BROWSER=chromium|webkit|firefox] node scripts/probe-mcp-app.mjs [evidence-directory]
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { remoteHarness, EXAMPLES } from '../test/mcp-harness.ts';
-const { chromium } = await import(process.env.PLAYWRIGHT_MODULE ?? 'playwright');
+const playwright = await import(process.env.PLAYWRIGHT_MODULE ?? 'playwright');
+const engine = process.env.BROWSER ?? 'chromium';
 const out = resolve(process.argv[2] ?? 'docs/round-xiii');
 await mkdir(out, { recursive: true });
 const remote = await remoteHarness();
@@ -22,7 +23,7 @@ try {
   html = resource.contents[0].text;
 } finally { await remote.close(); }
 await writeFile(join(out, 'remote-examples.json'), JSON.stringify(examples, null, 2) + '\n');
-const browser = await chromium.launch({ headless: true });
+const browser = await playwright[engine].launch({ headless: true, executablePath: engine === 'chromium' ? process.env.CHROME || undefined : undefined });
 const checks = [];
 try {
   for (const theme of ['light', 'dark']) {
@@ -85,5 +86,5 @@ try {
     await page.close();
   }
 } finally { await browser.close(); }
-await writeFile(join(out, 'app-harness.json'), JSON.stringify({ host: 'sandboxed iframe postMessage stub, not Claude or ChatGPT', browser: 'Chromium', checks }, null, 2) + '\n');
+await writeFile(join(out, 'app-harness.json'), JSON.stringify({ host: 'sandboxed iframe postMessage stub, not Claude or ChatGPT', browser: engine, checks }, null, 2) + '\n');
 console.log(JSON.stringify({ checks: checks.length, failures: 0, out }));
