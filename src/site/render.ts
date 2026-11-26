@@ -118,6 +118,7 @@ export function siteFooter(site: Site, root: string, o: { addFigures?: string; c
       html`<a href="${root}compare/">All comparisons</a>`,
       html`<a href="${root}sources/">Sources and method</a>`,
       html`<a href="${root}privacy/">Privacy</a>`,
+      html`<a href="${root}terms/">Terms</a>`,
     ]],
     ["Add to it", [
       html`<a href="${o.addFigures ?? `${REPO}/blob/main/CONTRIBUTING.md#your-own-figures`}">Add your figures</a>`,
@@ -715,6 +716,41 @@ export function privacyPage(site: Site): Page {
     body,
     markdown: ["# Privacy", "", "Borgo keeps nothing about you. It needs no account, and what you tell it stays in your browser.", "", ...items.flatMap(([h, p]) => [`## ${h}`, "", h === "Questions" ? `Ask on GitHub: ${REPO}/issues/new` : p, ""])].join("\n"),
     jsonld: [{ "@context": "https://schema.org", "@type": "WebPage", "@id": abs(site, path), url: abs(site, path), name: "Privacy", isPartOf: { "@id": `${site.origin}/#website` } }],
+  };
+}
+
+/** The terms of use: Borgo is free open information, not advice, without warranty. One page for people and for app directories. */
+export function termsPage(site: Site): Page {
+  const path = "/terms/";
+  const lede = "Borgo is free, open source and needs no account. It gives information from public sources, not advice.";
+  const items: [string, string][] = [
+    ["Information, not advice", "Borgo compares cities from public open data and from models of tax and pay. It is not financial, tax, legal or immigration advice. Each figure names its source and period: check the source, or ask a professional, before you decide on a move, a contract or a visa."],
+    ["No warranty", "Figures can be out of date, incomplete or wrong, and a model of take-home pay leaves out cases. Borgo is provided as it is, without warranty of any kind, and to the extent the law allows its makers are not liable for decisions made with it."],
+    ["Using Borgo", "Anyone may use the website, the command-line tool, the MCP server for assistants and the public data files, at no cost. The hosted services limit how many requests arrive in a minute; do not try to get around the limit or to disrupt the service for others."],
+    ["Code and data", "Borgo's code is open source under the Apache License 2.0 and its compiled data under CC BY 4.0. Figures from other publishers keep their own licences, listed on the sources page."],
+    ["Figures you send", "Send only figures of your own, true as far as you know, and nothing about other people. Sent figures are reviewed and published as open data under CC BY 4.0; a figure can be withdrawn in review, and you can remove yours with its removal code."],
+    ["Privacy", "What Borgo keeps, which is almost nothing, is on the privacy page."],
+    ["Changes", "These terms can change as Borgo does. Every change is public in the code's history on GitHub."],
+    ["Questions", "Ask on GitHub, where Borgo's code and data are public."],
+  ];
+  const para = (h: string, p: string) =>
+    h === "Questions" ? html`Ask on <a href="${REPO}/issues/new" rel="noopener">GitHub</a>, where Borgo's code and data are public.`
+    : h === "Privacy" ? html`What Borgo keeps, which is almost nothing, is on the <a href="../privacy/">privacy page</a>.`
+    : h === "Code and data" ? html`Borgo's code is open source under the Apache License 2.0 and its compiled data under CC BY 4.0. Figures from other publishers keep their own licences, listed on the <a href="../sources/">sources page</a>.`
+    : p;
+  const body = html`<article class="doc static-doc">
+    <h1>Terms of use</h1>
+    <p class="lede">${lede}</p>
+    ${items.map(([h, p]) => html`<h2>${h}</h2><p>${para(h, p)}</p>`)}
+  </article>`;
+  return {
+    path,
+    title: `Terms of use | ${site.name}`,
+    description: clip("Borgo's terms: free, open source, no account; information from public sources, not advice, without warranty; code Apache 2.0, data CC BY 4.0."),
+    section: null,
+    body,
+    markdown: ["# Terms of use", "", lede, "", ...items.flatMap(([h, p]) => [`## ${h}`, "", h === "Questions" ? `Ask on GitHub: ${REPO}/issues/new` : p, ""])].join("\n"),
+    jsonld: [{ "@context": "https://schema.org", "@type": "WebPage", "@id": abs(site, path), url: abs(site, path), name: "Terms of use", isPartOf: { "@id": `${site.origin}/#website` } }],
   };
 }
 

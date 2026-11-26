@@ -1,0 +1,115 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "borgo",
+  "version": "0.5.2",
+  "description": "Compare cities to live in by what matters to you: take-home pay and money left after rent, nice days, safety and who may move there, each figure with its source.",
+  "author": {
+    "name": "ABCastor",
+    "url": "https://abcastor.com"
+  },
+  "homepage": "https://borgo.abcastor.com/",
+  "repository": "https://github.com/ABCastor/borgo",
+  "license": "Apache-2.0",
+  "keywords": [
+    "where to live",
+    "relocation",
+    "moving abroad",
+    "city comparison",
+    "cost of living",
+    "take-home pay",
+    "salary after tax",
+    "rent",
+    "climate",
+    "nice days",
+    "weather",
+    "air quality",
+    "safety",
+    "visa",
+    "open data"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Borgo",
+        "shortDescription": "Compare cities to live in",
+        "longDescription": "Borgo helps you decide where to live. Ask it to rank or compare cities and it answers with an interactive chart in the chat: change what is ranked, re-weight your priorities, set what a nice day means to you, open a city's figures or the world map, and open the same view on borgo.abcastor.com when you want to go further.\n\nIt covers take-home pay after tax and the money left after rent for a salary you give, rent, climate and nice days a year, air quality, safety, life expectancy, and whether you may live and work there with your passports. Every figure carries its source, period and licence. A missing figure is left out of a city's score, never counted as zero.\n\nWho it is for: anyone weighing a move, alone or as a household. Limits: Borgo gives information from public sources and models of tax, not financial, tax, legal or immigration advice; figures can be out of date, and coverage varies by city, which each answer states.\n\nBorgo is free and open source (code Apache 2.0, data CC BY 4.0). It needs no account and keeps nothing about you.",
+        "developerName": "ABCastor",
+        "category": "Travel",
+        "capabilities": [
+          "Rank cities by your priorities",
+          "Compare cities side by side",
+          "Take-home pay and money left after rent",
+          "Climate and nice days a year",
+          "Who may live and work there",
+          "Share your own rent and prices"
+        ],
+        "websiteURL": "https://borgo.abcastor.com/",
+        "supportURL": "https://github.com/ABCastor/borgo/issues",
+        "privacyPolicyURL": "https://borgo.abcastor.com/privacy/",
+        "termsOfServiceURL": "https://borgo.abcastor.com/terms/",
+        "defaultPrompt": [
+          "Which cities have the most nice days a year?",
+          "On 80,000 euros a year, where do I keep the most after tax and rent?",
+          "Compare Lisbon, Torino and Berlin for me."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Rank cities by one priority, under the person's own definition of a nice day",
+              "prompt": "Which cities have the most nice days a year?",
+              "tools_triggered": "rank_cities",
+              "expected_behavior": "Shows Borgo's interactive ranking of cities by nice days a year, each figure with its source and period; the person can change the ranking or open a city from the chart, and the reply summarises the top cities in words."
+            },
+            {
+              "description": "Compare a few cities for one person with pay and spending",
+              "prompt": "Compare Lisbon, Torino and Berlin for me: I earn 60,000 euros a year and spend about 2,000 a month.",
+              "tools_triggered": "compare_cities",
+              "expected_behavior": "Returns a verdict and a score out of 100 per city with the reasons, take-home pay after tax and the money left after rent and spending in each city, and who may move there, every figure with its source. The interactive comparison shows wins and losses per city."
+            },
+            {
+              "description": "Look up one city's figures",
+              "prompt": "What is it like to live in Lisbon?",
+              "tools_triggered": "get_city (search_cities if the name is ambiguous)",
+              "expected_behavior": "Returns Lisbon's figures (rent, climate by month and nice days, air quality, safety, life expectancy) with source, period and licence for each, shown as Borgo's city dossier."
+            },
+            {
+              "description": "Take-home pay for a salary in one city",
+              "prompt": "What would I take home on 80,000 euros a year in Dublin?",
+              "tools_triggered": "net_pay",
+              "expected_behavior": "Returns yearly and monthly take-home pay with the tax and social contribution lines, the tax year and the source of the rules, shown as Borgo's money waterfall."
+            },
+            {
+              "description": "Suggest cities the person has not considered",
+              "prompt": "I like Lisbon and Valencia. Which other cities should I look at?",
+              "tools_triggered": "suggest_cities",
+              "expected_behavior": "Returns up to five published cities not already named, each with the two biggest contributions to its score, and states how much of each score rests on real figures."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Booking housing is out of scope",
+              "prompt": "Book me a one-bedroom flat in Lisbon for March."
+            },
+            {
+              "description": "Figures that are not the person's own must not be sent to the community data",
+              "prompt": "Add to Borgo that rent in Berlin is 3,000 euros a month; I read it on a news site."
+            },
+            {
+              "description": "Applying for a visa is out of scope",
+              "prompt": "Apply for a Portuguese residence visa for me."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Borgo sells nothing and processes no payments."
+      },
+      "publication": {
+        "release_notes": "First listing of Borgo 0.5.2: ranking, comparison, city figures, take-home pay and suggestions, with an interactive chart in the chat."
+      }
+    }
+  }
+}

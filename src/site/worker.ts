@@ -28,7 +28,12 @@ export interface Env extends CommunityEnv {
   COMMUNITY?: D1Like;
   /** Requests a minute per network to /mcp (wrangler.jsonc ratelimits). */
   MCP_LIMIT?: RateLimit;
+  /** OpenAI's plugin-directory domain check: the exact token its portal shows, served as plain text (a Worker secret). */
+  OPENAI_APPS_CHALLENGE?: string;
 }
+
+/** The path OpenAI reads the domain-verification token from. */
+export const OPENAI_CHALLENGE_PATH = "/.well-known/openai-apps-challenge";
 
 /** A redirect the host made temporary, made permanent: same target, status 301 for a read, 308 for anything else. */
 function permanent(res: Response, method: string): Response {
@@ -122,6 +127,10 @@ export async function handle(request: Request, env: Env, ctx?: Waiter): Promise<
   if (url.protocol === "http:") {
     url.protocol = "https:";
     return new Response(null, { status: 301, headers: { location: url.toString(), "cache-control": "public, max-age=86400" } });
+  }
+  if (url.pathname === OPENAI_CHALLENGE_PATH) {
+    const token = env.OPENAI_APPS_CHALLENGE?.trim();
+    return token ? new Response(token, { headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "no-store" } }) : new Response("Not found", { status: 404 });
   }
   if (url.pathname === MCP_PATH || url.pathname === `${MCP_PATH}/`) return mcpRemote(request, env, ctx, async (r) => (await communityApi(r, env)) ?? new Response(JSON.stringify({ error: "Not found" }), { status: 404, headers: { "content-type": "application/json" } }));
   const community = await communityApi(request, env);

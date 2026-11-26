@@ -158,3 +158,13 @@ test("a World Bank that does not answer becomes a quick 504 the app can read, no
     globalThis.fetch = real;
   }
 });
+
+test("the OpenAI domain check returns exactly the configured token, and nothing before it is set", async () => {
+  const req = () => new Request(`${O}/.well-known/openai-apps-challenge`);
+  const unset = await handle(req(), { ASSETS: { fetch: async () => new Response("asset") } } as never);
+  assert.equal(unset.status, 404);
+  const set = await handle(req(), { ASSETS: { fetch: async () => new Response("asset") }, OPENAI_APPS_CHALLENGE: "tok-123\n" } as never);
+  assert.equal(set.status, 200);
+  assert.equal(await set.text(), "tok-123");
+  assert.match(set.headers.get("content-type") ?? "", /^text\/plain/);
+});

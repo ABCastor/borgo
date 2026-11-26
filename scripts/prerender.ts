@@ -10,7 +10,7 @@ import { ROOT } from "../pipeline/lib.ts";
 import { CRITERIA } from "../src/core/criteria.ts";
 import type { Dataset } from "../src/core/types.ts";
 import { cityFacts, compareFacts, comparisonPairs, levelText, appQuery, referenceProfile, summaryLine, type CityFacts } from "../src/site/facts.ts";
-import { assumptionsText, citiesPage, cityPage, comparePage, comparisonsPage, homeJsonLd, mainDataset, shell, siteFooter, sourcesPage, privacyPage, toRoot, type Page, type Site } from "../src/site/render.ts";
+import { assumptionsText, citiesPage, cityPage, comparePage, comparisonsPage, homeJsonLd, mainDataset, shell, siteFooter, sourcesPage, privacyPage, termsPage, toRoot, type Page, type Site } from "../src/site/render.ts";
 import { TAX_MODELS } from "../src/tax/index.ts";
 import { html } from "../src/ui/dom.ts";
 import { abs, productHeader, CREATOR, DATA_LICENCE, SIGNATURE, SITE_NAME, SITE_ORIGIN, type NavLink } from "./site.ts";
@@ -84,6 +84,7 @@ export async function prerender(dist: string, data: Dataset, opts: PrerenderOpti
     comparisonsPage(site, data, pairs),
     sourcesPage(site, data, all),
     privacyPage(site),
+    termsPage(site),
     ...all.map((f) => cityPage(site, data, f, appQuery([f.city.id, ...neighbours(f)]))),
     ...pairs.map(([a, b]) => comparePage(site, data, compareFacts(data, a, b, pairs))),
   ];

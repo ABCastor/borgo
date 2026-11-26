@@ -29,10 +29,11 @@ before(async () => {
 
 after(() => rmSync(dist, { recursive: true, force: true }));
 
-test("one page per city, per comparison pair, three hubs, the privacy page and the app", () => {
+test("one page per city, per comparison pair, three hubs, the privacy and terms pages and the app", () => {
   const pairs = comparisonPairs(data);
-  assert.equal(manifest.pages.length, 1 + 3 + 1 + data.cities.length + pairs.length);
+  assert.equal(manifest.pages.length, 1 + 3 + 2 + data.cities.length + pairs.length);
   assert.ok(manifest.pages.includes("/privacy/"), "the privacy page app directories link to");
+  assert.ok(manifest.pages.includes("/terms/"), "the terms page app directories link to");
   for (const p of manifest.pages) assert.ok(existsSync(join(dist, pageFile(p))), `missing ${p}`);
   for (const c of data.cities) assert.ok(manifest.pages.includes(`/city/${c.id}/`));
   for (const p of manifest.pages) assert.ok(existsSync(join(dist, `${p.slice(1)}index.md`)), `missing markdown twin of ${p}`);

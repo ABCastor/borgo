@@ -1,0 +1,9 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
+  "mcpServers": {
+    "borgo": {
+      "type": "streamable-http",
+      "url": "https://borgo.abcastor.com/mcp"
+    }
+  }
+}
