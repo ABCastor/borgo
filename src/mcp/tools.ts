@@ -28,7 +28,7 @@ import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../commun
 export const APP_CALLABLE = ["model", "app"] as const;
 
 /** The version both servers report; package.json and server.json carry the same (test/mcp-remote.test.ts checks). */
-export const SERVER_VERSION = "0.3.0";
+export const SERVER_VERSION = "0.4.0";
 
 /** The tools both servers carry, in the order they are registered. */
 export const SHARED_TOOLS = ["search_cities", "get_city", "compare_cities", "rank_cities", "suggest_cities", "net_pay", "list_metrics_and_sources", "methodology", "list_sources", "community_figures", "submit_figures", "remove_figures"] as const;

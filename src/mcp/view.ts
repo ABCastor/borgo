@@ -33,7 +33,7 @@ button,select,input{font:inherit;color:inherit}
 .btn[aria-pressed=true]{border-color:var(--rank-accent);box-shadow:inset 0 0 0 1px var(--rank-accent)}
 .city-btn{padding:0 6px;border-color:transparent;text-align:left;text-decoration:underline;text-decoration-color:var(--color-border-primary);text-underline-offset:3px}
 .city-btn:hover{border-color:var(--color-border-primary)}
-select{padding:0 8px;max-width:100%}
+select{padding:0 28px 0 8px;max-width:100%;-webkit-appearance:none;appearance:none;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-position:calc(100% - 15px) 50%,calc(100% - 10px) 50%;background-size:5px 5px;background-repeat:no-repeat}
 :is(button,select,input,summary,[tabindex]):focus-visible{outline:2px solid var(--rank-accent);outline-offset:2px}
 .controls{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;margin:0 0 8px}
 .field{display:flex;flex-direction:column;gap:2px;font-size:11px;color:var(--color-text-secondary)}
@@ -50,6 +50,7 @@ tr.on{background:color-mix(in srgb,var(--rank-accent) 12%,transparent)}
 .card p{margin:6px 0}.actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
 .weights{display:block;border:1px solid var(--color-border-primary);border-radius:var(--border-radius-md);padding:6px 12px}
 .weights summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:600}
+summary{list-style:none;cursor:pointer;min-height:44px;display:flex;align-items:center}summary::-webkit-details-marker{display:none}details:not(.weights)>summary{text-decoration:underline;text-underline-offset:.18em;text-decoration-thickness:1px}
 .sliders{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));column-gap:24px}
 .slider{display:grid;grid-template-columns:minmax(90px,140px) 1fr 3ch;gap:8px;align-items:center;min-height:44px}
 .slider input[type=range]{width:100%;min-height:44px;accent-color:var(--rank-accent);margin:0}

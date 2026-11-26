@@ -41,7 +41,7 @@ export async function fetchPlace(data: Dataset, text: string, opts: { only?: str
   const outdated = cached?.observations.some((o) => o.fetcher && o.fetcher !== "agent" && current.has(o.source) && o.fetcher !== current.get(o.source));
   // A cache entry that only holds figures an agent recorded (no source was ever fetched) is not a fetch.
   const fetchedBefore = !!cached?.outcomes.length;
-  const fresh = cached && fetchedBefore && !outdated && Date.now() - Date.parse(cached.fetchedAt) < CACHE_DAYS * 86_400_000;
+  const fresh = cached && fetchedBefore && !outdated && ctx.now().getTime() - Date.parse(cached.fetchedAt) < CACHE_DAYS * 86_400_000;
   if (cached && fresh && !opts.refresh && !opts.only) {
     addFetched(data, [cached]);
     return { fetched: cached, fromCache: true, alternatives, savedTo: null, ...stands };
