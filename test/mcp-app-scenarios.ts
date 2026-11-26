@@ -302,12 +302,15 @@ export const SCENARIOS: Scenario[] = [
     },
   },
   {
-    name: "map: the land is coloured by months in range, every placed label clears the others, and a dot opens the card",
+    name: "map: plain land under a money ranking, weather land under nice days, every placed label clears the others, and a dot opens the card",
     async run(env) {
       const { page, result } = await ranked(env, { ...WORLD, limit: 10 });
       const f = page.frame;
       const rows = result.structuredContent.rows;
-      assert.ok(await f.locator(".world-view g.land path").count() >= 5, "land in several shades");
+      // Money is ranked here, so the land carries no second measure: one plain shape, no land legend, no nice-day range.
+      assert.equal(await f.locator(".world-view g.land path").count(), 1, "plain land");
+      assert.ok(!(await text(f.locator(".vlegend"))).includes("Land:"), "no land legend");
+      assert.equal(await f.locator('[data-act="nice"]').count(), 0, "no nice-day range on a money map");
       assert.equal(await f.locator(".city-dot").count(), 10);
       await settle(page, 400);
       const boxes = await f.locator(".world-view text.lbl").evaluateAll((els: SVGTextElement[]) => els.map((e) => { const b = e.getBoundingClientRect(); return [b.left, b.top, b.right, b.bottom, e.textContent]; }));
@@ -318,14 +321,20 @@ export const SCENARIOS: Scenario[] = [
       }
       assert.ok(boxes.some((b: any) => String(b[4]).includes(rows[0].name.toUpperCase()) || String(b[4]).includes(rows[0].name)), "the best city is named");
       await env.shot?.(page, "map-labels");
-      // The land follows the range at once; this ranking does not count nice days, so nothing is asked of the server.
-      const land = await f.locator(".world-view g.land").innerHTML();
-      await f.locator('[data-act="nice"]').click();
-      await f.getByRole("button", { name: "Coolest nice daytime temperature colder" }).click();
-      await settle(page, 900);
-      assert.notEqual(await f.locator(".world-view g.land").innerHTML(), land, "the land is coloured again");
-      assert.ok((await text(f.locator(".vlegend"))).includes("17–30 °C"));
-      assert.equal((await toolCalls(page)).length, 0, "no tool call");
+      // Under a nice-days ranking the land is the weather: several shades, and a range edit re-ranks and recolours it.
+      const nice = await ranked(env, { criterion: "nice_days", view: "world", limit: 10 });
+      const g = nice.page.frame;
+      assert.ok(await g.locator(".world-view g.land path").count() >= 5, "land in several shades");
+      assert.ok((await text(g.locator(".vlegend"))).includes("Land:"));
+      const land = await g.locator(".world-view g.land").innerHTML();
+      await g.locator('[data-act="nice"]').click();
+      await g.getByRole("button", { name: "Coolest nice daytime temperature colder" }).click();
+      await settle(nice.page, 900);
+      assert.notEqual(await g.locator(".world-view g.land").innerHTML(), land, "the land is coloured again");
+      assert.ok((await text(g.locator(".vlegend"))).includes("17–30 °C"));
+      assert.equal((await toolCalls(nice.page, "rank_cities")).at(-1)!.arguments.view, "world", "the ranking is asked again with the new range");
+      await done(nice.page);
+      assert.equal((await toolCalls(page)).length, 0, "the money map asked nothing");
       const [a, b] = rows;
       await f.locator(`.city-dot[data-open="${a.id}"]`).click({ force: true });
       await f.locator(".card h3").waitFor();
@@ -661,6 +670,9 @@ export const SCENARIOS: Scenario[] = [
       const { page, result } = await ranked(env, NICE);
       const f = page.frame;
       await f.locator('[data-act="nice"]').click();
+      // The editor opens and the frame grows to fit it; under load the host can lag a frame behind, and a control still
+      // outside the frame has no element at its edge. Measure once the size has settled.
+      await settle(page, 600);
       assert.deepEqual(await small(f), [], "ranking, with the nice-day editor open");
       for (const label of ["Rank by", "Order", "Region", "Show"]) assert.equal(await f.getByLabel(label, { exact: true }).count(), 1, label);
       assert.equal(await f.getByRole("radiogroup", { name: "Show as" }).count(), 1);

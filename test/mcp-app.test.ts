@@ -183,7 +183,7 @@ test("mcp app: the view never prints a raw nice-day definition (the sources note
 test("the view's look is the site's: every lifted component exists in src/ui, and the tokens are the site's own", async () => {
   const { siteStyle, LIFTED, viewCss } = await import("../src/mcp/view-style.ts");
   const { ROOT } = await import("../src/agent/dataset.ts");
-  const { MAP_COLOURS } = await import("../src/ui/map-scale.ts");
+  const { MAP_RAMP } = await import("../src/ui/map-scale.ts");
   const s = siteStyle(ROOT);
   assert.deepEqual(LIFTED.filter((l) => !s.matched.has(l)), [], "a renamed site component must be renamed here too");
   assert.equal(s.tokens.get("--wall"), "light-dark(#EFECE3, #121110)");
@@ -191,7 +191,11 @@ test("the view's look is the site's: every lifted component exists in src/ui, an
   assert.equal(s.tokens.get("--human"), "#C4552A");
   assert.match(s.tokens.get("--cond")!, /^Bib,/);
   const hex = (h: string) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
-  assert.deepEqual(hex(s.tokens.get("--map-mid")!), MAP_COLOURS[1], "the ramp's middle is the canvas map's");
+  for (const [i, name] of ["--map-lo", "--map-mid", "--map-hi"].entries()) {
+    const [light, dark] = s.tokens.get(name)!.match(/#[0-9a-f]{6}/gi)!;
+    assert.deepEqual(hex(light!), [...MAP_RAMP.light[i]!], `${name} light is the canvas map's`);
+    assert.deepEqual(hex(dark!), [...MAP_RAMP.dark[i]!], `${name} dark is the canvas map's`);
+  }
   const css = viewCss(ROOT);
   assert.ok(css.startsWith(":root{color-scheme:light dark;--paper:"));
   assert.ok(!/url\(/.test(css), "nothing to fetch");

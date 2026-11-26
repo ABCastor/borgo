@@ -101,7 +101,9 @@ function niceCounts(): boolean {
   return false;
 }
 /** Where the range button shows: wherever the answer counts nice days or draws the land by them. */
-const niceShown = () => S.kind === "city" || (S.kind === "ranking" && (niceCounts() || S.report?.view === "world")) || (S.kind === "compare" && (niceCounts() || S.tab === "weather" || S.tab === "map"));
+/** The land is coloured by the nice-day months only where the answer is about the weather; elsewhere it stays plain, so one map never mixes two measures. */
+const landByWeather = () => S.kind === "city" || niceCounts() || (S.kind === "compare" && S.tab === "weather");
+const niceShown = () => S.kind === "city" || niceCounts() || (S.kind === "compare" && S.tab === "weather");
 const niceEditable = () => interactive() && (S.kind === "city" || (niceShown() && (!niceCounts() || requerying())));
 
 function niceRow(): string {
@@ -192,6 +194,13 @@ function selectionHtml(): string {
 // ---------- The world map ----------
 let land: Land | null = null;
 let landCache = { key: "", svg: "" };
+let plainCache = "";
+/** The land with no measure on it: one path in the site's plain land colour. */
+function plainLand(): string {
+  land ??= unpackLand(BORGO_MAP);
+  if (!plainCache) plainCache = `<path d="${landPaths(BORGO_MAP, land, comfortOf(null, null)).map((p) => p.d).join("")}" style="fill:var(--map-land)"/>`;
+  return plainCache;
+}
 function landSvg(c: Comfort): string {
   land ??= unpackLand(BORGO_MAP);
   const key = c.min + ":" + c.max;
@@ -203,6 +212,7 @@ interface Dot { id: string; name: string; rank: number; value: number | null; un
 function mapHtml(dots: Dot[], order: "asc" | "desc", label: string): string {
   land ??= unpackLand(BORGO_MAP);
   const c: Comfort = S.comfort ?? comfortOf(null, null);
+  const weather = landByWeather();
   const located = dots.filter((d) => Array.isArray(d.point));
   const vb = mapWindow(land.box, located.map((d) => [toX(number(d.point![0])), toY(number(d.point![1]))]));
   // Dots, rings and labels keep their size on screen however far the window zooms in.
@@ -224,10 +234,10 @@ function mapHtml(dots: Dot[], order: "asc" | "desc", label: string): string {
   const lo = values.length ? Math.min(...values) : null, hi = values.length ? Math.max(...values) : null;
   const end = (v: number | null) => (v === null ? "–" : figureText(v, dots[0]?.unit ?? "").big);
   const best = order === "asc" ? [hi, lo] : [lo, hi];
-  return `<div class="vmap"><svg class="world-view" viewBox="${vb.map((v) => v.toFixed(1)).join(" ")}" role="${act ? "group" : "img"}" aria-label="${esc(label)}: the cities shown, on the Equal Earth world map; the land by the months in the nice-day range" data-vb="${vb.join(" ")}">` +
-    `<g class="land">${landSvg(c)}</g><g class="dots">${circles}</g><g class="lbls" aria-hidden="true"></g></svg></div>` +
+  return `<div class="vmap"><svg class="world-view" viewBox="${vb.map((v) => v.toFixed(1)).join(" ")}" role="${act ? "group" : "img"}" aria-label="${esc(label)}: the cities shown, on the Equal Earth world map${weather ? "; the land by the months in the nice-day range" : ""}" data-vb="${vb.join(" ")}">` +
+    `<g class="land">${weather ? landSvg(c) : plainLand()}</g><g class="dots">${circles}</g><g class="lbls" aria-hidden="true"></g></svg></div>` +
     `<div class="vlegend"><div class="mlg-row"><span class="mlg-end">${esc(end(best[0]!))}</span><span class="mlg-ramp is-cities" aria-hidden="true"></span><span class="mlg-end">${esc(end(best[1]!))}</span><span class="mlg-what"><b>Cities:</b> ${esc(lineName(label).toLowerCase())}, greener is better</span></div>` +
-    `<div class="mlg-row"><span class="mlg-end">0</span><span class="mlg-ramp is-land" aria-hidden="true"></span><span class="mlg-end">12</span><span class="mlg-what"><b>Land:</b> months in the ${c.min}–${c.max} °C range, by each month's average afternoon high</span></div></div>` +
+    (weather ? `<div class="mlg-row"><span class="mlg-end">0</span><span class="mlg-ramp is-land" aria-hidden="true"></span><span class="mlg-end">12</span><span class="mlg-what"><b>Land:</b> months in the ${c.min}–${c.max} °C range, by each month's average afternoon high</span></div>` : "") + `</div>` +
     `<p class="vsrc">Equal Earth projection. ${esc(BORGO_MAP.source)}. The dots are the cities shown, not every place.</p>` + (S.detail && dots.some((d) => d.id === S.detail.id) ? cardHtml() : "");
 }
 

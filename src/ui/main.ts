@@ -1101,6 +1101,21 @@ function refreshShares(active: HTMLInputElement | null): void {
 /** The field whose change was just refused and what it held, so the redraw gives it back with the reason beside it. */
 let refusedField: { key: string; value: string } | null = null;
 
+/** Adds what the city field holds. Enter calls it directly: WebKit does not always fire "change" on Enter in a field with a
+ * datalist, so a Safari user typing a city and pressing Enter would see nothing happen. The field empties first, so a
+ * later "change" from the same entry finds nothing to add. */
+function addCityFrom(t: HTMLInputElement): void {
+  const text = t.value.trim();
+  t.value = "";
+  if (!text) return;
+  const picked = pickedPlace(text);
+  const city = picked ? undefined : knownCity(state.data, text, regionName);
+  if (city) {
+    if (!state.profile.cities.includes(city.id)) setProfile((p) => p.cities.push(city.id));
+  } else if (text.length >= 2 && !state.live) void fetchLive(picked ?? text, text.split(",")[0]);
+  document.getElementById("add-city")?.focus();
+}
+
 function onChange(e: Event): void {
   inChange = true;
   const t = e.target as HTMLInputElement;
@@ -1155,14 +1170,7 @@ function changed(e: Event): void {
     return;
   }
   if (t.id === "add-city") {
-    const text = t.value.trim();
-    t.value = "";
-    const picked = pickedPlace(text);
-    const city = picked ? undefined : knownCity(state.data, text, regionName);
-    if (city) {
-      if (!state.profile.cities.includes(city.id)) setProfile((p) => p.cities.push(city.id));
-    } else if (text.length >= 2 && !state.live) void fetchLive(picked ?? text, text.split(",")[0]);
-    document.getElementById("add-city")?.focus();
+    addCityFrom(t as HTMLInputElement);
     return;
   }
   if (t.dataset.work !== undefined) {
@@ -1335,6 +1343,11 @@ function changed(e: Event): void {
 }
 
 function onKey(e: KeyboardEvent): void {
+  if ((e.target as HTMLElement).id === "add-city" && e.key === "Enter" && !e.isComposing) {
+    e.preventDefault();
+    addCityFrom(e.target as HTMLInputElement);
+    return;
+  }
   const h = (e.target as HTMLElement).closest?.<HTMLElement>("[data-comfort-handle]");
   if (h) {
     const f = h.dataset.comfortHandle as "min" | "max";
