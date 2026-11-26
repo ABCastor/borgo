@@ -1,9 +1,22 @@
-/* Borgo's house stands on the header's single ground rule. The name stands 10px above it; the sections and the tools
-   are centred on the name's cap midline, half its cap height above its baseline (Literata 560: caps are .73em), so the
-   whole bar reads as one line at every width. */
-.bmast { --name-size: 30px; --name-mid: calc(var(--name-size) * .365); position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: 40px auto 1fr auto; align-items: end; gap: 10px; flex-wrap: nowrap; padding-top: 16px; padding-bottom: 10px; background: var(--paper); }
-.bmark { display: block; align-self: end; margin-bottom: -10px; color: var(--ink); line-height: 0; }
-.bmark .mark { display: block; width: 40px; height: auto; overflow: visible; }
+/* Borgo's header: no rule, one baseline, one golden scale.
+   Every size comes from the cap height of the name, c: Literata 560 caps are .73em, so --name-size is c / .73.
+   The scale is c over and times the golden ratio: 8, 13, 21, 34, 55 px at c = 21 (Fibonacci).
+   - The house mark stands on the name's baseline, the B's foot, and is 34 px tall (c times phi): mark and name
+     are in the golden ratio, and the mark is as tall as the controls.
+   - Sections and tools are 34 px and centred on the cap midline, half of c above the baseline.
+   - The band is symmetric about that midline, with 13 px (c over phi) above the mark's roof; the sections sit on
+     the page's centre axis. No rule under the band. */
+.bmast {
+  --cap: 21px; --phi: 1.618;
+  --g1: calc(var(--cap) / var(--phi) / var(--phi)); --g2: calc(var(--cap) / var(--phi)); --g3: var(--cap); --g4: calc(var(--cap) * var(--phi));
+  --name-size: calc(var(--cap) / .73); --name-mid: calc(var(--cap) / 2);
+  position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: end; column-gap: var(--g3);
+  padding-top: var(--g2); padding-bottom: calc(var(--g2) + var(--g4) - var(--cap)); border-bottom: 0; background: var(--paper);
+}
+.blockup { display: flex; align-items: flex-end; gap: var(--g1); justify-self: start; min-width: 0; }
+.bright { display: flex; align-items: flex-end; justify-self: end; gap: var(--g1); }
+.bmark { display: block; color: var(--ink); line-height: 0; }
+.bmark .mark { display: block; height: var(--g4); width: auto; overflow: visible; }
 .mk-ink { fill: currentColor; }
 .mk-you { fill: var(--human); transform-box: fill-box; transform-origin: 50% 100%; }
 .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: settle .9s var(--ease) 1; }
@@ -11,16 +24,16 @@
 .bname { font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: var(--name-size); line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
 .bname .star { display: inline-block; margin-left: .1em; color: var(--human); transition: transform .45s var(--ease); }
 .bname:hover .star { transform: rotate(90deg); }
-.bmast .desktop-sections { justify-self: center; display: flex; align-items: center; gap: 2px; box-sizing: border-box; height: 40px; margin: 0 0 calc(var(--name-mid) - 20px); padding: 3px; background: var(--wash); border-radius: 7px; }
-.bmast .desktop-sections a { margin: 0; padding: 9px 13px; text-box: normal; border-radius: 4px; font-size: 13px; line-height: 1.2; }
+.bmast .desktop-sections { justify-self: center; display: flex; align-items: center; gap: 0; box-sizing: border-box; height: var(--g4); margin: 0 0 calc(var(--name-mid) - var(--g4) / 2); padding: 3px; background: var(--wash); border-radius: var(--g1); }
+.bmast .desktop-sections a { display: flex; align-items: center; height: 100%; box-sizing: border-box; margin: 0; padding: 0 var(--g2); text-box: normal; border-radius: calc(var(--g1) - 3px); font-size: 13px; line-height: 1; }
 .bmast .nav a[aria-current] { background: var(--ink); color: var(--paper); }
 .bmast .nav a::after { display: none; }
-.bmast .bar-tools { display: flex; align-items: center; justify-self: end; gap: 4px; margin-bottom: -8px; color: var(--ink); }
+.bmast .bar-tools { display: flex; align-items: center; gap: 0; color: var(--ink); }
 .settings-toggle { display: grid; place-items: center; width: 40px; height: 40px; border: 0; padding: 0; background: none; color: var(--human-ink); border-radius: 6px; }
 .settings-toggle:hover { background: var(--wash); }
 .settings-toggle svg { display: block; width: 19px; height: 19px; }
 .phone-sections { position: relative; }
-.phone-sections > summary { display: grid; place-items: center; min-width: 40px; min-height: 40px; padding: 0 6px; cursor: pointer; list-style: none; border-radius: 6px; }
+.phone-sections > summary { display: grid; place-items: center; min-width: var(--g4); height: var(--g4); box-sizing: border-box; padding: 0 var(--g1); cursor: pointer; list-style: none; border-radius: var(--g1); }
 .phone-sections > summary::-webkit-details-marker { display: none; }
 .phone-sections[open] > summary { background: var(--wash); }
 .bmast .header-menu { position: absolute; right: 0; top: calc(100% + 10px); min-width: 200px; display: flex; flex-direction: column; align-items: stretch; padding: 8px; margin: 0; border: 1px solid var(--rule); border-radius: 6px; background: var(--paper); }
@@ -28,17 +41,13 @@
 .header-menu button:hover, .header-menu a:hover { background: var(--wash); }
 .phone-sections { display: none; }
 @media (max-width: 900px) {
-  .bmast { grid-template-columns: 34px auto 1fr auto; gap: 8px; }
-  .bmark .mark { width: 34px; }
-  .bmast { --name-size: 26px; }
+  .bmast { --cap: 19px; grid-template-columns: auto minmax(0, 1fr); }
   .bmast .desktop-sections { display: none; }
-  .phone-sections { display: block; justify-self: end; height: 40px; margin-bottom: calc(var(--name-mid) - 20px); font-size: 13px; }
+  .phone-sections { display: block; margin-bottom: calc(var(--name-mid) - var(--g4) / 2); font-size: 13px; }
 }
 @media (max-width: 560px) {
-  .bmast { grid-template-columns: 30px auto 1fr auto; gap: 6px; }
-  .bmark .mark { width: 30px; }
-  .bmast { --name-size: 24px; }
-  .bmast .bar-tools { gap: 0; }
+  .bmast { --cap: 18px; }
+  .bright { gap: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: none; }

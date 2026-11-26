@@ -46,9 +46,10 @@ export function productHeader(home: string, nav: NavLink[], o: { settings?: bool
     ? `<span class="bar-tools"><button type="button" class="share-toggle" data-act="share" aria-label="Share this comparison">${SHARE_ICON}</button>${THEME_TOGGLE}<button type="button" class="settings-toggle" data-act="settings" aria-haspopup="dialog" aria-label="Settings, guided setup, AI assistant and reset">${SETTINGS_ICON}</button></span>`
     : "";
   // The mark, then the name right beside it, then the sections; the gear, when there is one, at the far right.
-  return `<header class="mast bmast"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${markSvg(MARK)}</a>` +
-    `<a class="bname" href="${home}" tabindex="-1" aria-hidden="true">${SITE_NAME}<span class="star">*</span></a>` +
-    `<nav class="nav desktop-sections" aria-label="Sections">${links}</nav>${o.settings ? `<details class="phone-sections"><summary>Sections</summary><nav class="nav header-menu" aria-label="Sections">${links}</nav></details>` : ""}${tools}</header>`;
+  // Three tracks: the lockup (mark and name) on the left, the sections on the page's axis, the tools on the right.
+  return `<header class="mast bmast"><span class="blockup"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${markSvg(MARK)}</a>` +
+    `<a class="bname" href="${home}" tabindex="-1" aria-hidden="true">${SITE_NAME}<span class="star">*</span></a></span>` +
+    `<nav class="nav desktop-sections" aria-label="Sections">${links}</nav><span class="bright">${o.settings ? `<details class="phone-sections"><summary>Sections</summary><nav class="nav header-menu" aria-label="Sections">${links}</nav></details>` : ""}${tools}</span></header>`;
 }
 
 export const CONTENT_TYPES: Record<string, string> = {

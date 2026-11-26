@@ -8,9 +8,10 @@ summary:focus-visible { outline: 2px solid var(--human); outline-offset: 4px; }
 .priority-catalogue > button { margin-block: .65rem; }
 .priority-catalogue [hidden] { display: none; }
 .bmast .bar-tools { color: var(--tool-icon-color); }
-/* The Castor toolbar, as on his other sites: bare 17px icons in 30px buttons, 6px apart. */
-.bmast .bar-tools { display: flex; align-items: center; align-self: end; gap: 6px; height: 30px; margin-bottom: calc(var(--name-mid) - 15px); }
-.bmast .bar-tools > button { display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 30px; padding: 0; border: 0; border-radius: 6px; background: none; color: inherit; cursor: pointer; }
+/* The Castor toolbar: bare 17px icons in buttons as tall as the sections (34 px at the desktop scale), centred on the
+   name's cap midline; the last icon's drawing, not its button, lines up with the page's right edge. */
+.bmast .bar-tools { display: flex; align-items: center; gap: 0; height: var(--g4); margin-bottom: calc(var(--name-mid) - var(--g4) / 2); margin-right: calc((17px - var(--g4)) / 2); }
+.bmast .bar-tools > button { display: grid; place-items: center; width: var(--g4); height: var(--g4); flex: 0 0 var(--g4); padding: 0; border: 0; border-radius: var(--g1); background: none; color: inherit; cursor: pointer; }
 .bmast .bar-tools > button:hover { background: color-mix(in oklab, currentColor 10%, transparent); }
 .bmast .bar-tools > button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 .bmast .share-toggle svg { display: block; width: var(--tool-icon-size, 17px); height: var(--tool-icon-size, 17px); fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
@@ -18,7 +19,8 @@ summary:focus-visible { outline: 2px solid var(--human); outline-offset: 4px; }
 .settings .set-actions button { text-align: left; padding: 10px 8px; border: 0; border-radius: 3px; background: none; color: var(--ink); font: inherit; }
 .settings .set-actions button:hover { background: var(--wash); }
 .bmast .desktop-sections a { position: relative; isolation: isolate; }
-.bmast .desktop-sections a[aria-current] { background: transparent; }
+/* The app draws the current section's pill with its sliding indicator; pages without one (city pages, Privacy) keep the plain ink pill. */
+.bmast .desktop-sections a[aria-current]:has(.section-indicator) { background: transparent; }
 .section-indicator { display: none; }
 .desktop-sections a[aria-current] .section-indicator { display: block; position: absolute; inset: 0; z-index: -1; background: var(--ink); border-radius: 4px; }
 .theme-toggle { display: inline-grid; place-items: center; width: 44px; height: 44px; flex: 0 0 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; cursor: pointer; }

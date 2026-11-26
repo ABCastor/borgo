@@ -13,7 +13,8 @@ const showSide = async page => {
 };
 const groupsInOrder = page => page.locator('.vgroups > [data-group]').evaluateAll(els => els.map(el => el.dataset.group));
 
-/** The header: the name, the sections and the three tools share one centre line, within 1 px. */
+/** The header: the name, the sections and the three tools share one centre line, within 1 px; no rule; the house on
+ *  the name's baseline; the band centred on that line; the sections on the page's axis. */
 export async function headerLine(page, out, width, theme) {
   await page.evaluate(() => scrollTo(0, 0));
   const m = await page.evaluate(() => {
@@ -22,8 +23,16 @@ export async function headerLine(page, out, width, theme) {
     const name = document.querySelector('.bmast .bname');
     const sections = [...document.querySelectorAll('.bmast .desktop-sections, .bmast .phone-sections > summary')].filter(shown);
     const tools = [...document.querySelectorAll('.bmast .bar-tools > button')].filter(shown);
-    return { name: cy(name), sections: sections.map(cy), tools: tools.map(cy), icons: tools.map(b => cy(b.querySelector('svg'))) };
+    const mark = document.querySelector('.bmast .bmark svg').getBoundingClientRect(), nr = name.getBoundingClientRect();
+    const head = document.querySelector('.bmast'), hr = head.getBoundingClientRect();
+    const desk = sections.find(s => s.classList.contains('desktop-sections'));
+    return { name: cy(name), sections: sections.map(cy), tools: tools.map(cy), icons: tools.map(b => cy(b.querySelector('svg'))),
+      markFoot: mark.bottom - nr.bottom, rule: getComputedStyle(head).borderBottomWidth, bandCentre: (hr.top + hr.bottom) / 2,
+      axis: desk ? (desk.getBoundingClientRect().left + desk.getBoundingClientRect().right) / 2 - innerWidth / 2 : 0 };
   });
+  // No rule; the house stands on the B's baseline; the band is centred on the cap midline; the sections on the page axis.
+  assert.equal(m.rule, '0px', `header rule ${width}/${theme}`);
+  assert.ok(Math.abs(m.markFoot) <= 1 && Math.abs(m.bandCentre - m.name) <= 1 && Math.abs(m.axis) <= 1, `header lockup ${width}/${theme}: ${JSON.stringify(m)}`);
   assert.equal(m.tools.length, 3, 'share, theme and settings');
   for (const y of [...m.sections, ...m.tools, ...m.icons]) assert.ok(Math.abs(y - m.name) <= 1, `header line ${width}/${theme}: ${JSON.stringify(m)}`);
   await page.locator('.bmast').screenshot({ path: join(out, `${width}-${theme}-xv-header.png`) });
