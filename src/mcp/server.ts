@@ -19,7 +19,7 @@ import type { Http } from "../community/net.ts";
 import { CITATION_TYPES, KINDS, type RepoView } from "../community/proposal.ts";
 import { loadCorrections, repoView } from "../community/repo.ts";
 import { FACT_KINDS } from "../community/stale.ts";
-import { guarded, guardedAsync, INSTRUCTIONS, looseOutput, openWorld, readOnly, registerShared, reply, SERVER_VERSION } from "./tools.ts";
+import { guarded, guardedAsync, INSTRUCTIONS, looseOutput, openWorld, readOnly, registerShared, reply, SERVER_INFO, SERVER_VERSION } from "./tools.ts";
 
 export { INSTRUCTIONS } from "./tools.ts";
 
@@ -42,7 +42,7 @@ export interface ServerOptions {
 
 export function createServer(data: Dataset, opts: ServerOptions = {}): McpServer {
   const registry = opts.registry ?? loadRegistry().entries;
-  const server = new McpServer({ name: "borgo", version: SERVER_VERSION }, { instructions: INSTRUCTIONS });
+  const server = new McpServer(SERVER_INFO, { instructions: INSTRUCTIONS });
   registerShared(server, data, { registry, view: viewHtml, local: true, communityFetch: opts.communityFetch });
 
   server.registerTool(

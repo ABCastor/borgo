@@ -4,17 +4,20 @@
   "title": "Borgo",
   "description": "Compare cities to live in on open, sourced data: take-home pay, rent, visas, climate, safety.",
   "websiteUrl": "https://borgo.abcastor.com",
+  "icons": [
+    { "src": "https://borgo.abcastor.com/icon-512.png", "mimeType": "image/png", "sizes": ["512x512"] }
+  ],
   "repository": {
     "url": "https://github.com/ABCastor/borgo",
     "source": "github"
   },
-  "version": "0.5.0",
+  "version": "0.5.1",
   "packages": [
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "@abcastor/borgo",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "runtimeHint": "npx",
       "transport": {
         "type": "stdio"

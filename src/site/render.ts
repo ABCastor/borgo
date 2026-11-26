@@ -79,6 +79,7 @@ export function shell(site: Site, page: Page, header: string): string {
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FAF9F4">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#141311">
 <link rel="icon" href="${root}favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="${root}apple-touch-icon.png">
 <link rel="preload" href="${root}fonts/archivo-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="${root}app.css">
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, "\\u003c")}</script>
@@ -116,6 +117,7 @@ export function siteFooter(site: Site, root: string, o: { addFigures?: string; c
       html`<a href="${root}cities/">All cities</a>`,
       html`<a href="${root}compare/">All comparisons</a>`,
       html`<a href="${root}sources/">Sources and method</a>`,
+      html`<a href="${root}privacy/">Privacy</a>`,
     ]],
     ["Add to it", [
       html`<a href="${o.addFigures ?? `${REPO}/blob/main/CONTRIBUTING.md#your-own-figures`}">Add your figures</a>`,
@@ -683,6 +685,34 @@ export function sourcesPage(site: Site, data: Dataset, all: CityFacts[]): Page {
     body,
     markdown: md.join("\n"),
     jsonld: [mainDataset(site, data, [...used.values()].map((u) => u.source))],
+  };
+}
+
+/** What Borgo keeps about the people who use it, which is almost nothing: one page for people and for app directories. */
+export function privacyPage(site: Site): Page {
+  const path = "/privacy/";
+  const items: [string, string][] = [
+    ["No accounts, no tracking", "Borgo has no sign-in, sets no cookies and runs no analytics or advertising scripts. It does not keep request logs."],
+    ["The website", "Your cities, priorities, pay and household are worked out in your browser and kept in its local storage, on your device. They are never sent to us. A share link carries your choices after the # sign, a part of the address browsers do not send to any server. Adding a place Borgo does not hold asks open-data services (such as Open-Meteo and the World Bank) for its figures straight from your browser, sending the place's name or coordinates."],
+    ["Assistants (the MCP server)", "When an assistant such as Claude or ChatGPT uses Borgo at borgo.abcastor.com/mcp, what it sends (city names, and pay or household if you gave them) is used to work out that one answer and is not stored. Borgo counts, per day, how many times each tool was called and whether it failed; nothing else about the call is written. Your network address is used only to limit how many requests arrive in a minute, and is not stored."],
+    ["Figures you send", "If you send a figure of your own (a rent, a price), Borgo keeps the place, the figure, the amount, its currency, the day, how it was sent and a hash of a removal code that lets you delete it. To limit sending, it keeps that day's salted hash of your network address, deleted after a day. Sent figures are published as open data under CC BY 4.0."],
+    ["On your own computer", "The command-line tool and the local MCP server run on your machine and send nothing to us. They read public data files and, when asked, the same open-data services."],
+    ["Hosting", "The site runs on Cloudflare, which handles every request to deliver it, under Cloudflare's own privacy policy."],
+    ["Questions", "Ask on GitHub, where Borgo's code and data are public."],
+  ];
+  const body = html`<article class="doc static-doc">
+    <h1>Privacy</h1>
+    <p class="lede">Borgo keeps nothing about you. It needs no account, and what you tell it stays in your browser.</p>
+    ${items.map(([h, p]) => html`<h2>${h}</h2><p>${h === "Questions" ? html`Ask on <a href="${REPO}/issues/new" rel="noopener">GitHub</a>, where Borgo's code and data are public.` : p}</p>`)}
+  </article>`;
+  return {
+    path,
+    title: `Privacy | ${site.name}`,
+    description: clip("Borgo keeps nothing about you: no account, no cookies, no analytics. Your choices stay in your browser; the assistant server stores only daily counts of tool calls."),
+    section: null,
+    body,
+    markdown: ["# Privacy", "", "Borgo keeps nothing about you. It needs no account, and what you tell it stays in your browser.", "", ...items.flatMap(([h, p]) => [`## ${h}`, "", h === "Questions" ? `Ask on GitHub: ${REPO}/issues/new` : p, ""])].join("\n"),
+    jsonld: [{ "@context": "https://schema.org", "@type": "WebPage", "@id": abs(site, path), url: abs(site, path), name: "Privacy", isPartOf: { "@id": `${site.origin}/#website` } }],
   };
 }
 

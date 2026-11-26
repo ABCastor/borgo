@@ -71,3 +71,17 @@ export function faviconSvg(mark: Mark): string {
     .join("");
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><style>.ink{fill:#14130F}.you{fill:#C4552A}@media (prefers-color-scheme:dark){.ink{fill:#E9E6DF}}</style><g transform="translate(0 ${((24 - (GROUND - mark.top)) / 2 - mark.top).toFixed(2)})">${paths}</g></svg>`;
 }
+
+/**
+ * The app icon (connector directories, home screens): the mark on paper with the Castor mark at its top right, as
+ * Descant wears it. `castor` is ./castor-mark.svg, a copy of castor-identity's master/mark-solid-light.svg; only its
+ * drawing is placed, cropped to the 2.2 to 21.8 box the mark fills.
+ */
+export function appIconSvg(mark: Mark, castor: string): string {
+  const paths = mark.parts
+    .map((p) => `<path fill="${p.part === "you" ? "#C4552A" : "#14130F"}"${p.fillRule ? ` fill-rule="${p.fillRule}"` : ""} d="${p.d}"/>`)
+    .join("");
+  const inner = castor.replace(/^[\s\S]*?<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2.5 -3.4 29 29"><rect x="-2.5" y="-3.4" width="29" height="29" fill="#F7F4EC"/>${paths}<svg x="17" y="0.9" width="6" height="6" viewBox="2.2 2.2 19.6 19.6">${inner}</svg></svg>`;
+}
+

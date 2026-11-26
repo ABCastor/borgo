@@ -261,3 +261,11 @@ test("remote mcp: a chart read left unfinished by one request never blocks the n
   assert.notEqual(view, "stuck", "the second request reads the chart itself instead of waiting on the first");
   assert.match(String((view as { contents: { text?: string }[] }).contents[0]!.text), /<html/i);
 });
+
+test("remote mcp: the server names itself with a title, its site and the app icon directories show", async () => {
+  const client = await remoteClient(remoteEnv());
+  const info = client.getServerVersion() as { title?: string; websiteUrl?: string; icons?: { src: string; mimeType?: string }[] };
+  assert.equal(info.title, "Borgo");
+  assert.equal(info.websiteUrl, "https://borgo.abcastor.com");
+  assert.ok(info.icons?.some((i) => i.src.endsWith("/icon-512.png") && i.mimeType === "image/png"));
+});

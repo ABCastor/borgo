@@ -28,7 +28,18 @@ import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../commun
 export const APP_CALLABLE = ["model", "app"] as const;
 
 /** The version both servers report; package.json and server.json carry the same (test/mcp-remote.test.ts checks). */
-export const SERVER_VERSION = "0.5.0";
+export const SERVER_VERSION = "0.5.1";
+/** Who the server is, as hosts and app directories show it: the name, the site and the app icon (scripts/app-icon.ts). */
+export const SERVER_INFO = {
+  name: "borgo",
+  title: "Borgo",
+  version: SERVER_VERSION,
+  websiteUrl: "https://borgo.abcastor.com",
+  icons: [
+    { src: "https://borgo.abcastor.com/icon-512.png", mimeType: "image/png", sizes: ["512x512"] },
+    { src: "https://borgo.abcastor.com/icon.svg", mimeType: "image/svg+xml", sizes: ["any"] },
+  ],
+};
 
 /** The tools both servers carry, in the order they are registered. */
 export const SHARED_TOOLS = ["search_cities", "get_city", "compare_cities", "rank_cities", "suggest_cities", "net_pay", "list_metrics_and_sources", "methodology", "list_sources", "community_figures", "submit_figures", "remove_figures"] as const;
