@@ -186,7 +186,7 @@ function sheet(s: AppState, r: CityResult, e: Evaluation, scale: number): Raw {
   const metaSrc = c?.source.origin.kind === "source" ? c.source.origin.observation.period : null;
   return html`<article class="sheet dos ${out ? "is-out" : ""} ${r.rank === 1 && !out && !unknown ? "is-lead" : ""}" data-flip="${r.city.id}" aria-labelledby="dn-${r.city.id}">
     <div class="band" aria-hidden="true"><i style="width:${r.total.toFixed(1)}%"></i></div>
-    <div class="d-head">${ident}${winsLosses(r, e, scale, s.profile.dealBreakers)}</div>
+    <div class="d-head">${ident}${winsLosses(r, e, scale, s.profile.dealBreakers, { open: s.wlOpen?.includes(`card:${r.city.id}`) })}</div>
     <div class="cells cells-2">
       <div class="cell c-comfort"><div class="lab"><span>${term("comfortable", "Nice days")} ${rangeButton(s, r.city.id)}</span>${n === null ? "" : html`<b class="num">${n}<small> a year</small></b>`}</div>
         ${c ? niceStrip(c, r.city.name, s.profile.prefs.comfort) : html`<p class="nice-none">No climate figures for ${r.city.name} yet.</p>`}

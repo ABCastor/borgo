@@ -1,3 +1,4 @@
+import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { firstProfile } from '../src/ui/state.ts';
 
@@ -90,7 +91,12 @@ export async function populatedAudit(context, origin, root) {
     await page.waitForTimeout(200);
     reports.push({route,hits:await layoutHits(page)});
     if (route === '/') {
-      for (const group of await page.locator('[data-act="group"][aria-expanded="false"]').all()) await group.click();
+      // Each click redraws the list, so take the first closed group again until none is left (aria-expanded used to
+      // render empty for false, which matched nothing and left this step expanding no group at all).
+      for (let i = 0; i < 20 && await page.locator('[data-act="group"][aria-expanded="false"]').count(); i++) await page.locator('[data-act="group"][aria-expanded="false"]').first().click();
+      assert.equal(await page.locator('[data-act="group"][aria-expanded="false"]').count(), 0, 'every priority opened for the audit');
+      // Measured from the top, as every other route is: clicking the last Edit scrolls the page under the sticky header.
+      await page.evaluate(() => scrollTo(0, 0));
       reports.push({route:'expanded-priorities',hits:await layoutHits(page)});
       await page.locator('[data-act="household"]').first().click();
       reports.push({route:'people-editor',hits:await layoutHits(page)});

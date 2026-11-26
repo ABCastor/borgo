@@ -1,15 +1,17 @@
-/* Borgo's house stands on the header's single ground rule. */
-.bmast { position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: 40px auto 1fr auto; align-items: end; gap: 10px; flex-wrap: nowrap; padding-top: 16px; padding-bottom: 10px; background: var(--paper); }
+/* Borgo's house stands on the header's single ground rule. The name stands 10px above it; the sections and the tools
+   are centred on the name's cap midline, half its cap height above its baseline (Literata 560: caps are .73em), so the
+   whole bar reads as one line at every width. */
+.bmast { --name-size: 30px; --name-mid: calc(var(--name-size) * .365); position: sticky; top: 0; z-index: 40; display: grid; grid-template-columns: 40px auto 1fr auto; align-items: end; gap: 10px; flex-wrap: nowrap; padding-top: 16px; padding-bottom: 10px; background: var(--paper); }
 .bmark { display: block; align-self: end; margin-bottom: -10px; color: var(--ink); line-height: 0; }
 .bmark .mark { display: block; width: 40px; height: auto; overflow: visible; }
 .mk-ink { fill: currentColor; }
 .mk-you { fill: var(--human); transform-box: fill-box; transform-origin: 50% 100%; }
 .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: settle .9s var(--ease) 1; }
 @keyframes settle { 0%, 100% { transform: none; } 30% { transform: translateY(-9%); } 62% { transform: translateY(2%); } 82% { transform: translateY(-1.5%); } }
-.bname { font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: 30px; line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
+.bname { font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: var(--name-size); line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
 .bname .star { display: inline-block; margin-left: .1em; color: var(--human); transition: transform .45s var(--ease); }
 .bname:hover .star { transform: rotate(90deg); }
-.bmast .desktop-sections { justify-self: center; display: flex; align-items: center; gap: 2px; margin: 0 0 -4px; padding: 3px; background: var(--wash); border-radius: 7px; }
+.bmast .desktop-sections { justify-self: center; display: flex; align-items: center; gap: 2px; box-sizing: border-box; height: 40px; margin: 0 0 calc(var(--name-mid) - 20px); padding: 3px; background: var(--wash); border-radius: 7px; }
 .bmast .desktop-sections a { margin: 0; padding: 9px 13px; text-box: normal; border-radius: 4px; font-size: 13px; line-height: 1.2; }
 .bmast .nav a[aria-current] { background: var(--ink); color: var(--paper); }
 .bmast .nav a::after { display: none; }
@@ -28,14 +30,14 @@
 @media (max-width: 900px) {
   .bmast { grid-template-columns: 34px auto 1fr auto; gap: 8px; }
   .bmark .mark { width: 34px; }
-  .bname { font-size: 26px; }
+  .bmast { --name-size: 26px; }
   .bmast .desktop-sections { display: none; }
-  .phone-sections { display: block; justify-self: end; margin-bottom: -8px; font-size: 13px; }
+  .phone-sections { display: block; justify-self: end; height: 40px; margin-bottom: calc(var(--name-mid) - 20px); font-size: 13px; }
 }
 @media (max-width: 560px) {
   .bmast { grid-template-columns: 30px auto 1fr auto; gap: 6px; }
   .bmark .mark { width: 30px; }
-  .bname { font-size: 24px; }
+  .bmast { --name-size: 24px; }
   .bmast .bar-tools { gap: 0; }
 }
 @media (prefers-reduced-motion: reduce) {

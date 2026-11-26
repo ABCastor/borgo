@@ -201,7 +201,8 @@ test("Weather keeps its name and explains actual 62-day and midpoint contributio
   assert.doesNotMatch(weather.explanation!, /median/);
   for (const weight of [0, 100]) {
     const ui = valuesSheet(app(d, { ...p, weights: { ...p.weights, nice_days: weight } })).value;
-    assert.match(ui, /for="wg-climate"[^>]*>Weather<\/label>/);
+    // Counting, Weather is its dial's label; not counting, it is Weather in Add priority's catalogue, never another name.
+    assert.match(ui, weight ? /for="wg-climate"[^>]*>Weather<\/label>/ : /<h3 class="cat-h">Weather<\/h3><button id="wg-climate"[^>]*aria-label="Add Weather"/);
   }
   const midpoint = evaluate(d, { ...p, weights: { ...zero, gut: 10 }, personal: [{ id: "gut", label: "Gut", scores: { "turin-it": 3 } }] }).results[0]!.lines.find((l) => l.id === "gut")!;
   assert.match(midpoint.explanation!, /middle of the fixed scale.*neither helps nor hurts/);

@@ -4,6 +4,7 @@
 import assert from 'node:assert/strict';
 import { roundXiiStart, roundXiiLand } from './walkthrough-xii.mjs';
 import { extraFlows } from './walkthrough-flows.mjs';
+import { roundXv } from './walkthrough-xv.mjs';
 import { populatedAudit, layoutHits } from './layout-audit.mjs';
 import { createServer } from 'node:http';
 import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
@@ -102,6 +103,16 @@ try {
           await page.locator('.setup-answer [data-act="add-priority"][data-id="safety"]').click();
           const saved = await page.evaluate(() => JSON.parse(localStorage.getItem('borgo:profile:v1')));
           assert.ok(saved.weights.safety > 0);
+          // A pointer drags the setup's dial: the list holding it is not redrawn under the pointer while it moves.
+          await page.locator('.setup-answer #wg-safety').scrollIntoViewIfNeeded();
+          const setupDial = await page.locator('.setup-answer #wg-safety').boundingBox();
+          const mid = setupDial.y + setupDial.height / 2;
+          await page.mouse.move(setupDial.x + setupDial.width * 0.1, mid);
+          await page.mouse.down();
+          await page.mouse.move(setupDial.x + setupDial.width * 0.6, mid, { steps: 6 });
+          const dragged = await page.evaluate(() => JSON.parse(localStorage.getItem('borgo:profile:v1')).weights.safety);
+          await page.mouse.up();
+          assert.ok(dragged > 30, `setup dial follows the pointer while dragged: ${dragged}`);
           await page.locator('.setup-answer [data-act="remove-priority"][data-id="safety"]').click();
         }
         if (i === 2) {
@@ -268,6 +279,8 @@ try {
       await worker.evaluate(async () => { const tabs = await chrome.tabs.query({}); await chrome.tabs.setZoom(tabs.find(t => t.url?.startsWith('http://127.0.0.1:')).id, 1); });
       await page.setViewportSize({ width, height: 1000 });
       evidence.push({width, theme, land: await roundXiiLand(page, shot)});
+      evidence.push({width, theme, roundXv: await roundXv(page, { out, width, theme, shot })});
+      assert.deepEqual(await layoutHits(page), [], `round XV end state: ${width}/${theme}`);
       await page.evaluate(() => location.hash = '#/');
       await page.locator('.bar-tools [data-act="settings"]').click();
       await page.waitForSelector('#pop [data-act="reset"]');

@@ -16,6 +16,7 @@ import { term } from "./terms.ts";
 import { countryName, money, num } from "./format.ts";
 import type { AppState } from "./state.ts";
 import { climateOf, niceStrip } from "./climate.ts";
+import { glanceScale, winsLosses } from "./glance.ts";
 
 /** The drawn close mark, one stroke weight everywhere. */
 export const CLOSE = raw('<svg viewBox="0 0 10 10" aria-hidden="true" fill="none"><path d="M1 1l8 8M9 1L1 9" stroke-linecap="round"/></svg>');
@@ -145,9 +146,13 @@ export function cell(s: AppState, r: CityResult, l: LineResult): Raw {
     )}</div>`;
   }
   const src = l.raw.sources[0];
+  // A weighted line with no figure here: said once, plainly, on the cell itself.
+  const gap = l.score === null && l.weight > 0 && !s.profile.dealBreakers.includes(l.id);
+  const text = gap && l.raw.text.startsWith("No figure for ") ? "No figure" : l.raw.text;
   const dotClass = src?.origin.kind === "you" ? "is-yours" : l.imputed ? "is-imputed" : "";
   return html`<div class="cmp-val ${l.score === null ? "is-missing" : ""}" title="${l.explanation ?? ""}">
-      <span class="v">${crit?.metric ? html`<button class="edit" data-act="edit" data-city="${r.city.id}" data-metric="${crit.metric}" title="Use your own number">${l.raw.text}</button>` : l.raw.text}${crit?.metric ? srcMark(src, r.city.id, crit.metric) : ""}</span>
+      <span class="v">${crit?.metric ? html`<button class="edit" data-act="edit" data-city="${r.city.id}" data-metric="${crit.metric}" title="Use your own number">${text}</button>` : text}${crit?.metric ? srcMark(src, r.city.id, crit.metric) : ""}</span>
+      ${gap ? html`<small class="gap-note">Left out of the score, not counted as zero</small>` : ""}
       ${l.score !== null ? html`<span class="scale" title="${l.imputed ? "No figure: scored as the lowest of your other cities" : ""}"><i style="left:${(l.score * 100).toFixed(1)}%" class="${dotClass}"></i></span>` : ""}
     </div>`;
 }
@@ -165,6 +170,7 @@ export function compareView(s: AppState, e: Evaluation): Raw {
   };
   const rentMetric = `rent_${s.profile.housing.size}`;
   const wsum = all.reduce((t, l) => t + l.weight, 0) || 1;
+  const wlScale = glanceScale(e);
   return html`<div class="sheet cmp-sheet"><div class="cmp-wrap"><table class="cmp">
     <thead><tr><th class="cmp-corner" scope="col"><span class="quiet">Ranked by your values</span></th>
       ${results.map(
@@ -175,6 +181,7 @@ export function compareView(s: AppState, e: Evaluation): Raw {
         </button></th>`,
       )}</tr></thead>
     <tbody>
+      ${results.length > 1 ? html`<tr class="cmp-wl"><th scope="row">Wins and loses<small>points against your other cities</small></th>${results.map((r) => html`<td>${winsLosses(r, e, wlScale, s.profile.dealBreakers, { open: s.wlOpen?.includes("cmp"), key: "cmp" })}</td>`)}</tr>` : ""}
       <tr class="cmp-nice"><th scope="row">Nice days by month<small>Your own weather definition · days</small></th>${results.map(r => {
         const c = climateOf(s, r.city);
         return html`<td>${c ? niceStrip(c, r.city.name) : "No monthly weather data"}</td>`;

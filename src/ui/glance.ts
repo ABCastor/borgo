@@ -99,22 +99,48 @@ function row(x: Delta, scale: number, kind: "win" | "loss", alone: boolean, fail
     <span class="wl-d num">${sign}${num(Math.abs(x.d), 1)}</span><span class="wl-bar" aria-hidden="true"><i style="width:${w.toFixed(1)}%"></i></span></li>`;
 }
 
-export function winsLosses(r: CityResult, e: Evaluation, scale: number, mustPass: string[]): Raw {
+/** Weighted lines with no figure for this city: left out of its score (fixed scoring renormalises), never zero. */
+export function leftOut(r: CityResult, mustPass: string[]): LineResult[] {
+  return r.lines.filter((l) => l.weight > 0 && l.score === null && !mustPass.includes(l.id));
+}
+
+const listOf = (xs: string[]) => (xs.length < 2 ? xs.join("") : `${xs.slice(0, -1).join(", ")} and ${xs.at(-1)}`);
+
+/**
+ * Where the city wins and loses against your other cities: the two biggest each way, and every line once opened (`open`),
+ * with its figure and points, the lines where it is level, and those left out for want of a figure. `key` names the
+ * toggle in AppState.wlOpen ("card:<id>" on a sheet, "cmp" in Compare, where every column opens together).
+ */
+export function winsLosses(r: CityResult, e: Evaluation, scale: number, mustPass: string[], o: { open?: boolean; key?: string } = {}): Raw {
   const ds = deltas(r, e.results).filter((x) => !x.line.imputed);
   const alone = e.results.length < 2;
   const failing = ds.filter((x) => mustPass.includes(x.line.id) && x.line.failed);
+  const gaps = leftOut(r, mustPass);
+  const key = o.key ?? `card:${r.city.id}`;
+  const id = `wl-${key.replace(/[^a-z0-9-]/gi, "-")}-${r.city.id}`;
+  const toggle = (n: number) => html`<button class="wl-more" data-act="wl" data-key="${key}" aria-expanded="${String(!!o.open)}" aria-controls="${id}">${o.open ? "Show fewer" : `See all ${n} lines`}</button>`;
+  const gapLine = gaps.length ? html`<p class="wl-gap">No figure here for ${listOf(gaps.map((l) => shortLabel(l).toLowerCase()))}: left out of its score, not counted as zero.</p>` : "";
   if (alone) {
-    const best = ds.sort((a, b) => b.d - a.d).slice(0, 4);
-    return html`<div class="glance"><p class="wl-h">${term("wins", "Earns most on")}</p><ol class="wl-list">${best.map((x) => row(x, scale, "win", true, false))}</ol>
+    const sorted = ds.sort((a, b) => b.d - a.d);
+    const best = o.open ? sorted : sorted.slice(0, 4);
+    return html`<div class="glance ${o.open ? "is-open" : ""}" id="${id}"><p class="wl-h">${term("wins", "Earns most on")}</p><ol class="wl-list">${best.map((x) => row(x, scale, "win", true, false))}</ol>
+      ${o.open ? gapLine : ""}${sorted.length > 4 || gaps.length ? toggle(sorted.length + gaps.length) : ""}
       <p class="wl-none">Add a second city to see where each one wins and loses.</p></div>`;
   }
-  const wins = ds.filter((x) => x.d > 0.25 && !failing.includes(x)).sort((a, b) => b.d - a.d).slice(0, 2);
-  const losses = [...failing, ...ds.filter((x) => x.d < -0.25 && !failing.includes(x)).sort((a, b) => a.d - b.d)].slice(0, failing.length ? Math.max(2, failing.length) : 2);
-  return html`<div class="glance">
+  const allWins = ds.filter((x) => x.d > 0.25 && !failing.includes(x)).sort((a, b) => b.d - a.d);
+  const allLosses = [...failing, ...ds.filter((x) => x.d < -0.25 && !failing.includes(x)).sort((a, b) => a.d - b.d)];
+  const level = ds.filter((x) => Math.abs(x.d) <= 0.25 && !failing.includes(x));
+  const wins = o.open ? allWins : allWins.slice(0, 2);
+  const losses = o.open ? allLosses : allLosses.slice(0, failing.length ? Math.max(2, failing.length) : 2);
+  const hidden = allWins.length - wins.length + allLosses.length - losses.length + (o.open ? 0 : level.length + gaps.length);
+  return html`<div class="glance ${o.open ? "is-open" : ""}" id="${id}">
     <p class="wl-h">${term("wins", "Wins on")}</p>
     ${wins.length ? html`<ol class="wl-list">${wins.map((x) => row(x, scale, "win", false, false))}</ol>` : html`<p class="wl-none">Ahead on nothing you weigh.</p>`}
     <p class="wl-h">Loses on</p>
     ${losses.length ? html`<ol class="wl-list">${losses.map((x) => row(x, scale, "loss", false, failing.includes(x)))}</ol>` : html`<p class="wl-none">Behind on nothing you weigh.</p>`}
+    ${o.open && level.length ? html`<p class="wl-level"><b>Level with the others:</b> ${listOf(level.map((x) => shortLabel(x.line).toLowerCase()))}.</p>` : ""}
+    ${o.open ? gapLine : ""}
+    ${hidden > 0 || o.open ? toggle(ds.length + gaps.length) : ""}
   </div>`;
 }
 

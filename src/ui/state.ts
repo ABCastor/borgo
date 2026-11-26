@@ -48,6 +48,14 @@ export interface AppState {
   /** "More priorities" is open on the values sheet. */
   moreOpen: boolean;
   removedPriority?: string;
+  /** The line last taken out with its X, for Undo: its weight, and a line of the person's own whole. */
+  removedLine?: { id: string; label: string; weight: number; personal?: Profile["personal"][number]; at?: number; required?: boolean };
+  /** Add priority's catalogue is open; it stays open while lines are ticked in it. */
+  catalogueOpen?: boolean;
+  /** What the catalogue is filtered by. */
+  catalogueQuery?: string;
+  /** Wins and loses lists shown whole: "card:<city id>" on a sheet, "cmp" in Compare. */
+  wlOpen?: string[];
   /** The private parts the person chose to put in the share link (SharePart keys); none until they tick one. */
   shareInclude: SharePart[];
   /** Places the opened link named that this browser has no data for, until they are added again. */

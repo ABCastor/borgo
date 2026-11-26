@@ -25,7 +25,8 @@ import { compareView, moneyView, sourcePopover } from "./results.ts";
 import { applyCitiesQuery, fetchedNames, placeFromId, hideIntro, introFor, loadFetchedCities, loadProfile, notFoundOnLoad, PRESETS, saveFetchedCity, saveProfile, sharedParam, storedOverride, shareUrl, sharePartsHeld, type AppState, type LiveStatus, type SharePart, type View } from "./state.ts";
 import { sharePanel } from "./share.ts";
 import { applyTheme, cycleTheme, themeChoice } from "./theme.ts";
-import { transitionView, enhanceDisclosures } from "./transitions.ts";
+import { transitionView, enhanceDisclosures, flipRows, FLIP } from "./transitions.ts";
+import { shortLabel } from "./glance.ts";
 import { openFilm } from "./film.ts";
 import { settingsPanel } from "./settings.ts";
 import { TERMS } from "./terms.ts";
@@ -318,13 +319,19 @@ function mountExplore(): void {
 /** The map on this page, if it is drawn. */
 const mapHere = () => !!document.getElementById("map-stage");
 
+/** The view's white card, which the section change moves and resizes as one box: the first sheet in the main column. */
+function markCard(): void {
+  for (const el of document.querySelectorAll("[data-vt-card]")) el.removeAttribute("data-vt-card");
+  document.querySelector("#main .sheet")?.setAttribute("data-vt-card", "");
+}
+
 /** Everything the profile drives: the top, the side sheet and the main view. */
 function renderApp(): void {
   if (state.view === "data" || state.view === "about" || state.view === "contact") return render();
   const side = document.getElementById("side");
   if (side) side.hidden = !!state.intro;
   document.querySelector(".layout")?.classList.toggle("setup-active", !!state.intro);
-  if (side) place(side, state.intro ? "" : (state.view === "money" ? moneySheet(state) : valuesSheet(state)).value);
+  if (side) flipRows(() => place(side, state.intro ? "" : (state.view === "money" ? moneySheet(state) : valuesSheet(state)).value));
   renderLive();
 }
 
@@ -336,7 +343,7 @@ function renderLive(): void {
   evaluation = evaluate(state.data, state.profile);
   // Each line's text carries its figure in the data's units; it is shown in the person's.
   for (const r of evaluation.results) for (const l of r.lines) l.raw = { ...l.raw, text: local(l.raw.text) };
-  place(document.getElementById("top"), topQuestion(state, evaluation).value);
+  if (!(dialMoving && state.intro)) place(document.getElementById("top"), topQuestion(state, evaluation).value);
   place(document.getElementById("result-notes"), verdict(state, evaluation, "notes").value);
   const main = document.getElementById("main");
   const v = state.view;
@@ -347,6 +354,7 @@ function renderLive(): void {
       main.innerHTML = mapShell(state).value;
       mountMap(state);
     }
+    markCard();
     refreshPopover();
     return;
   }
@@ -357,6 +365,7 @@ function renderLive(): void {
   if (v === "cities" && mapHere()) refreshMap(state);
   paintCanvases();
   flipPlay(before);
+  markCard();
   refreshPopover();
 }
 
@@ -391,7 +400,7 @@ function flipPlay(first: Map<string, { x: number; y: number }>): void {
     const dx = a.x - b.x;
     const dy = a.y - b.y;
     if (Math.abs(dx) < 1 && Math.abs(dy) < 1) continue;
-    el.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }], { duration: 420, easing: "cubic-bezier(.45,0,.55,1)" });
+    el.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }], FLIP);
   }
 }
 
@@ -487,6 +496,11 @@ function setComfort(field: "min" | "max", v: number): void {
   }, "values");
 }
 
+/** After an X takes its row away, focus goes to Undo, where the next step is, not back to the top of the page. */
+function focusAfterRemove(): void {
+  setTimeout(() => document.querySelector<HTMLElement>("#side .undo button, .setup-answer .undo button")?.focus({ preventScroll: true }), 0);
+}
+
 function onClick(e: MouseEvent): void {
   const target = e.target as HTMLElement;
   const theme = target.closest<HTMLElement>('[data-theme-toggle]');
@@ -554,16 +568,80 @@ function onClick(e: MouseEvent): void {
     case "open-city":
       location.hash = `#/city/${t.dataset.city}`;
       break;
+    case "wl": {
+      // Every line where a city wins and loses, or the two biggest each way again; focus stays on the same button.
+      const key = t.dataset.key!;
+      const controls = t.getAttribute("aria-controls");
+      state.wlOpen = state.wlOpen?.includes(key) ? state.wlOpen.filter((k) => k !== key) : [...(state.wlOpen ?? []), key];
+      renderLive();
+      document.querySelector<HTMLElement>(`[data-act="wl"][aria-controls="${controls}"]`)?.focus({ preventScroll: true });
+      return;
+    }
     case "remove-priority": {
       state.removedPriority = t.dataset.id!;
+      state.removedLine = undefined;
       setProfile(p => removePriority(p, t.dataset.id!, criteriaFor(p)));
+      focusAfterRemove();
       break;
     }
     case "add-priority":
     case "undo-priority": {
-      state.openGroups = [...new Set([...state.openGroups, t.dataset.id!])];
+      // A group opens to be set only when adding it leaves nothing counting yet (a stance, a line of your own to name).
+      const trial = structuredClone(state.profile);
+      addPriority(trial, t.dataset.id!, criteriaFor(trial));
+      const counting = grouped(criteriaFor(trial)).find((g) => g.group.id === t.dataset.id)?.parts.some((c) => weightOf(trial, c) > 0);
+      if (act === "add-priority" && !counting) state.openGroups = [...new Set([...state.openGroups, t.dataset.id!])];
       state.removedPriority = undefined;
+      state.removedLine = undefined;
+      if (act === "add-priority") state.catalogueOpen = false;
       setProfile(p => addPriority(p, t.dataset.id!, criteriaFor(p)));
+      if (act === "undo-priority") document.getElementById(`wg-${t.dataset.id}`)?.focus();
+      break;
+    }
+    case "catalogue": {
+      state.catalogueOpen = !state.catalogueOpen;
+      const panel = document.getElementById("priority-options");
+      if (panel) panel.hidden = !state.catalogueOpen;
+      t.setAttribute("aria-expanded", String(state.catalogueOpen));
+      if (state.catalogueOpen) panel?.querySelector<HTMLElement>("[data-priority-search]")?.focus();
+      return;
+    }
+    case "line": {
+      // A standard line, one click: on at a third priority's weight (or what it had before its X), or off again.
+      const id = t.dataset.id!;
+      const c = criteriaFor(state.profile).find((x) => x.id === id);
+      if (!c) return;
+      const group = grouped(criteriaFor(state.profile)).find((g) => g.parts.includes(c))!.group.id;
+      if (weightOf(state.profile, c) > 0) {
+        state.removedLine = { id, label: shortLabel(c), weight: weightOf(state.profile, c) };
+        state.removedPriority = undefined;
+        const fromList = !t.closest("#priority-options");
+        setProfile((p) => (p.weights[id] = 0));
+        if (fromList) focusAfterRemove();
+      } else {
+        if (c.applies && !c.applies(state.profile)) {
+          // A line that needs a stance or a kind of work first opens its group, where that is said.
+          state.openGroups = [...new Set([...state.openGroups, group])];
+          setProfile((p) => addPriority(p, group, criteriaFor(p)));
+          return;
+        }
+        const back = state.removedLine?.id === id ? state.removedLine.weight : THIRD_WEIGHT;
+        if (state.removedLine?.id === id) state.removedLine = undefined;
+        state.removedPriority = undefined;
+        setProfile((p) => (p.weights[id] = back));
+      }
+      break;
+    }
+    case "undo-line": {
+      const r = state.removedLine;
+      if (!r) return;
+      state.removedLine = undefined;
+      setProfile((p) => {
+        if (r.personal && !p.personal.some((l) => l.id === r.id)) p.personal.splice(Math.min(r.at ?? p.personal.length, p.personal.length), 0, r.personal);
+        p.weights[r.id] = r.weight;
+        if (r.required && !p.dealBreakers.includes(r.id)) p.dealBreakers.push(r.id);
+      });
+      document.getElementById(`w-${r.id}`)?.focus();
       break;
     }
     case "preset": {
@@ -600,14 +678,20 @@ function onClick(e: MouseEvent): void {
       });
       break;
     }
-    case "remove-line":
+    case "remove-line": {
+      const at = state.profile.personal.findIndex((l) => l.id === t.dataset.id);
+      const line = state.profile.personal[at];
+      if (line) state.removedLine = { id: line.id, label: line.label, weight: state.profile.weights[line.id] ?? 10, personal: structuredClone(line), at, required: state.profile.dealBreakers.includes(line.id) };
+      state.removedPriority = undefined;
       setProfile((p) => {
         const id = t.dataset.id!;
         p.personal = p.personal.filter((l) => l.id !== id);
         delete p.weights[id];
         p.dealBreakers = p.dealBreakers.filter((line) => line !== id);
       });
+      focusAfterRemove();
       break;
+    }
     case "score":
       setProfile((p) => {
         const line = p.personal.find((l) => l.id === t.dataset.line)!;
@@ -635,6 +719,10 @@ function onClick(e: MouseEvent): void {
       state.refused = [];
       state.openGroups = [];
       state.removedPriority = undefined;
+      state.removedLine = undefined;
+      state.catalogueOpen = false;
+      state.catalogueQuery = "";
+      state.wlOpen = [];
       state.moreOpen = false;
       state.shareInclude = [];
       state.intro = true;
@@ -933,6 +1021,7 @@ function onSubmit(e: SubmitEvent): void {
 function onInput(e: Event): void {
   const t = e.target as HTMLInputElement;
   if (t.dataset.prioritySearch !== undefined) {
+    state.catalogueQuery = t.value;
     for (const item of document.querySelectorAll<HTMLElement>("[data-catalogue-label]")) item.hidden = !item.dataset.catalogueLabel!.includes(t.value.trim().toLowerCase());
     return;
   }
@@ -955,17 +1044,27 @@ function onInput(e: Event): void {
     b.classList.remove("is-on");
     b.setAttribute("aria-pressed", "false");
   });
-  if (t.dataset.groupWeight) {
-    // A group's dial: its new weight is shared over its parts in the proportions they had.
-    const parts = (grouped(criteriaFor(state.profile)).find((g) => g.group.id === t.dataset.groupWeight)?.parts ?? []).filter((c) => !state.profile.dealBreakers.includes(c.id));
-    const split = splitGroupWeight(parts.map((c) => ({ id: c.id, weight: weightOf(state.profile, c), defaultWeight: c.defaultWeight, applies: !c.applies || c.applies(state.profile) })), v);
-    setProfile((p) => Object.assign(p.weights, split), "values");
-  } else {
-    const id = t.dataset.weight!;
-    setProfile((p) => (p.weights[id] = v), "values");
+  // While a dial moves, the cards follow but the list holding it is not redrawn: a redraw would take the dial away from
+  // the pointer (the guided setup draws its list in the top, which every live redraw replaced). Its release redraws it.
+  dialMoving = true;
+  try {
+    if (t.dataset.groupWeight) {
+      // A group's dial: its new weight is shared over its parts in the proportions they had.
+      const parts = (grouped(criteriaFor(state.profile)).find((g) => g.group.id === t.dataset.groupWeight)?.parts ?? []).filter((c) => !state.profile.dealBreakers.includes(c.id));
+      const split = splitGroupWeight(parts.map((c) => ({ id: c.id, weight: weightOf(state.profile, c), defaultWeight: c.defaultWeight, applies: !c.applies || c.applies(state.profile) })), v);
+      setProfile((p) => Object.assign(p.weights, split), "values");
+    } else {
+      const id = t.dataset.weight!;
+      setProfile((p) => (p.weights[id] = v), "values");
+    }
+  } finally {
+    dialMoving = false;
   }
   refreshShares(t);
 }
+
+/** True while a weight dial's input event redraws: the guided setup's list in the top stays as it is until release. */
+let dialMoving = false;
 
 /** After a weight moves: every dial, group and part, shows its new value and share, except the one being dragged. */
 function refreshShares(active: HTMLInputElement | null): void {
@@ -986,6 +1085,10 @@ function refreshShares(active: HTMLInputElement | null): void {
     const w = parts.reduce((s, c) => s + weightOf(p, c), 0);
     const out = document.getElementById(`og-${group.id}`);
     if (out) out.textContent = `${share(w, total)} of score`;
+    for (const c of parts) {
+      const line = document.getElementById(`ol-${c.id}`);
+      if (line) line.textContent = p.dealBreakers.includes(c.id) ? "required" : share(weightOf(p, c), total);
+    }
     const splitShare = document.getElementById(`sg-${group.id}`);
     if (splitShare) splitShare.textContent = share(w, total);
     const el = document.getElementById(`wg-${group.id}`) as HTMLInputElement | null;
@@ -1014,7 +1117,10 @@ function changed(e: Event): void {
   const t = e.target as HTMLInputElement | HTMLSelectElement;
   if (t.dataset.mapLens || t.id === "map-fade") return;
   if (t.dataset.weight || t.dataset.groupWeight) {
-    place(document.getElementById("side"), valuesSheet(state).value);
+    // Released: the priorities take their new order, sliding there as the cards do. Never while the dial moves. In the
+    // guided setup the list is in the top, and the side sheet stays empty.
+    if (state.intro) flipRows(() => renderLive());
+    else flipRows(() => place(document.getElementById("side"), valuesSheet(state).value));
     return;
   }
   // The community form is what the person sends, not their profile: it changes nothing until sent.
@@ -1487,7 +1593,8 @@ async function boot(): Promise<void> {
   disclosures.observe(document.body, { childList: true, subtree: true });
   document.addEventListener('toggle', () => enhanceDisclosures(), true);
   addEventListener("hashchange", () => {
-    transitionView(() => { render(); scrollTo(0, 0); });
+    markCard();
+    transitionView(() => { render(); scrollTo(0, 0); markCard(); });
   });
   render();
   enhanceDisclosures();

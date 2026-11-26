@@ -20,9 +20,9 @@ import { cardFor, pinAfterClick, sameTarget as same, type Target } from "./map-c
 // right to live, the land says how many months of its year are in the person's nice-day range. Pointing at a place
 // reads it; clicking pins its card (src/ui/map-card.ts), and only the card's button adds it.
 
-import { stretchScale, stretched, MAP_COLOURS } from "./map-scale.ts";
+import { stretchScale, stretched } from "./map-scale.ts";
 
-interface Palette { lo: number[]; hi: number[]; land: number[]; landHi: number[]; faint: number[]; ink: string; sheet: string; quiet: string }
+interface Palette { lo: number[]; mid: number[]; hi: number[]; land: number[]; landHi: number[]; faint: number[]; ink: string; sheet: string; quiet: string }
 
 const ui = {
   map: null as WorldMap | null,
@@ -189,6 +189,7 @@ function readPalette(host: HTMLElement): Palette {
   const css = (v: string) => `rgb(${rgbOf(probe, v).join(" ")})`;
   const p: Palette = {
     lo: rgbOf(probe, "var(--map-lo)"),
+    mid: rgbOf(probe, "var(--map-mid)"),
     hi: rgbOf(probe, "var(--map-hi)"),
     land: rgbOf(probe, "var(--map-land)"),
     landHi: rgbOf(probe, "var(--map-land-hi)"),
@@ -205,8 +206,7 @@ const mix = (a: number[], b: number[], t: number) => a.map((x, i) => Math.round(
 const rgb = (c: number[]) => `rgb(${c[0]} ${c[1]} ${c[2]})`;
 const ramp = (p: Palette, t: number) => {
   const v = Math.max(0, Math.min(1, t));
-  const mid = MAP_COLOURS[1]!;
-  return rgb(v < 0.5 ? mix(p.lo, mid, v * 2) : mix(mid, p.hi, (v - 0.5) * 2));
+  return rgb(v < 0.5 ? mix(p.lo, p.mid, v * 2) : mix(p.mid, p.hi, (v - 0.5) * 2));
 };
 /** The land's own scale, lighter than the cities' so their dots stay on top of it: one hue, darker with more months. */
 const landRamp = (p: Palette, t: number) => ramp(p, t);
@@ -850,7 +850,7 @@ function legend(s: AppState): Raw {
   }
   const fadeOut = Math.round(ui.fade * 100);
   return html`<div class="mlg">${rows}
-    <p class="hint">Red: lower fit; yellow: middle; green: higher fit. Colour spans the visible 5th–95th percentile, not a fixed score. Numbers and ranks do not change.</p>
+    <p class="hint">The greener, the better the fit. Colour spans the visible 5th–95th percentile, not a fixed score. Numbers and ranks do not change.</p>
     <div class="mlg-row mlg-keys"><span class="mlg-dot is-mine"></span>your cities, numbered in this order <span class="mlg-dot is-none"></span>${ui.lens === "score" ? "ruled out" : "no data"}</div>
     <label class="mlg-fade"><span>Fade the weakest</span><input type="range" id="map-fade" min="0" max="90" step="5" value="${fadeOut}" style="--fill:${(fadeOut / 90) * 100}%" aria-valuetext="${fadeOut ? `below ${fadeOut}% of the scale` : "nothing faded"}"><output class="num" for="map-fade">${fadeOut ? `below ${fadeOut}%` : "off"}</output></label>
   </div>`;

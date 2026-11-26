@@ -9,7 +9,7 @@ summary:focus-visible { outline: 2px solid var(--human); outline-offset: 4px; }
 .priority-catalogue [hidden] { display: none; }
 .bmast .bar-tools { color: var(--tool-icon-color); }
 /* The Castor toolbar, as on his other sites: bare 17px icons in 30px buttons, 6px apart. */
-.bmast .bar-tools { display: flex; align-items: center; align-self: center; gap: 6px; margin-bottom: 0; }
+.bmast .bar-tools { display: flex; align-items: center; align-self: end; gap: 6px; height: 30px; margin-bottom: calc(var(--name-mid) - 15px); }
 .bmast .bar-tools > button { display: grid; place-items: center; width: 30px; height: 30px; flex: 0 0 30px; padding: 0; border: 0; border-radius: 6px; background: none; color: inherit; cursor: pointer; }
 .bmast .bar-tools > button:hover { background: color-mix(in oklab, currentColor 10%, transparent); }
 .bmast .bar-tools > button:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
@@ -30,10 +30,18 @@ summary:focus-visible { outline: 2px solid var(--human); outline-offset: 4px; }
 .film-dialog h2 { font-size: 1.2rem; }
 .film-dialog video { display: block; width: 100%; max-height: 65dvh; }
 .film-dialog p { font-size: .85rem; margin-top: 12px; }
+/* Changing section: the view's white card is one box that slides and resizes straight from its old place and size to
+   its new ones (no scaling of what it holds, which cross-fades inside it, clipped to the box); the rest of the page
+   cross-fades. The card is marked by main.ts (markCard), one per page, so the box always has one old and one new. */
 @media (prefers-reduced-motion: no-preference) {
-  #page { view-transition-name: section; }
+  [data-vt-card] { view-transition-name: main-card; }
   .desktop-sections a[aria-current='page'] { view-transition-name: section-indicator; }
-  ::view-transition-old(section), ::view-transition-new(section), ::view-transition-group(section-indicator) { animation-duration: 230ms; animation-timing-function: var(--ease); }
+  ::view-transition-old(root), ::view-transition-new(root), ::view-transition-group(section-indicator) { animation-duration: 230ms; animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  ::view-transition-group(main-card) { animation-duration: 300ms; animation-timing-function: cubic-bezier(.45, 0, .55, 1); overflow: clip; border-radius: 10px; background: light-dark(#FFFFFF, #1E1C19); box-shadow: 0 1px 2px light-dark(rgb(20 19 15 / .07), rgb(0 0 0 / .4)), 0 10px 28px -16px light-dark(rgb(20 19 15 / .35), rgb(0 0 0 / .75)); }
+  /* The current section's dark pill slides and resizes as one; its words cross-fade in place, never stretched. */
+  ::view-transition-group(section-indicator) { border-radius: 4px; background: var(--ink); }
+  ::view-transition-old(section-indicator), ::view-transition-new(section-indicator) { inset: 0; inline-size: auto; block-size: auto; margin: auto; }
+  ::view-transition-old(main-card), ::view-transition-new(main-card) { inline-size: auto; block-size: auto; animation-duration: 300ms; animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
 }
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }

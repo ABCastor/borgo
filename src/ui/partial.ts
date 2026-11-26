@@ -23,6 +23,9 @@ function relevantGaps(s: AppState, r: CityResult) {
   return resultGaps(s.data, r).filter((g) => (g.what === "Residence rules" ? rights : g.what === "Take-home pay" || g.what === "Money" ? money : true));
 }
 
+/** What a gap does to the score, in one plain sentence: fixed scoring leaves the line out; it never counts as zero. */
+const zeroNote = (s: AppState) => (s.profile.prefs.normalise === "relative" ? "" : html` <span class="zero-note">Gaps are left out of its score, not counted as zero.</span>`);
+
 /** On a sheet: the marker, the share, and the first few gaps. In the dossier (`full`): every gap, one per line. */
 export function partialNote(s: AppState, r: CityResult, full = false): Raw {
   const gaps = relevantGaps(s, r);
@@ -30,7 +33,7 @@ export function partialNote(s: AppState, r: CityResult, full = false): Raw {
   const real = ownShare(r);
   const share = real < 0.999 ? html` ${Math.round(real * 100)}% of this ${term("score", "score")} from ${term("real", "its own figures")}` : "";
   if (full)
-    return html`<div class="partial"><p class="real"><b class="partial-mark">Partial data</b>${share}</p>
+    return html`<div class="partial"><p class="real"><b class="partial-mark">Partial data</b>${share}.${zeroNote(s)}</p>
       <ul class="gaps" aria-label="What ${r.city.name} lacks">${gaps.map((g) => html`<li><b>${g.what}</b>: ${g.why}</li>`)}</ul></div>`;
-  return html`<p class="real"><b class="partial-mark">Partial data</b>${share}${share ? ": " : " "}${gapsShort(gaps)}.</p>`;
+  return html`<p class="real"><b class="partial-mark">Partial data</b>${share}${share ? ": " : " "}${gapsShort(gaps)}.${zeroNote(s)}</p>`;
 }

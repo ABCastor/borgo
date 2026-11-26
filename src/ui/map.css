@@ -1,13 +1,13 @@
-/* The Map: the world as tiles on a white sheet, coloured by what the person values. City dots run from bar-out to
-   olive (a verdict); the land runs from map-land to a lighter olive by the months in the person's nice-day range, one
-   hue darkening with more months, so the dots stay on top of it; the person's own cities are ringed in ink and
+/* The Map: the world as tiles on a white sheet, coloured by what the person values. City dots and land share one
+   sequential ramp to green (map-scale.ts): pale straw to deep green on the light page, dim olive to bright green on the
+   dark one, monotonic in lightness so the ends differ without hue; the person's own cities are ringed in ink and
    numbered; the card that reads a place floats with the Lifted shadow, like the other popovers, and is a bottom sheet
    on a phone. */
 
 body.app {
-  --map-lo: #8f1231;
-  --map-hi: #a5e3ae;
-  --map-mid: #dca82b;
+  --map-lo: light-dark(#fae08a, #605120);
+  --map-mid: light-dark(#8eb045, #6f983d);
+  --map-hi: light-dark(#0b5d2a, #79df83);
   --map-land: light-dark(#E3DFD4, #36332D);
   --map-land-hi: color-mix(in oklab, var(--map-hi) 62%, var(--map-land));
   --map-faint: light-dark(#EDEAE2, #282622);

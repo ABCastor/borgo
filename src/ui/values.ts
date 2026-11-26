@@ -4,6 +4,7 @@ import { grouped, priorityGroups, type Group } from "../core/groups.ts";
 import type { Profile } from "../core/types.ts";
 import { niceTestsShort, rangeButton } from "./cards.ts";
 import { html, type Raw } from "./dom.ts";
+import { CLOSE } from "./results.ts";
 import { passportOptions, problemsFor } from "./top.ts";
 import { CURRENCIES, money } from "./format.ts";
 import { shortLabel } from "./glance.ts";
@@ -15,19 +16,27 @@ import { kindOf, WORK_KINDS } from "../core/work.ts";
 // pay and spending on Money. Nothing is edited in a bar on top.
 
 export function share(weight: number, total: number): string {
-  return total > 0 ? `${Math.round((100 * weight) / total)}%` : "0%";
+  if (!(total > 0)) return "0%";
+  const pct = Math.round((100 * weight) / total);
+  // A line that counts never reads as 0%: under half a percent is said as under 1%.
+  return weight > 0 && pct === 0 ? "<1%" : `${pct}%`;
 }
 
 const PART_MAX = 100;
 const GROUP_MAX = 100;
 
-function dial(id: string, label: string, weight: number, total: number, o: { personal?: boolean; mustPass?: boolean; canBreak?: boolean; question?: string; stance?: Raw; missing?: string[] }): Raw {
-  return html`<li class="vline ${o.personal ? "is-personal" : ""} ${o.stance ? "is-position" : ""} ${weight === 0 ? "is-zero" : ""}">
-    <label class="val-n" for="w-${id}" title="${o.question ?? ""}">${label}</label>
-    <output class="val-p num" id="o-${id}" for="w-${id}">${o.mustPass ? "requirement, not scored" : `${share(weight, total)} of score`}</output>
-    <input type="range" id="w-${id}" min="0" max="${PART_MAX}" step="1" value="${weight}" data-weight="${id}" ${o.mustPass ? "disabled" : ""} style="--fill:${((Math.min(weight, PART_MAX) / PART_MAX) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
+/** The remove X beside a priority or a line: a 44 px target, named for what it removes. */
+export function removeX(act: string, id: string, what: string): Raw {
+  return html`<button class="prio-x" data-act="${act}" data-id="${id}" aria-label="Remove ${what}" title="Remove ${what}">${CLOSE}</button>`;
+}
 
-    ${o.personal ? html`<button class="link val-x" data-act="remove-line" data-id="${id}">Remove</button>` : ""}
+function dial(id: string, label: string, weight: number, total: number, o: { personal?: boolean; mustPass?: boolean; canBreak?: boolean; question?: string; stance?: Raw; missing?: string[]; x?: boolean; extra?: Raw }): Raw {
+  return html`<li class="vline ${o.personal ? "is-personal" : ""} ${o.stance ? "is-position" : ""} ${weight === 0 ? "is-zero" : ""} ${o.x || o.personal ? "has-x" : ""}">
+    <label class="val-n" for="w-${id}" title="${o.question ?? ""}">${label}${o.personal ? html`<span class="yours">Yours</span>` : ""}</label>
+    <output class="val-p num" id="o-${id}" for="w-${id}">${o.mustPass ? "requirement, not scored" : `${share(weight, total)} of score`}</output>
+    ${o.personal ? removeX("remove-line", id, label) : o.x ? removeX("line", id, label) : ""}
+    <input type="range" id="w-${id}" min="0" max="${PART_MAX}" step="1" value="${weight}" data-weight="${id}" ${o.mustPass ? "disabled" : ""} style="--fill:${((Math.min(weight, PART_MAX) / PART_MAX) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
+    ${o.extra ?? ""}
     ${o.stance ?? ""}
     ${o.canBreak ? html`<label class="check"><input type="checkbox" data-act="toggle-breaker" data-id="${id}" ${o.mustPass ? "checked" : ""}> Required: rule out cities that fail</label><small class="hint">A requirement filters cities; it takes no share of the score.</small>` : ""}
   </li>`;
@@ -54,21 +63,28 @@ function stanceControl(c: Criterion, stance: number | undefined): Raw {
   </div>`;
 }
 
-/** The parts a closed group holds, in a few words: the ones that count first. */
-function partsSummary(p: Profile, parts: Criterion[]): string {
-  const on = parts.filter((c) => weightOf(p, c) > 0);
-  const off = parts.length - on.length;
-  // Mid-sentence, a label takes a small first letter, unless it is a name (Founders Running Club, English).
-  const mid = (l: string) => (/ [A-Z]/.test(l) || /^English/.test(l) ? l : l.charAt(0).toLowerCase() + l.slice(1));
-  const names = on.slice(0, 3).map((c, i) => (i === 0 ? shortLabel(c) : mid(shortLabel(c))));
-  const rest = on.length - names.length;
-  const counted = names.length ? `${names.join(", ")}${rest > 0 ? ` and ${rest} more` : ""}` : "Nothing counts yet";
-  return off > 0 ? `${counted} · ${off} off` : counted;
+/** The lines that make up a group, in its own order: the ones that count, and the standard ones that do not yet. */
+const counts = (p: Profile, c: Criterion) => weightOf(p, c) > 0 || p.dealBreakers.includes(c.id);
+/** A standard line that can be switched on with one click: it applies to this person as they are (a stance or a kind of work comes first). */
+const addable = (p: Profile, c: Criterion) => c.category !== "personal" && !c.position && (!c.applies || c.applies(p));
+const lineName = (c: Criterion) => (c.category === "personal" ? c.label : shortLabel(c));
+
+/** Nice days are the person's own weather: its range and tests, edited in place on the nice-days line. */
+function niceDef(s: AppState): Raw {
+  return html`<span class="vg-def">${rangeButton(s, "values")}<button class="link nice-sum" data-act="comfort" data-where="values-tests" aria-haspopup="dialog">Edit weather tests: ${niceTestsShort(s.profile.prefs.comfort)}</button></span>`;
 }
 
-/** Nice days are the person's own: the range, said once at the head of Climate, where everyone looks for it. */
-function niceDaysLine(s: AppState): Raw {
-  return html`<p class="nice-own">Nice days means the weather you enjoy. ${rangeButton(s, "values")} <button class="link nice-sum" data-act="comfort" data-where="values-tests" aria-haspopup="dialog">Edit weather tests: ${niceTestsShort(s.profile.prefs.comfort)}</button></p>`;
+/** A line that counts, in a closed group: its name and share, read-only; nice days carries its own definition. */
+function onLine(s: AppState, c: Criterion, total: number): Raw {
+  const p = s.profile;
+  const req = p.dealBreakers.includes(c.id);
+  return html`<li class="vg-line ${c.id === "nice_days" ? "is-nice" : ""}"><span class="vg-ln">${lineName(c)}${c.category === "personal" ? html`<span class="yours">Yours</span>` : ""}</span><span class="vg-lp num" id="ol-${c.id}">${req ? "required" : share(weightOf(p, c), total)}</span>${c.id === "nice_days" ? niceDef(s) : ""}</li>`;
+}
+
+/** One click to add a standard line, or to take it out again: pressed while it counts. */
+export function lineChip(p: Profile, c: Criterion): Raw {
+  const on = counts(p, c);
+  return html`<button class="add-chip" data-act="line" data-id="${c.id}" aria-pressed="${String(on)}" ${p.dealBreakers.includes(c.id) ? "disabled" : ""}><span aria-hidden="true">${on ? "✓" : "+"}</span> ${lineName(c)}</button>`;
 }
 
 /** The kind of work, said once at the head of Work and ambition: it decides which of the group's parts count. */
@@ -81,21 +97,7 @@ function workLine(s: AppState): Raw {
     <p class="vs-lede" id="work-note">${k ? (k.pay ? "Pay and jobs in your field count here, from official earnings and labour surveys." : "Young companies, developers and graduates around you count most.") : "Choose it and pay and jobs in your field count here."}</p>`;
 }
 
-/** The other parts of a group led by one line (money left, nice days), in a few words: what else counts, or what is off. */
-function alsoSummary(p: Profile, parts: Criterion[], lead: string): string {
-  const rest = parts.filter((c) => c.id !== lead);
-  const on = rest.filter((c) => weightOf(p, c) > 0);
-  const mid = (l: string) => (/ [A-Z]/.test(l) ? l : l.charAt(0).toLowerCase() + l.slice(1));
-  const name = (cs: Criterion[]) => {
-    const n = cs.slice(0, 2).map((c, i) => (i === 0 ? shortLabel(c) : mid(shortLabel(c))));
-    return cs.length > 2 ? `${n.join(", ")} and ${cs.length - 2} more` : n.join(" and ");
-  };
-  if (on.length) return `Also counts: ${name(on).charAt(0).toLowerCase()}${name(on).slice(1)}`;
-  return rest.length ? `${name(rest)}: off` : "";
-}
 
-/** Headline lines within their groups, never a fixed ordering of priorities. */
-const LEADS: Partial<Record<Group["id"], string>> = { money: "money_left", climate: "nice_days" };
 /** What a third priority starts at, shared over its parts by their default weights. */
 export const THIRD_WEIGHT = 10;
 
@@ -117,11 +119,12 @@ export function groupMissing(s: AppState, g: Group, parts: Criterion[], missing:
   return html`<p class="hint group-missing">${text}</p>`;
 }
 
+
 function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o: { missing?: Record<string, string[]> } = {}): Raw {
   const p = s.profile;
   const weight = parts.reduce((t, c) => t + weightOf(p, c), 0);
+  const on = parts.filter((c) => counts(p, c));
   const open = s.openGroups.includes(g.id);
-  const lead = LEADS[g.id];
   const label = g.label;
   const max = Math.max(GROUP_MAX, Math.ceil(weight));
   const part = (c: Criterion) =>
@@ -132,28 +135,37 @@ function groupBlock(s: AppState, g: Group, parts: Criterion[], total: number, o:
           mustPass: p.dealBreakers.includes(c.id),
           question: c.question,
           stance: c.position ? stanceControl(c, stanceOf(p, c.id)) : undefined,
+          x: !c.position && counts(p, c) && !p.dealBreakers.includes(c.id),
+          extra: c.id === "nice_days" ? niceDef(s) : undefined,
         });
-  return html`<li class="vgroup ${weight === 0 ? "is-zero" : ""} ${open ? "is-open" : ""}" data-group="${g.id}">
-    <div class="vline vg-head">
+  // Open: every line that counts as a dial; the group's other standard lines, one click each. Where you stand keeps
+  // every stance beside its line, since a stance is what switches the line on; your own lines all stay, at 0 too.
+  const shown = g.id === "stand" || g.id === "own" ? parts : on;
+  const more = g.id === "stand" ? [] : parts.filter((c) => !counts(p, c) && addable(p, c));
+  // A priority that is one line (Safety) is its own dial: nothing to list or open under it, unless it can be Required.
+  const single = parts.length === 1 && g.id !== "own" && !parts[0]!.fails && !parts[0]!.position;
+  return html`<li class="vgroup ${weight === 0 ? "is-zero" : ""} ${open ? "is-open" : ""}" data-group="${g.id}" data-flip-row="g-${g.id}">
+    <div class="vline vg-head has-x">
       <label class="val-n" for="wg-${g.id}" title="${g.question}">${label}</label>
       <output class="val-p num" id="og-${g.id}" for="wg-${g.id}">${share(weight, total)} of score</output>
+      ${removeX("remove-priority", g.id, label)}
       <input type="range" id="wg-${g.id}" min="0" max="${max}" step="1" value="${Math.round(weight)}" data-group-weight="${g.id}" ${parts.length && parts.every((c) => p.dealBreakers.includes(c.id)) ? "disabled" : ""} style="--fill:${((Math.min(weight, max) / max) * 100).toFixed(1)}%" aria-label="How much ${label} matters">
-
     </div>
     ${groupMissing(s, g, parts, o.missing ?? {})}
-    <div class="priority-actions"><button class="link" data-act="group" data-id="${g.id}" aria-expanded="${open}" aria-controls="vg-${g.id}">Edit</button><button class="link" data-act="remove-priority" data-id="${g.id}">Remove</button></div>
-    ${g.id === "climate" ? html`<h3 class="nice-headline">Nice days</h3>${niceDaysLine(s)}` : ""}
     ${g.id === "ambition" ? workLine(s) : ""}
-    <p class="hint">${lead ? alsoSummary(p, parts, lead) || partsSummary(p, parts) : partsSummary(p, parts)}</p>
-    ${open
+    ${single && !open ? "" : open
       ? html`<div class="vg-parts" id="vg-${g.id}"><p class="vs-lede">Lines split ${g.label}'s <span id="sg-${g.id}">${share(weight, total)}</span> share; moving one changes the total.</p>
           ${g.id === "stand" ? html`<p class="vs-lede">Say where you stand and a place scores by how close it is; nothing is assumed about you.</p>` : ""}
           ${g.id === "own" ? html`<p class="vs-lede">What no dataset knows: family nearby, a partner's job, a feeling. Score each city 1 to 5 in its dossier or in Compare.</p>` : ""}
-          ${parts.length ? html`<ul class="vals">${parts.map(part)}</ul>` : ""}
+          ${shown.length ? html`<ul class="vals">${shown.map(part)}</ul>` : ""}
+          ${more.length ? html`<p class="vg-more-h">More ${g.label.toLowerCase()} lines</p><div class="chips">${more.map((c) => lineChip(p, c))}</div>` : ""}
           ${g.pending ? html`<p class="vs-lede">${g.pending}</p>` : ""}
           ${g.id === "own" ? html`<form class="addline" data-act="add-line"><input name="label" placeholder="e.g. Family nearby" aria-label="New line of your own" maxlength="40"><button class="pill-btn">Add</button></form>` : ""}
         </div>`
-      : ""}
+      : on.length
+        ? html`<ul class="vg-on" aria-label="What counts in ${label}">${on.map((c) => onLine(s, c, total))}</ul>`
+        : html`<p class="hint">Nothing counts here yet.</p>`}
+    ${single && !open ? "" : html`<div class="priority-actions"><button class="link" data-act="group" data-id="${g.id}" aria-expanded="${String(open)}" aria-controls="vg-${g.id}">${open ? "Done" : more.length ? "Edit or add lines" : "Edit"}</button></div>`}
   </li>`;
 }
 
@@ -171,6 +183,53 @@ function eligibility(s: AppState): Raw {
   </section>`;
 }
 
+/** The few standard lines most people start from, offered first in Add priority. */
+export const START_WITH = ["money_left", "nice_days", "safety", "clean_air", "right_to_live"];
+
+/** Undo for the last priority or line taken out with its X. */
+function undoLine(s: AppState, crit: Criterion[]): Raw {
+  if (s.removedPriority) {
+    const g = grouped(crit).find((x) => x.group.id === s.removedPriority)?.group;
+    return html`<p class="undo" role="status">${g?.label ?? "Priority"} removed. <button class="link" data-act="undo-priority" data-id="${s.removedPriority}">Undo</button></p>`;
+  }
+  if (s.removedLine) return html`<p class="undo" role="status">${s.removedLine.label} removed. <button class="link" data-act="undo-line" data-id="${s.removedLine.id}">Undo</button></p>`;
+  return html``;
+}
+
+/**
+ * Add priority: Borgo's standard catalogue, grouped as the list is, with the lines most people start from first. A
+ * line is one click to add or take out again; a group's Add starts its usual lines. The person's own lines come last.
+ */
+function catalogueBlock(s: AppState, crit: Criterion[]): Raw {
+  const p = s.profile;
+  const open = !!s.catalogueOpen;
+  const q = (s.catalogueQuery ?? "").trim().toLowerCase();
+  const all = grouped(crit).filter(({ group }) => !group.shows || group.shows(p));
+  const { active } = priorityGroups(p, crit);
+  const start = START_WITH.map((id) => crit.find((c) => c.id === id)).filter((c): c is Criterion => !!c && addable(p, c));
+  const words = (g: Group, parts: Criterion[]) => [g.label, g.question, ...parts.filter((c) => c.category !== "personal").map(lineName)].join(" ").toLowerCase();
+  return html`<div class="priority-catalogue"><button class="pill-btn" data-act="catalogue" aria-controls="priority-options" aria-expanded="${String(open)}"><span aria-hidden="true">+</span> Add priority</button>
+    <div id="priority-options" class="catalogue" ${open ? "" : "hidden"}>
+      <label class="cat-search">Search priorities<input type="search" data-priority-search value="${s.catalogueQuery ?? ""}" placeholder="Rent, sunshine, schools…"></label>
+      <section class="cat-g cat-start" data-catalogue-label="${start.map(lineName).join(" ").toLowerCase()} start" ${q && !start.some((c) => lineName(c).toLowerCase().includes(q)) ? "hidden" : ""}><h3 class="cat-h">Most people start with</h3><div class="chips">${start.map((c) => lineChip(p, c))}</div></section>
+      <ul class="cat-list" aria-label="Standard priorities">${all.filter(({ group }) => group.id !== "own").map(({ group, parts }) => {
+        const isOn = active.some((x) => x.group.id === group.id);
+        const lines = parts.filter((c) => addable(p, c));
+        return html`<li class="cat-g" data-catalogue-label="${words(group, parts)}" ${q && !words(group, parts).includes(q) ? "hidden" : ""}>
+          <div class="cat-gh"><h3 class="cat-h">${group.label}</h3>${isOn ? html`<span class="cat-on">Counts</span>` : html`<button id="wg-${group.id}" class="pill-btn" data-act="add-priority" data-id="${group.id}" aria-label="Add ${group.label}">Add</button>`}</div>
+          <p class="hint">${group.question}</p>
+          ${lines.length > 1 || (lines.length === 1 && lines[0]!.id !== group.id) ? html`<div class="chips">${lines.map((c) => lineChip(p, c))}</div>` : ""}
+        </li>`;
+      })}
+      ${(() => {
+        const own = all.find(({ group }) => group.id === "own");
+        if (!own) return "";
+        const isOn = active.some((x) => x.group.id === "own");
+        return html`<li class="cat-g cat-own" data-catalogue-label="your own lines ${words(own.group, own.parts)}" ${q && !`your own lines ${words(own.group, own.parts)}`.includes(q) ? "hidden" : ""}><div class="cat-gh"><h3 class="cat-h">Your own lines</h3>${isOn ? html`<span class="cat-on">Counts</span>` : html`<button id="wg-own" class="pill-btn" data-act="add-priority" data-id="own" aria-label="Add Your own lines">Add</button>`}</div><p class="hint">What no dataset knows, such as family nearby. You score each city 1 to 5.</p></li>`;
+      })()}</ul>
+    </div></div>`;
+}
+
 export function valuesSheet(s: AppState): Raw {
   const p = s.profile;
   const crit = criteriaFor(p);
@@ -182,15 +241,15 @@ export function valuesSheet(s: AppState): Raw {
   const presetActive = PRESETS.find((pr) => CRITERIA.every((c) => (p.weights[c.id] ?? c.defaultWeight) === (pr.weights[c.id] ?? c.defaultWeight)))?.id;
   const total = crit.reduce((t, c) => t + weightOf(p, c), 0);
   const groups = grouped(crit).filter(({ group }) => !group.shows || group.shows(p));
-  const { active, catalogue } = priorityGroups(p, crit);
+  const { active } = priorityGroups(p, crit);
   const on = active.length;
   return html`<div class="vs-fold ${s.valuesOpen ? "is-open" : ""}"><button class="vs-sum" data-act="fold" aria-expanded="${s.valuesOpen}" aria-controls="vs-body"><span>What matters</span><span class="quiet">${on} of ${groups.length} count · ${s.valuesOpen ? "close" : "edit"}</span></button>
     <div class="vs-body" id="vs-body">
     <h2 class="sh">What matters</h2>
     <p class="vs-lede">Set relative importance; each percentage is a ${term("share", "Share")} of your score, not money.</p>
     <ul class="vals vgroups">${active.map(({ group, parts }) => groupBlock(s, group, parts, total, { missing }))}</ul>
-    ${s.removedPriority ? html`<p role="status">Priority removed. <button class="link" data-act="undo-priority" data-id="${s.removedPriority}">Undo</button></p>` : ""}
-    <div class="priority-catalogue"><button class="pill-btn" data-disclose="priority-options" aria-controls="priority-options" aria-expanded="false"><span aria-hidden="true">+</span> Add priority</button><div id="priority-options" hidden><label>Search priorities<input type="search" data-priority-search placeholder="People, Nature, your own lines…"></label><ul>${catalogue.map(({group}) => html`<li data-catalogue-label="${group.label.toLowerCase()}"><label for="wg-${group.id}">${group.label}</label> <button id="wg-${group.id}" class="pill-btn" data-act="add-priority" data-id="${group.id}" aria-label="Add ${group.label}">Add</button><p class="hint">${group.question}</p></li>`)}</ul></div></div>
+    ${undoLine(s, crit)}
+    ${catalogueBlock(s, crit)}
     <section class="requirements"><h3>Required</h3><p class="hint">Rule out cities that fail. Requirements take no share of the score.</p><ul>${crit.filter(c => p.dealBreakers.includes(c.id)).map(c => html`<li>${c.label} <button class="link" data-act="toggle-breaker" data-id="${c.id}">Remove requirement</button></li>`)}</ul></section>
     ${eligibility(s)}
 

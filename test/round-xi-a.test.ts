@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
+import { readFileSync } from 'node:fs';
 import { addPriority, removePriority, priorityGroups } from '../src/core/groups.ts';
 import { criteriaFor, evaluate } from '../src/core/engine.ts';
 import { CRITERIA, niceDays } from '../src/core/criteria.ts';
 import { BINS, BIN_COUNT } from '../src/core/weather-days.ts';
-import { stretchScale, stretched, MAP_COLOURS } from '../src/ui/map-scale.ts';
+import { stretchScale, stretched, MAP_RAMP } from '../src/ui/map-scale.ts';
 import { climateOf, niceStrip, niceMonthCounts } from '../src/ui/climate.ts';
 import { loadProfile, saveProfile, type AppState } from '../src/ui/state.ts';
 import { fixture, profile } from './fixture.ts';
@@ -64,14 +65,28 @@ test('map stretch uses visible 5th–95th percentile, saturates outliers, handle
   assert.equal(stretched(7,[7,7]),.5); assert.equal(stretchScale([NaN]),null);
 });
 
-test('map end colours retain a strong luminance ramp under Machado full deuteranopia simulation', () => {
+test('map ramp runs to green, monotonic in lightness under Machado full deuteranopia simulation, light and dark', () => {
   // Machado, Oliveira, Fernandes (2009), severity 1.0, linear RGB matrix.
   const matrix=[[.367322,.860646,-.227968],[.280085,.672501,.047413],[-.011820,.042940,.968881]];
   const linear=(c:number)=> c/255<=.04045 ? c/255/12.92 : ((c/255+.055)/1.055)**2.4;
-  const luminance=MAP_COLOURS.map(col=>{
-    const rgb=col.map(linear), simulated=matrix.map(row=>Math.max(0,Math.min(1,row.reduce((s,v,i)=>s+v*rgb[i]!,0))));
-    return simulated[0]!*.2126+simulated[1]!*.7152+simulated[2]!*.0722;
-  });
-  assert.ok(luminance[1]!>luminance[0]!+.15); assert.ok(luminance[2]!>luminance[1]!+.15);
-  assert.ok((luminance[2]!+.05)/(luminance[0]!+.05)>3);
+  const css=readFileSync('src/ui/map.css','utf8');
+  for (const [theme, ramp] of Object.entries(MAP_RAMP)) {
+    const luminance=ramp.map(col=>{
+      const rgb=[...col].map(linear), simulated=matrix.map(row=>Math.max(0,Math.min(1,row.reduce((s,v,i)=>s+v*rgb[i]!,0))));
+      return simulated[0]!*.2126+simulated[1]!*.7152+simulated[2]!*.0722;
+    });
+    // Light page: best is darkest. Dark page: best is brightest. Either way every step is a clear change in lightness.
+    const dir = theme === 'light' ? -1 : 1;
+    assert.ok(dir*(luminance[1]!-luminance[0]!)>.15, theme); assert.ok(dir*(luminance[2]!-luminance[1]!)>.15, theme);
+    const [hi, lo] = [Math.max(luminance[0]!, luminance[2]!), Math.min(luminance[0]!, luminance[2]!)];
+    assert.ok((hi+.05)/(lo+.05)>3, theme);
+    // The best end is green: its green channel leads.
+    const best=ramp[2]!; assert.ok(best[1]>best[0] && best[1]>best[2], `${theme} best is green`);
+    // The page's CSS uses exactly these values.
+    const hex=(c:readonly number[])=>'#'+[...c].map(x=>x.toString(16).padStart(2,'0')).join('');
+    for (const [i, name] of ['lo','mid','hi'].entries()) {
+      const m=css.match(new RegExp(`--map-${name}: light-dark\\((#[0-9a-f]{6}), (#[0-9a-f]{6})\\)`))!;
+      assert.ok(m, name); assert.equal(m[theme==='light'?1:2], hex(ramp[i]!), `${theme} ${name}`);
+    }
+  }
 });
