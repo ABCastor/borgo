@@ -1,6 +1,6 @@
 // An MCP Apps host in a page: the real view in a sandboxed iframe, a JSON-RPC peer over postMessage that records every
 // message the view sends, answers the way a host does (tools/call goes to Borgo's real remote handler), and delivers
-// results the way a host does (tool-input, then tool-result). The browser comes from Playwright, which is optional
+// results the way a host does (tool-input, then tool-result). The frame runs under the spec's default CSP. The browser comes from Playwright, which is optional
 // (PLAYWRIGHT_MODULE, as scripts/probe-mcp-app.mjs): a machine without it skips the browser tests and says so.
 import { remoteHarness } from "./mcp-harness.ts";
 
@@ -14,6 +14,11 @@ export const FULL_HOST: HostCaps = { capabilities: { openLinks: {}, serverTools:
 export const BARE_HOST: HostCaps = { capabilities: {} };
 
 export interface Sent { id?: number; method: string; params: any }
+
+/** The CSP a host must apply to a view that declares no domains (MCP Apps 2026-01-26, "Restrictive Default"). */
+export const DEFAULT_CSP = "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' data:; connect-src 'none'";
+/** The view document as a host frames it: under the default CSP, with a recorder of anything the policy blocks. */
+export const framed = (html: string) => html.replace("<head>", `<head><meta http-equiv="Content-Security-Policy" content="${DEFAULT_CSP}"><script>window.__violations=[];document.addEventListener("securitypolicyviolation",(e)=>window.__violations.push(e.violatedDirective+" "+e.blockedURI))</script>`);
 
 export async function loadPlaywright(): Promise<any | null> {
   try {
@@ -96,7 +101,7 @@ export async function openHost(browser: any, server: Server, o: { theme?: "light
       else if (m.id !== undefined) reply(m.id, {});
     });
     iframe.srcdoc = html;
-  }, { html: server.html, theme, host, refuse: o.refuse ?? [], echo: o.echo ?? false });
+  }, { html: framed(server.html), theme, host, refuse: o.refuse ?? [], echo: o.echo ?? false });
   await page.waitForFunction(() => (window as any).ready === true);
   return {
     page, frame: page.frameLocator("#view"), errors, requests,

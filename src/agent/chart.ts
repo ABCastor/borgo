@@ -60,11 +60,11 @@ export function summaryChartInput(report: {
 
 const PALETTE = ["#006770", "#C4552A", "#667D2F", "#00858F", "#9A6B3F", "#4F6D8A", "#8A5A83", "#B08A2E", "#3F7F5F", "#7A7A7A", "#A04545", "#5E8C99"];
 
-function esc(s: string): string {
+export function esc(s: string): string {
   return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 }
 
-function money(n: number, cur: string): string {
+export function money(n: number, cur: string): string {
   try {
     return new Intl.NumberFormat("en-GB", { style: "currency", currency: cur, maximumFractionDigits: 0 }).format(n).replace("-", "−");
   } catch {

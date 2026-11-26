@@ -45,6 +45,8 @@ export const REGION_CHOICES = [
 export const LIMIT_CHOICES = [5, 10, 20, 50];
 /** The figures a city card shows beside the ranking: one of each kind, all with their sources in get_city. */
 export const CARD_METRICS = ["rent_1bed", "sunshine_hours", "pm25", "homicide_rate", "life_expectancy", "life_evaluation", "price_level"];
+/** The twelve-month lows and highs a city card draws its year from, air and feels-like. */
+export const CLIMATE_METRICS = ["temp_low", "temp_high", "feels_low", "feels_high"];
 
 export function measures(): Measure[] {
   const out: Measure[] = [];
