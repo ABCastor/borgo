@@ -28,7 +28,7 @@ import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../commun
 export const APP_CALLABLE = ["model", "app"] as const;
 
 /** The version both servers report; package.json and server.json carry the same (test/mcp-remote.test.ts checks). */
-export const SERVER_VERSION = "0.5.1";
+export const SERVER_VERSION = "0.5.2";
 /**
  * Every tool's human name also sits in its annotations (annotations.title), where app directories read it; the
  * registered title stays the source, so the two never differ. Call once on a new server, before registering tools.
@@ -313,7 +313,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "get_city",
     {
       title: "Figures for a city",
-      description: "One city's figures, each with source, period, geographic level and licence; daylight; the take-home pay model; whether each person in a household may live and work there, with the rules checked; links to sources we may not copy, and Borgo's generic quality-of-life index with its fixed weights. Compact by default (figures with a value, long series counted); pass metrics for a few figures, detail \"full\" for everything. Hosts with MCP Apps already show this result as Borgo's city dossier (key figures with their sources, the year's temperatures against the person's nice days), so do not draw your own chart or table of it: summarise in words and say the dossier is interactive. Other hosts get the markdown.",
+      description: "One city's figures, each with source, period, geographic level and licence; daylight; the take-home pay model; whether each person in a household may live and work there, with the rules checked; links to sources we may not copy, and Borgo's generic quality-of-life index with its fixed weights. Compact by default (figures with a value, long series counted); pass metrics for a few figures, detail \"full\" for everything. Hosts with MCP Apps show this result as Borgo's city dossier (key figures with their sources, the year's temperatures against the person's nice days). Other hosts get the markdown.",
       inputSchema: {
         city: z.string().describe("City id or name"),
         passports: z.array(z.array(z.string())).optional().describe("Optional: each person's passports, e.g. [['US']] or [['IT'],['US','IE']]: who may live and work there"),
@@ -337,7 +337,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     {
       title: "Compare cities",
       description:
-        "Rank any number of cities for a person or household: a verdict, the score out of 100 from their weights with points and reasons per line, must-pass lines as pass, fail or unknown, each earner's take-home pay and what is left after rent and spending, who can move there, how the set was scored, and what to add next. Every figure carries its source and period. Compact by default; detail \"full\" adds every tax line, childcare, health, leave and break-even. Hosts with MCP Apps already show this result as an interactive Borgo chart the person can click (change the ranking, adjust weights, open a city), so do not draw your own chart or table of it: summarise the findings in words and say the chart is interactive. Other hosts get the markdown.",
+        "Rank any number of cities for a person or household: a verdict, the score out of 100 from their weights with points and reasons per line, must-pass lines as pass, fail or unknown, each earner's take-home pay and what is left after rent and spending, who can move there, how the set was scored, and what to add next. Every figure carries its source and period. Compact by default; detail \"full\" adds every tax line, childcare, health, leave and break-even. Hosts with MCP Apps show this result as an interactive Borgo chart the person can click (change the ranking, adjust weights, open a city). Other hosts get the markdown.",
       inputSchema: compareInput,
       outputSchema: compareOutput,
       annotations: readOnly,
@@ -363,7 +363,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "rank_cities",
     {
       title: "Rank and filter known cities",
-      description: "List known cities by any scalar/monthly metric, any priority recipe (nice days under your definition, money left with salary and spending), or your overall score. Compose inclusive metric/priority ranges, geographic and population filters and established household rights. Every row names its sources and periods. Gaps and unknown filters never pass as zero. Returns an in-chat bar chart, Equal Earth map or weather month strips, plus a markdown fallback. Defaults: descending, 20 results; rent usually needs ascending. Money uses one display currency, default EUR or salary currency. Use compare_cities for the full explanation of finalists. Hosts with MCP Apps already show this result as an interactive Borgo chart the person can click (change the ranking, adjust weights, open a city), so do not draw your own chart or table of it: summarise the findings in words and say the chart is interactive. Other hosts get the markdown.",
+      description: "List known cities by any scalar/monthly metric, any priority recipe (nice days under your definition, money left with salary and spending), or your overall score. Compose inclusive metric/priority ranges, geographic and population filters and established household rights. Every row names its sources and periods. Gaps and unknown filters never pass as zero. Returns an in-chat bar chart, Equal Earth map or weather month strips, plus a markdown fallback. Defaults: descending, 20 results; rent usually needs ascending. Money uses one display currency, default EUR or salary currency. compare_cities gives the full explanation of finalists. Hosts with MCP Apps show this result as an interactive Borgo chart the person can click (change the ranking, adjust weights, open a city). Other hosts get the markdown.",
       inputSchema: {
         ...compareInput, cities: compareInput.cities.optional(), ...measureInput,
         score: z.boolean().optional().describe("true ranks the engine's overall weighted score; omit metric and criterion."),
@@ -395,7 +395,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "suggest_cities",
     {
       title: "Suggest cities for me",
-      description: "Rank all published cities by the current profile: top five not already in cities, with their two biggest observed score contributions. Same inputs as compare_cities; cities may be empty. Fixed scoring by default; Weather uses your nice-day definition. Missing lines do not count there: check coverage before deciding.",
+      description: "Rank all published cities by the current profile: top five not already in cities, with their two biggest observed score contributions. Same inputs as compare_cities; cities may be empty. Fixed scoring by default; Weather uses your nice-day definition. Missing lines are left out of a city's score, so its coverage says how much of the score rests on real figures.",
       inputSchema: { ...compareInput, cities: z.array(z.string()).optional().describe("Already chosen cities to exclude, if any") },
       outputSchema: looseOutput,
       annotations: readOnly,
@@ -407,7 +407,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "net_pay",
     {
       title: "Take-home pay",
-      description: "Take-home pay for a gross yearly salary in a country (and region or city, for regional and municipal taxes), with every tax line, the model's caveats and its official sources. Takes age, children, a pension share, a newcomer regime, and a partner (joint filing for a married couple where the country has it). Hosts with MCP Apps already show this result as Borgo's money waterfall (gross pay, each tax line, take-home pay), so do not draw your own chart or table of it: summarise in words. Other hosts get the markdown.",
+      description: "Take-home pay for a gross yearly salary in a country (and region or city, for regional and municipal taxes), with every tax line, the model's caveats and its official sources. Takes age, children, a pension share, a newcomer regime, and a partner (joint filing for a married couple where the country has it). Hosts with MCP Apps show this result as Borgo's money waterfall (gross pay, each tax line, take-home pay). Other hosts get the markdown.",
       inputSchema: {
         country: z.string().optional().describe("ISO alpha-2 or name; optional when city is given"),
         city: z.string().optional().describe("City id or name; sets country, region and municipal taxes"),
@@ -521,7 +521,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     {
       title: "Add the person's own figures",
       description:
-        "Send what the person pays and earns where they live to Borgo's open community data (published rounded under CC BY 4.0, no name or address kept; an automated review holds amounts far from others' or the official figure). Without confirm it sends nothing and returns the draft with its privacy note: show both to the person. Call again with confirm true only after they said yes to these exact figures, and only figures they gave you as their own, never estimates or figures read on another site. The answer carries a removal code for them to keep.",
+        "Sends what the person pays and earns where they live to Borgo's open community data (published rounded under CC BY 4.0, no name or address kept; an automated review holds amounts far from others' or the official figure). Without confirm nothing is sent: the answer is the draft with its privacy note, for the person to approve. With confirm true the exact figures of the draft are recorded; it takes figures a person gives as their own, not estimates or figures from other sites. The answer carries a removal code for the person to keep.",
       inputSchema: {
         city: z.string().describe("City id (turin-it) or name ('Turin', 'Palermo, IT')"),
         rent: z.object({ amount: z.number().min(0).describe("What they pay a month, without bills, in the place's currency"), bedrooms: z.enum(BEDROOMS.map((b) => b.id) as [string, ...string[]]).describe(BEDROOMS.map((b) => `${b.id}: ${b.label}`).join("; ")), area: z.enum(AREAS.map((a) => a.id) as [string, ...string[]]).describe("centre or outside the centre") }).optional(),

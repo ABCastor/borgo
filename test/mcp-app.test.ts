@@ -44,18 +44,17 @@ test("the tools say a host with MCP Apps already shows the chart, so the assista
   const h = await remoteHarness();
   try {
     const tools = (await h.client.listTools()).tools;
+    // Tool descriptions state what a host shows; the guidance for the model (draw nothing more, summarise in words)
+    // lives in the server instructions, because directory policy keeps model instructions out of tool descriptions.
     for (const name of ["rank_cities", "compare_cities"]) {
       const d = tools.find((t) => t.name === name)!.description!;
-      assert.match(d, /already show this result as an interactive Borgo chart/);
-      assert.match(d, /do not draw your own chart or table of it/);
-      assert.match(d, /summarise the findings in words/);
+      assert.match(d, /Hosts with MCP Apps show this result as an interactive Borgo chart/);
     }
     for (const name of ["get_city", "net_pay"]) {
       const d = tools.find((t) => t.name === name)!.description!;
-      assert.match(d, /Hosts with MCP Apps already show this result as Borgo's/);
-      assert.match(d, /do not draw your own chart or table of it/);
-      assert.match(d, /summarise in words/);
+      assert.match(d, /Hosts with MCP Apps show this result as Borgo's/);
     }
+    for (const t of tools) assert.doesNotMatch(t.description ?? "", /\b(do not|don't|summarise in words|say the (chart|dossier) is)\b/i, `${t.name}: no instruction to the model in its description`);
     assert.match(INSTRUCTIONS, /do not draw another chart or table/);
     assert.match(INSTRUCTIONS, /do not redraw it/);
     assert.match(INSTRUCTIONS, /Retain the compact table and Borgo link for hosts without Apps/);
