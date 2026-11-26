@@ -697,6 +697,8 @@ export function privacyPage(site: Site): Page {
     ["Assistants (the MCP server)", "When an assistant such as Claude or ChatGPT uses Borgo at borgo.abcastor.com/mcp, what it sends (city names, and pay or household if you gave them) is used to work out that one answer and is not stored. Borgo counts, per day, how many times each tool was called and whether it failed; nothing else about the call is written. Your network address is used only to limit how many requests arrive in a minute, and is not stored."],
     ["Figures you send", "If you send a figure of your own (a rent, a price), Borgo keeps the place, the figure, the amount, its currency, the day, how it was sent and a hash of a removal code that lets you delete it. To limit sending, it keeps that day's salted hash of your network address, deleted after a day. Sent figures are published as open data under CC BY 4.0."],
     ["On your own computer", "The command-line tool and the local MCP server run on your machine and send nothing to us. They read public data files and, when asked, the same open-data services."],
+    ["Sharing", "Borgo sells nothing and shares nothing about you. The only other parties are the host, below, and the open-data services your browser asks directly when you add a new place."],
+    ["How long it is kept", "Daily tool counts are kept as totals. A figure you send stays until you remove it with its code, or until it is withdrawn in review. The network hash for limiting is deleted after a day. Nothing else is kept, so there is nothing else to delete."],
     ["Hosting", "The site runs on Cloudflare, which handles every request to deliver it, under Cloudflare's own privacy policy."],
     ["Questions", "Ask on GitHub, where Borgo's code and data are public."],
   ];
