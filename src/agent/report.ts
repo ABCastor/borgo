@@ -554,6 +554,10 @@ export interface CompareSummary {
       takeHomeMonth: number | null;
       costMonth: number | null;
       leftMonth: number | null;
+      /** Gross pay a year, in the display currency; null without a salary. */
+      grossYear: number | null;
+      /** What the monthly cost is made of, in the display currency: null where it is not known or not counted. */
+      costs: { pension: number | null; rent: number | null; everyday: number | null; childcare: number | null; health: number | null };
       /** Only with a partial figure: the most money left a month can be. */
       leftMonthAtMost?: number;
       regime: string | null;
@@ -637,6 +641,8 @@ export function summarize(r: CompareReport, opts: { limit?: number } = {}): Comp
               takeHomeMonth: c.money.monthly.net.shown,
               costMonth: c.money.monthly.cost.shown,
               leftMonth: c.money.incomplete ? null : c.money.monthly.left.shown,
+              grossYear: c.money.salaryFrom === "none" ? null : c.money.yearly.gross.shown,
+              costs: { pension: c.money.monthly.pension.shown, rent: c.money.monthly.rent.shown, everyday: c.money.monthly.everyday.shown, childcare: c.money.monthly.childcare.shown, health: c.money.monthly.health.shown },
               ...(c.money.leftAtMost !== null ? { leftMonthAtMost: c.money.leftAtMost } : {}),
               regime: c.money.regimes.length ? c.money.regimes.map((x) => `${x.name}${c.money.regimes.length > 1 || x.person !== c.money.earners[0]?.label ? ` (${x.person})` : ""}${x.status === "scenario" ? ", a scenario: conditions to confirm" : ""}`).join("; ") : null,
               incomplete: c.money.incomplete,

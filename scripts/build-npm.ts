@@ -5,7 +5,7 @@
 // path the sources build from import.meta.url (the dataset, the registry, the map) still lands on the package root.
 // Runs before every npm pack and npm publish (prepack in package.json).
 import { build, transform } from "esbuild";
-import { chartSource, clientSource } from "../src/mcp/chart-source.ts";
+import { chartSource, clientSource, styleSource } from "../src/mcp/chart-source.ts";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -20,6 +20,7 @@ const target = `node${/\d+/.exec(pkg.engines.node)![0]}`;
 const compiled = async (source: string) => (await transform(source, { loader: "ts", format: "esm", target: "es2022" })).code;
 const chart = await compiled(chartSource());
 const client = await compiled(clientSource());
+const style = styleSource();
 
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
@@ -40,7 +41,7 @@ const result = await build({
   plugins: [{
     name: "compiled-chart",
     setup(b) {
-      b.onLoad({ filter: /src[\\/]mcp[\\/]chart-source\.ts$/ }, () => ({ contents: `export const chartSource = () => ${JSON.stringify(chart)};\nexport const clientSource = () => ${JSON.stringify(client)};`, loader: "js" }));
+      b.onLoad({ filter: /src[\\/]mcp[\\/]chart-source\.ts$/ }, () => ({ contents: `export const chartSource = () => ${JSON.stringify(chart)};\nexport const clientSource = () => ${JSON.stringify(client)};\nexport const styleSource = () => (${JSON.stringify(style)});\nexport const literal = (v) => JSON.stringify(v).replace(/</g, "\\\\u003c");`, loader: "js" }));
     },
   }],
 });
@@ -59,7 +60,10 @@ for (const dir of [...packages.keys()].sort()) {
   if (!file) throw new Error(`${meta.name} has no licence file to ship beside the bundle.`);
   notices.push(`${meta.name} ${meta.version} (${meta.license ?? "see below"})\n\n${readFileSync(join(abs, file), "utf8").trim()}\n`);
 }
-await writeFile(join(OUT, "THIRD-PARTY-LICENSES.txt"), `The npm package's build/npm/borgo.js bundles these packages, each under its own licence.\n\n${notices.join(`\n${"-".repeat(80)}\n\n`)}`);
+// The MCP App view carries the site's fonts, cut to Latin (src/mcp/fonts), inside the bundle: their licence goes too.
+for (const [face, file] of [["Barlow Condensed 600 and 700, subset (the view's Bib)", "barlow-condensed-OFL.txt"], ["Archivo, subset (the view's UI)", "archivo-OFL.txt"]] as const)
+  notices.push(`${face} (OFL-1.1)\n\n${readFileSync(join(ROOT, "src/mcp/fonts", file), "utf8").trim()}\n`);
+await writeFile(join(OUT, "THIRD-PARTY-LICENSES.txt"), `The npm package's build/npm/borgo.js bundles these packages and fonts, each under its own licence.\n\n${notices.join(`\n${"-".repeat(80)}\n\n`)}`);
 
 const size = readFileSync(join(OUT, "borgo.js")).length;
 if (!existsSync(join(OUT, "borgo.js")) || !readFileSync(join(OUT, "borgo.js"), "utf8").startsWith("#!/usr/bin/env node")) throw new Error("build/npm/borgo.js must start with its #! line.");

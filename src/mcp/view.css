@@ -1,0 +1,247 @@
+/* The MCP App view's own layout. Its tokens and components are the site's, lifted when the view is built
+   (src/mcp/view-style.ts): this file only places them in a chat column, from 320 px up. Every control keeps a 44 px
+   target while it looks like the site's 32 px pill (the target grows past the drawing, not the drawing itself). */
+
+* { box-sizing: border-box; }
+html { background: var(--wall); color: var(--ink); -webkit-text-size-adjust: 100%; }
+body { margin: 0; padding: 10px; font: 400 14.5px/1.5 var(--ui); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: var(--machine); text-underline-offset: .18em; text-decoration-thickness: 1px; }
+:focus-visible { outline: 2px solid var(--between); outline-offset: 2px; }
+input, select { caret-color: var(--human); accent-color: var(--human); }
+.wait { margin: 0; padding: 20px; color: var(--quiet); }
+
+/* The sheet and its head */
+.vsheet { padding: 18px 20px 16px; }
+.vhead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.vtitle { margin: 0; font: 700 26px/1 var(--cond); letter-spacing: .03em; text-transform: uppercase; text-wrap: balance; }
+.vsub { flex: 1 1 100%; margin: 2px 0 0; font-size: 13px; color: var(--quiet); }
+.vverdict { margin: 8px 0 0; font-size: 15px; line-height: 1.45; max-width: 90ch; }
+.vsrc { margin: 10px 0 0; font-size: 12px; color: var(--quiet); }
+.vsrc b { font-weight: 600; color: var(--ink); }
+.vfoot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); }
+.vfoot .quiet { font-size: 12px; }
+
+/* 44 px targets around the site's drawings */
+.pill-btn, .ink-btn, .seg button, .range, .chip-x, .vtick, .vlink { position: relative; }
+.pill-btn::after, .ink-btn::after, .seg button::after, .range::after, .chip-x::after, .vlink::after { content: ""; position: absolute; left: 50%; top: 50%; width: max(100%, 44px); height: 44px; transform: translate(-50%, -50%); }
+.pill-btn, .ink-btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; margin: 6px 0; text-decoration: none; }
+.ink-btn:hover { background: color-mix(in oklab, var(--ink) 80%, var(--sheet)); }
+.seg { margin: 6px 0; }
+.seg button { min-width: 44px; }
+.chip-x { width: 32px; height: 32px; border-radius: 999px; }
+.chip-x:hover { background: var(--wash); }
+.vlink { border: 0; background: none; padding: 0; color: var(--machine); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 1px; font-size: 13px; }
+
+/* The controls of a ranking: quiet pills, labels for screen readers only, the value says what it is */
+.vctl { display: flex; flex-wrap: wrap; align-items: center; gap: 0 8px; margin: 12px 0 0; }
+.pick { position: relative; display: inline-flex; }
+.pick select { -webkit-appearance: none; appearance: none; height: 44px; max-width: 100%; margin: 0; padding: 0 30px 0 13px; border: 6px solid transparent; border-left: 0; border-right: 0; border-radius: 999px; outline: 1.5px solid var(--rule); outline-offset: -7.5px; background: transparent; background-clip: padding-box; color: var(--ink); font: 600 14px/1 var(--cond); letter-spacing: .05em; text-transform: uppercase; cursor: pointer; }
+.pick select:hover { outline-color: var(--quiet); }
+.pick select:focus-visible { outline: 2px solid var(--between); outline-offset: -8px; }
+.pick::after { content: ""; position: absolute; right: 14px; top: 50%; width: 6px; height: 6px; margin-top: -5px; border-right: 1.5px solid var(--quiet); border-bottom: 1.5px solid var(--quiet); transform: rotate(45deg); pointer-events: none; }
+.pick select option, .pick select optgroup { font: 400 14px var(--ui); text-transform: none; letter-spacing: 0; color: CanvasText; background: Canvas; }
+.vctl .seg { margin-left: auto; }
+.status { min-height: 1.5em; margin: 4px 0 0; font-size: 12.5px; color: var(--quiet); }
+.status:empty { min-height: 0; margin: 0; }
+
+/* Nice days: the range button and its editor, the site's "Your nice days" in place */
+.vnice { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 10px 0 0; font-size: 13px; }
+.vnice .range { margin: 0; min-height: 26px; }
+.vnice .range[aria-expanded="true"] { background: color-mix(in oklab, var(--human) 12%, transparent); border-style: solid; }
+.niced { margin: 10px 0 0; padding: 14px 16px; border-radius: 10px; background: var(--wash); }
+.niced-h { margin: 0; font: 700 18px/1.1 var(--cond); letter-spacing: .04em; text-transform: uppercase; }
+.niced-t { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 8px 0 0; font-size: 14px; }
+.niced .stepper { display: inline-flex; align-items: center; height: 34px; border: 1.5px solid var(--human); border-radius: 6px; background: var(--sheet); overflow: visible; }
+.niced .stepper button { position: relative; width: 40px; height: 31px; border: 0; background: none; color: var(--human-ink); font-size: 17px; line-height: 1; }
+.niced .stepper button::after { content: ""; position: absolute; inset: -7px -2px; }
+.niced .stepper button:hover { background: color-mix(in oklab, var(--human) 10%, transparent); }
+.niced .stepper output { display: inline-block; min-width: 34px; text-align: center; font: 700 19px/1 var(--cond); }
+.niced .seg { background: var(--sheet); }
+.niced .nice-tests { margin-top: 12px; gap: 0; }
+.niced .nt { display: flex; align-items: center; gap: 10px; min-height: 44px; font-size: 13.5px; line-height: 1.3; cursor: pointer; }
+.niced .nt input { width: 18px; height: 18px; margin: 0; flex: 0 0 auto; accent-color: var(--human); }
+.niced .nt b { font-weight: 600; }
+.niced .nt span { color: var(--quiet); }
+.niced .nt-day select { height: 34px; margin: 0; padding: 0 8px; border: 1.5px solid var(--rule); border-radius: 6px; background: var(--sheet); color: var(--ink); font: 500 13.5px var(--ui); }
+.niced .hint { margin: 8px 0 0; font-size: 12px; }
+
+/* Bars: the map page's ranked list, a row per city, the checkbox on the row */
+.vrows { margin: 10px 0 0; }
+.vrows li { position: relative; flex-wrap: wrap; }
+.vrows .mr-go { min-height: 48px; }
+.vrows .mr-go .mr-name { font-size: 17px; }
+.vrows .mr-v b { font: 700 18px/1 var(--cond); color: var(--ink); }
+.vrows .mr-cite { grid-column: 2 / -1; font-size: 11.5px; color: var(--quiet); }
+.vtick { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; flex: 0 0 44px; cursor: pointer; }
+.vtick input { width: 18px; height: 18px; margin: 0; accent-color: var(--human); cursor: pointer; }
+.vrows li.is-on .mr-go { background: color-mix(in oklab, var(--human) 7%, transparent); }
+.vrows li > .card { flex: 1 1 100%; }
+.vbar-teal .mr-bar i { background: var(--machine); }
+
+/* Months: the site's nice-day strip, a row per city */
+.vmonths { display: grid; gap: 10px; margin: 12px 0 0; }
+.vm-row { display: grid; grid-template-columns: minmax(96px, 150px) minmax(0, 1fr); align-items: center; gap: 4px 14px; padding-bottom: 8px; border-bottom: 1px solid var(--rule); }
+.vm-row:last-child { border-bottom: 0; }
+.vm-name { display: grid; gap: 2px; min-width: 0; }
+.vm-name .mr-go { min-height: 44px; padding: 4px 6px; grid-template-columns: 22px minmax(0, 1fr); }
+.vm-total { padding-left: 36px; font-size: 12px; color: var(--quiet); }
+.vm-total b { font: 700 16px/1 var(--cond); color: var(--ink); }
+.nstrip { min-width: 0; }
+.nm { grid-template-rows: 34px auto auto; }
+.nm { background: linear-gradient(var(--wash), var(--wash)) top / 100% 34px no-repeat; }
+.nm.is-teal i { background: var(--machine); }
+.nm b { font: 600 10.5px/1 var(--cond); letter-spacing: .04em; text-transform: uppercase; }
+.nm small { font: 600 11px/1.2 var(--cond); color: var(--ink); }
+.vm-row > .card { grid-column: 1 / -1; }
+
+/* The world: land tiles by months in the nice-day range, city dots by the ranking, labels that never collide */
+.vmap { position: relative; margin: 12px -6px 0; }
+.vmap svg { display: block; width: 100%; height: auto; }
+.vmap .land-none { fill: var(--map-land); }
+.vmap .dot { stroke: var(--sheet); stroke-width: 1.4; cursor: pointer; }
+.vmap .dot.is-none { fill: var(--sheet); stroke: var(--quiet); stroke-dasharray: 2 2; }
+.vmap .ring { fill: none; stroke: var(--ink); stroke-width: 1.8; pointer-events: none; }
+.vmap .dot:focus { outline: none; }
+.vmap .dot:focus-visible { stroke: var(--ink); stroke-width: 3; }
+.vmap .lbl { font-family: var(--cond); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; fill: var(--ink); paint-order: stroke; stroke: var(--sheet); stroke-linejoin: round; pointer-events: none; }
+.vmap .lbl tspan.n { fill: var(--between-ink); }
+:root[data-mode="fullscreen"] .vmap svg { max-height: calc(100vh - 240px); }
+.vlegend { display: grid; gap: 6px; margin: 10px 0 0; }
+.vlegend .mlg-row { font-size: 12.5px; }
+.vlegend .mlg-ramp { flex: 0 1 110px; }
+.mlg-ramp.is-cities { background: linear-gradient(90deg, var(--map-lo), var(--map-mid), var(--map-hi)); }
+.vlegend .range { margin: 0 2px; }
+
+/* A city: the site's dossier head, its key figures as cells, its year as the climate chart */
+.card { margin: 6px 0 10px; padding: 14px 16px 12px; border-radius: 10px; background: var(--sheet); box-shadow: 0 1px 2px rgb(0 0 0 / .1), 0 18px 44px -14px rgb(0 0 0 / .45); }
+.card:focus { outline: none; }
+.card:focus-visible { outline: 2px solid var(--between); outline-offset: 2px; }
+.dhead { display: flex; align-items: flex-start; gap: 8px; }
+.dhead > div { flex: 1; min-width: 0; }
+.dhead .dname { margin: 0; font-size: 30px; }
+.dsheet .dhead .dname { font-size: 40px; }
+.dhead .dmeta { margin-top: 4px; }
+.dfig { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2px 8px; margin: 10px 0 0; }
+.dfig .big { font: 700 38px/.9 var(--cond); }
+.dfig .big small { margin-left: 3px; font: 600 15px/1 var(--cond); letter-spacing: .04em; color: var(--quiet); }
+.dfig .rankw { margin-left: auto; font: 700 14px/1 var(--cond); letter-spacing: .05em; text-transform: uppercase; color: var(--between-ink); }
+.dfig .src-line { flex: 1 1 100%; font-size: 12px; color: var(--quiet); }
+.dcells { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); margin: 12px 0 0; border-top: 1px solid var(--rule); }
+.dcells .fig { min-width: 0; padding: 9px 12px 9px 0; border-bottom: 1px solid var(--rule); }
+.dcells .lab { margin-bottom: 4px; }
+.dcells .val { font: 700 24px/1 var(--cond); }
+.dcells .val small { margin-left: 2px; font: 600 13px/1 var(--cond); letter-spacing: .03em; color: var(--quiet); }
+.dcells .cite { display: block; margin-top: 3px; font-size: 11.5px; line-height: 1.3; color: var(--quiet); }
+.dclim { margin: 14px 0 0; }
+.dclim .lab { margin: 0; }
+.dclim figcaption { margin-top: 4px; font-size: 12px; color: var(--quiet); }
+.dact { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; margin-top: 8px; }
+.dmoney { margin: 14px 0 0; }
+
+/* A comparison: the standings, each city's wins and losses, then the points of every line with its weight */
+.vstand { margin: 12px 0 0; padding: 0; list-style: none; }
+.vstand > li { padding: 10px 0 8px; border-top: 1px solid var(--rule); }
+.vstand > li:first-child { border-top: 0; }
+.cr { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; align-items: center; gap: 2px 10px; }
+.cr-n { font: 700 22px/1 var(--cond); color: var(--between-ink); }
+.is-out .cr-n { color: var(--quiet); }
+.cr-name { position: relative; z-index: 1; justify-self: start; min-height: 44px; margin: -6px 0; padding: 0; border: 0; background: none; color: var(--ink); font: 600 24px/1 var(--cond); letter-spacing: .02em; text-transform: uppercase; text-align: left; overflow-wrap: anywhere; }
+.cr-name:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.is-out .cr-name { text-decoration: line-through 2px var(--ink); }
+.cr-score { font: 700 34px/.9 var(--cond); text-align: right; }
+.is-lead .cr-score { color: var(--between-ink); }
+.cr-score small { margin-left: 2px; font: 600 14px/1 var(--cond); letter-spacing: .04em; color: var(--quiet); }
+.cr .band { grid-column: 2 / -1; height: 8px; border-radius: 4px; overflow: hidden; }
+.is-out .band i { background: var(--quiet); }
+.cr-meta { grid-column: 2 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; font-size: 12.5px; color: var(--quiet); }
+.cr-meta b { font: 700 16px/1 var(--cond); color: var(--ink); }
+.cr-meta .fail { font-size: 12.5px; }
+.cr-why { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 2px; border: 0; background: none; color: var(--ink); font: 600 13px/1 var(--cond); letter-spacing: .06em; text-transform: uppercase; }
+.cr-why svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s var(--ease); }
+.cr-why[aria-expanded="true"] svg { transform: rotate(180deg); }
+.cr-wl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 24px; margin: 6px 0 4px 36px; }
+.cr-wl .wl-list + .wl-h { margin-top: 0; }
+.cr-wl > div { min-width: 0; }
+.cr > .card, .vstand > li > .card { grid-column: 1 / -1; }
+
+.vlines-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin: 18px 0 0; padding-top: 12px; border-top: 2px dashed var(--perf); }
+.vlines-h .sh { font-size: 20px; }
+.vlines-h .vs-lede { flex: 1 1 100%; margin: 2px 0 0; }
+.vlines { overflow-x: auto; margin: 6px -4px 0; padding: 0 4px; }
+.vl-row { display: grid; grid-template-columns: minmax(150px, 1.5fr) repeat(var(--n), minmax(58px, 1fr)); align-items: center; gap: 0 10px; min-width: max-content; border-bottom: 1px solid var(--rule); }
+.vl-row:last-child { border-bottom: 0; }
+.vl-row.is-head { min-height: 30px; border-bottom: 1px solid var(--ink); font: 600 12.5px/1.1 var(--cond); letter-spacing: .06em; text-transform: uppercase; color: var(--quiet); }
+.vl-row.is-head span:not(:first-child) { text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.slider { position: sticky; left: 0; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 0 8px; min-height: 56px; padding: 6px 0 4px; background: var(--sheet); }
+.slider label { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.slider .val-n { font-size: 14px; }
+.slider output { font: 700 15px/1.3 var(--cond); color: var(--human-ink); }
+.slider input[type="range"] { grid-column: 1 / -1; height: 24px; }
+.is-zero .val-n, .is-zero output { color: var(--quiet); }
+.vl-pts { display: grid; justify-items: end; gap: 3px; padding: 6px 0; }
+.vl-pts b { font: 600 16px/1 var(--cond); }
+.vl-pts.is-best b { color: var(--between-ink); font-weight: 700; }
+.vl-pts.is-none b { color: var(--quiet); font-weight: 600; }
+.vl-pts i { display: block; width: 100%; max-width: 64px; height: 4px; border-radius: 2px; background: var(--wash); overflow: hidden; }
+.vl-pts i::before { content: ""; display: block; width: var(--w); height: 100%; background: var(--between); }
+.vl-reset { margin-top: 6px; }
+
+/* Money: the money page's waterfall, one card per city */
+.vmoney { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 14px 22px; margin: 12px 0 0; }
+.mcard-h { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding-bottom: 6px; border-bottom: 1px solid var(--ink); }
+.mcard-h b { font: 600 22px/1 var(--cond); letter-spacing: .02em; text-transform: uppercase; }
+.mcard-h span { font-size: 12px; color: var(--quiet); text-align: right; }
+.wf { margin-top: 4px; }
+.wf td.num { width: 5.6rem; font-variant-numeric: tabular-nums; }
+.wf .wf-bar { width: 32%; }
+.wf-left .wf-bar i { background: var(--between); opacity: 1; }
+.wf-neg .wf-bar i { background: var(--fail); opacity: .7; }
+.wf tr.wf-sum th, .wf tr.wf-sum td.num { color: var(--between-ink); font-size: 14px; }
+.wf tr.wf-sum.wf-neg th, .wf tr.wf-sum.wf-neg td.num { color: var(--fail); }
+.vpay { max-width: 600px; margin: 12px 0 0; }
+.mnote { margin: 6px 0 0; font-size: 12px; color: var(--quiet); }
+
+/* Sources and calculations: a plain button face, no triangle */
+.fold { margin-top: 12px; }
+.fold > summary { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; list-style: none; cursor: pointer; color: var(--quiet); font: 600 13px/1 var(--cond); letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary::marker { content: ""; }
+.fold > summary svg { width: 12px; height: 12px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .2s var(--ease); }
+.fold[open] > summary svg { transform: rotate(180deg); }
+.fold > summary:hover { color: var(--ink); }
+.fold-body { font-size: 12.5px; }
+.fold-body h3 { margin: 12px 0 4px; font: 700 15px/1.1 var(--cond); letter-spacing: .05em; text-transform: uppercase; }
+.fold-body ul { margin: 4px 0; padding-left: 18px; color: var(--quiet); }
+.fold-body li { margin: 2px 0; }
+.tscroll { overflow-x: auto; }
+.vt { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+.vt th, .vt td { padding: 6px 8px 6px 0; border-bottom: 1px solid var(--rule); text-align: left; vertical-align: top; font-weight: 400; }
+.vt thead th { border-bottom: 1px solid var(--ink); font: 600 12px/1.1 var(--cond); letter-spacing: .06em; text-transform: uppercase; color: var(--quiet); }
+.vt td.n, .vt th.n { text-align: right; white-space: nowrap; }
+
+/* Picked cities: what to do with them */
+.selection { display: flex; flex-wrap: wrap; align-items: center; gap: 0 10px; margin: 10px 0 0; padding: 4px 12px 4px 14px; border: 1.5px dashed var(--human); border-radius: 10px; }
+.selection p { flex: 1 1 14rem; margin: 6px 0; font-size: 13.5px; }
+.selection p b { font: 700 15px/1 var(--cond); letter-spacing: .05em; text-transform: uppercase; color: var(--human-ink); }
+
+@media (max-width: 560px) {
+  body { padding: 6px; }
+  .vsheet { padding: 14px 14px 12px; }
+  .vtitle { font-size: 22px; }
+  .vctl .seg { margin-left: 0; }
+  .cr-score { font-size: 28px; }
+  .cr-name { font-size: 20px; }
+  .cr-wl { grid-template-columns: minmax(0, 1fr); margin-left: 0; }
+  .vm-row { grid-template-columns: minmax(0, 1fr); }
+  .dsheet .dhead .dname { font-size: 32px; }
+  .dcells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* On a phone a line's name and weight take the row, and the cities' points share the one beneath. */
+  .vl-row { grid-template-columns: repeat(var(--n), minmax(44px, 1fr)); gap: 0 10px; min-width: 0; padding-bottom: 4px; }
+  .vl-row .slider { position: static; grid-column: 1 / -1; min-height: 48px; padding-bottom: 0; }
+  .vl-row.is-head > span:first-child { display: none; }
+  .vl-row.is-head span:not(:first-child) { text-align: right; }
+  .vlines { overflow-x: visible; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }

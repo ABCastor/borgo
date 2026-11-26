@@ -195,8 +195,8 @@ export function reply(text: string, structured: object): CallToolResult {
  * What the MCP App view needs to act on its own, kept out of the model's reading: the call's arguments (so a click can
  * ask again with one thing changed) and the part of the profile a Borgo link carries (so it opens the same ranking).
  */
-export function appMeta(data: Dataset, args: object): { _meta: { borgo: { query: object; share: object } } } {
-  return { _meta: { borgo: { query: args, share: shareFor(data, args) } } };
+export function appMeta(data: Dataset, args: object, query: object = args): { _meta: { borgo: { query: object; share: object } } } {
+  return { _meta: { borgo: { query, share: shareFor(data, args) } } };
 }
 
 /** Errors become tool results the agent can read and act on, not protocol failures. */
@@ -252,7 +252,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
   server.registerResource(
     "compare-chart",
     VIEW_URI,
-    { title: "City comparison chart", description: "City answers: comparison scores, sourced ranked bars, Equal Earth city dots or weather month strips. Works without network access.", mimeType: VIEW_MIME, _meta: { ui: { prefersBorder: false } } },
+    { title: "Borgo in the chat", description: "Borgo's answers drawn as the site draws them: a ranking as sourced bars, the world map or month strips; a comparison with each city's wins and losses, the points of every line, the money waterfall, the year's weather and the map; a city's dossier; take-home pay. Works without network access.", mimeType: VIEW_MIME, _meta: { ui: { prefersBorder: false } } },
     async (uri) => ({ contents: [{ uri: uri.href, mimeType: VIEW_MIME, text: await opts.view(), _meta: { ui: { prefersBorder: false } } }] }),
   );
 
@@ -291,7 +291,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "get_city",
     {
       title: "Figures for a city",
-      description: "One city's figures, each with source, period, geographic level and licence; daylight; the take-home pay model; whether each person in a household may live and work there, with the rules checked; links to sources we may not copy, and Borgo's generic quality-of-life index with its fixed weights. Compact by default (figures with a value, long series counted); pass metrics for a few figures, detail \"full\" for everything.",
+      description: "One city's figures, each with source, period, geographic level and licence; daylight; the take-home pay model; whether each person in a household may live and work there, with the rules checked; links to sources we may not copy, and Borgo's generic quality-of-life index with its fixed weights. Compact by default (figures with a value, long series counted); pass metrics for a few figures, detail \"full\" for everything. Hosts with MCP Apps already show this result as Borgo's city dossier (key figures with their sources, the year's temperatures against the person's nice days), so do not draw your own chart or table of it: summarise in words and say the dossier is interactive. Other hosts get the markdown.",
       inputSchema: {
         city: z.string().describe("City id or name"),
         passports: z.array(z.array(z.string())).optional().describe("Optional: each person's passports, e.g. [['US']] or [['IT'],['US','IE']]: who may live and work there"),
@@ -301,11 +301,12 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
       },
       outputSchema: cityOutput,
       annotations: readOnly,
-      _meta: { ui: { visibility: [...APP_CALLABLE] } },
+      _meta: { ui: { resourceUri: VIEW_URI, visibility: [...APP_CALLABLE] }, "ui/resourceUri": VIEW_URI },
     },
-    guarded(({ city, passports, rights, metrics, detail }) => {
+    guarded((args) => {
+      const { city, passports, rights, metrics, detail } = args;
       const r = cityReport(data, city, { passports, rights, metrics, detail: detail ?? "summary" });
-      return reply(cityMarkdown(r), r);
+      return { ...reply(cityMarkdown(r), r), ...appMeta(data, { cities: [r.city.id] }, args) };
     }),
   );
 
@@ -384,7 +385,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "net_pay",
     {
       title: "Take-home pay",
-      description: "Take-home pay for a gross yearly salary in a country (and region or city, for regional and municipal taxes), with every tax line, the model's caveats and its official sources. Takes age, children, a pension share, a newcomer regime, and a partner (joint filing for a married couple where the country has it).",
+      description: "Take-home pay for a gross yearly salary in a country (and region or city, for regional and municipal taxes), with every tax line, the model's caveats and its official sources. Takes age, children, a pension share, a newcomer regime, and a partner (joint filing for a married couple where the country has it). Hosts with MCP Apps already show this result as Borgo's money waterfall (gross pay, each tax line, take-home pay), so do not draw your own chart or table of it: summarise in words. Other hosts get the markdown.",
       inputSchema: {
         country: z.string().optional().describe("ISO alpha-2 or name; optional when city is given"),
         city: z.string().optional().describe("City id or name; sets country, region and municipal taxes"),
@@ -404,6 +405,8 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
       },
       outputSchema: netPayOutput,
       annotations: readOnly,
+      // Drawn by the view, never called by it.
+      _meta: { ui: { resourceUri: VIEW_URI, visibility: ["model"] }, "ui/resourceUri": VIEW_URI },
     },
     guarded((args) => {
       const r = netPay(data, args);
