@@ -15,7 +15,7 @@ export const BARE_HOST: HostCaps = { capabilities: {} };
 
 export interface Sent { id?: number; method: string; params: any }
 
-/** The CSP a host must apply to a view that declares no domains (MCP Apps 2026-01-26, "Restrictive Default"). */
+/** The CSP a host must apply to a view that declares no domains (the MCP Apps spec, "Restrictive Default"). */
 export const DEFAULT_CSP = "default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' data:; connect-src 'none'";
 /** The view document as a host frames it: under the default CSP, with a recorder of anything the policy blocks. */
 export const framed = (html: string) => html.replace("<head>", `<head><meta http-equiv="Content-Security-Policy" content="${DEFAULT_CSP}"><script>window.__violations=[];document.addEventListener("securitypolicyviolation",(e)=>window.__violations.push(e.violatedDirective+" "+e.blockedURI))</script>`);
