@@ -111,7 +111,7 @@ async function mcp() {
 
     const view = await request("resources/read", { uri: "ui://borgo/compare.html" });
     const html = view.result?.contents?.[0]?.text ?? "";
-    check("mcp chart view", /function compareSvg/.test(html) && /function renderRanking/.test(html) && /const borgoLand/.test(html) && !/:\s*ChartInput\b/.test(html), `${html.length} characters`);
+    check("mcp chart view", /function compareSvg/.test(html) && /function rankingHtml/.test(html) && /function shareLink/.test(html) && /ui\/open-link/.test(html) && /const BORGO = \{/.test(html) && /const borgoLand/.test(html) && !/:\s*ChartInput\b/.test(html), `${html.length} characters`);
   } finally {
     child.stdin.end();
     const code = await Promise.race([exited, new Promise((ok) => setTimeout(() => ok("timeout"), 5_000))]);

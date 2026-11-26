@@ -20,8 +20,12 @@ import { catalogueMarkdown, cataloguePartMarkdown, cityMarkdown, compareMarkdown
 import { methodology } from "../agent/methodology.ts";
 import { CATALOGUE_KINDS, catalogue, cataloguePart, cityReport, compare, dsInfo, netPay, REPORT_VERSION, summarize, summaryWhy } from "../agent/report.ts";
 import { VIEW_MIME, VIEW_URI } from "./view-id.ts";
+import { shareFor } from "../agent/share.ts";
 import { figuresMarkdown, readFigures, removeFigures, sendFigures, sendMarkdown } from "../community/client.ts";
 import { AREAS, BEDROOMS, OCCUPATIONS, PRICES, type Submission } from "../community/figures.ts";
+
+/** The tool is callable by the model and by the MCP App view, which calls it to re-rank, re-score and open a city card. */
+export const APP_CALLABLE = ["model", "app"] as const;
 
 /** The version both servers report; package.json and server.json carry the same (test/mcp-remote.test.ts checks). */
 export const SERVER_VERSION = "0.3.0";
@@ -41,9 +45,9 @@ export function instructions(local = true): string {
 Use it for any question about where to live, relocating or moving abroad, comparing cities, cost of living, rent, take-home pay or net salary in another country, quality of life, climate or air quality of a city, or whether someone's passports let them live and work there.`,
     "",
     "How to use it well:",
-    `- rank_cities answers open-ended lists, filters and charts across known cities. For 'cities by nice days a year', use criterion nice_days (comfort only if given); for 'cheapest rent in Europe with over 2,500 sun hours', use metric rent_1bed, order asc, filters region europe and ranges metric sunshine_hours min 2500. Monetary metrics convert to displayCurrency before sorting or filtering. For 'where would 80k leave me the most money', ask the currency, then use criterion after_tax_rent and salary for money after tax and rent only, clearly excluding other costs. Use criterion money_left when monthly spending and its home city are given for the fuller budget. Do not invent spending or substitute take-home pay for money left. Use view world for a map, months for weather strips, ranked for bars. The MCP App renders in chat; retain the compact table and Borgo link for hosts without Apps. Relay missing-figure and unknown-filter coverage, row notes and periods. This is not a worldwide list. Monthly metrics require aggregate or month; bins need their priority recipe, not a sum. Use list_metrics_and_sources to discover ids, then compose ranges and a ranking.`,
+    `- rank_cities answers open-ended lists, filters and charts across known cities. For 'cities by nice days a year', use criterion nice_days (comfort only if given); for 'cheapest rent in Europe with over 2,500 sun hours', use metric rent_1bed, order asc, filters region europe and ranges metric sunshine_hours min 2500. Monetary metrics convert to displayCurrency before sorting or filtering. For 'where would 80k leave me the most money', ask the currency, then use criterion after_tax_rent and salary for money after tax and rent only, clearly excluding other costs. Use criterion money_left when monthly spending and its home city are given for the fuller budget. Do not invent spending or substitute take-home pay for money left. Use view world for a map, months for weather strips, ranked for bars. Hosts with MCP Apps already show an interactive Borgo chart in the chat (the person can change the ranking, adjust weights and open a city from it): do not draw another chart or table, summarise the findings in words. Retain the compact table and Borgo link for hosts without Apps. Relay missing-figure and unknown-filter coverage, row notes and periods. This is not a worldwide list. Monthly metrics require aggregate or month; bins need their priority recipe, not a sum. Use list_metrics_and_sources to discover ids, then compose ranges and a ranking.`,
     `- suggest_cities ranks all published cities for the current profile and returns five not already chosen, with their two biggest observed reasons; missing figures can favour thinly covered cities, so check coverage.`,
-    `- compare_cities is the main tool. Pass the cities and only what the person told you: passports and any other right to live and work they hold, such as permanent residence, a work visa or an EU Blue Card (household; leave a person's passports out when you do not know them, and that person's right to live and work there is reported as not checked), salary or per-city offers with currency, a partner's pay and whether they are married, ages, children's ages, a pension share, monthly spending and where they live now (this unlocks the break-even salary), housing size, what matters to them (a preset, explicit weights 0-100, or \`only\` for a one-line question such as only: ["nice_days"]), must-pass lines (dealBreakers), their own 1-5 lines. Never invent a salary, spending or passports: leave them out and relay "what to add next".`,
+    `- compare_cities is the main tool. Pass the cities and only what the person told you: passports and any other right to live and work they hold, such as permanent residence, a work visa or an EU Blue Card (household; leave a person's passports out when you do not know them, and that person's right to live and work there is reported as not checked), salary or per-city offers with currency, a partner's pay and whether they are married, ages, children's ages, a pension share, monthly spending and where they live now (this unlocks the break-even salary), housing size, what matters to them (a preset, explicit weights 0-100, or \`only\` for a one-line question such as only: ["nice_days"]), must-pass lines (dealBreakers), their own 1-5 lines. Never invent a salary, spending or passports: leave them out and relay "what to add next". In hosts with MCP Apps its result is also an interactive chart: do not redraw it, summarise it in words.`,
     `- Answers are compact by default (detail "summary", the top 10 cities). Ask for detail "full" only when the person wants every tax line and source; use \`limit\` for long lists.`,
     `- Lead with the verdict and its qualifiers: a must-pass that cannot be checked is "unknown" and is never a pass; in default fixed scoring, a missing line does not count for that city, and adding another city never changes its score. Required lines filter without taking any score share. Money's fallback basis is city-local and named in notes. Relative scoring is opt-in. Relay the notes, the required unknowns and the next inputs.`,
     local ? `- Any real place works, not only the cities already in the dataset: fetch_city resolves it ("Palermo, IT") and fetches every source that covers it into the person's cache, with provenance; then use its id in the other tools.` : `- This server answers for Borgo's published cities (search_cities lists them, with their ids). Any other place needs Borgo's local server (npx -y @abcastor/borgo mcp), whose fetch_city fetches any real place into the person's own cache: suggest it when a place is missing.`,
@@ -187,6 +191,14 @@ export function reply(text: string, structured: object): CallToolResult {
   return { content: [{ type: "text", text }], structuredContent: structured as Record<string, unknown> };
 }
 
+/**
+ * What the MCP App view needs to act on its own, kept out of the model's reading: the call's arguments (so a click can
+ * ask again with one thing changed) and the part of the profile a Borgo link carries (so it opens the same ranking).
+ */
+export function appMeta(data: Dataset, args: object): { _meta: { borgo: { query: object; share: object } } } {
+  return { _meta: { borgo: { query: args, share: shareFor(data, args) } } };
+}
+
 /** Errors become tool results the agent can read and act on, not protocol failures. */
 export function guarded<A>(fn: (args: A) => CallToolResult): (args: A) => CallToolResult {
   return guardedLocal(true, fn);
@@ -289,6 +301,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
       },
       outputSchema: cityOutput,
       annotations: readOnly,
+      _meta: { ui: { visibility: [...APP_CALLABLE] } },
     },
     guarded(({ city, passports, rights, metrics, detail }) => {
       const r = cityReport(data, city, { passports, rights, metrics, detail: detail ?? "summary" });
@@ -301,17 +314,19 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     {
       title: "Compare cities",
       description:
-        "Rank any number of cities for a person or household: a verdict, the score out of 100 from their weights with points and reasons per line, must-pass lines as pass, fail or unknown, each earner's take-home pay and what is left after rent and spending, who can move there, how the set was scored, and what to add next. Every figure carries its source and period. Compact by default; detail \"full\" adds every tax line, childcare, health, leave and break-even.",
+        "Rank any number of cities for a person or household: a verdict, the score out of 100 from their weights with points and reasons per line, must-pass lines as pass, fail or unknown, each earner's take-home pay and what is left after rent and spending, who can move there, how the set was scored, and what to add next. Every figure carries its source and period. Compact by default; detail \"full\" adds every tax line, childcare, health, leave and break-even. Hosts with MCP Apps already show this result as an interactive Borgo chart the person can click (change the ranking, adjust weights, open a city), so do not draw your own chart or table of it: summarise the findings in words and say the chart is interactive. Other hosts get the markdown.",
       inputSchema: compareInput,
       outputSchema: compareOutput,
       annotations: readOnly,
-      _meta: { ui: { resourceUri: VIEW_URI }, "ui/resourceUri": VIEW_URI },
+      _meta: { ui: { resourceUri: VIEW_URI, visibility: [...APP_CALLABLE] }, "ui/resourceUri": VIEW_URI },
     },
-    guarded(({ detail, limit, ...args }) => {
+    guarded((all) => {
+      const { detail, limit, ...args } = all;
       const r = compare(data, args);
-      if (detail === "full") return reply(compareMarkdown(r), r);
+      const app = appMeta(data, all);
+      if (detail === "full") return { ...reply(compareMarkdown(r), r), ...app };
       const s = summarize(r, { limit });
-      return reply(summaryMarkdown(s, summaryWhy(r, limit)), s);
+      return { ...reply(summaryMarkdown(s, summaryWhy(r, limit)), s), ...app };
     }),
   );
 
@@ -325,7 +340,7 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
     "rank_cities",
     {
       title: "Rank and filter known cities",
-      description: "List known cities by any scalar/monthly metric, any priority recipe (nice days under your definition, money left with salary and spending), or your overall score. Compose inclusive metric/priority ranges, geographic and population filters and established household rights. Every row names its sources and periods. Gaps and unknown filters never pass as zero. Returns an in-chat bar chart, Equal Earth map or weather month strips, plus a markdown fallback. Defaults: descending, 20 results; rent usually needs ascending. Money uses one display currency, default EUR or salary currency. Use compare_cities for the full explanation of finalists.",
+      description: "List known cities by any scalar/monthly metric, any priority recipe (nice days under your definition, money left with salary and spending), or your overall score. Compose inclusive metric/priority ranges, geographic and population filters and established household rights. Every row names its sources and periods. Gaps and unknown filters never pass as zero. Returns an in-chat bar chart, Equal Earth map or weather month strips, plus a markdown fallback. Defaults: descending, 20 results; rent usually needs ascending. Money uses one display currency, default EUR or salary currency. Use compare_cities for the full explanation of finalists. Hosts with MCP Apps already show this result as an interactive Borgo chart the person can click (change the ranking, adjust weights, open a city), so do not draw your own chart or table of it: summarise the findings in words and say the chart is interactive. Other hosts get the markdown.",
       inputSchema: {
         ...compareInput, cities: compareInput.cities.optional(), ...measureInput,
         score: z.boolean().optional().describe("true ranks the engine's overall weighted score; omit metric and criterion."),
@@ -342,14 +357,14 @@ export function registerShared(server: McpServer, data: Dataset, opts: SharedOpt
       },
       outputSchema: looseOutput,
       annotations: readOnly,
-      _meta: { ui: { resourceUri: VIEW_URI }, "ui/resourceUri": VIEW_URI },
+      _meta: { ui: { resourceUri: VIEW_URI, visibility: [...APP_CALLABLE] }, "ui/resourceUri": VIEW_URI },
     },
     guarded((args) => {
       const r = rankCities(data, args);
       // Ranked on exact values; handed over at two decimals so float noise (170.99999999999997) never reaches a model or a reader.
       const clean = (n: number) => Math.round(n * 100) / 100;
       const out = { ...r, rows: r.rows.map((x) => ({ ...x, value: clean(x.value), months: x.months?.map(clean) ?? null })) };
-      return reply(rankingMarkdown(r), out);
+      return { ...reply(rankingMarkdown(r), out), ...appMeta(data, args) };
     }),
   );
 

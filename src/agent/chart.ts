@@ -33,6 +33,31 @@ export function chartInput(report: {
   };
 }
 
+/**
+ * The chart's data from the default (summary) compare result, the shape compare_cities returns unless detail is "full":
+ * lines carry an id and points, their labels sit once in `lines`, and the money left each month is `money.leftMonth`.
+ */
+export function summaryChartInput(report: {
+  displayCurrency: string;
+  lines: { id: string; label: string }[];
+  ranking: { id: string; ruledOut: string[] }[];
+  cities: { id: string; name: string; total: number; coverage: number; money?: { leftMonth: number | null }; lines: { id: string; points: number }[] }[];
+}): ChartInput {
+  // A line's label reads "Nice days (18-30 °C feels-like, ...)": the chart's legend keeps the name before the bracket.
+  const label = (id: string) => (report.lines.find((l) => l.id === id)?.label ?? id).replace(/\s*\(.*$/, "");
+  return {
+    currency: report.displayCurrency,
+    cities: report.cities.map((c) => ({
+      name: c.name,
+      total: c.total,
+      coverage: c.coverage,
+      ruledOut: (report.ranking.find((r) => r.id === c.id)?.ruledOut.length ?? 0) > 0,
+      monthlyLeft: c.money?.leftMonth ?? null,
+      lines: c.lines.filter((l) => l.points > 0).map((l) => ({ label: label(l.id), points: l.points })),
+    })),
+  };
+}
+
 const PALETTE = ["#006770", "#C4552A", "#667D2F", "#00858F", "#9A6B3F", "#4F6D8A", "#8A5A83", "#B08A2E", "#3F7F5F", "#7A7A7A", "#A04545", "#5E8C99"];
 
 function esc(s: string): string {

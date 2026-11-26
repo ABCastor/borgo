@@ -5,7 +5,7 @@
 // path the sources build from import.meta.url (the dataset, the registry, the map) still lands on the package root.
 // Runs before every npm pack and npm publish (prepack in package.json).
 import { build, transform } from "esbuild";
-import { chartSource } from "../src/mcp/chart-source.ts";
+import { chartSource, clientSource } from "../src/mcp/chart-source.ts";
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { mkdir, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
@@ -17,7 +17,9 @@ const pkg = JSON.parse(readFileSync(join(ROOT, "package.json"), "utf8")) as { en
 const target = `node${/\d+/.exec(pkg.engines.node)![0]}`;
 
 // The MCP App view runs src/agent/chart.ts in the host's iframe: compile it now, as the sources strip it at runtime.
-const chart = (await transform(chartSource(), { loader: "ts", format: "esm", target: "es2022" })).code;
+const compiled = async (source: string) => (await transform(source, { loader: "ts", format: "esm", target: "es2022" })).code;
+const chart = await compiled(chartSource());
+const client = await compiled(clientSource());
 
 await rm(OUT, { recursive: true, force: true });
 await mkdir(OUT, { recursive: true });
@@ -38,7 +40,7 @@ const result = await build({
   plugins: [{
     name: "compiled-chart",
     setup(b) {
-      b.onLoad({ filter: /src[\\/]mcp[\\/]chart-source\.ts$/ }, () => ({ contents: `export const chartSource = () => ${JSON.stringify(chart)};`, loader: "js" }));
+      b.onLoad({ filter: /src[\\/]mcp[\\/]chart-source\.ts$/ }, () => ({ contents: `export const chartSource = () => ${JSON.stringify(chart)};\nexport const clientSource = () => ${JSON.stringify(client)};`, loader: "js" }));
     },
   }],
 });
