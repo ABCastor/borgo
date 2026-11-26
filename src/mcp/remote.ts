@@ -11,7 +11,7 @@ import type { Dataset } from "../core/types.ts";
 import { lazyFiles, partFiles, withParts, type PartFile } from "../registry/licences.ts";
 import type { RegistryEntry } from "../registry/schema.ts";
 import type { D1Like } from "../site/community-api.ts";
-import { instructions, registerShared, SERVER_INFO, SERVER_VERSION, SHARED_TOOLS } from "./tools.ts";
+import { instructions, registerShared, SERVER_INFO, SERVER_VERSION, titlesInAnnotations, SHARED_TOOLS } from "./tools.ts";
 
 export const MCP_PATH = "/mcp";
 /** Requests a minute from one network, set on the rate-limit binding in wrangler.jsonc. */
@@ -161,7 +161,7 @@ export async function mcpRemote(request: Request, env: McpEnv, wait: Waiter | un
     headers.set("cf-connecting-ip", ip);
     return community(new Request(new URL(new URL(req.url).pathname + new URL(req.url).search, origin), { method: req.method, headers, body: req.method === "GET" || req.method === "HEAD" ? undefined : await req.text() }));
   }) as typeof fetch;
-  const server = new McpServer(SERVER_INFO, { instructions: instructions(false) });
+  const server = titlesInAnnotations(new McpServer(SERVER_INFO, { instructions: instructions(false) }));
   registerShared(server, loaded.data, { registry: loaded.registry, view: loaded.view, local: false, communityFetch });
   const transport = new WebStandardStreamableHTTPServerTransport({ sessionIdGenerator: undefined, enableJsonResponse: true });
   await server.connect(transport);

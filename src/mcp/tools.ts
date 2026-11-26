@@ -29,6 +29,17 @@ export const APP_CALLABLE = ["model", "app"] as const;
 
 /** The version both servers report; package.json and server.json carry the same (test/mcp-remote.test.ts checks). */
 export const SERVER_VERSION = "0.5.1";
+/**
+ * Every tool's human name also sits in its annotations (annotations.title), where app directories read it; the
+ * registered title stays the source, so the two never differ. Call once on a new server, before registering tools.
+ */
+export function titlesInAnnotations<S extends { registerTool: (...a: any[]) => any }>(server: S): S {
+  const register = server.registerTool.bind(server);
+  server.registerTool = ((name: string, config: { title?: string; annotations?: Record<string, unknown> }, cb: unknown) =>
+    register(name, config.title ? { ...config, annotations: { title: config.title, ...config.annotations } } : config, cb)) as S["registerTool"];
+  return server;
+}
+
 /** Who the server is, as hosts and app directories show it: the name, the site and the app icon (scripts/app-icon.ts). */
 export const SERVER_INFO = {
   name: "borgo",

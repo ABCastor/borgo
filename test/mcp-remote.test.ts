@@ -269,3 +269,10 @@ test("remote mcp: the server names itself with a title, its site and the app ico
   assert.equal(info.websiteUrl, "https://borgo.abcastor.com");
   assert.ok(info.icons?.some((i) => i.src.endsWith("/icon-512.png") && i.mimeType === "image/png"));
 });
+
+test("remote mcp: every tool carries its title in its annotations too, as app directories read it", async () => {
+  const client = await remoteClient(remoteEnv());
+  const { tools } = await client.listTools();
+  assert.ok(tools.length >= 10);
+  for (const t of tools) assert.equal(t.annotations?.title, t.title, `${t.name}: annotations.title is the tool's title`);
+});
