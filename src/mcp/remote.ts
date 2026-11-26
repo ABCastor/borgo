@@ -44,9 +44,13 @@ interface Loaded {
   view: () => Promise<string>;
 }
 
-let loading: Promise<Loaded> | null = null;
+// What a Worker instance keeps between requests is finished values, never a promise: a promise started by one request
+// cannot settle in another (Workers compatibility flag handle_cross_request_promise_resolution), so a read whose request
+// ended first, a client that hung up, would leave every later request waiting on it. A cold instance under concurrent
+// first requests reads twice; that is cheaper than one stuck instance.
+let loaded: Loaded | null = null;
 /** For tests: forget the data read before. */
-export const resetMcpData = () => void (loading = null);
+export const resetMcpData = () => void (loaded = null);
 
 async function asset<T>(env: McpEnv, origin: string, path: string): Promise<T> {
   const res = await env.ASSETS.fetch(new Request(new URL(path, origin), { method: "GET" }));
@@ -55,21 +59,19 @@ async function asset<T>(env: McpEnv, origin: string, path: string): Promise<T> {
 }
 
 /** The published dataset with its part files, the registry and the chart view, read once per Worker instance. */
-function load(env: McpEnv, origin: string): Promise<Loaded> {
-  loading ??= (async () => {
-    const [snapshot, registry] = await Promise.all([asset<Dataset>(env, origin, "/data/dataset.json"), asset<RegistryEntry[]>(env, origin, "/data/registry.json")]);
-    const files = await Promise.all([...partFiles(snapshot), ...lazyFiles(snapshot).map((l) => l.file)].map((f) => asset<PartFile>(env, origin, `/${f.replace(/^\//, "")}`)));
-    let view: Promise<string> | null = null;
-    const viewText = () =>
-      (view ??= env.ASSETS.fetch(new Request(new URL(VIEW_FILE, origin))).then((r) => {
-        if (!r.ok) throw new Error(`${VIEW_FILE}: ${r.status}`);
-        return r.text();
-      }));
-    return { data: withParts(snapshot, files), registry, view: viewText };
-  })();
-  // A failed read is tried again on the next request, not kept.
-  loading.catch(() => (loading = null));
-  return loading;
+async function load(env: McpEnv, origin: string): Promise<Loaded> {
+  if (loaded) return loaded;
+  const [snapshot, registry] = await Promise.all([asset<Dataset>(env, origin, "/data/dataset.json"), asset<RegistryEntry[]>(env, origin, "/data/registry.json")]);
+  const files = await Promise.all([...partFiles(snapshot), ...lazyFiles(snapshot).map((l) => l.file)].map((f) => asset<PartFile>(env, origin, `/${f.replace(/^\//, "")}`)));
+  let view: string | null = null;
+  const viewText = async () => {
+    if (view !== null) return view;
+    const r = await env.ASSETS.fetch(new Request(new URL(VIEW_FILE, origin)));
+    if (!r.ok) throw new Error(`${VIEW_FILE}: ${r.status}`);
+    return (view = await r.text());
+  };
+  // A failed read throws before this line, so it is tried again on the next request, not kept.
+  return (loaded ??= { data: withParts(snapshot, files), registry, view: viewText });
 }
 
 const CORS: Record<string, string> = {

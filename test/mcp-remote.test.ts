@@ -245,3 +245,19 @@ test("remote mcp: one version everywhere, and server.json lists the remote besid
   assert.equal(server.version, pkg.version);
   assert.deepEqual(server.remotes, [{ type: "streamable-http", url: `${ORIGIN}/mcp` }]);
 });
+
+test("remote mcp: a chart read left unfinished by one request never blocks the next (Workers settle a promise only in its own request)", async () => {
+  const env = remoteEnv();
+  const first = await remoteClient(env);
+  await first.callTool({ name: "search_cities", arguments: { query: "Lisbon" } });
+  // The first request starts the view read and is gone before it settles: its promise never resolves.
+  const real = env.ASSETS.fetch.bind(env.ASSETS);
+  let stalled = 0;
+  env.ASSETS.fetch = (request: Request) => (new URL(request.url).pathname === VIEW_FILE && stalled++ === 0 ? new Promise<Response>(() => {}) : real(request));
+  void first.readResource({ uri: "ui://borgo/compare.html" }).catch(() => {});
+  await new Promise((r) => setTimeout(r, 20));
+  const second = await remoteClient(env);
+  const view = await Promise.race([second.readResource({ uri: "ui://borgo/compare.html" }), new Promise<"stuck">((r) => setTimeout(() => r("stuck"), 3000))]);
+  assert.notEqual(view, "stuck", "the second request reads the chart itself instead of waiting on the first");
+  assert.match(String((view as { contents: { text?: string }[] }).contents[0]!.text), /<html/i);
+});
