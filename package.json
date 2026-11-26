@@ -1,6 +1,6 @@
 {
   "name": "@abcastor/borgo",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "type": "module",
   "description": "Borgo: compare any cities on open, sourced data, weighted by what you value.",
   "license": "Apache-2.0",
