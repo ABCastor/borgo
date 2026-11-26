@@ -165,3 +165,9 @@ test("the view document: protocol, calls it makes, and no way to reach a network
   assert.ok(html.length < 300_000, `light: ${html.length} bytes`);
   assert.ok(html.includes("min-height:44px"));
 });
+
+test("mcp app: the view never prints a raw nice-day definition (the sources note says it in words)", async () => {
+  const { readFileSync } = await import("node:fs");
+  const src = readFileSync(new URL("../src/mcp/view-client.ts", import.meta.url), "utf8");
+  assert.doesNotMatch(src, /JSON\.stringify\(r\.definition\)/);
+});

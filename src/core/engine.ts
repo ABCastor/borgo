@@ -113,7 +113,7 @@ export function weightOf(profile: Profile, c: Criterion): number {
  * The engine's version: scoring, money and the tax models together, the same as package.json's. Reports carry it, so
  * two answers can be told apart when the code that made them differs (test/engine.test.ts keeps the two in step).
  */
-export const ENGINE_VERSION = "0.4.0";
+export const ENGINE_VERSION = "0.4.1";
 
 /** The largest amounts the engine takes: beyond these an input is a typo, not a salary. */
 export const LIMITS = { yearly: 100_000_000, monthly: 10_000_000, comfort: [-30, 50] as [number, number] };
