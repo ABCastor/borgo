@@ -212,8 +212,9 @@ const ramp = (p: Palette, t: number) => {
 const landRamp = (p: Palette, t: number) => ramp(p, t);
 
 /**
- * Each tile's colour key: "r" and a share for the right to live, "m" and a share of the twelve months in the person's
- * range for every other value, or "land" or "faint" (a country a must-pass right to live rules out).
+ * Each tile's colour key: "r" and a share for the score, the right to live or a value with a country figure, "m" and a
+ * share of the twelve months in the person's range for nice days, or "land" (no figure on land) or "faint" (a country a
+ * must-pass right to live rules out).
  */
 const scoreMapCities = candidateScorer();
 let landLines = new Map<string, Map<string, number>>();
@@ -236,7 +237,18 @@ function tileValue(s: AppState, map: WorldMap, i: number): { k: "r" | "m"; v: nu
     const value = tileLand(landValues.get(cc), monthsInRange(map, i, k.min, k.max) / 12).score;
     return value == null ? "land" : { k: "r", v: value };
   }
-  return { k: "m", v: monthsInRange(map, i, k.min, k.max) / 12 };
+  if (ui.lens === "nice_days") return { k: "m", v: monthsInRange(map, i, k.min, k.max) / 12 };
+  // Any other value: the country's own figure on it, where one exists; values measured only at cities (money kept,
+  // rent) leave the land neutral, so the city dots alone carry them.
+  const v = landLines.get(cc)?.get(ui.lens);
+  return v == null ? "land" : { k: "r", v };
+}
+
+/** Whether the land carries the current lens: the score, the right to live, nice days, or a value with country figures. */
+function landCarries(): boolean {
+  if (ui.lens === "score" || ui.lens === "right_to_live" || ui.lens === "nice_days") return true;
+  for (const m of landLines.values()) if (m.has(ui.lens)) return true;
+  return false;
 }
 
 // ---------- View: zoom and centre, in projection units ----------
@@ -845,7 +857,10 @@ function legend(s: AppState): Raw {
         ? html`<div class="mlg-row"><span class="mlg-what">${ui.lens === "score" ? "Every city on the map is ruled out by a required line. Turn one off in What matters to see them scored." : `No city on the map has data on ${lensLabel(ui.lens, s).toLowerCase()} yet.`}</span></div>`
         : rampBar(lo, hi, ui.lens === "score" ? html`<b>Cities:</b> your score, as each would score among your cities${ends}` : html`<b>Cities:</b> ${lensLabel(ui.lens, s).toLowerCase()}${/ a (year|month)$/.test(lensText(ui.span.hi)) ? lensText(ui.span.hi).match(/ a (year|month)$/)![0] : ""}${ends}`),
     );
-    rows.push(ui.lens === "score" ? scoreLand : land);
+    const label = lensLabel(ui.lens, s).toLowerCase();
+    rows.push(ui.lens === "score" ? scoreLand : landCarries()
+      ? rampBar((ui.landSpan[0]*100).toFixed(0), (ui.landSpan[1]*100).toFixed(0), html`<b>Land:</b> ${label}, scored by each country's own figure`, true)
+      : html`<div class="mlg-row"><span class="mlg-sw is-land"></span><span class="mlg-what"><b>Land:</b> ${label} is measured city by city, so only the cities carry it</span></div>`);
     if (s.profile.dealBreakers.includes("right_to_live") && hasPassports(s)) rows.push(html`<div class="mlg-row"><span class="mlg-sw is-faint"></span><span class="mlg-what">Faint land: countries your Required right to live rules out</span></div>`);
   }
   const fadeOut = Math.round(ui.fade * 100);

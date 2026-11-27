@@ -80,6 +80,7 @@ body.app {
 .mlg-what { flex: 1 1 16rem; }
 .mlg-row .range { margin: 0 2px; }
 .mlg-sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; }
+.mlg-sw.is-land { background: var(--map-land); outline: 1px solid var(--rule); }
 .mlg-sw.is-hi { background: var(--map-hi); } .mlg-sw.is-mid { background: var(--map-mid); } .mlg-sw.is-lo { background: var(--map-lo); } .mlg-sw.is-faint { background: var(--map-faint); outline: 1px solid var(--rule); }
 .mlg-dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; }
 .mlg-dot.is-mine { background: var(--map-hi); box-shadow: 0 0 0 1.5px var(--sheet), 0 0 0 3.5px var(--ink); margin: 0 3px; }
