@@ -32,7 +32,7 @@
       "interface": {
         "displayName": "Borgo",
         "shortDescription": "Compare cities to live in",
-        "longDescription": "Borgo helps you decide where to live. Ask it to rank or compare cities and it answers with an interactive chart in the chat: change what is ranked, re-weight your priorities, set what a nice day means to you, open a city's figures or the world map, and open the same view on borgo.abcastor.com when you want to go further.\n\nIt covers take-home pay after tax and the money left after rent for a salary you give, rent, climate and nice days a year, air quality, safety, life expectancy, and whether you may live and work there with your passports. Every figure carries its source, period and licence. A missing figure is left out of a city's score, never counted as zero.\n\nWho it is for: anyone weighing a move, alone or as a household. Limits: Borgo gives information from public sources and models of tax, not financial, tax, legal or immigration advice; figures can be out of date, and coverage varies by city, which each answer states.\n\nBorgo is free and open source (code Apache 2.0, data CC BY 4.0). It needs no account and keeps nothing about you.",
+        "longDescription": "Borgo helps you decide where to live. Ask it to rank or compare cities and it answers with an interactive chart in the chat: change what is ranked, re-weight your priorities, set what a nice day means to you, open a city's figures or the world map, and open the same view on borgo.abcastor.com when you want to go further.\n\nIt covers take-home pay after tax and the money left after rent for a salary you give, rent, climate and nice days a year, air quality, safety, life expectancy, and whether you may live and work there with your passports. Every figure carries its source, period and licence. A missing figure is left out of a city's score, never counted as zero.\n\nWho it is for: anyone weighing a move, alone or as a household. Limits: Borgo gives information from public sources and models of tax, not financial, tax, legal or immigration advice; figures can be out of date, and coverage varies by city, which each answer states.\n\nBorgo is open source (code Apache 2.0, data CC BY 4.0). It needs no account and keeps nothing about you.",
         "developerName": "Castor",
         "category": "Travel",
         "capabilities": [
@@ -41,7 +41,7 @@
           "Take-home pay and money left after rent",
           "Climate and nice days a year",
           "Who may live and work there",
-          "Share your own rent and prices"
+          "Share your own rent and everyday costs"
         ],
         "websiteURL": "https://borgo.abcastor.com/",
         "supportURL": "https://github.com/ABCastor/borgo/issues",
