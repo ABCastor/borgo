@@ -22,8 +22,6 @@
 .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: settle .9s var(--ease) 1; }
 @keyframes settle { 0%, 100% { transform: none; } 30% { transform: translateY(-9%); } 62% { transform: translateY(2%); } 82% { transform: translateY(-1.5%); } }
 .bname { font-family: var(--word); font-weight: 560; font-variation-settings: "opsz" 72; letter-spacing: -.055em; font-size: var(--name-size); line-height: 1; text-box: trim-both cap alphabetic; color: var(--ink); white-space: nowrap; }
-.bname .star { display: inline-block; margin-left: .1em; color: var(--human); transition: transform .45s var(--ease); }
-.bname:hover .star { transform: rotate(90deg); }
 .bmast .desktop-sections { justify-self: center; display: flex; align-items: center; gap: 0; box-sizing: border-box; height: var(--g4); margin: 0 0 calc(var(--name-mid) - var(--g4) / 2); padding: 3px; background: var(--wash); border-radius: var(--g1); }
 .bmast .desktop-sections a { display: flex; align-items: center; height: 100%; box-sizing: border-box; margin: 0; padding: 0 var(--g2); text-box: normal; border-radius: calc(var(--g1) - 3px); font-size: 13px; line-height: 1; }
 .bmast .nav a[aria-current] { background: var(--ink); color: var(--paper); }
@@ -51,5 +49,4 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .bmark:hover .mk-you, .bmark:focus-visible .mk-you { animation: none; }
-  .bname .star { transition: none; }
-}
+  }

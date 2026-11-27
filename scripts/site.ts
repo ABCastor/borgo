@@ -5,7 +5,7 @@ import { createServer, type Server } from "node:http";
 import { extname, join } from "node:path";
 import { ROOT } from "../pipeline/lib.ts";
 import { MARK, PRODUCT_NAME } from "../src/ui/brand/index.ts";
-import { markSvg } from "../src/ui/brand/marks.ts";
+import { lockupSvg } from "../src/ui/brand/marks.ts";
 
 /** Where the site is served. Every canonical URL, sitemap entry, JSON-LD id, llms.txt and API link is built from it; set SITE_ORIGIN to build for another host. */
 export const SITE_ORIGIN = (process.env.SITE_ORIGIN ?? "https://borgo.abcastor.com").replace(/\/$/, "");
@@ -35,9 +35,10 @@ const SHARE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false
 const SETTINGS_ICON = (await readFile(join(ROOT, "src/ui/castor/settings.svg"), "utf8")).trim();
 
 /**
- * The product header: the Castor header's line and navigation (castor/header.css), with Borgo's own mark at the left
- * standing on the line, and the name with Castor's typed asterisk at the right. `settings` adds the app's gear.
+ * The product header: the Castor header's line and navigation (castor/header.css), with Borgo's logo at the left (its
+ * mark with the Castor mark at the top right, Design Library section 20) standing on the line, and the name beside it. `settings` adds the app's gear.
  */
+const CASTOR_MARK = (await readFile(join(ROOT, "src/ui/brand/castor-mark.svg"), "utf8")).trim();
 const THEME_TOGGLE = (await readFile(join(ROOT, "src/ui/castor/castor-theme-toggle.html"), "utf8")).trim();
 
 export function productHeader(home: string, nav: NavLink[], o: { settings?: boolean } = {}): string {
@@ -47,8 +48,8 @@ export function productHeader(home: string, nav: NavLink[], o: { settings?: bool
     : "";
   // The mark, then the name right beside it, then the sections; the gear, when there is one, at the far right.
   // Three tracks: the lockup (mark and name) on the left, the sections on the page's axis, the tools on the right.
-  return `<header class="mast bmast"><span class="blockup"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${markSvg(MARK)}</a>` +
-    `<a class="bname" href="${home}" tabindex="-1" aria-hidden="true">${SITE_NAME}<span class="star">*</span></a></span>` +
+  return `<header class="mast bmast"><span class="blockup"><a class="bmark" href="${home}" aria-label="${SITE_NAME}, home">${lockupSvg(MARK, CASTOR_MARK)}</a>` +
+    `<a class="bname" href="${home}" tabindex="-1" aria-hidden="true">${SITE_NAME}</a></span>` +
     `<nav class="nav desktop-sections" aria-label="Sections">${links}</nav><span class="bright">${o.settings ? `<details class="phone-sections"><summary>Sections</summary><nav class="nav header-menu" aria-label="Sections">${links}</nav></details>` : ""}${tools}</span></header>`;
 }
 

@@ -49,7 +49,7 @@ const header = productHeader("#/", [
 const published = JSON.parse(await readFile(join(ROOT, "public/data/dataset.json"), "utf8")) as Dataset & Published;
 const page = (await readFile(join(ROOT, "public/index.html"), "utf8")).replace("<!--HEADER-->", header);
 await writeFile(join(DIST, "index.html"), page);
-await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK));
+await writeFile(join(DIST, "favicon.svg"), faviconSvg(MARK, await readFile(join(ROOT, "src/ui/brand/castor-mark.svg"), "utf8")));
 await cp(join(ROOT, "public/media"), join(DIST, "media"), { recursive: true });
 await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });
 await cp(join(ROOT, "public/data"), join(DIST, "data"), { recursive: true });
