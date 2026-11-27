@@ -74,17 +74,24 @@ export function markSvg(mark: Mark, o: { cls?: string; title?: string; crop?: bo
 }
 
 /**
- * The Castor standard for a product logo (Design Library section 20, measured from Descant's shipped icons): the Castor
- * mark sits at the product mark's top right corner, its centre on the mark's right ink edge and a little above its top,
- * its diameter a third of the mark's height. Relative to the mark, so the header, the favicon and the app icon agree.
- * `tile` is the app icon: the whole lockup centred on paper, at most `max` per cent of the square either way.
+ * The Castor standard for a product logo (Design Library section 20), measured from Descant's shipped app icon: on a
+ * square, the product's own mark is centred (its ink box centred across, its middle at 52.7% down, at most 61.5% tall
+ * and 62% wide), and the Castor mark always sits at the same place and size: centre at 77.05%, 18.55%, diameter 20.92%.
+ * Every product's icon, favicon and header take this one composition, so the Castor mark never moves between products.
  */
-export const CASTOR_ON = { size: 0.34, rise: 0.057, tile: { max: 74 } } as const;
+export const CASTOR_ON = { castor: { cx: 77.05, cy: 18.55, d: 20.92 }, mark: { cy: 52.7, maxH: 61.5, maxW: 62 } } as const;
 
-/** The Castor disc's centre and diameter, in the product mark's own grid units. */
+/** The product mark's placement on the 100-unit square: scale and offset of its 24-unit grid. */
+function squarePlace(mark: Mark): { k: number; x: number; y: number } {
+  const m = CASTOR_ON.mark;
+  const k = Math.min(m.maxW / (mark.right - mark.left), m.maxH / (GROUND - mark.top));
+  return { k, x: 50 - ((mark.left + mark.right) / 2) * k, y: m.cy - ((mark.top + GROUND) / 2) * k };
+}
+
+/** The Castor disc's centre and diameter in the product mark's own grid units, from the square's fixed place. */
 function castorBox(mark: Mark): { cx: number; cy: number; d: number } {
-  const h = GROUND - mark.top;
-  return { cx: mark.right, cy: mark.top - CASTOR_ON.rise * h, d: CASTOR_ON.size * h };
+  const { k, x, y } = squarePlace(mark), c = CASTOR_ON.castor;
+  return { cx: (c.cx - x) / k, cy: (c.cy - y) / k, d: c.d / k };
 }
 
 /** The Castor drawing, as `castor` (./castor-mark.svg) holds it, centred at (cx, cy) with diameter d. */
@@ -125,12 +132,10 @@ export function faviconSvg(mark: Mark, castor: string): string {
 
 /**
  * The app icon (connector directories, home screens): the mark on paper with the Castor mark at its top right, as
- * Descant wears it, placed by the standard (CASTOR_ON.tile). `castor` is ./castor-mark.svg, a copy of castor-identity's
+ * Descant wears it, placed by the standard (CASTOR_ON). `castor` is ./castor-mark.svg, a copy of castor-identity's
  * master/mark-solid-light.svg.
  */
 export function appIconSvg(mark: Mark, castor: string): string {
-  const b = lockupBox(mark);
-  const k = CASTOR_ON.tile.max / Math.max(b.x1 - b.x0, b.y1 - b.y0);
-  const x = 50 - ((b.x0 + b.x1) / 2) * k, y = 50 - ((b.y0 + b.y1) / 2) * k;
+  const { k, x, y } = squarePlace(mark);
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#F7F4EC"/><g transform="translate(${x.toFixed(3)} ${y.toFixed(3)}) scale(${k.toFixed(4)})">${paths(mark, (p) => `fill="${p === "you" ? "#C4552A" : "#14130F"}"`)}${castorAt(castor, castorBox(mark), false)}</g></svg>`;
 }
