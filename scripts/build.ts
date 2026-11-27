@@ -55,7 +55,8 @@ await cp(join(ROOT, "public/fonts"), join(DIST, "fonts"), { recursive: true });
 await cp(join(ROOT, "public/data"), join(DIST, "data"), { recursive: true });
 // The compare chart's MCP App document, which the remote MCP server (/mcp) reads; the local one builds its own.
 await writeFile(join(DIST, "data/mcp-view.txt"), viewHtml());
-// Files that must sit at the site root as they are (search engine verification, the IndexNow key).
+// Files that must sit at the site root as they are (search engine verification, the IndexNow key, the plugin
+// reviewers' walkthrough at /review/walkthrough.mp4, linked from nowhere on the site).
 if (existsSync(join(ROOT, "public/root"))) await cp(join(ROOT, "public/root"), DIST, { recursive: true });
 // Open data stays open to other sites' browser code: the API and the data snapshot answer any origin.
 await writeFile(join(DIST, "_headers"), ["/api/*", "/data/*"].map((p) => `${p}\n  Access-Control-Allow-Origin: *\n`).join(""));

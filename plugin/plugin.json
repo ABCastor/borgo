@@ -105,7 +105,8 @@
           ]
         },
         "commerce": false,
-        "commerce_description": "Borgo sells nothing and processes no payments."
+        "commerce_description": "Borgo sells nothing and processes no payments.",
+        "demo_recording_url": "https://borgo.abcastor.com/review/walkthrough.mp4"
       },
       "publication": {
         "release_notes": "First listing of Borgo 0.5.2: ranking, comparison, city figures, take-home pay and suggestions, with an interactive chart in the chat."
