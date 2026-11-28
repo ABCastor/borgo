@@ -94,11 +94,25 @@ function castorBox(mark: Mark): { cx: number; cy: number; d: number } {
   return { cx: (c.cx - x) / k, cy: (c.cy - y) / k, d: c.d / k };
 }
 
-/** The Castor drawing, as `castor` (./castor-mark.svg) holds it, centred at (cx, cy) with diameter d. */
+let cutId = 0;
+
+/**
+ * The Castor drawing, as `castor` (./castor-mark.svg) holds it, centred at (cx, cy) with diameter d. The keyline between
+ * the asterisk and the disc is a real cut through the disc (a mask), never a paper-coloured stroke: on any background,
+ * dark included, the gap shows what is behind the logo.
+ */
 function castorAt(castor: string, at: { cx: number; cy: number; d: number }, themed: boolean): string {
   let inner = castor.replace(/^[\s\S]*?<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
-  // On a page the disc and its keyline follow the theme (the same two colours the Castor master's light and dark files use).
-  if (themed) inner = inner.replace('fill="#006770"', 'fill="var(--machine)"').replace('stroke="#FAF9F4"', 'stroke="var(--paper)"');
+  const keyline = inner.match(/<path class="keyline"[^>]*\/>/);
+  if (keyline) {
+    const id = `castor-cut-${++cutId}`;
+    const cut = keyline[0].replace(' class="keyline"', "").replace(/stroke="[^"]*"/, 'stroke="#000"');
+    inner = inner
+      .replace(keyline[0], "")
+      .replace('<path class="machine"', `<mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"><rect width="24" height="24" fill="#fff"/>${cut}</mask><path class="machine" mask="url(#${id})"`);
+  }
+  // On a page the disc follows the theme (the colour the Castor master's light and dark files use).
+  if (themed) inner = inner.replace('fill="#006770"', 'fill="var(--machine)"');
   return `<svg class="castor" x="${(at.cx - at.d / 2).toFixed(3)}" y="${(at.cy - at.d / 2).toFixed(3)}" width="${at.d.toFixed(3)}" height="${at.d.toFixed(3)}" viewBox="2.2 2.2 19.6 19.6" aria-hidden="true">${inner}</svg>`;
 }
 
